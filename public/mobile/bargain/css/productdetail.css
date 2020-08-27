@@ -1,0 +1,212 @@
+.wrap {
+	height: 100%;
+}
+.kanjia-rule {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.kanjia-rule .product-img {
+	position: relative;
+}
+.kanjia-rule .product-img img {
+	width: 100%;
+}
+.product-intro {
+	padding: 0 3%;
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+.topic {
+	position: relative;
+	padding: 8px 0;
+	height: 42px;
+	border-bottom: 1px dashed #ddd;
+}
+.topic p {
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+.topic span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 5px;
+	font-size: 12px;
+	z-index: 2;
+	background-color: #fff;
+}
+.price-youfei {
+	overflow: hidden;
+	height: 38px;
+	line-height: 38px;
+}
+.price-youfei>p {
+	width: 50%;
+	float: left;
+}
+.price-youfei>p strong {
+	font-size: 16px;
+	font-weight: normal;
+	color: red;
+}
+.price-youfei>span {
+	width: 50%;
+	float: right;
+	text-align: right;
+	font-size: 13px;
+}
+.pro-detail {
+	padding: 0;
+	background-color: #fff;
+}
+.pro-detail .tab-content .tab-title {
+	height: 38px;
+	overflow: hidden;
+	padding: 0 3%;
+	border-bottom: 1px solid #eee;
+}
+.pro-detail .tab-content .tab-title li {
+	width: 33.33%;
+	float: left;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	color: #333;
+	font-size: 14px;
+}
+.pro-detail .tab-content .tab-title li.active {
+	color: #FF8D39;
+	position: relative;
+}
+.pro-detail .tab-content .tab-title li.active:after {
+	content: '';
+	border-bottom: 2px solid #FF8D39;
+	position: absolute;
+	bottom: 0;
+	width: 90%;
+	left: 5%;
+	z-index: 1;
+}
+.pro-detail .tab-content .tab-con {
+	padding: 0 3%;
+}
+.pro-detail .tab-content .tab-con>li {
+	display: none;
+	padding: 10px 0;
+	color: #666;
+}
+.pro-detail .tab-content .tab-con>li img {
+	width: 100%;
+	line-height: 1.6;
+	color: #444;
+}
+.pro-detail .tab-content .tab-con>li.current {
+	display: block;
+}
+.pro-detail img {
+	width: 100%;
+	margin: 8px auto;
+}
+.pro-detail p {
+	line-height: 1.6;
+	font-size: 14px;
+	padding: 2px 2%;
+}
+
+/*砍价榜*/
+.tab-content .tab-con .zhanyou-list{
+	padding:0;
+}
+.tab-content .tab-con .zhanyou-list li {
+	overflow: hidden;
+	background-color: #fff;
+	padding: 6px 0;
+	height: 82px;
+	box-sizing: border-box;
+}
+.tab-content .tab-con .zhanyou-list li:last-child.border-b:after {
+	background-color: #fff;
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang {
+	height: 70px;
+	width: 70px;
+	position: absolute;
+	left: 0;
+	top: 5px;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin:0;
+	padding:0;
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang span {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 25px;
+	height: 25px;
+	background: url('') no-repeat;
+	background-size: 100%;
+	background-position: left top;
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang span.one {
+	background-image: url(../image/TOP-1@2x.png);
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang span.two {
+	background-image: url(../image/TOP-2@2x.png);
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang span.three {
+	background-image: url(../image/TOP-3@2x.png);
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang span.four {
+	background-image: url(../image/TOP-4@2x.png);
+}
+.tab-content .tab-con .zhanyou-list li .zhanyou-info {
+	margin-left: 75px;
+}
+.tab-content .tab-con .zhanyou-list li .zhanyou-info p {
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	font-size: 13px;
+	color: #888;
+	padding: 0 2%;
+}
+.tab-content .tab-con .zhanyou-list li .zhanyou-info h4 {
+	font-size: 15px;
+	letter-spacing: 1px;
+	line-height: 1.8;
+	padding: 0 2%;
+	margin:0;
+	margin-top: 2px;
+	color: #444;
+}
+.operation-btn {
+	overflow: hidden;
+}
+.operation-btn a, .operation-btn span {
+	display: block;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 15px;
+	color: #fff;
+}
+.operation-btn a:active {
+	opacity: 0.9;
+}
+.operation-btn .buy-btn {
+	background-color: #D82223;
+}

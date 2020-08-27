@@ -1,0 +1,38 @@
+
+.datepicker { z-index: 1060 !important; }
+.ui-table-order .time-cell { width: 120px !important; }
+.form-group-box { overflow: auto; }
+.form-group-box .form-group { width: 260px; margin-right: 10px; float: left; }
+table tr th, table tr td { text-align: center; }
+.remark { min-width: 250px; max-width: 400px; overflow: hidden; white-space: normal !important; vertical-align: middle; text-align: left; }
+
+.page-content {padding: 0 12px;background-color: #f9f9f9;}
+.cur-remain{padding: 12px 0;}
+.cur-remain .cur-remain-label{font-size: 12px;color: #999;}
+.cur-remain .cur-remain-val span{font-size: 22px;color: #333;line-height: 40px;}
+.cur-remain .cur-remain-val .recharge-btn { color: #008cf6; font-size: 12px; padding: 0 6px; position: relative; top: -2px; }
+.cur-remain .cur-remain-val .tag{border-radius: 3px;padding: 3px 5px;line-height: 1;font-size: 12px;margin-left: 10px;}
+.cur-remain .cur-remain-val .tag.wdq-tag{background-color: #e3f0fa;color: #008cf6;}
+.cur-remain .cur-remain-val .tag.ydq-tag{background-color: #f8e8e8;color: #ff2a36;}
+.cur-remain .end-date{font-size: 13px;color: #999;}
+.record-tabbable .nav-tabs{border-bottom: 1px solid #eee;}
+.record-tabbable .nav-tabs > li{margin-right: 15px;}
+.record-tabbable .nav-tabs > li > a{padding: 10px 6px;}
+.record-tabbable .nav-tabs > li > a, .record-tabbable .nav-tabs > li > a:focus{background-color: #fff;border:none;}
+.record-tabbable .nav-tabs > li.active > a, .record-tabbable .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{box-shadow: none;border: none;border-bottom: 4px solid #008cf6; color: #008cf6;}
+.search-part-wrap{padding: 8px 0;background-color: #fff;}
+.breadcrumbs{border-bottom: none;}
+
+/*分页颜色*/
+.page-part-wrap{ text-align: left;}
+.page-part-wrap .pagination a{color: #666;background-color: #f0f0f0;}
+.page-part-wrap .pagination .current,.page-part-wrap .pagination a:hover{background-color: #008df2;}
+.page-part-wrap .pagination a,.page-part-wrap .pagination span{margin-bottom: 0;}
+
+.balance { display: table;padding: 18px 0; border:none; background-color: #f9f9f9;margin: 10px 0;border-radius: 4px;}
+.balance .balance-info { display: table-cell; width: 1000px;float: none;border-left: 1px solid #efefef;text-align: center; font-size: 0;}
+.balance .balance-info:first-child{border-left: none;}
+.balance .balance-info .balance-info-item{display: inline-block;vertical-align: middle;width: 50%;}
+.balance .balance-info .balance-content{margin-bottom: 4px;}
+.balance .balance-info .balance-content .money{ color: #0081f6;line-height: 1;}
+.balance .balance-info .balance-title{color: #666;margin-bottom: 0;}

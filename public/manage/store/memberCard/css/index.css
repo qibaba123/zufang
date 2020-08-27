@@ -1,0 +1,226 @@
+/* 去除input默认样式 */
+.index-con select,input, button, textarea {
+	outline: none;
+	border: 0;
+	-webkit-appearance: none;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.border-t, .border-b,.border-l,.border-r {
+	position: relative;
+}
+.border-t:before, .border-b:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #e2e2e2;
+	right: 0;
+	height: 1px;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+.border-l::before,.border-r::after{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	background: #e2e2e2;
+	left: 0;
+	width: 1px;
+	-webkit-transform: scaleX(0.5);
+	transform: scaleX(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+.border-b:after {
+	top: auto;
+	bottom: 0;
+}
+.border-r::after{
+	right:0;
+	left:auto;
+}
+.index-con {
+	padding: 0;
+	position: relative;
+}
+.index-con .index-main {
+	height: 480px;
+	background-color: #f3f4f5;
+	overflow: auto;
+}
+/* 隐藏滚动条 */
+.index-con *::-webkit-scrollbar{
+    display: none;
+}
+/* 会员卡详情 */
+.card-detail{
+}
+.card-detail .card-item{
+	margin-bottom: 0;
+}
+.card-detail .card-box{
+	background-color: #fff;
+	padding: 13px 3.5%;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 10px;
+}
+.card-intro{
+	margin-bottom: 10px;
+	padding-left: 3.5%;
+	border-top:1px solid #eee;
+	background-color: #fff;
+}
+.card-intro h4{
+	line-height: 42px;
+	font-weight: bold;
+}
+.card-intro .intro-txt{
+	padding: 10px;
+	padding-right: 3.5%;
+	line-height: 1.7;
+	color: #666;
+	font-size: 13px;
+}
+.card-item{
+	margin:0 auto 10px;
+	width: 100%;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	background-color: #3474BC;
+	position: relative;
+	overflow: hidden;
+}
+.card-type{
+	position: absolute;
+	top:0;
+	right: 0;
+	z-index: 1;
+	color: #fff;
+	width: 60px;
+	text-align: center;
+	line-height: 3;
+}
+.card-type:before{
+	content: '';
+	height: 0;
+	width: 0;
+	position: absolute;
+	top:0;
+	right: 0;
+	border-width: 38px 50px 38px 50px;
+	border-style: dashed dashed solid solid;
+	border-color:  #2F69AB #2F69AB transparent transparent;
+	z-index: -1;
+}
+.card-name {
+	overflow: hidden;
+	padding:13px 0 0 13px;
+}
+.card-name .avatar{
+	float: left;
+	height: 40px;
+	width: 40px;
+	border:1px solid rgba(255,255,255,.8);
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	overflow: hidden;
+}
+.card-name .avatar img{
+	width: 100%;
+	min-height: 100%;
+}
+.card-name h3{
+	color: #fff;
+	font-size: 14px;
+	margin-left: 48px;
+	line-height: 38px;
+}
+.card-info{
+	padding: 3% 10px 7%;
+	text-align: center;
+	color: #fff;
+	line-height: 1.8;
+}
+.card-info p{
+	font-size: 16px;
+	font-weight: bold;
+}
+.card-info span{
+	display: block;
+	color: rgba(255,255,255,0.6);
+	font-size: 12px;
+}
+.limit-date {
+	padding: 0 10px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #316EB3;
+	color: #fff;
+	position: relative;
+}
+.limit-date p{
+	font-size: 14px;
+	padding-right: 70px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.limit-date span{
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	top:5px;
+	right: 13px;
+	padding:0 8px;
+	background-color:#2D66A7;
+	-webkit-border-radius: 14px; 
+	border-radius: 14px; 
+	font-size: 12px;
+}
+.card-item.purple{
+	background-color: #c07df8;
+}
+.card-item.purple .card-type:before{
+	border-color:  #b36bf0 #b36bf0 transparent transparent;
+}
+.card-item.purple .limit-date{
+	background-color: #b36bf0;
+}
+.card-item.purple .limit-date span{
+	background-color: #ab59ef;
+}
+.card-item.green{
+	background-color: #8BC34A;
+}
+.card-item.green .card-type:before{
+	border-color:  #83bb43 #83bb43 transparent transparent;
+}
+.card-item.green .limit-date{
+	background-color: #83bb43;
+}
+.card-item.green .limit-date span{
+	background-color: #73ae30;
+}
+.card-item.orange{
+	background-color: #FF5722;
+}
+.card-item.orange .card-type:before{
+	border-color:  #f24d19 #f24d19 transparent transparent;
+}
+.card-item.orange .limit-date{
+	background-color: #f24d19;;
+}
+.card-item.orange .limit-date span{
+	background-color: #e3420f;
+}

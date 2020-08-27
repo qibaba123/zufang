@@ -1,0 +1,110 @@
+.wrap {
+	height: 100%;
+}
+.kanjia-rule {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.kanjia-rule .product-img {
+	position: relative;
+}
+.kanjia-rule .product-img img {
+	width: 100%;
+}
+.kanjia-rule .product-img p {
+	width: 100%;
+	padding: 5px 3%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	line-height: 1.5;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	color: #A6A3A4;
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+.kanjia-rule .active-time {
+	height: 45px;
+	line-height: 45px;
+	padding: 0 3%;
+	background-color: #fff;
+	color: #A49188;
+	letter-spacing: 0.5px;
+	font-size: 15px;
+}
+.kanjia-rule>p {
+	padding: 0 3%;
+	line-height: 50px;
+	height: 50px;
+	color: #8A8988;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+}
+.kanjia-rule .price {
+	overflow: hidden;
+	padding: 0 3%;
+}
+.kanjia-rule .price p {
+	width: 45%;
+	height: 46px;
+	line-height: 46px;
+	font-size: 16px;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.kanjia-rule .price p b {
+	font-size: 18px;
+}
+.kanjia-rule .price .cur-price {
+	float: left;
+	background-color: #FF8603;
+	color: #fff;
+}
+.kanjia-rule .price .initial-price {
+	float: right;
+	border: 1px solid #D0D0D0;
+	color: #6C6B6A;
+	text-decoration: line-through;
+}
+.kanjia-rule .rules {
+	padding: 20px 3%;
+	color: #8A8988;
+}
+.kanjia-rule .rules h4 {
+	font-size: 18px;
+	line-height: 2;
+}
+.kanjia-rule .rules p {
+	line-height: 1.5;
+	font-size: 15px;
+}
+.operation-btn {
+	overflow: hidden;
+}
+.operation-btn a {
+	display: block;
+	width: 50%;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 15px;
+	color: #fff;
+}
+.operation-btn a:active {
+	opacity: 0.9;
+}
+.operation-btn a.help-btn {
+	background-color: #FF8603;
+}
+.operation-btn a.join-btn {
+	background-color: #D82223;
+}

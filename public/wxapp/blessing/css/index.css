@@ -1,0 +1,22 @@
+html,body{background-color: #cfeafa;}
+body{position: relative;}
+.greeting-wrap{min-height: 100%;position: relative;padding-top: 1px;padding-bottom: 1px;}
+.top_bg{width: 100%;display: block;}
+.greet-info{ position: absolute;z-index: 2;top: 300px;left: 0;width: 100%;}
+.user-avatar{height: 56px;width: 56px;border-radius: 50%;border:2px solid #fcc66b;margin: 0 auto;}
+.user-avatar img{display: block;height: 100%;width: 100%;border-radius: 50%;background-color: #fcc66b;}
+.name-input{width: 347px;height: 65px;margin: 15px auto;position: relative;}
+.name-input img{position: absolute;width: 100%;height: 100%;top:0;left:0;z-index: 0;}
+.name-input input,.name-input .greet-txt{width: 94%;margin:0 auto;height: 65px;padding: 5px 10px;text-align: center;color: #fff;font-size: 19px;position: relative;z-index: 2;box-sizing: border-box;letter-spacing: 2rpx;white-space:nowrap;overflow-x:auto;}
+.name-input .greet-txt{padding: 0 8px;line-height: 64px;}
+.common-wrap{width: 340px;margin: 0 auto;margin-bottom: 15px;position: relative;padding: 13px 0;}
+.common-wrap:last-child{margin-bottom: 0;}
+.common-wrap .border{width: 100%;height: 15px;display: block;position: absolute;top:0;left:0;z-index: 2;}
+.common-wrap .border-bottom{bottom: 0;top:auto;}
+.common-wrap .content{width: 100%;min-height: 100px;position: relative;}
+.common-wrap .content .middle{width: 100%;display: block;position: absolute;top:0;left:0;height:100%;z-index: 0;}
+.common-wrap .content .txt-img{display: block;width: 100%;}
+.common-wrap .content .greet-user{color: #b26519;font-size: 19px;text-align: center;padding: 0 15px;line-height: 1.8;margin-bottom: 8px;}
+.common-wrap .content .greet-detail{color: #b26519;font-size:16px;line-height: 1.6;padding: 0 30px 8px;position: relative;z-index: 1;}
+.code-show{padding:30px 0;}
+.code-show img{width: 150px;margin: 0 auto;}

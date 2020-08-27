@@ -1,0 +1,83 @@
+.header { background-color: #fff; border-bottom: 1px solid #eee; }
+
+/*轮播图*/
+.applet-banner .flexslider { border: none; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; margin: 0; height: auto; }
+.applet-banner .flexslider .slides > li { height: auto; }
+.applet-banner .flex-control-nav { bottom: -8px; z-index: 2; display: table; }
+.applet-banner .flex-control-nav li { margin: 0; display: table-cell; width: 1000px; height: auto; }
+.applet-banner .flex-control-paging li a { display: block; margin: 0; padding: 0; width: 100%; height: 4px; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; background-color: #DBDBDB; }
+.applet-banner .flex-control-paging li a:hover { background-color: #FB9C2B; }
+.applet-banner .flex-control-paging li a.flex-active { background-color: #FB9C2B; }
+.applet-banner .flex-direction-nav { position: absolute; top: 50%; z-index: 10; width: 1200px; margin-left: -600px; left: 50%; height: 48px; margin-top: -24px; }
+.applet-banner .flex-direction-nav li { width: 50%; float: left; box-sizing: border-box; }
+.applet-banner .flex-direction-nav li a { background-image: url(../images/arrow.png); margin-top: 0; top: 0; width: 40px; height: 48px; }
+.applet-banner .flex-direction-nav .flex-prev { left: 0; background-position: 0 0; }
+.applet-banner .flex-direction-nav .flex-next { right: 0; background-position: -40px 0; }
+.applet-enter-show { background-color: #fff; width: 100%; }
+.applet-enter-show img { max-width: 100%; }
+.applet-tese { background-color: #F6F6F6; padding: 20px 0; }
+.title-img { max-width: 100%; margin: 0 auto; display: block; }
+.tese-list { width: 1200px; margin: 0 auto; padding: 30px 0 0; }
+.tese-list li { width: 384px; height: 150px; margin-right: 24px; float: left; -webkit-box-shadow: 1px 1px 20px #ddd; -moz-box-shadow: 1px 1px 20px #ddd; -ms-box-shadow: 1px 1px 20px #ddd; box-shadow: 1px 1px 20px #ddd; background-color: #fff; margin-bottom: 25px; }
+.tese-list li.no-marR { margin-right: 0; }
+.tese-list li img { float: left; }
+.tese-list li .tese-intro { margin-left: 150px; text-align: center; padding-top: 15px; }
+.tese-list li .tese-intro h4 { font-size: 19px; line-height: 2; margin-bottom: 10px; }
+.tese-list li .tese-intro p { line-height: 1.8; font-size: 15px; color: #666; }
+.applet-kunhuo { background-color: #fff; width: 100%; }
+.applet-kunhuo img { max-width: 100%; }
+.bg-white { background-color: #fff; }
+.bg-white img { width: 100%; max-width: 1200px; margin: 0 auto; }
+.applet-tiyan { height: 400px; background: url(/public/site/applet/images/yonghutiyan.png) no-repeat center; background-size: auto 400px; }
+.applet-use { background-color: #F6F6F6; }
+.applet-use .title-img { padding: 20px 0; margin-bottom: 10px; }
+.use-list { width: 1200px; margin: 0 auto; padding-bottom: 10px; }
+.use-list li { width: 25%; float: left; margin-bottom: 10px; }
+.use-list li img { height: 150px; width: 150px; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; border-radius: 50%; margin: 5px auto; }
+.use-list li p { text-align: center; font-size: 16px; color: #555; line-height: 1.8; }
+.yh-active { position: relative; }
+.yh-active .now-get { width: 14%; height: 16.5%; position: absolute; left: 43%; bottom: 4%; cursor: pointer; }
+.applet-cooperation { background-color: #f6f6f6; }
+.trade-case .title-img,.applet-cooperation .title-img { padding: 20px 0; margin-bottom: 10px; }
+.cooperate-list { padding-bottom: 25px; width: 1100px; margin: 0 auto; }
+.cooperate-list li { width: 20%; float: left; margin-bottom: 15px }
+.cooperate-list li div { padding: 5px 0; width: 95%; }
+.cooperate-list li div img { display: block; width: 180px; margin: 0 auto; border: none; }
+
+/*用户案例*/
+.case-list{width: 1100px;margin:0 auto;}
+.case-item { width: 200px; background-color: #fff; float: left; margin: 0 10px; margin-bottom: 15px; -webkit-box-shadow: 1px 1px 5px #ddd; -moz-box-shadow: 1px 1px 5px #ddd; -ms-box-shadow: 1px 1px 5px #ddd; -o-box-shadow: 1px 1px 5px #ddd; box-shadow: 1px 1px 5px #ddd; }
+.case-item .case-img { width: 200px; height: 200px; display: block; position: relative; }
+.case-item .case-img img { height: 100%; height: 100%; }
+.case-item .case-img .case-code { position: absolute; left: 0; top: 0; height: 100%; width: 100%; padding: 20px; background-color: rgba(0, 0, 0, 0.5); z-index: 1; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -ms-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; -webkit-transform: scale(0); -moz-transform: scale(0); -ms-transform: scale(0); -o-transform: scale(0); transform: scale(0); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; }
+.case-item .case-img:hover .case-code { -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transform: scale(1); }
+.case-item .case-title { line-height: 2; padding: 8px 10px; font-size: 15px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; box-sizing: border-box; letter-spacing: 1px; text-align: center; font-weight: bold; }
+.case-item .case-title .price { margin-left: 5px; color: red; font-size: 14px; letter-spacing: 0; }
+/*领取优惠券弹出层*/
+.modal-content { width: 430px; position: fixed; top: 35%; left: 50%; margin-left: -215px; background-color: #fff; border-radius: 4px; box-shadow: 1px 1px 8px #ccc; z-index: 100; display: none; }
+.get-coupon { padding: 15px; }
+.get-coupon h3 { font-size: 26px; line-height: 2; text-align: center; letter-spacing: 1px; margin-bottom: 5px; }
+.get-coupon .input-wrap { padding: 5px 5px 5px 0; }
+.get-coupon .input-wrap label { width: 80px; line-height: 34px; float: left; text-align: right; }
+.get-coupon .input-wrap .right-input { margin-left: 80px; }
+.get-coupon .input-wrap input { height: 38px; padding: 6px 10px; border: 1px solid #dfdfdf; border-radius: 3px; font-size: 14px; box-sizing: border-box; outline: none; width: 100%; }
+.opera-box { padding: 15px 0; text-align: center; }
+.opera-box span { display: inline-block; margin: 0 6%; width: 30%; text-align: center; height: 38px; line-height: 38px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; cursor: pointer; }
+.opera-box span.cancel-btn { background-color: #ddd; }
+.opera-box span.get-btn { background-color: #FF001E; color: #fff; }
+.opera-box span:hover { opacity: 0.8; }
+
+/*浮动提示*/
+.fudong-tips { position: fixed; top: 50%; left: 50%; // height: 220px; width: 500px; margin-left: -250px; margin-top: -110px; background-color: #fff; -webkit-border-radius: 8px; border-radius: 8px; overflow: hidden; z-index: 10; -webkit-box-shadow: 0 0 5px #ddd; box-shadow: 0 0 5px #ddd; }
+.fudong-tips .close-tips { height: 24px; width: 24px; position: absolute; top: 2px; right: 2px; z-index: 12; background: #ddd url(/public/site/applet/images/icon-close.png) no-repeat center; background-size: 20px; background-color: rgba(0, 0, 0, 0.3); border-radius: 50%; cursor: pointer; -webkit-transition: all 0.5s; transition: all 0.5s; }
+.fudong-tips .close-tips:hover { background-color: rgba(0, 0, 0, 0.55); }
+.fudong-tips .main-intro { padding-bottom: 5px; background-color: #FEA62F; padding: 25px 0; }
+.fudong-tips .main-intro img { width: 88%; margin: 0 auto; }
+.fudong-tips .main-intro p { text-align: center; font-size: 18px; color: #fff; line-height: 2; margin-top: 5px; }
+.fudong-tips .get-info { overflow: hidden; margin-top: 22px; padding: 0 10%; }
+.fudong-tips .input-wrap { padding: 5px 5px 5px 0; box-sizing: border-box; }
+.fudong-tips .input-wrap label { width: 80px; line-height: 34px; float: left; text-align: right; }
+.fudong-tips .input-wrap .right-input { margin-left: 80px; }
+.fudong-tips .input-wrap input { height: 38px; padding: 6px 10px; border: 1px solid #dfdfdf; border-radius: 3px; font-size: 14px; box-sizing: border-box; outline: none; width: 100%; }
+.free-get-btn { display: block; margin: 15px auto 22px; padding: 8px 20px; text-align: center; background-color: #FF001E; color: #fff; font-size: 15px; width: 100px; -webkit-border-radius: 4px; border-radius: 4px; }
+.free-get-btn:hover { opacity: 0.8; color: #fff; }

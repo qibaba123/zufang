@@ -1,0 +1,172 @@
+.page-content{
+    padding:20px;
+}
+a{
+	text-decoration: none;
+	color: #38f;
+}
+.redbag-box{
+	width: 870px;
+	margin:0 auto;
+	font-family: "黑体";
+    overflow: hidden;
+    padding-bottom: 50px
+}
+.left-edit{
+	border-right: 1px dashed #dfdfdf;
+	float: left;
+	width: 560px;
+}
+.red-input-group{
+	margin-bottom: 15px;
+}
+.red-input-group label{
+	width: 100px;
+	float: left;
+	line-height: 34px;
+	color: #333;
+}
+.red-input-group .input-ele{
+	margin-left: 100px;
+}
+.red-input-group .input-ele .form-control{
+	resize: none;
+}
+.red-input-group .error{
+	color:#e15f63;
+	font-size: 14px;
+	padding-top: 4px;
+}
+
+
+/*右侧预览*/
+.right-preview{
+	width: 270px;
+	float: right;
+}
+.right-preview h4{
+	font-family:"黑体";
+	font-size: 14px;
+	margin:0;
+	padding:10px 0;
+}
+.demo-item{
+	margin-bottom: 10px;
+}
+.message-template {
+    padding: 12px 12px 0;
+    border: 1px solid #e7e7eb;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.message-template .temp-name {
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 10px;
+    padding: 0 5px 10px;
+}
+.message-template .temp-name .logo {
+    border-radius: 100%;
+    height: 25px;
+    margin: -2px 6px 0 0;
+    vertical-align: middle;
+    width: 25px;
+}
+.message-template .temp-news {
+    padding: 0 5px;
+}
+.mb10 {
+    margin-bottom: 10px !important;
+}
+.gray {
+    color: #8d8d8d !important;
+}
+
+.message-template .temp-ft {
+    background: rgba(0, 0, 0, 0) url("../images/temp_message.png") no-repeat 97% center;
+    border-top: 1px solid #ebebeb;
+    margin-top: 10px;
+    padding: 6px 5px;
+}
+.security-notice {
+    background: rgba(0, 0, 0, 0) url("../images/redbag.png") repeat scroll 0 0;
+    height: 121px;
+    position: relative;
+}
+.security-notice .word {
+    color: #ffffff;
+    font-size: 16px;
+    left: 75px;
+    overflow: hidden;
+    position: absolute;
+    text-overflow: ellipsis;
+    top: 19px;
+    white-space: nowrap;
+    width: 180px;
+}
+.security-notice .stat {
+    color: #ffffff;
+    font-size: 16px;
+    left: 75px;
+    position: absolute;
+    top: 48px;
+}
+.security-notice .sign {
+    color: #a6a6a6;
+    font-size: 16px;
+    left: 13px;
+    position: absolute;
+    top: 94px;
+}
+
+.receive-hongbao {
+    background: rgba(0, 0, 0, 0) url("../images/redbag-b.png") repeat scroll 0 0;
+    height: 369px;
+    position: relative;
+}
+.receive-hongbao .logo {
+    border-radius: 100%;
+    height: 50px;
+    left: 50%;
+    margin-left: -25px;
+    position: absolute;
+    top: 33px;
+    width: 50px;
+}
+.receive-hongbao .from {
+    color: #f9c69d;
+    font-size: 12px;
+    left: 18px;
+    position: absolute;
+    right: 18px;
+    text-align: center;
+    top: 90px;
+}
+.receive-hongbao .from .name {
+    display: block;
+}
+.receive-hongbao .word {
+    color: #ffe2b1;
+    font-size: 16px;
+    left: 18px;
+    position: absolute;
+    right: 18px;
+    text-align: center;
+    top: 138px;
+}
+/* 保存按钮样式 */
+.alert.save-btn-box{
+    border: 1px solid #F5F5AA;
+    background-color: #FFFFCC;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    margin-left: -453px;
+    width: 870px;
+    margin-bottom: 0;
+    z-index: 200;
+}
+.menu-min.sidebar+.main-content .alert.save-btn-box{
+    margin-left:-502px;
+}

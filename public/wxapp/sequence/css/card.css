@@ -1,0 +1,58 @@
+.main-container,.main-content,.page-content{
+	background: #F3F3F9;
+}
+.card{
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+
+    margin-bottom: 30px;
+    border: 0px;
+    border-radius: 0.625rem;
+    box-shadow: 6px 11px 41px -28px #a99de7;
+}
+.card .card-body{
+	padding: 1.88rem 1.81rem;
+}
+.card-title{
+	font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-bottom: 0.75rem;
+}
+
+.layui-form-item label, .layui-form-switch, .layui-form-item label:before, .layui-form-item label:after{
+    -webkit-box-sizing:content-box;
+    box-sizing: content-box;
+}
+.layui-form-label{
+    padding: 9px 15px 9px 0;
+    width: 100px;
+}
+
+.card .fa{
+    margin-top:10px;
+    font-size: 16px;
+}
+.width500{
+    width: 500px!important;
+}
+.width750{
+    width: 750px!important;
+}
+.flex{
+    display: flex;
+}
+.flex .layui-form-select{
+    flex: 1;
+}
+
+.layui-form{
+    position: relative;
+}

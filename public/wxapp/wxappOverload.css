@@ -1,0 +1,98 @@
+.sidebar, .main-container { top: 45px; }
+div.navbar { border-top: none; background-color: #3C545E; }
+.widget-toolbar > .dropdown > .dropdown-menu.pull-right::before, .dropdown-menu.pull-right.dropdown-caret::before { right: 24px; }
+.breadcrumbs { border-bottom: 1px solid #e5e5e5; background-color: #feffff; }
+.help-center-box { border-top: 1px solid #e5e5e5; }
+.user-info { top: 9px; }
+.ace-nav>li { border-left: 1px solid #3C545E; }
+.ace-nav>li.grey>a, .ace-nav>li.purple>a { background-color: #3C545E; }
+.ace-nav > li.light-blue > a { background-color: #3C545E !important; }
+.ace-nav>li.grey>a:visited, .ace-nav>li.purple>a:visited { background-color: #3C545E !important; }
+.ace-nav>li.light-blue>a:visited { background-color: #2B3A41 !important; }
+.ace-nav>li.grey>a:hover, .ace-nav>li.purple>a:hover, .ace-nav>li.light-blue>a:hover { background-color: #2B3A41 !important; }
+.ace-nav>li.grey>a:active, .ace-nav>li.purple>a:active, .ace-nav>li.light-blue>a:active { background-color: #2B3A41 !important; }
+.ace-nav>li.open.grey>a, .ace-nav>li.open.purple>a, .ace-nav>li.open.light-blue>a { background-color: #2B3A41 !important; }
+.ace-nav .nav-user-photo { border: none; }
+.sidebar { background-color: #709993; }
+.logo-show span { color: #fff; }
+.sidebar-collapse { background-color: #709993; }
+.sidebar-collapse:before { border-top-color: #fff; }
+.sidebar-collapse > [class*="icon-"] { border-top-color: #fff; color: #709993; }
+.sidebar-shortcuts { background-color: #709993; }
+.nav-list > li { border: none; }
+.nav-list > li > a { background-color: #709993; color: #fff; }
+.nav-list > li > a:hover { color: #fff; background-color: #5a8e86; }
+.nav-list > li a > .arrow { color: #fff; }
+.nav-list > li.open > a, .nav-list > li.open > a:hover { color: #fff; background-color: #5a8e86; }
+.nav-list .open > a:visited { color: #fff; background-color: #5a8e86; }
+.nav-list .open > a, .nav-list .open > a:hover, .nav-list .open > a:focus { color: #fff; background-color: #5a8e86; }
+.nav-list .open > a:active { color: #fff; background-color: #5a8e86; }
+.nav-list > li a:hover > .arrow, .nav-list > li.active > a > .arrow, .nav-list > li.open > a > .arrow { color: #fff; }
+.nav-list > li .submenu > li > a { color: #fff; }
+.nav-list>li .submenu>li, .nav-list>li>.submenu li.open>a, .nav-list>li .submenu>li.active>a { background-color: #709993; }
+.nav-list > li .submenu, .nav-list > li .submenu > li > a, .nav-list > li > .submenu > li:first-child > a { border: none; }
+.nav-list > li .submenu > li > a:hover { color: #fff !important; background-color: #5a8e86; }
+.nav-list > li .submenu > li a > [class*="icon-"]:first-child { background-color: rgba(0, 0, 0, 0); }
+.nav-list>li> .submenu li.open>a { color: #fff !important; background-color: #5a8e86 !important; }
+.nav-list li.active>a:after { border-right-color: #F47A6D; }
+.nav-list>li.active:after { border: 2px solid #F47A6D; right: 0; }
+.nav-list > li .submenu > li.active > a > [class*="icon-"]:first-child { color: #fff; }
+.nav-list > li.active > a, .nav-list > li.active > a:hover, .nav-list > li.active > a:focus, .nav-list > li.active > a:active { background-color: #709993; color: #fff; }
+
+/*隐藏快捷菜单*/
+#sidebar-shortcuts { line-height: 25px; }
+textarea.form-control { resize: none; }
+.ke-statusbar-right-icon { display: none !important; }
+.index-main .pagination { margin: 0; }
+.preview-page { padding-bottom: 60px !important; }
+td p { margin: 0 0 3px; }
+.index-main>div[data-left-preview]{position:relative;}
+.index-main>div[data-left-preview].cur-edit::after, .index-main >div[data-left-preview].cur-edit:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #FC7C7C;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 10;
+  cursor: pointer;
+}
+.index-main>div[data-left-preview]:hover::after{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #FC7C7C;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 10;
+    cursor: pointer;
+}
+.index-main>div[data-left-preview]:hover::before{
+  content:'编辑';
+  position: absolute;
+  top:0;
+  right:0;
+  width: 56px;
+  height: 30px;
+  line-height: 32px;
+  text-align: center;
+  color: #fff;
+  padding-right: 12px;
+  background:url(/public/wxapp/images/icon_edit_white.png) no-repeat 90% center;
+  background-size: 12px;
+  background-color: #118bfb;
+  font-size: 13px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 10;
+  cursor: pointer;
+}

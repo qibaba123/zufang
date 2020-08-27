@@ -1,0 +1,80 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    list-style: none;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+    color: #333;
+    outline: none;
+    line-height: 1.5;
+    background-color: #fff;
+    font: 14px/1.5 "Microsoft Yahei","Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+input, select, textarea {
+    font-size: 100%;
+}
+input, select {
+    vertical-align: middle;
+}
+img{
+    display: block;
+    border:0;
+}
+a{
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+/* 去除input默认样式 */
+input,button,select,textarea{
+    outline:none;
+    border:0;
+    -webkit-appearance: none;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+html,*{
+    width: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    color: #333;
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: none;
+    font: normal 14px/200% arial, helvetica, "Hiragino Sans GB", "Microsoft Yahei", "微软雅黑", sans-serif;
+    text-align: left;
+    max-width: 640px;
+    margin:0 auto;
+}
+
+.clearfix:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    content: "";
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}

@@ -1,0 +1,28 @@
+.ajax-pages a{
+    padding: 5px 8px;
+    margin: 0 1px;
+    min-width: 28px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #333;
+}
+.ajax-pages a:hover{
+    background-color: #f8f8f8;
+    color: #0077DD;
+}
+.ajax-pages a.active{
+    background-color: #0077DD;
+    color: #fff;
+    border-color: #0077DD;
+}
+.ajax-pages p{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5px;
+    margin-bottom: 0;
+}

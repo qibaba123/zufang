@@ -1,0 +1,235 @@
+/* flex布局 */
+.flex-wrap {
+  	display: -webkit-flex;
+  	display: -ms-flexbox;
+  	display: -webkit-box;
+  	display: -ms-box;
+  	display: box;
+  	display: flex;
+}
+.flex-con {
+  	-webkit-box-flex: 1;
+  	-ms-box-flex: 1;
+  	-webkit-flex: 1;
+  	-ms-flex: 1;
+  	box-flex: 1;
+  	flex: 1;
+}
+.flex-vertical {
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	-webkit-flex-flow: column;
+	-flex-direction: column;
+	flex-flow: column;
+}
+#main{
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: #fff;
+}
+html,body,#wrap{
+  height: 100%;
+}
+.header{
+  height: 48px;
+  background-color: #F8F8F8;
+  border-bottom: 1px solid #CFCFCF;
+}
+.header .back{
+  display: inline-block;
+  float: left;
+  height: 48px;
+  line-height: 50px;
+  background: url(../images/icon_back.png) no-repeat;
+  background-size: 25px;
+  background-position: 5px center;
+  font-size: 16px;
+  padding-left: 35px;
+}
+/* 主内容 */
+.main-con{
+}
+.main-con>p{
+  padding:10px 4%;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.tips{
+  background-color: #FCD865;
+  padding:12px 4%;
+  color: #845D1E;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+.recharge-amount{
+  padding:0 2%;
+  text-align: center;
+}
+.recharge-amount>span,.recharge-amount input{
+  border: 1px solid #dedede;
+  display: inline-block;
+  width: 45%;
+  margin:0 1.5%;
+  // height: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  font-size: 14px;
+  transition:all 0.5s;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  padding:8px 0;
+  line-height: 1.6;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.recharge-amount>span b{
+  color: #FF4978;
+  font-size: 16px;
+}
+.recharge-amount input{
+  padding:20px 5px 19px;
+}
+.recharge-amount>span.selected{
+  position: relative;
+  border:1px solid #FF4978;
+  color: #FF4978;
+}
+.recharge-amount>span.selected::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url('/public/mobile/images/active.png') no-repeat bottom right;
+  background-size: 18px;
+  z-index: 1;
+}
+.recharge-amount input:focus{
+  border:1px solid #FF4978;
+}
+/* 底部操作 */
+.footer{
+  background-color: #F8F8F8;
+  font-size: 16px;
+  overflow: hidden;
+  padding:5px 4%;
+  position: relative;
+  width: 100%;
+}
+.footer:after{
+  content:'';
+  border-top:1px solid #ddd;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.footer p{
+  width: auto;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 4px;
+}
+.footer p span{
+  color: #DA3651;
+}
+.footer .submit-order{
+  display: block;
+  text-decoration: none;
+  float: right;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 3px;
+  background-color: #DA3651;
+  color: #fff;
+  text-align: center;
+  margin-top: 5px;
+  padding:0 20px;
+}
+/* 弹出层样式 */
+.layermbox1 .layermcont {
+  height: 100%;
+}
+.payment{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.payment .close{
+  position: absolute;
+  right: 5px;
+  top:0;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 25px;
+  color: #666;
+}
+.payment .pay-choose p{
+  text-align: center;
+  margin:0;
+  font-size: 15px;
+  padding:10px 0;
+  color: #444;
+  line-height: 2;
+  font-weight: bold;
+}
+.payment .pay-choose ul{
+  border-top:1px solid #F0F0F0;
+}
+.payment .pay-choose li{
+  border-bottom:1px solid #F0F0F0;
+  height: 45px;
+  line-height: 45px;
+  padding:0 4%;
+  position: relative;
+}
+.payment .pay-choose li p{
+  position: absolute;
+  width: 65%;
+  right: 4%;
+  top:0;
+  height: 45px;
+  line-height: 45px;
+  color: #DF3938;
+  text-align: right;
+  padding:0;
+  font-weight: normal;
+}
+.payment .pay-choose li p.check{
+  padding-right: 25px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url(../images/icon-radio.png) no-repeat;
+  background-size: 18px;
+  background-position: right center;
+}
+.payment .pay-choose li p.check.checked{
+  background-image: url(../images/icon-radio-checked.png);
+}
+.payment .pay-choose li p.check.disabled{
+  color: #e3e3e3;
+}
+.payment .confirm-pay{
+  display: block;
+  text-decoration: none;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  background-color: #DA3651;
+  color: #fff;
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+  font-size: 15px;
+}

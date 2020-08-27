@@ -1,0 +1,141 @@
+img{
+	display: block;
+}
+body{
+	max-width: 750px;
+	margin:0 auto;
+}
+.border-t, .border-b,.border-l,.border-r {
+	position: relative;
+}
+.border-t:before, .border-b:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #E6E2E2;
+	right: 0;
+	height: 1px;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+.border-l::before,.border-r::after{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	background: #E6E2E2;
+	left: 0;
+	width: 1px;
+	-webkit-transform: scaleX(0.5);
+	transform: scaleX(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+.border-b:after {
+	top: auto;
+	bottom: 0;
+}
+.border-r::after{
+	right:0;
+	left:auto;
+}
+.top-banner{
+	height: 170px;
+}
+.top-banner h4{
+	line-height: 2;
+}
+.bottom-area{
+	left:0;
+}
+.block-item-con{
+	padding:0;
+}
+.threesale-intro h3{
+	text-align: center;
+	color: #FF7C1F;
+	font-size: 17px;
+	padding: 10px 0;
+	line-height: 1.5;
+}
+.threesale-intro>div{
+	font-size: 14px;
+	line-height: 1.3;
+	font-weight: bold;
+	text-align: center;
+	color: #444;
+	padding:5px 0;
+	border-bottom: 1px dashed #f2f2f2;
+}
+.threesale-intro>p{
+	font-size: 12px;
+	line-height: 1.5;
+	color: #999;
+	padding:5px 5%;
+}
+.threesale-intro>img{
+	width: 100%;
+}
+.threesale-intro h4{
+	text-align: center;
+	color: #fff;
+	font-size: 17px;
+	padding: 10px 0;
+	background-color: #F49803;
+	line-height: 1.5;
+	margin:10px auto;
+}
+.threesale-intro h4>span{
+	font-size: 20px;
+}
+.threesale-intro>.sale-tese{
+	padding:5px 3%;
+	border-bottom: 0;
+}
+.threesale-intro>.sale-tese img{
+	margin-bottom: 10px;
+	width: 100%;
+}
+.threesale-intro>.sale-tese img:last-child{
+	margin-bottom: 0;
+}
+.tel-address {
+	position: relative;
+}
+.tel-address>img{
+	width: 100%;
+}
+.tel-address>.contact-us{
+	position: absolute;
+	left:0;
+	width: 100%;
+	top: 50%;
+	height: 60%;
+	transform:translateY(-50%);
+}
+.tel-address>.contact-us img{
+	height: 100%;
+	margin:0 5%;
+	vertical-align: middle;
+	box-sizing: border-box;
+  	border: 4px solid rgba(0,0,0,0.15);
+  	border-radius: 3px;
+}
+.tel-address>.contact-us>div {
+	position: absolute;
+	left: 36%;
+	top:0;
+	right: 5%;
+}
+.tel-address>.contact-us>div p{
+	color: #fff;
+	text-align: left;
+}
+.btn-orange {
+  color: #fff;
+  border-color: #F49803;
+  background-color: #F49803;
+}

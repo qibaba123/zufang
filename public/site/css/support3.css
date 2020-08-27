@@ -1,0 +1,218 @@
+@charset "UTF-8";
+
+a, body {
+    color: #333
+}
+.clearfix, .container .content {
+    /* zoom: 1 */
+}
+.copyright .ft-links~.ft-copyright, hr {
+    border-image: url(../images/border-line.png) 2 stretch;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline
+}
+html {
+    line-height: 1;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: Helvetica, "STHeiti STXihei", "Microsoft JhengHei", "Microsoft YaHei", Tohoma, Arial
+}
+ol, ul {
+    list-style: none
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+caption, td, th {
+    font-weight: 400;
+    vertical-align: middle
+}
+blockquote, q {
+    quotes: none
+}
+blockquote:after, blockquote:before, q:after, q:before {
+    content: "";
+    content: none
+}
+.arrow-right::after, .clearfix:after, .container .content:after {
+    content: ''
+}
+a img {
+    border: none
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+    display: block
+}
+body {
+    background-color: #eee;
+    -webkit-backface-visibility: hidden;
+    margin: 0 auto;
+}
+body.body-fixed-bottom {
+    padding-bottom: 40px
+}
+.container {
+    background-color: #f8f8f8
+}
+strong {
+    font-weight: 700
+}
+a {
+    background: 0 0;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent
+}
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+h2 {
+    font-size: 18px;
+    line-height: 22px
+}
+h3 {
+    font-size: 15px;
+    line-height: 18px
+}
+button, input[type=number], input[type=text], input[type=password], input[type=email], input[type=search], select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none
+}
+.btn {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 5px 4px;
+    margin: 0;
+    font-size: 12px;
+    cursor: pointer;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    color: #999
+}
+.btn-block {
+    width: 100%;
+    padding: 11px 10px;
+    font-size: 16px;
+    line-height: 16px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+.btn-orange {
+    color: #fff;
+    border-color: #f60;
+    background-color: #f60
+}
+.c-orange {
+    color: #f60 !important
+}
+.c-orange-dark {
+    color: #f15a0c !important
+}
+.c-green {
+    color: #06bf04 !important
+}
+.c-red {
+    color: #ed5050 !important
+}
+.c-pink {
+    color: #ee614b !important
+}
+.c-white {
+    color: #fff !important
+}
+.c-gray-light {
+    color: #e5e5e5 !important
+}
+.c-gray {
+    color: #c9c9c9 !important
+}
+.c-gray-dark {
+    color: #999 !important
+}
+.c-gray-darker {
+    color: #666 !important
+}
+.c-black {
+    color: #333 !important
+}
+.c-yellow {
+    color: #f09000 !important
+}
+.c-light-yellow {
+    color: #fcff00 !important
+}
+.c-blue {
+    color: #00a0f8 !important
+}
+hr {
+    margin: 10px 0;
+    border: 0;
+    -webkit-border-image: url(../images/border-line.png) 2 stretch;
+    -moz-border-image: url(../images/border-line.png) 2 stretch;
+    border-top: 2px solid #e5e5e5
+}
+.js-area {
+    margin-bottom: 50px
+}
+.bottom-area {
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FFF;
+    z-index: 100;
+}
+.top-banner {
+    position: relative;
+    height: 180px;
+    background: url("../images/fxbydd_01.png") #999 center;
+    background-size: cover;
+    color: white
+}
+.top-banner .top-logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 90px;
+    height: 90px;
+    margin-left: -45px;
+    border:3px solid #fff;
+    border-radius: 50%;
+    background: #eee center;
+    background-size: cover
+}
+.top-banner h4 {
+    padding-top: 125px;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center
+}
+.top-banner .banner-info-row {
+    margin-top: 12px;
+    font-size: 12px;
+    text-align: center
+}
+.top-banner .banner-info-row .info-column {
+    display: inline-block;
+    margin: 0 10px
+}

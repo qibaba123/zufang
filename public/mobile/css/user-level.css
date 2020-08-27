@@ -1,0 +1,86 @@
+/* 会员分类 */
+.member-fenlei{
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+.member-fenlei .flex-con{
+    height: 40px;
+    line-height: 40px;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+}
+.member-fenlei .flex-con.current{
+    color: #E84437;
+    font-weight: bold;
+}
+
+/*搜索样式*/
+.search-box{
+    padding:8px 4%;
+    overflow: hidden;
+}
+.search-box .search-txt{
+    width: 79%;
+    float: left;
+    background: url(../images/iconfont-sousuo@2x.png) no-repeat #fff;
+    background-position: 8px center;
+    background-size: 18px;
+    padding:10px 2%;
+    padding-left: 11%;
+    border-radius:10px;
+    border:1px solid #D3D4D6;
+}
+.search-box button{
+    width: 18%;
+    float: right;
+    height: 36px;
+    line-height: 36px;
+    background-color: #FA3637;
+    color: #fff;
+    border-radius: 2px;
+}
+/*战友列表*/
+.zhanyou-list li{
+    overflow: hidden;
+    background-color: #fff;
+    padding: 12px 4%;
+}
+.zhanyou-list li:last-child.border-b:after{
+    background-color: #fff;
+}
+.zhanyou-list li .left-touxiang{
+    height: 80px;
+    width: 80px;
+    float: left;
+}
+.zhanyou-list li .left-touxiang img{
+    width: 100%;
+    height: 100%;
+}
+.zhanyou-list li .zhanyou-info{
+    width: 72%;
+    float: left;
+    padding-left: 4%;
+}
+.zhanyou-list li .zhanyou-info p{
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+}
+.zhanyou-list li .zhanyou-info p:first-child{
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+.buy-sale{
+    overflow: hidden;
+}
+.buy-sale .sale{
+    float: right;
+}
+.buy-id {
+    display: inline-block;
+    width: 30%;
+}

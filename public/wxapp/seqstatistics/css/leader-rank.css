@@ -1,0 +1,13 @@
+.table{
+	border:none;
+}
+.info{
+	display: flex;
+	align-items: center;
+	color: #8a8a8a;
+}
+.info img{
+	width: 55px;
+	height: 55px;
+	margin-right: 10px;
+}

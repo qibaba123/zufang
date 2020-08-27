@@ -1,0 +1,359 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+img {
+	display: block;
+	border: 0;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+input {
+	outline: 0;
+	border: 0;
+}
+ul li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	outline: 0;
+}
+a:active {
+	background-color: #f5f5f5;
+}
+.no-margin-top {
+	margin-top: 0 !important;
+}
+.border-top {
+	position: relative;
+}
+.border-top:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 70%;
+	height: 2px;
+	background-color: #e60012;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.padding-btm {
+	padding-bottom: 60px;
+}
+.no-padding-left {
+	padding-left: 0 !important;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	clear: both;
+}
+html, body, .container {
+	width: 100%;
+	min-width: 320px;
+	max-width: 640px;
+	margin: 0 auto;
+	background-color: #f5f5f5;
+	font-size: 14px;
+	font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, Heiti, SimSun, sans-serif;
+}
+
+/* 状态栏区域start */
+.header-main {
+	position: fixed;
+	width: 100%;
+	min-width: 320px;
+	max-width: 640px;
+	height: 45px;
+	background-color: #ff2d4b;
+	z-index: 10;
+}
+.logo-box {
+	margin-left: 0.26rem;
+	width: 1.42rem;
+	height: 100%;
+	background-color: #ff2d4b;
+	background: url('../image/index-1_06.png') center center no-repeat;
+	background-size: 100% auto;
+}
+.topback {
+	width: 0.32rem;
+	height: 45px;
+	background: url('../image/index-00_05.png') no-repeat left center;
+	background-size: 0.32rem 0.4rem;
+	margin-left: 0.24rem;
+}
+.top-title {
+	line-height: 45px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	width: 60%;
+	margin: 0 auto;
+}
+.user-center {
+	padding: 0 0.26rem;
+	width: 0.42rem;
+	height: 100%;
+	background: url('../image/index-1_03.png') center center no-repeat;
+	background-size: 0.42rem auto;
+}
+
+/* 状态栏区域end */
+
+/* 用户头像区域start*/
+.userPic-box {
+	background-color: #ff2d4b;
+	padding: 0.5rem 0.20rem 0.3rem;
+	color: #fff;
+	position: relative;
+}
+.userId {
+	text-align: right;
+	position: absolute;
+	right: 0.20rem;
+}
+.userImg {
+	width: 1.79rem;
+	height: 1.79rem;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+.userName {
+	text-align: center;
+	padding: 10px 0 6px;
+}
+
+/* 用户头像区域end */
+
+/* 主体盒子样式 */
+.content-main {
+}
+
+/* 顶部导航start */
+.top-nav li {
+	float: left;
+	width: 33.333333%;
+	text-align: center;
+	background-color: #fff;
+	margin-bottom: 6px;
+}
+.top-nav li a {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	color: #000;
+	font-size: 14px;
+}
+.top-nav li.border-top a {
+	color: #e60012;
+}
+
+/* 顶部导航end */
+
+/* 幻灯start */
+.banner {
+	width: 100%;
+	// height: 3.8rem;
+}
+.swiper-container {
+	// height: 3.8rem;
+	height: 100%;
+}
+.swiper-slide {
+	height: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	position:relative;
+}
+.swiper-slide img {
+	// height: 3.8rem;
+	width: 100%;
+}
+.swiper-slider a {
+	display: block;
+}
+.swiper-slide .tags{
+	position:absolute;
+	bottom:0;
+	right:10px;
+	color: #ff2d4b;
+}
+/* 幻灯end */
+
+/* 公共图文列表项start */
+.list-item-box {
+	padding: 0;
+	background-color: #fff;
+	margin: 10px auto;
+	overflow: hidden;
+}
+.list-item {
+}
+.list-item a {
+	display: block;
+	color: #000;
+	padding: 12px 0 12px 0.8rem;
+	font-size: 15px;
+	position: relative;
+}
+.icon-list {
+	width: 0.4rem;
+	height: 0.4rem;
+	position: absolute;
+	top: 50%;
+	left: 0.25rem;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.enter-tag {
+	width: 0.15rem;
+	height: 0.25rem;
+	position: absolute;
+	right: 0.2rem;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.border-bm {
+	position: relative;
+}
+.border-bm:before {
+	position: absolute;
+	content: '';
+	display: block;
+	width: 750px;
+	height: 1px;
+	background-color: #eaeaea;
+	left: -0.3rem;
+	bottom: 0;
+}
+.border-t, .border-b, .border-l, .border-r {
+	position: relative;
+}
+.border-t:before, .border-b:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #e2e2e2;
+	right: 0;
+	height: 1px;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+.border-l::before, .border-r::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	background: #e2e2e2;
+	left: 0;
+	width: 1px;
+	-webkit-transform: scaleX(0.5);
+	transform: scaleX(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+.border-b:after {
+	top: auto;
+	bottom: 0;
+}
+.border-r::after {
+	right: 0;
+	left: auto;
+}
+
+/* 公共图文列表项end */
+
+/* 倒计时 */
+.time-separator {
+	font-weight: 600;
+	padding: 0 2px;
+}
+.time1, .time2, .time3 {
+	background-color: #DCD8D8;
+	padding: 2px 3px;
+}
+
+/* 字体颜色相关 */
+.font-w {
+	color: #fff;
+}
+
+/* 充值相关 */
+.charge-box {
+	position: absolute;
+	right: 0.25rem;
+}
+.charge-box p {
+	margin-bottom: 5px;
+}
+.charge-link {
+	display: block;
+	width: 80px;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.8);
+	line-height: 32px;
+	color: #ff2d4b;
+	border-radius: 4px;
+	margin: 0 auto;
+}
+.tuichu {
+	margin-top: 20px;
+}
+.tuichu a {
+	display: block;
+	width: 70%;
+	padding: 8px 0;
+	border-radius: 6px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #ff2d4b;
+}
+.display-block {
+	display: block;
+	height: 100%;
+}
+.lh {
+	line-height: 45px;
+	margin-right: 0.2rem;
+}
+.text-center {
+	text-align: center;
+}
+a, html {
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	//chrome内核去除背景高亮
+	-moz-tap-highlight-color: rgba(0, 0, 0, 0);
+	//Firefox内核去除背景高亮
+	-o-tap-highlight-color: rgba(0, 0, 0, 0);
+	//欧朋内核去除背景高亮
+	-ms-tap-highlight-color: rgba(0, 0, 0, 0);
+	//IE内核去除背景高亮
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	//去除背景高亮 
+	outline: none;
+}

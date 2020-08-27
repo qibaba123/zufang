@@ -1,0 +1,24 @@
+/* 会员信息提示框样式 */
+.page-header{
+    padding:10px 0;
+}
+.page-header .alert-gray{
+    background-color: #F4F4F4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    color: #666;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+}
+body{
+    min-width: 1200px;
+}
+.input-group{
+    width: 100%;
+}
+.input-group-addon-title{
+    width:123px;
+}

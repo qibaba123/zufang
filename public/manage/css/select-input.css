@@ -1,0 +1,28 @@
+.table tbody tr td.good-name{
+    white-space: normal;
+    min-width: 300px;
+}
+.mem-list{
+    position: absolute;
+    left:0;
+    top:50px;
+    width: 100%;
+    max-height: 500px;
+    overflow: auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 4px;
+    display: none;
+    z-index: 10;
+}
+.mem-list li a{
+    border-bottom: 1px solid #eee;
+}
+.mem-list li:last-child{
+    border-bottom: none;
+}
+.mem-list li a{
+    padding: 10px;
+    display: block;
+}

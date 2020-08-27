@@ -1,0 +1,609 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
+body { line-height: 1; font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\9ED1\4F53", Arial, sans-serif; color: #222; font-size: 14px ;background-color: #f8f8f8;}
+input, textarea, select, button { font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "\9ED1\4F53", Arial, sans-serif }
+ol, ul { list-style: none }
+blockquote, q { quotes: none }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none }
+table { border-collapse: collapse; border-spacing: 0 }
+.content-inner { width: 100% !important }
+@media screen and (max-width:980px) {
+	.content-inner { width: 980px !important }
+}
+@media screen and (min-width:1281px) {
+	.content-inner { width: 1280px !important }
+}
+
+.inner-header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 41px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(6, 0, 1, .1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    box-sizing: border-box;
+    z-index: 10;
+    justify-content: space-between;
+    min-width: 1200px;
+}
+.header-space {
+    width: 100%;
+    height: 60px;
+}
+
+.logo {
+    display: block;
+}
+.logo img {
+    width: 121px;
+    height: 21px;
+    vertical-align: middle;
+}
+
+.logo h2 {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    font-size: 20px;
+    color: #333;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.hidden {
+    display: none!important;
+}
+.inner-header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 41px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(6, 0, 1, .1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    box-sizing: border-box;
+    z-index: 10;
+    justify-content: space-between;
+    min-width: 1200px;
+}
+.header-space {
+    width: 100%;
+    height: 60px;
+}
+
+.logo {
+    display: block;
+}
+.logo img {
+    width: 121px;
+    height: 21px;
+    vertical-align: middle;
+}
+
+.logo h2 {
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    color: #333;
+    vertical-align: middle;
+}
+.header-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header-menu i {
+    height: 9px;
+    color: #E4E4E4;
+    line-height: 9px;
+    overflow: hidden;
+}
+
+.header-menu .doc-link,
+.header-message {
+    display: inline-block;
+    color: #333;
+    font-size: 14px;
+    width: 52px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.header-menu .header-message-count {
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    left: 96px;
+    line-height: 13px;
+    font-size: 12px;
+    color: #FFF;
+    padding: 2px 5px;
+    background: #F7534F;
+    border-radius: 12px;
+}
+
+.header-menu .header-message-count i {
+    color: #FFF;
+    position: relative;
+    top: -1px;
+    left: 0;
+}
+
+.header-menu .doc-link:hover,
+.header-message:hover {
+    color: #38f;
+}
+
+.user-info {
+    margin-left: 38px;
+    position: relative;
+    cursor: pointer;
+}
+
+.user-info .user-avatar {}
+
+.user-info .user-avatar img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.user-avatar .icon-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-top: 5px solid #333;
+    border-radius: 1px;
+    margin: 5px 0 0 8px;
+    vertical-align: middle;
+}
+
+.user-info .user-menu {
+    position: absolute;
+    right: -24px;
+    top: 54px;
+    background-color: #fff;
+    width: 130px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    text-align: center;
+    display: none;
+}
+.user-info:hover .user-menu{
+	display: block;
+}
+.user-info .user-menu li {
+    padding: 0 10px;
+    height: 42px;
+    line-height: 42px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.user-info .user-menu li:last-child {
+    border-top: 1px solid #eee;
+}
+
+.user-menu .icon-arrow-pop,
+.user-menu .icon-arrow-pop:after {
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 12px solid transparent;
+}
+
+.user-menu .icon-arrow-pop {
+    top: -27px;
+    right: 17px;
+    border-bottom: 15px solid #eee;
+}
+
+.user-menu .icon-arrow-pop:after {
+    top: -11px;
+    left: -12px;
+    content: "";
+    z-index: 2;
+    border-bottom: 15px solid #fff;
+}
+
+.user-info .show-pop {
+    display: block;
+}
+
+.hover {
+    background-color: #f0f6fe;
+}
+.header-space {
+    width: 100%;
+    height: 60px;
+}
+
+#root {
+    background-color: #f8f8f8;
+}
+
+.mainapp {
+    overflow: hidden;
+    padding: 43px 0; 
+    width: 934px;
+    margin: 0 auto;
+    position: relative;
+}
+.app {
+    display: block;
+    /*cursor: pointer;*/
+    align-items: center;
+    /*display: flex;*/
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .07);
+    text-decoration: none;
+    margin-bottom: 22px;
+    padding-left: 51px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.app:hover {
+    background-color: #fdfdfd;
+    border-bottom: none;
+}
+/* 去掉hover态
+.app-admin-logo:hover {
+    text-decoration: none;
+    border-bottom: 1px solid;
+    padding-bottom: 3px;
+}*/
+
+.app-left {
+    background-color: #eee;
+}
+
+.app-right {
+    padding-right: 51px;
+}
+
+.app-error {
+    margin-right: 79px;
+}
+
+.app-admin {
+    color: #38F;
+}
+.app-bottom{
+    display: flex;
+}
+
+.app-admin-logo {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    /*justify-content: center;*/
+    text-decoration: none;
+    color: #38f;
+    height: 40px;
+    line-height: 30px;
+}
+
+.app-admin-logo img {
+    width: 24px;
+    height: 24px;
+}
+
+.app-admin-logo span {
+    font-size: 16px;
+    margin-left: 9px;
+    margin-top: 3px;
+}
+.manage-applet{
+    background-color: #397fe8;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.appheader {
+    flex-direction: column;
+    margin-bottom: 30px;
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.appheader div {
+    font-size: 24px;
+    color: #19233C;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+
+button {
+    background: #38F;
+    color: #fff;
+    font-size: 18px;
+    line-height: 14px;
+    height: 40px;
+    float: right;
+    border-radius: 3.38px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0;
+    border: none;
+}
+
+button:hover {
+    background-color: #4c84ff99;
+}
+
+button:active,
+button:focus {
+    outline: 0;
+}
+
+.appheader .btn-disabled {
+    background: #ddd;
+    cursor: default;
+    border: 0 solid #ccc;
+}
+
+.appheader button span {
+    font-size: 20px;
+    color: #fff;
+    margin-right: 9px;
+}
+
+.app-meta {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    font-size: 0;
+    height: 177px;
+}
+
+.app-meta-avatar {
+    margin-right: 22px;
+}
+
+.app-avatar {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    background: #ccc;
+    color: #fff;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 72px;
+    height: 72px;
+    line-height: 32px;
+    border-radius: 5px;
+    background: transparent;
+}
+
+.app-avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.app-content {
+    flex: 1 0;
+}
+
+.app-title {
+    font-size: 20px;
+    color: #19233C;
+    margin-bottom: 13px;
+}
+
+.app-title.app-title-color {
+    color: #F7534F;
+}
+.app-category-name{
+    font-size: 14px;
+    background-color: #d7e5f9;
+    margin-left: 10px;
+    border-radius: 12px;
+    color: #38f;
+    padding: 5px;
+}
+.app-not-open{
+    font-size: 14px;
+    background-color: #f9e3e6;
+    margin-left: 10px;
+    border-radius: 12px;
+    color: #ff6a5e;
+    padding: 5px;
+}
+.app-desc {
+    display: flex;
+    line-height: 24px;
+    font-size: 14px;
+}
+.app-desc span a {
+    color: #38F;
+    cursor: pointer;
+    text-decoration: none;
+}
+.app-desc span a + span {
+    margin-left: 5px;
+}
+.app-desc > span:first-child {
+    width: 70px;
+    margin-right: 15px;
+    color: #333;
+}
+.app-desc > span:last-child {
+    width: 483px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+    color: #999;
+}
+.app-desc > span:last-child .info:first-child {
+    padding-right: 10px;
+}
+.app-desc > span:last-child .info:not(:first-child) {
+    padding: 0 10px;
+}
+.app-desc > span:last-child .info:not(:last-child) {
+    border-right: 1px solid #999;
+}
+
+.app-desc span a {
+    color: #38F;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.app-desc>span:first-child {
+    width: 70px;
+    margin-right: 15px;
+    color: #333;
+}
+
+.app-desc>span:last-child {
+    width: 483px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+    color: #999;
+}
+
+.app-desc>span:last-child .info:nth-child(even) {
+    padding-left: 10px;
+}
+
+.app-desc>span:last-child .info:nth-child(odd) {
+    padding-right: 10px;
+}
+
+.app-desc>span:last-child .info:not(:last-child) {
+    border-right: 1px solid #999;
+}
+
+.app-description {
+    font-size: 14px;
+    color: #999;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+
+.appheader .verify-tips {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: -2px;
+    flex: 1;
+    margin-right: 50px;
+}
+
+.verify-link {
+    cursor: pointer;
+    color: #38f;
+}
+
+
+
+
+/******第三方平台样式*******/
+
+.appheader .apptab {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.appheader .apptab li {
+    position: relative;
+    margin-right: 50px;
+    font-size: 18px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 18px;
+    padding-bottom: 11px;
+    cursor: pointer;
+}
+
+.appheader .apptab li.active {
+    color: #3388FF;
+}
+
+.appheader .apptab li.active:after {
+    content: '.';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background: #3388FF;
+    color: #fff;
+}
+
+.appheader .apptip {
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    justify-content: flex-end;
+}
+
+.app-desc .third-fail-tip {
+    color: #999;
+}
+
+.app-desc .third-fail-tip i {
+    color: #f95d5d;
+}
+
+.app-desc .third-fail-tip a {
+    color: #38F;
+    text-decoration: none;
+}
+
+.third-empty-tip {
+    padding: 60px 0;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
+    border-radius: 3px;
+}
+
+.third-empty-tip .line-one {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #19233C;
+    text-align: center;
+    line-height: 24px;
+}
+
+.third-empty-tip .line-two {
+    font-size: 14px;
+    color: #999999;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24px;
+}

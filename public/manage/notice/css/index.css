@@ -1,0 +1,136 @@
+/* 去除input默认样式 */
+input, button, select, textarea {
+	outline: none;
+	border: 0;
+	-webkit-appearance: none;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.index-con {
+	padding: 0;
+	height: 480px;
+	position: relative;
+}
+.index-con .index-main {
+	height: 380px;
+	background-color: #F0F0F0;
+	overflow: auto;
+}
+.index-con .index-main{
+	height: 480px;
+	background-color: #f8f8f8;
+}
+.noticeTxt-manage .edit-img img {
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.flex-wrap {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: -ms-box;
+      display: box;
+      display: flex;
+}
+.flex-con {
+      -webkit-box-flex: 1;
+      -ms-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      box-flex: 1;
+      flex: 1;
+}
+.flex-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-flex-flow: column;
+    -flex-direction: column;
+    flex-flow: column;
+}
+.border-t, .border-b,.border-l,.border-r {
+    position: relative;
+}
+.border-t:before, .border-b:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #e2e2e2;
+    right: 0;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+.border-l::before,.border-r::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    background: #e2e2e2;
+    left: 0;
+    width: 1px;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+.border-b:after {
+    top: auto;
+    bottom: 0;
+}
+.border-r::after{
+    right:0;
+    left:auto;
+}
+.message-list li{
+    padding:10px 4%;
+    background-color: #fff;
+}
+.message-list li img{
+    height: 40px;
+    width: 40px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    float: left;
+}
+.message-list li div{
+    // height: 40px;
+}
+.message-list li h4{
+    padding-top: 1px;
+    line-height: 1.6;
+    font-weight: normal;
+}
+.message-list li h4>p{
+    /*overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;*/
+    font-size: 14px;
+}
+.message-list li h4>span{
+    color: #999;
+    font-size: 12px;
+}
+.message-list div>p{
+    color: #999;
+    line-height: 1.5;
+    font-size: 12px;
+    margin-left: 50px;
+    /*overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;*/
+}

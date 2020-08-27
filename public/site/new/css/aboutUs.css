@@ -1,0 +1,129 @@
+/*公共标题部分*/
+.has-title .title-wrap { text-align: center; letter-spacing: 1px; }
+.has-title .title-wrap h3 { font-size: 24px; }
+.has-title .title-wrap .line { width: 30px; box-sizing: border-box; border-top: 5px solid #2F90F3; margin: 30px auto; }
+
+/*了解天店通*/
+.know-wrap { background-color: #F9F9F9; padding: 50px 0; }
+.know-wrap .know { width: 1200px; margin: 0 auto; }
+.know-wrap .know .brief { max-width: 850px; line-height: 1.5; text-align: center; font-size: 14px; color: #7E7E7E; letter-spacing: 1px; margin: 0 auto; }
+.know-wrap .know .infor .item { width: 300px; float: left; }
+.know-wrap .know .infor .item .img-wrap { width: 180px; margin: 0 auto; position: relative; text-align: right; }
+.know-wrap .know .infor .item .img-wrap img { display: inline-block; width: 140px; height: 140px; opacity: 0.3; }
+.know-wrap .know .infor .item .img-wrap span { font-size: 42px; color: #3091F3; position: absolute; top: 46px; left: 0; }
+.know-wrap .know .infor .item p { width: 180px; margin: 0 auto; color: #7E7E7E; }
+
+/*历程*/
+.course-wrap { height: 298px; padding: 1px 0; background: url(../img/course-bg.png) no-repeat center center; background-size: cover; }
+.course-wrap .course { width: 1200px; height: 150px; margin: 75px auto; }
+.course-wrap .course .course-left .time-list .item { height: 50px; line-height: 50px; padding-right: 50px; position: relative; cursor: pointer; }
+.course-wrap .course .course-left .time-list .item span { vertical-align: middle; }
+.course-wrap .course .course-left .time-list .item
+.disc { display: inline-block; width: 8px; height: 8px; background-color: #3091F3; border-radius: 50%; position: absolute; top: 50%; margin-top: -4px; right: 21px; z-index: 2; }
+.course-wrap .course .course-left .time-list .item.active
+.disc:before { cursor: pointer; content: ''; position: absolute; left: 50%; margin-left: -10px; top: 50%; margin-top: -10px; width: 20px; height: 20px; box-sizing: border-box; border: 1px solid rgba(58, 133, 218, 0.2); background-color: rgba(58, 133, 218, 0.1); z-index: -1; border-radius: 50%; }
+.course-wrap .course .course-left .time-list .item:before, .course-wrap .course .course-left .time-list .item:after { content: ''; position: absolute; right: 24px; top: 0; bottom: 50%; width: 2px; margin-top: -4px; background-color: #3291F2; z-index: 1; }
+.course-wrap .course .course-left .time-list .item:after { top: 50%; bottom: 0; }
+.course-wrap .course .course-left .time-list .item:first-child:before { display: none; }
+.course-wrap .course .course-left .content { height: 171px; box-sizing: border-box; border: 1px solid #E2E2E2; border-radius: 5px; background-color: #fff; padding: 30px; margin: 20px 50px 0 20px; letter-spacing: 1px; color: #666; position: relative; display: none; }
+.course-wrap .course .course-left .content.active { display: block; }
+.course-wrap .content p { display: -webkit-box !important; overflow: hidden; text-overflow: ellipsis; word-break: break-all; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.course-wrap .course-left .content:before { content: ''; border: 10px solid transparent; border-right: 10px solid #fff; width: 0; height: 0; position: absolute; }
+.course-wrap .course-left .content:nth-child(1):before { top: 10%; left: -20px; }
+.course-wrap .course-left .content:nth-child(2):before { bottom: 50%; left: -20px; }
+.course-wrap .course-left .content:nth-child(3):before { bottom: 20%; left: -20px; }
+.course-wrap .course-left .content .title { color: #111; font-size: 20px; margin-bottom: 20px; }
+.course-wrap .course  .course-right { width: 270px; }
+.course-wrap .course  .course-right .title { font-size: 28px; color: #111; margin-bottom: 30px; letter-spacing: 1px; }
+.course-wrap .course  .course-right p { font-size: 16px; color: #666; letter-spacing: 1px; }
+
+/*精英团队*/
+.team-wrap { background-color: #F9F9F9; padding: 50px 0; }
+.team-wrap .team { width: 1200px; margin: 0 auto; }
+.team-wrap .team .brief { max-width: 850px; line-height: 1.5; text-align: center; font-size: 14px; color: #7E7E7E; letter-spacing: 1px; margin: 0 auto; }
+.team-wrap .team-list { margin-top: 10px; }
+.team-wrap .team-list .item { width: 240px; float: left; letter-spacing: 1px; }
+.team-wrap .team-list .img-box { width: 100px; height: 100px; margin: 10px auto; }
+.team-wrap .team-list .img-box img { display: block; width: 100%; height: 100%; }
+.team-wrap .team-list .title { font-size: 20px; color: #111; margin-bottom: 10px; text-align: center; }
+.team-wrap .team-list .infor { font-size: 16px; color: #666; text-align: center; }
+
+/*联系我们*/
+.contact-wrap { height: 380px; background: url('') no-repeat center center; background-size: cover; } /*/public/site/new/img/about/contact-bg.png*/
+.contact-wrap .contact { width: 1200px; padding: 72.5px 0; margin: 0 auto; letter-spacing: 1px; }
+.contact-wrap .contact .contact-left { width: 300px; float: left; font-size: 16px; color: #666; margin-bottom: 10px; }
+.contact-wrap .contact-left .title { font-size: 24px; color: #111; margin-bottom: 6px; }
+.contact-wrap .contact-left .time { margin-bottom: 30px; }
+.contact-wrap .contact-left .phone-wrap { margin-bottom: 30px; }
+.contact-wrap .contact-left .phone-wrap .phone-title { margin-bottom: 6px; }
+.contact-wrap .contact-left .phone-wrap .phone { font-size: 28px; color: #3091F2; margin-top: 10px; }
+.contact-wrap .contact-left .infor-con { margin-bottom: 10px; }
+.contact-wrap .contact-left .infor-con .desc { float: left; }
+.contact-wrap .contact-left .infor-con .text { float: left; max-width: 248px; }
+.contact-wrap .contact-right { width: 230px; box-sizing: border-box; border-left: 1px solid #e2e2e2; letter-spacing: 1px; float: left; padding-left: 50px; margin: 70px 0 0 90px; }
+.contact-wrap .contact-right .title { font-size: 20px; color: #111; }
+.contact-wrap .contact-right .infor { font-size: 16px; margin: 10px 0 50px; color: #666 }
+.contact-wrap .contact-right .btn { width: 150px; height: 50px; line-height: 50px; text-align: center; font-size: 18px; box-sizing: border-box; border: 1px solid #3091F2; border-radius: 5px; }
+.contact-wrap .contact-right .btn a { color: #3091F2; display: block; }
+
+/*企业活力*/
+.cleardiv { clear: both; }
+.vitalitybox { background: #FFFFFF; width: 100%; position: relative; }
+.vitality { width: 1200px; padding: 50px 0; margin: 0 auto; }
+.vitality .vitality-tit { text-align: center; font-size: 24px; }
+.vitality .vitality-borderB { width: 30px; box-sizing: border-box; border-top: 5px solid #2F90F3; margin: 30px auto; }
+.vitality-con { max-width: 850px; line-height: 1.5; text-align: center; font-size: 14px; color: #7E7E7E; letter-spacing: 1px; margin: 0 auto; }
+.vitality  .img-box { position: relative; height: 460px; margin: 30px 0; }
+.vitality .img-box img { width: 240px; height: 240px; display: block; float: left; }
+.vitality .img-box .img1 { position: absolute; top: 120px; left: 0; }
+.vitality .img-box .img2 { position: absolute; left: 120px; top: 0; }
+.vitality .img-box .img3 { position: absolute; top: 120px; left: 240px; }
+.vitality .img-box .img4 { position: absolute; top: 0; left: 360px; }
+.vitality .img-box .img5 { width: 340px; height: 340px; position: absolute; top: 120px; left: 430px; }
+.vitality .img-box .img6 { position: absolute; top: 0; left: 600px; }
+.vitality .img-box .img7 { position: absolute; top: 120px; left: 720px; }
+.vitality .img-box .img8 { position: absolute; top: 0; left: 840px; }
+.vitality .img-box .img9 { position: absolute; top: 120px; left: 960px; }
+
+/*资质证书*/
+.certificatebox { background: #F9F9F9; width: 100%; }
+.certificate { width: 1200px; padding: 50px 0; margin: 0 auto; }
+.certificate .certificate-tit { text-align: center; font-size: 24px; }
+.certificate .certificate-borderB { width: 30px; box-sizing: border-box; border-top: 5px solid #2F90F3; margin: 30px auto; }
+.certificate-con { max-width: 850px; line-height: 1.5; text-align: center; font-size: 14px; color: #7E7E7E; letter-spacing: 1px; margin: 0 auto; }
+.certificate .swiperbox { width: 950px; height: 690px; background: url(/public/site/new/img/aboutUs/desk.png) no-repeat; background-size: 950px 300px; background-position: left bottom; margin: 0 auto; }
+.certificate .swiperbox .zhengshu img { width: 260px; height: 360px; display: block; margin: 0 auto; }
+.certificate .swiperbox .zhengshu { position: relative; top: 42px;		/*	    left: 30px;*/ width: 900px; }
+.certificate .swiperbox .zili img { width: 270px; height: 190px; }
+.certificate .swiperbox .zili { position: relative; top: 110px; width: 600px; left: 10px; }
+.course-wrap .course .course-left .content { width: 778px; }
+.course-wrap .content p { -webkit-line-clamp: 5; line-height: 1.5em; }
+.top-banner img { display: block; width: 100%; }
+
+/*新加样式开始*/
+.vitality-btn { width: 150px; height: 40px; line-height: 40px; text-align: center; font-size: 16px; color: #fff; letter-spacing: 2px; background-color: #2F90F3; border-radius: 20px; margin: 30px auto 0; cursor: pointer; }
+.recruit-wrap { color: #fff; font-size: 16px; position: absolute;top: 0; right: 0; left: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.7); display: none;		/*z-index: 3;*/ }
+.recruit-wrap .close-btn { text-align: right; padding: 15px; }
+.recruit-wrap .close-btn span { display: inline-block; font-size: 26px; padding: 0 15px; cursor: pointer; }
+.recruit-wrap .recruit-con { padding: 0 100px; }
+.recruit-wrap .recruit-con .recruit-left { height: 630px; padding: 20px 10px 20px 0; position: relative; }
+.recruit-wrap .recruit-con .recruit-left:after { position: absolute; content: ''; height: 100%; border-right: 2px solid #fff; right: 22px; top: 0; }
+.recruit-wrap .recruit-con .recruit-left .title { font-size: 20px; text-align: center; }
+.recruit-wrap .recruit-con .position-wrap { text-align: right; height: 582px; overflow: hidden; }
+.recruit-wrap .recruit-con .position-wrap .scroll-wrap { height: 100%; padding-right: 35px; overflow-y: auto; overflow-x: hidden; position: relative; right: -20px; }
+.recruit-wrap .recruit-con .position-list { margin-top: 10px; }
+.recruit-wrap .recruit-con .position-wrap .desc { font-size: 18px; padding: 0 10px; }
+.recruit-wrap .recruit-con .position-wrap li { max-width: 100px; color: rgba(255, 255, 255, 0.8); padding: 0 10px; height: 30px; line-height: 30px; font-size: 14px; margin: 0 auto; position: relative; cursor: pointer; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.recruit-wrap .recruit-con .position-wrap li:hover { background-color: rgba(255, 255, 255, 0.2) }
+.recruit-wrap .recruit-con .position-wrap li.active { background-color: rgba(255, 255, 255, 0.2) }
+.recruit-wrap .recruit-con .position-wrap li.active:after { content: ''; border: 10px solid transparent; border-left: 10px solid #fff; width: 0; height: 0; position: absolute; top: 6px; right: -40px; }
+.recruit-right { height: 648px; box-sizing: border-box; padding: 80px 50px; color: rgba(255, 255, 255, 0.8); font-size: 14px; }
+.recruit-right .content, .recruit-right .content .job-main { display: none; }
+.recruit-right .content.active, .recruit-right .content .job-main.descShow { display: block; }
+.recruit-right .job { margin-bottom: 20px; }
+.recruit-right .job .desc { margin-bottom: 10px; }
+.recruit-right .job .email { color: #2F90F3; padding: 0 6px; }
+
+/*新加样式结束*/
+.descShow .job-con * { background: transparent !important; }
+.rich-style { background: transparent !important; color: #fff !important; }

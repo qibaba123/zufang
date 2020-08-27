@@ -1,0 +1,62 @@
+/*战友列表*/
+.zhanyou-list li{
+    overflow: hidden;
+    background-color: #fff;
+    padding: 12px 4%;
+}
+.zhanyou-list li:last-child.border-b:after{
+    background-color: #fff;
+}
+.zhanyou-list li .left-touxiang{
+    height: 80px;
+    width: 80px;
+    float: left;
+    position: relative;
+}
+.zhanyou-list li .left-touxiang img{
+    width: 100%;
+    height: 100%;
+}
+.zhanyou-list li .left-touxiang span{
+    display: block;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: url('') no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.zhanyou-list li .left-touxiang span.rank_0{
+    background-image: url(../images/TOP-1@2x.png);
+}
+.zhanyou-list li .left-touxiang span.rank_1{
+    background-image: url(../images/TOP-2@2x.png);
+}
+.zhanyou-list li .left-touxiang span.rank_2{
+    background-image: url(../images/TOP-3@2x.png);
+}
+.zhanyou-list li .left-touxiang span.rand_3{
+    background-image: url(../images/TOP-4@2x.png);
+}
+.zhanyou-list li .zhanyou-info{
+    width: 72%;
+    float: left;
+    padding-left: 4%;
+}
+.zhanyou-list li .zhanyou-info p{
+    height: 23px;
+    line-height: 23px;
+    overflow: hidden;
+}
+.zhanyou-list li .zhanyou-info p:first-child{
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    margin-top: 5px;
+}
+.line-text {
+    display: inline-block;
+    width: 30%;
+}

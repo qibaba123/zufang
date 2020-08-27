@@ -1,0 +1,66 @@
+body{
+	height: 100%;
+	background-color: #FD2E4C;
+}
+.get-coupon{
+	width: 100%;
+	height: 100%;
+	background: url(../images/piao@2x.png) no-repeat top center;
+	background-size: 100%;
+	padding-top: 35%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.coupon-info{
+	width: 56%;
+	margin:0 auto;
+	position: relative;
+}
+.coupon-info img{
+	width: 100%;
+}
+.coupon-info .info{
+	position: absolute;
+	left:10%;
+	width: 80%;
+	top:18%;
+}
+.coupon-info .info .avatar-box{
+	height: 80px;
+	width: 80px;
+	margin:0 auto;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.coupon-info .info .avatar-box img{
+	width: 100%;
+	min-height: 100%;
+}
+.coupon-info .info h4{
+	text-align: center;
+	font-size: 16px;
+	color: #FE3752;
+	margin-top: 10%;
+}
+.coupon-info .info p{
+	text-align: center;
+	font-size: 18px;
+	color: #FE2D4C;
+	margin-top: 10%;
+}
+.get-coupon-btn{
+	display: block;
+	width: 80%;
+	margin:0 auto;
+	margin-top: 13%;
+	background-color: #FCEB55;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	color: #FE523A;
+	font-size: 16px;
+	margin-bottom: 5%;
+}

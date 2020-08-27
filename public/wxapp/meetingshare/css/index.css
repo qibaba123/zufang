@@ -1,0 +1,21 @@
+.content{background: #4074fd;padding: 30px 15px;}
+.share-content{background-color:#fff;padding: 8px;border-radius: 4px;}
+.img-cover img{display: block;width:100%;}
+.meeting-infor{padding: 15px; border-bottom: 1px dashed #92addb;margin: 0px 10px;}
+.meeting-infor .title-wrap .title{text-align: center;font-size:18px;font-weight: bold;line-height:1.2;letter-spacing: 1px;}
+.meeting-infor .title-wrap .desc{color:#999;font-size:14px;text-align: center;margin-top:6px;}
+.meeting-infor .price-wrap{text-align:center;margin-top:12px;}
+.meeting-infor .price-wrap .new-price{color:red;font-size:18px;}
+.meeting-infor .address-time{text-align:center;margin-top: 5px;color:#666;}
+.meeting-infor .address-time .address{line-height:1.2;margin-bottom:5px;}
+.meeting-infor .brief .title{color:#333;text-align: center;margin-top:12px;font-size:16px;font-weight:bold;}
+.meeting-infor .brief .title span{display:inline-block;height:30px;line-height:30px;position:relative;}
+.meeting-infor .brief .title span:before{left:-40px;}
+.meeting-infor .brief .title span:after{right:-40px;}
+.meeting-infor .brief .con{font-size:14px;color:#666;letter-spacing: 1px;line-height:1.5;text-align: center;}
+.share-content .applet-code{padding:20px 0;text-align:center;position: relative}
+.share-content .applet-code:before,.share-content .applet-code:after{content: '';position: absolute;top: -9px;width: 15px;height: 15px;border-radius: 50%;background-color: #4074fd;}
+.share-content .applet-code:before{left: -16px}
+.share-content .applet-code:after{right: -16px}
+.share-content .applet-code img{display: block;width:110px;height:110px;margin:0 auto 6px;}
+.share-content .applet-code{color:#999;font-size:12px;letter-spacing: 1px;}

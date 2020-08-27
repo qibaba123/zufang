@@ -1,0 +1,249 @@
+/* flex布局 */
+.flex-wrap {
+  	display: -webkit-flex;
+  	display: -ms-flexbox;
+  	display: -webkit-box;
+  	display: -ms-box;
+  	display: box;
+  	display: flex;
+}
+.flex-con {
+  	-webkit-box-flex: 1;
+  	-ms-box-flex: 1;
+  	-webkit-flex: 1;
+  	-ms-flex: 1;
+  	box-flex: 1;
+  	flex: 1;
+}
+.flex-vertical {
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	-webkit-flex-flow: column;
+	-flex-direction: column;
+	flex-flow: column;
+}
+#main{
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: #EFEEEA;
+}
+html,body,#wrap{
+  height: 100%;
+}
+.header{
+  height: 48px;
+  background-color: #F8F8F8;
+  border-bottom: 1px solid #CFCFCF;
+}
+.header .back{
+  display: inline-block;
+  float: left;
+  height: 48px;
+  line-height: 50px;
+  background: url(../image/icon_back.png) no-repeat;
+  background-size: 25px;
+  background-position: 5px center;
+  font-size: 16px;
+  padding-left: 35px;
+}
+.main-con .product-num{
+  padding:0 4%;
+  height: 45px;
+  line-height: 45px;
+  font-size: 15px;
+  background: url(../image/icon_xiala.png) no-repeat;
+  background-size: 20px;
+  background-position: 96% center;
+  background-color: #fff;
+  box-shadow: 0 2px 5px #F0EFEB;
+  position: relative;
+}
+.main-con .product-num.hide{
+  background-image: url(../image/icon_xiala_hide.png);
+}
+.main-con .product-intro{
+  height: 48px;
+  line-height: 48px;
+  width: 94%;
+  margin:0 auto;
+  background-color: #FAF6EE;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding:0 3%;
+  padding-right: 25%;
+  color: #999;
+  position: relative;
+  margin-top: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.main-con .product-intro:after{
+  content: '';
+  width: 100%;
+  border-bottom: 3px dotted #EFEEEA;
+  position: absolute;
+  bottom:-1px;
+  left:0;
+}
+.main-con .product-intro p{
+  position: absolute;
+  right: 3%;
+  top:0;
+  width: 22%;
+  height: 48px;
+  line-height: 48px;
+  font-size: 15px;
+  text-align: right;
+  color: #333;
+}
+.main-con .product-intro p span{
+  color: #D53530;
+}
+.main-con .order-info{
+  margin-top: 10px;
+}
+.main-con .order-info li{
+  padding:0 4%;
+  height: 45px;
+  line-height: 45px;
+  background-color: #fff;
+  position: relative;
+  padding-right: 50%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.main-con .order-info li:first-child{
+  border-bottom: 1px solid #F0F0F0;
+}
+.main-con .order-info li p{
+  position: absolute;
+  right: 4%;
+  top:0;
+  height: 45px;
+  text-align: right;
+  color: #999;
+}
+.main-con .order-info li span{
+  position: absolute;
+  right: 4%;
+  top:0;
+  display: block;
+  height: 45px;
+  text-align: right;
+  color: #DA3651;
+}
+.footer{
+  background-color: #fff;
+  font-size: 16px;
+  overflow: hidden;
+  padding:5px 4%;
+}
+.footer p{
+  width: 50%;
+  float: left;
+  height: 50px;
+  line-height: 50px;
+}
+.footer p span{
+  color: #DA3651;
+}
+.footer .submit-order{
+  display: block;
+  text-decoration: none;
+  float: right;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  background-color: #DA3651;
+  color: #fff;
+  text-align: center;
+  margin-top: 5px;
+  padding:0 20px;
+}
+/* 弹出层样式 */
+.layermbox1 .layermcont {
+  height: 100%;
+}
+.payment{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.payment .close{
+  position: absolute;
+  right: 5px;
+  top:0;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 25px;
+  color: #666;
+}
+.payment .pay-choose p{
+  text-align: center;
+  margin:0;
+  font-size: 15px;
+  padding:10px 0;
+  color: #444;
+  line-height: 2;
+  font-weight: bold;
+}
+.payment .pay-choose ul{
+  border-top:1px solid #F0F0F0;
+}
+.payment .pay-choose li{
+  border-bottom:1px solid #F0F0F0;
+  height: 45px;
+  line-height: 45px;
+  padding:0 4%;
+  position: relative;
+}
+.payment .pay-choose li p{
+  position: absolute;
+  width: 70%;
+  right: 4%;
+  top:0;
+  height: 45px;
+  line-height: 45px;
+  color: #DF3938;
+  text-align: right;
+  padding:0;
+}
+.payment .pay-choose li p.check{
+  padding-right: 30px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url(../image/icon-radio.png) no-repeat;
+  background-size: 18px;
+  background-position: right center;
+}
+.payment .pay-choose li p.check.checked{
+  background-image: url(../image/icon-radio-checked.png);
+}
+.payment .pay-choose li p.check.disabled{
+  color: #e3e3e3;
+}
+.payment .confirm-pay{
+  display: block;
+  text-decoration: none;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  background-color: #DA3651;
+  color: #fff;
+  text-align: center;
+  width: 90%;
+  font-size: 15px;
+  margin: 10px auto;
+}
+.recharge-tip {
+  display: block;
+  color: #FF6600;
+  background-image: url(/public/mobile/images/jiantou-icon.png);
+  background-position: center right;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,23 @@
+body{max-width: 750px;margin:0 auto;}
+.copy-wxnum-zhanwei{height: 60px;}
+.copy-wxnum-top,.copy-wxnum-bottom{padding: 10px;position: fixed;left:50%;width: 100%;max-width:750px;transform: translateX(-50%); top:0;z-index: 10;background-color: #fff;box-sizing: border-box;align-items: center;box-shadow: 0 0 5px #eee;}
+.copy-wxnum-bottom{top:auto;bottom: 0;}
+.icon-wx{display: block;height: 40px;width: 40px;margin-right: 6px;border-radius: 50%;box-shadow: 0 1px 5px #eee;}
+.wx-num{font-size: 15px;min-width: 0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;line-height: 40px;}
+.copy-btn{height: 32px;line-height: 32px;padding: 0 10px;color: #fff;background-color: #4E90FF;font-size: 14px;text-align: center;border-radius: 20px;width: 70px;box-sizing: border-box;}
+
+.content{padding: 10px;font-size: 14px;color: #333;line-height: 1.6;}
+/*.content img{display: block;margin: 0 auto;max-width: 100%;width: 100%;}*/
+.content img{display: block;margin: 0 auto;max-width: 100%}
+
+/*复制成功弹窗*/
+.copy-success-modal{position: fixed;left:0;top:0;width: 100%;height:100%;z-index: 20;display: none;}
+.copy-success-mask{position: absolute;left:0;top:0;width: 100%;height:100%;z-index: 1;background-color: rgba(0,0,0,.5);}
+.copy-success-con{position: absolute;left:50%;top:50%;width: 70%;z-index: 2;background-color: #fff;border-radius: 4px;transform: translate(-50%,-50%);padding: 20px 10px;box-sizing: border-box;}
+.copy-success-con .icon-success{display: block;width: 52px;margin: 0 auto;}
+.copy-success-con .copy-tip{font-size: 20px;text-align: center;margin: 6px 0 8px;}
+.copy-success-con .copy-fu-tip{font-size: 14px;line-height: 1.5;text-align: center;}
+.btn-box{text-align: center;margin-top: 15px;}
+.btn-box .btn{display: inline-block;vertical-align: middle; height: 35px;line-height: 35px;padding: 0 10px;border:1px solid #999; color: #999;font-size: 15px;text-align: center;border-radius: 20px;width: 38%;box-sizing: border-box;}
+.btn-box .btn.green{border-color: #00D48C;color: #00D48C;}
+.btn-box .cancel-btn{margin-right: 6%;}

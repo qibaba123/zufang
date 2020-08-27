@@ -1,0 +1,16 @@
+.table{
+	border:none;
+}
+.table thead td{
+	background-color: #fff;
+	border-top: 1px solid #f1f1f1!important;
+	border-bottom: 1px solid #f1f1f1!important;
+}
+.table thead tr td:nth-of-type(1),.table thead tr td:nth-of-type(2),.table thead tr td:nth-of-type(3){
+	width:150px;
+}
+.progress{
+    border-radius: 4px;
+    height: 10px;
+    margin-bottom:0;
+}

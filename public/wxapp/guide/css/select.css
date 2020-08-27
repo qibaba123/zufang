@@ -1,0 +1,330 @@
+.main-content{
+    margin-left: 0;
+}
+.main-container>.main-container-inner,.page-content{
+    background-color: #FAFAFA;
+}
+.applet-muban{
+    max-width: 1160px;
+    margin:0 auto;
+}
+.applet-muban h3.title{
+    font-size: 28px;
+    color: #505050;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    padding: 30px 0;
+}
+.applet-mb-wrap{
+    width: 100%;
+    height: 180px;
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+    top:0;
+    box-shadow:none;
+    -webkit-transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -ms-transition:all 0.5s;
+    transition:all 0.5s;
+}
+.applet-mb-wrap:hover{
+    box-shadow: 8px 8px 20px #ddd;
+    top:-8px;
+}
+.applet-muban .row .col-xs-4{
+    margin-bottom: 25px;
+}
+.mb-intro .left-logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    overflow:hidden;
+    float: left;
+}
+.mb-intro .left-logo img{
+    height: 100%;
+    width: 100%;
+}
+.mb-intro .right-intro{
+    margin-left: 80px;
+    min-height: 80px;
+    position: relative;
+}
+.mb-intro .right-intro .buy-btn{
+    border-radius: 3px;
+    height: 32px;
+    line-height: 30px;
+    padding: 0 5px;
+    background-color: #E1061D;
+    color: #fff;
+    font-size: 13px;
+    position: absolute;
+    top:0;
+    right: 0;
+    min-width: 44px;
+    text-align: center;
+    border:1px solid #E1061D;
+    -webkit-transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -ms-transition:all 0.5s;
+    transition:all 0.5s;
+}
+.mb-intro .right-intro .buy-btn:hover{
+    background-color: #fff;
+    color: #E1061D;
+}
+.mb-intro .right-intro .wait-btn{
+    border-radius: 3px;
+    height: 32px;
+    line-height: 30px;
+    padding: 0 5px;
+    font-size: 13px;
+    position: absolute;
+    top:0;
+    right: 0;
+    min-width: 44px;
+    text-align: center;
+    border:1px solid #E1061D;
+    -webkit-transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -ms-transition:all 0.5s;
+    transition:all 0.5s;
+    background-color: #ddd;
+    border-color: #ddd;
+    color: #fff;
+}
+.mb-intro .right-intro .applet-title{
+    font-size: 16px;
+    line-height: 32px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+.mb-intro .right-intro .intro-txt{
+    color: #808080;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 5px;
+    display: -webkit-box;
+    display: -moz-box;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    height: 42px;
+    margin: 0;
+}
+.applet-mb-wrap .see-detail-price{
+    overflow:hidden;
+    margin-top: 22px;
+}
+.applet-mb-wrap .see-detail-price .detail-btn{
+    height: 32px;
+    line-height: 30px;
+    background-color: #fff;
+    padding: 0 8px;
+    border-radius: 3px;
+    color: #06BF04;
+    float: left;
+    min-width: 80px;
+    text-align: center;
+    font-size: 13px;
+    border: 1px solid #06BF04;
+    -webkit-transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -ms-transition:all 0.5s;
+    transition:all 0.5s;
+}
+.applet-mb-wrap .see-detail-price .detail-btn:hover{
+    background-color: #06BF04;
+    color: #fff;
+}
+.applet-mb-wrap .see-detail-price .price{
+    color: #FF4400;
+    font-size: 18px;
+    line-height: 32px;
+    float: right;
+    margin:0;
+}
+.taocan-buy {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding: 10px 15px;
+// min-width: 905px;
+}
+.taocan-buy .title {
+    text-align: center;
+    margin: 0;
+    line-height: 2;
+    font-size: 22px;
+    margin: 10px auto;
+}
+.taocan-intro .taocan-item {
+    float: left;
+    width: 28%;
+    margin-right: 8%;
+    min-height: 280px;
+    border: 1px solid #d7d7d7;
+    box-shadow: 0 0 0 0;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 20px;
+    min-width: 216px;
+}
+.taocan-intro .taocan-item-nomargin {
+    margin-right: 0;
+}
+.taocan-intro .taocan-item .tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    border-width: 19px 42px;
+    border-color: #DD4A43 transparent transparent #DD4A43;
+    border-style: solid dashed dashed solid;
+}
+.taocan-intro .taocan-item .tag span {
+    color: #fff;
+    font-size: 12px;
+    left: -39px;
+    position: absolute;
+    top: -15px;
+    transform: rotate(-24deg);
+    width: 50px;
+}
+.taocan-intro .price {
+    color: #999;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+.taocan-intro .price strong {
+    color: #dd4a43;
+    font-family: Helvetica, Microsoft YaHei, Arial, sans-serif;
+    font-size: 36px
+}
+.taocan-intro .mix-con {
+    padding: 10px 0;
+}
+.taocan-intro .mix-con ul {
+    text-align: center;
+    padding-top: 0 20px;
+    height: 150px;
+}
+.taocan-intro .mix-con li {
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.taocan-intro .buy-btn {
+    border: 1px solid #dd4a43;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #dd4a43;
+    display: block;
+    font-size: 18px;
+    height: 40px;
+    line-height: 35px;
+    margin: 0 auto;
+    margin-top: 5px;
+    text-align: center;
+    width: 200px
+}
+.taocan-intro .buy-btn:hover {
+    background-color: #dd4a43;
+    color: #fff;
+}
+.pay-info dl {
+    display: block;
+    font-size: 14px;
+    margin: 0 0 3px;
+    overflow: hidden;
+}
+.pay-info dl dt {
+    float: left;
+    width: 90px;
+    text-align: right;
+    line-height: 32px;
+}
+.pay-info dl dd {
+    margin-left: 100px;
+    line-height: 32px;
+}
+.pay-info .pay-info-line {
+    border-bottom: 1px solid #e5e5e5;
+    margin: 20px 0px;
+    padding-bottom: 5px;
+}
+.pay-info dl dd .money {
+    font-size: 20px;
+    color: #DD4A43;
+}
+.pay-info dl dd .total-money {
+    font-size: 20px;
+    color: #FF7011;
+    line-height: 1;
+}
+.pay-info dl dd .read-agreement {
+    font-size: 12px;
+}
+.applet-muban .alert{
+    position: relative;
+}
+.applet-muban .alert .close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.cur-choose-info{
+    padding-right: 20px;
+}
+.cur-choose-info .item-info{
+    width: 48%;
+    display: inline-block;
+}
+.cur-choose-info .item-info .label-name{
+    width: 72px;
+    line-height: 30px;
+    float: left;
+    font-weight: bold;
+    text-align: right;
+}
+.cur-choose-info .item-info p{
+    margin:0;
+    line-height: 30px;
+    margin-left: 80px;
+}
+.manage-center-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #FF8D39;
+    color: #fff;
+    border-radius: 3px;
+}
+.manage-center-btn:hover{
+    color: #fff;
+    opacity: 0.85;
+}
+.manage-center-btn span{
+    display: block;
+    padding: 0 12px;
+    position: relative;
+    top:50%;
+    margin-top: -40px;
+}

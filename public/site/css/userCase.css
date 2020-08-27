@@ -1,0 +1,23 @@
+body { min-width: 1200px; margin: 0 auto; overflow: auto; background-color: #fff; }
+.header { background-color: #fff; border-bottom: 1px solid #eee; }
+
+/*导航*/
+.case_nav { background-color: #fff; border-bottom: 1px solid #dfdfdf; }
+.inv-type { width: 1200px; margin-left: auto; margin-right: auto; }
+.inv-type .tab { position: relative; cursor: pointer; display: inline-block; width: 87px; height: 41px; font-size: 16px; line-height: 45px; text-align: center; color: #3b3b3b; margin-bottom: 10px; }
+.case_nav .inv-type .tab-active { border-bottom: 4px solid #ffcb2f; }
+
+/*用户案例*/
+.case-title { width: 100%; // height: 163px; // background: url(../images/yonghuanli@2x.png) center no-repeat; }
+.case-title img { width: 100%; }
+.case-list { width: 1200px; margin: 0 auto; }
+.case-list ul { padding: 40px 0; }
+.case-list li { width: 220px; height: 400px; float: left; margin-right: 25px; margin-bottom: 60px; position: relative; border: 1px solid #eaeaea; box-sizing: border-box; }
+.case-list li:nth-of-type(5n) { margin-right: 0; }
+.case-list li img { width: 100%; height: 100%; }
+.case-list li .case-code { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .6); transition: all 0.5s; opacity: 0; color: #fff; box-sizing: border-box; padding: 0 5%; }
+.case-list li:hover .case-code { opacity: 1; }
+.case-list .case-code h3 { font-size: 18px; text-align: center; line-height: 1.5; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: normal; margin: 5px 0; }
+.case-list .case-code img { width: 160px; height: 160px; margin: 0 auto; }
+.case-list .case-code p { font-size: 16px; font-weight: normal; text-align: center; line-height: 3; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.cc_name { text-align: center; height: 40px; line-height: 40px; font-size: 20px; margin-top: 10px; }

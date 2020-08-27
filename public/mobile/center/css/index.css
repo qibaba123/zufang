@@ -1,0 +1,263 @@
+/*用户基本信息*/
+.member-info{
+  padding: 10px 0;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  background: url(../images/shk_02.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: top center;
+  background-color: #fff;
+  color: #fff;
+  position: relative;
+}
+.signin{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 32px;
+  height: 32px;
+  background: url(../images/icon_qiandao.png) no-repeat center;
+  background-size: 70%;
+}
+.base-info{
+  overflow: hidden;
+  padding:20px 4%;
+}
+.base-info .left-touxiang{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+.base-info .left-touxiang img{
+  width: 100%;
+  height: 100%;
+}
+.base-info .user-name{
+  float: left;
+  width: 76%;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  padding-left: 4%;
+}
+.base-info .user-name p{
+  line-height: 22px;
+  line-height: 22px;
+  overflow: hidden;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+.base-info .user-name p:first-child{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+.myfund{
+    width: 100%;
+    margin-top: 20px;
+}
+.myfund ul{
+    display: table;
+    background-color: rgba(0,0,0,0.1);
+    padding:6px 0;
+}
+.myfund ul li{
+    display: table-cell;
+    width: 3000px;
+    border-right: 1px solid #1D2D3A;
+}
+.myfund ul li:last-child{
+  border-right:0;
+}
+.myfund ul li p{
+    line-height: 1.4;
+    text-align: center;
+}
+/* 订单信息 */
+.all-order{
+  margin-top: 10px;
+}
+.all-order a{
+  padding:0 4%;
+  background-color: #fff;
+  line-height: 38px;
+  color: #333;
+}
+.all-order a span{
+  line-height: 38px;
+  font-size: 12px;
+  color: #999;
+  padding-right: 15px;
+  text-align: right;
+  background: url(../images/iconfont-more@2x.png) no-repeat;
+  background-size: 6px;
+  background-position: right center;
+}
+.order-info{
+  background-color: #fff;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #eee;
+}
+.order-info a{
+  text-align: center;
+  padding:15px 0 10px;
+  position: relative;
+  padding-top: 35px;
+  line-height: 1;
+  color: #999;
+  background: url('') no-repeat;
+  background-size: 22px;
+  background-position: center 9px;
+  font-size: 12px;
+}
+.order-info a:active{
+  background-color: #f5f5f5;
+}
+.order-info .orderstate1{
+  background-image:  url(../images/icon-dfk.png);
+}
+.order-info .orderstate2{
+  background-image:  url(../images/icon-dfh.png);
+}
+.order-info .orderstate3{
+  background-image:  url(../images/icon-dsh.png);
+  background-size: 20px;
+}
+.order-info .orderstate4{
+  background-image:  url(../images/icon-order4.png);
+}
+.order-info a.border-r::after{
+  top:12px;
+  bottom: 12px;
+}
+.order-info a span{
+  position: absolute;
+  top:2px;
+  right: 19%;
+  width: 20px;
+  height: 20px;
+  line-height: 16px;
+  text-align: center;
+  color: #FFA131;
+  border: 2px solid #FFA131;
+  border-radius: 50%;
+  font-size: 12px;
+  background-color: #fff;
+}
+.ad-img{
+  display: block;
+  margin-bottom: 10px;
+}
+.ad-img img{
+  width: 100%;
+}
+/*用户操作*/
+.user-operation{
+  margin-bottom: 8px;
+}
+.user-operation>li a{
+  display: block;
+  width: 100%;
+  padding:8px 4%;
+  padding-left: 12%;
+  background: url('') no-repeat;
+  background-position: 4% center;
+  background-size: 22px;
+  background-color: #fff;
+  position: relative;
+  font-size: 15px;
+  /* letter-spacing: 1px; */
+  
+}
+.user-operation>li a:active{
+  background-color: #f5f5f5;
+}
+.user-operation>li a.icon1{
+  background-image: url(../images/icon-jf.png);
+}
+.user-operation>li a.icon2{
+  background-image: url(../images/icon-yhq.png);
+}
+.user-operation>li a.icon3{
+  background-image: url(../images/icon-cz.png);
+}
+.user-operation>li a.icon4{
+  background-image: url(../images/icon-yetx.png);
+}
+.user-operation>li a.icon5{
+  background-image: url(../images/icon-yfk.png);
+}
+.user-operation>li a.icon6{
+  background-image: url(../images/icon-dpj.png);
+}
+.user-operation>li a.icon7{
+  background-image: url(../images/icon-sc.png);
+}
+.user-operation>li a.icon8{
+  background-image: url(../images/icon-xgzl.png);
+}
+.user-operation>li a.icon9{
+  background-image: url(../images/icon_dzgl.png);
+}
+.user-operation>li a.icon10{
+  background-image: url(../images/icon-hytq.png);
+}
+.user-operation>li a.icon11{
+  background-image: url(../images/icon-hyhd.png);
+}
+.user-operation>li a.icon12{
+  background-image: url(../images/icon-phone.png);
+}
+.user-operation>li a.icon13{
+  background-image: url(../images/icon-partner.png);
+}
+.user-operation>li a.icon14{
+  background-image: url(../images/icon-cart.png);
+}
+.user-operation>li a.icon15{
+  background-image: url(../images/icon-pintuan.png);
+}
+.user-operation>li a.icon16{
+  background-image: url(../images/icon-choujiang.png);
+}
+.user-operation>li a.icon17{
+  background-image: url(../images/icon-quyu.png);
+}
+.user-operation>li a.icon18{
+  background-image: url(../images/icon-point.png);
+}
+.user-operation>li>a>span{
+  min-width: 44px;
+  background-color: #fff;
+  height: 44px;
+  line-height: 47px;
+  text-align: right;
+  padding-right: 20px;
+  position: absolute;
+  top:0;
+  right: 3%;
+  font-size: 13px;
+  color: #FF3838;
+  background: url(../images/iconfont-more@2x.png) no-repeat;
+  background-size: 7px;
+  background-position: right center;
+}
+.login-out{
+  width: 93%;
+  margin:10px auto;
+}
+.login-out a{
+  display: block;
+  height: 43px;
+  line-height: 43px;
+  background-color: #F23030;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 4px;
+}
+.login-out a:active{
+  opacity: 0.9;
+}

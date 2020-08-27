@@ -1,0 +1,173 @@
+html,body{
+	background-color:#F8F8F8;
+	width:100%;
+}
+.inves-part img{
+	display: block;
+	width:100%;
+}
+.inves-part.bg-white{
+	background-color:#fff;
+}
+.getProject .content{
+	text-align: center;
+}
+.getProject .content .btn{
+	background-color:#FF2D07;
+	color:#fff;
+	font-size:14px;
+	width:100px;
+	height:30px;
+	text-align: center;
+	line-height:30px;
+	margin:5px auto 6px;
+	border-radius:15px;
+	letter-spacing: 2px;
+}
+.getProject .content .notice{
+	font-size:12px;
+	color:#666;
+	margin-bottom:8px;
+}
+.getProject .content .notice span{
+	color:#FF2D07;
+	font-size:13px;
+	margin-left:5px;
+	font-weight: bold;
+}
+.get-model{
+	background-color:rgba(0,0,0,0.6);
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:100;
+	display: none;
+}
+.model-con{
+	width:80%;
+	position:fixed;
+	top:50%;
+	left:10%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index:101;
+	display: none;
+}
+.model-con img{
+	display: block;
+	width:100%;
+}
+.model-con .con-wrap{
+	background-color:#fff;
+	width:100%;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	padding-bottom:20px;
+}
+.model-con .left-num{
+	width: 60%;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 12px;
+    background-color: #F2F2F2;
+    border-radius: 12px;
+    margin: -8px auto 0;
+    position: relative;
+    color: #666;
+    letter-spacing: 2px;
+}
+.model-con .left-num span{
+	color:#FF2D07;
+	font-size:14px;
+	margin-left:5px;
+	font-weight: bold;
+}
+.model-con .input-section{
+	width:80%;
+	margin:20px auto;
+	box-sizing:border-box;
+	border-top:1px solid #eee;
+	border-bottom:1px solid #eee;
+}
+.model-con .input-section .input-wrap{
+	padding:10px 0;
+	box-sizing:border-box;
+	border-bottom:1px solid #eee;
+}
+.model-con .input-section .input-wrap:last-child{
+	border-bottom:none;
+}
+.model-con .input-section .input-wrap .desc{
+	font-size:16px;
+	color:#555;
+	margin-right:20px;
+}
+.model-con .input-wrap .desc span{
+	padding:0 18px;
+}
+.model-con .input-wrap input{
+	border:none;
+	outline: none;
+	display: block;
+	width:100%;
+	font-size:14px;
+}
+.model-con .get-btn{
+	background-color:#FF2D07;
+	color:#fff;
+	font-size:18px;
+	width:60%;
+	height:40px;
+	text-align: center;
+	line-height:40px;
+	margin:20px auto 10px;
+	border-radius:20px;
+	letter-spacing: 5px;
+}
+
+/*拨打电话*/
+.making-calling{
+	height:40px;
+	position: fixed;
+	left:0;
+	margin-top:-20px;
+	z-index: 11;
+}
+.making-calling .icon{
+	float: left;
+	height: 40px;
+	width: 40px;
+	background: url(/public/mobile/business/images/lianxi-bj_22.png) no-repeat;
+	background-size: 25px;
+	background-position: center;
+	background-color: rgba(0,0,0,0.7);
+	border-radius:5px 0 0 5px;
+	-webkit-transition: all 0.3s ease 0.3s;
+	transition: all 0.3s ease 0.3s;
+}
+.making-calling .icon.radius{
+	border-radius:5px;
+}
+.making-calling p{
+	float: left;
+	font-size: 12px;
+	color: #fff;
+	line-height: 20px;
+	background-color: rgba(0,0,0,0.6);
+	width:90px;
+	height: 40px;
+	overflow: hidden;
+	text-align: center;
+	border-radius: 0 5px 5px 0;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.making-calling p a{
+	color: #fff;
+}
+.making-calling p.hide{
+	width: 0;
+}

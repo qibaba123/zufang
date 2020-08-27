@@ -1,0 +1,11 @@
+.table.table-avatar tbody>tr>td{
+    line-height: 48px;
+}
+.form-group{
+    margin-bottom: 0;
+}
+
+.btn-del-single{
+    font-size: 14px;
+    color: red;
+}

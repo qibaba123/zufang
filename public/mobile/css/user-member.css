@@ -1,0 +1,193 @@
+/*用户基本信息*/
+.member-info{
+    padding-top: 10px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    background: url(../images/shk_02.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: top center;
+    background-color: #fff;
+    color: #000;
+}
+.base-info{
+    overflow: hidden;
+    padding:20px 4% 0;
+}
+.base-info .left-touxiang{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+}
+.base-info .left-touxiang img{
+    width: 100%;
+    height: 100%;
+}
+.base-info .user-name{
+    float: left;
+    width: 76%;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+    padding-left: 4%;
+}
+.base-info .user-name p{
+    line-height: 22px;
+    overflow: hidden;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+.base-info .user-name p:first-child{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+.myfund{
+    width: 100%;
+    margin-top: 20px;
+}
+.myfund ul{
+    display: table;
+    background-color: rgba(0,0,0,0.1);
+    padding:6px 0;
+}
+.myfund ul li{
+    display: table-cell;
+    width: 3000px;
+    border-right: 1px solid #1D2D3A;
+}
+.myfund ul li:last-child{
+    border-right:0;
+}
+.myfund ul li p{
+    line-height: 1.4;
+    text-align: center;
+}
+/*用户操作*/
+.user-operation{
+    margin-top: 8px;
+}
+.user-operation>li a{
+    display: block;
+    width: 100%;
+    padding:8px 4%;
+    padding-left: 11%;
+    background: url('') no-repeat;
+    background-position: 4% center;
+    background-size: 20px;
+    background-color: #fff;
+    position: relative;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.user-operation>li>a>span{
+    width: 25%;
+    background-color: #fff;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    padding-right: 20px;
+    position: absolute;
+    top:0;
+    right: 3%;
+    font-size: 13px;
+    background: url(../images/iconfont-more@2x.png) no-repeat;
+    background-size: 9px;
+    background-position: right center;
+}
+.user-operation>li.mine .zhanyou {
+    padding-left: 11%;
+    background-color: #fff;
+    margin-top: 1px;
+}
+.user-operation>li.mine>.border-b:after{
+    background-color: #DEDEDE;
+}
+.user-operation>li.mine .zhanyou li.border-b:after{
+    background-color: #DEDEDE;
+}
+.user-operation>li.mine .zhanyou li a{
+    padding:7px 0;
+    color: #353535;
+    background: url(../images/iconfont-more@2x.png) no-repeat;
+    background-size: 8px;
+    background-position:96% center;
+    position: relative;
+}
+.user-operation>li.mine .zhanyou li a span{
+    height: 40px;
+    line-height: 40px;
+    width: 25%;
+    text-align: right;
+    color: #068ACD;
+    position: absolute;
+    top:0;
+    right:10%;
+}
+.user-operation>li.mine>a{
+    background-image: url(../images/iconfont-hezuotuandui@2x.png);
+    box-shadow: 1px 1px 1px #e9e9e9;
+    margin-bottom: 1px;
+}
+.user-operation>li.mine>a span{
+    color: #DB1616;
+    background: url(../images/icon-sanjiao@2x.png) no-repeat;
+    background-size: 15px;
+    background-position: right center;
+}
+.user-operation>li.mine>a span.toggle{
+    background-image: url(../images/iconfont-sanjiao@2x.png);
+    background-size: 8px;
+}
+/* .user-operation>li.icon2 a{
+    background-image: url(../images/fxsr.png);
+}
+.user-operation>li.icon2>a>span{
+    background: url(../images/iconfont-more@2x.png) no-repeat;
+    background-size: 8px;
+    background-position: right center;
+}
+
+.user-operation>li.icon2>a>span.toggle{
+    background-image: url(../images/icon-sanjiao@2x.png);
+    background-size: 15px;
+} */
+.user-operation>li.icon1 a{
+  background-image: url(../images/fxsr.png);
+}
+.user-operation>li.icon2 a{
+  background-image: url(../images/fxyj.png);
+}
+.user-operation>li.icon3 a{
+  background-image: url(../images/order-weixuan.png);
+}
+.user-operation>li.icon4 a{
+  background-image: url(../images/tgyj.png);
+}
+.user-operation>li.icon5 a{
+  background-image: url(../images/iconfont-profile.png);
+}
+.user-operation>li.icon6 a{
+  background-image: url(../images/erweima-yixuan.png);
+}
+.user-operation>li.icon7 a{
+  background-image: url(../images/iconfont-shenqingtixianicon@2x.png);
+}
+.user-operation>li.icon8 a{
+  background-image: url(../images/iconfont-weifenxiao@2x.png);
+}
+.user-operation>li.icon8 a span i{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background: url(../images/iconfont-top@2x.png) no-repeat;
+    background-size: 15px;
+    background-position: center;
+    margin-right: 3px;
+    position: relative;
+    top: 2px;
+}
+.red{
+  color: #f82b07!important;
+}

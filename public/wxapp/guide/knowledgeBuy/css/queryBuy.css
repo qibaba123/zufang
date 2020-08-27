@@ -1,0 +1,74 @@
+/* 默认样式 */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+div, h1, h2, h3, h4, h5, h6, p, ol, ul, li,
+span, i, img, a, input, textarea, select, option,
+header, footer, nav, article, section, view, audio, video,
+th, tr, td, dl, dt, dd {margin: 0;padding: 0;box-sizing: border-box;}
+ul li{list-style: none;}
+a{text-decoration: none;color: #333;}
+img{display: block;}
+
+html, body{background: #F8F8F8;font-size: 16px;font-family: 微软雅黑 ,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+.wrap{width: 1200px;margin: 0 auto;}
+.block{display: block;}
+.float-l{float: left;}
+.float-r{float: right;}
+.clear{clear: both;}
+.bg-ff{background: #fff;}
+.color-ff{color: #fff;}
+.color-23{color: #232323 !important;}
+.font-6{font-size: 16px;color: #333333;}
+.font-8{font-size: 21px;color: #333333;}
+.font-12{font-size: 32px;color: #333333;}
+.text-center{text-align: center;}
+.text-right{text-align: right;}
+.text-left{text-align: left;}
+.hide{display: none;}
+.position-r{position: relative;}
+.warning{position: fixed;z-index: 9999;top: 50%;left: 50%;transform: translateX(-50%);background: rgba(0, 0, 0, .8);color: #fff;font-size: 16px;text-align: center;line-height: 36px;padding: 6px 15px;border-radius: 4px;display: none;}
+
+.header{background: rgba(255, 255, 255, 1);}
+.header .wrap{height: 105px;}
+.logo img{height: 55px;height: auto;display: block;margin-top: 25px;}
+.nav li {float: left;padding: 0 23px;transition: all .2s linear;cursor: pointer;}
+.nav li:hover >a{color: #333333;}
+.nav li >a{line-height: 105px;color: #8F8F8F;}
+.nav .active >a{color: #333333;font-weight: 600;}
+.nav .sign{border-radius: 4px;overflow: hidden;margin-top: 36px;}
+.nav .sign a{padding: 0 10px;line-height: 32px;display: block;float: left;background: #fff;}
+.nav .sign a:last-child{background: #4768DE;color: #fff;}
+
+.address{font-size: 18px;color: #333;padding: 30px 0;}
+.address >span{color: #5376FC;}
+.progress-line{position: absolute;left: 16.6666666%;right: 16.666666%;top: 20px;border-top: 1px dashed #D7D7D7;}
+.progress .progress-item{float: left;width: 33.333333%;text-align: center;font-size: 14px;color: #666;}
+.progress .circle{width: 40px;height: 40px;font-size: 20px;line-height: 40px;text-align: center;background: #D7D7D7;color: #333;border-radius: 100%;margin: 0 auto 28px;position: relative;z-index: 110;}
+.progress .active{color: #5376FC;}
+.progress .active .circle{background: #5376FC;color: #fff;}
+.table{line-height: 60px;}
+.table, .table tr, .table td{border: none;border-collapse: collapse;}
+.table-th{background: rgba(83, 118, 252, .2);color: #5376FC;}
+.pay-method li{padding: 0 50px 0 100px;line-height: 88px;font-size: 18px;}
+.pay-method .icon_radio, .success .icon_radio{background: url('/public/wxapp/guide/knowledgeBuy/images/radio_false.png') top left / 100% 100% no-repeat;width: 20px;height: 20px;display: block;float: right;margin-right: 66px;margin-top: 34px;}
+.pay-method .icon_radio[select]{background: url('/public/wxapp/guide/knowledgeBuy/images/radio_true.png') top left / 100% 100% no-repeat;}
+.pay-method .pay_icon{width: 40px;height: 40px;float: left;margin: 20px 30px 0 0;}
+.pay-method .pay-btn{line-height: 56px;width: 154px;color: #fff;background: #FD7C23;border-radius: 4px;border: none;margin-top: 16px;}
+.pay-method .border-t{border-top: 1px solid #D7D7D7;}
+.pay-method .price, .pay .pay-info span{font-weight: 600;color: #FD7C23;}
+.pay{padding: 15px 18px;margin-top: 36px;}
+.pay .pay-info{background: #F8F8F8;padding: 10px 26px;line-height: 32px;}
+.pay .font-14{font-size: 14px;color: #666;}
+.pay .qr-code{margin: 20px 0 36px;padding: 15px 15px 48px;border: 1px solid #d8d8d8;}
+.pay .select-method{color: #5478F9;font-size: 14px;cursor: pointer;line-height: 22px;}
+.pay .matter{font-size: 14px; color: #666;line-height: 32px;}
+.pay .qr-code-img .float-l{width: 50%;}
+.pay .qr-code-img .phone-module{width: 160px;height: auto;display: block;margin: 0 auto;}
+.pay .qr-code-img::before{content: '';width: 1px;left: 50%;top: 20%;bottom: 20%;background: #F1F1F1;position: absolute;}
+.pay .qr-code-pay{width: 166px;height: 166px;display: block;margin: 20px auto;}
+.pay .sweep{padding-left: 36px;line-height: 22px;background: url('/public/wxapp/guide/knowledgeBuy/images/code.png') left 50% / 24px 24px no-repeat;width: 170px;margin: 20px auto;text-align: left;font-size: 14px;color: #cdcdcd;}
+.success{width: 700px;padding: 60px 0;margin: 40px auto 0;box-shadow: 0 0 5px 5px rgba(0, 0, 0, .01);text-align: center;line-height: 46px;}
+.success a{display: block;color: #fff;background: #5376FC;width: 144px;margin: 0 auto;margin-top: 20px}
+.success .icon_radio{background: url('/public/wxapp/guide/knowledgeBuy/images/success.png') top left / 100% 100% no-repeat;float: none;margin: 0 20px 0 0;display: inline-block;position: relative;top: 2px;}
+
+
+

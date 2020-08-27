@@ -1,0 +1,540 @@
+.wrap {
+	height: 100%;
+}
+.kanjia-rule {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.kanjia-rule .product-img {
+	position: relative;
+}
+.kanjia-rule .product-img img {
+	width: 100%;
+}
+.kanjia-rule .product-img p {
+	width: 100%;
+	padding: 5px 3%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	line-height: 1.5;
+	background-color: rgba(0, 0, 0, 0.6);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	color: #A6A3A4;
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+.kanjia-rule .active-time {
+	height: 45px;
+	line-height: 45px;
+	padding: 0 3%;
+	background-color: #fff;
+	color: #A49188;
+	letter-spacing: 0.5px;
+	font-size: 15px;
+}
+.kanjia-rule>p {
+	padding: 0 3%;
+	line-height: 50px;
+	height: 50px;
+	color: #8A8988;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+}
+.kanjia-rule .price-box {
+	overflow: hidden;
+	padding: 0 3%;
+}
+.kanjia-rule .price-box p {
+	width: 45%;
+	height: 46px;
+	line-height: 46px;
+	font-size: 14px;
+	text-align: center;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.kanjia-rule .price-box p b {
+	font-size: 18px;
+}
+.kanjia-rule .price-box .cur-price {
+	float: left;
+	background-color: #FF8603;
+	color: #fff;
+}
+.kanjia-rule .price-box .initial-price {
+	float: right;
+	border: 1px solid #D0D0D0;
+	color: #6C6B6A;
+	text-decoration: line-through;
+}
+.kanjia-rule .rules {
+	margin: 20px 0;
+	color: #8A8988;
+	background-color: #fff;
+}
+.kanjia-rule .rules h4 {
+	font-size: 18px;
+	line-height: 2;
+}
+.kanjia-rule .rules p {
+	line-height: 1.5;
+	font-size: 14px;
+}
+.rules .tab-content .tab-title{
+	height: 38px;
+	overflow: hidden;
+	padding:0 3%;
+	border-bottom: 1px solid #eee;
+}
+.rules .tab-content .tab-title li{
+	width: 33.33%;
+	float: left;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	color: #333;
+	font-size: 14px;
+}
+.rules .tab-content .tab-title li.active{
+	color: #FF8D39;
+	position: relative;
+}
+.rules .tab-content .tab-title li.active:after{
+	content:'';
+	border-bottom: 2px solid #FF8D39;
+	position: absolute;
+	bottom: 0;
+	width: 90%;
+	left: 5%;
+	z-index: 1;
+}
+.rules .tab-content .tab-con{
+	padding:0 3%;
+}
+.rules .tab-content .tab-con>li{
+	display: none;
+	padding:10px 0;
+	color: #444;
+}
+.rules .tab-content .tab-con>li img{
+	width: 100%;
+	line-height: 1.6;
+}
+.rules .tab-content .tab-con>li.current{
+	display: block;
+}
+/* 亲友团 */
+.tab-content .tab-con .result-list {
+	background-color: #fff;
+}
+.tab-content .tab-con .result-list li {
+	padding: 0 5px;
+}
+.tab-content .tab-con .result-list li a {
+	display: block;
+	overflow: hidden;
+	padding: 6px 2%;
+	border-bottom: 1px dashed #ddd;
+}
+.tab-content .tab-con .result-list li a>div {
+	float: left;
+	position: relative;
+}
+.tab-content .tab-con .result-list li a>div.user-info {
+	width: 58%;
+}
+.tab-content .tab-con .result-list li a>div.user-info img {
+	width: 33%;
+	height: auto;
+	margin-left: 0;
+	vertical-align: middle;
+	box-sizing: border-box;
+}
+.tab-content .tab-con .result-list li a>div.user-info p {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 70px;
+	height: 60px;
+	line-height: 60px;
+	color: #444;
+	font-size: 14px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.tab-content .tab-con .result-list li a>div.result {
+	padding: 5px 0;
+	width: 42%;
+}
+.tab-content .tab-con .result-list li a>div.result p {
+	line-height: 25px;
+	text-align: right;
+	color: #666;
+	font-size: 12px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.tab-content .tab-con .result-list li a>div.result p span {
+	font-size: 17px;
+	color: #FF8603;
+	margin-left: 6px;
+}
+/*砍价榜*/
+.tab-content .tab-con .zhanyou-list{
+	padding:0;
+}
+.tab-content .tab-con .zhanyou-list li {
+	overflow: hidden;
+	background-color: #fff;
+	padding: 6px 0;
+	height: 82px;
+	box-sizing: border-box;
+}
+.tab-content .tab-con .zhanyou-list li:last-child.border-b:after {
+	background-color: #fff;
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang {
+	height: 70px;
+	width: 70px;
+	position: absolute;
+	left: 0;
+	top: 5px;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang img {
+	width: 80%;
+	height: 80%;
+	display: block;
+	margin:0;
+	padding:0;
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang span {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 25px;
+	height: 25px;
+	background: url('') no-repeat;
+	background-size: 100%;
+	background-position: left top;
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang span.one {
+	background-image: url(../image/TOP-1@2x.png);
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang span.two {
+	background-image: url(../image/TOP-2@2x.png);
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang span.three {
+	background-image: url(../image/TOP-3@2x.png);
+}
+.tab-content .tab-con .zhanyou-list li .left-touxiang span.four {
+	background-image: url(../image/TOP-4@2x.png);
+}
+.tab-content .tab-con .zhanyou-list li .zhanyou-info {
+	margin-left: 75px;
+}
+.tab-content .tab-con .zhanyou-list li .zhanyou-info p {
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	font-size: 13px;
+	color: #888;
+	padding: 0 2%;
+}
+.tab-content .tab-con .zhanyou-list li .zhanyou-info h4 {
+	font-size: 15px;
+	letter-spacing: 1px;
+	line-height: 1.8;
+	padding: 0 2%;
+	margin:0;
+	margin-top: 2px;
+}
+.operation-btn {
+	overflow: hidden;
+}
+.operation-btn a {
+	display: block;
+	width: 50%;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 15px;
+	color: #fff;
+}
+.operation-btn a:active {
+	opacity: 0.9;
+}
+.operation-btn a.help-btn {
+	background-color: #FF8603;
+}
+.operation-btn a.buy-btn {
+	background-color: #D82223;
+}
+/* 动画弹出层样式 */
+.animation-shade{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.4);
+	display: none;
+}
+.animation-shade img{
+	width: 100%;
+	display: block;
+	margin:0 auto;
+}
+.animation-con{
+	width: 90%;
+	position: absolute;
+	left: 5%;
+	top:0;
+	-webkit-animation-delay:0.5s;
+	animation-delay:0.5s;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+	z-index: 5;
+}
+.animation-con>img{
+	width: 90%;
+}
+.person{
+	width: 80%;
+	position: absolute;
+	left: 10%;
+	bottom: 10%;
+	-webkit-animation-delay:1.5s;
+	animation-delay:1.5s;
+	z-index: 10;
+}
+.person img{
+	width: 85%;
+}
+.hongbao{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 20%;
+	-webkit-animation-delay:2s;
+	animation-delay:2s;
+}
+.price{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom:-5%;
+	-webkit-animation-delay:2s;
+	animation-delay:2s;
+}
+.price img{
+	width: 70%;
+}
+.price p{
+	width: 50%;
+	margin:0 auto;
+	position: absolute;
+	left: 25%;
+	bottom: 0;
+	top:43%;
+	text-align: center;
+	font-size: 15px;
+	color: #DD8811;
+	-webkit-transform: translate3d(0, -50%, 0);
+	transform: translate3d(0, -50%, 0)
+}
+.price p span{
+	font-size: 18px;
+}
+/* 动画效果 */
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both
+}
+.animated.infinite {
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite
+}
+.animated.hinge {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s
+}
+/* 淡入动画 */
+@-webkit-keyframes fadeIn {
+	0% {
+		opacity: 0
+	}
+	100% {
+		opacity: 1
+	}
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0
+	}
+	100% {
+		opacity: 1
+	}
+}
+.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn
+}
+/* 向下滑出动画 */
+@-webkit-keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		-ms-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none
+	}
+}
+.fadeInDown {
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown
+}
+/* 淡出动画 */
+@-webkit-keyframes fadeOut {
+	0% {
+		opacity: 1
+	}
+	100% {
+		opacity: 0
+	}
+}
+@keyframes fadeOut {
+	0% {
+		opacity: 1
+	}
+	100% {
+		opacity: 0
+	}
+}
+.fadeOut {
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut
+}
+/* 向左滑出动画 */
+@-webkit-keyframes fadeInRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@keyframes fadeInRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(100%, 0, 0);
+		-ms-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none
+	}
+}
+.fadeInRight {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight
+}
+/* 向上滑出动画 */
+@-webkit-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		-ms-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none
+	}
+}
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp
+}
+/* 放大缩小动画 */
+@-webkit-keyframes zoomIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(.3, .3, .3);
+		transform: scale3d(.3, .3, .3)
+	}
+	50% {
+		opacity: 1
+	}
+}
+@keyframes zoomIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(.3, .3, .3);
+		-ms-transform: scale3d(.3, .3, .3);
+		transform: scale3d(.3, .3, .3)
+	}
+	50% {
+		opacity: 1
+	}
+}
+.zoomIn {
+	-webkit-animation-name: zoomIn;
+	animation-name: zoomIn
+}

@@ -1,0 +1,29 @@
+.table{
+	border:none;
+}
+.padding-line{
+	height: 24px;
+	background-color: #fff;
+	border:none;
+}
+.head-title{
+	background-color: #F5F5F5;
+}
+.goods-info{
+	display: flex;
+	align-items: center;
+}
+.goods-info img{
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+}
+.table tbody tr td:nth-of-type(1){
+	border-left: 1px solid #e6e6e6;
+}
+.table tbody tr td{
+	border-right: 1px solid #e6e6e6;
+}
+.no-border{
+	border:none;
+}

@@ -1,0 +1,6 @@
+.change-color a { color: #ccc !important; margin-bottom: 4px; display: inline-block; }
+#header-top .top-right .download .ewm { width: 120px; height: 120px; }
+#header-top .top-right .download .ewm img { width: 100px; height: 100px; }
+.qrcode-box { position: relative; }
+.qrcode-dropdown { display: none; position: absolute; top: -155px; right: 145px; height: 200px; width: 200px; }
+.qrcode-box:hover .qrcode-dropdown { display: block; }

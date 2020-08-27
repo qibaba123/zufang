@@ -1,0 +1,21 @@
+.table{
+	color: #666;
+}
+
+.label-padding{
+	padding: 5px;
+	line-height: 1.8;
+	height: 32px;
+	width: 32px;
+}
+.flex{
+	display: flex;
+	align-items: center;
+}
+.goods-img{
+	width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    padding: 1px;
+    margin-right: 10px;
+}

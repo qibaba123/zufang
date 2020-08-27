@@ -1,0 +1,292 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	list-style: none;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+	color: #333;
+	outline: none;
+	line-height: 1.5;
+	background-color: #fff;
+	font: 14px/1.5 "Microsoft Yahei","Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+input, select, textarea {
+	font-size: 100%;
+}
+input, select {
+	vertical-align: middle;
+}
+img{
+	display: block;
+	border:0;
+}
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+	display: block;
+	visibility: hidden;
+	height: 0;
+	content: "";
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+.preview-page{
+	width: 900px;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	padding:20px 15px;
+	overflow: hidden;
+}
+.preview-page .mobile-page{
+	width: 350px;
+	float: left;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	padding:0 15px;
+}
+.mobile-page .mobile-header {
+    height: 70px;
+    width: 100%;
+    background: url(../images/iphone_head.png) no-repeat;
+    background-position: center;
+}
+.mobile-page .mobile-con{
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	border:1px solid #ccc;
+	background-color: #fff;
+}
+.mobile-con .title-bar{
+	height: 64px;
+	background: url(../images/titlebar.png) no-repeat;
+    background-position: center;
+    padding-top:20px;
+    font-size: 16px;
+    line-height: 44px;
+    text-align: center;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+}
+
+.mobile-page .mobile-footer{
+	height: 65px;
+	line-height: 65px;
+	text-align: center;
+    width: 100%;
+}
+.mobile-page .mobile-footer span{
+	display: inline-block;
+	height: 45px;
+	width: 45px;
+	margin:10px 0;
+	background-color: #e6e1e1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+.edit-right{
+	margin-left: 365px;
+}
+.edit-right .edit-con{
+	width: 100%;
+    margin-top: 135px;
+    /* min-height: 300px; */
+    border: 1px solid #D1D1D1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+    position: relative;
+    background-color: #f8f8f8;
+    padding:10px 20px;
+    min-height: 100px;
+}
+.edit-con::before {
+    border-color: transparent #d1d1d1 transparent transparent;
+    border-style: solid;
+    border-width: 8px 10px 8px 0;
+    height: 0;
+    left: -10px;
+    position: absolute;
+    top: 19px;
+    width: 0;
+    content: '';
+}
+.edit-con::after {
+    border-color: transparent #F8F8F8 transparent transparent;
+    border-style: solid;
+    border-width: 8px 10px 8px 0;
+    height: 0;
+    left: -9px;
+    position: absolute;
+    top: 19px;
+    width: 0;
+    content: '';
+}
+.edit-con>div{
+	margin-bottom: 10px;
+}
+.edit-con div[data-right-edit].show{
+	display: block!important;
+}
+.edit-con>div>label{
+	line-height: 35px;
+	display: block;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+}
+.edit-con input[type=text]{
+	padding:5px 8px;
+	font-size: 14px;
+	border:1px solid #ddd;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    width: 100%;
+    -webkit-transition: box-shadow 0.5s;
+	-moz-transition: box-shadow 0.5s;
+	-ms-transition: box-shadow 0.5s;
+	-o-transition: box-shadow 0.5s;
+	transition: box-shadow 0.5s;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	height: 33px;
+}
+.edit-con input[type=text]:focus{
+	border-color: #81C1F0;
+	-webkit-box-shadow: 0 0 8px #81C1F0;
+	-moz-box-shadow: 0 0 8px #81C1F0;
+	box-shadow: 0 0 8px #81C1F0;
+}
+
+/* 背景管理样式 */
+
+.bg-manage img{
+	width: 30%;
+	vertical-align: bottom;
+	display: inline-block;
+}
+.bg-manage>span{
+	color: #38f;
+	display: inline-block;
+	vertical-align: bottom;
+	padding:5px;
+}
+/* 颜色管理 */
+.color-manage{
+	background-color: #fff;
+	border:1px solid #ddd;
+	padding:10px;
+}
+.color-manage>div{
+	width: 48%;
+	display: inline-block;
+}
+/* 分类管理 */
+.delete{
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	width: 25px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+}
+.add-box{
+	border:1px dashed #999;
+	padding:10px;
+	height: 60px;
+	line-height: 30px;
+	font-size: 60px;
+	font-weight: bold;
+	text-align: center;
+	color: #999;
+	background-color: #fff;
+	cursor: pointer;
+	box-sizing: border-box;
+	margin-top: 15px;
+}
+.fenlei-manage{
+	padding: 20px 20px 10px;
+	background-color: #fff;
+	border:1px solid #ddd;
+	position: relative;
+	margin-bottom: 12px;
+	border-radius: 3px;
+}
+.fenlei-manage .input-groups{
+	margin:6px 0;
+	overflow: hidden;
+}
+.fenlei-manage .input-groups label{
+	width: 16%;
+	float: left;
+	line-height: 33px;
+}
+.fenlei-manage .input-groups input[type=text]{
+	width: 82%;
+	float: left;
+}
+
+/* 保存按钮样式 */
+.alert.save-btn-box{
+	border: 1px solid #F5F5AA;
+	background-color: #FFFFCC;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -453px;
+	width: 870px;
+	margin-bottom: 0;
+	z-index: 200;
+}
+.menu-min.sidebar+.main-content .alert.save-btn-box{
+	margin-left:-502px;
+}

@@ -1,0 +1,218 @@
+*{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: Arial,Helvetica,"Microsoft YaHei"!important;
+}
+img{
+	display: block;
+	border: 0;
+}
+a{
+	text-decoration: none;
+	outline: 0;
+}
+.lt{
+	float:left;
+}
+.rt{
+	float:right;
+}
+li{
+	list-style:none;
+}
+.clearfix:after{
+	content:" ";
+	display:table;
+	clear:both;
+}
+input{
+    outline: none;
+}
+#pg{
+	width:100%;
+	margin:0 auto;
+	height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.901961);
+    z-index: 1000;
+    opacity: 1;
+    transition: none 0.2s ease;
+}
+.container{
+	overflow: hidden;
+    visibility: visible;
+    display: block;
+    opacity: 1;
+    position: absolute;
+    z-index: 1000;
+    transition: opacity 300ms ease;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0px);
+    transform: translate3d(-50%, -50%, 0px);
+    border-radius: 4px;
+    background: white;
+    width: 85%;
+    padding: 20px;
+    max-width: 320px;
+    box-sizing: border-box;
+}
+.header{
+	border-bottom-width: 1px;
+	position: relative;
+    margin-bottom: 3%;
+    -webkit-border-image: url(../images/border-line-2.png) 2 stretch;
+    -moz-border-image: url(../images/border-line-2.png) 2 stretch;
+    border-image: url(../images/border-line-2.png) 2 stretch;
+    border-bottom: 2px solid #e5e5e5;
+    text-align: center;
+    color: #06bf04!important;
+}
+.header h2{
+	margin-bottom: 4%;
+    line-height: 16px;
+    font-size: 16px;
+}
+.wrapper-form{
+	padding-top: 3%;
+	font-size: 14px!important;
+}
+
+.wrapper-form .form-item {
+    position: relative;
+    margin-top: 10px;
+}
+.wrapper-form .form-item:first-child {
+    margin-top: 0;
+}
+.wrapper-form .form-item label {
+    position: absolute;
+    top: 1px;
+    left: 10px;
+    line-height: 45px;
+    z-index: 1;
+    color: #666;
+}
+.wrapper-form .form-item input[disabled='disabled'] {
+    background: #f8f8f8;
+}
+.wrapper-form .form-item input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 18px;
+    padding: 12px 10px 12px 68px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    opacity: 1;
+    -webkit-appearance: none;
+}
+.hide {
+    display: none!important;
+    visibility: hidden;
+}
+.wrapper-form .btn-auth-code {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    padding: 15px 4px;
+    border-radius: 5px;
+    color: #06bf04;
+	display: inline-block;
+    background-color: transparent;
+    border: 1px solid #0c3;
+    border-radius: 3px;
+    text-align: center;
+    margin: 0; 
+    font-size: 12px;
+    line-height: 12px;
+}
+.error {
+	margin-top: 10px;
+	word-break: break-word;
+	font-size: 12px!important;
+	color: #f60!important;
+	display:none;
+}
+.action-container {
+    margin: 10px 0 0 0;
+    padding: 0;
+    text-align: center;   
+}
+.action-container>.btn{
+    margin-bottom: 0;
+    width: 100%;
+    padding: 11px 10px;
+    font-size: 16px;
+    line-height: 16px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #06bf04;
+    border-color: #03b401;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #e5e5e5;
+  
+}
+
+.bottom-tips{
+	padding-top: 16px;
+	font-size: 12px!important;
+}
+.c-orange {
+    color: #f60!important;
+}
+.c-blue {
+    color: #38f!important;
+}
+.bottom-tips a {
+    background: 0 0;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}		
+.pull-right {
+    float: right;
+}
+.bottom-tips .inline-item{
+    padding: 0 10px;
+    border-right: 1px solid #e5e5e5;
+    font-size: 12px;
+}
+.register .hide {
+    display: none !important;
+    visibility: hidden;
+}
+.register .wrapper-form .btn-auth-code {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    padding: 15px 4px;
+    border-radius: 5px;
+    color: #06bf04;
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid #0c3;
+    border-radius: 3px;
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+    line-height: 12px;
+}
+.login-part{
+    display: none;
+}

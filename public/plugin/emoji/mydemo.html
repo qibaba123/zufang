@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-emoji by eshengsky</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="lib/css/bootstrap.css"/>
+    <link rel="stylesheet" href="lib/css/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" href="dist/css/jquery.emoji.css"/>
+    <link rel="stylesheet" href="lib/css/railscasts.css"/>
+    <!-- <link rel="stylesheet" href="dist/css/index.css"/> -->
+    <style>
+        #editor {
+            height: 91px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+            color: #555;
+            display: block;
+            font-size: 14px;
+            line-height: 1.42857;
+            padding: 6px 12px;
+            transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+            width: 100%;
+        }
+
+        #editor:focus {
+            border-color: #66afe9;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+            outline: 0 none;
+        }
+
+        #btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="editor" contenteditable="true">发发发</div>
+<button id="btn" class="btn btn-sm btn-default">:)</button>
+<script src="lib/script/jquery.min.js"></script>
+<script src="lib/script/highlight.pack.js"></script>
+<script src="lib/script/jquery.mousewheel-3.0.6.min.js"></script>
+<script src="lib/script/jquery.mCustomScrollbar.min.js"></script>
+<script src="dist/js/jquery.emoji.min.js"></script>
+<script>
+    $(function(){
+        $("#editor").emoji({
+            button: "#btn",
+            showTab: false,
+            animation: 'fade',
+            icons: [{
+                name: "QQ表情",
+                path: "dist/img/qq/",
+                maxNum: 91,
+                excludeNums: [41, 45, 54],
+                file: ".gif"
+            }]
+        });
+    })
+</script>
+</body>
+</html>

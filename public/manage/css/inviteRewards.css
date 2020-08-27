@@ -1,0 +1,585 @@
+.wrapper-app{
+	width: 800px;
+	margin:0 auto;
+}
+a {
+    color: #07d;
+    text-decoration: none;
+}
+.my-reward-total-url{
+    cursor: pointer;
+}
+.wrapper-app p{
+	margin: 0;
+}
+.invite-code-board .top-banner {
+    color: #fff;
+    font-size: 14px;
+}
+.invite-code-board .top-banner .top-banner-img {
+    width: 100%;
+    height: 240px;
+    display: inline-block;
+    background-size: cover;
+    background-image: url(/public/manage/images/jl-banner.jpg);
+}
+.invite-code-board .invite-code-info {
+    margin: 20px 0 30px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.invite-code-board .invite-code-info .invite-code {
+    font-size: 16px;
+    color: #333;
+    font-weight: lighter;
+}
+.invite-code-board .invite-code-info .invite-code-desc {
+    margin-bottom: 10px;
+}
+.invite-code-board .invite-code-info .invite-code .invite-code-num {
+    color: #333;
+    font-weight: normal;
+    font-size: 20px;
+}
+.invite-code-board .invite-code-info .invite-code .invite-code-update {
+    margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.invite-code-board .invite-code-info .invite-steps {
+    position: relative;
+    border: 1px #D1D1D1 dashed;
+    padding: 20px 40px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 400px;
+    flex: 0 0 400px;
+    box-sizing: content-box;
+}
+.invite-code-board .invite-code-info .invite-steps::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-top: 1px #D1D1D1 dashed;
+    border-left: 1px #D1D1D1 dashed;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background-color: #fff;
+    position: absolute;
+    left: -12px;
+    top: 30px;
+}
+.zent-steps {
+    width: 100%;
+    line-height: 1.5;
+    font-size: 0;
+}
+.zent-steps-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+.zent-steps-tail {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.zent-steps-step {
+    position: relative;
+}
+.zent-steps-tail i {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    border-radius: 1px;
+    height: 1px;
+    vertical-align: top;
+    background: #999;
+}
+.zent-steps-tail i::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    background: #999;
+    height: 100%;
+    opacity: 0;
+}
+.zent-steps-step .zent-step-head {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    background: #fff;
+}
+.zent-step-head-inner {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #999;
+    line-height: 20px;
+}
+.zent-step-head-inner .zent-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    background: #999;
+    color: #fff;
+    font-size: 12px;
+}
+.zent-steps-step .zent-step-main {
+    position: relative;
+    vertical-align: top;
+    max-width: 120px;
+    color: #999;
+}
+.zent-steps-step .zent-step-main .zent-step-title {
+    font-size: 13px;
+    max-width: 120px;
+    line-height: 14px;
+    margin-top: 10px;
+}
+.zent-steps-item:last-child .zent-step-main {
+    position: absolute;
+    width: 120px;
+    right: 0;
+    text-align: right;
+}
+.zent-steps-item:last-child .zent-step-head-inner {
+    margin-right: 0;
+}
+.invite-code-board .invite-code-info .invite-steps .zent-steps-item:nth-child(2) .zent-step-main {
+    left: -54px;
+}
+.invite-code-board .invite-code-info .invite-steps .zent-step-main, .invite-code-board .invite-code-info .invite-steps .zent-step-title {
+    max-width: 200px;
+    white-space: nowrap;
+}
+.invite-code-board .invite-tab {
+    margin-top: 40px;
+}
+.zent-tabs {
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+.zent-tabs-nav {
+    position: relative;
+    border-bottom: 1px solid #e4e4e4;
+    outline: none;
+    margin-bottom: 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.zent-tabs-nav-content {
+    margin-bottom: -1px;
+    height: 35px;
+    overflow: hidden;
+}
+.zent-tabs-scroll {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+.zent-tabs-tabwrap {
+    float: left;
+    position: relative;
+}
+.zent-tabs-nav-ink-bar {
+    display: none;
+}
+.zent-tabs-tab {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #666;
+    border-top: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+}
+.zent-tabs .zent-tabs-actived {
+    position: relative;
+    color: black;
+    background-color: white;
+}
+.zent-tabs-tab:first-child {
+    border: 1px solid #e4e4e4;
+    border-bottom: 0;
+    border-top-left-radius: 4px;
+}
+.zent-tabs-tab:last-child {
+    border-top-right-radius: 4px;
+}
+.zent-tabs-tab-inner {
+    padding: 8px 15px;
+    text-align: center;
+    min-width: 90px;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.zent-tabs .zent-tabs-actived .zent-tabs-tab-inner {
+    padding-bottom: 9px;
+}
+.zent-tabs-panewrap .zent-tab-tabpanel{
+	display: none;
+}
+.invite-code-board .invite-tab .my-reward {
+    margin: 20px 0 40px 0;
+    padding: 40px 30px;
+    border: 1px solid #E5E5E5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.invite-code-board .invite-tab .my-reward-item {
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    padding: 20px 0;
+}
+.invite-code-board .invite-tab .my-reward-total {
+    padding-right: 30px;
+    border-right: 1px solid #E5E5E5;
+}
+.invite-code-board .invite-tab .my-reward-download {
+    box-sizing: border-box;
+    padding-left: 30px;
+    height: 140px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.invite-code-board .invite-tab .my-reward-total-table {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.invite-code-board .invite-tab .my-reward-total-item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.invite-code-board .invite-tab .my-reward-title {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 16px;
+}
+.invite-code-board .invite-tab .my-reward-num {
+    font-size: 20px;
+    color: #FF6600;
+    margin-bottom: 16px;
+}
+.invite-code-board .invite-tab .my-reward-download-text {
+    text-align: center;
+    margin:0;
+}
+.invite-code-board .invite-tab .my-reward-download div {
+    text-align: center;
+}
+.zent-btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    border: 1px solid #bbb;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    outline: none;
+}
+.zent-btn-danger {
+    color: #fff;
+    background: #ff4343;
+    border-color: #f63535;
+}
+.invite-code-board .invite-tab .my-reward-download-btn {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    height: 50px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.invite-code-board .invite-tab .my-reward-download-btn-icon {
+    display: inline-block;
+    margin-right: 10px;
+    width: 20px;
+    height: 25px;
+    background-size: cover;
+    background-image: url(https://b.yzcdn.cn/v2/image/www/account/personal_invitecode/icon_xiazai@2x.png);
+}
+.invite-code-board .invite-tab .my-reward-download-btn i, .invite-code-board .invite-tab .my-reward-download-btn span {
+    vertical-align: middle;
+}
+.zent-loading-container-static {
+    position: relative;
+}
+.zent-table {
+    border: 1px solid #e5e5e5;
+}
+.zent-table {
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.zent-table .tr {
+    border-bottom: 1px solid #e5e5e5;
+}
+.zent-table .tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #DCDCDC;
+}
+.zent-table .tr:last-child {
+    border-bottom: none;
+}
+.zent-table .cell {
+    position: relative;
+    display: inline-block;
+    -webkit-box-flex: 1;
+    -ms-flex: auto;
+    flex: auto;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    padding: 10px;
+    padding-left: 0;
+    text-align: left;
+    font-size: 12px;
+}
+.zent-table .cell:last-child {
+    text-align: right;
+}
+.zent-table .cell:first-child {
+    padding-left: 10px;
+}
+.zent-table .thead .tr {
+    border-top: none;
+    border-bottom: 1px solid #e5e5e5;
+    background: #f2f2f2;
+}
+.invite-code-board .reward-list .empty-data {
+    box-sizing: border-box;
+}
+.zent-table .cell.empty-data {
+    line-height: 20px;
+    height: 40px;
+    text-align: center;
+}
+.zent-pagination {
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+}
+.zent-pagination__info {
+    display: inline-block;
+}
+.invite-code-board .invite-questions {
+    margin-top: 20px;
+    border: 1px solid #E5E5E5;
+    padding: 20px;
+}
+.invite-code-board .invite-questions-item {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+.invite-code-board .invite-questions-title {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1;
+}
+.invite-code-board .invite-questions-content {
+    text-align: justify;
+}
+.invite-code-board .invite-table-pic {
+    font-size: 14px;
+}
+.invite-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 40px 0 30px 0;
+    text-align: center;
+}
+.invite-title::before {
+    content: '-';
+    margin-right: 6px;
+}
+.invite-title::after {
+    content: '-';
+    margin-left: 6px;
+}
+.invite-code-board .invite-table-pic .text-title {
+    font-weight: bold;
+    margin: 20px 0;
+    font-size: 13px;
+}
+.invite-code-board .invite-table-pic .pic-text {
+    font-size: 12px;
+    margin: 20px 0;
+}
+.my-reward-download-btn{
+    position: relative;
+}
+.scan-download{
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    margin-left: -115px;
+    width: 230px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 3px;
+    box-shadow: 0 0 8px #ccc;
+    display: none;
+}
+.scan-download:before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 230px;
+    z-index: 2;
+    border-width: 6px;
+    border-color: #fff transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+    margin-left: -2px;
+}
+.scan-download:after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 230px;
+    z-index: 0;
+    border-width: 8px;
+    border-color: #efefef transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+    margin-left: -4px;
+}
+.scan-download img{
+    width: 100%;
+}
+.my-reward-download-btn:hover .scan-download{
+    display: block;
+}
+.zent-dialog-r-body {
+    color: #666;
+}
+.invite-code-dialog-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.invite-code-dialog {
+    padding-left: 20px;
+}
+.invite-code-dialog-label {
+    margin-right: 10px;
+}
+.invite-code-dialog-input {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 250px;
+    flex: 0 0 250px;
+}
+.zent-input-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    height: 30px;
+    max-height: 36px;
+    line-height: 28px;
+}
+.zent-input, .zent-input[type=text], .zent-input[type=password], .zent-input[type=datetime], .zent-input[type=date], .zent-input[type=month], .zent-input[type=time], .zent-input[type=week], .zent-input[type=number], .zent-input[type=email], .zent-input[type=url], .zent-input[type=tel], .zent-input[type=color], .zent-input[type=search] {
+    display: inline-block;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 80px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin: 0;
+    border: 1px solid #bbb;
+    color: #333333;
+    font-size: 12px;
+    border-radius: 2px;
+    box-shadow: none;
+    -webkit-transition: border .2s ease-in-out, box-shadow .2s ease-in-out;
+    transition: border .2s ease-in-out, box-shadow .2s ease-in-out;
+    outline: none;
+}
+.invite-code-dialog-warn {
+    font-size: 12px;
+    color: #f34f34;
+    margin: 10px 0 0 84px;
+}
+.invite-code-dialog-footer {
+    margin-top: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+.zent-btn-primary {
+    color: #fff;
+    background: #3283fa;
+    border-color: #3283fa;
+}
+.zent-btn + .zent-btn {
+    margin-left: 10px;
+}
+.zent-btn-primary-outline {
+    color: #3283fa;
+    border-color: #3283fa;
+    background: #fff;
+}

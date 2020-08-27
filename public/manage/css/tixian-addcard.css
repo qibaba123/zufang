@@ -1,0 +1,236 @@
+.page-content {
+    padding: 20px;
+}
+.page-content * {
+    font-family: '黑体';
+}
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ui-box {
+    margin-bottom: 15px;
+}
+.page-settlement .applyWithdrawal-region {
+    border: 1px solid #e5e5e5;
+    font-family: '黑体';
+}
+.page-settlement .applyWithdrawal-region .header {
+    font-size: 14px;
+    color: #333;
+    background: #f8f8f8;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 12px;
+    border-bottom: 1px solid #e5e5e5;
+}
+a {
+    color: #38f;
+    cursor: pointer;
+}
+a.new-window {
+    color: blue;
+}
+.form-horizontal {
+    margin-bottom: 30px;
+    width: auto;
+}
+.page-settlement .applyWithdrawal-region .form-horizontal {
+    padding: 30px 50px;
+}
+.page-settlement .applyWithdrawal-region .form-horizontal .control-group {
+    margin-bottom: 20px;
+}
+.form-horizontal .control-label {
+    float: left;
+    width: 160px;
+    padding-top: 5px;
+    text-align: right;
+}
+.form-horizontal .control-label {
+    width: 120px;
+    font-size: 14px;
+    line-height: 18px;
+    font-family: '黑体';
+}
+.form-horizontal .controls {
+    margin-left: 130px;
+    word-break: break-all;
+    line-height: 1.1;
+    padding-left: 10px;
+}
+.page-settlement .settingWithdrawal-region .form-horizontal .info-row{
+    line-height: 38px;
+    padding:0;
+    font-size: 14px;
+}
+.money {
+    color: #FF6600;
+}
+.page-settlement .applyWithdrawal-region .form-horizontal .money {
+    font-size: 24px;
+}
+.form-horizontal em.required {
+    font-size: 16px;
+    color: #f00;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.page-settlement .applyWithdrawal-region .form-horizontal .bank-group li.bank {
+    width: 545px;
+    height: 46px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+    line-height: 46px;
+    font-size: 14px;
+    padding: 0 15px;
+    cursor: pointer;
+    transition:all 0.5s;
+}
+.page-settlement .applyWithdrawal-region .form-horizontal .bank-group li.bank.active {
+    border: 1px solid #FF6600;
+    background-color: #fff9f1;
+}
+.dropdown--right, .dropdown-right {
+    display: inline-block;
+}
+.page-settlement .applyWithdrawal-region .form-horizontal .bank-group li.bank .dropdown {
+
+    /*visibility: hidden;*/
+    float: right;
+}
+.c-gray {
+    color: #999 !important;
+}
+.page-settlement .applyWithdrawal-region .form-horizontal .bank-group li.bank .account_name {
+    float: right;
+}
+.dropdown .caret {
+    margin-top: 8px;
+    margin-left: 2px;
+}
+.page-settlement .applyWithdrawal-region .form-horizontal .bank-group li.bank .dropdown .caret {
+    margin-top: -2px;
+}
+.page-settlement .applyWithdrawal-region .form-horizontal .bank-group li.bank .dropdown .dropdown-menu {
+    min-width: 80px;
+    text-align: center;
+    margin-top: -10px;
+}
+.dropdown-menu>li>a {
+    padding: 3px 15px;
+}
+.page-settlement .applyWithdrawal-region .form-horizontal input {
+    padding: 6px 10px;
+    width: 300px;
+    display: inline-block;
+    height: 38px;
+}
+.tixian-notice {
+    color: #999;
+    margin-top: 10px;
+}
+.form-horizontal .form-actions {
+    padding: 0 0 0 130px;
+    margin: 25px 0 10px 0;
+    background: none;
+    border: none;
+}
+.btn {
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #333;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.form-actions .btn {
+    margin-right: 6px;
+}
+.form-horizontal .btn, .form-horizontal .btn-mini {
+    font-size: 12px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #07d !important;
+    border-color: #006cc9;
+}
+.btn-primary:hover {
+    background-color: #0080ED !important;
+    border-color: #0066BE !important;
+}
+
+
+.alert {
+    padding: 12px 35px 12px 15px;
+    color: #333;
+    background-color: #FFF5CB;
+    border-color: #FDEEB2;
+    border-radius: 0;
+}
+.text-strong {
+    color: #FF6600;
+    font-size: 16px;
+    font-weight: 600;
+}
+.page-settlement .settingWithdrawal-region .control-label {
+    padding:0;
+    height: 38px;
+    line-height: 38px;
+    width: 140px;
+}
+.page-settlement .settingWithdrawal-region .controls p {
+    margin-top: 5px;
+}
+.page-settlement .settingWithdrawal-region .form-horizontal input,.page-settlement .settingWithdrawal-region .form-horizontal select {
+    padding: 6px 10px;
+    width: 350px;
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+}
+.page-settlement .settingWithdrawal-region .form-horizontal input.sms{
+    width: 100%;
+}
+.page-settlement .settingWithdrawal-region .input-group-addon{
+    -webkit-border-radius: 0 4px 4px 0!important;
+    -moz-border-radius: 0 4px 4px 0!important;
+    -ms-border-radius: 0 4px 4px 0!important;
+    -o-border-radius: 0 4px 4px 0!important;
+    border-radius: 0 4px 4px 0!important;
+    padding: 0;
+}
+.page-settlement .settingWithdrawal-region  button.sms-btn{
+    border:0;
+    height: 36px;
+    line-height: 30px;
+    background-color: #F8F8F8!important;
+    outline: none;
+    color: #666;
+    cursor: pointer;
+}
+.page-settlement .settingWithdrawal-region  button.sms-btn:active{
+    top:0;
+    left:0;
+}
+
+/************开启未开启样式**************/
+input[type=checkbox].ace.ace-switch.ace-switch-5+.lbl::before {
+   content: '\a0\a0\a0默认\a0\a0\a0\a0\a0\a0不默认';
+}
+input[type=checkbox].ace.ace-switch.ace-switch-5+.lbl::before{
+    background-color: #D15B47;
+    border: 0px;
+}
+input[type=checkbox].ace.ace-switch.ace-switch-4:checked + .lbl::after, input[type=checkbox].ace.ace-switch.ace-switch-5:checked + .lbl::after {
+    left: 51px;
+}
+input[type=checkbox].ace.ace-switch.ace-switch-4 + .lbl::before, input[type=checkbox].ace.ace-switch.ace-switch-5 + .lbl::before{
+    width: 72px;
+}

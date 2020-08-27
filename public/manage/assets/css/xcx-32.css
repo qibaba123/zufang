@@ -1,0 +1,45 @@
+body{
+	font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+	-moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+.nav-list>li>a{
+	font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+}
+.sidebar{
+	width: 190px;
+}
+.main-content{
+	margin-left: 190px;
+}
+#navbar{
+	margin-left: 190px;
+}
+.nav-list{
+	font-weight: 400;
+}
+.nav-list > li{
+	padding: 3px 0;
+}
+.nav-list > li > a{
+	font-size: 14px;
+}
+.nav-list li .submenu{
+	margin:5px 2px;
+}
+.nav-list > li .submenu > li > a{
+	padding-left: 45px;
+}
+.nav-list > li .submenu > li > a >i{
+	padding-left: 10px;
+}
+.sidebar-content{
+	overflow: auto;
+}
+.comp-name{
+	font-size: 12px;
+}
+.nav-list > li .submenu > li a i[class*="fa"]{
+	display: inline-block!important;
+}

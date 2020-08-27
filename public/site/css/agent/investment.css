@@ -1,0 +1,130 @@
+html,body{
+	background-color:#F8F8F8;
+	min-width:1200px;
+}
+.inves-part img{
+	display: block;
+	width:100%;
+}
+.inves-part.bg-white{
+	background-color:#fff;
+}
+.getProject .content{
+	text-align: center;
+}
+.getProject .content .btn{
+	background-color:#FF2D07;
+	color:#fff;
+	font-size:18px;
+	width:190px;
+	height:45px;
+	text-align: center;
+	line-height:45px;
+	margin:10px auto 15px;
+	border-radius:25px;
+	letter-spacing: 5px;
+}
+.getProject .content .notice{
+	font-size:14px;
+	color:#666;
+	margin-bottom:20px;
+}
+.getProject .content .notice span{
+	color:#FF2D07;
+	font-size:16px;
+	margin-left:10px;
+	font-weight: bold;
+}
+.get-model{
+	background-color:rgba(0,0,0,0.6);
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:100;
+	display: none;
+}
+.model-con{
+	width:800px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-left:-400px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	z-index:101;
+	display: none;
+}
+.model-con img{
+	display: block;
+	width:100%;
+}
+.model-con .con-wrap{
+	background-color:#fff;
+	width:100%;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	padding-bottom:20px;
+}
+.model-con .left-num{
+	width:300px;
+	height:30px;
+	line-height:30px;
+	text-align: center;
+	font-size:14px;
+	background-color:#F2F2F2;
+	border-radius:15px;
+	margin:-15px auto 0;
+	position:relative;
+	color:#666;
+	letter-spacing: 2px;
+}
+.model-con .left-num span{
+	color:#FF2D07;
+	font-size:16px;
+	margin-left:10px;
+	font-weight: bold;
+}
+.model-con .input-section{
+	width:500px;
+	margin:20px auto;
+	box-sizing:border-box;
+	border-top:1px solid #eee;
+	border-bottom:1px solid #eee;
+}
+.model-con .input-section .input-wrap{
+	padding:20px 0;
+	box-sizing:border-box;
+	border-bottom:1px solid #eee;
+}
+.model-con .input-section .input-wrap:last-child{
+	border-bottom:none;
+}
+.model-con .input-section .input-wrap .desc{
+	font-size:18px;
+	color:#555;
+	margin-right:20px;
+}
+.model-con .input-wrap .desc span{
+	padding:0 18px;
+}
+.model-con .input-wrap input{
+	border:none;
+	outline: none;
+	display: block;
+	width:100%;
+	font-size:16px;
+}
+.model-con .get-btn{
+	background-color:#FF2D07;
+	color:#fff;
+	font-size:18px;
+	width:190px;
+	height:45px;
+	text-align: center;
+	line-height:45px;
+	margin:30px auto 20px;
+	border-radius:25px;
+	letter-spacing: 5px;
+}

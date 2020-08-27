@@ -1,0 +1,126 @@
+.hongbao-box{
+	/* background-color: #fff; */
+}
+.content-main{
+	padding-top: 86px;
+}
+.content-main .top-nav{
+	position: fixed;
+	top:45px;
+	left:0;
+	width: 100%;
+	height: 40px;
+	z-index: 5;
+}
+.title-item-comment{
+	height: 0.55rem;
+	line-height: 0.55rem;
+	padding-left: 0.2rem;
+	background-color: #fff;
+	margin-bottom: 0.1rem;
+}
+.hongbao-main,.goods-main{
+	padding: 0 0.12rem;
+}
+.hongbao-main li,.goods-main li{
+	width: 50%;
+	float: left;
+	margin-bottom: 0.15rem;
+}
+.hongbao-main li a,.goods-main li a{
+	display:block;
+	color: #000;
+}
+.hongbao-content,.goods-content{
+	width: 95%;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+}
+.hongbao-content img,.goods-content img{
+	width: 100%;
+}
+.goods-content .img-show{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	background-color: #f2f2f2;
+	overflow: hidden;
+}
+.hongbao-text,.goods-text{
+	padding: 0 0.2rem;
+}
+
+.hongbao-text p,.goods-text p{
+	// padding: 0.16rem 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	line-height: 2;
+}
+.hongbao-text-part3{
+	color: #dd2020;
+	padding-bottom: 0.16rem;
+}
+.hongbao-text-part2,.goods-text-part2{
+	padding-bottom: 0.16rem;
+	color: #666;
+	font-size: 12px;
+}
+.countTime{
+	font-size: 0;
+
+}
+.hongbao-text-part3 .countTime span{
+	display: inline-block;
+	font-size: 13px;
+}
+.time-separator{
+	font-weight: 600;
+	padding: 0 2px;
+}
+.time1, .time2, .time3{
+	background-color: #DCD8D8;
+	padding: 2px 3px;
+}
+.goods-text-part3{
+	height: 0.16rem;
+	border-radius: 6px;
+	background-color: #f2efef;
+	margin-bottom: 0.23rem;
+}
+.goods-text-part3 .jindu{
+	width: 0;
+	height: 0.16rem;
+	border-radius: 6px;
+	background-color: #ffbf33;
+}
+.benqijoin{
+	padding:0 3%;
+	margin: 0.19rem auto;
+	text-align: center;
+}
+.benqijoin a {
+	padding:10px 0;
+	color: #4e4e61;
+	display: block;
+	background-color: #eaeaea;
+}
+a,html{
+	-webkit-tap-highlight-color: transparent; /* For some Androids */ 
+	-webkit-tap-highlight-color: rgba(0,0,0,0);//chrome内核去除背景高亮
+	-moz-tap-highlight-color: rgba(0,0,0,0);//Firefox内核去除背景高亮
+	-o-tap-highlight-color: rgba(0,0,0,0);//欧朋内核去除背景高亮
+	-ms-tap-highlight-color: rgba(0,0,0,0);//IE内核去除背景高亮
+	tap-highlight-color: rgba(0,0,0,0);//去除背景高亮 
+	outline: none;
+}

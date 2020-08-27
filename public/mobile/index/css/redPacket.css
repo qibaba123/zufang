@@ -1,0 +1,335 @@
+html,body{
+    height: 100%;
+    background-color: #fff;
+}
+body{
+    height: auto;
+    overflow: auto;
+}
+iframe{
+    display: none;
+}
+.wrap{
+    width:100%;
+}
+.main{
+    // overflow: auto;
+    // -webkit-overflow-scrolling: touch;
+    transition: all 0.3s ease-in-out;
+    padding-top: 48px;
+}
+/*导航样式*/
+.nav{
+    height: 48px;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 11;
+}
+.nav ul{
+    overflow: hidden;
+}
+.nav ul li{
+    width:12.5%;
+    float: left;
+    text-align: center;
+}
+.nav ul li a{
+    display: block;
+    color: #09747A;
+    height: 48px;
+    line-height:48px;
+    text-align: center;
+    letter-spacing: 1px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.nav ul li a.current{
+    background-color: #EC2F44;
+    color: #fff;
+}
+.nav ul li.logo-box.current a{
+    background-color: rgba(0,0,0,0);
+}
+.nav ul li.logo-box{
+    width: 25%;
+}
+.nav ul li.logo-box a{
+    height: 48px;
+    width: 100%;
+    background: url(../img/tdotit-logo@2x.png) no-repeat;
+    background-position: center;
+    background-size: auto 68%;
+}
+/*返回顶部*/
+.back-top {
+    position: fixed;
+    right: 10px;
+    bottom: 30px;
+    z-index: 5;
+    height: 35px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    line-height: 1.3;
+    padding-top: 5px;
+    border-radius: 8px;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    font-size: 12px;
+}
+.back-top.hide{
+    display: none;
+    opacity: 0;
+}
+
+
+.container{
+    transition: all 0.3s ease-in-out;
+    padding-top: 48px;
+}
+.container .top-image{
+    position: relative;
+    width:100%;
+    height:570px;
+    background:url(../img/bannerbeijing@2x.png) no-repeat;
+    background-position:center;
+    background-size: 100%;
+}
+.top-image .word{
+    position: absolute;
+    /* bottom: 0px; */
+    left: 48%;
+    /* margin-left: -300px; */
+    line-height: 15px;
+    font-size: 13px;
+    width: 100%;
+    transform: translateX(-50%);
+    font-family: "黑体";
+    text-align: center;
+    color: #888;
+    bottom: 4px;
+    letter-spacing: -1px
+}
+.red-packet{
+     padding: 10px;
+}
+.red-packet h2,.two-packet .title span{
+    font-size:18px;
+    font-weight: normal;
+    color:#545454;
+    text-align: center;
+}
+.red-packet h3{
+    font-size: 14px;
+    text-align: center;
+    color:#888;
+    line-height: 1.5;
+}
+.red-packet .image {
+    margin:0 auto;
+    margin-top: 10px;
+    width: 90%;
+}
+.attention{
+    background:#fff;
+}
+.two-packet{
+    background:#ededed
+}
+.two-packet .title{
+    width: 183px;
+    margin: 0 auto;
+}
+.two-packet .title h2,.two-packet .title span{
+    display: inline-block;
+    color:#888;
+}
+.two-packet .title h2{
+    cursor: pointer;
+}
+.two-packet .title h2.active{
+    color:#545454;
+}
+.two-packet .title h2:hover{
+    color:#545454;
+}
+.two-packet .title span{
+    padding:0 8px;
+}
+.packet{
+    display: none;
+}
+.word-packet{
+    display: block;
+}
+.fission{
+    background-color: #fff;
+}
+.fission h3{
+    line-height: 1.5;
+}
+.dingxiang{
+    background-color: #ededed;
+}
+.user{
+    background-color: #fff;
+        padding: 10px;   
+}
+.user h2{
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    color: #555;
+}
+.user ul{
+    width:100%;
+}
+.user ul li{
+    width: 33.3%;
+    box-sizing: border-box;
+    /* margin-right: 57.5px; */
+    float: left;
+    margin-bottom: 10px; 
+}
+.user ul li img{
+    margin:0 auto;
+    width: 90%;
+}
+.footer{
+    background-color: #ededed;
+    color:#555;
+    padding: 10px;
+}
+.footer h3{
+    text-align: center;
+    line-height: 2;
+    font-size: 18px;
+    color:#555;
+}
+.footer .word,.footer p{
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+.footer p{
+    text-align: center;
+}
+.footer p span{
+    margin-right: 40px;
+}
+.footer .btn{
+       width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #EC2F44;
+    margin: 0 auto;
+    color: #fff;
+    cursor: pointer;
+    /* font-size: 14px; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 70px;
+    -webkit-border-radius: 70px;
+    -o-border-radius: 70px;
+}
+#contact-page{
+    padding: 0 10px;
+    background: #EC2F44;
+}
+#contact-page h4 {
+    text-align: center;
+    font-size: 18px;
+    line-height: 3;
+    color:#fff;
+}
+#contact-page .contactus .contact-way p{
+    overflow: hidden;
+}
+#contact-page .contactus .contact-way p span{
+    display: block;
+    width: 60%;
+    float: left;
+    line-height: 1.4;
+    padding: 5px 0;
+    color:#fff;
+}
+#contact-page .contactus .contact-way p span a{
+    color: #fff;
+}
+#contact-page .contactus .contact-way p span:first-child{
+    width: 28%;
+    float: left;
+    padding-left: 12%;
+}
+#contact-page .contactus .contact-way p:nth-child(1) span:first-child{
+    background: url(../img/lianxi-bj_27.png) no-repeat;
+    background-size: 25px;
+    background-position: left center;
+}
+#contact-page .contactus .contact-way p:nth-child(2) span:first-child{
+    background: url(../img/lianxi-bj_22.png) no-repeat;
+    background-size: 25px;
+    background-position: left center;
+}
+#contact-page .contactus .contact-way p:nth-child(3) span:first-child{
+    background: url(../img/lianxi-bj_19.png) no-repeat;
+    background-size: 25px;
+    background-position: left center;
+}
+#contact-page .contactus p.erweima{
+    padding-bottom: 20px;
+}
+#contact-page .contactus p.erweima img{
+    width: 50%;
+    margin:20px auto;
+}
+/*拨打电话*/
+.making-calling{
+    height:40px;
+    position: fixed;
+    left:0;
+    top:80%;
+    margin-top:-20px;
+    z-index: 11;
+}
+.making-calling .icon{
+    float: left;
+    height: 40px;
+    width: 40px;
+    background: url(../img/lianxi-bj_22.png) no-repeat;
+    background-size: 25px;
+    background-position: center;
+    background-color: rgba(0,0,0,0.7);
+    border-radius:5px 0 0 5px;
+    -webkit-transition: all 0.3s ease 0.3s;
+    transition: all 0.3s ease 0.3s;
+}
+.making-calling .icon.radius{
+    border-radius:5px;
+}
+.making-calling p{
+    float: left;
+    font-size: 12px;
+    color: #fff;
+    line-height: 20px;
+    background-color: rgba(0,0,0,0.6);
+    width:90px;
+    height: 40px;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.making-calling p a{
+    color: #fff;
+}
+.making-calling p.hide{
+    width: 0;
+}

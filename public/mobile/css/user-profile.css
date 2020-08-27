@@ -1,0 +1,211 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+img {
+	display: block;
+	border: 0;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+input {
+	outline: 0;
+	border: 0;
+}
+ul li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	outline: 0;
+}
+a:active {
+	background-color: #f5f5f5;
+}
+html, body, .container {
+	width: 100%;
+	min-width: 320px;
+	max-width: 640px;
+	margin: 0 auto;
+	background-color: #f5f5f5;
+	font-size: 14px;
+	font-family: Helvetica, Tahoma, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", STXihei, STHeiti, Heiti, SimSun, sans-serif;
+}
+html,a{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+body {
+	background-color: rgba(0, 0, 0, 0) !important;
+}
+.list-item-box {
+	margin: 0 auto;
+	overflow: hidden;
+}
+.list-item-box ul {
+	padding: 0 0.3rem;
+	margin-bottom: 10px;
+	background-color: #fff;
+}
+.list-item {
+	padding: 0.22rem 0;
+	padding-right: 0.5rem;
+	position: relative;
+	color: #333;
+	line-height: 21px;
+}
+.list-item-box .list3 .list-item {
+	padding-right: 0;
+}
+.list-item span.fr {
+	max-width: 70%;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #999;
+	text-overflow: ellipsis;
+}
+.touxiang-info {
+	height: 50px;
+	line-height: 50px;
+}
+.touxiang {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.touxiang img {
+	width: 100%;
+	height: 100%;
+}
+.list-item .edit {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0.4rem;
+	height: 98%;
+	background-color: #f00;
+	background: url(../images/jiantou-icon.png) no-repeat;
+	background-size: 90%;
+	background-position: right center;
+}
+.list-item .no-edit {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0.4rem;
+	height: 100%;
+	background-color: #f00;
+	background: url(../images/no-edit.png) no-repeat;
+	background-size: 90%;
+	background-position: right center;
+}
+.border-bm {
+	position: relative;
+}
+.border-bm:before {
+	position: absolute;
+	content: '';
+	display: block;
+	width: 750px;
+	height: 1px;
+	background-color: #eaeaea;
+	left: -0.3rem;
+	bottom: 0;
+	transform: scaleY(0.5);
+}
+.border-t {
+	position: relative;
+}
+.border-t:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #e2e2e2;
+	right: 0;
+	height: 1px;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+.apply-btn {
+	background-color: #fff;
+	height: 70px;
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 11;
+}
+.apply-btn span {
+	display: inline-block;
+	background-color: #39C166;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 60%;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	color: #fff;
+	border-radius: 3px;
+	margin-top: 15px;
+}
+.list-item input {
+	font-size: 14px;
+	color: #999;
+	padding: 5px;
+	border: 0;
+	outline: none;
+	-webkit-appearance: none;
+	text-align: right;
+}
+.chooseSex{
+	text-align: center;
+	padding:12px 0;
+}
+/* .radio-box input {
+	display: none;
+	outline:none;
+	border:0;
+	-webkit-appearance: none;
+} */
+.chooseSex span {
+	padding-left: 22px;
+	height: 32px;
+	line-height: 32px;
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	margin:0 8px;
+	padding-right: 10px;
+}
+.chooseSex span:after {
+	content: '';
+	height: 20px;
+	line-height: 16px;
+	text-align: center;
+	width: 20px;
+	border: 2px solid #39C166;
+	color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	top: 6px;
+	box-sizing: border-box;
+}
+.chooseSex span.selected:after {
+	content: '✔';
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #39C166;
+}

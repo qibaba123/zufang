@@ -1,0 +1,291 @@
+.page-content{
+    padding:15px;
+}
+.reply{
+    width: 100%;
+    max-width: 900px;
+    margin:0 auto;
+}
+.mobile-page{
+    width: 350px;
+    margin:0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:0 15px;
+    float: left;
+    margin-right: 5px;
+}
+.mobile-page .mobile-header {
+    height: 70px;
+    width: 100%;
+    background: url(/public/manage/shopfixture/images/iphone_head.png) no-repeat;
+    background-position: center;
+}
+.mobile-page .mobile-con{
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    border:1px solid #ccc;
+    background-color: #fff;
+}
+.mobile-con .title-bar{
+    height: 64px;
+    background: url(/public/manage/shopfixture/images/titlebar.png) no-repeat;
+    background-position: center;
+    padding-top:20px;
+    font-size: 16px;
+    line-height: 44px;
+    text-align: center;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+.index-main{
+    background-color: #f5f6f7;
+    padding:20px 0;
+    min-height: 450px;
+}
+.mobile-page .mobile-footer{
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    width: 100%;
+}
+.mobile-page .mobile-footer span{
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    margin:10px 0;
+    background-color: #e6e1e1;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+.touxiang{
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+.touxiang img{
+    width: 100%;
+    height: 100%;
+}
+.message-show{
+    padding:10px 8px;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    max-width: 210px;
+    line-height: 1.5;
+    margin-left: 10px;
+}
+.message-show::before{
+    content:'';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border:8px solid transparent;
+    border-color: transparent;
+    border-right-color: #fff;
+    left: -15px;
+    top:10px;
+}
+.message-show a{
+    text-decoration: none;
+    color: #38f;
+}
+
+.auto-reply{
+    border:1px solid #ECECEF;
+    border-bottom: none;
+}
+.reply-header{
+    border-bottom: 1px solid #ECECEF;
+    padding:0 15px;
+}
+.reply-header span{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    color: #BABBBB;
+    cursor: pointer;
+    font-family: '黑体';
+    width: 80px;
+    padding:6px 0;
+}
+.reply-header span.active{
+    color: #333;
+}
+.reply-header span .icon-edit{
+    position: relative;
+    top: 1px;
+    margin-right: 3px;
+}
+.reply-header span .icon-picture{
+    margin-right: 5px;
+}
+.reply-content{
+    border-bottom: 1px solid #ECECEF;
+    padding:0;
+}
+.reply-content .reply-detail{
+    display: none;
+}
+.reply-content .reply-detail.active{
+    display: block;
+}
+
+.reply-content #editor {
+    height: 180px;
+    background-color: #fff;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 10px;
+    outline: none;
+    overflow: auto;
+    transition:box-shadow 0.3s;
+    width: 100%;
+    border: none;
+    resize: none;
+    box-sizing: border-box;
+}
+.reply-content #editor:focus {
+    box-shadow: 0 0 5px #eee inset;
+}
+.reply-content .img-upload{
+    padding:15px 0;
+    text-align: center;
+}
+.img-upload>div{
+    display: inline-block;
+    width: 45%;
+    margin:0 1.5%;
+    vertical-align: middle;
+    border:1px dashed #dfdfdf;
+    height: 180px;
+    text-align: center;
+    cursor: pointer;
+}
+.img-upload>div p{
+    color: #999;
+    font-size: 14px;
+    line-height: 1.5;
+    margin:0;
+    margin-top: 50px;
+}
+.img-upload>div span{
+    font-size: 70px;
+    color: #C9C9C9;
+    font-family: '宋体';
+    display: block;
+    height: 40px;
+    line-height: 40px;
+}
+
+.img-show{
+    padding: 15px;
+    display: none;
+}
+.img-show img{
+    display: inline-block;
+    vertical-align: bottom;
+    height: 120px;
+    width: 120px;
+}
+.img-show span{
+    color: #38f;
+    padding:0 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.reply-footer{
+
+}
+.reply-footer .emotion{
+    padding: 2px 15px;
+    border-bottom: 1px solid #ECECEF;
+}
+.reply-footer .emotion .bq-btn{
+    border:0;
+    padding:0;
+    height: 30px;
+    width: 30px;
+    background: url(../images/icon_bq.png) no-repeat;
+    background-position: center;
+    background-size: 26px;
+    background-color: #fff;
+    outline: none;
+    vertical-align: middle;
+}
+.reply-footer .emotion .bq-btn:active{
+    top: 0!important;
+}
+.reply-footer .insert-text{
+    padding: 8px 10px;
+    border-bottom: 1px solid #ECECEF;
+}
+.reply-footer .insert-text span{
+    color: #38f;
+    padding: 3px 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+.reply-footer .insert-text span:hover{
+    color: blue;
+}
+.reply-footer .insert-text span.btn{
+    margin-top: 5px;
+    margin-left: 7px;
+}
+.remain-chars{
+    line-height: 30px;
+    color: #999;
+}
+.remain-chars .num{
+    margin:0 3px;
+    color: red;
+}
+.btn-box{
+    padding: 15px 0;
+}
+.btn-box .btn{
+    width: 80px;
+    margin-right: 10px;
+    outline: none;
+}
+
+#customLink .input-group{
+    margin-bottom: 10px;
+}
+#customLink .input-group .input-group-addon{
+    border:none;
+    background-color: #fff;
+}
+#customLink .input-group .form-control{
+    border-radius: 4px;
+}

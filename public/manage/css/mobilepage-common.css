@@ -1,0 +1,194 @@
+body, p, input, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd, form { margin: 0; padding: 0; list-style: none; vertical-align: middle; font-weight:normal; }
+img { border:0; margin: 0; padding: 0;display: block; }
+body { color: #333; -webkit-user-select: none; -webkit-text-size-adjust: none; font:normal 16px/200% "微软雅黑", helvetica, arial; text-align:left;   }
+header, section, footer { display: block; margin: 0; padding: 0 }
+a{text-decoration:none;color:#333;}
+/* 左侧手机模板样式 */
+.mobile-page{
+	width: 340px;
+	height: 620px;
+	border:1px solid #E5E5E5;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	border-radius: 15px;
+  margin:0 auto;
+}
+.mobile-page .mobile-header{
+	height: 60px;
+	width: 100%;
+	background:url(../images/iphone_head.png) no-repeat;
+	background-position: center;
+}
+.mobile-page .mobile-con{
+	width: 320px;
+	margin:0 auto;
+	border:1px solid #C5C5C5;
+}
+.mobile-page .mobile-con .title-bar{
+	height: 64px;
+	background:url(../images/titlebar.png) no-repeat;
+	background-position: center;
+	width: 100%;
+	background-size: 100% 100%;
+  position: relative;
+}
+.mobile-page .mobile-con .title-bar h3{
+  color: #f9f9f9;
+  font-size: 16px;
+  width: 60%;
+  position: absolute;
+  left: 20%;
+  bottom:0;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-weight: bold;
+}
+.flex-wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex-con {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.flex-vertical {
+  -webkit-box-orient: vertical;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+}
+.border-t, .border-b {
+  position: relative;
+}
+.border-t:before, .border-b:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #E9E9E9;
+  right: 0;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.border-b:after {
+  top: auto;
+  bottom: 0;
+}
+#wrap {
+  height: 480px;
+  position: relative;
+}
+/* 
+#header {
+  background-color: #1B1B1B;
+  height: 48px;
+  width: 100%;
+  border-bottom: 1px solid #676767;
+  color: #fff;
+}
+#header span{
+  display: block;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  width: 50px;
+}
+#header .back{
+  background: url('') no-repeat;
+  background-position: 40% center;
+  background-size: 12px;
+  float: left;
+} 
+#header h3{
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  height: 48px;
+  line-height: 48px;
+  width: 60%;
+  margin:0 auto;
+  letter-spacing: 2px;
+}
+#header .more{
+  background: url('') no-repeat;
+  background-position:center;
+  background-size: 30px;
+  float: right;
+}      
+#footer {
+  background-color: #fff;
+  width: 100%;
+}
+#footer ul{
+  display: table;
+  border-top: 1px solid #E4E4E5;
+}
+#footer ul li{
+  display: table-cell;
+  *display: inline-block;
+  width: 3000px;
+  text-align: center;
+}
+#footer ul li a{
+  width: 100%;
+  font-size: 12px;
+  font-weight: normal;
+  color: #8A8A8A;
+  text-align: center;
+  line-height: 18px;
+  padding-top: 30px;
+  padding-bottom: 2px;
+  background: url('') no-repeat center 4px;
+  background-size: auto 25px; 
+  text-decoration: none;
+  cursor: default;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 80px;
+  min-width: 80px;
+}
+#footer ul li.active a{
+  color:#058ACD;
+}
+#footer ul li:nth-child(1) a{
+  background-image: url(../images/shouye-weixuan.png);
+}
+#footer ul li:nth-child(2) a{
+  background-image: url(../images/order-weixuan.png);
+}
+#footer ul li:nth-child(3) a{
+  background-image: url(../images/zhanji-weixuan.png);
+}
+#footer ul li:nth-child(4) a{
+  background-image: url(../images/erweima-weixuan.png);
+}
+#footer ul li:nth-child(1).active a{
+  background-image: url(../images/shouye-yixuan.png);
+}
+#footer ul li:nth-child(2).active a{
+  background-image: url(../images/order-yixuan.png);
+}
+#footer ul li:nth-child(3).active a{
+  background-image: url(../images/zhanji-yixuan.png);
+}
+#footer ul li:nth-child(4).active a{
+  background-image: url(../images/erweima-yixuan.png);
+}
+#main{
+  overflow: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+ */

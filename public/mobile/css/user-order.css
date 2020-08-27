@@ -1,0 +1,134 @@
+.tip-label{
+    padding:9px 4%;
+    background-color: #fff;
+    position: relative;
+    line-height: 40px;
+    color: #333;
+    font-size: 15px;
+}
+.tip-label>img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.tip-label span{
+    position: absolute;
+    right: 4%;
+    top: 9px;
+    height: 40px;
+    line-height: 42px;
+    font-size: 13px;
+    color: #999;
+    padding-right: 15px;
+    background: url(/public/mobile/images/iconfont-more@2x.png) no-repeat;
+    background-position: right center;
+    background-size: 8px;
+}
+.list-box ul{
+    padding:0;
+    margin:0;
+    margin-bottom:10px;
+}
+.list-box li{
+    margin-bottom:10px;
+    background-color: #fff;
+    font-size: 13px;
+    list-style:none;
+}
+.list-box .title{
+    overflow: hidden;
+    height: 40px;
+    padding: 0 3%;
+    position: relative;
+}
+.list-box .title p{
+    margin:0;
+}
+.list-box .title:before{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    border-bottom: 1px solid #d7d7d7;
+    height: 1px;
+    width: 100%;
+    -webkit-transform:scaleY(0.5);
+}
+.list-box .title .product-name{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+}
+.list-box .title .state{
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    color: #a2d246;
+}
+.list-box .content{
+    position: relative;
+    padding: 6px 3%;
+}
+/* .list-box .content:before{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    border-bottom: 1px solid #d7d7d7;
+    height: 1px;
+    width: 100%;
+    -webkit-transform:scaleY(0.5);
+} */
+.list-box .content p span{
+    color: #8E8E8E;
+}
+.list-box .content .product{
+    overflow: hidden;
+    padding: 0 3%;
+}
+.list-box .content .product-type{
+    float: left;
+}
+.list-box .content .order-num{
+    float: right;
+}
+.list-box .content .order-time{
+    
+}
+/* .list-box .product-price{
+    overflow: hidden;
+    padding: 0 5%;
+    height: 40px;
+    line-height: 40px;
+} */
+.list-box .product-price{
+    display: inline-block;
+    color:#FF7F00;
+    font-weight: 600;
+    font-size: 14px;
+    margin:0;
+    text-align: right;
+}
+.list-box .product-price .btn{
+    float: right;
+}
+.list-box .product-price .btn span{
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    width: 55px;
+    border: 1px solid #FF7F00;
+    border-radius: 3px;
+    text-align: center;
+    margin-left: 5px;
+    letter-spacing: 2px;
+    color: #FF7F00;
+}
+.list-box .product-price .btn span.disabled-btn {
+    border: none;
+    color: white;
+    background-color:#9A9A9A;
+}

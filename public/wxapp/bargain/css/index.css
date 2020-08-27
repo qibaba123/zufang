@@ -1,0 +1,14 @@
+.new-share-content { width: 100%;position: relative;padding-top: 13%; }
+.new-share-content .share-bg { width: 100%; display: block;position: absolute;top:0; left:0;z-index: 0;}
+.poster-info{width: 80%;border-radius: 8px;background-color: #fff;position: relative;z-index: 3;margin: 0 auto;min-height:425px;box-shadow: 0 4px 15px #ffeae8;box-sizing: border-box;padding:20px 18px;}
+.poster-info .poster-cover{width: 100%;display: block;}
+.poster-info .title{padding: 13px 10px;line-height: 1.45;font-size: 15px;text-align: center;min-height: 42px;}
+.shop-info{align-items: center;}
+.shop-info .shop-logo{width: 56px;height: 56px;border-radius: 50%;display: inline-block;margin: 0;margin-right: 15px;vertical-align: middle;}
+.shop-info .share-intro{font-size: 13px;color: #666;line-height: 1.4;display: inline-block;vertical-align: middle;max-width: 69%;}
+.applet-code{display: flex;align-items: center;width: 80%;margin: 0 auto;padding: 6% 0;white-space: nowrap;}
+.applet-code .left-code{position: relative;width: 100px;height: 100px;padding:6px;margin-right: 12px;}
+.applet-code .left-code .code-bg{position: absolute;left: 0;top:0;width: 100%;height: 100%;}
+.applet-code .left-code .code-img{display: block;width: 100%;height: 100%;}
+.applet-code .code-intro .code-title{font-size: 14px;line-height: 1.35;display: block;white-space: normal;}
+.applet-code .code-intro .code-sub{font-size: 12px;color: #999;line-height: 1.35;max-width: 176px;white-space: normal;}

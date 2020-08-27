@@ -1,0 +1,107 @@
+.header{
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+.help-wrap {
+    padding-top: 80px;
+}
+.search-container {
+     background: url(../img/qing-bg.svg) center bottom no-repeat;
+    background-size: 100%; 
+    background-color: #007AB0;
+    text-align: center;
+    height: 200px;
+    width: 100%;
+}
+.search-container .search {
+    padding-top: 75px;
+    display: inline-block;
+}
+.search-container .search form{
+    display: block;
+}
+.search-container .search .search-match {
+    float: left;
+    position: relative;
+    width: 800px;
+    height: 50px;
+}
+.search-container .search .search-match input {
+    background: url(../img/icon-search.png) no-repeat 10px center;
+    background-size: 28px;
+    background-color: #fff;
+    height: 50px;
+    width: 800px;
+    padding-left: 48px;
+    padding-right: 20px;
+    border-radius: 0;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 3px 0 0 3px;
+    box-sizing: border-box;
+    padding: 13px 0 13px 48px
+}
+.search-container .search input[type=submit] {
+    height: 50px;
+    border-radius: 0;
+    border: none;
+    background-color: #21d376;
+    width: 90px;
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    float: left;
+}
+.help-container {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 0;
+}
+.help-con {
+    border: 1px solid #eee;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+.help-con h4 {
+    height: 45px;
+    line-height: 45px;
+   /*  padding-left: 40px;
+   background: url('') no-repeat 8px center;
+   background-size: 28px; */
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #F8F8F8;
+    font-family: '黑体';
+}
+.help-con h4 img{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    margin:0 5px 0 8px;
+}
+.help-con .help-link {
+    padding: 10px 40px;
+    overflow: hidden;
+}
+.help-con .help-link a {
+    float: left;
+    width: 25%;
+    text-align: left;
+    color: #0077DF;
+    line-height: 2.2;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 15px;
+}
+.help-con .help-link a:hover {
+    color: #FF8C39;
+}

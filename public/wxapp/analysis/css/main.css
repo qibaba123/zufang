@@ -1,0 +1,63 @@
+@CHARSET "UTF-8";
+/**
+*choicemerchant.css
+*/
+/* .mt-element-list .list-default.mt-list-container ul>.mt-list-item>.list-icon-container.done{font-size: 14px; float: left;width:0;height:0;padding:0;border:0;} */
+.page-content-wrapper .left-kill{margin-left:0 !important;}
+.page-content {background: #eaedf2;}
+.breadcrumbs {background-color: #eaedf2;}
+
+/*  首页 今日'   订单  */
+.order-stat-bg{ background-color:#56c31b; }
+.order-stat-bg .visual>i{ color: #c4e250;opacity:.2; }
+.order-stat-bg .details .number{color:#FFF;}
+.order-stat-bg .details .desc{color: #FFF;}
+/*今日销量*/
+.order-sales{ background-color:#9e8af5; }
+.order-sales .visual>i{ color: #FFF;opacity: .1;    filter: alpha(opacity=10); }
+.order-sales  .details .number{color:#FFF;}
+.order-sales  .details .desc{color: #FFF;}
+/*本月订单数*/
+.order-month-sales{ background-color:#729ae0; }
+.order-month-sales .visual>i{ color: #FFF;opacity: .1;filter: alpha(opacity=10); }
+.order-month-sales .details .number{color:#FFF;}
+.order-month-sales .details .desc{color: #FFF;}
+/* 总订单数 */
+.order-total{ background-color:#588673; }
+.order-total .visual>i{ color: #FFF;opacity: .1;    filter: alpha(opacity=10); }
+.order-total .details .number{color:#FFF;}
+.order-total .details .desc{color: #FFF;}
+/*订单量 */
+.dashboard-stat2 .progress-info .progress1{height:25px;}
+.dashboard-stat2 .display .number h3{font-size:17px;}
+.dashboard-stat2 .display .icon>i{font-size:20px;}
+/* 团长总数量 */
+.portlet .portlet-title .dashboard-ztcnb{padding-bottom:3px;}
+.portlet .portlet-title .dashboard-ztcnb,.portlet .portlet-title .dashboard-ztcnb .display-bottom {margin-bottom:0px; }
+.dashboard-stat2 .head-nubs{margin:0px;}
+.head-nubs .number{display:inline-block;}
+.portlet-body .row .col-md-6{padding:0px;}
+.zczl{ background: #fff; margin-bottom: 20px;padding: 10px 10px 2px 10px; }
+.zczl .row{margin-top:10px;margin-bottom:10px;}
+.zczl .zczl-title .number{ float: left; display: inline-block;margin-bottom: 10px; }
+.zczl .zczl-title .number h3{ margin: 5px 0 7px 7px;padding: 0;font-size:17px;font-weight: 400;  }
+.zczl .zczl-title .icon {display: inline-block;float:right;padding:2px 0 0;}
+.zczl .zczl-title .icon>i {color:#cbd4e0;font-size:20px;}
+.zczl .zczl-title .head-bottom{clear:both; margin-top:5px; height:5px;background-color:#659be0;}
+.mt-widget-2 .pie-font{ width: 80px;text-align: center;margin-top: 20px;padding-left: 15px;}
+.mt-widget-2 .pie-font  span{width:80px;text-align: center;color: #0f9176;font-size: 16px;letter-spacing: 0;font-weight: 500;}
+.mt-widget-2 .chart-style{ padding:9px; -webkit-box-flex: 1;}
+.mt-widget1{display: -webkit-box;}
+.easy-pie-chart .number{
+    width: 100%;
+    max-width: 160px;
+    margin: 0 auto;
+    font-size: 14px!important;
+    position: relative;
+    text-align: center;
+    height: auto;
+    /* line-height: 75px; */
+}
+.tab-content {
+    border: 0;
+}

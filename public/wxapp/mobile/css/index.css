@@ -1,0 +1,23 @@
+html,body{background-color: #fff;}
+.new-share-content { width: 100%;position: relative;box-shadow: 0 2px 8px #eee; }
+.info-show{position: relative;padding: 20px 15px 10px;padding-right: 100px;}
+.info-show .name{font-size: 20px;font-weight: bold;margin-bottom: 5px;}
+.info-show .company{font-size: 16px;line-height: 1.4;color: #000;}
+.info-show .logo{position: absolute;top:12px;right: 15px;width: 64px;height: 64px;}
+.tel-addr{padding: 5px 15px;}
+.info-item{background: url() no-repeat left 2px;background-size:16px;line-height: 20px;padding-left: 22px;color: #888;font-size: 14px;}
+.info-item.icon-tel{background-image: url('/public/wxapp/mobile/images/icon_detail_tel.png');margin-bottom: 6px;}
+.info-item.icon-addr{background-image: url('/public/wxapp/mobile/images/icon_detail_address.png');}
+.main-business{width: 92%;margin: 20px auto;background-color: #fafafa;padding: 15px 10px;min-height: 240px;box-sizing: border-box;}
+.main-business .label-title{font-size: 16px;color: #333;line-height: 1.5;margin-bottom: 5px;}
+.main-business .business-intro{font-size: 14px;color: #888;line-height: 1.5;}
+
+.applet-code{display: flex;align-items: center;width: 100%;margin: 0 auto;padding:0 15px;padding-bottom: 37px;background: url('/public/wxapp/mobile/images/bg.png') no-repeat bottom center;background-size:100%;box-sizing: border-box;}
+.applet-code .left-code{position: relative;width: 100px;height: 100px;padding:6px;margin-right: 12px;}
+.applet-code .left-code .code-bg{position: absolute;left: 0;top:0;width: 100%;height: 100%;}
+.applet-code .left-code .code-img{display: block;width: 100%;height: 100%;}
+.applet-code .code-intro .code-title{font-size: 14px;line-height: 1.35;display: block;}
+.applet-code .code-intro .code-sub{font-size: 12px;color: #aaa;}
+.user-info{position: relative;padding:5px 0;padding-left: 35px;}
+.user-info .avatar{position: absolute;height: 24px;width: 24px;border-radius: 50%;left: 2px;}
+.user-info p{font-size: 14px;color: #666;line-height: 24px;}

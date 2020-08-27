@@ -1,0 +1,147 @@
+body, div, p, input, h1, h2, h3, h4, h5, h6, ol, ul, li, dl, dt, dd, form, button, select, textarea,article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    vertical-align: middle;
+    font-weight: normal;
+}
+img {
+    margin:auto;
+    display: block;
+}
+body {
+    color: #333;
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: none;
+    font: normal 14px/180% arial, helvetica, "Hiragino Sans GB", "Microsoft Yahei", "微软雅黑", sans-serif;
+    text-align: left;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{
+    display: block;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+html{
+    width: 100%;
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+body{
+    background-color: #f0f0f0;
+    height: 100%;
+    position: relative;
+    max-width: 640px;
+    margin:0 auto;
+}
+/* 主内容区域样式 */
+.top{
+    background-color: #F15353;
+    padding:5% 4% 6%;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.top h4{
+    font-size: 18px;
+    line-height: 2;
+}
+.top p{
+    font-size: 13px;
+    line-height: 1.6;
+}
+.num-value{
+    padding-left: 4%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.num-value h4{
+    font-size: 18px;
+    line-height: 2;
+}
+.num-value>div{
+    padding:4% 0;
+    padding-right: 4.5%;
+    position: relative;
+}
+.num-value>div p{
+    color: #999;
+    font-size: 13px;
+    line-height: 1.5;
+}
+.num-value>div .value{
+    color: #F05151;
+    font-size: 14px;
+}
+.num-value .num-valueA::after{
+    background-color: #d8d8d8;
+    content:'';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    transform:scaleY(0.5);
+    z-index: 1;
+}
+.last-user {
+    background-color: #F5F5F5;
+    border-radius: 3px;
+    padding:0 10px;
+}
+.last-user .user-num{
+    line-height: 42px;
+    color: #999;
+    margin:10px auto;
+}
+.last-user .user-num span{
+    float: right;
+    height: 25px;
+    width: 25px;
+    margin-top: 10px;
+    background:url(../image/more.png) no-repeat center;
+    background-size: 90%;
+    transition:all 0.3s;
+}
+.last-user .user-num.open span{
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
+}
+.num-valueA .table-con{
+    padding-bottom: 10px;
+    display: none;
+}
+.num-valueA .table-con table{
+    width: 100%;
+    word-break:break-all;
+    border-collapse:collapse;
+}
+.width-28{
+    width: 28%;
+}
+.width-72{
+    width: 72%;
+}
+.num-valueA .table-con table td{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.num-valueA .table-con table thead td{
+    border-bottom: 1px solid #DEDEDE;
+    font-weight: bold;
+    font-size: 13px;
+}
+.num-valueA .table-con table tbody td{
+    color: #666;
+    font-size: 12px;
+}
+.remain-explain{
+    padding:0 5%;
+    color: #999;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    font-size: 13px;
+}

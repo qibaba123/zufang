@@ -1,0 +1,442 @@
+.header{
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+.service-wrap{
+	width: 100%;
+	font-family: "黑体";
+	padding-top: 80px;
+}
+.service-wrap>div{
+	overflow: hidden;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.service-wrap .container{
+	width: 1200px;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.service-wrap .part-title{
+	line-height: 138px;
+	font-size: 34px;
+	color: #555;
+	text-align: center;
+	letter-spacing: 1px;
+}
+.service-wrap .part-fu-title{
+	font-size: 22px;
+	color: #555;
+	text-align: center;
+	line-height: 45px;
+	letter-spacing: 1px;
+}
+/* banner广告 */
+.service-banner{
+	width: 100%;
+	height: 600px;
+	background: url(../images/league/banner@2x.png) no-repeat center center;
+}
+/* 合作加盟 */
+.hzjm{
+	background-color: #F4F4F4;
+}
+.hzjm .zixun-info{
+	overflow: hidden;
+	padding-bottom: 50px;
+}
+.hzjm .zixun-info li{
+	width: 380px;
+	height: 460px;
+	background-color: #fff;
+	margin-right: 20px;
+	margin-bottom: 18px;
+	border-radius: 8px;
+	float: left;
+}
+.hzjm .zixun-info li:last-child,.hzjm .zixun-info li.last{
+	margin-right: 0;
+	width: 400px;
+}
+.hzjm .zixun-info li .wrap{
+	padding: 20px;
+}
+.hzjm .zixun-info li .tag{
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	width: 80px;
+	border-radius: 4px;
+	background-color: #FA6C16;
+	color: #fff;
+	text-align: center;
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+.zixun-info li .contact-info{
+	overflow: hidden;
+	margin-bottom: 17px;
+}
+.zixun-info li .contact-info img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-right: 13px;
+	float: left;
+}
+.zixun-info li .contact-info div{
+	padding-top: 8px;
+}
+.zixun-info li .contact-info p{
+	font-size: 15px;
+	color: #595959;
+	line-height: 22px;
+}
+.zixun-info li .contact-info p span{
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 76px;
+	text-align: right;
+	position: relative;
+	top: -2px;
+}
+.zixun-info li .contact-info .name{
+	font-size: 22px;
+	line-height: 38px;
+	color: #525252;
+}
+.zixun-info li .fuze-area{
+	font-size: 16px;
+	color: #5D5D5D;
+	height: 200px;
+	line-height: 1.5;
+}
+.zixun-info li .fuze-area span{
+	line-height: 45px;
+	display: block;
+	font-size: 19px;
+}
+.zixun-info li .zixun-btn{
+	display: block;
+	height: 48px;
+	line-height: 48px;
+	width: 150px;
+	margin:0 auto;
+	background-color: #1EC2FF;
+	color: #fff;
+	border:1px solid #4EB0D5;
+	border-radius: 8px;
+	text-align: center;
+	font-size: 20px;
+	box-sizing: border-box;
+	transition:all 0.5s;
+}
+.zixun-info li .zixun-btn:hover{
+	color: #1EC2FF;
+	background-color: #fff;
+}
+.zixun-info li .dl-apply h4{
+	line-height: 45px;
+	font-weight: normal;
+	font-size: 16px;
+	/*margin-bottom: 25px;*/
+}
+.orange{
+	color: #FF6815!important;
+}
+.zixun-info li .dl-apply h4 span{
+	font-size: 23px;
+	color: #FF6815;
+}
+.input-box {
+	margin-bottom: 12px;
+	overflow: hidden;
+}
+.input-box .cus-label{
+	width: 138px;
+	text-align: right;
+	float: left;
+	font-size: 16px;
+	line-height: 30px;
+	color: #575757;
+}
+.input-box .input-row{
+	padding-left: 138px;
+	height: 34px;
+}
+.input-box .cus-input{
+	width: 100%;
+	height: 30px;
+	border:1px solid #C8C8C8;
+	padding: 5px 10px 6px;
+	box-sizing: border-box;
+	outline: none;
+	font-family: "微软雅黑";
+	color: #555;
+}
+.input-box select.cus-input{
+	width: 67px;
+	margin-left: 10px;
+	float: left;
+	padding: 4px 0 6px 6px;
+	vertical-align: middle;
+}
+.input-box select.cus-input:first-child{
+	margin-left: 0;
+}
+.input-box .get-code{
+	float: right;
+	width: 80px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 13px;
+	background-color: #FF6815;
+	color: #fff;
+	font-family: "微软雅黑";
+	cursor: pointer;
+}
+.input-box .get-code.disabled{
+	background-color: #ccc;
+}
+/* 选择我们的理由 */
+.xzwm{
+	padding: 60px 0;
+}
+.xzwm .part-title{
+	line-height: 60px;
+}
+.xzwm .part-fu-title{
+	line-height: 38px;
+}
+.xzwm .xz-reason{
+	width: 1160px;
+	margin:0 auto;
+	overflow: hidden;
+	margin-top: 60px;
+}
+.xzwm .xz-reason li{
+	width: 50%;
+	box-sizing: border-box;
+	float: left;
+	padding-left: 50px;
+	border-bottom:1px dashed #C2C2C2;
+	padding-top: 30px;
+}
+.left-border{
+	border-left: 1px dashed #C2C2C2;
+}
+.no-padding-top{
+	padding-top: 0!important;
+}
+.no-bottom-border{
+	border-bottom: none!important;
+}
+.xzwm .xz-reason li h4{
+	line-height: 60px;
+	padding-left:35px;
+	font-size: 30px;
+	color: #565656;
+	background: url(../images/league/jiantou@2x.png) no-repeat left center;
+	font-weight: normal;
+}
+.xzwm .xz-reason li p{
+	height: 113px;
+	line-height: 42px;
+	color: #8D8D8D;
+	font-size: 22px;
+	padding-left:35px;
+	padding-right: 20px;
+}
+/* 七大优势 */
+.qdys{
+	padding: 60px 0 0;
+	background-color: #FF8D3A;
+}
+.qdys .part-title{
+	line-height: 60px;
+	color: #fff;
+}
+.qdys .part-fu-title{
+	line-height: 38px;
+	color: #fff;
+}
+.qdys .td-list {
+	text-align: center;
+	padding:10px 0;
+	font-size: 0;
+	margin-top: 20px;
+}
+.qdys .td-list li{
+	width: 222px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	margin-right: 104px;
+}
+.no-marginR{
+	margin-right: 0!important;
+}
+.qdys .td-list li h4{
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	line-height: 2;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+.qdys .td-list .td-intro{
+	width: 222px;
+	height: 256px;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 65px 17px;
+	color: #838383;
+	font-size: 17px;
+	text-align: left;
+	line-height: 32px;
+	background: url(../images/league/dbx@2x.png) no-repeat center;
+}
+/* 应用行业 */
+.yyhy{
+	padding: 60px 0 0;
+	background-color: #fff;
+}
+.yyhy .part-title{
+	line-height: 60px;
+	color: #585858;
+}
+.yyhy .part-fu-title{
+	line-height: 38px;
+	color: #5C5C5C;
+}
+.yyhy .hy-list{
+	margin-top: 30px;
+}
+.yyhy .hy-list li{
+	width: 285px;
+	margin-bottom: 25px;
+	margin-right: 20px;
+	float: left;
+}
+.yyhy .hy-list li img{
+	width: 285px;
+	height: 210px;
+	border-radius: 10px;
+	display: block;
+	margin:auto;
+}
+.yyhy .hy-list li p{
+	line-height: 75px;
+	color: #5c5c5c;
+	text-align: center;
+	font-size: 22px;
+}
+
+/* 动画效果相关样式 */
+.show-animate .animated {
+	-webkit-animation-duration: 1.5s;
+	animation-duration: 1.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both
+}
+@-webkit-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		-ms-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none
+	}
+}
+.show-animate .fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp
+}
+@-webkit-keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		-ms-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none
+	}
+}
+.show-animate .fadeInLeft {
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft
+}
+@-webkit-keyframes fadeInRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@keyframes fadeInRight {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(100%, 0, 0);
+		-ms-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0)
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none
+	}
+}
+.show-animate .fadeInRight {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight
+}

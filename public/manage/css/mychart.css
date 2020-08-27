@@ -1,0 +1,67 @@
+body{
+	min-width: 1200px;
+}
+.filter-date{
+	font-size: 12px;
+}
+.filter-date>span{
+	cursor: pointer;
+	padding:2px 5px;
+	border:1px solid rgba(0,0,0,0);
+}
+.filter-date>span:hover{
+	border:1px solid #ccc;
+}
+.filter-date>span.btn-current{
+	border-width: 1px;
+  border-color: #438EB9;
+  color: #444!important;
+  text-shadow: none!important;
+  background-color: #FFF!important;
+}
+.statistics-title{
+	border:1px solid #eee;
+	background-color: #f8f8f8;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.statistics-title>div{
+	padding:10px 15px;
+	font-size: 14px;
+	font-weight: bold;
+	width: 60px;
+	border-right:1px solid #eee;
+	float: left;
+}
+.statistics-title>ul{
+	padding:8px 0 7px;
+	overflow: hidden;
+	list-style: none;
+	float: left;
+	margin:0;
+}
+.statistics-title>ul>li{
+	border-left:1px solid #eee;
+	float: left;
+	width: 125px;
+	text-align: center;
+}
+.statistics-title>ul>li h5{
+	font-size: 22px;
+	margin:0;
+	padding:0;
+}
+.statistics-title>ul>li p{
+	margin:0;
+	margin-top: 3px;
+}
+.statistics-title>ul>li a p{
+	color: #444;
+}
+.statistics-title>ul>li a:hover{
+	text-decoration: none;
+	color: #3879D9;
+}
+.statistics-title>ul>li:first-child{
+	border-left:0;
+}

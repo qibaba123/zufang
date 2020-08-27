@@ -1,0 +1,114 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+	background-color: #efefef;
+	font-family: 'Helvetica Neue','Hiragino Sans GB',Arial,"微软雅黑",sans-serif;
+	font-size: 14px;
+	line-height: 1.2;
+}
+html{
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+.text-right{
+	text-align: right;
+}
+ul li{
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+	list-style: none;
+}
+.container{
+	width: 93%;
+	margin: 0 auto;
+}
+.header{
+	box-sizing: border-box;
+	background: url(/public/mobile/images/ewm_06.png) no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-color: #00b9b9;
+	border-radius: 5px;
+	padding: 18px;
+	color: #fff;
+	margin: 10px 0 10px 0;
+}
+.logo{
+	height: 70px;
+	// padding-left: 85px;
+	// background: url('../images/logo.png') left center no-repeat;
+	// background-size: 70px 70px;
+	line-height: 70px;
+}
+.logo .logoimg{
+	display: inline-block;
+	vertical-align: middle;
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin:5px 0;
+	margin-right: 10px;
+}
+.logo .logoimg img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.brand-name{
+	font-size: 45px;
+}
+.contact-we{
+	margin-top: 6.42%;
+}
+.contact-we .num-way{
+	margin-bottom: 8px;
+}
+.choice-box{
+	background-color: #fff;
+}
+.choice-title, .choice-item, .choice-store{
+	padding: 12px;
+	border-bottom: 1px solid #eaeaea;
+	position: relative;
+}
+.choice-flag{
+	position: absolute;
+	width: 20px;
+	height: 16px;
+	right: 12px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.choice-flag.active{
+	background: url('../images/choice-flag.png') no-repeat;
+	background-size: cover;
+}
+.choice-title{
+	color: #777;
+}
+.item-detail{
+	margin: 12px auto;
+	background-color: #fff;
+	padding: 12px;
+	line-height: 1.5;
+}
+.buy-btn{
+	position: fixed;
+	width: 93%;
+	background-color: #ff7513;
+	text-align: center;
+	padding: 12px 0;
+	color: #fff;
+	border-radius: 5px;
+	bottom: 15px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}

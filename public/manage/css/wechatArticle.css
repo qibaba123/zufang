@@ -1,0 +1,355 @@
+*{
+	margin:0;
+	padding:0;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea, h1, h2, h3, h4 ,h5 ,h6 {
+	color: #333;
+	outline: none;
+	line-height: 1.5;
+	background-color: #fff;
+	font: 14px/1.5 "Microsoft Yahei","Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+input, select, textarea {
+	font-size: 100%;
+}
+input, select {
+	vertical-align: middle;
+}
+.preview-page{
+	width: 900px;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	padding:20px 15px;
+	/*overflow: hidden;*/
+	padding-bottom: 60px;
+}
+.preview-page .mobile-page{
+	width: 350px;
+	float: left;
+	background-color: #fff;
+	border: 1px solid #dedede;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	padding:0 15px;
+}
+.mobile-page .mobile-header {
+    height: 70px;
+    width: 100%;
+    background: url(../images/iphone_head.png) no-repeat;
+    background-position: center;
+}
+.mobile-page .mobile-con{
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	border:1px solid #eee;
+	background-color: #fff;
+}
+.mobile-con .title-bar{
+	height: 64px;
+	background: url(../images/titlebar.png) no-repeat;
+    background-position: center;
+    padding-top:20px;
+    font-size: 16px;
+    line-height: 44px;
+    text-align: center;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+}
+.article{
+	padding:5px 10px;
+	overflow: auto;
+	height: 450px;
+}
+.article .article-title{
+	font-size: 22px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	line-height: 1.3;
+	margin-bottom: 8px;
+	white-space: normal;
+	word-break: break-all;
+}
+.article .date{
+	color: #8c8c8c;
+	margin-bottom: 8px;
+}
+.article .date span{
+	color: #607fa6;
+	margin-left: 5px;
+}
+.article .article-con{
+	padding:0;
+	font-family: '黑体', SimHei;
+	color: rgb(63, 63, 63);
+	white-space: normal;
+    font-size: 14px;
+    line-height: 22px;
+    word-wrap: break-word;
+}
+.article .article-con p{
+	font-size: 14px;
+    line-height: 22px;
+    word-wrap: break-word;
+}
+.article .article-con img{
+	display: block;
+	width: 100%;
+	margin:5px auto;
+}
+.mobile-page .mobile-footer{
+	height: 65px;
+	line-height: 65px;
+	text-align: center;
+    width: 100%;
+}
+.mobile-page .mobile-footer span{
+	display: inline-block;
+	height: 45px;
+	width: 45px;
+	margin:10px 0;
+	background-color: #e6e1e1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+.edit-right{
+	margin-left: 365px;
+}
+.edit-right .edit-con{
+	width: 100%;
+    margin-top: 135px;
+    min-height: 300px;
+    border: 1px solid #dedede;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+    position: relative;
+    background-color: #f9f9f9;
+    padding:10px 15px;
+}
+.edit-con::before {
+    border-color: transparent #dedede transparent transparent;
+    border-style: solid;
+    border-width: 8px 10px 8px 0;
+    height: 0;
+    left: -10px;
+    position: absolute;
+    top: 19px;
+    width: 0;
+    content: '';
+}
+.edit-con::after {
+    border-color: transparent #f9f9f9 transparent transparent;
+    border-style: solid;
+    border-width: 8px 10px 8px 0;
+    height: 0;
+    left: -9px;
+    position: absolute;
+    top: 19px;
+    width: 0;
+    content: '';
+}
+.edit-con>div{
+	margin-bottom: 10px;
+}
+.edit-con>div label{
+	line-height: 35px;
+	display: block;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+}
+.edit-con input[type=text]{
+	padding:6px 8px;
+	font-size: 14px;
+	border:1px solid #ddd;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    width: 100%;
+    -webkit-transition: box-shadow 0.5s;
+	-moz-transition: box-shadow 0.5s;
+	-ms-transition: box-shadow 0.5s;
+	-o-transition: box-shadow 0.5s;
+	transition: box-shadow 0.5s;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.edit-con input[type=text]:focus{
+	border-color: #81C1F0;
+	-webkit-box-shadow: 0 0 8px #81C1F0;
+	-moz-box-shadow: 0 0 8px #81C1F0;
+	box-shadow: 0 0 8px #81C1F0;
+}
+
+/* 富文本编辑器配置 */
+.edui-default .edui-editor-breadcrumb{
+	display: none;
+}
+
+.setting-save {
+    border: 1px solid #F5F5AA;
+    background-color: #FFFFCC;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    margin-left: -484px;
+    width:930px;
+    margin-bottom: 0;
+    z-index: 9999;
+}
+.menu-min.sidebar+.main-content .setting-save{
+  margin-left: -536px;
+}
+
+.flex-wrap {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: -ms-box;
+      display: box;
+      display: flex;
+}
+.flex-con {
+      -webkit-box-flex: 1;
+      -ms-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      box-flex: 1;
+      flex: 1;
+}
+.space-line{
+	margin:15px 0;
+	border-bottom: 1px dashed #ddd;
+}
+.store-info{
+	background-color: #F7F7F7;
+	border:1px solid #eee;
+	max-width: 100%;
+	padding: 6px 4%;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.store-logo{
+	height: 45px;
+	width: 45px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 15px;
+}
+.store-logo img{
+	display: block;
+	width: 100%;
+	height: 100%
+}
+.store-name h4{
+	font-size: 14px;
+	line-height: 1.5;
+	margin-top: 3px;
+}
+.store-name>p{
+	font-size: 12px;
+	color: #999;
+}
+.flex-wrap {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: -ms-box;
+      display: box;
+      display: flex;
+}
+.flex-con {
+      -webkit-box-flex: 1;
+      -ms-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      box-flex: 1;
+      flex: 1;
+}
+.space-line{
+	margin:15px 0;
+	border-bottom: 1px dashed #ddd;
+}
+.store-info{
+	background-color: #F7F7F7;
+	border:1px solid #eee;
+	max-width: 100%;
+	padding: 6px 4%;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.store-logo{
+	height: 45px;
+	width: 45px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 15px;
+}
+.store-logo img{
+	display: block;
+	width: 100%;
+	height: 100%
+}
+.store-name h4{
+	font-size: 14px;
+	line-height: 1.5;
+	margin:0;
+	margin-top: 3px;
+	background-color: #F7F7F7;
+}
+.store-name>p{
+	margin:0;
+	font-size: 12px;
+	color: #999;
+}
+.enter-store{
+	padding-right: 20px;
+	background: url(/public/manage/images/enter.png) no-repeat;
+	background-size: 12px;
+	background-position: right center;
+}
+.enter-store p{
+	padding-top: 8px;
+	line-height: 1.2;
+	font-size: 12px;
+	color: #C62B39;
+}

@@ -1,0 +1,131 @@
+body{
+	/*height: 100vh;*/
+	background: #ebf3ff;
+}
+.banner-bg{
+	width: 7.5rem;
+	height: auto;
+}
+
+.pay-msg-box{
+	/*position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform:translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);*/
+	position: relative;
+	top: -2rem;
+	margin: 0 auto;
+	width: 6.7rem;
+	background: #fff;
+	border-radius: .2rem;
+	
+}
+.pay-msg-top{
+	padding: 0 .5rem;
+	height: 1.4rem;
+	background: #ebf3ff;
+	font-size: .25rem;
+	line-height: 1.5;
+	color: #c0c0c0;
+	border-radius: .2rem .2rem 0 0;
+}
+.pay-msg-top .company-name{
+	margin-bottom: .05rem;
+	font-size:.3rem;
+	line-height: 1.5;
+	color: #333333;
+}
+.pay-msg-top .company-logo{
+	width: .7rem;
+	height: .7rem;
+	border-radius: .12rem;
+}
+.pay-msg-bottom{
+	min-height: 5rem;
+	padding: 0 .5rem;
+	background: #fff;
+	border-radius: 0 0 .2rem .2rem ;
+}
+.pay-msg-bottom .input-tip{
+	padding-top: .3rem;
+	font-size: .28rem;
+	line-height:1.5;
+	color: #a3a3a3;
+}
+
+.pay-msg-bottom .input-box {
+	padding: .1rem 0;
+	border-bottom: .01rem solid #eee;
+	font-size: .34rem;
+	color: #666;
+}
+.input-box input{
+	padding: 0 .1rem;
+	height: .9rem;
+	font-size: .4rem;
+	font-weight: 600;
+	color: #333333;
+	border: none;
+	outline: none;
+}
+.pay-btn{
+	margin: 1rem auto;
+	width: 4.8rem;
+	height: .95rem;
+	background: -o-linear-gradient(right, #ffb120, #ffc634); 
+    background: -moz-linear-gradient(right, #ffb120, #ffc634); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #ffb120 , #ffc634);
+	line-height: .95rem;
+	border-radius:.48rem;
+	font-size: .31rem;
+	text-align: center;
+	letter-spacing:.02rem;
+	color: #ffffff;
+	cursor: pointer;
+}
+/*扫码*/
+.pay-code{
+	display: none;
+	min-height: 5rem;
+	padding: .2rem .5rem;
+	background: #fff;
+	border-radius: 0 0 .2rem .2rem ;
+}
+.pay-code .need-pay-tip{
+	font-size: .26rem;
+	line-height: 1.5;
+	color: #a3a3a3;
+}
+.pay-code .need-pay-num{
+	font-size: .24rem;
+	line-height: 1.5;
+	color: #333;
+}
+.pay-code .change-pay-num{
+	font-size: .24rem;
+	line-height: 1.5;
+	color: #0689e1;
+	font-weight: 600;
+	cursor: pointer;
+}
+.pay-code .need-pay-num text{
+	font-size: .38rem;
+	line-height: 1.5;
+	color: #333;
+}
+.pay-code .code-img{
+	display: block;
+	margin: .5rem auto 0;
+	width: 2.8rem;
+	height: 2.8rem;
+}
+.pay-code .scan-code-tip{
+	margin-top: .1rem;
+	font-size:.26rem;
+	line-height: 1.5;
+	color: #ababab;
+	text-align: center;
+}

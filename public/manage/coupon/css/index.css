@@ -1,0 +1,127 @@
+/* 去除input默认样式 */
+/* input, button, select, textarea {
+	outline: none;
+	border: 0;
+	-webkit-appearance: none;
+} */
+input, button, select, textarea{
+	outline: none;
+	border:0;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.index-con {
+	padding: 0;
+	position: relative;
+}
+.index-con .index-main {
+	height: 450px;
+	background-color: #F9F9F9;
+	overflow: auto;
+}
+.coupon .about-card-desc{
+	font-size: 12px;
+    text-align: center;
+    line-height: 40px;
+    color: #ccc;
+}
+.coupon-detail-wrap .promote-card{
+	-webkit-tap-highlight-color: transparent;
+    position: relative;
+    min-height: 180px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fe314e), to(#fe6263));
+    background: -moz-linear-gradient(to bottom, #fe314e, #fe6263);
+    color: #fff;
+}
+.coupon-detail-wrap .promote-card .dot{
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: url("../images/dot.png") repeat-x left bottom;
+    background-size: auto 5px;
+}
+.coupon-detail-wrap .promote-card .promote-card-name{
+	font-size: 16px;
+    line-height: 60px;
+    padding-left: 10px;
+    font-weight: normal;
+
+}
+.coupon-detail-wrap .promote-card .promote-share {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ffbabb;
+    border-color: rgba(255,255,255,0.5);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+}
+.coupon-detail-wrap .promote-card .promote-value {
+    font-size: 30px;
+    line-height: 40px;
+    word-break: break-word;
+}
+.coupon-detail-wrap .promote-card .promote-limit{
+	font-size: 12px;
+	line-height: 40px;
+	letter-spacing: 0.5px;
+}
+.coupon-detail-wrap .promote-card .promote-limit-date{
+	font-size: 12px;
+	line-height: 18px;
+	color: rgba(255,255,255,0.5);
+}
+.promote-desc .promote-desc-title{
+	padding: 10px 0 0 20px;
+	font-size: 12px;
+}
+.promote-desc .block-item{
+	margin:10px auto;
+	padding:10px;
+	border-top:1px solid #eaeaea;
+	border-bottom:1px solid #eaeaea;
+	background-color: #fff;
+	font-size: 13px;
+}
+
+.coupon-show .showTicket{
+	padding:10px 4%;
+	background-color: #fff;
+}
+.coupon-show .showTicket li .ticket-box{
+	width: 242px;
+	height: 114px;
+	background: url(../images/preferential.png) no-repeat center;
+	background-size: cover;
+	color: #fff;
+	margin:0 auto;
+}
+.showTicket li .ticket-box div{
+	padding: 15px 21% 10px 10px;
+}
+.showTicket li div .money span{
+	font-size: 35px;
+	line-height: 1;
+}
+.showTicket li div .limitmoney{
+	margin-top: 5px;
+	font-size: 16px;
+}
+.showTicket li div .limit-time{
+	font-size: 12px;
+	margin-top: 5px;
+	line-height: 1.15;
+	color: rgba(255,255,255,0.6);
+}

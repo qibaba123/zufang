@@ -1,0 +1,57 @@
+.wrap {
+	padding-top: 10px;
+}
+.result-list {
+	padding-bottom: 30px;
+	background-color: #fff;
+	border-top: 1px solid #E9E9E9;
+	border-bottom: 1px solid #E9E9E9;
+}
+.result-list li {
+	padding: 0 5px;
+}
+.result-list li a {
+	display: block;
+	overflow: hidden;
+	padding: 10px 2%;
+	border-bottom: 1px dashed #f0f0f0;
+}
+.result-list li a>div {
+	float: left;
+	position: relative;
+}
+.result-list li a>div.user-info {
+	width: 60%;
+}
+.result-list li a>div.user-info img {
+	width: 60px;
+	margin-left: 0;
+	vertical-align: middle;
+	box-sizing: border-box;
+	border: 1px solid #DEDEDE;
+}
+.result-list li a>div.user-info p {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 70px;
+	height: 60px;
+	line-height: 60px;
+	color: #888;
+	font-size: 15px;
+}
+.result-list li a>div.result {
+	padding: 5px 0;
+	width: 40%;
+}
+.result-list li a>div.result p {
+	line-height: 25px;
+	text-align: right;
+	color: #888;
+}
+.result-list li a>div.result p span {
+	font-size: 18px;
+	color: #FF8603;
+	margin-left: 10px;
+}

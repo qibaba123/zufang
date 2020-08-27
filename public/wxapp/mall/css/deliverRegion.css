@@ -1,0 +1,351 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    list-style: none;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+address, caption, cite, code, dfn, em, th {
+    font-style: normal;
+    font-weight: normal;
+}
+html {
+    color: #333;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 100%;
+}
+/* IE6对positon:fixed的单独处理修正IE6滚动抖动的bug */
+*html, *html body {
+    background-image: url(about:blank);/*修正IE6滚动抖动的bug*/
+    background-attachment: fixed;/*根据自己实际，非必需*/
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea, h1,h2,h3,h4,h5,h6{
+    color: #333;
+    outline: none;
+    background-color: #fff;
+    font: 14px/160% "Microsoft Yahei","Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+input, select, textarea {
+    font-size: 100%;
+}
+
+/* 重置button边框 */
+button {
+    border: none;
+}
+
+/* 去掉各Table cell 的边距并让其边重合 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* IE bug fixed: th 不继承 text-align*/
+th {
+    text-align: inherit;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption, th {
+    text-align: left;
+}
+
+/* 去除默认边框 */
+fieldset, img {
+    border: none;
+    outline: none;
+    -moz-outline: none;
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display: block;
+}
+nav ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+a:hover{
+    opacity: 0.9;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);  
+}
+img{
+    display: block;
+    border: 0;
+}
+/* change colours to suit your needs */
+ins {
+    background-color: #ff9;
+    color: #333;
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color: #ff9;
+    color: #333;
+    font-style: italic;
+    font-weight: bold;
+}
+del {
+    text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+}
+input, select {
+    vertical-align: middle;
+}
+
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    content: "";
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+.zent-btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 28px;
+    padding: 0 10px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    border: 1px solid #bbb;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+.zent-btn+.zent-btn {
+    margin-left: 10px;
+}
+.zent-btn-primary {
+    color: #fff;
+    background: #38f;
+    border-color: #38f;
+}
+.zent-btn.zent-btn-primary:hover{
+    opacity: 0.9;
+}
+.zent-btn.btn-wide:hover{
+    color: #38f;
+    border-color: #38f;
+}
+.area-box{
+    padding:20px;
+}
+/*选择区域弹出层*/
+.area-modal-wrap{
+    display: none;
+}
+.area-modal-wrap .modal-mask {
+    position: fixed;
+    background-color: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+.area-modal{
+    position: absolute;
+    left: 50%;
+    margin-left: -345px;
+    width: 690px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    z-index: 1001;
+    top: 150px;
+}
+.area-modal-wrap .area-modal-head{
+    padding: 15px 10px;
+    background: #F6F6F6;
+    font-size: 14px;
+    line-height: 14px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.area-modal-wrap .area-editor-wrap{
+    padding: 30px 0;
+    width: 560px;
+    margin: 0 auto;
+}
+.area-add{
+    width: 150px;
+    float: left;
+    padding-top: 160px;
+    text-align: center;
+}
+.area-modal-wrap .area-editor-wrap .area-editor-column{
+    float: left;
+    width: 203px;
+    height: 375px;
+    border: 1px solid #e5e5e5;
+    box-sizing: content-box;
+}
+.area-modal-wrap .area-editor-wrap .area-editor-column.area-editor-column-used {
+    float: right;
+}
+.area-modal-wrap .area-editor>.area-editor-list{
+    padding: 0;
+    overflow: auto;
+}
+.area-modal-wrap .area-editor>.area-editor-list{
+    height: 332px;
+}
+.area-modal-wrap .area-editor>.area-editor-list li{
+    box-sizing: border-box;
+    width: 100%;
+}
+.area-modal-wrap .area-editor-list-title {
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px 0 10px;
+    margin: 0;
+    font-weight: normal;
+    width: 100%;
+    box-sizing: border-box;
+}
+.area-modal-wrap .area-editor-list-title.area-editor-list-select {
+    background: #d7d7d7;
+}
+.area-modal-wrap .area-editor-list-title.checked{
+    background:url('../deliverRegion/selected.png') 95% center no-repeat #d7d7d7;
+    background-size: 15px;
+}
+.area-modal-wrap .area-editor-list-title {
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px 0 10px;
+    margin: 0;
+    font-weight: normal;
+}
+.area-modal-wrap .area-editor-list-title .area-editor-list-title-content {
+    position: relative;
+    top: 5px;
+    padding-left: 20px;
+    line-height: 30px;
+    cursor: pointer;
+}
+.area-modal-wrap .area-editor-list-select .area-editor-ladder-toggle {
+    background-color: #fff;
+    color: #d7d7d7;
+}
+.area-modal-wrap .area-editor-ladder-toggle {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #d7d7d7;
+    color: #fff;
+    line-height: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.area-modal-wrap .area-editor-depth1 .area-editor-ladder-toggle {
+    left: 12px;
+    text-indent: 0;
+}
+.area-modal-wrap .area-editor-depth1 {
+    text-indent: 1em;
+}
+.area-modal-wrap .area-editor-list {
+    padding: 0;
+    overflow: auto;
+}
+.area-modal-wrap .area-editor-remove-btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #d7d7d7;
+    color: #fff;
+    line-height: 15px;
+    text-align: center;
+    text-indent: 0;
+    margin-top: 8px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.area-modal-wrap .area-editor-head {
+    margin: 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+    padding: 10px 0;
+    font-weight: normal;
+    background: #f6f6f6;
+    border-bottom: 1px solid #e5e5e5;
+}
+.area-modal-wrap .area-modal-foot {
+    padding: 15px 10px;
+    background: #F6F6F6;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+}
+

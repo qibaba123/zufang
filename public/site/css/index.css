@@ -1,0 +1,248 @@
+
+/* 主内容区域样式 */
+.main-con{
+	width: 100%;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+.main-con .pic-show{
+	width: 100%;
+	padding-top: 0;
+}
+.main-con .pic-show a{
+	display: block;
+}
+.main-con .pic-show img{
+	width: 100%;
+}
+.main-con .backstage-function{
+	padding:50px 0;
+	width: 1220px;
+	margin:0 auto;
+}
+.main-con .backstage-function h3{
+	color: #FF8C39;
+	font-size: 32px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+.main-con .backstage-function p{
+	text-indent: 2em;
+	line-height: 1.8;
+	color: #666;
+	letter-spacing: 1px;
+	font-size: 16px;
+	padding:0 20px;
+}
+/* 天店通特点新增样式 */
+.characteristic{
+	padding:50px 0;
+	width: 1220px;
+	margin:0 auto;
+}
+.characteristic h3{
+	color: #FF8C39;
+	font-size: 45px;
+	font-weight: normal;
+	text-align: center;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+}
+.characteristic-list{
+	overflow: hidden;
+	padding:0 28px;
+	margin-top: 50px;
+}
+.characteristic-list li{
+	width: 566px;
+	height: 200px;
+	float: left;
+	position: relative;
+	margin-bottom: 30px;
+}
+.characteristic-list li.marginR{
+	margin-right: 30px;
+}
+.characteristic-list li img{
+	width: 100%;
+}
+.characteristic-list li>div{
+	position: absolute;
+	left:20%;
+	top:0;
+	color: #fff;
+	padding: 30px 0;
+	max-width: 70%;
+	// text-align: center;
+}
+.characteristic-list li>div h4{
+	font-size: 25px;
+	line-height: 3;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	letter-spacing: 1px;
+}
+.characteristic-list li>div a{
+	display: block;
+	font-size: 18px;
+	line-height: 2;
+	color:rgba(255,255,255,0.7);
+	letter-spacing: 0.5px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+
+
+.main-con .can-doing>h3{
+	width: 1220px;
+	margin:0 auto;
+	text-align: center;
+	font-size: 32px;
+	line-height: 1;
+	margin-bottom: 35px;
+}
+.main-con .can-doing>h3 img{
+	margin:0 auto;
+	height: 35px;
+}
+/* 如何使用天店通 */
+.use-step{
+	overflow: hidden;
+	width: 1180px;
+	margin:80px auto 60px;
+}
+.use-step>div,.use-step>span{
+	float: left;
+	width: 190px;
+	height: 180px;
+}
+.use-step>div{
+	background:url(../images/bg.png) no-repeat;
+	background-position: center;
+}
+.use-step>span {
+	width: 140px;
+	background:url(../images/jt.png) no-repeat;
+	background-position: center;
+}
+.use-step>div p{
+	width: 70%;
+	margin: 70px auto 62px;
+	color: #fff;
+	text-align: center;
+	font-size: 18px;
+	line-height: 24px;
+}
+.helptip{
+	width: 1180px;
+	margin:0 auto 80px;
+}
+.helptip img{
+	width: 100%;
+}
+/* 三级分销能为你做什么 */
+.main-con .can-doing .divider{
+	height: 31px;
+	width: 1220px;
+	margin:0 auto;
+	background: url(../images/fxb-sy_20.png) no-repeat;
+	background-position: center;
+	background-size: auto 31px;
+}
+.main-con .part-con{
+	padding-top: 50px;
+	width: 100%;
+}
+.main-con .part-con .container{
+	width: 1220px;
+	margin:0 auto;
+	overflow: hidden;
+}
+.bg-gray{
+	background-color: #F8F8F8;
+}
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}
+.main-con .part-con .part-intro{
+	background: url('') no-repeat;
+	background-size: 129px;
+	background-position: left top;
+	padding:56px 45px 45px 110px;
+	margin-left: 45px;
+	position: relative;
+	top: 70px;
+}
+.main-con #part-con1 .part-intro{
+	background-image: url(../images/fxb-sy_27.png);
+}
+.main-con #part-con2 .part-intro{
+	background-image: url(../images/fxb-sy_35.png);
+}
+.main-con #part-con3 .part-intro{
+	background-image: url(../images/fxb-sy_42.png);
+}
+.main-con #part-con4 .part-intro{
+	background-image: url(../images/fxb-sy_50.png);
+}
+.main-con .part-con .part-intro h4{
+	font-size: 23px;
+	font-weight: normal;
+	text-align: left;
+	line-height: 1.5;
+	margin-bottom:20px;
+}
+.main-con .part-con .part-intro p{
+	line-height: 2;
+	font-size: 15px;
+	position: relative;
+}
+.main-con .part-con .part-intro p span{
+	position: absolute;
+	left:-20px;
+	top:15px;
+	height: 6px;
+	width: 6px;
+	-webkit-transform:translateY(-50%);
+	transform:translateY(-50%);
+	background-color: #FF8C39;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.quick-nav{
+	position: fixed;
+  top: 200px;
+  right: 60px;
+  color: #323a47;
+  z-index: 56;
+}
+.quick-nav>a{
+	display: block;
+	margin-bottom: 10px;
+	height: 8px;
+	width: 8px;
+	border:1px solid #92AFD0;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #fff;
+	-ms-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.quick-nav>a.active{
+	background-color: #92AFD0;
+}

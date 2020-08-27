@@ -1,0 +1,258 @@
+.message-set,h3,h4{
+    font-family: "黑体";
+}
+.page-content{
+    padding: 20px;
+}
+.ui-block-head {
+    position: relative;
+    padding: 10px;
+    line-height: 20px;
+    background: #f8f8f8;
+}
+.ui-block-head h3 {
+    display: inline-block;
+    margin: 0 12px 0 0;
+    padding: 0 0 0 10px;
+    border-left: 4px solid #f70;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.ui-block-head .block-title {
+    margin-right: 5px;
+}
+.switches {
+    margin:0;
+    margin-top: 10px;
+}
+.switch-item {
+    float: left;
+    width: 24%;
+    margin-bottom: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 1.33%;
+    background-color: #f3f4f5;
+    padding: 10px 20px;
+    position: relative;
+    border-radius: 3px;
+}
+.switch-item:hover{
+    background-color: #F2F2F2;
+}
+a {
+    color: #38f;
+    cursor: pointer;
+}
+.switch-item a:hover{
+    color: #38f;
+}
+.switch-item .title {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    height: 44px;
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    word-break:break-all;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+}
+.switch-item .switch-setting {
+    color: #07d;
+}
+.switch-item div{
+    overflow: hidden;
+}
+.switch-item:nth-child(4n) {
+    margin-right: 0;
+}
+.shortmenu-intro{
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+input[type=checkbox].ace.ace-switch.ace-switch-5+.lbl::before {
+    content: "已启用\a0\a0\a0\a0\a0\a0\a0未启用";
+}
+input[type=checkbox].ace.ace-switch.ace-switch-5+.lbl::before {
+    background-color: #666666;
+    border: 1px solid #666666;
+}
+input[type=checkbox].ace.ace-switch {
+    width: 110px;
+    height: 36px;
+}
+input[type=checkbox].ace.ace-switch.ace-switch-4+.lbl::before, input[type=checkbox].ace.ace-switch.ace-switch-5+.lbl::before{
+    line-height: 35px;
+    height: 36px;
+    overflow: hidden;
+    border-radius: 18px;
+    width: 100px;
+    font-size: 14px;
+}
+input[type=checkbox].ace.ace-switch.ace-switch-4:checked+.lbl::before, input[type=checkbox].ace.ace-switch.ace-switch-5:checked+.lbl::before {
+    background-color: #44BB00;
+    border-color: #44BB00;
+}
+input[type=checkbox].ace.ace-switch.ace-switch-4+.lbl::after, input[type=checkbox].ace.ace-switch.ace-switch-5+.lbl::after{
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 50%;
+    top: 1px;
+}
+input[type=checkbox].ace.ace-switch.ace-switch-4:checked+.lbl::after, input[type=checkbox].ace.ace-switch.ace-switch-5:checked+.lbl::after{
+    left:64px;
+    top: 1px
+}
+.shortmenu-intro em{
+    color: red;
+}
+
+.box{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.page-content{
+    padding:20px;
+}
+.message{
+    font-family: "黑体";
+    position: relative;
+    width: 60%;
+    min-width: 700px;
+    margin:0 auto;
+}
+.message label{
+    width: 80px;
+    text-align: right;
+    position: absolute;
+    padding-top: 20px;
+    left:0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+}
+.message .message-con{
+    margin-right: 170px;
+}
+.message-con .edit-text{
+    width:100%;
+    padding: 15px;
+    padding-right: 0;
+}
+.message-con .edit-text textarea{
+    width: 100%;
+    padding: 10px;
+    line-height: 1.6;
+    resize: vertical;
+    border:1px solid #D5D5D5;
+    -webkit-border-radius: 3px 3px 0 0!important;
+    -moz-border-radius: 3px 3px 0 0!important;
+    -ms-border-radius: 3px 3px 0 0!important;
+    -o-border-radius: 3px 3px 0 0!important;
+    border-radius: 3px 3px 0 0!important;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    outline: none;
+}
+.message-con .edit-text textarea:focus{
+    border-color: #81C1F0!important;
+    -webkit-box-shadow: 0 0 5px #81C1F0!important;
+    -moz-box-shadow: 0 0 5px #81C1F0!important;
+    -ms-box-shadow: 0 0 5px #81C1F0!important;
+    -o-box-shadow: 0 0 5px #81C1F0!important;
+    box-shadow: 0 0 5px #81C1F0!important;
+}
+.message .short-opera{
+    width: 160px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    padding: 15px;
+    border:1px solid #dfdfdf;
+    -webkit-border-radius: 3px!important;
+    -moz-border-radius: 3px!important;
+    -ms-border-radius: 3px!important;
+    -o-border-radius: 3px!important;
+    border-radius: 3px!important;
+    min-height: 200px;
+}
+.message .short-opera p{
+    text-align: center;
+    padding:8px;
+    color: #38f;
+    margin:0;
+    cursor: pointer;
+}
+.message .short-opera p:hover{
+    font-weight: bold;
+}
+.message .short-opera .clear{
+    color: red;
+    font-size: 15px;
+}
+.message .short-opera .clear:hover{
+    font-weight: bold;
+}
+.character{
+    text-align: right;
+    padding: 5px;
+    border: 1px solid #D5D5D5;
+    border-top: 0;
+    color: #999;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    -ms-border-radius: 0 0 3px 3px;
+    -o-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    background-color: #f8f8f8;
+}
+.red{
+    color: red;
+}
+.setting-box{
+    min-width: 700px;
+    width: 60%;
+    margin:0 auto;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.setting-box h4{
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 3;
+    margin: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #ddd;
+}
+.switch-box{
+    margin-left: 95px;
+}
+.switch-box>div{
+    margin-bottom: 10px;
+    line-height: 34px;
+}
+.switch-box input[type=checkbox].ace.ace-switch + .lbl {
+    margin-top: -3px;
+}
+.switch-box input[type=checkbox].ace.ace-switch.ace-switch-5 + .lbl::before {
+    content: "\a0\a0是\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0否";
+}
+.select-message{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+.select-message select.form-control{
+    width: 400px;
+}

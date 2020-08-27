@@ -1,0 +1,367 @@
+
+.bill-wrap{
+	padding:15px;
+}
+.search-wrap{
+	padding:15px 20px;
+	background-color:#fff;
+	border-radius:4px;
+	margin-bottom: 15px;
+}
+.search-wrap .input-item{
+	display: inline-block;
+	vertical-align: top;
+	margin:6px 0;
+}
+.search-wrap .input-item label{
+	line-height:36px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 10px;
+    width: 60px;
+    text-align: right;
+}
+.search-wrap .input-box{
+	display: inline-block;
+	vertical-align: middle;
+}
+.search-wrap .cus-input{
+	border:1px solid #eee;
+	height:38px;
+	line-height:38px;
+	text-align:center;
+	width:170px;
+	outline:none;
+	border-radius: 4px;
+	background-color: transparent;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+.search-wrap select.cus-input{
+	-webkit-appearance: none;
+	text-align: center;
+    text-align-last: center;
+}
+.search-wrap .input-icon{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+.search-wrap .input-icon .input-box{
+	position: relative;
+	z-index: 1;
+}
+.search-wrap .input-icon .icon{
+	position: absolute;
+	right: 8px;
+	top: 10px;
+	width: 20px;
+}
+.search-wrap .opera-area{
+	padding: 0 5px;
+	position: relative;
+	text-align: center;
+}
+.search-wrap .opera-btn{
+	display: inline-block;
+    vertical-align: middle;
+    height: 40px;
+    line-height: 40px;
+    width: 150px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(left,#2675FF,#5D62FF);
+    background: -o-linear-gradient(right,#2675FF,#5D62FF);
+    background: -moz-linear-gradient(right,#2675FF,#5D62FF);
+    background: linear-gradient(to right,#2675FF,#5D62FF);
+    color: #fff;
+    margin: 0 50px;
+    cursor: pointer;
+}
+.search-wrap .opera-btn:hover{
+	opacity: 0.9;
+}
+.search-wrap .opera-btn.yellow-btn{
+	background: -webkit-linear-gradient(left,#FFD25F,#F8B700);
+    background: -o-linear-gradient(right,#FFD25F,#F8B700);
+    background: -moz-linear-gradient(right,#FFD25F,#F8B700);
+    background: linear-gradient(to right,#FFD25F,#F8B700);
+}
+.total-wrap{
+	padding:20px 0;
+	background-color:#fff;
+	border-radius:4px;
+	justify-content:center;
+	-webkit-justify-content:center;
+	-o-justify-content:center;
+	-moz-justify-content:center;
+	margin-bottom: 15px;
+}
+.total-wrap .total-item{
+	text-align:center;
+}
+.total-wrap .total-item .desc{
+	color:#333;
+	font-size:18px;
+	font-weight:bold;
+	letter-spacing: 1px;
+}
+.total-wrap .total-item .num{
+	color:#333;
+	font-size:15px;
+	margin-top:2px;
+}
+.bill-content{
+	padding:0 20px;
+	background-color:#fff;
+	border-radius:4px;
+}
+.bill-content .billbtn-area{
+	padding-top: 15px;
+	font-size: 0;
+	padding-bottom: 15px;
+}
+.bill-content .billbtn-area .bill-btn{
+	width:90px;
+	height:32px;
+	line-height:32px;
+	text-align:center;
+	font-size:15px;
+	color:#C1C1C1;
+	border-radius:4px;
+	border:1px solid #C1C1C1;
+	display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.bill-content .billbtn-area .income-btn{
+	border-right:none;
+	border-radius: 4px 0 0 4px;
+}
+.bill-content .billbtn-area .refund-btn{
+	border-left:none;
+	border-radius: 0 4px 4px 0;
+}
+.bill-content .billbtn-area .bill-btn.active{
+	border:1px solid #053FFF;
+	color:#053FFF;
+}
+.bill-list{
+	display: none;
+}
+.bill-list.show{
+	display: block;
+}
+.bill-table{
+	width: 100%;
+	/*border-top:1px solid #eee;*/
+}
+.bill-table th{
+	padding:16px 0;
+	font-size:15px;
+	color:#111;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	text-align: center;
+}
+.bill-table tbody td{
+	padding:16px 0;
+	border-top:1px solid #eee;
+	text-align: center;
+}
+
+/*弹窗内容*/
+.modal-part{
+	display: none;
+}
+.hx-modal{
+	box-sizing: border-box;
+	padding: 0 20px 10px;
+	line-height: 28px;
+}
+.hx-modal .info-list{
+	padding: 10px 0;
+}
+.hx-modal .info-list li{
+	display: flex;
+}
+.info-list li .good-list{
+	flex: 1;
+	max-width: 240px;
+}
+.info-list li .good-list p{
+	padding: 4px 0;
+	line-height: 1.4;
+}
+.modal-btnarea{
+	padding: 10px 0;
+}
+.modal-btnarea .modal-btn{
+	width: 92px;
+	border-radius: 3px;
+	height: 38px;
+	line-height: 38px;
+	color: #fff;
+	background: -webkit-linear-gradient(left,#2675FF,#5D62FF);
+	background: -o-linear-gradient(right,#2675FF,#5D62FF);
+	background: -moz-linear-gradient(right,#2675FF,#5D62FF);
+	background: linear-gradient(to right,#2675FF,#5D62FF);
+	color: #fff;
+	text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+}
+.modal-btnarea .modal-btn:hover{
+	opacity: 0.95;
+}
+.modal-btnarea .print-btn{
+	float: left;
+	background:#CCCCCC;
+	color: #fff;
+}
+.modal-btnarea .close-btn{
+	float: right;
+}
+/*退款弹窗内容样式*/
+.tk-info{
+	padding: 15px 0 5px;
+}
+.tk-info .money-show{
+	width: 200px;
+    margin-left: 70px;
+}
+.tk-info .money-show td{
+	border: 1px solid #F1F1F1;
+	width: 50%;
+	text-align: center;
+	padding:4px 0;
+	color: #666;
+}
+.tk-info .money-input-box{
+	margin-top: 5px;
+}
+.tk-info .input-item{
+	margin-top: 15px;
+}
+.tk-info .input-item label{
+	color: #666;
+	padding-right: 10px;
+	width: 70px;
+	box-sizing: border-box;
+}
+.tk-info .input-item .tag{
+	color: #055DFF;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.tk-info .input-item .cus-input{
+	border:1px solid #f1f1f1;
+	height:38px;
+	line-height:38px;
+	text-align:left;
+	width:100%;
+	outline:none;
+	border-radius: 4px;
+	background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+.tk-info .input-item .cus-input:focus{
+	border-color: #ddd;
+}
+.tk-info .input-item select.cus-input{
+	background: #fff url(/public/wxapp/cashier/img/icon_xia.png) no-repeat 98% center;
+	background-size: 20px;
+	-webkit-appearance: none;icon_xia.png
+}
+.tk-info .input-item .tkgood-select{
+	background: #fff url(/public/wxapp/cashier/img/icon_xia.png) no-repeat 98% center;
+	background-size: 20px;
+	position: relative;
+}
+.tk-info .tkgood-select .choose-name{
+	text-align: left;
+	height:36px;
+	line-height:36px;
+}
+.tk-info .tkgood-select .tkgood-list{
+    position: absolute;
+    left: 0;
+    top: 38px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 6px #ccc;
+    border-radius: 4px;
+    z-index: 1;
+    display: none;
+}
+.tk-info .tkgood-select .tkgood-list.show{
+	display: block;
+}
+.tk-info .tkgood-list .good-num{
+	line-height: 36px;
+	border-bottom: 1px solid #eee;
+	padding: 0 10px;
+	cursor: pointer;
+}
+.tk-info .tkgood-list .good-num.active{
+	color: #1D78FF;
+}
+.tkgood-list span{
+	display: inline-block;
+	vertical-align: middle;
+}
+.tkgood-list .good-name{
+	max-width: 148px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-right: 3px;
+}
+.tkgood-list .num-change{
+	font-size: 0;
+}
+.tkgood-list .num-change span{
+	height: 20px;
+	min-width: 20px;
+}
+.tkgood-list .num-change span.num{
+	color: #1D78FF;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+}
+.tkgood-list .num-change span.minus{
+	border:1px solid #EEEEEE;
+	background:url(/public/wxapp/cashier/img/icon_jian.png) no-repeat center;
+	background-size: 8px;
+}
+.tkgood-list .num-change span.add{
+	border:1px solid #EEEEEE;
+	background:url(/public/wxapp/cashier/img/icon_jia_black.png) no-repeat center;
+	background-size: 8px;
+}
+.tkgood-list .num-change span.add.dis{
+	background-image:url(/public/wxapp/cashier/img/icon_jia_hui.png);
+}
+.tk-info .choose-opera span{
+	text-align: center;
+	color: #999999;
+	cursor: pointer;
+}
+.tk-info .choose-opera .confirm-btn{
+	color: #1D78FF;
+	position: relative;
+}
+.tk-info .choose-opera .confirm-btn:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 25%;
+	height: 50%;
+	width: 1px;
+	background-color: #eee;
+}
+

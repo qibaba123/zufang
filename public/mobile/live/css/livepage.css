@@ -1,0 +1,245 @@
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.live-box video{
+	width: 100%;
+}
+.live-info{
+	background-color: #030303;
+	overflow: hidden;
+}
+.live-info p{
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	padding: 0 10px;
+}
+.live-info p.scan-num{
+	padding-left: 32px;
+	background: url(../images/icon_scan.png) no-repeat 10px center;
+	background-size: 18px;
+}
+.live-info .fr{
+	font-size: 0;
+	padding-left: 2px;
+	background-color: #3D0204;
+	width: 75px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.live-info .fr .icon-hide,.live-info .fr span{
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	font-size: 14px;
+	vertical-align: middle;
+}
+.live-info .fr .icon-hide {
+	width: 20px;
+	background: url(../images/icon_hide.png) no-repeat center;
+	background-size: 12px;
+	-webkit-transform:rotate(180deg);
+	transform:rotate(180deg);
+}
+.live-info .fr .hide-video{
+	display: none;
+}
+.live-info .fr .show-video{
+	display: inline-block;
+}
+.live-info .fr.show .hide-video{
+	display: inline-block;
+}
+.live-info .fr.show .show-video{
+	display: none;
+}
+.live-info .fr.show .icon-hide{
+	-webkit-transform:rotate(0);
+	transform:rotate(0);
+}
+/*聊天信息*/
+.chat-content{
+	position: absolute;
+    width: 100%;
+    bottom: 42px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.chat-content li{
+	overflow: hidden;
+	padding:10px;
+}
+.chat-content .left-mess{
+	text-align: left;
+}
+.chat-content .avatar{
+	display: inline-block;
+	vertical-align: top;
+	height: 45px;
+	width: 45px;
+	border-radius: 6px;
+}
+.chat-content .left-mess .info-txt{
+	display: inline-block;
+	max-width: 70%;
+	margin-left: 5px;
+}
+.chat-content .left-mess .user-name{
+	font-size: 13px;
+	padding-left: 3px;
+}
+.chat-content .chat-txt{
+	padding: 6px 8px;
+	border: 1px solid #e8e8e8;
+	border-radius: 4px;
+	background-color: #fff;
+}
+.chat-content .right-mess{
+	text-align: right;
+}
+.chat-content .right-mess .info-txt{
+	display: inline-block;
+	max-width: 70%;
+	margin-right: 5px;
+}
+.chat-content .right-mess .user-name{
+	font-size: 13px;
+	padding-right: 3px;
+}
+.chat-content .time-show{
+	padding: 5px;
+	text-align: center;
+}
+.chat-content .cur-time{
+	display: inline-block;
+	padding: 3px 8px;
+	font-size: 13px;
+	color: #fff;
+	background-color: #CCCCCC;
+	border-radius: 5px;
+	line-height: 1.5;	
+}
+/*底部聊天输入框*/
+.bottom-chat{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	max-width: 750px;
+	background-color: #fff;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.bottom-chat.border-t:before{
+	background-color: #ccc;
+}
+.chat-opera{
+	padding: 0 10px;
+	height: 42px;
+}
+.mess-input{
+	padding-right: 5px;
+}
+.mess-input input{
+	padding: 8px 10px;
+	border:1px solid #ccc;
+	width: 100%;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.mess-biqoqing,.mess-add{
+	height: 42px;
+	width: 38px;
+}
+.mess-biqoqing span,.mess-add span{
+	display: block;
+	height: 100%;
+	width: 100%;
+	background: url() no-repeat center;
+	background-size: 30px;
+}
+.mess-biqoqing span:active,.mess-add span:active{
+	opacity: 0.9;
+}
+.mess-biqoqing span{
+	background-image: url(../images/icon_biaoqing.png);
+}
+.mess-add span{
+	background-image: url(../images/icon_add.png);
+	background-size: 34px;
+}
+.bottom-chat .add-box{
+	width: 100%;
+	display: table;
+	border-top: 1px solid #eee;
+	display: none;
+}
+.bottom-chat .add-item{
+	display: table-cell;
+	width: 1000px;
+	text-align: center;
+	padding: 10px 0;
+}
+.bottom-chat .add-item span{
+	display: block;
+	height: 48px;
+	width: 48px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border:1px solid #ddd;
+	background: url() no-repeat center;
+	background-size: 32px;
+	margin:0 auto;
+}
+.bottom-chat .add-item span.icon_ttp{
+	background-image: url(../images/icon_ttp.png);
+}
+.bottom-chat .add-item span.icon_fhb{
+	background-image: url(../images/icon_fhb.png);
+}
+.bottom-chat .add-item span.icon_slp{
+	background-image: url(../images/icon_slp.png);
+}
+.bottom-chat .add-item span.icon_wym{
+	background-image: url(../images/icon_wym.png);
+}
+.chat-content .product-mess{
+      padding: 6px 8px;
+      border: 1px solid #e8e8e8;
+      border-radius: 4px;
+      background-color: #fff;
+    }
+    .product-mess .good-img{
+      height: 55px;
+      width: 55px;
+      background-color: #f0f0f0;
+      float: left;
+    }
+    .product-mess .good-intro{
+      height: 55px;
+      margin-left: 65px;
+    }
+    .product-mess .good-intro h4{
+      line-height: 16px;
+      font-size: 13px;
+      text-align: left;
+      margin-bottom: 2px;
+      padding: 3px 0;
+      height: 36px;
+        box-sizing: border-box;
+        display: -webkit-box !important;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        word-break:break-all;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:2;
+    }
+    .product-mess .good-intro .price{
+      text-align: left;
+      color: #FF5050;
+      line-height: 1.2;
+    }

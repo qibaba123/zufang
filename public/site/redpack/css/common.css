@@ -1,0 +1,132 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    list-style: none;
+}
+address,caption,cite,code,dfn,em,strong,th,var,i { 
+    font-weight: normal; 
+    font-style: normal; 
+}
+/* HTML5 媒体文件跟 img 保持一致 */
+audio, canvas, video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 100%;
+}
+html,body{
+    min-width: 1200px;
+    overflow: auto;
+    width: 100%
+}
+/* IE6对positon:fixed的单独处理修正IE6滚动抖动的bug */
+*html, *html body {
+    background-image: url(about:blank);/*修正IE6滚动抖动的bug*/
+    background-attachment: fixed;/*根据自己实际，非必需*/
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea, h1,h2,h3,h4,h5,h6{
+    color: #333;
+    outline: none;
+    font: 14px/160% "Microsoft Yahei","Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+input, select, textarea {
+    font-size: 100%;
+}
+body{
+    background: rgb(249,249,249);
+}
+/* 去除默认边框 */
+fieldset, img {
+    border: none;
+    outline: none;
+    -moz-outline: none;
+}
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+/*a:hover{
+    opacity: 0.9;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=90);  
+}*/
+/*去除input默认样式*/
+input[type="button"], input[type="submit"], input[type="reset"],textarea,input,button{
+    -webkit-appearance: none;
+    border:0;
+    outline:none;
+}
+
+/*去除input属性type=number时候后面的额上下小尾巴*/
+input[type=number] {
+    -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+img{
+    display: block;
+    border: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*左右浮动*/
+.lt{
+    float:left;
+}
+.rt{
+    float:right;
+}
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    content: "";
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+.flex-wrap {
+    display: box;
+    display: -ms-box;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+ }
+.flex-con {
+    flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    box-flex: 1;
+    -ms-box-flex: 1;
+    -webkit-box-flex: 1;
+ }
+.flex-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction:column;
+    -ms-flex-direction:column;
+    -flex-direction:column;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+}

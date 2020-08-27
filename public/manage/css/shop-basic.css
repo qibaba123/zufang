@@ -1,0 +1,595 @@
+.c-gray {
+    color: #999 !important;
+}
+.red {
+    color: #f30;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+.page-content {
+    padding-top: 20px;
+}
+.settlement-info {
+    border: 1px solid #e5e5e5;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+.ui-box {
+    margin-bottom: 15px;
+}
+.account-info {
+    padding: 20px;
+    background: #f9f9f9;
+    zoom: 1;
+    position: relative;
+}
+.account-info:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.account-info img {
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+.account-info .account-info-meta {
+    margin-left: 100px;
+    margin-right: 220px;
+    margin-top: -6px;
+}
+.account-info .right-code {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 120px;
+}
+.account-info .right-code .btn {
+
+    /*position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -15px;*/
+    height: 30px;
+    line-height: 30px;
+    z-index: 1;
+    background-color: #fff;
+}
+.account-info .right-code .btn:hover {
+    background-color: #fafafa !important;
+}
+.account-info .right-code p {
+    margin: 0;
+    line-height: 1.5;
+}
+.account-info .right-code .code {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+    z-index: 1;
+    color: #666;
+    display: none;
+    margin-top: 5px;
+    padding-bottom: 10px;
+}
+.account-info .right-code a {
+    color: #666;
+    font-size: 12px;
+    text-decoration: none;
+}
+.account-info .right-code img {
+    width: 95px;
+    height: 95px;
+    float: none;
+}
+.account-info .right-code .copy_input {
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.5;
+    cursor: pointer;
+    color: #666;
+}
+.account-info .right-code .copy_input:hover {
+    color: #333;
+}
+.account-info .info-item {
+    margin-top: 7px;
+}
+.account-info .account-info-meta label {
+    display: inline;
+    color: #999;
+    cursor: text;
+}
+.balance {
+    padding: 10px 0;
+    border-top: 1px solid #e5e5e5;
+    background: #fff;
+    zoom: 1;
+}
+.balance-info {
+    text-align: center;
+    padding: 0 15px 30px;
+}
+.balance .balance-info {
+    float: left;
+    width: 25%;
+    margin-left: -1px;
+    padding: 0 15px;
+    border-left: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.balance .balance-info2 {
+    width: 50%;
+}
+.balance .balance-info .balance-title {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 10px;
+}
+.balance .balance-info .balance-title span {
+    font-size: 12px;
+}
+.balance .balance-info .balance-content {
+    zoom: 1;
+}
+.balance .balance-info .balance-content .money {
+    font-size: 25px;
+    color: #f60;
+}
+.balance .balance-info .balance-content span, .balance .balance-info .balance-content a {
+    vertical-align: baseline;
+    line-height: 26px;
+}
+.balance .balance-info .balance-content .unit {
+    font-size: 12px;
+    color: #666;
+}
+.pull-right {
+    float: right;
+}
+.balance .balance-info .balance-content .money {
+    font-size: 25px;
+    color: #f60;
+}
+.balance .balance-info .balance-content .money-font {
+    font-size: 20px;
+}
+.ui-btn {
+    display: inline-block;
+    border-radius: 2px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 12px;
+    cursor: pointer;
+    color: #333;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 12px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.ui-btn-primary {
+    color: #fff;
+    background: #07d;
+    border-color: #006cc9;
+}
+.ui-btn-primary:hover, .ui-btn-primary:focus {
+    color: #fff;
+    background-color: #0080ed;
+}
+.balance .balance-info .balance-content .btn-margin-right {
+    margin-right: 4px;
+}
+.balance-content {
+    position: relative;
+}
+
+/* 充值弹出框 */
+.ui-popover {
+    background: #ddd none repeat scroll 0 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 1px;
+    z-index: 1010;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 120%;
+    width: 300px;
+    left: auto;
+}
+.ui-popover .ui-popover-inner {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 4px;
+    min-width: 280px;
+    padding: 10px;
+}
+.ui-popover .ui-popover-inner .money-input {
+    border-radius: 4px !important;
+    line-height: 19px;
+    -webkit-transition: border linear .2s, box-shadow linear .2s;
+    -moz-transition: border linear .2s, box-shadow linear .2s;
+    -o-transition: border linear .2s, box-shadow linear .2s;
+    transition: border linear .2s, box-shadow linear .2s;
+}
+.ui-popover .ui-popover-inner .money-input:focus {
+    border: 1px solid #73b8ee;
+    -webkit-box-shadow: inset 0 1px 1px rgba(115, 184, 238, .075);
+    -moz-box-shadow: inset 0 1px 1px rgba(115, 184, 238, .075);
+    box-shadow: inset 0 1px 1px rgba(115, 184, 238, .075);
+}
+.ui-popover .arrow {
+    border: 5px solid transparent;
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+.ui-popover.top-center .arrow {
+    left: 90%;
+    margin-left: -5px;
+    top: -10px;
+}
+.ui-popover.top-left .arrow, .ui-popover.top-center .arrow, .ui-popover.top-right .arrow {
+    border-bottom-color: #ddd;
+}
+.ui-popover .arrow::after {
+    border: 5px solid transparent;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    position: relative;
+    width: 0;
+}
+.ui-popover.top-center .arrow::after {
+    left: -5px;
+    top: -3px;
+}
+.ui-popover.top-left .arrow::after, .ui-popover.top-center .arrow::after, .ui-popover.top-right .arrow::after {
+    border-bottom-color: #fff;
+}
+
+/* 提示充值金额不能为空样式 */
+.layui-layer-error {
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, .3);
+    width: 500px;
+    top: 180px !important
+}
+.layui-layer-error .layui-layer-content {
+    background-color: #FF4343;
+    padding: 8px 10px;
+    border: 1px solid #E23333;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+/* 确认充值弹出层 */
+.zent-dialog-body {
+    padding: 0 20px;
+    color: #666;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+.layui-layer-title {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+.zent-dialog-body .online-pay-content {
+    position: relative;
+}
+.zent-dialog-body .pay-info {
+    padding: 0 0 10px 0;
+    vertical-align: baseline;
+}
+.zent-dialog-body .pay-info dl {
+    zoom: 1;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.zent-dialog-body .pay-info dl:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.zent-dialog-body .pay-info dl dt {
+    float: left;
+    width: 90px;
+}
+.zent-dialog-body .pay-info dl dd {
+    margin-left: 90px;
+    line-height: 20px;
+}
+.zent-dialog-body .money {
+    color: #FF6600;
+}
+.zent-dialog-body .pay-info dl dd .money {
+    font-size: 24px;
+}
+a {
+    color: #07d;
+    text-decoration: none;
+}
+.ui-nav {
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+}
+.ui-nav ul {
+    margin-bottom: -1px;
+}
+.ui-nav li {
+    float: left;
+    margin-left: -1px;
+    list-style: none;
+}
+.ui-nav li a {
+    display: inline-block;
+    padding: 0 12px;
+    line-height: 32px;
+    color: #333;
+    border: 1px solid #e5e5e5;
+    background: #f8f8f8;
+    min-width: 80px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.zent-dialog-body .ui-nav li a {
+    padding: 0 40px;
+}
+.ui-nav li.active a, .ui-nav li a.active {
+    border-bottom-color: #fff;
+    background: #fff;
+}
+.zent-alert {
+    border-radius: 2px;
+    padding: 9px 14px;
+    font-size: 12px;
+    line-height: 28px;
+    color: #333;
+    background-color: #FFF5CB;
+    border: 1px solid #FFF5CB;
+    margin: 0 0 20px 0;
+    vertical-align: middle;
+}
+.zent-dialog-body .image-code {
+    width: 200px;
+    margin-left: 25px;
+}
+.zent-dialog-body .image-code img {
+    width: 100%;
+}
+.zent-dialog-body .online-pay-content .weixin-btn {
+    position: absolute;
+    bottom: 16px;
+    left: 250px;
+}
+.zent-dialog-body p {
+    line-height: 1.2em;
+    margin-bottom: 1em;
+}
+.zent-dialog-body .online-pay-content .weixin-btn p {
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+.zent-dialog-body .online-pay-content .weixin-btn .btn-last {
+    margin-left: 5px;
+}
+.zent-btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border-radius: 3px !important;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    border: 1px solid #bbb;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s
+}
+.zent-btn:visited {
+    color: #333;
+}
+.zent-btn:hover {
+    color: #276ACC;
+    border-color: #276ACC
+}
+.zent-btn:active {
+    color: #333;
+    background: #e5e5e5;
+    border-color: #bbb
+}
+.zent-btn.zent-btn-loading:hover, .zent-btn.zent-btn-loading:active {
+    background: #fff;
+    border: 1px solid #bbb
+}
+.zent-btn + .zent-btn {
+    margin-left: 10px
+}
+.zent-btn-large {
+    font-size: 14px;
+    height: 36px;
+    line-height: 34px;
+    padding: 0 30px
+}
+.zent-btn-small {
+    height: 26px;
+    line-height: 24px;
+    padding: 0 5px
+}
+.zent-btn-primary {
+    color: #fff;
+    background: #3283fa;
+    border-color: #3283fa
+}
+.zent-btn-primary:link, .zent-btn-primary:visited, .zent-btn-primary:focus {
+    color: #fff
+}
+.zent-btn-primary:hover {
+    color: #fff;
+    background: #66a3ff;
+    border-color: #2e7df1
+}
+.zent-btn-primary:active {
+    color: #fff;
+    background: #276ACC;
+    border-color: #2e7df1
+}
+.zent-btn-primary.zent-btn-loading:hover, .zent-btn-primary.zent-btn-loading:active {
+    background: #3283fa;
+    border-color: #3283fa
+}
+.zent-btn-primary.zent-btn-loading::after {
+    border-color: #fff transparent transparent transparent
+}
+.zent-btn-primary-outline {
+    color: #3283fa;
+    border-color: #3283fa;
+    background: #fff
+}
+.zent-btn-primary-outline:link, .zent-btn-primary-outline:visited, .zent-btn-primary-outline:focus {
+    color: #3283fa
+}
+.zent-btn-primary-outline:hover {
+    color: #276ACC;
+    border-color: #276ACC
+}
+.zent-btn-primary-outline:active {
+    color: #276ACC;
+    background: #e5e5e5;
+    border-color: #3283fa
+}
+.zent-btn-primary-outline.zent-btn-loading:hover, .zent-btn-primary-outline.zent-btn-loading:active {
+    border-color: #3283fa;
+    background: #fff
+}
+.zent-btn-primary-outline.zent-btn-loading::after {
+    border-color: #3283fa transparent transparent transparent
+}
+.table thead tr th,.table tbody tr td{
+    text-align:left;
+}
+.shop-shortfunc .col-xs-3 {
+    padding: 5px;
+}
+.shop-shortfunc .col-xs-3 a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+.shop-shortfunc h3 {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 2;
+    margin: 0;
+}
+.shop-shortfunc h3 a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #5ba7f3;
+    margin-left: 5px;
+}
+.shop-shortfunc h3 a:hover {
+    color: #38f;
+}
+.func-wrap .col-xs-3 a {
+    padding: 15px 20px;
+    color: #333;
+    text-align: left;
+    background-color: #F8F8F8;
+}
+.func-wrap .col-xs-3 a:hover {
+    color: #88D093;
+}
+.func-icon {
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    vertical-align: middle;
+    margin-right: 10px;
+    background: url() no-repeat center;
+    background-color: #88D093;
+    position: relative;
+    top: -1px;
+}
+.func-icon-1 {
+    background-image: url(/public/manage/images/func-icon/dianpuzhuangxiu.png);
+}
+.func-icon-2 {
+    background-image: url(/public/manage/images/func-icon/shangjiashangpin.png);
+}
+.func-icon-3 {
+    background-image: url(/public/manage/images/func-icon/dianpuxinxishezhi.png);
+}
+.func-icon-4 {
+    background-image: url(/public/manage/images/func-icon/dianpuxinxi.png);
+}
+.func-icon-5 {
+    background-image: url(/public/manage/images/func-icon/shouquan.png);
+}
+.func-icon-6 {
+    background-image: url(/public/manage/images/func-icon/zidingyi.png);
+}
+.func-icon-7 {
+    background-image: url(/public/manage/images/func-icon/huiyuanliebiao.png);
+}
+.func-icon-8 {
+    background-image: url(/public/manage/images/func-icon/bangzhuzhongxin.png);
+}
+.func-wrap, .tool-wrap {
+    margin-bottom: 15px;
+}
+.tool-wrap .bg-1 {
+    background-color: #C95F9D;
+}
+.tool-wrap .bg-2 {
+    background-color: #3AB3C5;
+}
+.tool-wrap .bg-3 {
+    background-color: #4290C4;
+}
+.tool-wrap .bg-4 {
+    background-color: #36C7A5;
+}
+.tool-wrap .col-xs-3 a {
+    padding: 20px 10px;
+}
+.tool-wrap .col-xs-3 a:hover {
+    opacity: 0.9;
+}
+.tool-wrap .col-xs-3 h4 {
+    font-size: 20px;
+    line-height: 1.8;
+    font-weight: normal;
+    margin: 0;
+}
+.tool-wrap .col-xs-3 p {
+    margin: 0;
+}

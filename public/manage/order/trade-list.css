@@ -1,0 +1,269 @@
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    content: "";
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+ul,li{
+    list-style: none;
+    margin:0;
+}
+p{
+    margin:0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+caption, th, td {
+    font-weight: normal;
+    vertical-align: middle;
+}
+a {
+    color: #38f;
+    cursor: pointer;
+}
+.c-gray {
+    color: #999 !important;
+}
+.page-content{
+    padding:20px;
+}
+.trade-list{
+    font-family: '黑体';
+}
+.ui-table {
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 0;
+    border: 1px solid #e5e5e5;
+}
+.ui-table .cell-30 {
+    width: 30%;
+}
+.ui-table .cell-13 {
+    width: 13%;
+}
+.ui-table th {
+    background: #f8f8f8;
+}
+.ui-table th, .ui-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ui-nav {
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+}
+.ui-nav ul {
+    zoom: 1;
+    margin-bottom: -1px;
+    margin-left: 1px;
+}
+.ui-nav li {
+    float: left;
+    margin-left: -1px;
+}
+.ui-nav li a {
+    display: inline-block;
+    padding: 0 12px;
+    line-height: 32px;
+    color: #333;
+    border: 1px solid #e5e5e5;
+    background: #f8f8f8;
+    min-width: 80px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ui-nav li.active a, .ui-nav li a.active {
+    border-bottom-color: #fff;
+    background: #fff;
+}
+.ui-table-order th, .ui-table-order td {
+    padding: 10px;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ui-table-order th {
+    background: #f8f8f8;
+}
+.ui-table-order .price-cell, .ui-table-order .number-cell {
+    text-align: right;
+}
+.ui-table-order .aftermarket-cell, .ui-table-order .customer-cell, .ui-table-order .time-cell, .ui-table-order .state-cell, .ui-table-order .pay-price-cell {
+    text-align: center;
+}
+.ui-table-order .aftermarket-cell {
+    width: 85px;
+}
+.ui-table-order .customer-cell {
+    word-break: break-all;
+    width: 110px;
+}
+.ui-table-order .time-cell {
+    padding: 10px 0px;
+}
+.ui-table-order .time-cell {
+    width: 80px;
+}
+.ui-table-order .state-cell {
+    width: 100px;
+}
+.ui-table-order .pay-price-cell {
+    width: 120px;
+}
+.ui-table-order tr {
+    border: 1px solid #f2f2f2;
+}
+.ui-table-order .separation-row {
+    border: none;
+    height: 10px;
+}
+.ui-table-order .separation-row td {
+    padding: 0;
+}
+.ui-table-order tr {
+    border: 1px solid #f2f2f2;
+}
+.ui-table-order .header-row {
+    background: #fafafa;
+    height: 30px;
+}
+.ui-table-order .header-row td {
+    padding: 5px 10px;
+}
+a.new-window {
+    color: blue;
+}
+.ui-table-order .content-row .image-cell {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding-right: 0;
+}
+.ui-table-order .content-row .image-cell img {
+    width: 60px;
+    height: 60px;
+    max-width: 60px;
+    max-height: 60px;
+}
+.ui-table-order .title-cell .goods-title {
+    line-height: 20px;
+}
+.ui-table-order p {
+    margin: 0 0 10px;
+}
+
+.ui-table-order .price-cell, .ui-table-order .number-cell {
+    text-align: right;
+}
+.ui-table-order .aftermarket-cell, .ui-table-order .customer-cell, .ui-table-order .time-cell, .ui-table-order .state-cell, .ui-table-order .pay-price-cell {
+    text-align: center;
+}
+.ui-table-order .content-row .aftermarket-cell, .ui-table-order .content-row .customer-cell, .ui-table-order .content-row .time-cell, .ui-table-order .content-row .state-cell, .ui-table-order .content-row .pay-price-cell {
+    border-left: 1px solid #f2f2f2;
+}
+.ui-table-order .aftermarket-cell {
+    width: 85px;
+}
+.ui-table-order .time-cell {
+    padding: 10px 0px;
+}
+.center, .text-center {
+    text-align: center;
+}
+.form-horizontal .control-group .control-label {
+    float: left;
+    width: 85px;
+    text-align: right;
+    padding:0;
+    line-height: 32px;
+}
+.form-horizontal .control-group{
+    margin-bottom: 5px;
+    // overflow: hidden;
+}
+.form-horizontal .control-group .controls{
+    margin-left: 85px;
+    font-size: 14px;
+}
+.form-horizontal .control-group .controls .control-action{
+    line-height: 32px;
+}
+.form-horizontal .control-group .controls label{
+    padding:0;
+    line-height: 32px;
+}
+.form-horizontal .control-group .controls input[type=radio]{
+    position: relative;
+    top: 2px;
+}
+.form-horizontal .control-group .controls .tip{
+    font-size: 12px;
+    color: #999;
+    margin-top: 3px;
+}
+.ui-table-order .remark-row td {
+    padding: 0 10px;
+    word-break: break-all;
+}
+.ui-table-order tr {
+    border: 1px solid #f2f2f2;
+}
+.ui-table-order .remark-row {
+    height: 25px;
+    line-height: 25px;
+    background: #fffaeb;
+    color: #f90;
+}
+.ui-table-order .remark-row.buyer-msg {
+    background: #FDEEEE;
+    color: #ED5050;
+}
+
+
+/* 多选搜索框 */
+.chosen-container{
+    width: 100%!important;
+}
+.chosen-container-single .chosen-single{
+    height: 34px;
+}
+.chosen-container-single .chosen-single span{
+    line-height: 34px;
+}
+.chosen-single div b:before{
+    top: 5px;
+}
+.modal-content{
+    overflow: visible;
+}
+.tuan-tag{
+    padding: 2px;
+    background-color: #ea0000;
+    color: #fff;
+    font-size: 12px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    position: relative;
+    top: -1px;
+}

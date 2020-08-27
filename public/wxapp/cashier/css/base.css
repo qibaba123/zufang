@@ -1,0 +1,47 @@
+html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #3a3a3a; background: #fff }
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { margin: 0; padding: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1 }
+html, body, button, input, select, textarea { font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif; color: #333; }
+input, select, textarea { font-size: 100%; outline: none; }
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none !important; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; }
+table { border-collapse: collapse; border-spacing: 0 }
+th { text-align: inherit }
+fieldset, img, a img { border: none }
+iframe { display: block }
+abbr, acronym { border: 0; font-variant: normal }
+del { text-decoration: line-through }
+address, caption, cite, code, dfn, em, th, var { font-style: normal; font-weight: 400 }
+ol, ul { list-style: none }
+caption, th { text-align: left }
+html, body { background-color: #f5f5f5; min-width: 1200px; width: 100%; }
+a { text-decoration: none; cursor: pointer }
+a:hover { text-decoration: none }
+img { display: block; border: 0; }
+.clearfix:after { display: block; visibility: hidden; height: 0; content: ""; clear: both; }
+.clearfix { zoom: 1; }
+.clearfix:before, .clearfix:after { display: block; visibility: hidden; height: 0; content: ""; clear: both; }
+.clearfix { zoom: 1; }
+.flex-wrap { display: -webkit-flex; display: -ms-flexbox; display: -webkit-box; display: -ms-box; display: box; display: flex; align-items: center; }
+.flex-wrap1 { display: -webkit-flex; display: -ms-flexbox; display: -webkit-box; display: -ms-box; display: box; display: flex; }
+.flex-con { -webkit-box-flex: 1; -ms-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; box-flex: 1; flex: 1; }
+.flex-vertical { -webkit-box-orient: vertical; -webkit-flex-direction: column; -ms-flex-direction: column; -webkit-flex-flow: column; -flex-direction: column; flex-flow: column; }
+.center { text-align: center;}
+.right { text-align: right; }
+.margin-15 { margin-left: 15px; }
+.main-part { margin-left: 180px; min-height: 200px; }
+
+/*分页样式*/
+.page-part { position: fixed; left: 180px; bottom: 0; z-index: 100; right: 0; padding: 0 15px; }
+.pagination { text-align: center; padding: 10px 20px; background-color: #fff; border-radius: 4px; }
+.pagination a { text-decoration: none; border: none; color: #333; }
+.pagination a, .pagination span, .pagination input { display: inline-block; vertical-align: middle; margin-right: 5px; padding: 8px; line-height: 1.05; min-width: 32px; box-sizing: border-box; border: 1px solid #EBEBEB; border-radius: 3px; }
+.pagination .jump-page-go { border: none; padding: 0; }
+.pagination .jump-page-go input { width: 32px; padding: 8px 0; text-align: center; }
+.pagination .current, .pagination a:hover { background: -webkit-linear-gradient(left, #2675FF, #5D62FF); background: -o-linear-gradient(right, #2675FF, #5D62FF); background: -moz-linear-gradient(right, #2675FF, #5D62FF); background: linear-gradient(to right, #2675FF, #5D62FF); color: #fff; }
+.pagination .prev:hover, .pagination .next:hover { }
+.pagination .prev, .pagination .next { background: url(../image/icon_zuo.png) no-repeat center; background-size: 16px; height: 32px; cursor: pointer; }
+.pagination .next { background-image: url(../image/icon_you.png); }
+.pagination .current.prev, .pagination .current.next { color: #999; opacity: 0.7; cursor: default; }
+.pagination .jump-btn { background: -webkit-linear-gradient(left, #2675FF, #5D62FF); background: -o-linear-gradient(right, #2675FF, #5D62FF); background: -moz-linear-gradient(right, #2675FF, #5D62FF); background: linear-gradient(to right, #2675FF, #5D62FF); color: #fff; border-color: #0561FF; width: 80px; }

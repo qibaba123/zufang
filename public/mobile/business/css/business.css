@@ -1,0 +1,90 @@
+
+.part img{
+	display: block;
+	width: 100%;
+}
+.apply-box{
+	padding: 25px 0;
+}
+.apply-title{
+	font-size: 15px;
+	text-align: center;
+	padding: 0 5px;
+	margin-bottom: 10px;
+	color: #333;
+	line-height: 1.3;
+}
+.input-rows{
+	padding: 5px 20px;
+}
+.input-rows input{
+	height: 36px;
+	border:1px solid #dfdfdf;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 10px;
+	width: 100%;
+	font-size: 13px;
+}
+.btn-box{
+	margin-top: 10px;
+	padding:  0 20px;
+}
+.apply-btn{
+	width: 100%;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #2ed694;
+    color: #fff;
+    font-size: 15px;
+}
+.apply-btn:active{
+	opacity: 0.8;
+}
+/*拨打电话*/
+.making-calling{
+	height:40px;
+	position: fixed;
+	left:0;
+	margin-top:-20px;
+	z-index: 11;
+}
+.making-calling .icon{
+	float: left;
+	height: 40px;
+	width: 40px;
+	background: url(/public/mobile/business/images/lianxi-bj_22.png) no-repeat;
+	background-size: 25px;
+	background-position: center;
+	background-color: rgba(0,0,0,0.7);
+	border-radius:5px 0 0 5px;
+	-webkit-transition: all 0.3s ease 0.3s;
+	transition: all 0.3s ease 0.3s;
+}
+.making-calling .icon.radius{
+	border-radius:5px;
+}
+.making-calling p{
+	float: left;
+	font-size: 12px;
+	color: #fff;
+	line-height: 20px;
+	background-color: rgba(0,0,0,0.6);
+	width:90px;
+	height: 40px;
+	overflow: hidden;
+	text-align: center;
+	border-radius: 0 5px 5px 0;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+.making-calling p a{
+	color: #fff;
+}
+.making-calling p.hide{
+	width: 0;
+}

@@ -1,0 +1,82 @@
+.container{
+    background-color: #fff;
+    padding:0 2%;
+    padding-top: 40px;
+}
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 1;
+    font-size:16px;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 3%;
+    border-bottom: 1px solid #eee;
+}
+.header>div{
+    height: 42px;
+    line-height: 42px;
+}
+.goods{
+    width:60%;
+    text-align: left;
+}
+.money,.profit{
+    width:20%;
+    text-align: center;    
+}
+.money{
+    text-align: left;    
+}
+.profit{
+    text-align: right;    
+}
+.header .money,.header .profit{
+    text-align:center;
+}
+.content > li{
+    position: relative;
+    border-top:1px solid #eee; 
+    padding:10px 0;
+}
+.content > li:first-child{
+    border-top: 0;
+}
+.content li img{
+    position: absolute;
+    width: 60px;
+    height: 60px;           
+    border-radius: 8px;
+    -webkit-border-radius:8px;
+    -o-border-radius:8px;          
+}
+.content li .goods >div{           
+    padding-left: 70px;  
+    display: -webkit-box !important;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    word-break:break-all;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:3;
+   line-height: 20px;                        
+}
+.content li ul li{
+    line-height: 20px;           
+}
+.content li .money ul{           
+    color:#FA9856; 
+    font-size:12px;                  
+}
+.content li .money ul{           
+    padding-left: 17%;                
+}
+.content li .profit ul{           
+    color:#53C0F6;  
+    font-size:12px;                 
+}
+.content li .profit ul{           
+    padding-right: 20%                 
+}

@@ -1,0 +1,88 @@
+/*公共标题部分*/
+.has-title .title-wrap { text-align: center; letter-spacing: 1px; margin-bottom: 20px; }
+.has-title .title-wrap p { font-size: 24px; }
+.has-title .title-wrap .small-text { text-align: center; font-size: 12px; color: #999; }
+.has-title .brief { max-width: 850px; line-height: 1.5; text-align: center; font-size: 14px; color: #7E7E7E; letter-spacing: 1px; margin: 0 auto 50px; }
+
+/*我们的服务*/
+.team-wrap { background-color: #fff; padding: 50px 0; }
+.team-wrap .team { width: 1000px; margin: 0 auto; }
+.team-wrap .team .brief { max-width: 850px; line-height: 1.5; text-align: center; font-size: 14px; color: #7E7E7E; letter-spacing: 1px; margin: 0 auto 50px; }
+.team-wrap .team-list .item { width: 230px; float: left; letter-spacing: 1px; padding: 0 10px; }
+.team-wrap .team-list .img-box { width: 100px; height: 100px; margin: 10px auto; }
+.team-wrap .team-list .img-box img { display: block; width: 100%; height: 100%; }
+.team-wrap .team-list .title { font-size: 20px; color: #111; margin-bottom: 10px; text-align: center; }
+.team-wrap .team-list .infor { font-size: 12px; line-height: 1.5; color: #666; text-align: center; }
+
+/*行业案例*/
+.case-wrap { background-color: #F5F5F5; padding: 50px 0; }
+.case-wrap .case { width: 800px; margin: 0 auto; }
+.case-wrap .tab-select { margin: 0 auto 50px; }
+.case-wrap .tab-select .item { width: 160px; height: 30px; line-height: 30px; text-align: center; background-color: #E9E9E9; color: #111; margin: 0 20px; letter-spacing: 1px; float: left; }
+.case-wrap .tab-select .item:hover { background-color: #2F91F4; color: #fff; }
+.case-wrap .con-list .case-con { display: none; }
+.case-wrap .con-list .case-con.active { display: block; }
+.case-wrap .con-list .item { width: 266.66px; float: left; }
+.case-wrap .con-list .img-box { width: 240px; margin: 0 auto; }
+.case-wrap .con-list .img-box img { display: block; width: 100%; }
+.case-wrap .con-list .item p { text-align: center; color: #111; font-size: 14px; font-weight: bold; }
+
+/*技术实力*/
+.technology-wrap { height: 560px; background: url(../img/customizing/technology-bg.jpg) no-repeat center center; background-size: cover; position: relative; }
+.technology-wrap .technology-model { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 50px 0; }
+.technology-wrap .technology-model .technology { width: 1200px; margin: 0 auto; }
+.technology-wrap .title-wrap .small-text { color: #DFDFE0; }
+.technology-wrap .brief { color: #DFDFE0; }
+.technology-wrap .technology-left { width: 350px; height: 195px; float: left; }
+.technology-wrap .technology-left img { display: block; width: 100%; height: 100%; }
+.technology-wrap .technology-right { float: right; letter-spacing: 1px; width: 792px; }
+.technology-right .num-wrap .item { width: 264px; text-align: center; float: left; }
+.technology-right .num-wrap .item .num { color: #2F91F4; font-size: 38px; }
+.technology-right .num-wrap .item .text { font-size: 14px; }
+.technology-right .infor-wrap .item { width: 224px; padding: 10px; float: left; margin: 0 10px; background-color: rgba(0, 0, 0, 0.5); text-align: center; font-size: 14px; letter-spacing: 1px; line-height: 1.5; }
+.technology-right .infor-wrap { margin-top: 85px; }
+.technology-right .infor-wrap .item .title { font-size: 20px; margin-bottom: 30px; }
+
+/*关于团队*/
+.aboutTeam-wrap { padding: 50px 0; background-color: #F5F5F5; }
+.aboutTeam { width: 1000px; margin: 0 auto; }
+.aboutTeam .item { width: 250px; float: left; }
+.aboutTeam-list .item .img-box { width: 100%; }
+.aboutTeam-list .item .img-box img { display: block; width: 100%; }
+.aboutTeam-list .item .text { text-align: center; background-color: #fff; padding: 10px 0; }
+.aboutTeam-list .item .text .title { font-size: 24px; margin-bottom: 10px; }
+.aboutTeam-list .item .text .english-text { font-size: 12px; color: #999; }
+
+/*服务流程*/
+.serviceProcess-wrap { height: 600px; background: url(../img/serviceProcess-bg.jpg) no-repeat center center; background-size: cover; position: relative; }
+.serviceProcess-model { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.7); color: #fff; font-size: 18px; letter-spacing: 1px; padding: 0 50px; }
+.serviceProcess { width: 1200px; margin: 0 auto; }
+.serviceProcess-left { width: 550px; float: left; text-align: center; margin-top: 75px; }
+.serviceProcess-left  .title-wrap { margin-bottom: 10px; }
+.serviceProcess-left  .title-wrap .title { font-size: 28px; }
+.serviceProcess-left .title-wrap .english-text { font-size: 12px; }
+.serviceProcess-left .process-list .item { width: 220px; height: 70px; line-height: 70px; margin: 0 auto; position: relative; }
+.serviceProcess-left .process-list .item:before, .serviceProcess-left .process-list .item:after { content: ''; position: absolute; left: 24px; top: 0; bottom: 50%; width: 2px; margin-top: -4px; background-color: #fff; z-index: 1; }
+.serviceProcess-left .process-list .item:after { top: 50%; bottom: 0; }
+.serviceProcess-left .process-list .item:first-child:before { display: none; }
+.serviceProcess-left .process-list .item:last-child:after { display: none; }
+.serviceProcess-left .process-list .item .num { display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; font-size: 14px; color: #fff; box-sizing: border-box; border: 1px solid #fff; background-color: #3091F2; border-radius: 50%; position: absolute; left: 10px; top: 20px; z-index: 2; }
+.serviceProcess-right { width: 650px; float: left; text-align: center; margin-top: 75px; }
+.serviceProcess-right  .title-wrap { margin-bottom: 40px; }
+.serviceProcess-right  .title-wrap .title { font-size: 28px; }
+.serviceProcess-right .title-wrap .english-text { font-size: 12px; margin-bottom: 20px; }
+.serviceProcess-right .title-wrap .infor { font-size: 12px; }
+.serviceProcess-right .form .input-item { box-sizing: border-box; border: 1px solid #fff; width: 370px; margin: 0 auto; padding: 5px 0 5px 5px; margin-bottom: 10px; }
+.serviceProcess-right .form .input-item span { vertical-align: middle; }
+.serviceProcess-right .form .input-item input { display: inline-block; height: 40px; background: none; vertical-align: middle; border: none; outline: none; color: #fff; }
+.serviceProcess-right .form .input-item textarea { display: inline-block; height: 80px; background: none; vertical-align: middle; border: none; outline: none; color: #fff; }
+.serviceProcess-right .form .textarea-wrap span { position: relative; top: -30px; }
+.serviceProcess-right .form .btn { width: 370px; margin: 0 auto; height: 50px; line-height: 50px; color: #fff; background-color: #3091F2; text-align: center; font-size: 16px; }
+
+/*品牌用户*/
+.brandUser-wrap { padding: 50px 0; background-color: #FFFFFF; }
+.brandUser-wrap .brandUser { width: 1200px; margin: 0 auto; }
+.brandUser-wrap .brand-list .item { width: 200px; height: 100px; background-color: #F5F5F5; margin: 20px; float: left; }
+.brandUser-wrap .brand-list .item img { display: block; width: 100%; height: 100%; }
+.case-wrap .tab-select { margin: 0 auto 40px; }
+.top-banner img { display: block; width: 100%; }

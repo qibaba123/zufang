@@ -1,0 +1,113 @@
+.ban{
+    position: relative;
+}
+.ban img{
+    width: 100%;
+    height: auto;
+}
+.hbje-box{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 10px;
+    text-align: center;
+    color: #fff9b0;
+    font-size: 20px;
+}
+.start-countDown{
+    padding: 15px 0;
+    background-color: #eaeaea;
+    text-align: center;
+}
+.jine-font{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 58%;
+    color: #fff9b0;
+    font-size: 16px;
+}
+/* hb style */
+
+.hb-modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 1999;
+    width: 100%;
+    height: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-time{
+    position: absolute;
+    top: 33.6%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.modal-time .time2, .modal-time .time3{
+    background-color: rgba(220,216,216,0.5);
+    padding: 0px 2px;
+}
+.hb-main-box{
+    position: absolute;
+    width: 100%;
+    height: 7.50rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    overflow: hidden;
+    z-index: 20000;
+}
+.hb-pic{
+    width: 100%;
+    height: 100%;
+}
+.modal-hb-num{
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: #fefdba;
+    font-size: 16px;
+}
+.qiang-btn{
+    position: absolute;
+    top: 47.5%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 1.08rem;
+    height: 1.08rem;
+    line-height: 1.08rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fdc233;
+    background-color: #fb5043;
+    font-size: 18px;
+    box-shadow: 0 2px #d7241b;
+    transition: box-shadow 0.3s ease-out;
+}
+.qiang-btn:active{
+    box-shadow: none;
+}
+.close-btn{
+    position: absolute;
+    top: 26.5%;
+    right: 15%;
+    width: 0.4rem;
+    height: 0.4rem;
+    opacity: 0;
+    text-indent: 999px;
+}
+@media screen and (height:480px){
+    .modal-time{
+        top: 33%;
+    }
+}

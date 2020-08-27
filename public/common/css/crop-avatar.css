@@ -1,0 +1,206 @@
+body {
+  background-color: #fcfcfc;
+}
+
+.avatar-view {
+  display: list-item;
+  float: left;
+  height: 220px;
+  width: 220px;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,.15);
+  cursor: pointer;
+  overflow: hidden;
+  margin: 2px 4px;
+}
+
+.avatar-view img {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-body {
+  padding-right: 0;
+  padding-left: 4px;
+}
+
+.avatar-upload {
+  overflow: hidden;
+}
+
+.avatar-upload label {
+  display: block;
+  float: left;
+  clear: left;
+  width: 100px;
+}
+
+.avatar-upload input {
+  display: block;
+}
+
+.avater-alert {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.avatar-wrapper {
+  height: 264px;
+  width: 100%;
+  margin-top: 4px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.25);
+  background-color: #fcfcfc;
+  overflow: hidden;
+}
+
+.avatar-wrapper img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.avatar-preview {
+  float: left;
+  margin-top: 15px;
+  margin-right: 15px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.avatar-preview:hover {
+  border-color: #ccf;
+  box-shadow: 0 0 5px rgba(0,0,0,.15);
+}
+
+.avatar-preview img {
+  width: 100%;
+  height: 100%;
+}
+
+.preview-lg {
+  height: 184px;
+  width: 184px;
+  margin-top: 4px;
+  float: none;
+}
+
+.preview-md {
+  height: 100px;
+  width: 100px;
+}
+
+.preview-sm {
+  height: 50px;
+  width: 50px;
+}
+
+@media (min-width: 992px) {
+  .avatar-preview {
+    float: none;
+  }
+}
+
+.loading {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff url("../img/loading.gif") no-repeat center center;
+  opacity: .75;
+  filter: alpha(opacity=75);
+  z-index: 20140628;
+  // min-height: 1000px;
+}
+
+form.idealforms .icon-delete {
+  background: url("../img/icon_delete.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  cursor: pointer;
+  height: 18px;
+  margin-left: -6px;
+  margin-top: -6px;
+  position: absolute;
+  top: 0;
+  width: 18px;
+}
+
+form.idealforms.adaptive .icon-delete {
+  margin-top: 35px;
+  top: 0;
+}
+form.idealforms .icon-delete-act {
+  background: url("../img/icon_delete.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  cursor: pointer;
+  height: 18px;
+  margin-left: -6px;
+  margin-top: -6px;
+  position: absolute;
+  top: 0;
+  width: 18px;
+}
+
+form.idealforms.adaptive .icon-delete {
+  margin-top: 35px;
+  top: 0;
+}
+
+.modal-header {
+  padding: 8px 10px;
+}
+.modal-body {
+  padding: 8px;
+}
+.modal-footer {
+  padding: 8px;
+}
+.col-md-3 {
+  padding-left: 14px;
+  padding-right: 0;
+  width: 22%;
+}
+/* 弹出框自定义样式 */
+.upload-input{
+  display: inline-block;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  background-color: #1276D8;
+  color: #fff;
+  width: 90px;
+  position: relative;
+  cursor:pointer; 
+}
+.avatar-upload input {
+  display: block;
+  height: 35px;
+  width: 90px;
+  opacity: 0;
+  margin:0;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 2;
+  cursor:pointer;
+}
+.crop-preview{
+  overflow: hidden;
+}
+.crop-preview .crop{
+  width: 70%;
+  float: left;
+}
+.crop-preview .preview{
+  width: 28%;
+  float: right;
+}
+.modal-content{
+  border:0;
+}
+#crop-avatar {
+  min-width: 320px;
+  // max-width: 640px;
+}

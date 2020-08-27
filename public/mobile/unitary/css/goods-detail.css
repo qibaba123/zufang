@@ -1,0 +1,437 @@
+html{
+	-webkit-tap-highlight-color: transparent; /* For some Androids */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-moz-tap-highlight-color: rgba(0,0,0,0);
+	-o-tap-highlight-color: rgba(0,0,0,0);
+	-ms-tap-highlight-color: rgba(0,0,0,0);
+	tap-highlight-color: rgba(0,0,0,0);
+}
+.banner{
+	width: 100%;
+}
+.swiper-container{
+	/*height: 4.0rem;*/
+}
+.swiper-slide img{
+	/*height: 4.0rem;*/
+	width: 100%;
+}
+.gdetail{
+	padding: 0.1rem 0.2rem;
+	background-color: #fff;
+}
+.gdetail-title{
+	font-weight: 600;
+	line-height: 1.5;
+}
+.qihao, .xuqiu{
+	padding: 0.15rem 0;
+}
+.jindu-father{
+	width: 100%;
+	height: 0.15rem;
+	border-radius: 6px;
+	background-color: #eeeeee;
+}
+.jindu-child{
+	width: 0;
+	height: 0.15rem;
+	border-radius: 6px;
+	background-color: #ffbf33;
+}
+.jianginfo{
+	border: 1px solid #e0e0e0;
+}
+.jianginfo-part1{
+	padding: 0.2rem;
+}
+.huojiangName{
+	padding-bottom: 0.15rem;
+}
+.jianginfo-part2{
+	height: 0.9rem;
+	line-height: 0.9rem;
+	padding-left: 1.33rem;
+	background-color: #eaeaea;
+	position: relative;
+}
+.xingyunnum{
+	letter-spacing: 1px;
+    font-size: 16px;
+    color: #e60e1f;
+    position: relative;
+    top: 1px;
+}
+.countDetail{
+	position: absolute;
+	right: 0.8rem;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	line-height: 1;
+	padding: 5px 10px;
+	border-radius: 4px;
+	background-color: #e60e1f;
+	text-align: center;
+	color: #fff;
+}
+.countDetail a {
+	color: #ffffff;
+}
+.benqijoin{
+	padding: 9px 0;
+	background-color: #eaeaea;
+	margin: 0.19rem auto;
+	text-align: center;
+	border-radius: 3px;
+	color: #999;
+}
+.checkNum{
+	color: #e60e1f;
+	padding-left: 7px;
+}
+.alljilu{
+	padding: 0;
+	background-color: #fff;
+	overflow: hidden;
+}
+.alljilu-title{
+	padding: 12px 0 12px 0.6rem;
+	padding-left: 0.8rem;
+	/* background: url('../image/商品详情00_15-05.png') left center no-repeat; */
+	background-size: 0.4rem 0.4rem;
+	position: relative;
+	font-size: 15px;
+}
+.alljilu .alljilu-title>img{
+	left:0.25rem;
+	position: absolute;
+}
+.alljilu-content{
+	overflow: hidden;
+}
+.md-box{
+	position: absolute;
+	top: 0;
+	right: 0.25rem;
+	display: table-cell;
+	bottom:0;
+	vertical-align: middle;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.enter-tag-show{
+	display: inline-block;
+	width: 15px;
+	height: auto;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-transform: translate3d(0, 0, 0);
+   	transform: translate3d(0, 0, 0);
+	
+}
+.list-item-box .enter-tag{
+    width: 15px;
+    height: auto;
+}
+.md-box .enter-tag-show{
+    width: 15px;
+    height: auto;
+}
+.rtt{
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+.alljilu-content li{
+	padding-top: 8px;
+	padding-bottom: 2px;
+}
+.border-dashed-bm{
+	position: relative;
+}
+.border-dashed-bm:after{
+	position: absolute;
+	left: -0.2rem;
+	content: '';
+	display: block;
+	width: 7.50rem;
+	height: 0;
+	bottom: 0;
+	border-top: 1px dashed #eaeaea;
+}
+.alljilu-content p{
+	padding-left: 0.25rem;
+	padding-right: 0.25rem;
+	padding-bottom: 6px;
+}
+.go-join{
+	background-color: #fff;
+	padding: 10px 0;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	max-width: 640px;
+	z-index: 100;
+	box-sizing: border-box;
+}
+.join-btn{
+	display: block;
+	position: relative;
+	// left: 50%;
+	// -webkit-transform: translateX(-50%);
+	// transform: translateX(-50%);
+	margin: 0 auto;
+	width: 60%;
+	padding: 10px 0;
+	color: #fff;
+	background-color: #ea3123;
+	text-align: center;
+	border-radius: 3px;
+}
+.lt{
+	float:left;
+}
+.rt{
+	float:right;
+}
+.join-btn-left,.join-btn-right{
+	width: 46%;
+	padding: 10px 0;
+	color: #fff;
+	background-color: #ea3123;
+	text-align: center;
+	border-radius:4px;
+	-o-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+.countdown-box{
+	padding: 0 0.2rem;
+	background-color: #fff;
+	overflow: hidden;
+}
+.show-count{
+	background-color: #eaeaea;
+	margin: 0.19rem auto;
+	padding: 0.35rem 0 0.35rem 0.8rem;
+	position: relative;
+}
+.show-count span{
+
+}
+.gongxi,.lingjiang{
+	text-align: center;
+	margin: 0.38rem auto;
+}
+.lingjiang a{
+	color: #fff;
+	padding: 5px 10px;
+	background-color: #e60012;
+}
+.nojoin{
+	padding: 0 0.2rem;
+	background-color: #fff;
+	border-top: 1px solid #eaeaea;
+	margin-top: 10px;
+}
+.join-tip{
+	padding: 0.18rem 0;
+	background-color: #eaeaea;
+	text-align: center;
+	margin: 0.25rem auto;
+}
+input,button,select,textarea{
+	outline:none;
+	border:0;
+	-webkit-appearance: none;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+body{
+	max-width: 640px;
+	margin:0 auto;
+}
+.layermbox1 .layermcont{
+	height: 100%;
+}
+.join-box{
+	width:100%;
+	height: 100%;
+	position: relative; 
+}
+.join-box .close{
+	position: absolute;
+	right: 5px;
+	top:0;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 25px;
+	color: #666;
+}
+.join-box .join-con{
+	padding:10px 0;
+	width: 80%;
+	margin:0 auto;
+}
+.join-box .join-con p{
+	text-align: center;
+	margin:0;
+	font-size: 15px;
+	padding-top: 10px;
+	color: #444;
+}
+.join-box .join-con .input-num{
+	border:1px solid #adadad;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	height: 35px;
+	line-height: 35px;
+	position: relative;
+	overflow: hidden;
+	margin-top: 10px;
+}
+.join-box .join-con .input-num span{
+	height: 35px;
+	width: 15%;
+	text-align: center;
+	font-size: 20px;
+	color: #838383;
+	position: absolute;
+	top:0;
+}
+.join-box .join-con .input-num .minus-btn{
+	left:0;
+}
+.join-box .join-con .input-num .add-btn{
+	right:0;
+}
+.join-box .join-con .input-num input{
+	width: 70%;
+	height: 35px;
+	line-height: 35px;
+	display: block;
+	margin:0 auto;
+	border-left: 1px solid #DCDCDC;
+	border-right: 1px solid #DCDCDC;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: center;
+	color: #DA3651;
+	font-size: 16px;
+}
+.join-box .join-con .short-num{
+	width: 100%;
+	overflow: hidden;
+	margin:10px 0;
+}
+.join-box .join-con .short-num span{
+	float: left;
+	width: 21%;
+	margin:0 2%;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	border:1px solid #d5d5d5;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.join-box .join-con p.price{
+	font-size: 15px;
+	color: #666;
+}
+.join-box .join-con p.price em {
+	padding: 0 10px;
+}
+.join-box .join-con p.price span{
+	color: #DA3651;
+}
+.join-box button{
+	width: 100%;
+	position: absolute;
+	left:0;
+	bottom:0;
+	height: 46px;
+	line-height: 38px;
+	text-align: center;
+	color: #fff;
+	background-color: #DA3651;
+	font-size: 15px;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+/*全价购买*/
+.full-price-buy{
+	background-color: #fff;
+	position: relative;
+	width: 100%;
+	padding-bottom: 10px;
+	margin-top:10px;
+}
+.full-price-buy .full-buy-tag{
+	padding: 8px 10px;
+	line-height: 1;
+	background-color: #ea3123;
+	color: #fff;
+	font-size: 12px;
+	float: left;
+	border-bottom-right-radius: 14px;
+    border-top-right-radius: 14px;
+    padding-right: 12px;
+}
+.full-price-buy .price{
+	margin:0 auto;
+	font-size: 20px;
+	color: #ea3123;
+	height: 28px;
+	line-height: 28px;
+	padding-left: 75px;
+}
+.full-price-buy .buy-tip{
+	font-size: 14px;
+	color: #999;
+	padding: 0 3%;
+	margin-top: 10px;
+}
+.full-price-buy .kucun-buy{
+	position: absolute;
+	right: 3%;
+	top:50%;
+	margin-top: -27px;
+}
+.full-price-buy .full-buy-btn{
+	display: inline-block;
+	padding: 0 13px;
+	background-color: #ea3123;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 4px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+}
+.full-price-buy .kucun{
+	color: #999;
+	text-align: center;
+	font-size: 12px;
+	line-height: 1.1;
+	margin-top: 6px;
+}

@@ -1,0 +1,147 @@
+/* 去除input默认样式 */
+input, button, select, textarea {
+	outline: none;
+	border: 0;
+	-webkit-appearance: none;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.index-con {
+	padding: 0;
+	// height: 480px;
+	position: relative;
+}
+.index-con .index-top {
+	height: 48px;
+	background-color: #05AF0F;
+}
+.index-top .logo {
+	float: left;
+	height: 48px;
+	padding: 0 10px;
+}
+.index-top .logo img {
+	height: 44px;
+	margin: 2px auto;
+}
+.index-top .search {
+	height: 48px;
+	margin-left: 64px;
+	position: relative;
+}
+.index-top .search input {
+	padding: 5px 10px;
+	margin: 7px 0;
+	border: 1px solid #fff;
+	background-color: #05AF0F;
+	width: 72%;
+	padding-right: 45px;
+	color: #fff;
+}
+.index-top .search input::-webkit-input-placeholder {
+	color: #fff;
+	text-align: left;
+}
+.index-top .search input::-moz-placeholder {
+	color: #fff;
+	text-align: left;
+}
+.index-top .search input:-ms-input-placeholder {
+	color: #fff;
+	text-align: left;
+}
+.index-top .search input:-moz-placeholder {
+	color: #fff;
+	text-align: left;
+}
+.index-top .search .search-btn {
+	position: absolute;
+	width: 40px;
+	height: 33px;
+	top: 7px;
+	right: 14px;
+	background: url(../images/icon-search.png) no-repeat;
+	background-size: 22px;
+	background-position: center;
+}
+.index-con .index-main {
+	height: 480px;
+	background-color: #f8f8f8;
+	overflow: auto;
+}
+a{
+	text-decoration: none;
+}
+/* 主内容样式 */
+.bg-wrap{
+    height: 100%;
+    width: 100%;
+    background: url(../images/bg.png) no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+.opera-btn{
+    width: 100%;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    padding:20px;
+    box-sizing: border-box;
+}
+.opera-btn ul{
+    width: 85%;
+    margin:0 auto;
+    margin-bottom: 3px;
+}
+.opera-btn ul li{
+    margin-bottom: 8px;
+}
+.opera-btn ul li.tihuan-show{
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.3);
+	padding: 10px 0;
+	color: #fff;
+}
+.opera-btn ul li a{
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    background-color: #f3f4f5;
+    color: #666;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.opera-btn ul.btn-style2{
+    overflow: hidden;
+}
+.opera-btn ul.btn-style2 li{
+    width: 49%;
+    margin-right: 2%;
+    float: left;
+    margin-bottom: 5px;
+}
+.opera-btn ul.btn-style2 li:nth-child(2n){
+    margin-right: 0;
+}
+.entershop-btn{
+    display: block;
+    margin:0 auto;
+    width: 85%;
+    padding:8px 0;
+    text-align: center;
+    background-color: #FD6847;
+    color: #fff;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.entershop-btn:hover{
+	color: #fff;
+}

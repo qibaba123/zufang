@@ -1,0 +1,82 @@
+html, body { background-color: #fff; }
+.header-wrap { background: url(/public/wxapp/job/images/icon_bg2.png) no-repeat center center; background-size: 100% 100%; position: relative; }
+.header-con { padding: 10px 15px; }
+.header-con .logo { width: 50px; height: 50px; background-color: #fff; border-radius: 50%; }
+.header-con .logo img { display: block; width: 100%; height: 100%; border-radius: 50%; }
+.header-con .infor { padding-left: 15px; color: #fff; font-size: 14px; height: 50px; }
+.header-con .infor .title { font-size: 16px; padding-top: 4px; }
+.header-con .infor .label-wrap span { position: relative; padding: 0 5px; }
+.header-con .infor .label-wrap span::after { content: ''; width: 3px; height: 3px; border-radius: 50%; background-color: #fff; position: absolute; top: 7px; right: -3px; }
+.header-con .infor .label-wrap span:first-child { padding-left: 0; }
+.header-con .infor .label-wrap span:last-child::after { width: 0; height: 0; }
+.header-wrap .label-icon { width: 50px; height: 81.4px; background: url(/public/wxapp/job/images/icon_bg1.png) no-repeat center center; background-size: 100% 100%; color: #fff; font-size: 22px; text-align: center; position: absolute; top: 0; right: 3%; }
+.header-wrap .label-icon span { display: inline-block; padding-top: 22px; }
+.recruit-wrap { padding: 30px 0; text-align: center; background-color: #f8f8f8; }
+.recruit-wrap .money-wrap { color: #FE9B1A; font-size: 35px; margin-bottom: 15px; }
+.recruit-wrap .position-wrap { margin-bottom: 10px; }
+.recruit-wrap .position-wrap .name { color: #333; font-size: 25px; }
+.recruit-wrap .position-wrap .label-wrap { max-width: 80%; margin: 0 auto; }
+.recruit-wrap .position-wrap .label-wrap label { padding: 0 5px; border-right: 1px solid #eee; font-size: 12px; color: #666; }
+.recruit-wrap .position-wrap .label-wrap label:last-child { border-right: 0; }
+.recruit-wrap .position-wrap .label-wrap label img { display: inline-block; width: 6px; height: 8.4px; vertical-align: middle; }
+.recruit-wrap .position-wrap .label-wrap label span { vertical-align: middle; }
+.recruit-wrap .desc-wrap { max-width: 80%; margin: 0 auto; }
+.recruit-wrap .desc-wrap span { display: inline-block; width: 30%; height: 30px; line-height: 30px; text-align: center; font-size: 12px; color: #666; box-sizing: border-box; border: 1px solid #FE9B1A; border-radius: 15px; margin: 0 1% 10px; }
+
+/*推荐部分*/
+.recommend-content { background-color: #f8f8f8; padding: 0 0 15px; }
+
+/*.recommend-wrap{
+	width:95%;
+	margin:0 auto;
+	background:url(/public/wxapp/job/images/tj-bg.png) no-repeat center center;
+	background-size:cover;
+	min-height: 105px;
+	padding:10px 0;
+	border-radius:4px;
+	box-shadow: 0 0px 12px #ccc;
+}*/
+.recommend-wrap { width: 95%; margin: 0 auto; background: url(/public/wxapp/job/images/r-bg.png) no-repeat center center; background-size: 100% 100%; min-height: 85px;	/*padding:10px 0;*/ border-radius: 4px;	/*box-shadow: 0 0px 12px #ccc;*/ }
+.recommend-wrap .desc { width: 60px; color: #fff; text-align: center; }
+.recommend-wrap .desc span { display: inline-block; width: 25px; font-size: 15px; margin-top: 12px; }
+.recommend-wrap .con { text-align: center;    /* margin-top: 10px; */ line-height: 85px; font-size: 18px; color: #fff; }
+.recommend-wrap .con span { font-size: 34px; color: #FE9B1A; padding: 0px 12%; font-weight: bold; }
+.title-desc { padding: 0 0 12px; }
+.recommend-wrap .title-wrap { font-size: 16px; color: #fff; text-align: center; }
+.recommend-wrap .title-wrap img { display: inline-block; width: 20px; height: 22px; vertical-align: middle; }
+.recommend-wrap .title-wrap span { vertical-align: middle; }
+.recommend-wrap .desc-wrap { color: rgba(255, 255, 255, 0.8); font-size: 13px; text-align: center; margin-bottom: 10px; }
+.reward-list .item-con { width: 80%; height: 40.24px; line-height: 40.24px; background: url(/public/wxapp/job/images/icon_bg4.png) no-repeat center center; background-size: 100% 100%; color: #fff; margin: 0 auto; font-size: 12px; }
+.reward-list .item .item-con span { display: block; width: 50%; text-align: center; }
+.reward-list .item-con .money { font-size: 14px; font-weight: bold; }
+
+/*内推招聘网*/
+.code-wrap { padding: 20px 0; }
+.code-wrap .code-img { width: 30%; margin: 0 auto 10px; }
+.code-wrap .code-img img { display: inline-block; width: 100%; height: auto; }
+.code-wrap .desc { text-align: center; font-size: 14px; color: #F9AE55; }
+.footer-desc { font-size: 12px; color: #666; text-align: center; }
+
+
+/*新版内退招聘网职位分享海报样式*/
+.new-share-content { width: 100%; padding-bottom: 10px}
+.new-share-content .share-bg { width: 100%; display: block; }
+.share-info { position: absolute; left: 0; top: 0; width: 100%; z-index: 1; }
+.share-info .company-info { padding: 8% 0; }
+.share-info .award-tip {color:#51350a; height: 40px; line-height: 40px; background-color: #ffdb5c; border-radius: 25px; text-align: center; width: 70%; margin: 0 auto; font-size: 15px; font-weight: 550; position: relative; top: 25px; margin-top: -10px; }
+.share-info .award-tip:before{content: '';position: absolute;left: 50%;top:-12px;border-style: dashed dashed solid dashed;border-width:6px;border-color:  transparent transparent #ffdb5c transparent;margin-left: -6px; }
+.company-info .company-logo { display: block; height: 80px; width: 80px; border-radius: 50%; margin: 0 auto; }
+.company-info .name { font-size: 19px; color: #fff; text-align: center; margin-top: 12px; line-height: 1.5; }
+.company-info .label { font-size: 14px; color: #fff; text-align: center; line-height: 1.5; }
+.company-info .label span { padding: 0 2px; }
+.job-info { margin-top: 5%; }
+.job-info .job-name, .job-salary { font-size: 30px; text-align: center; color: #fff; line-height: 1.4; font-weight: 500; }
+.job-info .job-salary { font-size: 28px; font-weight: 600; }
+.job-info .label { text-align: center; padding: 20px 0; }
+.job-info .label span { display: inline-block; vertical-align: middle; padding: 8px 15px; border: 1px solid #fff; border-radius: 30px; line-height: 1.2; color: #fff; margin: 5px 8px; font-size: 14px; }
+.applet-code { margin-top: 15px; }
+.applet-code .code { width: 40%; display: block; margin: 0 auto; }
+.applet-code .code-tip { font-size: 13px; text-align: center; color: #999; margin-top: 8px; }
+.rights { text-align: center; margin-top: 10px; margin-bottom: 10px;}
+.rights .shop-logo { height: 30px; width: 30px; border-radius: 5px; margin-right: 5px; display: inline-block; vertical-align: middle; }
+.rights .shop-logo span { display: inline-block; vertical-align: middle; font-size: 14px; }

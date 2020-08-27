@@ -1,0 +1,161 @@
+.table.table-avatar tbody>tr>td{
+    line-height: 48px;
+}
+.form-group{
+    margin-bottom: 0;
+}
+/* 设为会员弹出框 */
+.page-content{
+    position: relative;
+}
+.ui-popover {
+    background: #000 none repeat scroll 0 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 2px;
+    position: absolute;
+    z-index: 1010;
+    display: none;
+}
+.ui-popover .ui-popover-inner {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 4px;
+    min-width: 280px;
+    padding: 10px;
+}
+.ui-popover .arrow {
+    border: 5px solid transparent;
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+.ui-popover.left-top .arrow, .ui-popover.left-center .arrow, .ui-popover.left-bottom .arrow {
+    border-left-color: #000;
+}
+.ui-popover .arrow::after {
+    border: 5px solid transparent;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    position: relative;
+    width: 0;
+}
+.ui-popover.left-center .arrow {
+    margin-top: -5px;
+    right: -10px;
+    top: 50%;
+}
+
+.ui-popover.left-center .arrow::after {
+    right: 7px;
+    top: -5px;
+}
+.ui-popover.left-top .arrow::after, .ui-popover.left-center .arrow::after, .ui-popover.left-bottom .arrow::after {
+    border-left-color: #fff;
+}
+.ui-popover.top-center .arrow {
+    left: 50%;
+    margin-left: -5px;
+    top: -10px;
+}
+.ui-popover.top-left .arrow, .ui-popover.top-center .arrow, .ui-popover.top-right .arrow {
+    border-bottom-color: #000;
+}
+.ui-popover .arrow::after {
+    border: 5px solid transparent;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    position: relative;
+    width: 0;
+}
+.ui-popover.top-center .arrow::after {
+    left: -5px;
+    top: -3px;
+}
+.ui-popover.top-left .arrow::after, .ui-popover.top-center .arrow::after, .ui-popover.top-right .arrow::after {
+    border-bottom-color: #fff;
+}
+.ui-btn {
+    background: #f8f8f8 none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    box-sizing: content-box;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 12px;
+    text-align: center;
+}
+.ui-btn:hover, .ui-btn:focus {
+    background: #fcfcfc none repeat scroll 0 0;
+    border-color: #ccc;
+    color: #333;
+}
+.ui-btn-primary {
+    background: #07d none repeat scroll 0 0;
+    border-color: #006cc9;
+    color: #fff;
+}
+.ui-btn-primary:hover, .ui-btn-primary:focus {
+    background: #0080ed none repeat scroll 0 0;
+    border-color: #0066be;
+    color: #fff;
+}
+.uneditable-input, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="tel"], input[type="color"], input[type="search"], select, textarea {
+    border-radius: 4px;
+    color: #555;
+    display: inline-block;
+    font-size: 14px;
+    // height: 20px;
+    // line-height: 20px;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    vertical-align: middle;
+}
+.uneditable-input, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="tel"], input[type="color"], input[type="search"], textarea {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+}
+.uneditable-input:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="tel"]:focus, input[type="color"]:focus, input[type="search"]:focus, textarea:focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+    outline: 0 none;
+}
+.searchable-select-input[type="text"]{
+    margin-bottom: 0;
+    height:30px;
+    display: none;
+}
+.searchable-select{
+    font-size: 13px;
+}
+.searchable-select-caret{
+    top:4px;
+}
+.searchable-select-item.hover {
+
+    background: #3875D7;
+    color: white;
+}
+
+.searchable-select-item.selected {
+    background: #3875D7;
+    color: white;
+}
+.searchable-select-holder{
+    color: #999;
+}
+.ui-btn{
+    text-decoration: none;
+}
+.ui-btn:hover{
+    text-decoration: none;
+}

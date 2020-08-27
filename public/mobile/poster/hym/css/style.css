@@ -1,0 +1,510 @@
+html{
+	height: 100%;
+	font-family: Arial,Verdana,Sans-serif;
+	font-size: 12px;
+}
+body, .container{
+	width: 100%;
+	height: 100%;
+	overflow-y: hidden;
+	max-width: 640px;
+	margin: 0 auto;
+	font-size: 12px;
+}
+img{
+	width: 100%;
+	height: 100%;
+}
+
+/* 音乐播放 */
+.music-wrap{
+	position: fixed;
+	top:10px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	z-index: 1000;
+}
+.music-wrap img{
+	width: 100%;
+	height: 100%;
+}
+.on {
+    -webkit-animation: bmic 2s infinite linear;
+    -moz-animation: bmic 2s infinite linear;
+    animation: bmic 2s infinite linear;
+}
+
+.off {
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none;
+}
+@-webkit-keyframes bmic {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-moz-keyframes bmic {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+@keyframes bmic {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.swiper-container{
+	width: 100%;
+	height: 100%;
+}
+.swiper-container .swiper-slider{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.page1{
+	/* background: url('../images/yibj.png') left top no-repeat;
+	background-size: 100%; */
+}
+.page2{
+	background: url('../images/erbjj.png') left top no-repeat;
+	background-size: 100%;
+}
+.page3{
+	background: url('../images/sanbj.png') left top no-repeat;
+	background-size: 100%;
+}
+.page4{
+	background: url('../images/sibj.png') left top no-repeat;
+	background-size: 100%;
+}
+.page5{
+	background: url('../images/wubj.png') no-repeat;
+	background-size: 100%;
+}
+.page6{
+	background: url('../images/liubj.png') no-repeat;
+	background-size: 100%;
+}
+.page7{
+	background-color: #43abd9;
+}
+.page8{
+	/* background: url('../images/babj.png') no-repeat;
+	background-size: 100%; */
+	background-color: #35ba3b;
+}
+.page9{
+	background-color: #f7b20f;
+}
+.page10{
+	background: url('../images/shibj.png');
+	background-size: 100%;
+}
+p{
+	text-align: center;
+	font-size: 16px;
+	padding-bottom: 10px;
+}
+.page-pic{
+	position: absolute;
+}
+/* one */
+.page1-pic-0{
+	height: 100%;
+}
+.page1-pic-0 img{
+	width: 7.5rem;
+	height: 100%;
+}
+.page1-pic-1{
+	top: 20.61%;
+}
+.page1-pic-2{
+	top: 38.90%;
+}
+.page1-pic-3{
+	bottom: 7.19%;
+}
+/* two */
+.page2-pic-circle img{
+	width: 1.4rem;
+	height: 1.4rem;
+}
+.page2-pic-1{
+	top: 0;
+}
+.page2-pic-2{
+	top: 17.8%;
+	left: 8.8%;
+}
+.page2-pic-2 img{
+	width: 155px;
+	height: 30px;
+}
+.page2-pic-3{
+	top: 27.96%;
+	right: 12%;
+}
+.page2-pic-4{
+	top: 33.73%;
+	right: 35.73%;
+}
+.page2-pic-5{
+	top: 35.53%;
+	left: 7%;
+}
+.page2-pic-6{
+	top: 42.57%;
+	right: 14.66%;
+}
+.page2-pic-60{
+	top: 43.32%;
+	left: 31.73%;
+}
+.page2-pic-7{
+	top: 56.07%;
+	left: 19.2%;
+}
+.page2-pic-8{
+	top: 57.95%;
+	left: 44%;
+}
+.page2-pic-8 img{
+	width: 50px;
+	height: 50px;
+}
+.page2-pic-9{
+	top: 58.84%;
+	right: 14.66%;
+}
+.page2-pic-9 img{
+	width: 53px;
+	height: 53px;
+}
+.page2-pic-10{
+	bottom: 6.37%;
+	width: 100%;
+}
+.page2-pic-10 img{
+	width: 100%;
+	height: auto;
+}
+/* three */
+.page3-pic-1{
+	width: 100%;
+}
+.page3-pic-1 img{
+	width: 100%;
+	height: 3.6rem;
+}
+.page3-pic-2,.page3-pic-3{
+	top: 4rem;
+}
+.page3-pic-2 img,.page3-pic-3 img{
+	width: 7.5rem;
+	height: 4.96rem;
+}
+.page3-pic-8{
+	bottom: 0.6rem;
+}
+.page3-pic-8 img{
+	width: 7.5rem;
+	height: 1.32rem;
+}
+/* four */
+.page4-pic-4 img, .page4-pic-5 img, .page4-pic-6 img, .page4-pic-7 img, .page4-pic-8 img{
+	width: 1.85rem;
+	height: 1.61rem;
+}
+.page4-pic-4{
+	top: 41.67%;
+	left: 6.66%;
+}
+.page4-pic-5{
+	top: 42.57%;
+	left: 37.86%;
+}
+.page4-pic-6{
+	top: 42.57%;
+	right: 6.93%;
+}
+.page4-pic-7{
+	top: 56.07%;
+	left: 22.66%;
+}
+.page4-pic-8{
+	top: 59.07%;
+	right: 20%;
+}
+.page4-pic-9{
+	bottom: 18.36%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+}
+.page4-pic-9 img{
+	width: 0.87rem;
+	height: 1.17rem;
+}
+.page4-pic-10{
+	bottom: 5.24%;
+}
+.page4-pic-10 img{
+	width: 7.5rem;
+	height: 0.98rem;
+}
+/* five */
+.page5-pic-01-common img{
+	width: 7.5rem;
+	height: 5.2rem;
+}
+.page5-pic-2{
+	top: 5.2rem;
+	width: 7.5rem;
+	height: 2.09rem;
+	background: url('../images/wubj_02.png');
+}
+.page5-pic-3{
+	top: 5.2rem;
+}
+.page5-pic-3 img{
+	width: 7.5rem;
+	height: 2.09rem;
+}
+.page5-pic-4{
+	bottom: -5px;
+}
+.page5-pic-4 img{
+	width: 7.5rem;
+	height: 4.2rem;
+}
+/* six */
+.page6-pic-1{
+	top: 0.62rem;
+	left: 0.5rem;
+}
+.page6-pic-1 img{
+	width: 4.54rem;
+	height: 0.45rem;
+}
+.page6-pic-2{
+	top: 15.14%;
+	left: 6.4%;
+}
+.page6-pic-2 img{
+	width: 2.12rem;
+	height: 1.17rem;
+}
+.page6-pic-3{
+	top: 14.39%;
+	right: 0;
+}
+.page6-pic-3 img{
+	width: 4.21rem;
+	height: 1.5rem;
+}
+.page6-pic-4{
+	top: 28.48%;
+	left: 0;
+}
+.page6-pic-4 img{
+	width: 4.75rem;
+	height: 1.68rem;
+}
+.page6-pic-5{
+	/* top: 53.6%; */
+	top: 6.92rem;
+}
+.page6-pic-5 img{
+	width: 7.5rem;
+	height: 0.91rem;
+}
+
+.page6-pic-6, .page6-pic-7, .page6-pic-8{
+	/* top: 61.61%; */
+	top: 8.23rem;
+}
+.page6-pic-6{
+	left: 10%;
+}
+.page6-pic-6 img, .page6-pic-7 img, .page6-pic-8 img{
+	width: 1.74rem;
+	height: 1.75rem;
+}
+.page6-pic-7{
+	left: 2.89rem;
+}
+.page6-pic-8{
+	right: 10%;
+}
+.page6-pic-9{
+	bottom: 0.2rem;
+}
+.page6-pic-9 img{
+	width: 7.5rem;
+	height: 1.52rem;
+}
+/* 第七屏 */
+.page7-pic-1 img{
+	width: 100%;
+	height: 2.64rem;
+}
+/* .page7-pic-2{
+	top: 26.38%;
+}
+.page7-pic-2 img{
+	width: 7.5rem;
+	height: 5.87rem;
+} */
+.page7-pic-2-common{
+	top: 3.5rem;
+}
+.page7-pic-2-common img{
+	width: 7.5rem;
+	height: 5.85rem;
+}
+.page7-pic-3{
+	bottom: 0;
+}
+.page7-pic-3 img{
+	width: 4.66rem;
+	height: 1.6rem;
+}
+.page7-pic-4{
+	bottom: 0;
+	right: 0;
+}
+.page7-pic-4 img{
+	width: 2.64rem;
+	height: 2.33rem;
+}
+/* 第八屏 */
+.page8-pic-1{
+	top: 8.24%;
+}
+.page8-pic-1 img{
+	width: 3.31rem;
+	height: 1.23rem;
+}
+.page8-pic-2{
+	top: 13.49%;
+	right: 0.2rem;
+}
+.page8-pic-2 img{
+	width: 3.64rem;
+	height: 2.69rem;
+}
+.page8-pic-3{
+	top: 50.74%;
+	left: 0.78rem;
+}
+.page8-pic-3 img{
+	width: 1.8rem;
+	height: 2.36rem;
+}
+.page8-pic-4{
+	top: 43.70%;
+	left: 3.14rem;
+	/* -webkit-transform: translateX(-50%);
+	transform: translateX(-50%); */
+}
+.page8-pic-4 img{
+	width: 1.17rem;
+	height: 3.63rem;
+}
+.page8-pic-5{
+	top: 50.74%;
+	right: 0.54rem;
+}
+.page8-pic-5 img{
+	width: 2.1rem;
+	height: 2.43rem;
+}
+.page8-pic-6{
+	bottom: 0;
+	background-color: #fff;
+}
+.page8-pic-6 img{
+	width: 7.5rem;
+	height: 2.26rem;
+}
+/* 第九屏 */
+.page9-pic-1{
+	top: 0.3rem;
+}
+.page9-pic-1 img{
+	width: 7.5rem;
+	/* height: 2.37rem; */
+	height: 1.64rem;
+}
+.page9-pic-2{
+	/* top: 2.37rem; */
+	top: 2.14rem;
+}
+.page9-pic-2 img{
+	width: 7.5rem;
+	/* height: 1.54rem; */
+	height: 0.4rem;
+}
+.page9-pic-3-common{
+	/* top: 3.3rem; */
+	/* bottom: 0.3rem; */
+	top: 2.8rem;
+}
+.page9-pic-3-common img{
+	width: 7.5rem;
+	height: 8.3rem;
+}
+/* 第十屏 */
+.page10-pic-1{
+	top: 0.56rem;
+	left: 0.56rem;
+}
+.page10-pic-1 img{
+	width: 1.64rem;
+	height: 0.91rem;
+}
+.page10-pic-2{
+	top: 4.05rem;
+	width: 100%;
+}
+.page10-pic-2 img{
+	width: 40%;
+	display: block;
+	margin: 0 auto;
+}
+.page10-pic-3{
+	top: 7.3rem;
+}
+.page10-pic-3 img{
+	width: 7.5rem;
+	height: 0.45rem;
+}
+.page10-pic-4{
+	top: 8.12rem;
+}
+.page10-pic-4 img{
+	width: 7.5rem;
+	height: 0.86rem;
+}
+.page10-pic-5{
+	bottom: 0.6rem;
+}
+.page10-pic-5 img{
+	width: 7.5rem;
+	height: 0.44rem;
+}

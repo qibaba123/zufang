@@ -1,0 +1,256 @@
+body{
+	font-family: "微软雅黑";
+	margin: 0 0;
+	font-size: 16px;
+}
+.header {
+	background-color: #fff;
+	border-bottom: 1px solid #eee;
+}
+.clear{
+	clear:both;
+}
+/*中间内容部分*/
+.content{
+	width:100%;
+	padding-top: 80px;
+}
+/*搜索框*/
+.content .coursePic{
+	background-image:url(/public/site/img/helpcenter/banner.png) ;
+	width:100%;
+	text-align: center;
+}
+.coursePic .courseSearch {
+	padding-top: 4%;
+	height: 40px;
+overflow: hidden;
+}
+.courseSearch span{
+	display: inline-block;
+	background-color: #1BC9D9;
+	margin-left: -6px;
+    width: 6%;
+    color: #fff;
+    border-radius: 0 4px 4px 0;
+    /*position: relative;
+    top: 2px;*/
+    line-height: 38px;
+    height: 40px;
+    padding: 0 0;
+}
+ .courseSearch input{
+	background-color: rgba(255,255,255,.4);	
+	height: 40px;
+	line-height: 40px;
+	width:25%;
+	border-radius: 4px 0 0 4px;
+	outline: none;
+	color:rgba(255,255,255,.85);
+	border:none;
+	padding: 0 0;
+	padding-left: 6px;
+}
+input::-webkit-input-placeholder {
+	color: rgba(255,255,255,.7);
+	letter-spacing: 1px;
+ } 
+ /*操作教程*/
+.courseList ul{
+	list-style: none;	
+	margin-left: 28%;
+	
+	margin-top: 30px;
+	padding-bottom: 20px;
+}
+.courseList ul li{
+	width:100px;
+	float: left;
+	margin: 0 100px 0 0;
+}
+.courseList ul li img{
+	width:45px;
+	padding-left:28px;
+	padding-bottom: 7px;
+}
+.courseList ul li span{
+	display: inline-block;
+	color:#fff;
+	font-size: 14px;
+}
+
+/*教程介绍*/
+.courseContent{
+	width  :1200px;
+	margin : 0 auto;
+	display:none;
+	overflow: hidden;
+}
+.active{
+	display:block;
+}
+/*产品介绍列表*/
+.courseContent .productIntroduce{
+	width:250px;
+	float: left;
+	border: 1px solid #eee;
+	color: #333;
+	font-size: 16px;
+	/*padding: 0 10px;*/
+}
+.introduceList{
+	/*padding: 0 10px;*/
+}
+.introduceList .introduceTittle{
+	padding: 10px 0;
+	cursor: pointer;
+}
+.line{
+	width: 230px;
+    height: 1px;
+    background-color: #eee;
+    margin-left: 10px;
+}
+.introduceList .introduceTittle span{
+	display:block;
+	float: left;
+	margin-top: 1px;
+    margin-left: 20px;
+    width:165px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 2;
+}
+.introduceList .introduceTittle .newPic{
+	width: 8%;
+	float: left;
+	margin-left: 15px;
+	margin-top:8px;
+}
+.introduceList .introduceTittle .row-down{
+	float: right;
+	width:5%;
+	margin-right: 15px;
+	margin-top: 14px;
+}
+.introduceDetail{
+	
+	display: none;
+}
+.introduceDetailList p{
+	margin: 0 0;
+	overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   line-height: 20px;
+   width: 230px;
+   margin-left: 10px;
+   
+}
+.introduceDetailList{
+	padding: 10px 0 10px 0;
+	cursor: pointer;
+}
+.introduceDetailFirst {
+	color: #666;
+	font-size: 14px;	
+}
+.introduceDetailSecond{
+	color:#A3A3A3;
+	font-size: 12px;
+	padding-bottom: 2px;
+}
+.changeColor{
+	background-color: #e9fbfb;
+	border-left: 2px solid #0BD8D8;
+}
+/*详细操作教程*/
+.courseDetailBox{
+	width: 830px;
+	float: right;
+	margin-right:50px ;
+	color:#333;
+}
+.courseDetail{
+	display: none;
+}
+.courseDetailTitle{
+	text-align: center;
+	font-size: 22px;
+	color:#333;
+	font-weight: 700;
+}
+.courseTeam{
+	font-size: 20px;
+	color:#333;
+}
+.courseTeam::before{
+	content: "";
+	height: 25px;
+	width: 4px;
+	background-color: #0bd8d8;
+	position: absolute;
+}
+.courseTeam span{
+	padding-left: 15px;
+}
+.courseStep{
+	padding-left: 15px;
+	padding-top: 30px;
+}
+.courseDetail p{
+	font-size: 15px;
+	/*padding-left: 15px;*/
+	color:#B6B6B6;
+	padding:10px 0 10px 15px;
+	line-height: 20px;
+}
+.courseDetail img{
+	padding-left: 15px;
+}
+.sonTitle{
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 20px;
+	line-height: 2;
+}
+/*右侧*/
+.t_f img{
+	margin-top: 10px;
+}
+.solve{
+	text-align: center;
+}
+.solve div{
+	display: inline-block;
+	padding: 10px 20px;
+	cursor: pointer;
+	margin: 0 10px;
+	border-radius: 2px;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+.no{
+	border-color: inherit;
+	color: rgb(230,67,64);
+}
+.yes{
+	border-color: inherit;
+	color: rgb(62,185,78);
+}
+.prompt{
+	font-size: 0.9em;
+	color: #888;
+	text-align: center;
+}
+.navlist{
+	float: left;
+	width: 100%;
+	text-align: left;
+	color: #0077DF;
+	line-height: 2.2;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 18px;
+}

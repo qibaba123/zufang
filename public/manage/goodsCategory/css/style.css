@@ -1,0 +1,475 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	list-style: none;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body {
+	color: #333;
+	outline: none;
+	line-height: 1.5;
+	background-color: #fff;
+	font: 14px/1.5 Helvetica,STHeiti,"Microsoft YaHei",Verdana,Arial,Tahoma,sans-serif;;
+}
+h1,h2,h3,h4,h5,h6,button, input, select, textarea{
+    font: inherit;
+	font-weight: normal;
+}
+input, select, textarea {
+	font-size: 100%;
+}
+input, select {
+	vertical-align: middle;
+}
+img{
+	display: block;
+	border:0;
+}
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+	display: block;
+	visibility: hidden;
+	height: 0;
+	content: "";
+	clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.left{
+	text-align: left;
+}
+.center{
+	text-align: center;
+}
+.right{
+	text-align: right;
+}
+.preview-page{
+	max-width: 900px;
+	margin:0 auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	padding:20px 15px;
+	overflow: hidden;
+}
+.preview-page .mobile-page{
+	width: 350px;
+	float: left;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-ms-border-radius: 15px;
+	-o-border-radius: 15px;
+	border-radius: 15px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	padding:0 15px;
+}
+.mobile-page .mobile-header {
+    height: 70px;
+    width: 100%;
+    background: url(../images/iphone_head.png) no-repeat;
+    background-position: center;
+}
+.mobile-page .mobile-con{
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	border:1px solid #ccc;
+	background-color: #fff;
+}
+.mobile-con .title-bar{
+	height: 64px;
+	background: url(../images/titlebar.png) no-repeat;
+    background-position: center;
+    padding-top:20px;
+    font-size: 16px;
+    line-height: 44px;
+    text-align: center;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	letter-spacing: 1px;
+}
+
+.mobile-page .mobile-footer{
+	height: 65px;
+	line-height: 65px;
+	text-align: center;
+    width: 100%;
+}
+.mobile-page .mobile-footer span{
+	display: inline-block;
+	height: 45px;
+	width: 45px;
+	margin:10px 0;
+	background-color: #e6e1e1;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+.edit-right{
+	margin-left: 365px;
+}
+.edit-right .edit-con{
+	width: 100%;
+    margin-top: 135px;
+    border: 1px solid #D1D1D1;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+    position: relative;
+    background-color: #f8f8f8;
+    padding:15px 15px 10px;
+    min-height: 80px;
+}
+.edit-con::before {
+    border-color: transparent #d1d1d1 transparent transparent;
+    border-style: solid;
+    border-width: 8px 10px 8px 0;
+    height: 0;
+    left: -10px;
+    position: absolute;
+    top: 19px;
+    width: 0;
+    content: '';
+}
+.edit-con::after {
+    border-color: transparent #F8F8F8 transparent transparent;
+    border-style: solid;
+    border-width: 8px 10px 8px 0;
+    height: 0;
+    left: -9px;
+    position: absolute;
+    top: 19px;
+    width: 0;
+    content: '';
+}
+.edit-con div[data-right-edit].show{
+	display: block!important;
+}
+.edit-con>div>label{
+	line-height: 35px;
+	display: block;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+}
+.edit-con .cus-input{
+	padding:5px 8px;
+	font-size: 14px;
+	border:1px solid #ddd;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    width: 100%;
+    -webkit-transition: box-shadow 0.5s;
+	-moz-transition: box-shadow 0.5s;
+	-ms-transition: box-shadow 0.5s;
+	-o-transition: box-shadow 0.5s;
+	transition: box-shadow 0.5s;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	resize: vertical;
+	color: #666;
+}
+.edit-con .cus-input:focus{
+	border-color: #81C1F0;
+	-webkit-box-shadow: 0 0 8px #81C1F0;
+	-moz-box-shadow: 0 0 8px #81C1F0;
+	box-shadow: 0 0 8px #81C1F0;
+}
+
+.radio-box {
+	max-width: 640px;
+	text-align: left;
+	padding: 0;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 5px;
+}
+.radio-box>span{
+	display: inline-block;
+	margin-right: 20px;
+}
+.radio-box input{
+	display: none;
+	outline:none;
+	border:0;
+	-webkit-appearance: none;
+}
+.radio-box input+label {
+	padding-left: 20px;
+	height: 26px;
+	line-height: 26px;
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	font-weight: normal;
+	font-size: 13px;
+	cursor: pointer;
+	text-align: left;
+}
+.radio-box input+label:after {
+	content: '';
+	height: 16px;
+	line-height: 14px;
+	text-align: center;
+	width: 16px;
+	border: 1px solid #ccc;
+	color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	top: 5px;
+	box-sizing: border-box;
+	background-color: #fff;
+	transition:border-color 0.3s;
+}
+.radio-box input:checked+label:after {
+	content: '';
+	color: #fff;
+	font-size: 30px;
+	border:5px solid #06A6D9;
+	font-weight: bold;
+	background-color: #f9f9f9;
+}
+.input-rows{
+	margin-bottom: 5px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: -ms-box;
+	display: box;
+	display: flex;
+}
+.input-rows>label{
+	width: 130px;
+	line-height: 34px;
+	text-align: right;
+}
+.input-rows .input-groups{
+	width: 180px;
+}
+.input-rows .input-groups .cus-input{
+	width: 100px;
+}
+.red{
+	color: red;
+}
+.input-rows .input-groups .radio-box{
+	padding:3px 0;
+}
+.input-rows .input-groups .radio-box .cus-input{
+	display: inline-block;
+	vertical-align: middle;
+	width: 70px;
+	height: 26px;
+	margin:0 3px;
+}
+.edit-con .fenlei-manage{
+	margin-bottom: 0;
+}
+.del-btn{
+	position: absolute;
+	text-align: center;
+	cursor: pointer;
+	right: -10px;
+    top: -10px;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 20px;
+    height: 20px;
+    width: 20px;
+    font-weight: bold;
+    display: none;
+}
+.del-btn:hover{
+	background-color: rgba(0,0,0,0.6);
+}
+.first-item-manage{
+	padding: 10px 15px 5px 15px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    position: relative;
+    cursor: move;
+}
+.first-item-manage:hover>.del-btn{
+	display: block;
+}
+.first-item-manage .input-rows{
+	margin-bottom: 0;
+}
+.add-first-btn{
+	width: 110px;
+    height: 34px;
+    line-height: 34px;
+    margin: 20px auto 10px;
+    background-color: #2196F3;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #007cdf;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.add-first-btn:hover{
+	opacity: 0.9;
+}
+.add-second-btn{
+	width: 100px;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px auto 5px;
+    background-color: #8BC34A;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #76b033;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+.add-second-btn:hover{
+	opacity: 0.9;
+}
+.first-item-manage .second-manage{
+	display: none;
+	padding: 15px 15px 5px;
+    background-color: #f5f5f5;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    margin-top: 5px;
+}
+.second-manage .second-item-manage{
+	cursor: move;
+}
+.see-second-item{
+	font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    color: #999;
+    font-family: "微软雅黑";
+    cursor: pointer;
+    padding: 5px 0 0;
+}
+.see-second-item b{
+	font-weight: normal;
+}
+.see-second-item .icon-tip{
+	font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    font-weight: bold;
+    -webkit-transition:all .5s;
+    -moz-transition:all .5s;
+    -ms-transition:all .5s;
+    transition:all .5s;
+    font-family: "微软雅黑";
+}
+.see-second-item.show .icon-tip{
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	transform:rotate(180deg);
+}
+.see-second-item:hover{
+	color: #555;
+}
+.second-item-manage{
+	background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #eee;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    position: relative;
+}
+.second-item-manage:hover>.del-btn{
+	display: block;
+}
+.second-item-manage .fenlei-img{
+	width: 70px;
+	height: 70px;
+	border-radius: 8px;
+	overflow: hidden;
+	float: left;
+}
+.second-item-manage .fenlei-img img{
+	width: 100%;
+	height: 100%;
+}
+.second-item-manage .right-input{
+	padding-left: 80px;
+	height: 70px;
+}
+.second-item-manage .right-input .input-rows{
+	margin:0;
+	margin-bottom: 5px;
+}
+.second-item-manage .right-input .input-rows>label{
+	width: 100px;
+}
+.second-item-manage .right-input .input-name{
+	padding-top: 6px;
+}
+.second-item-manage .right-input .input-name>label{
+	margin-bottom: 3px;
+}
+/* 保存按钮样式 */
+.alert.save-btn-box{
+	border: 1px solid #F5F5AA;
+	background-color: #FFFFCC;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	margin-left: -453px;
+	width: 870px;
+	margin-bottom: 0;
+	z-index: 200;
+}
+.menu-min.sidebar+.main-content .alert.save-btn-box{
+	margin-left:-502px;
+}

@@ -1,0 +1,295 @@
+.main-content{min-width:1200px;}
+.header-wrap{
+	background:url('../img/trillIndex/top_bg.jpg') no-repeat center center;
+	background-size:cover;
+	padding:100px 0;
+}
+.header-wrap .title{
+	display:block;
+	width:690px;
+	margin:0 auto;
+}
+.header-wrap .small-title{
+	color:#fff;
+	font-size:16px;
+	text-align:center;
+	letter-spacing:4px;
+	padding:70px 0;
+}
+.header-wrap .experience-btn{
+	background-color:#FDCD00;
+	width:180px;
+	height:36px;
+	line-height:36px;
+	color:#111;
+	letter-spacing:1px;
+	font-size:16px;
+	margin:0 auto;
+	text-align:center;
+	cursor: pointer;
+}
+.part-white{
+	background-color:#fff;
+}
+.part-grey{
+	background-color:#F9F9F9;
+}
+.common-part{
+	padding:40px 0;
+}
+.common-title{
+	text-align:center;
+	padding-bottom:30px;
+	font-size:24px;
+	color:#333;
+	letter-spacing:1px;
+}
+.common-title img{
+	display:block;
+	width:98px;
+	margin:10px auto 0;
+}
+.app-wrap .app-list,.advantage-wrap .advantage-list{
+	width:1200px;
+	margin:0 auto;
+	justify-content:space-between;
+	-webkit-justify-content:space-between;
+	-moz-justify-content:space-between;
+	-o-justify-content:space-between;
+}
+.app-wrap .app-list .app-item{
+	text-align:center;
+	font-size:14px;
+	letter-spacing:1px;
+}
+.app-wrap .app-list .app-item img{
+	display:block;
+	margin-bottom:10px;
+}
+.advantage-wrap .advantage-list .advantage-item{
+	text-align:center;
+	font-size:12px;
+	color:#999;
+	letter-spacing:1px;
+	max-width:116px;
+}
+.advantage-wrap .advantage-list .advantage-item .img-box{
+	width:75px;
+	height:75px;
+	margin:0 auto;
+	border-bottom:3px solid #FF00A7;
+}
+.advantage-wrap .advantage-list .advantage-item .img-box img{
+	display:block;
+	width:100%;
+	height:100%;
+}
+.advantage-wrap .advantage-list .advantage-item .item-title{
+	font-size:16px;
+	color:#333;
+	padding:20px 0;
+}
+.advantage-wrap .advantage-list .advantage-item p{
+	height:40px;
+	line-height:20px;
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	word-break:break-all;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+}
+.trill-enter .enter-list{
+	width:1200px;
+	margin:0 auto;
+}
+.trill-enter .enter-list .list-part{
+	justify-content:space-between;
+	-webkit-justify-content:space-between;
+	-moz-justify-content:space-between;
+	-o-justify-content:space-between;
+}
+.trill-enter .enter-list .enter-item{
+	text-align:center;
+	font-size:14px;
+	color:#999;
+	letter-spacing:1px;
+}
+.trill-enter .enter-list .enter-item img{
+	display:block;
+	margin-bottom:10px;
+	
+}
+.application-value{
+	background:url('../img/trillIndex/value_bg.jpg') no-repeat center center;
+	background-size:cover;
+}
+.application-value .value-list{
+	width:1200px;
+	margin:0 auto;
+	text-align:center;
+}
+.application-value .value-list .value-item{
+	width:188px;
+	height:48px;
+	line-height:48px;
+	background:url('../img/trillIndex/kuang1.png') no-repeat center center;
+	background-size:100% 100%;
+	display:inline-block;
+	color:#fff;
+	font-size:14px;
+	margin:0  60px 50px 0;
+	margin-right:60px;
+	letter-spacing:1px;
+}
+.application-value .value-list .value-item:nth-child(5n){
+	margin-right:0;
+}
+.market-opportunity .opportunity-list{
+	width:1200px;
+	margin:0 auto;
+	justify-content:space-between;
+	-webkit-justify-content:space-between;
+	-moz-justify-content:space-between;
+	-o-justify-content:space-between;
+}
+.market-opportunity .opportunity-list .opportunity-item{
+	width:270px;
+	height:50px;
+	line-height:50px;
+	background:url('../img/trillIndex/kuang2.png') no-repeat center center;
+	background-size:100% 100%;
+	text-align:center;
+	letter-spacing:1px;
+	color:#555;
+	font-size:16px;
+}
+.trill-join .small-title{
+	/*padding-bottom:40px;*/
+	color:#666;
+	font-size:14px;
+	text-align:center;
+}
+.trill-join .profit-list{
+	width:1200px;
+	margin:0 auto;
+	flex-wrap:wrap;
+	-webkit-flex-wrap:wrap;
+	justify-content:space-between;
+	-webkit-justify-content:space-between;
+	-moz-justify-content:space-between;
+	-o-justify-content:space-between;
+}
+.trill-join .profit-list .profit-item{
+	width:12%;
+	text-align:center;
+	font-size:14px;
+	color:#555;
+	letter-spacing:1px;
+	margin:40px 8% 0 0;
+}
+.trill-join .profit-list .profit-item:nth-child(5n){
+	margin-right:0;
+}
+.trill-join .profit-list .profit-item img{
+	display:block;
+	margin:0 auto 10px;
+}
+.choose-reason .chooseWhy-list{
+	width:1200px;
+	margin:0 auto;
+	-webkit-flex-wrap:wrap;
+	justify-content:space-between;
+	-webkit-justify-content:space-between;
+	-moz-justify-content:space-between;
+	-o-justify-content:space-between;
+}
+/*.choose-reason .reason-list .reason-item{
+	width:20%;
+}*/
+.choose-reason .chooseWhy-list .img-box{
+	position:relative;
+	height:99px;
+	line-height:99px;
+	color:#111;
+	letter-spacing:3px;
+	font-weight:600;
+	font-size:18px;
+	text-align:center;
+	margin-bottom:20px;
+}
+.choose-reason .chooseWhy-list .img-box img{
+	width:84px;
+	height:99px;
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-42px;
+	z-index:0;
+}
+.choose-reason .chooseWhy-list .img-box .desc{
+	position:relative;
+	z-index:1;
+}
+.choose-reason .chooseWhy-list .brief{
+	width:70%;
+	margin:0 auto;
+	font-size:14px;
+	color:#999;
+	height:40px;
+	line-height:20px;
+	letter-spacing:1px;
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	word-break:break-all;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+	text-align:center;
+}
+.bottom-wrap{
+	padding:60px 0;
+	background:url('../img/trillIndex/footer_bg.jpg') no-repeat center center;
+	background-size:cover;
+}
+.bottom-wrap .bottom-title{
+	display:block;
+	width:353px;
+	margin:0 auto;
+}
+.bottom-wrap .brief{
+	padding:35px 0;
+	color:#fff;
+	font-size:18px;
+	letter-spacing:1px;
+}
+.bottom-wrap .brief i{
+	display:block;
+	text-align:center;
+	line-height:30px;
+}
+.bottom-wrap .bottom-btn{
+	width:600px;
+	margin:0 auto;
+	justify-content:space-between;
+	-webkit-justify-content:space-between;
+	-moz-justify-content:space-between;
+	-o-justify-content:space-between;
+}
+.bottom-wrap .bottom-btn .btn{
+	width:260px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	font-size:16px;
+	letter-spacing:1px;
+	cursor: pointer;
+}
+.bottom-wrap .bottom-btn .btn.bottom-apply{
+	background-color:#FDCD00;
+	color:#333;
+}
+.bottom-wrap .bottom-btn .btn.bottom-look{
+	border:1px solid #FDCD00;
+	color:#fff;
+}

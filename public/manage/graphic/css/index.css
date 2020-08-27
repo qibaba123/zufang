@@ -1,0 +1,228 @@
+/* 去除input默认样式 */
+.index-con select,input, button, textarea {
+	outline: none;
+	border: 0;
+	-webkit-appearance: none;
+}
+input[type=number] {
+	-moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+.border-t, .border-b,.border-l,.border-r {
+	position: relative;
+}
+.border-t:before, .border-b:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #e2e2e2;
+	right: 0;
+	height: 1px;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+.border-l::before,.border-r::after{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	background: #e2e2e2;
+	left: 0;
+	width: 1px;
+	-webkit-transform: scaleX(0.5);
+	transform: scaleX(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+.border-b:after {
+	top: auto;
+	bottom: 0;
+}
+.border-r::after{
+	right:0;
+	left:auto;
+}
+.index-con {
+	padding: 0;
+	position: relative;
+}
+.index-con .index-main {
+	min-height: 450px;
+	background-color: #eee;
+	overflow: auto;
+}
+.add-little-item{
+	background-color: #fff;
+	text-align: center;
+	line-height: 40px;
+	color: #38f;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+}
+/* 隐藏滚动条 */
+.index-con *::-webkit-scrollbar{
+    display: none;
+}
+/* 单图文 */
+.single-graphic{
+	padding: 10px;
+}
+.single-graphic .graphic-item{
+	border:1px solid #E3E3E3;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 3px;
+}
+.single-graphic .graphic-item h3{
+	font-size: 16px;
+	color: #333;
+	line-height: 1.3;
+    margin-bottom: 5px;
+}
+.single-graphic .graphic-item .date{
+	color: #999;
+	font-size: 12px;
+}
+.single-graphic .graphic-item img{
+	width: 100%;
+	margin:10px 0;
+}
+.single-graphic .graphic-item .intro{
+	color: #999;
+	font-size: 14px;
+	line-height: 1.5;
+}
+.single-graphic .graphic-item .see-all{
+	font-size: 15px;
+	color: #333;
+	text-decoration: none;
+	margin-top: 15px;
+	display: block;
+}
+/* 多图文 */
+.more-graphic{
+	padding: 10px;
+}
+.more-graphic .graphic-item{
+	border:1px solid #E3E3E3;
+	background-color: #fff;
+	border-radius: 3px;
+}
+.more-graphic .fm-pic{
+	position: relative;
+	padding: 8px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+}
+.more-graphic .fm-pic img{
+	width: 100%;
+	display: block;
+}
+.more-graphic .fm-pic p{
+	position: absolute;
+	left:8px;
+	right: 8px;
+	bottom: 8px;
+	padding: 8px 10px;
+	line-height: 1.3;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #fff;
+	background-color: rgba(0,0,0,0.5);
+}
+.more-graphic .fm-pic .edit{
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: none;
+}
+.more-graphic .fm-pic .edit span{
+	color: #fff;
+	display: inline-block;
+	width: 36px;
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	background-color: rgba(0,0,0,0.3);
+	cursor: pointer;
+}
+.more-graphic .fm-pic:hover{
+	background-color: #f0f0f0;
+}
+.more-graphic .fm-pic:hover .edit,.more-graphic .fm-pic.cur-edit .edit{
+	display: block;
+}
+.more-graphic .little-item li{
+	overflow: hidden;
+	position: relative;
+	padding: 10px 12px;
+}
+.more-graphic li .edit{
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: none;
+}
+.more-graphic li .edit span{
+	color: #fff;
+	width: 36px;
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	display: inline-block;
+	margin-left: 1px;
+	background-color: rgba(0,0,0,0.3);
+	cursor: pointer;
+}
+.more-graphic li .edit span.hide{
+	display: none;
+}
+.more-graphic .little-item li:hover{
+	background-color: #f0f0f0;
+}
+.more-graphic .little-item li:hover .edit,.more-graphic .little-item li.cur-edit .edit{
+	display: block;
+}
+.more-graphic .little-item li p{
+	min-height: 40px;
+	margin: 7px 0;
+	line-height: 20px;
+	padding-right: 60px;
+	display: -webkit-box !important;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	word-break:break-all;
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:2;
+}
+.more-graphic .little-item .pic{
+	width: 54px;
+	height: 54px;
+	float: right;
+	position: absolute;
+	right: 10px;
+	top:10px;
+	overflow: hidden;
+}
+.more-graphic .little-item .pic img{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	-webkit-transform:translate(-50%,-50%);
+	-moz-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+	min-width: 100%;
+	height: 100%;
+}

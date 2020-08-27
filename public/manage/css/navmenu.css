@@ -1,0 +1,154 @@
+.table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td{
+    vertical-align: middle;
+}
+.page-content{
+    position: relative;
+}
+#mainContent{
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.sidebar{
+    z-index: 5;
+}
+.second-navmenu{
+    width: 130px;
+    background-color: #EAEDF1;
+    position: fixed;
+    left:140px;
+    top:49px;
+    padding-top: 40px;
+    bottom:0;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+.breadcrumbs{
+    z-index: 2;
+}
+.second-navmenu:before{
+    content: "";
+    display: block;
+    width: 130px;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+    background-color: #EAEDF1;
+}
+.second-navmenu ul{
+    list-style: none;
+    margin:0;
+}
+.second-navmenu li.title{
+    height: 60px;
+    line-height: 60px;
+    padding-left: 15px;
+    font-weight: bold;
+}
+.second-navmenu li>a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 30px;
+    text-decoration: none;
+    color: #666;
+}
+.second-navmenu li>a:hover{
+    background-color: #F4F6F8;
+}
+.second-navmenu li>a.active{
+    background-color: #fff;
+}
+.second-navmenu .showhide-shortcut{
+    position: absolute;
+    right:0;
+    top:380px;
+    height: 50px;
+    width: 20px;
+    overflow: hidden;
+}
+.second-navmenu .showhide-shortcut>div{
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0;
+    width: 20px;
+    color: #2B7DBC;
+    cursor: pointer;
+    background-color: #F7F7F7;
+    position: relative;
+    right: 0;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.second-navmenu .showhide-shortcut .hide-menu{
+    right: -5px;
+    position: relative;
+}
+.second-navmenu .showhide-shortcut .hide-menu:hover{
+    right: 0;
+}
+.second-navmenu .showhide-shortcut .hide-menu>span{
+    position: absolute;
+    left:0;
+}
+.second-navmenu .showhide-shortcut .hide-menu>span.left-top{
+    top:0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #EAEDF1;
+    border-right: 20px solid transparent;
+    display: inline-block;
+}
+.second-navmenu .showhide-shortcut .hide-menu>span.left-bottom{
+    bottom:0;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #EAEDF1;
+    border-right: 20px solid transparent;
+    display: inline-block;
+}
+.second-navmenu .showhide-shortcut .show-menu{
+    left: -5px;
+    position: relative;
+    background-color: #EAEDF1;
+}
+.second-navmenu .showhide-shortcut .show-menu:hover{
+    left: 0;
+}
+.second-navmenu .showhide-shortcut .show-menu{
+    position: relative;
+}
+.second-navmenu .showhide-shortcut .show-menu>span{
+    position: absolute;
+    right:0;
+}
+.second-navmenu .showhide-shortcut .show-menu>span.right-top{
+    top:0;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #fff;
+    border-left: 20px solid transparent;
+    display: inline-block;
+}
+.second-navmenu .showhide-shortcut .show-menu>span.right-bottom{
+    bottom:0;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #fff;
+    border-left: 20px solid transparent;
+    display: inline-block;
+
+}
+#mainContent{
+    margin-left: 130px;
+}

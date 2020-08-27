@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body, button, input, select, textarea {
+    color: #333;
+    outline: none;
+    line-height: 1.5;
+    background-color: #fff;
+    font: 14px/1.5 "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+a {
+    text-decoration: none;
+    color: blue;
+}
+a:hover {
+    opacity: 0.9;
+    text-decoration: none;
+}
+.wrap {
+    margin: 15px auto;
+    overflow: auto;
+}
+.wechat-setting {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #E4E4E4;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.application-list ul{
+    margin-left: -20px;
+    overflow: hidden;
+}
+.application-list ul li{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 240px;
+    float: left;
+    position: relative;
+}
+.application-list ul li a{
+    display: block;
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+.application-list ul li.recommend a, .application-list ul li.latest a{
+    background: #fff5cb none repeat scroll 0 0;
+    position: relative;
+}
+.application-list ul li.recommend::before,.application-list ul li.latest::before{
+    background: #ff4343 none repeat scroll 0 0;
+    color: #fff;
+    content: "";
+    height: 17px;
+    line-height: 17px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 36px;
+    z-index: 2;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.application-list ul li.recommend::before{
+    content:'推荐';
+}
+.application-list ul li.latest::before{
+    content:'最新';
+}
+.application-list .application-logo{
+    float: left;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background: url() no-repeat;
+    background-size: 28px;
+    background-position: center;
+    -webkit-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+.application-list .bg-blue{
+    background-color: #66A3FF;
+}
+.application-list .bg-orange{
+    background-color: #FF842C;
+}
+.application-list .bg-red{
+    background-color: #FF5353;
+}
+.application-list .bg-green{
+    background-color: #5AB081;
+}
+.application-list h3{
+    margin:0;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.application-list .application-name, .application-list .application-desc{
+    margin-left: 50px;
+}
+.application-list .application-name{
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: bottom;
+}
+.application-list .application-desc{
+    color: #999;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+}

@@ -1,0 +1,367 @@
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    content: "";
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+ul,li{
+    list-style: none;
+    margin:0;
+}
+p{
+    margin:0;
+}
+#refund-form{
+    font-family: '黑体';
+}
+.btn.btn-link:hover{
+    text-decoration: none;
+}
+.page-content{
+    padding:20px;
+    background-color: #fff;
+}
+.page-trade-order-detail{
+    padding: 15px;
+    min-width: 750px;
+    min-height: 500px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 1px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.2);
+    font-family: '黑体';
+}
+.step-region{
+    position: relative;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+}
+.ui-step {
+    padding: 14px 0 8px 0;
+    zoom: 1;
+    overflow: hidden;
+}
+.ui-step li {
+    width: 24.9999%;
+    float: left;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+.ui-step li::before, .ui-step li::after {
+    position: absolute;
+    left: 0;
+    top: 36px;
+    display: block;
+    content: ' ';
+    width: 50%;
+    height: 4px;
+    background: #999;
+    z-index: 1;
+}
+.ui-step li:first-child::before {
+    width: 0;
+}
+.ui-step li::after {
+    left: 50%;
+}
+.ui-step li.ui-step-done::before, .ui-step li.ui-step-done::after, .ui-step li.ui-step-done .ui-step-number {
+    background-color: #80CCFF;
+}
+.ui-step .ui-step-title {
+    color: #999;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+}
+.ui-step li.ui-step-done .ui-step-title {
+    color: #80CCFF;
+}
+.ui-step .ui-step-number {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+    line-height: 22px;
+    background: #999;
+    color: #fff;
+    border-radius: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.ui-step li.ui-step-done .ui-step-number {
+    color: transparent;
+}
+.ui-step .ui-step-meta {
+    color: #ccc;
+}
+.ui-step li.ui-step-done .ui-step-number::after {
+    position: absolute;
+    left: 0;
+    width: 17px;
+    height: 20px;
+    line-height: 20px;
+    content: '√';
+    color: #fff;
+    font-family: serif;
+}
+.ui-step li:last-child::after {
+    width: 0;
+}
+
+.page-trade-order-detail .content-region {
+    position: relative;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.page-trade-order-detail .info-region, .page-trade-order-detail .state-region {
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.page-trade-order-detail .info-region {
+    width: 320px;
+    padding: 15px 15px 50px 15px;
+    border-right: 1px solid #e5e5e5;
+}
+.page-trade-order-detail .state-region {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 20px 20px 90px 20px;
+    margin-left: -1px;
+    border-left: 1px solid #e5e5e5;
+}
+.page-trade-order-detail .info-region h3 {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: '黑体';
+}
+.page-trade-order-detail .info-region .secured-title {
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+    color: #f60;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+caption, th, td {
+    font-weight: normal;
+    vertical-align: middle;
+}
+a {
+    color: #38f;
+    cursor: pointer;
+}
+.page-trade-order-detail .info-table {
+    margin-top: 10px;
+}
+.page-trade-order-detail .info-table th {
+    text-align: right;
+    color: #999;
+    width: 60px;
+}
+.page-trade-order-detail .info-table th, .page-trade-order-detail .info-table td {
+    color: #999;
+    padding: 0 0 10px 0;
+    vertical-align: top;
+    font-size: 12px;
+}
+.page-trade-order-detail .dashed-line {
+    border-top: 1px dashed #e5e5e5;
+}
+.page-trade-order-detail .state-region .state-title {
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: '黑体';
+}
+.page-trade-order-detail .state-region .state-title .icon {
+    position: absolute;
+    left: -40px;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #07d;
+    border-radius: 28px;
+    line-height: 24px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: serif;
+}
+.page-trade-order-detail .state-region .state-title .icon.success {
+    color: #55BD47;
+    border-color: #55BD47;
+}
+.page-trade-order-detail .state-region .state-desc {
+    margin-bottom: 30px;
+    color: #666;
+}
+.page-trade-order-detail .state-remind-region {
+    position: absolute;
+    right: 20px;
+    bottom: 25px;
+    left: 340px;
+}
+.page-trade-order-detail .state-remind {
+    padding: 10px 0 0 40px;
+}
+.page-trade-order-detail .state-remind h4 {
+    color: #FF6600;
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-family: '黑体';
+}
+.page-trade-order-detail .state-remind ul {
+    padding-left: 4px;
+}
+.page-trade-order-detail .state-remind li {
+    color: #999;
+    line-height: 1.5;
+}
+.page-trade-order-detail .state-remind li::before {
+    content: ' · ';
+}
+.ui-table {
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+    margin-bottom: 0;
+    border: 1px solid #e5e5e5;
+}
+.ui-table .cell-30 {
+    width: 30%;
+}
+.ui-table .cell-13 {
+    width: 13%;
+}
+.ui-table th {
+    background: #f8f8f8;
+}
+.ui-table th, .ui-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.page-trade-order-detail .goods-table thead th {
+    background-color: #f2f2f2;
+    color: #999;
+}
+.page-trade-order-detail .goods-table .tr-express {
+    color: #999;
+}
+.ui-table tbody tr:last-of-type {
+    border-bottom: none;
+}
+.ui-table tbody tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.ui-table.ui-table-simple tbody tr:nth-child(even) {
+    background: none;
+}
+.page-trade-order-detail .goods-table td {
+    border-bottom: none 0;
+    border-top: 1px solid #e5e5e5;
+    vertical-align: middle;
+}
+.page-trade-order-detail .goods-table .tr-express td {
+    background: #fafafa;
+}
+
+.page-trade-order-detail .goods-table .tr-express strong {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+.page-trade-order-detail .goods-table .td-postage {
+    text-align: center;
+    vertical-align: middle;
+    border-left: 1px solid #e5e5e5;
+    background: #fff !important;
+}
+.ui-table tbody tr:last-of-type {
+    border-bottom: none;
+}
+.page-trade-order-detail .goods-table .td-goods-image {
+    width: 80px;
+}
+.ui-centered-image {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+}
+.ui-centered-image img {
+    max-width: 60px;
+    max-height: 60px;
+    border: 0;
+    vertical-align: middle;
+}
+.c-gray {
+    color: #999 !important;
+}
+.page-trade-order-detail .goods-table tfoot>tr>td {
+    padding: 15px 10px;
+    line-height: 24px;
+}
+.ui-money, .ui-money-income, .ui-money-outlay {
+    font-weight: bold;
+    color: #333;
+}
+.ui-money-income {
+    color: #55BD47;
+}
+.page-trade-order-detail .goods-table tfoot .real-pay {
+    font-size: 14px;
+}
+.page-trade-order-detail .goods-table .tr-express .express-latest-news {
+    color: #390;
+}
+.page-trade-order-detail .goods-table .tr-express .express-meta {
+    margin-right: 20px;
+}
+.ui-table .cell-25 {
+    width: 25%;
+}
+.ui-table .cell-60 {
+    width: 60%;
+}
+.ui-table .cell-15 {
+    width: 15%;
+}
+.page-trade-order-detail .modal-dialog{
+    font-family: "黑体";
+}
+.modal-header{
+    padding:12px 15px;
+}
+.modal-header h4{
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "黑体";
+}

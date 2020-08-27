@@ -1,0 +1,146 @@
+.container-content .top-image{
+    position: relative;
+    width:100%;
+    height:570px;
+    background:url(../../img/redpack/bannerbeijing@2x.png) no-repeat;
+    background-position:center;
+}
+.top-image .word{
+    position: absolute;
+    bottom:6px;
+    left: 50%;
+    margin-left:-300px;
+    line-height: 40px;
+    font-size: 27px;
+    width:600px;
+    text-align: center;
+    color:#888;
+}
+.red-packet{
+     padding-top: 20px;
+}
+.red-packet h2,.two-packet .title span{
+    font-size:36px;
+    font-weight: normal;
+    color:#545454;
+    text-align: center;
+    line-height: 80px;
+}
+.red-packet h3{
+    font-size: 24px;
+    text-align: center;
+    color:#888;
+    line-height: 70px;
+}
+.red-packet .image {
+    margin:0 auto;
+    width:523px;
+    margin-top: 20px;
+}
+.attention{
+    background:#fff;
+}
+.two-packet{
+    background:#ededed
+}
+.two-packet .title{
+    width: 350px;
+    margin: 0 auto;
+}
+.two-packet .title h2,.two-packet .title span{
+    display: inline-block;
+    color:#888;
+}
+.two-packet .title h2{
+    cursor: pointer;
+}
+.two-packet .title h2.active{
+    color:#545454;
+}
+.two-packet .title h2:hover{
+    color:#545454;
+}
+.two-packet .title span{
+    padding:0 8px;
+}
+.packet{
+    display: none;
+}
+.word-packet{
+    display: block;
+}
+.fission{
+    background-color: #fff;
+}
+.fission h3{
+    line-height: 35px;
+    margin: 10px 0;
+}
+.fission .image{
+    margin-top: 40px;
+}
+.dingxiang{
+    background-color: #ededed;
+}
+.user{
+    background-color: #fff;   
+}
+.user h2{
+    font-size: 36px;
+    line-height:95px;
+}
+.user ul{
+    width:985px;
+    margin:0 auto;
+}
+.user ul li{
+    width:150px;
+    margin-right: 57.5px;
+    float: left;
+    margin-bottom: 57.5px; 
+}
+.user ul li:nth-child(5n){
+    margin-right: 0;
+}
+.footer-content{
+    background-color: #ededed;
+    color:#555;
+    padding: 20px 0;
+}
+.footer-content h3{
+    text-align: center;
+    line-height: 75px;
+    font-size: 36px;
+    color:#555;
+}
+.footer-content .word,.footer p{
+    font-size: 25px;
+    line-height: 45px;
+    width:985px;
+    margin: 0 auto;
+}
+.footer-content p{
+    text-align: center;
+}
+.footer-content p span{
+    margin-right: 40px;
+}
+.footer-content .btn{
+    width:200px;
+    height:50px;
+    line-height: 50px;
+    background-color: #304b66;
+    margin: 0 auto;
+    color: #fff;
+    cursor:pointer;
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom:20px;
+    text-align: center;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+.footer-content .btn a{
+    color: #fff;
+}

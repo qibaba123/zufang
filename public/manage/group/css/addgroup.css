@@ -1,0 +1,135 @@
+.page-content{
+    padding-top: 20px;
+}
+.choose-pintuan {
+    width: 800px;
+    margin: 0 auto;
+}
+.choose-pintuan>h3 {
+    font-size: 26px;
+    line-height: 46px;
+    text-align: center;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+.choose-pintuan>p {
+    font-size: 16px;
+    line-height: 36px;
+    color: #999;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.pintuan-type .type-item {
+    width: 650px;
+    margin: 0 auto 20px;
+}
+.pintuan-type a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    overflow: hidden;
+    padding: 20px;
+    border: 1px dashed #ddd;
+}
+.pintuan-type a:hover{
+    background-color: #f8f8f8;
+}
+.pintuan-type .ticket {
+    width: 193px;
+    height: 72px;
+    padding: 14px 3px 14px 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 24px;
+    line-height: 44px;
+    color: #fff;
+    background: url("../images/coupons-tickets.png") no-repeat;
+    text-align: center;
+    float: left;
+}
+.pintuan-type .ticket span {
+    display: inline-block;
+    background: url("../images/icon_tuan.png") no-repeat left center;
+    background-size: 28px;
+    padding-left: 38px;
+}
+.pintuan-type .ticket.ticket-red {
+    background-position: 0 0;
+}
+.pintuan-type .ticket.ticket-blue {
+    background-position: 0 -82px;
+}
+.pintuan-type .ticket.ticket-green {
+    background-position: 0 -164px;
+}
+.pintuan-type .ticket.ticket-yellow {
+    background-position: 0 -246px;
+}
+.pintuan-type .right-txt {
+    float: right;
+    height: 72px;
+    width: 400px;
+}
+.pintuan-type .right-txt h4 {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 22px;
+    color: #666;
+    margin: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 0;
+}
+.pintuan-type .right-txt p {
+    margin: 0;
+    padding: 5px 0;
+    line-height: 18px;
+    color: #999;
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; */
+}
+
+.product-item{
+    padding: 5px 10px;
+    position: relative;
+    border: 1px solid #e8e8e8;
+    -webkit-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 850px;
+    padding-right: 45px;
+    margin-bottom: 10px;
+}
+
+.product-item .item-wrap{
+    width: 100%;
+    font-size: 0;
+}
+.product-item .item-wrap>div{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+}
+.product-item .item-wrap .button-box{
+    width: 20%;
+}
+.product-item .item-wrap .good-name{
+    width: 72%;
+}
+.product-item .item-wrap .good-name p{
+    width: 100%;
+    margin:0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

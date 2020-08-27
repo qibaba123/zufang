@@ -1,0 +1,456 @@
+.wrap {
+    margin: 20px auto;
+    min-width: 930px;
+    overflow: auto;
+}
+.wechat-setting {
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #E4E4E4;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.function {
+    overflow: hidden;
+    /* border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px; */
+}
+.function .left {
+    width: 78%;
+    float: left;
+}
+.function .left table {
+    width: 100%;
+    word-break: break-all;
+    border-collapse: collapse;
+}
+.function .left table td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    color: #333;
+    letter-spacing: 0.8px;
+}
+.function .left table td a {
+    color: #07d;
+    border: 0;
+    cursor: pointer;
+}
+.function .left table .input-group .form-control{
+    border: 0;
+    color: #999;
+}
+.function .left table td.title {
+    padding: 12px 10px;
+    width: 130px;
+    text-align:right;
+    background-color: #F8F8F8;
+    font-size: 13px;
+}
+.function .left .opera-btn {
+    margin-top: 20px;
+}
+.function .left .opera-btn a {
+    display: inline-block;
+    padding: 0 10px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+}
+.function .left .opera-btn a:hover {
+    opacity: 0.9;
+}
+.function .left .opera-btn a.have-btn {
+    background-color: #48B921;
+    border: 1px solid #41A71D;
+    margin-right: 10px;
+}
+.function .left .opera-btn a.no-btn {
+    background-color: #FF8603;
+    border: 1px solid #DF7808;
+}
+.function .right {
+    width: 20%;
+    float: right;
+}
+.function .right .erweima {
+    padding: 30px 0;
+}
+.function .right .erweima img {
+    display: block;
+    width: 180px;
+    margin: 0 auto;
+}
+.function .right .erweima a {
+    text-decoration: none;
+    color: blue;
+    text-align: center;
+    display: block;
+    line-height: 2.4;
+    font-size: 15px;
+}
+.attention {
+    padding: 25px 0 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.attention table {
+    width: 100%;
+    word-break: break-all;
+    border-collapse: collapse;
+}
+.attention table td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+    border: 0;
+    font-size: 13px;
+    color: #333;
+    letter-spacing: 0.8px;
+}
+.attention table td.title {
+    padding: 12px 10px;
+    width: 130px;
+    text-align: right;
+    font-size: 14px;
+}
+.attention table td>div {
+    margin-top: 5px;
+}
+.attention table td span {
+    margin-right: 8px;
+}
+.attention table td span input{
+    display: none;
+}
+.attention table td span input+label {
+    margin-left: 2px;
+    font-size: 12px;
+    vertical-align: top;
+    padding-left: 20px;
+    background: url(/public/manage/images/no-check.png) no-repeat;
+    background-size: 16px;
+    background-position: left center;
+}
+.attention table td span input:checked+label{
+    background-image: url(/public/manage/images/checked.png);
+}
+.attention table td>div.on-input {
+    padding: 5px 0;
+    margin: 0;
+    padding-top: 0;
+}
+.attention table td>div.on-input input {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+    -webkit-border-radius: 4px!important;
+    -ms-border-radius: 4px!important;
+    -moz-border-radius: 4px!important;
+    -o-border-radius: 4px!important;
+    border-radius: 4px!important;
+    color: #555;
+    display: inline-block;
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    padding: 5px 6px;
+    vertical-align: middle;
+    width: 290px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+.attention table td>div.on-input a {
+    margin-right: 10px;
+    line-height: 2.2;
+}
+.save-box {
+    height: 70px;
+    background-color: #FFFEDC;
+}
+.save-box .save-btn {
+    display: inline-block;
+    padding: 0 20px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    -webkit-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    background-color: #0077DD;
+    border: 1px solid #0064CE;
+    margin-top: 15px;
+    margin-left: 150px;
+}
+.pay-info dl {
+    display: block;
+    font-size: 14px;
+    margin: 0 0 3px;
+    overflow: hidden;
+}
+.pay-info dl dt {
+    float: left;
+    width: 120px;
+    text-align: right;
+    line-height: 32px;
+}
+.pay-info dl dd {
+    margin-left: 135px;
+    line-height: 32px;
+}
+.pay-info .pay-info-line {
+    border-bottom: 1px solid #e5e5e5;
+    margin: 20px 0px;
+    padding-bottom: 5px;
+}
+.pay-info dl dd .money {
+    font-size: 20px;
+    color: #DD4A43;
+}
+.pay-info dl dd .total-money {
+    font-size: 20px;
+    color: #FF7011;
+    line-height: 1;
+}
+.pay-info dl dd .read-agreement {
+    font-size: 12px;
+}
+a {
+    color: #07d;
+    text-decoration: none;
+}
+.pay-info .not-sufficient-funds {
+    position: relative;
+    margin-top: 10px;
+    padding: 10px 6px;
+    border: 1px solid #FDEEB2;
+    border-width: 1px 2px;
+    color: #333;
+    background: #FFF6CC;
+    width: 330px;
+    font-size: 12px;
+}
+.red {
+    color: #f30;
+}
+.alert-yellow {
+    color: #FF6330;
+    font-weight: bold;
+    background-color: #FFFFCC;
+    border-color: #FFDA89;
+    margin: 10px 0;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+}
+.zent-dialog-body {
+    padding: 5px 10px;
+    color: #666;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+.layui-layer-title {
+    font-family: "Microsoft YaHei", sans-serif;
+}
+.zent-dialog-body .online-pay-content {
+    position: relative;
+}
+a {
+    color: #07d;
+    text-decoration: none;
+}
+.ui-nav {
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+}
+.ui-nav ul {
+    margin-bottom: -1px;
+}
+.ui-nav li {
+    float: left;
+    margin-left: -1px;
+    list-style: none;
+}
+.ui-nav li a {
+    display: inline-block;
+    padding: 0 12px;
+    line-height: 32px;
+    color: #333;
+    border: 1px solid #e5e5e5;
+    background: #f8f8f8;
+    min-width: 80px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.zent-dialog-body .ui-nav li a {
+    padding: 0 40px;
+}
+.ui-nav li.active a, .ui-nav li a.active {
+    border-bottom-color: #fff;
+    background: #fff;
+}
+.zent-alert {
+    border-radius: 2px;
+    padding: 9px 14px;
+    font-size: 12px;
+    line-height: 28px;
+    color: #333;
+    background-color: #FFF5CB;
+    border: 1px solid #FFF5CB;
+    margin: 0 0 10px 0;
+    vertical-align: middle;
+}
+.zent-dialog-body .image-code {
+    width: 200px;
+    height: 200px;
+    margin-left: 25px;
+}
+.zent-dialog-body .image-code img {
+    width: 100%;
+}
+.zent-dialog-body .online-pay-content .weixin-btn {
+    position: absolute;
+    bottom: 16px;
+    left: 250px;
+}
+.zent-dialog-body p {
+    line-height: 1.2em;
+    margin-bottom: 1em;
+}
+.zent-dialog-body .online-pay-content .weixin-btn p {
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+.zent-dialog-body .online-pay-content .weixin-btn .btn-last {
+    margin-left: 5px;
+}
+.zent-btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border-radius: 3px !important;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    border: 1px solid #bbb;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s
+}
+.zent-btn:visited {
+    color: #333;
+}
+.zent-btn:hover {
+    color: #276ACC;
+    border-color: #276ACC
+}
+.zent-btn:active {
+    color: #333;
+    background: #e5e5e5;
+    border-color: #bbb
+}
+.zent-btn.zent-btn-loading:hover, .zent-btn.zent-btn-loading:active {
+    background: #fff;
+    border: 1px solid #bbb
+}
+.zent-btn + .zent-btn {
+    margin-left: 10px
+}
+.zent-btn-large {
+    font-size: 14px;
+    height: 36px;
+    line-height: 34px;
+    padding: 0 30px
+}
+.zent-btn-small {
+    height: 26px;
+    line-height: 24px;
+    padding: 0 5px
+}
+.zent-btn-primary {
+    color: #fff;
+    background: #3283fa;
+    border-color: #3283fa
+}
+.zent-btn-primary:link, .zent-btn-primary:visited, .zent-btn-primary:focus {
+    color: #fff
+}
+.zent-btn-primary:hover {
+    color: #fff;
+    background: #66a3ff;
+    border-color: #2e7df1
+}
+.zent-btn-primary:active {
+    color: #fff;
+    background: #276ACC;
+    border-color: #2e7df1
+}
+.zent-btn-primary.zent-btn-loading:hover, .zent-btn-primary.zent-btn-loading:active {
+    background: #3283fa;
+    border-color: #3283fa
+}
+.zent-btn-primary.zent-btn-loading::after {
+    border-color: #fff transparent transparent transparent
+}
+.zent-btn-primary-outline {
+    color: #3283fa;
+    border-color: #3283fa;
+    background: #fff
+}
+.zent-btn-primary-outline:link, .zent-btn-primary-outline:visited, .zent-btn-primary-outline:focus {
+    color: #3283fa
+}
+.zent-btn-primary-outline:hover {
+    color: #276ACC;
+    border-color: #276ACC
+}
+.zent-btn-primary-outline:active {
+    color: #276ACC;
+    background: #e5e5e5;
+    border-color: #3283fa
+}
+.zent-btn-primary-outline.zent-btn-loading:hover, .zent-btn-primary-outline.zent-btn-loading:active {
+    border-color: #3283fa;
+    background: #fff
+}
+.zent-btn-primary-outline.zent-btn-loading::after {
+    border-color: #3283fa transparent transparent transparent
+}
+.table thead tr th, .table tbody tr td {
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+.flex{
+	align-items: center;
+    display: flex;
+}
+.goods-img{
+    border: 1px solid #ccc;
+	margin-right: 10px;
+    height: 40px;
+    padding: 1px;
+    width: 40px;
+}
+.progress{
+    border-radius: 4px;
+    height: 10px;
+    margin-bottom:0;
+}

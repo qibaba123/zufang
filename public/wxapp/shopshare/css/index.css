@@ -1,0 +1,22 @@
+.detail-wrap{padding-bottom: 50px;background: url(/public/wxapp/shopshare/images/bg.png) no-repeat bottom center;background-size: 100%;}
+.shop-cover{width: 100%;position: relative;max-height: 220px;overflow:hidden;}
+.shop-cover .cover{display: block;width: 100%;}
+.shop-cover .arc{display: block;width: 100%;position: absolute;bottom: 0;left:0;z-index: 1;}
+.shop-info{width: 76%;border-radius: 8px;background-color: #fff;box-shadow: 0 2px 10px #eee;padding:25px 15px;min-height: 300px;margin:0 auto;    margin-top: -60px;
+position: relative;z-index: 2;}
+.shop-info .shop-logo{height: 70px;width: 70px;border-radius: 6px;margin: 0 auto;}
+.shop-info .shop-logo img{display: block;width: 100%;height: 100%;border-radius: 6px;}
+.shop-info .shop-name{font-size: 16px;text-align: center;line-height: 1.45;font-weight: bold;margin-top: 12px;}
+.shop-info .open-time{font-size: 14px;color: #666;text-align: center;}
+.addr-tel{border-top:1px dashed #f1f1f1;padding:10px;margin-top: 8px;}
+.addr-tel .info-item{position: relative;padding-left: 22px;margin-bottom: 4px;}
+.addr-tel .info-item .icon{display: block;width: 15px;position: absolute;left:0;top:1px;}
+.addr-tel .info-item p{margin:0;line-height: 1.4;font-size: 14px;color: #333;}
+.applet-code{margin-top: 15px;}
+.applet-code .code-img{width: 140px;margin: 0 auto;display: block;}
+.applet-code p{font-size: 14px;text-align: center;color: #bbb;margin-top: 10px;}
+
+.activity-label{padding:10px 10px 0;box-sizing:border-box;}
+.activity-label .label-item{width:33.33%;float:left;}
+.activity-label .label-item img{display:inline-block;width:15px;height:15px;vertical-align: middle;}
+.activity-label .label-item span{color:#666;font-size:12px;vertical-align: middle;}

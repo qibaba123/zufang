@@ -1,0 +1,244 @@
+/* 短信数量统计样式 */
+.sms-view{
+    padding:10px;
+    background-color: #F8F8F8;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.sms-view ul{
+    margin:0;
+    list-style: none;
+}
+.sms-view ul li{
+    width: 20%;
+    float: left;
+    border-right:1px dotted #ccc;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    list-style: none;
+}
+.sms-view ul li h5{
+    font-size: 22px;
+    line-height: 1;
+    margin: 10px 0 0;
+    color: #0077dd;
+    cursor: pointer;
+}
+.sms-view ul li p{
+    color: #666;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+/* 充值弹出框 */
+.ui-popover {
+    background: #000 none repeat scroll 0 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 2px;
+    z-index: 1010;
+    display: none;
+    position: absolute;
+    right: 50%;
+    top: 120%;
+    width: 300px;
+    left: auto;
+    margin-right: -35px;
+}
+.ui-popover .ui-popover-inner {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 4px;
+    min-width: 280px;
+    padding: 10px;
+    -webkit-box-sizing: border-box!important;
+    -moz-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+}
+.ui-popover .ui-popover-inner .money-input {
+    border-radius: 4px !important;
+    line-height: 19px;
+    -webkit-transition: border linear .2s, box-shadow linear .2s;
+    -moz-transition: border linear .2s, box-shadow linear .2s;
+    -o-transition: border linear .2s, box-shadow linear .2s;
+    transition: border linear .2s, box-shadow linear .2s;
+    -webkit-box-sizing: border-box!important;
+    -moz-box-sizing: border-box!important;
+    box-sizing: border-box!important;
+    width: 163px;
+}
+.ui-popover .ui-popover-inner .money-input:focus {
+    border: 1px solid #73b8ee;
+    -webkit-box-shadow: inset 0 1px 1px rgba(115, 184, 238, .075);
+    -moz-box-shadow: inset 0 1px 1px rgba(115, 184, 238, .075);
+    box-shadow: inset 0 1px 1px rgba(115, 184, 238, .075);
+}
+.ui-popover .arrow {
+    border: 5px solid transparent;
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+.ui-popover.top-center .arrow {
+    left: 90%;
+    margin-left: -5px;
+    top: -10px;
+}
+.ui-popover.top-left .arrow, .ui-popover.top-center .arrow, .ui-popover.top-right .arrow {
+    border-bottom-color: #000;
+}
+.ui-popover .arrow::after {
+    border: 5px solid transparent;
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    position: relative;
+    width: 0;
+}
+.ui-popover.top-center .arrow::after {
+    left: -5px;
+    top: -3px;
+}
+.ui-popover.top-left .arrow::after, .ui-popover.top-center .arrow::after, .ui-popover.top-right .arrow::after {
+    border-bottom-color: #fff;
+}
+
+.zent-btn {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    border-radius: 3px !important;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    border: 1px solid #bbb;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s
+}
+.zent-btn:visited {
+    color: #333;
+}
+.zent-btn:hover {
+    color: #276ACC;
+}
+.zent-btn:active {
+    color: #333;
+    background: #e5e5e5;
+}
+.zent-btn-success {
+    color: #fff;
+    background: #06bf04;
+    border-color: #00ab00;
+}
+.zent-btn-success:visited, .zent-btn-success:hover {
+    color: #fff;
+    border-color: #00ab00;
+}
+.zent-btn-large {
+    font-size: 14px;
+    height: 36px;
+    line-height: 34px;
+    padding: 0 30px;
+}
+.zent-btn-danger {
+    color: #fff;
+    background: #ff4343;
+    border-color: #f63535;
+}
+.zent-btn-danger:visited, .zent-btn-danger:hover {
+    color: #fff;
+    border-color: #f63535;
+}
+.widget-app-board .app-board-intro .zent-btn-large.ui-btn-buy {
+    padding: 0 40px;
+}
+.layui-layer-error {
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, 0);
+    width: 500px;
+    top: 180px !important;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+.layui-layer-error .layui-layer-content {
+    background-color: #FF4343;
+    padding: 8px 10px;
+    border: 1px solid #E23333;
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+/* 订购弹出层内容 */
+.zent-dialog-body {
+    padding: 10px 0 20px 0;
+    color: #666;
+}
+.pay-info dl {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.pay-info dl dt {
+    float: left;
+    width: 160px;
+    text-align: right;
+}
+.pay-info dl dd {
+    margin-left: 175px;
+}
+.pay-info .pay-info-line {
+    border-bottom: 1px solid #e5e5e5;
+    margin: 20px 0px;
+    padding-bottom: 5px;
+}
+.pay-info dl dd .money {
+    color: #FF6600;
+}
+.pay-info dl dd .total-money {
+    font-size: 20px;
+    color: #FF7011;
+    line-height: 1;
+}
+.pay-info dl dd .read-agreement {
+    font-size: 12px;
+}
+a {
+    color: #07d;
+    text-decoration: none;
+}
+.pay-info .not-sufficient-funds {
+    position: relative;
+    margin-top: 10px;
+    padding: 10px 6px;
+    border: 1px solid #FDEEB2;
+    border-width: 1px 2px;
+    color: #333;
+    background: #FFF6CC;
+    width: 330px;
+    font-size: 12px;
+}
+.red {
+    color: #f30;
+}
+.alert-yellow {
+    color: #FF6330;
+    font-weight: bold;
+    background-color: #FFFFCC;
+    border-color: #FFDA89;
+    margin:10px 0;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    line-height: 1.1;
+}

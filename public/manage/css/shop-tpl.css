@@ -1,0 +1,29 @@
+#goods-tr td{
+    padding:8px 5px;
+    border-bottom:1px solid #eee;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+}
+#goods-tr td img{
+    width: 60px;
+    height: 60px;
+}
+#goods-tr td p.g-name{
+    margin:0;
+    padding:0;
+    height: 30px;
+    line-height: 30px;
+    max-width: 400px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #38f;
+    font-family: '黑体';
+}
+.modal-dialog{
+    width: 730px;
+}
+.pull-right>.btn{
+    margin-left: 6px;
+}

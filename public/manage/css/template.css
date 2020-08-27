@@ -1,0 +1,116 @@
+.choose-template{
+    min-width: 660px;
+}
+.cst_h3 {
+    line-height: 16px;
+    border-left: 3px solid #1C89D5;
+    padding-left: 5px;
+    font-weight: 700;
+    color: #333;
+    font-size: 16px;
+    margin:15px 0;
+}
+.using-template{
+    padding: 12px;
+    border:1px solid #ddd;
+    margin-bottom: 30px;
+}
+.using-preview{
+    float: left;
+    width: 175px;
+    height: 290px;
+    overflow: hidden;
+    margin-right: 25px;
+}
+.using-preview img{
+    width: 100%;
+}
+.using-info{
+    margin:0;
+}
+.using-info .input-group .input-group-addon{
+    font-size: 12px;
+}
+.using-info .input-group .input-group-addon:first-child{
+    border-radius: 5px 0 0 5px!important;
+    width: 120px;
+    text-align: left;
+}
+.using-info .input-group .input-group-addon:last-child{
+    border-radius: 0 5px 5px 0!important;
+    cursor: pointer;
+}
+.using-info .input-group .input-group-addon.edit{
+    background-color: #428BCA;
+    color: #fff;
+}
+.using-info .input-group .input-group-addon.edit:hover{
+    opacity: 0.9;
+}
+.using-info .input-group .input-group-addon.copy{
+    background-color: #87B87F;
+    color: #fff;
+}
+.using-info .input-group .input-group-addon.copy:hover{
+    opacity: 0.9;
+}
+.using-info li{
+    margin:5px 0 20px;
+    font-size: 12px;
+}
+.using-info .erweima img{
+    height: 120px;
+    width: 120px;
+    border:1px solid #eee;
+    padding:5px;
+    vertical-align: top;
+}
+.all-template li{
+    display: inline-block;
+    width: 175px;
+    height: 290px;
+    border:1px solid #eee;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.all-template li.usingtem:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url(/public/manage/images/using.png) no-repeat;
+    background-size: 25px;
+    background-position: center;
+    background-color: rgba(0,0,0,.5);
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.all-template li img{
+    width: 100%;
+    padding:5px;
+}
+.all-template li .use-edit{
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    padding:10px 0;
+    background-color: rgba(0,0,0,.6);
+    text-align: center;
+    -webkit-transition: bottom 0.5s;
+    -moz-transition: bottom 0.5s;
+    -ms-transition: bottom 0.5s;
+    transition: bottom 0.5s;
+}
+.all-template li:hover .use-edit{
+    bottom: 0;
+}
+.all-template li.usingtem:hover .use-edit{
+    bottom: -50px;
+}
+.all-template li .use-edit .btn{
+    margin:0 10px;
+}

@@ -1,0 +1,158 @@
+html,body{
+	width: 100%;
+	background-color:#fff;
+}
+.header-wrap img{
+	display:block;
+	width:100%;
+}
+.content-center{
+	background-color:#F5F5F7;
+}
+.recruit-wrap{
+	padding:30px 0;
+	text-align:center;
+}
+.recruit-wrap .logo{
+	width:90px;
+	height:90px;
+	border-radius:50%;
+	background-color:#63AEF1;
+	margin:0 auto 10px;
+}
+.recruit-wrap .logo img{
+	display: block;
+	width:100%;
+	height:100%;
+	border-radius:50%;
+}
+.recruit-wrap .position-wrap{
+	margin-bottom:10px;
+}
+.recruit-wrap .position-wrap .name{
+	color:#111;
+	font-size:20px;
+	font-weight: bold;
+}
+.recruit-wrap .position-wrap .label-wrap{
+	max-width:80%;
+	line-height:1.2;
+	margin:0 auto;
+}
+.recruit-wrap .position-wrap .label-wrap label{
+	box-sizing:border-box;
+	padding:0 5px;
+	border-right:1px solid #eee;
+	font-size:12px;
+	color:#666;
+}
+.recruit-wrap .position-wrap .label-wrap label:last-child{
+	border-right:0;
+}
+.recruit-wrap .position-wrap .label-wrap label img{
+	display:inline-block;
+	width:6px;
+	height:8.4px;
+	vertical-align: middle;
+}
+.recruit-wrap .position-wrap .label-wrap label span{
+	vertical-align: middle;
+}
+.recruit-wrap .desc-wrap{
+	max-width:80%;
+	margin:0 auto;
+}
+.recruit-wrap .desc-wrap span{
+	display:inline-block;
+	width:30%;
+	height:25px;
+	background-color:#017FED;
+	line-height:25px;
+	text-align:center;
+	font-size:13px;
+	color:#fff;
+	box-sizing:border-box;
+	border-radius:12.5px;
+	margin:0 1% 5px;
+}
+/*招聘职位*/
+.recruit-position{
+	padding-bottom: 20px;
+}
+.recruit-position .title{
+	margin-bottom: 15px;
+}
+.recruit-position .title img{
+	display:block;
+	width:100%;
+}
+.position-list .position-item{
+	width:50%;
+	text-align: center;
+	float:left;
+}
+.position-list .position-item span{
+	display:inline-block;
+	height: 20px;
+	line-height: 20px;
+	margin:0 auto 5px;
+	overflow: hidden;
+	color:#494367;
+	font-size:14px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+	border-bottom:1px solid #494367;
+	position:relative;
+}
+.position-list .position-item label{
+	position: relative;
+	display:block;
+	width:75%;
+	margin:0 auto;
+	box-sizing: border-box;
+	padding-left: 10px;
+	text-align:left;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.position-list .position-item label::before{
+	content:'';
+	width:5px;
+	height:5px;
+	background-color:#333;
+	border-radius: 50%;
+	position:absolute;
+	top:7.5px;
+	left:0;
+}
+/*内推招聘网*/
+.code-wrap{
+	padding:0 0 20px;
+	background-color:#fff;
+}
+.code-wrap .hu{
+	display:block;
+	width:100%;
+}
+.code-wrap .code-img{
+	width:30%;
+	margin:-30px auto 10px;
+}
+.code-wrap .code-img img{
+	display:inline-block;
+	width:100%;
+	height: auto;
+	height:auto;
+}
+.code-wrap .desc{
+	text-align:center;
+	font-size:14px;
+	color:#555;
+}
+.footer-desc{
+	font-size:12px;
+	color:#666;
+	text-align:center;
+}

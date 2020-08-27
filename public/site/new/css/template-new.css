@@ -1,0 +1,15 @@
+.case-nav { display: table; width: 100%; }
+.case-nav .nav-item { display: table-cell; width: 1000px; }
+.change-color { color: red; }
+.productBrief-wrap { background-size: cover; }
+.swiper-wrapper { width: 100% !important; }
+.swiper-slide ul { text-align: center; }
+.swiper-slide ul li { display: inline-block; }
+.brief-labels { width: 676px !important; }
+.brief-labels span { width: 70px !important; }
+.brief-labels span:nth-child(8n) { margin-right: 0; }
+.caseCode-wrap { width: 100%; background-color: rgba(40, 58, 96, 0.5); }
+.case-code { width: 920px; margin: 0 auto; padding: 20px 0; }
+.case-code .code-item { width: 150px; height: 150px; background: url(/public/site/new/img/baseShopping/code-border.png) no-repeat center; background-size: 100% 100%; margin: 0 40px; color: #fff; float: left; text-align: center; border-radius: 2px; position: relative; }
+.case-code .code-item img { display: block; width: 110px; height: 110px; margin: 16px auto 5px; }
+.classify-feature .con-wrap p { line-height: 25px; }

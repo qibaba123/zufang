@@ -1,0 +1,374 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: transparent;
+    outline: 0;
+}
+body{
+	width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    margin: 0 auto;
+	background: #e8e8ed;
+    font-size: 14px;
+    font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+    line-height: 1.3;
+    color: #666;
+    font-size: 14px;
+}
+a, a:visited{
+	text-decoration: none;
+	color: #333;
+}
+img{
+	border: 0;
+	vertical-align: middle;
+}
+ul li{
+	list-style: none;
+}
+.clearfix:after{
+	content: '';
+	display: table;
+	clear: both;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.color-red{
+	color: #FC4F36;
+}
+.color-gray{
+	color: #999;
+}
+.border-bottom:after{
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	width: 100%;
+	height: 2px;
+	background-color: #CC0033;
+}
+.border-t, .border-b,.border-l,.border-r {
+    position: relative;
+}
+.border-t:before, .border-b:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #e2e2e2;
+    right: 0;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+.border-l::before,.border-r::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    background: #e2e2e2;
+    left: 0;
+    width: 1px;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+.border-b:after {
+    top: auto;
+    bottom: 0;
+}
+.border-r::after{
+    right:0;
+    left:auto;
+}
+.orderNav-list{
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+	z-index: 10;
+}
+.orderNav-list .swiper-container {
+    width: 100%;
+    height: 42px;
+}
+.orderNav-list .swiper-slide {
+    text-align: center;
+    font-size: 14px;
+}
+.orderNav-list a{
+    display: inline-block;
+    height: 42px;
+    line-height: 42px;
+    color: #333;
+    text-decoration: none;
+}
+.orderNav-list a.active{
+    color: #FF3B53;
+    position: relative;
+    border-bottom: 3px solid #FF2741;
+    box-sizing: border-box;
+    margin-bottom: -1px;
+}
+ .orderNav-list ul{
+	display: table;
+	width: 100%;
+}
+.orderNav-list ul li{
+	display: table-cell;
+    width: 1000px;
+	background-color: #fff;
+	line-height: 42px;
+	text-align: center;
+	position: relative;
+}
+.orderNav-list ul li.active:after{
+	content:'';
+	position: absolute;
+	left:0;
+	bottom: -1px;
+	height: 3px;
+	width: 100%;
+	background-color: #FC6746;
+	z-index: 1;
+}
+.orderNav-list ul li.active a{
+	color: #FC6746;
+} 
+.orderInfo{
+	padding: 11px 10px;
+	background-color: #fff;
+	margin-top: 8px;
+}
+.orderInfo-right {
+    color: #FB3E23;
+}
+.goodsInfo{
+	padding: 10px 12px;
+	background-color: #f5f5f5;
+}
+.goodsPic {
+	height: 60px;
+	width: 60px;
+	border-radius: 2px;
+	overflow: hidden;
+}
+.goodsPic img{
+	display: block;
+	width: 60px;
+	min-height: 60px;
+}
+.goods-text-wrap{
+	margin-left: 70px;
+	height: 100%;
+}
+.goods-text-left{
+	position: relative;
+	width: 70%;
+	overflow: hidden;
+}
+.goods-text-left .goods-title{
+	line-height: 1.5;
+	font-size: 13px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.goods-text-left .goods-color{
+	line-height: 1;
+	font-size: 13px;
+	color: #999;
+	margin-top: 3px;
+}
+.goods-text-right{
+	text-align: right;
+	width: 28%;
+	line-height: 1.3;
+}
+.goods-pay{
+	padding: 13px 10px;
+	background-color: #fff;
+	text-align: right;
+}
+.order-btn{
+	padding: 8px 10px;
+	background-color: #fff;
+	text-align: right;
+	font-size: 0;
+}
+.order-btn span{
+	display: inline-block;
+	color: #5C616B;
+	background-color: #fff;
+	padding: 6px;
+	font-size: 14px;
+	text-align: center;
+	margin-right: 2.66%;
+	border:1px solid #5C616B;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.order-btn span:last-child{
+	margin-right: 0;
+}
+.order-btn span.red-outline{
+	color: #FF5F39;
+	border-color: #FF6946;
+}
+
+.no-order{
+	padding-top: 42%;
+	text-align: center;
+}
+.no-order .icon-noorder{
+	width: 90px;
+	height: 90px;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	display: inline-block;
+	background: url(/public/mobile/center/images/no-order.png) no-repeat;
+	background-size: 45px 50px;
+	background-position: center;
+	background-color: #D7D8DA;
+}
+.no-order h4{
+	font-size: 16px;
+	letter-spacing: 1px;
+	line-height: 1.8;
+}
+.no-order p{
+	font-size: 12px;
+	color: #999;
+	line-height: 2;
+	margin-bottom: 5px;
+}
+.no-order a{
+	height: 30px;
+	line-height: 30px;
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	border:1px solid #999;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #666;
+	font-size: 14px;
+}
+/* 物流弹出层样式 */
+*{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing: border-box;
+}
+.logistics .title{
+	height: 45px;
+	line-height: 45px;
+	font-size: 14px;
+	position: relative;
+	padding-left: 15px;
+	background-color: #f5f5f5;
+}
+.logistics .close{
+	position: absolute;
+	right:0;
+	top:0;
+	height: 45px;
+	width: 40px;
+	line-height: 43px;
+	text-align: center;
+	font-size: 26px;
+	color: #333;
+}
+.logistics-detail{
+	max-height: 400px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.logistics-detail ul{
+	list-style: none;
+	padding:15px 20px;
+	margin:0;
+}
+.logistics-detail li{
+	border-left:1px solid #ccc;
+	padding-left: 20px;
+	padding-bottom: 8px;
+}
+.logistics-detail li .state{
+	position: relative;
+	padding-bottom: 8px;
+	color: #BBBBBB;
+	line-height: 1.6;
+}
+.logistics-detail li .state p{
+	margin:0;
+}
+.logistics-detail li .state:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #E5E5E5;
+	right: 0;
+	height: 1px;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+.logistics-detail li .state:before {
+	top: auto;
+	bottom: 0;
+}
+.logistics-detail li:last-child{
+	padding-bottom: 0;
+}
+.logistics-detail li:last-child .state:before{
+	height: 0;
+}
+.logistics-detail li .state:after{
+	content: '';
+	position: absolute;
+	top:0;
+	left:-25px;
+	height: 9px;
+	width: 9px;
+	background-color: #ccc;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+.logistics-detail li .state-new{
+	color: #25AE5F;
+}
+.logistics-detail li .state-new:after{
+	content: '';
+	position: absolute;
+	top:0;
+	left:-30px;
+	height: 15px;
+	width: 15px;
+	background-color: #25AE5F;
+	border:2px solid #B8E4CA;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.open{
+	-webkit-transform:rotate(90deg)!important;
+	transform:rotate(90deg)!important;
+}

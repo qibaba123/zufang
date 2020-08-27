@@ -1,0 +1,190 @@
+.table-box{
+    margin: 10px 10px;
+    width: 370px;
+    float: left;
+    height: 260px;
+    border: 1px solid #DEDEDE;
+    box-shadow: 0 3px 9px 1px #F7F7F7;
+}
+
+.table-title{
+    background-color: #76C2B7;
+    color:#fff;
+    width: 100%;
+    height: 45px;
+    text-align: left;
+    line-height: 45px;
+}
+
+.table-title span{
+    padding-left: 10px;
+    font-size: 24px;
+}
+
+.table-info{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 10px;
+    position: relative;
+}
+
+.table-img{
+    width: 82px;
+    height: 82px;
+    border: 1px solid #DEDEDE;
+}
+
+.table-fit{
+    color: #709993;
+    height: 30px;
+    max-width: 130px;
+    line-height: 30px;
+    text-align: left;
+    position: relative;
+    bottom:83px;
+    left:110px;
+    overflow: hidden;
+}
+
+.table-fit span{
+    padding: 3px 7px;
+    background-color: #E3EBEA;
+}
+
+.table-meal-total div{
+    height: 30px;
+    line-height: 30px;
+    padding: 3px 5px;
+    margin: 3px 0;
+    font-size: 20px;
+    color: #666;
+}
+
+.table-meal-total{
+    position: relative;
+    bottom: 20px;
+}
+
+.table-buttons{
+    width: 90px;
+    bottom: 110px;
+    left:265px;
+    position: relative;
+}
+
+.table-buttons a{
+    width: 80px;
+    display: block;
+    float: left;
+    margin: 7px 0;
+    text-align: center;
+    line-height: 30px;
+
+}
+
+.table-page-box{
+    text-align: center;
+}
+
+.meal-detail,.meal-detail:hover{
+    border: 1px solid #76C2B7;
+    color: #709993;
+}
+.end-meal,.end-meal:hover{
+    border: 1px solid #FF7471;
+    background-color:#FF7471; ;
+    color: #fff;
+}
+
+/* 下拉按钮样式 */
+.dropbtn {
+    color: #709993;
+    background-color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 容器 <div> - 需要定位下拉内容 */
+.dropdown {
+    position: relative;
+    bottom: 110px;
+    left:275px;
+    display: inline-block;
+}
+
+/* 下拉内容 (默认隐藏) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 6px 14px 0px rgba(0,0,0,0.2);
+    z-index: 5000;
+    right: 9px;
+}
+
+/* 下拉菜单的链接 */
+.dropdown-content a {
+    color: #709993;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a i{
+    margin-right: 10px;
+}
+
+/* 鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* 在鼠标移上去后显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 当下拉内容显示后修改下拉按钮的背景颜色 */
+/*.dropdown:hover .dropbtn {*/
+    /*background-color: #3e8e41;*/
+/*}*/
+
+/*弹出订单详情样式*/
+.trade-box{
+    color: #666;
+    height: auto;
+}
+
+.trade-table{
+    width: 100%;
+}
+.trade-table td{
+    padding: 3px 3px;
+}
+
+.meal-name{
+    min-width: 320px;
+}
+
+.trade-box-main{
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 200px;
+    max-height: 450px;
+    width: 100%;
+    padding: 10px 10px;
+    margin-bottom: 5px;
+}
+
+.trade-box-bottom{
+    width: 100%;
+    text-align: right;
+    padding: 13px 20px;
+    height: 60px;
+    font-size: 22px;
+    border-top: 1px solid #DEDEDE;
+}
+
+.layui-layer-rim{
+    border: 1px solid #DEDEDE !important;
+}
