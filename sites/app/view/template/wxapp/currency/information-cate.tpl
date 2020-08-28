@@ -251,7 +251,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-4:checked+.lbl::after, input[type
             <!--
             <a href="/wxapp/currency/informationStyle" class="btn btn-green btn-xs" style="padding-top: 2px;padding-bottom: 2px;">样式设置</a>
             -->
-            <a href="/wxapp/currency/informationSlide" class="btn btn-green btn-xs" style="padding-top: 2px;padding-bottom: 2px;">幻灯图管理</a>
+            <!--<a href="/wxapp/currency/informationSlide" class="btn btn-green btn-xs" style="padding-top: 2px;padding-bottom: 2px;">幻灯图管理</a>
             <a class="btn btn-primary btn-xs page-link-show" style="padding-top: 2px;padding-bottom: 2px;" data-toggle="modal" data-target="#pageLinkModal" >分类链接</a>
             <{if $appletCfg['ac_type'] != 32 && $appletCfg['ac_type'] != 36 && $appletCfg['ac_type'] != 33 && $appletCfg['ac_type'] != 34}>
             <span style="margin-left: 40px">
@@ -261,7 +261,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-4:checked+.lbl::after, input[type
                         <span class="lbl"></span>
                     </label>
                 </span>
-            <{/if}>
+            <{/if}>-->
         </div><!-- /.page-header -->
         <div class="classify-wrap" ng-app="classifyApp" ng-controller="classifyCtrl">
             <div class="classify-title">
@@ -410,7 +410,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-4:checked+.lbl::after, input[type
                     </div>
                 </div>
                 <div class="edit-right" style="margin-left: 375px;">
-                <div class="edit-con" style="width: 60%;margin-top: 50px;">
+                <!--<div class="edit-con" style="width: 60%;margin-top: 50px;">
                     <div class="service-style">
                         <label>资讯列表展示样式</label>
                         <div class="radio-box">
@@ -441,7 +441,7 @@ input[type=checkbox].ace.ace-switch.ace-switch-4:checked+.lbl::after, input[type
 						</span>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
             </div>
             <div class="alert alert-warning save-btn-box" role="alert"><button class="btn btn-blue btn-sm" ng-click="saveAll()">  保 存

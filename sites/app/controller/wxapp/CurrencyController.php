@@ -747,13 +747,13 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             ),
             
         );
-        if($this->wxapp_cfg['ac_type'] == 1 || $this->wxapp_cfg['ac_type'] == 3 || $this->wxapp_cfg['ac_type'] == 6 || $this->wxapp_cfg['ac_type'] == 13 || $this->wxapp_cfg['ac_type'] == 21 || $this->wxapp_cfg['ac_type'] == 27 || $this->wxapp_cfg['ac_type'] == 28){
-            array_push($link, array(
-                'label' => '付费管理',
-                'link'  => '/wxapp/currency/informationCardType',
-                'active'=> 'pay'
-            ));
-        }
+//        if($this->wxapp_cfg['ac_type'] == 1 || $this->wxapp_cfg['ac_type'] == 3 || $this->wxapp_cfg['ac_type'] == 6 || $this->wxapp_cfg['ac_type'] == 13 || $this->wxapp_cfg['ac_type'] == 21 || $this->wxapp_cfg['ac_type'] == 27 || $this->wxapp_cfg['ac_type'] == 28){
+//            array_push($link, array(
+//                'label' => '付费管理',
+//                'link'  => '/wxapp/currency/informationCardType',
+//                'active'=> 'pay'
+//            ));
+//        }
         $this->output['secondLink'] = $link;
         $this->output['linkType']   = $type;
         $this->output['snTitle']    = '资讯管理';
