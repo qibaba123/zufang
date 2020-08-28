@@ -12,6 +12,60 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->access_path  = PLUM_PATH_PUBLIC.'/build/spread/';
     }
 
+    //公告管理
+    public function noticeListAction(){
+        $page  = $this->request->getIntParam('page');
+        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage($this->curr_sid);
+        $index = $page * $this->count;
+        $list  = $notice_model->getList(array(),$index,$this->count,array('sn_weight'=>"DESC"));
+        $this->output['list'] = $list;
+        $total = $notice_model->getCount(array());
+        $pageCfg    = new Libs_Pagination_Paginator($total,$this->count);
+        $this->output['pageHtml']   = $pageCfg->render();
+        $this->displaySmarty('wxapp/currency/notice-list.tpl');
+
+    }
+
+
+    //保存公告
+    public function noticeSave(){
+        $id = $this->request->getIntParam('id');
+        $brief = $this->request->getStrParam('name');
+        $weight = $this->request->getIntParam('weight');
+        $data['sn_brief'] = $brief;
+        $data['sn_weight'] = $weight;
+        $data['sn_create_time'] = time();
+        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage($this->curr_sid);
+        if($id){
+            $ret = $notice_model->updateById($data,$id);
+        }else{
+            $data['sn_s_id'] = $this->curr_sid;
+            $ret = $notice_model->insertValue($data);
+        }
+        if($ret){
+            $this->displayJsonSuccess(array(),true,'保存成功');
+        }else{
+            $this->displayJsonError('保存失败');
+        }
+
+
+
+    }
+
+    //删除公告
+    public function noticeDeletedAction(){
+        $id = $this->request->getIntParam('id');
+        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage($this->curr_sid);
+        $update['sn_deleted'] = 1;
+        $ret = $notice_model->updateById($update,$id);
+        if($ret){
+            $this->displayJsonSuccess(array(),true,'删除成功');
+        }else{
+            $this->displayJsonError('删除失败');
+        }
+    }
+
+
    /**
      * 下载小程序码
      */

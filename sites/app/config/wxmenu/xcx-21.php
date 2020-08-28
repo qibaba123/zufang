@@ -166,7 +166,12 @@ return array(
             'access'    => 'module-cfg',
             'special'   => true,
             'submenu'   => array(
-
+                array(
+                    'title'     => '公告管理',
+                    'link'      => '/currency/noticeList',
+                    'icon'      => 'icon-cog',
+                    'access'    => 'currency-informationList',
+                ),
                 array(
                     'title'     => '资讯管理',
                     'link'      => '/currency/informationList',
