@@ -508,7 +508,7 @@
     }
 
     .balance .balance-info {
-        width: 16.66% !important;
+        width: 50% !important;
     }
 
     .table thead tr th {
@@ -680,7 +680,7 @@
                     <span class="money"><{$statInfo['showSum']}></span>
                 </div>
             </div>
-            <div class="balance-info">
+          <!--  <div class="balance-info">
                 <div class="balance-title">总推送次数
                 </div>
                 <div class="balance-content">
@@ -704,7 +704,7 @@
                 <div class="balance-content">
                     <span class="money"><{$statInfo['likeSum']}></span>
                 </div>
-            </div>
+            </div>-->
         </div>
         <div class="row">
             <div class="col-xs-12">
