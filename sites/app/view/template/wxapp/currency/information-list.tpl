@@ -771,15 +771,15 @@
                                 <td>
                                     <p>
                                         <a href="/wxapp/currency/addInformation/id/<{$val['ai_id']}>" >编辑</a> -
-                                        <a href="/wxapp/currency/informationCommentList?aid=<{$val['ai_id']}>" >评论</a> -
+                                        <!--<a href="/wxapp/currency/informationCommentList?aid=<{$val['ai_id']}>" >评论</a> - -->
                                         <a href="#" id="delete-confirm" data-id="<{$val['ai_id']}>" onclick="deleteArticle('<{$val['ai_id']}>')" style="color:#f00;">删除</a>
-                                       <{if !$dyyu}>
+                                       <!--<{if !$dyyu}>
                                         - <a href="javascript:;" id="link_<{$val['ai_id']}>" class="btn-link" data-link="<{$page_link}>?id=<{$val['ai_id']}>">页面路径</a>
-                                       <{/if}>
+                                       <{/if}>-->
                                     </p>
 
                                     <p>
-                                        <{if $val['ai_isrecommend']}>
+                                        <!--<{if $val['ai_isrecommend']}>
                                         <a href="javascript:;" class="set-recommend" data-id="<{$val['ai_id']}>" data-recommend="0">取消推荐</a> -
                                         <{else}>
                                         <a href="javascript:;" class="set-recommend" data-id="<{$val['ai_id']}>" data-recommend="1">设置推荐</a> -
@@ -790,11 +790,11 @@
                                         <a href="javascript:;" data-toggle="modal" data-target="#tplPreviewModal" onclick="showPreview('<{$val['ai_id']}>')" >推送预览</a> -
                                         <{/if}>
                                         <a href="/wxapp/tplpreview/pushHistory?type=information&id=<{$val['ai_id']}>" >推送记录</a>
-                                        <{/if}>
+                                        <{/if}>-->
                                         <!-- 公众号资讯链接复制 -->
-                                        <{if $article_link}>
+                                      <!--  <{if $article_link}>
                                         <a href="#" class="copy-button-link" data-clipboard-action="copy" data-clipboard-text="<{$article_link}>?id=<{$val['ai_id']}>&title=<{$val['ai_title']}>" >复制链接路径</a>
-                                        <{/if}>
+                                        <{/if}>-->
                                     </p>
                                 </td>
                             </tr>
