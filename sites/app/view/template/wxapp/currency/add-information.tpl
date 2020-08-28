@@ -264,7 +264,7 @@
                     <input class="form-control" type="number" id="sort" value="<{if $row && $row['ai_sort']}><{$row['ai_sort']}><{/if}>" placeholder="排序权重">
                 </div>
             </div>
-            <div class="part" style="overflow: hidden">
+           <!-- <div class="part" style="overflow: hidden">
                 <div style="width: 49%;float: left;">
                     <label for="">是否推荐</label>
                     <label id="default-onoff">
@@ -280,18 +280,22 @@
                     <input class="form-control" type="number" id="price" value="<{if $row && $row['ai_price']}><{$row['ai_price']}><{/if}>" placeholder="付费价格">
                 </div>
                 <{/if}>
-            </div>
+            </div>-->
             <div class="part" style="overflow: hidden">
                 <div style="width: 49%;float: left;">
                     <label for="">阅读量</label>
                     <input class="form-control" type="number" id="showNum" value="<{if $row}><{$row['ai_show_num']}><{else}>0<{/if}>" placeholder="阅读量">
                 </div>
                 <div style="width: 49%;float: right;">
+                    <label for="">时间</label>
+                    <input class="form-control" type="text" id="customTime" value="<{if $row && $row['ai_create_time']}><{date('Y-m-d H:i:s',$row['ai_create_time'])}><{else}><{date('Y-m-d H:i:s',time())}><{/if}>" onclick="chooseDate()" placeholder="资讯时间">
+                </div>
+                <!--<div style="width: 49%;float: right;">
                     <label for="">点赞量</label>
                     <input class="form-control" type="number" id="likeNum" value="<{if $row}><{$row['ai_like_num']}><{else}>0<{/if}>" placeholder="点赞量">
-                </div>
+                </div>-->
             </div>
-            <div class="part" style="overflow: hidden">
+           <!-- <div class="part" style="overflow: hidden">
                 <div style="width: 49%;float: left;">
                     <label for="">文章来源</label>
                     <input class="form-control" type="text" id="articleFrom" value="<{if $row}><{$row['ai_from']}><{/if}>" placeholder="文章来源">
@@ -303,8 +307,10 @@
                 <div style="font-size: 12px;color: #999;margin-top: 2px;">
                     新增文章时，不填则默认为保存时间；修改文章时，不填为不修改时间
                 </div>
-            </div>
-            <{if $chooseGoods == 1}>
+            </div>-->
+
+            <input type="hidden" name="allow_like" value="1">
+           <!-- <{if $chooseGoods == 1}>
                 <{if $appletCfg['ac_type'] != 27}>
                 <div class="recommentGoods">
                     <div class="topic">
@@ -423,7 +429,7 @@
                         <label for="allow_comment_0">不允许</label>
                     </span>
                 </div>
-            </div>
+            </div>-->
             <!--
             <div class="topic" style="">
                 <label for="">是否允许点赞</label>
@@ -440,7 +446,7 @@
             </div>
             -->
             <{/if}>
-            <{if $appletCfg['ac_type'] eq 18}>
+          <!--  <{if $appletCfg['ac_type'] eq 18}>
             <div class="topic">
                 <label for="">详情内容显示类型</label>
                 <div class="radio-box">
@@ -457,7 +463,7 @@
                     </span>
                 </div>
             </div>
-            <{/if}>
+            <{/if}>-->
             <div class="contxt">
                 <label for="">文章内容<font color="red">*</font></label>
                 <div>
@@ -468,78 +474,8 @@
                     </div>
                 </div>
             </div>
-            <div class="part" style="overflow: hidden">
-                <label for="">相关文章</label>
-                <div class="related-info-box">
-                <{foreach $relatedInfo as $index => $info}>
-                    <div class="related-info related-info_<{$index}>">
-                        <div class="related-info-cate">
-                            <label id="default-onoff">
-                                <select style="height: 35px;" class="form-control select-cate" onchange="getInformation(this,<{$index}>)">
-                                    <option value="0">请选择分类</option>
-                                    <{foreach $category_select as $key=>$val}>
-                                    <option value="<{$key}>" <{if $info['cateId'] == $key}>selected<{/if}>><{$val}></option>
-                                    <{/foreach}>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="related-info-detail">
-                             <select  style="height: 35px;" class="form-control select-info">
-                                    <option value="0">请选择文章</option>
-                                    <{foreach $info['selectInfo'] as $infoRow}>
-                                        <option value="<{$infoRow['id']}>" <{if $info['infoId'] == $infoRow['id']}>selected<{/if}>><{$infoRow['title']}></option>
-                                    <{/foreach}>
-                             </select>
-                        </div>
-                        <button class='btn btn-sm btn-default goods-button btn-remove-info' onclick='removeInfo(<{$index}>)'>移除</button>
-                    </div>
-                <{/foreach}>
-                </div>
-                <div class="add-related-box">
-                    <div class="btn btn-sm btn-green" onclick="addInfo()">+添加相关文章</div>
-                </div>
-            </div>
-            <!-- 付费预约 -->
-            <{if $chooseAppoGoods==1}>
-            <div class="recommentAppointmentGoods">
-                <div class="topic">
-                    <label for="">推荐付费预约商品样式</label>
-                    <div class="radio-box">
-                         <span data-val="0">
-                             <input type="radio" name="appointmentGoodsType" <{if ($row && $row['ai_appointment_goods_type'] eq 1) || !$row}>checked<{/if}> value="1" id="appointmentGoodsType0" >
-                             <label for="appointmentGoodsType0">滑动</label>
-                         </span>
-                        <span data-val="1">
-                            <input type="radio" name="appointmentGoodsType" <{if $row && $row['ai_appointment_goods_type'] eq 2}>checked<{/if}> value="2" id="appointmentGoodsType1">
-                            <label for="appointmentGoodsType1">列表</label>
-                        </span>
-                    </div>
-                </div>
-                <div class="part" style="overflow: hidden">
-                    <div style="width: 78%;float: left;">
-                        <label for="">推荐付费预约商品</label>
-                    </div>
-                    <div style="width: 20%;float: right;">
-                        <label for=""><span>
-                            <button class="btn btn-sm btn-primary goods-button btn-appointment-goods">添加</button>
-                            <button class="btn btn-sm btn-danger goods-button btn-appointment-remove-all">清空</button>
-                        </span></label>
 
-                    </div>
-                </div>
-                <div class="topic appointment-goods-selected-list">
-                    <{if $appointmentGoodsList}>
-                    <{foreach $appointmentGoodsList as $goods}>
-                    <div class='goods-name appointment-goods-selected' gid='<{$goods['g_id']}>' ><div class='goods-selected-name'><{$goods['g_name']}></div><div class='goods-selected-button'><button class='btn btn-sm btn-default goods-button btn-remove' onclick='removeGoods(this)'>移除</button></div></div>
-                    <{/foreach}>
-                    <{else}>
-                    <span class="goods-name appointment-goods-none" style="font-weight: bold;color: #38f">
-                        无推荐付费预约商品
-                    </span>
-                    <{/if}>
-                </div>
-            </div>
-            <{/if}>
+
         </div>
     </div>
     <div class="alert alert-warning setting-save" role="alert">
