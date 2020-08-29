@@ -18,6 +18,22 @@ class App_Model_Shop_MysqlShopSlideStorage extends Libs_Mvc_Model_BaseModel{
         $this->game_table = 'applet_gamebox_game';
     }
 
+     //关联文章
+    public function getInformationList($where,$index,$count,$sort){
+        $sql = "SELECT ss.*,ai.ai_title ";
+        $sql .= " FROM ".DB::table($this->_table)." ss ";
+        $sql .= " LEFT JOIN pre_applet_information ai on ss.ss_link = ai.ai_id ";
+        $sql .= $this->formatWhereSql($where);
+        $sql .= $this->getSqlSort($sort);
+        $sql .= $this->formatLimitSql($index,$count);
+        $ret = DB::fetch_all($sql);
+        if($ret === false){
+            trigger_error("query mysql failed.", E_USER_ERROR);
+            return false;
+        }
+        return $ret;
+    }
+
     /*
      * 前端获取店铺可展示的幻灯列表
      */

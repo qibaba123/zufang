@@ -167,6 +167,12 @@ return array(
             'special'   => true,
             'submenu'   => array(
                 array(
+                    'title'     => '轮播图管理',
+                    'link'      => '/currency/slideList',
+                    'icon'      => 'icon-cog',
+                    'access'    => 'currency-informationList',
+                ),
+                array(
                     'title'     => '公告管理',
                     'link'      => '/currency/noticeList',
                     'icon'      => 'icon-cog',

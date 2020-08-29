@@ -1,147 +1,89 @@
 <?php
 
 
-class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitController
+class App_Controller_Wxapp_SlideController extends App_Controller_Wxapp_InitController
 {
-    private $hold_dir;
-    private $access_path;
     public function __construct()
     {
         parent::__construct();
-        $this->hold_dir     = PLUM_APP_BUILD.'/spread/';
-        $this->access_path  = PLUM_PATH_PUBLIC.'/build/spread/';
+//        $this->hold_dir     = PLUM_APP_BUILD.'/spread/';
+//        $this->access_path  = PLUM_PATH_PUBLIC.'/build/spread/';
+    }
+
+    //幻灯管理
+    public function informationSlideAction() {
+        $this->informationSecondLink('cate');
+        $slide_model = new App_Model_Slide_MysqlSlideStorage();
+        $where       = array();
+
+        $sort        = array('sl_weight'=>'DESC','sl_id'=>'DESC');
+        $list        = $slide_model->getList($where,0,0,$sort);
+        $this->output['list']  = $list;
+//        $goods_model = new App_Model_Goods_MysqlGoodsStorage();
+////        $where1      = array('name'=>'g_deleted','oper'=>'=','value'=>0);
+//        $where       = array();
+//        $where[]     = array('name' => 'g_s_id','oper' => '=','value' =>$this->curr_sid);
+//        $where[]     = array('name' => 'g_independent_mall','oper' => '=','value' =>0);
+//        $where[]     = array('name' => 'g_type','oper' => 'in','value' => array(1,2));
+//        $sort        =  array('g_weight'=>'ASC','g_id' => 'DESC');
+//        $goods       = $goods_model->getList($where,0,0,$sort);
+//
+//        $this->output['goods'] = $goods;
+        $infor_model = new App_Model_Applet_MysqlAppletInformationStorage();
+        $this->output['information'] = $infor_model->getList(array(),0,0,array('ai_sort'=>'DESC'));
+        $this->renderCropTool('/wxapp/index/uploadImg');
+        $this->buildBreadcrumbs(array(
+            array('title' => '幻灯片管理', 'link' => '#'),
+        ));
+        $slide_type = plum_parse_config('slide_type','juqingshe');
+        $this->output['slide_type'] = $slide_type;
+        $this->displaySmarty('wxapp/currency/slide.tpl');
     }
 
 
-    //首页轮播图
-    public function slideListAction(){
-        $page  = $this->request->getIntParam('page');
-        $index = $page * $this->count;
-        $slide_model = new App_Model_Shop_MysqlShopSlideStorage($this->curr_sid);
-        $list        = $slide_model->getInformationList(array(),$index,$this->count,array('ss_weight'=>'DESC'));
-        $this->output['list'] = $list;
-        $this->displaySmarty('wxapp/currency/slide-list.tpl');
-    }
+    public function saveSlideAction(){
+        $id = $this->request->getIntParam('id',0);
+//        $category = $this->request->getIntParam('category');
+//        $categoryOld = $this->request->getIntParam('categoryOld');
+        $sort = $this->request->getIntParam('sort');
+        $type = $this->request->getIntParam('type');
+        $path = $this->request->getStrParam('path');
+        //$gid  = $this->request->getIntParam('gid',0);
+        $ainame = $this->request->getStrParam('ainame');
+        $aiid   = $this->request->getIntParam('aiid');
 
-
-
-    //公告管理
-    public function noticeListAction(){
-        $page  = $this->request->getIntParam('page');
-        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage($this->curr_sid);
-        $index = $page * $this->count;
-        $list  = $notice_model->getList(array(),$index,$this->count,array('sn_weight'=>"DESC"));
-        $this->output['list'] = $list;
-        $total = $notice_model->getCount(array());
-        $pageCfg    = new Libs_Pagination_Paginator($total,$this->count);
-        $this->output['pageHtml']   = $pageCfg->render();
-        $this->displaySmarty('wxapp/currency/notice-list.tpl');
-
-    }
-
-
-    //保存公告
-    public function noticeSave(){
-        $id = $this->request->getIntParam('id');
-        $brief = $this->request->getStrParam('name');
-        $weight = $this->request->getIntParam('weight');
-        $data['sn_brief'] = $brief;
-        $data['sn_weight'] = $weight;
-        $data['sn_create_time'] = time();
-        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage($this->curr_sid);
-        if($id){
-            $ret = $notice_model->updateById($data,$id);
-        }else{
-            $data['sn_s_id'] = $this->curr_sid;
-            $ret = $notice_model->insertValue($data);
-        }
-        if($ret){
-            $this->displayJsonSuccess(array(),true,'保存成功');
-        }else{
-            $this->displayJsonError('保存失败');
-        }
-
-
-
-    }
-
-    //删除公告
-    public function noticeDeletedAction(){
-        $id = $this->request->getIntParam('id');
-        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage($this->curr_sid);
-        $update['sn_deleted'] = 1;
-        $ret = $notice_model->updateById($update,$id);
-        if($ret){
-            $this->displayJsonSuccess(array(),true,'删除成功');
-        }else{
-            $this->displayJsonError('删除失败');
-        }
-    }
-
-
-   /**
-     * 下载小程序码
-     */
-    public function downCodeAction()
-    {
-        $file     = PLUM_DIR_ROOT . $this->wxapp_cfg['ac_receivable_code'];
-        $filesize = filesize($file);
-        $filename = $this->wxapp_cfg['ac_gh_id'] . ".jpg";
-
-        plum_send_http_header("Content-type: application/octet-stream");
-        plum_send_http_header("Accept-Ranges: bytes");
-        plum_send_http_header("Accept-Length:" . $filesize);
-        plum_send_http_header("Content-Disposition: attachment; filename=" . $filename);
-
-        readfile($file);
-    }
-     /*
-     * 更新收银二维码
-     */
-    public function updateAppletCashierAction()
-    {
-        // 获取小程序收款码
-        $wxxcx_client = new App_Plugin_Weixin_WxxcxClient($this->curr_sid);
-        $result       = $wxxcx_client->fetchWxappCode('pages/payshort/payshort');
-        if ($result) {
-            // 保存收款小程序码
-            $set            = array('ac_receivable_code' => $result);
-            $applet_storage = new App_Model_Applet_MysqlCfgStorage();
-            $applet_storage->updateById($set, $this->wxapp_cfg['ac_id']);
-            $this->wxapp_cfg['ac_receivable_code'] = $result;
-        }
-        if ($result) {
-            App_Helper_OperateLog::saveOperateLog("更新收银台二维码成功");
-        }
-        $this->showAjaxResult($result, '更新');
-    }
-
-   /**
-     * 优惠满减设置
-     */
-    public function discountSetAction()
-    {
-        $full_amount    = $this->request->getStrParam('full_amount');
-        $reduced_amount = $this->request->getStrParam('reduced_amount');
-        $high_amount    = $this->request->getStrParam('high_amount');
-        //获取收款的满减优惠
-        $appletPay_Model = new App_Model_Applet_MysqlAppletPayStorage($this->curr_sid);
-        $appPaycfg       = $appletPay_Model->findRowPay();
-        if ($appPaycfg) {
-            $set = array(
-                'ap_full_amount'    => $full_amount,
-                'ap_reduced_amount' => $reduced_amount,
-                'ap_high_amount'    => $high_amount,
+        if($path){
+            $slide_model = new App_Model_Slide_MysqlSlideStorage();
+            $data = array(
+                'sl_s_id'      => $this->curr_sid,
+                'sl_weight'    => $sort,
+                'sl_img'       => $path,
+                'sl_link'      => $aiid,
+                'sl_type'      => $type,
+                'sl_link_name' => $ainame,
+                'sl_add_time'  => time()
             );
-            $ret = $appletPay_Model->updateById($set, $appPaycfg['ap_id']);
-            App_Helper_OperateLog::saveOperateLog("收银台配置信息保存成功");
-            $this->showAjaxResult($ret);
-        } else {
-            $this->displayJsonError('支付未配置');
+            if($id){
+                $res = $slide_model -> updateById($data,$id);
+            }else{
+                $res = $slide_model -> insertValue($data);
+            }
+            $this->showAjaxResult($res,'保存');
+        }else{
+            $this->displayJsonError('添加失败');
         }
 
     }
-    
+
+    public function deleteSlideAction(){
+        $id = $this->request->getIntParam('id',0);
+        $slide_model = new App_Model_Slide_MysqlSlideStorage();
+        $res = $slide_model->deleteById($id);
+        $this->showAjaxResult($res,'删除');
+    }
+
+
+
     public function secondLink($type='index'){
         $link = array(
             array(
@@ -165,7 +107,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->output['snTitle']    = 'VR/音视频设置';
     }
 
-    
+
     public function appointmentListAction(){
         $page = $this->request->getIntParam('page');
         $mobile = $this->request->getStrParam('mobile');
@@ -195,7 +137,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/appointment.tpl');
     }
 
-    
+
     public function handleAppointmentAction(){
         $id = $this->request->getIntParam('id');
         $market = $this->request->getStrParam('market');
@@ -206,13 +148,12 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             );
             $appointment_storage = new App_Model_Applet_MysqlWeddingAppointmentStorage($this->curr_sid);
             $ret = $appointment_storage->updateById($updata,$id);
-            App_Helper_OperateLog::saveOperateLog("处理预约信息成功");
             $this->showAjaxResult($ret,'处理');
         }else{
             $this->displayJsonError('处理失败，请稍后重试');
         }
     }
-    
+
     public function deleteAppointmentAction(){
         $id = $this->request->getIntParam('id');
         if($id){
@@ -221,13 +162,12 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             );
             $appointment_storage = new App_Model_Applet_MysqlWeddingAppointmentStorage($this->curr_sid);
             $ret = $appointment_storage->updateById($updata,$id);
-            App_Helper_OperateLog::saveOperateLog("删除预约信息成功");
             $this->showAjaxResult($ret,'删除');
         }else{
             $this->displayJsonError('删除失败，请稍后重试');
         }
     }
-    
+
     public function articleListAction(){
         $page       = $this->request->getIntParam('page');
         $where      = array();
@@ -252,7 +192,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/article-list.tpl');
     }
 
-    
+
     public function addArticleAction(){
         $id = $this->request->getIntParam('id');
         $row = array();
@@ -269,7 +209,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/add-article.tpl');
     }
 
-    
+
     public function saveArticleAction(){
         $title   = $this->request->getStrParam('title');
         $brief   = $this->request->getStrParam('brief');
@@ -291,16 +231,13 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             }else{
                 $ret = $article_model->insertValue($data);
             }
-            if($ret){
-                App_Helper_OperateLog::saveOperateLog("文章【{$title}】保存成功");
-            }
             $this->showAjaxResult($ret);
         }else{
             $this->displayJsonError('请将信息填写完整');
         }
     }
 
-    
+
     public function conductVideoAction(){
         $this->secondLink('video');
         $qiniu_cfg = plum_parse_config('access','qiniu');
@@ -321,7 +258,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/new-video.tpl');
     }
 
-    
+
     public function backgroundMusicAction(){
         $this->secondLink('music');
         $video_storage = new App_Model_Applet_MysqlAppletVideoStorage($this->curr_sid);
@@ -342,7 +279,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/new-music.tpl');
     }
 
-    
+
     public function vrUrlAction(){
         $this->secondLink('vrUrl');
         $video_storage = new App_Model_Applet_MysqlAppletVideoStorage($this->curr_sid);
@@ -382,7 +319,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->renderCropTool('/wxapp/index/uploadImg');
         $this->displaySmarty('wxapp/currency/vrurl.tpl');
     }
-    
+
     public function saveVrUrlAction(){
         $musicUrl= $this->request->getStrParam('vrUrl');
         $open= $this->request->getIntParam('open');
@@ -397,8 +334,8 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $video_storage = new App_Model_Applet_MysqlAppletVideoStorage($this->curr_sid);
         $row = $video_storage->fetchShopVideo(null,false);
         if($row){
-            
-                $ret = $video_storage->fetchShopVideo($updata,false);
+
+            $ret = $video_storage->fetchShopVideo($updata,false);
         }else{
             $updata['av_s_id'] = $this->curr_sid;
             $updata['av_update_time'] = time();
@@ -407,7 +344,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         App_Helper_OperateLog::saveOperateLog("VR全景配置信息保存成功");
         $this->showAjaxResult($ret);
     }
-    
+
     private function _get_video_time($url){
         $session_url = $url.'?avinfo';
         $result = file_get_contents($session_url);
@@ -424,7 +361,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         return $m->getDuration();//显示时长秒数
     }
 
-    
+
     public function saveVideoOpenAction(){
         $open = $this->request->getIntParam('open');
         $videoTime = $this->request->getIntParam('videoTime');
@@ -447,7 +384,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->showAjaxResult($ret);
     }
 
-    
+
     public function saveVideoOpenSwitchAction(){
         $result = array(
             'ec' => 400,
@@ -472,13 +409,11 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                 'em' => '成功',
                 'open' => $open
             );
-            $str = $open == 1 ? '开启' : '关闭';
-            App_Helper_OperateLog::saveOperateLog("{$str}首页视频成功");
         }
         $this->displayJson($result,true);
     }
 
-    
+
     public function saveMusicAction(){
         $title= $this->request->getStrParam('title');
         $musicUrl= $this->request->getStrParam('musicUrl');
@@ -505,7 +440,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->showAjaxResult($ret);
     }
 
-    
+
     public function saveMusicOpenAction(){
         $result = array(
             'ec'    => 400,
@@ -535,22 +470,17 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displayJson($result,1);
     }
 
-    
+
     public function deletedArticleAction(){
         $id = $this->request->getIntParam('id');
         if($id){
             $article_model = new App_Model_Applet_MysqlAppletArticleStorage();
-            $article = $article_model->getRowById($id);
             $ret = $article_model->deleteDFById($id,$this->curr_sid);
-            if($ret){
-                App_Helper_OperateLog::saveOperateLog("文章【{$article['aa_title']}】删除成功");
-            }
         }
-
         $this->showAjaxResult($ret,'删除');
     }
 
-    
+
     public function payStyleAction() {
         $pay_type    = new App_Model_Auth_MysqlPayTypeStorage($this->curr_sid);
         $type = $pay_type->findRowPay();
@@ -569,11 +499,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             );
             $pay_type->insertValue($type);
         }
-        $paySort = array();
-        if($type && $type['pt_pay_type_sort']){
-            $paySort = json_decode($type['pt_pay_type_sort'],true);
-        }
-        $this->output['paySort'] = $paySort;
         $this->output['payType'] = $type;
         $pay_model      = new App_Model_Applet_MysqlAppletPayStorage($this->curr_sid);
         $appletPay         = $pay_model->findRowPay();
@@ -598,45 +523,40 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty("wxapp/currency/paystyle.tpl");
     }
 
-    
+
     public function savePayAction(){
         $pre    = 'ap_';
         $req_key= array('appid','mchid','mchkey','sslcert','sslkey');
-        $result = $this->deal_save_pay($pre,$req_key,$pre);
+        $result = $this->deal_save_pay($pre,$req_key);
         $this->displayJson($result);
     }
-    
+
+
     public function saveBaiduPayAction(){
         Libs_Log_Logger::outputLog('百度支付配置');
         $pre    = 'abp_';
         $req_key= array('dealid','appkey','public_key','public_rsa_key','private_rsa_key');
         Libs_Log_Logger::outputLog($req_key);
-        $result = $this->deal_save_pay($pre,$req_key,$pre);
+        $result = $this->deal_save_pay($pre,$req_key);
         $this->displayJson($result);
     }
 
-    
+
     public function saveAlipayAction(){
         $pre = 'ap_';
         $req_key = array('pid','account','key','ssl_pub','ssl_pri');
-        $result = $this->deal_save_pay($pre,$req_key,$pre);
+        $result = $this->deal_save_pay($pre,$req_key);
         $this->displayJson($result);
     }
 
-    private function deal_save_pay($pre,$req_key,$type,$payType=''){
+    private function deal_save_pay($pre,$req_key){
         $data = array();
         foreach($req_key as $val){
             $data[$pre.$val] = $this->request->getStrParam($val);
         }
         $data[$pre.'update_time'] = time();
-
-        if($this->menuType == 'weixin'){
-            $data['ap_weixin_appid'] = $data['ap_appid'];
-            unset($data['ap_appid']);
-        }
-
         Libs_Log_Logger::outputLog($data);
-        switch($type){
+        switch($pre){
             case 'ap_':
                 $pay_model      = new App_Model_Applet_MysqlAppletPayStorage($this->curr_sid);
                 break;
@@ -644,18 +564,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                 $pay_model      = new App_Model_Baidu_MysqlBaiduPayCfgStorage($this->curr_sid);
                 break;
             case 'atp_':
-                if(!$payType){
-                    $client = new App_Plugin_Alixcx_XcxClient($this->curr_sid);
-                    $client->client->errorAlertType=1;
-                    $ret_code = $client->testSign($data['atp_alipay_appid'],$data['atp_alipay_private_key'],$data['atp_alipay_public_key']);
-                    if($ret_code != 10000){
-                        $this->displayJsonError('校验失败，请检查配置信息是否正确');
-                    }
-                }
                 $pay_model      = new App_Model_Toutiao_MysqlToutiaoPayStorage($this->curr_sid);
-                break;
-            case 'qq':
-                $pay_model      = new App_Model_Qq_MysqlAppletQqPayStorage($this->curr_sid);
                 break;
 
             default:
@@ -689,7 +598,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         return $result;
     }
 
-    
+
     public function changePayAction(){
         $result = array(
             'ec' => 400,
@@ -712,50 +621,12 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         }
         if($check){
             $set = $this->pay_type_field($type,$row['pt_'.$type]);
-            if($this->menuType=='weixin' && $type == 'wxpay_applet'){
-                $set['pt_wxpay_zy'] = $set['pt_'.$type];
-            }
             $ret = $pay_type->findRowPay($set);
             if($ret){
                 $result = array(
                     'ec' => 200,
                     'em' => '修改成功'
                 );
-                $type_str = '';
-                switch ($type){
-                    case 'wxpay_ds':
-                        $type_str = '微信支付（代收）';
-                        break;
-                    case 'wxpay_zy':
-                        $type_str = '微信支付（自有）';
-                        break;
-                    case 'alipay':
-                        $type_str = '支付宝支付';
-                        break;
-                    case 'cash':
-                        $type_str = '货到付款';
-                        break;
-                    case 'coin':
-                        $type_str = '余额支付';
-                        break;
-                    case 'wxpay_applet':
-                        $type_str = '微信小程序支付';
-                        break;
-                    case 'baidu_pay':
-                        $type_str = '百度小程序支付';
-                        break;
-                    case 'alipay_applet':
-                        $type_str = '支付宝小程序支付';
-                        break;
-                    case 'toutiao_pay':
-                        $type_str = '头条小程序支付';
-                        break;
-                }
-                $str = $set['pt_'.$type] == 1 ? '开启' : '关闭';
-                if($str && $type_str){
-                    App_Helper_OperateLog::saveOperateLog($str.$type_str);
-                }
-
             }else{
                 $result['em'] = '修改失败';
             }
@@ -763,26 +634,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displayJson($result);
     }
 
-    
-    public function paySortAction(){
-        $wxpay = $this->request->getIntParam('wxpay');
-        $coin = $this->request->getIntParam('coin');
-        $cash = $this->request->getIntParam('cash');
-        $pay_type    = new App_Model_Auth_MysqlPayTypeStorage($this->curr_sid);
-        $row = $pay_type->findRowPay();
-        if($row){
-            $data = array(
-                'wxpay' => $wxpay,
-                'coin'  => $coin,
-                'cash'  => $cash
-            );
-            $updata = array('pt_pay_type_sort'=> json_encode($data));
-            $ret = $pay_type->findRowPay($updata);
-        }
-        $this->showAjaxResult($ret);
-    }
 
-    
     private function pay_type_field($type,$key){
         $field = array('wxpay_ds','wxpay_zy','alipay','cash','coin','wxpay_applet','baidu_pay');
         $set   = array();
@@ -799,7 +651,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         return $set;
     }
 
-    
+
     public function informationSecondLink($type='list'){
         $link = array(
             array(
@@ -812,15 +664,15 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                 'link'  => '/wxapp/currency/informationList',
                 'active'=> 'list'
             ),
-            
+
         );
-//        if($this->wxapp_cfg['ac_type'] == 1 || $this->wxapp_cfg['ac_type'] == 3 || $this->wxapp_cfg['ac_type'] == 6 || $this->wxapp_cfg['ac_type'] == 13 || $this->wxapp_cfg['ac_type'] == 21 || $this->wxapp_cfg['ac_type'] == 27 || $this->wxapp_cfg['ac_type'] == 28){
-//            array_push($link, array(
-//                'label' => '付费管理',
-//                'link'  => '/wxapp/currency/informationCardType',
-//                'active'=> 'pay'
-//            ));
-//        }
+        if($this->wxapp_cfg['ac_type'] == 1 || $this->wxapp_cfg['ac_type'] == 3 || $this->wxapp_cfg['ac_type'] == 6 || $this->wxapp_cfg['ac_type'] == 13 || $this->wxapp_cfg['ac_type'] == 21 || $this->wxapp_cfg['ac_type'] == 27 || $this->wxapp_cfg['ac_type'] == 28){
+            array_push($link, array(
+                'label' => '付费管理',
+                'link'  => '/wxapp/currency/informationCardType',
+                'active'=> 'pay'
+            ));
+        }
         $this->output['secondLink'] = $link;
         $this->output['linkType']   = $type;
         $this->output['snTitle']    = '资讯管理';
@@ -864,7 +716,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/information-cate.tpl');
     }
 
-    
+
     public function informationListAction(){
         $this->informationSecondLink('list');
         $page       = $this->request->getIntParam('page');
@@ -937,23 +789,11 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             array('title' => '模块管理', 'link' => '#'),
             array('title' => '资讯管理', 'link' => '#'),
         ));
-        if($this->menuType == 'toutiao' && $this->wxapp_cfg['ac_type'] == 18){
-            $this->output['dyyu'] = true;
-        }
-        if($this->menuType=='weixin'){
-            $link_host      = plum_parse_config('weixin_index','weixin');
-            $article_url    = $link_host[$this->wxapp_cfg['ac_type']];
-            $article_url   .= sprintf('?appletType=5&suid=%s&share=/InformationDetail',$this->curr_shop['s_unique_id']);
-        }else{
-            $article_url   ='';
-        }
-        $this->output['article_link']=$article_url;
-
         $this->displaySmarty('wxapp/currency/information-list.tpl');
     }
 
 
-    
+
     private function _get_information_category(){
         $category_storage = new App_Model_Applet_MysqlAppletInformationCategoryStorage($this->curr_sid);
         $list = $category_storage->getListBySid();
@@ -973,7 +813,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->output['category_select'] = $category_select;
     }
 
-    
+
     public function changeInformationCateAction(){
         $ids = $this->request->getStrParam('ids');
         $category  = $this->request->getIntParam('custom_cate');
@@ -992,7 +832,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                 'ec' => 200,
                 'em' => '修改成功'
             );
-            App_Helper_OperateLog::saveOperateLog("修改资讯分类成功");
         }else{
             $result = array(
                 'ec' => 400,
@@ -1003,7 +842,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displayJson($result);
     }
 
-    
+
     public function informationMultiDeleteAction(){
         $ids = $this->request->getStrParam('ids');
         $id_arr = plum_explode($ids);
@@ -1020,7 +859,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                 'ec' => 200,
                 'em' => '删除成功'
             );
-            App_Helper_OperateLog::saveOperateLog("删除资讯成功");
         }else{
             $result = array(
                 'ec' => 400,
@@ -1031,7 +869,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displayJson($result);
     }
 
-    
+
     public function addInformationAction(){
         $id = $this->request->getIntParam('id');
         $row = array();
@@ -1065,7 +903,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                     $agoodsList = $g_model->getList($where_goods,0,10,array(),array('g_id','g_name'));
                 }
                 $this->output['appointmentGoodsList'] = $agoodsList;
-            
             }
 
             if($row['ai_related_info']){
@@ -1087,19 +924,12 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->output['category_select'] = $category_select;
         $this->output['informationArr'] = $this->_get_information_cate_group($id,true);
         $chooseGoods = 0;
-
         $applet_cfg = $this->_get_cfg_by_menutype($this->menuType,$this->curr_sid);
         $cfg        = $applet_cfg->findShopCfg();
         $shopType = array(1,13,21,24,6,8,32,27);
         if(in_array($cfg['ac_type'],$shopType)){
             $chooseGoods = 1;
         }
-       $chooseAppoGoods = 0;
-       $appoShopType = [9];
-       if(in_array($cfg['ac_type'],$appoShopType)){
-           $chooseAppoGoods = 1;
-       }
-       $this->output['chooseAppoGoods']=$chooseAppoGoods;
 
 
         $showAllow = 0;
@@ -1119,15 +949,11 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             array('title' => '资讯列表', 'link' => '/wxapp/currency/informationList'),
             array('title' => '添加资讯', 'link' => '#'),
         ));
-        
         $this->renderCropTool('/wxapp/index/uploadImg');
         $this->displaySmarty('wxapp/currency/add-information.tpl');
     }
 
 
-
-
-    
     public function saveInformationAllAction(){
         $result = array(
             'ec' => 400,
@@ -1150,9 +976,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                 'ec' => 400,
                 'em' => '资讯分类保存失败'
             );
-        }
-        if($result['ec'] == 200){
-            App_Helper_OperateLog::saveOperateLog("资讯列表样式及分类保存成功");
         }
         $this->displayJson($result,true);
     }
@@ -1229,7 +1052,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
     }
 
 
-    
+
     public function saveCategoryAction(){
         $categoryList = $this->request->getArrParam('categoryList');
         $category_storage = new App_Model_Applet_MysqlAppletInformationCategoryStorage($this->curr_sid);
@@ -1280,13 +1103,12 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         }
         if($up_ret || $del_ret || $ins_ret || $num>0){
             $ret = 1;
-            App_Helper_OperateLog::saveOperateLog("资讯分类保存成功");
         }else{
             $ret = 0;
         }
         $this->showAjaxResult($ret);
     }
-    
+
     private function _save_shop_category($category){
         $data = array(
             'ssc_s_id' => $this->curr_sid,
@@ -1298,7 +1120,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $ret = $category_storage->insertValue($data);
     }
 
-    
+
     public function saleInformationAction(){
         $title   = $this->request->getStrParam('title');
         $brief   = $this->request->getStrParam('brief');
@@ -1399,7 +1221,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         }
     }
 
-    
+
     private function _save_shop_information($title,$cover,$brief,$category,$content){
         $data = array(
             'ss_category'    => $category,
@@ -1415,7 +1237,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $ret = $article_model->insertValue($data);
     }
 
-    
+
     public function deletedInformationAction(){
         $id = $this->request->getIntParam('id');
         if($id){
@@ -1427,13 +1249,13 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->showAjaxResult($ret,'删除');
     }
 
-    
+
     public function informationStyleAction(){
         $this->output['applet_cfg'] = $this->wxapp_cfg;
         $this->displaySmarty('wxapp/currency/information-style.tpl');
     }
 
-    
+
     public function saveInformationStyleAction(){
         $style = $this->request->getIntParam('styleId');
         if($style){
@@ -1441,72 +1263,10 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             $wxxcx_model = $this->_get_cfg_by_menutype($this->menuType,$this->curr_sid);
             $ret = $wxxcx_model->updateById($set,$this->wxapp_cfg['ac_id']);
         }
-        if($ret){
-            App_Helper_OperateLog::saveOperateLog("资讯列表样式保存成功");
-        }
         $this->showAjaxResult($ret);
     }
 
-    
-    public function cashierAction($plugin = 0,$pluginLinkType = ''){
-        $type = $this->request->getStrParam('type');
-        $appletPay_Model = new App_Model_Applet_MysqlAppletPayStorage($this->curr_sid);
-        $appcfg = $appletPay_Model->findRowPay();
-        if(!$appcfg && $this->curr_shop['s_broker_type'] == 1){
-            plum_redirect_with_msg('请先在支付配置中配置微信支付参数','/wxapp/currency/payStyle');
-        }
-        if(!$this->wxapp_cfg['ac_receivable_code']){
-            $wxxcx_client   = new App_Plugin_Weixin_WxxcxClient($this->curr_sid);
-            $result = $wxxcx_client->fetchWxappCode('pages/payshort/payshort');
-            if($result){
-                $set = array('ac_receivable_code'=>$result);
-                $applet_storage = new App_Model_Applet_MysqlCfgStorage();
-                $applet_storage->updateById($set,$this->wxapp_cfg['ac_id']);
-                $this->wxapp_cfg['ac_receivable_code'] = $result;
-            }
-        }
-        $appletPay_Model = new App_Model_Applet_MysqlAppletPayStorage($this->curr_sid);
-        $appPaycfg = $appletPay_Model->findRowPay();
-        $this->output['payCfg'] = $appPaycfg;
-        $this->output['wxapp_cfg'] = $this->wxapp_cfg;
-        $this->output['type'] = $type;
-        $this->output['sid'] = $this->curr_sid;
-        $bread = [
-            array('title' => '模块管理', 'link' => '#'),
-            array('title' => '收银台', 'link' => '#'),
-        ];
-        $showShopSearch = 0;
-        if(in_array($this->wxapp_cfg['ac_type'],[6,8])){
-            $showShopSearch = 1;
-        }
-        if($plugin == 1){
-            $showShopSearch = 0;
-            $plugin_cfg = plum_parse_config('plugin_cfg','cashier');
-            $this->output['link']       = $plugin_cfg['link'];
-            $this->output['linkType']   = $pluginLinkType;
-            $this->output['snTitle']    = $plugin_cfg['snTitle'];
-            $bread = $plugin_cfg['breadcrumbs'][$pluginLinkType];
-        }
-        if($this->curr_shop['s_broker_type'] == 2){
-            $showShopSearch = 0;
-        }
 
-
-        $this->_get_cash_recode($showShopSearch);
-        $this->output['plugin'] = $plugin;
-        $this->output['showShopSearch'] = $showShopSearch;
-
-        $this->buildBreadcrumbs($bread);
-
-        if($this->curr_shop['s_broker_type'] == 2 || $plugin){
-            $this->displaySmarty('wxapp/currency/cashier-cfg-new.tpl');
-        }else{
-            $this->displaySmarty('wxapp/currency/cashier-cfg.tpl');
-        }
-
-    }
-
-    
     private function utf8_str_to_unicode($utf8_str) {
         $unicode_str = '';
         for($i=0;$i<mb_strlen($utf8_str);$i++){
@@ -1524,168 +1284,69 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         return $unicode_str;
     }
 
-    
-    private function _get_cash_recode($searchShop = 0){
-        $paytype = App_Helper_Trade::$trade_pay_type;
-        $this->output['paytype'] = $paytype;
-        $selPayType = array();
-        $selPayType[1] = $paytype[1];
-        $selPayType[2] = $paytype[2];
-        $selPayType[3] = $paytype[3];
-        $selPayType[5] = $paytype[5];
-        $selPayType[6] = $paytype[6];
-        $selPayType[9] = $paytype[9];
-        $this->output['selPayType'] = $selPayType;
 
-        $test = $this->request->getIntParam('test');
-
+    private function _get_cash_recode(){
+        $this->output['paytype'] = App_Helper_Trade::$trade_pay_type;
         $page       = $this->request->getIntParam('page');
-        $enterId    = $this->request->getIntParam('enterId',0);
+        $enterId    = $this->request->getIntParam('enterId');
         $index      = $page * $this->count;
         $cash_recode= new App_Model_Cash_MysqlRecordStorage($this->curr_sid);
         $where      = array();
         $where[]    = array('name'=>'cr_s_id','oper'=>'=','value'=>$this->curr_sid);
-        if($enterId){
-            if($enterId > 0){
-                $where[]    = array('name'=>'cr_es_id','oper'=>'=','value'=>$enterId);
-            }elseif ($enterId < 0){
-                $where[]    = array('name'=>'cr_es_id','oper'=>'=','value'=>0);
-            }
+        if($enterId && $enterId>0){
+            $where[]    = array('name'=>'cr_es_id','oper'=>'=','value'=>$enterId);
         }
-
-        if($this->curr_shop['s_broker_type'] == 2) {
-            $startTime   = $this->request->getStrParam('start');
-            $endTime     = $this->request->getStrParam('end');
-            $timeAll     = $this->request->getIntParam('timeAll');
-
-            if(!$timeAll) {
-                if(!$startTime && !$endTime) {
-                    $startTime = date('Y-m-d', time());
-                    $endTime   = date('Y-m-d', time());
-                }
-                if($startTime){
-                    $where[]    = array('name' => 'cr_pay_time', 'oper' => '>=', 'value' => strtotime($startTime));
-                }
-
-                if($endTime){
-                    $where[]    = array('name' => 'cr_pay_time', 'oper' => '<=', 'value' => (strtotime($endTime) + 86400));
-                }
-            }
-
-            $this->output['start'] = $startTime;
-            $this->output['end']   = $endTime;
-            $this->output['timeAll']  = $timeAll;
-
-        } else {
-            $startTime   = $this->request->getStrParam('start');
-            if($startTime){
-                $where[]    = array('name' => 'cr_pay_time', 'oper' => '>=', 'value' => strtotime($startTime));
-            }
-            $this->output['start'] = $startTime;
-            $endTime     = $this->request->getStrParam('end');
-            if($endTime){
-                $where[]    = array('name' => 'cr_pay_time', 'oper' => '<=', 'value' => (strtotime($endTime) + 86400));
-            }
-            $this->output['end'] = $endTime;
+        $startTime   = $this->request->getStrParam('start');
+        if($startTime){
+            $where[]    = array('name' => 'cr_pay_time', 'oper' => '>=', 'value' => strtotime($startTime));
         }
-
-        $trade_id     = $this->request->getStrParam('trade_id');
-        if($trade_id){
-            $where[]    = array('name' => 'cr_tid', 'oper' => '=', 'value' => $trade_id);
+        $this->output['start'] = $startTime;
+        $endTime     = $this->request->getStrParam('end');
+        if($endTime){
+            $where[]    = array('name' => 'cr_pay_time', 'oper' => '<=', 'value' => (strtotime($endTime) + 86400));
         }
-        $this->output['trade_id'] = $trade_id;
-        $order_status=$this->request->getStrParam('order_status','all');
-        $order_status_code=[
-            'all'   =>-1,
-            'payed' =>0,
-            'refund'=>1,
-        ];
-        if($order_status_code[$order_status] > -1) {
-            $where[]    = array('name' => 'cr_isrefund', 'oper' => '=', 'value' =>$order_status_code[$order_status]);
-        }
-
-        $pay_type = $this->request->getStrParam('pay_type');
-        if($pay_type) {
-            $where[] = array('name' => 'cr_pay_type', 'oper' => '=', 'value' =>$pay_type);
-        }
-        $this->output['pay_type'] = $pay_type;
-
-        $os_manage = $this->request->getIntParam('os_manage');
-        if($os_manage) {
-            $where[] = array('name' => 'cr_uid', 'oper' => '=', 'value' =>$os_manage);
-        }
-        $this->output['os_manage'] = $os_manage;
-
-        $search_nickname = $this->request->getStrParam('search_nickname');
-        if($search_nickname) {
-            $where[] = array('name' => 'm.m_nickname', 'oper' => 'like', 'value' =>'%'.$search_nickname.'%');
-        }
-        $this->output['search_nickname'] = $search_nickname;
-
-
-        $search_machine = $this->request->getStrParam('search_machine');
-        if($search_machine) {
-            $where[] = array('name' => 'cr_code', 'oper' => '=', 'value' =>$search_machine);
-        }
-        $this->output['search_machine'] = $search_machine;
-
-        if($searchShop){
-            $this->_entershop_for_select(true);
-            $total      = $cash_recode->findCashRecordMemberCountShop($where);
-        }else{
-            $total      = $cash_recode->findCashRecordMemberCount($where);
-        }
-
+        $this->output['end'] = $endTime;
+        $total      = $cash_recode->findCashRecordMemberCount($where);
         $page_libs  = new Libs_Pagination_Paginator($total,$this->count,'jquery',true);
         $list       = array();
         if($total > $index){
             $sort   = array('cr_pay_time'=>'DESC');
-            if($searchShop){
-                $list = $cash_recode->findCashRecordMemberShop($where,$index,$this->count,$sort);
-            }else{
-                $list = $cash_recode->findCashRecordMember($where,$index,$this->count,$sort);
-            }
+            $list = $cash_recode->findCashRecordMember($where,$index,$this->count,$sort);
         }
-
         $this->output['paginator'] = $page_libs->render();
         $this->output['list']      = $list;
         $this->output['enterId']   = $enterId;
-        $this->output['machine']   = $this->_get_bind_machine();
 
-        $where_all = $where_total = $where_refund = [];
-        $where_all[] = $where_total[] = $where_refund[] = ['name'=>'cr_s_id','oper'=>'=','value'=>$this->curr_sid];
-
-        if($enterId){
-            if($enterId > 0){
-                $where_all[] = $where_total[] = $where_refund[] = ['name'=>'cr_es_id','oper'=>'=','value'=>$enterId];
-            }elseif ($enterId < 0){
-                $where_all[] = $where_total[] = $where_refund[] = ['name'=>'cr_es_id','oper'=>'=','value'=>0];
-            }
+        $where_total = $where_refund = [];
+        $where_total[] = $where_refund[] = ['name'=>'cr_s_id','oper'=>'=','value'=>$this->curr_sid];
+        if($enterId && $enterId>0){
+            $where_total[] = $where_refund[] = ['name'=>'cr_es_id','oper'=>'=','value'=>$enterId];
         }
         $where_total[] = ['name'=>'cr_isrefund','oper'=>'=','value'=>0];
         $where_refund[] = ['name'=>'cr_isrefund','oper'=>'=','value'=>1];
-        $todayInfo = $cash_recode->getSumInfo($where);
-        $todayRel  = $todayInfo['money'] - $todayInfo['refund'];
 
-        $totalInfo  = $cash_recode->getSumInfo($where_total);
+        $todayInfo = $cash_recode->getSumInfo($where_total,true);
+        $totalInfo = $cash_recode->getSumInfo($where_total);
         $refundInfo = $cash_recode->getSumInfo($where_refund);
-        $allInfo    = $cash_recode->getSumInfo($where_all);
-        $allRel     = $allInfo['money'] - $allInfo['refund'];
-
         $this->output['statInfo'] = [
             'todayTotal' => $todayInfo['total'] ? $todayInfo['total'] : 0,
-            'todayMoney' => $todayRel ? $todayRel :0,
-            'totalTotal' => $allInfo['total'] ? $allInfo['total'] : 0,
-            'totalMoney' => $allInfo['money'] ? $allInfo['money'] : 0,
+            'todayMoney' => $todayInfo['money'] ? $todayInfo['money'] : 0,
+            'totalTotal' => $totalInfo['total'] ? $totalInfo['total'] : 0,
+            'totalMoney' => $totalInfo['money'] ? $totalInfo['money'] : 0,
             'refundTotal' => $refundInfo['total'] ? $refundInfo['total'] : 0,
-            'refundMoney' => $allInfo['refund'] ? $allInfo['refund'] : 0,
+            'refundMoney' => $refundInfo['money'] ? $refundInfo['money'] : 0,
         ];
-        $osManage = $this->_get_osManage();
-        $this->output['osManage'] = $osManage;
 
+        if(in_array($this->wxapp_cfg['ac_type'],[8])){
+            $this->output['showSearch'] = 1;
+
+        }
+        if($this->wxapp_cfg['ac_type'] == 8){
+            $this->_get_entershop_list();
+        }
     }
 
-    
+
     private function _get_entershop_list(){
         $es_model = new App_Model_Entershop_MysqlEnterShopStorage();
         $where = array();
@@ -1694,7 +1355,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->output['shopList'] = $list;
     }
 
-    
+
     public function pemcertAction() {
         $uploader   = new Libs_File_Transfer_Uploader('cert|pem');
         $ret = $uploader->receiveFile('pem_cert');
@@ -1721,8 +1382,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $open   = $open ? 1 : 0;
         $wxapp_model = $this->_get_cfg_by_menutype($this->menuType,$this->curr_sid);
         $wxapp_model->updateById(array('ac_share_open' => $open), $this->wxapp_cfg['ac_id']);
-        $str = $open == 1 ? '开启' : '关闭';
-        App_Helper_OperateLog::saveOperateLog("{$str}分享开关");
         $this->displayJsonSuccess();
     }
 
@@ -1731,12 +1390,12 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $shareCover = $this->request->getStrParam('shareCover','');
         $shareTitle = $this->request->getStrParam('shareTitle','');
         $shareCustom = $this->request->getIntParam('shareCustom',0);
-            if($shareImg && $shareImg==$this->wxapp_cfg['ac_share_addr'] && $shareCover && $shareCover==$this->wxapp_cfg['ac_share_cover'] && $shareTitle && $this->wxapp_cfg['ac_share_title']==$shareTitle && $shareCustom && $shareCustom==$this->wxapp_cfg['ac_share_custom'] ){
+        if($shareImg && $shareImg==$this->wxapp_cfg['ac_share_addr'] && $shareCover && $shareCover==$this->wxapp_cfg['ac_share_cover'] && $shareTitle && $this->wxapp_cfg['ac_share_title']==$shareTitle && $shareCustom && $shareCustom==$this->wxapp_cfg['ac_share_custom'] ){
             $this->displayJsonError('保存成功');
         }
 
         if($shareImg || $shareCover){
-            $wxapp_model = $this->_get_cfg_by_menutype($this->menuType,$this->curr_sid);
+            $wxapp_model    = new App_Model_Applet_MysqlCfgStorage($this->curr_sid);
 
             $set = array(
                 'ac_share_addr' => $shareImg,
@@ -1780,7 +1439,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             'keyword'   => $keyword,
             'cover'     => $cover
         ];
-        App_Helper_OperateLog::saveOperateLog("保存客服回复成功");
         $this->displayJsonSuccess($data,true,'保存成功');
     }
 
@@ -1798,8 +1456,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $open = $value == 'on' ? 1 : 0;
         $wxapp_model = $this->_get_cfg_by_menutype($this->menuType,$this->curr_sid);
         $wxapp_model->updateById(array('ac_kefu_mobile' => $open), $this->wxapp_cfg['ac_id']);
-        $str = $open == 1 ? '开启' : '关闭';
-        App_Helper_OperateLog::saveOperateLog("{$str}客服回复");
         $this->displayJsonSuccess();
     }
     public function wxcardAction() {
@@ -1832,7 +1488,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->output['list']  = $list;
         $this->displaySmarty('wxapp/currency/wxcard-list.tpl');
     }
-    
+
     public function syncCouponAction(){
         $client = new App_Plugin_Weixin_CardPlugin($this->curr_sid);
         $card   = $client->fetchCardList(0, 50);
@@ -1878,25 +1534,18 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                 }
             }
         }
-        if($num){
-            App_Helper_OperateLog::saveOperateLog("同步微信卡券成功");
-        }
         $this->showAjaxResult($num,'同步');
     }
 
-    
+
     public function delCouponAction(){
         $id = $this->request->getIntParam('id');
         $card_model = new App_Model_Wechat_MysqlCardStorage($this->curr_sid);
-        $card = $card_model->getRowById($id);
         $ret = $card_model->deleteById($id);
-        if($ret){
-            App_Helper_OperateLog::saveOperateLog("删除微信卡券【{$card['wc_title']}】成功");
-        }
         $this->showAjaxResult($ret, '删除');
     }
 
-    
+
     public function cardBackgroundAction(){
         $wechat_model   = new App_Model_Auth_MysqlWeixinStorage();
         $wechat         = $wechat_model->findWeixinBySid($this->curr_sid);
@@ -1919,7 +1568,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/wxcard/card-background.tpl');
     }
 
-    
+
     public function saveCardBackgroundAction(){
         $background = $this->request->getStrParam('background');
         $wechat_model   = new App_Model_Auth_MysqlWeixinStorage();
@@ -1928,14 +1577,11 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             $set = array('wc_card_background' => $background);
             $ret = $wechat_model->updateById($set,$wechat['wc_id']);
         }
-        if($ret){
-            App_Helper_OperateLog::saveOperateLog("保存卡券列表背景图成功");
-        }
         $this->showAjaxResult($ret);
     }
 
 
-    
+
     public function fetchWebContentAction(){
         $url = $this->request->getStrParam('url');
         $type = $this->request->getIntParam('type', 1);
@@ -1945,7 +1591,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                 $ret = $apiset_model->extractNewsData($url);
                 $ret['result']['img_list'][0]['url'] = $this->_download_article_image($ret['result']['img_list'][0]['url']);
             }else{
-                $client_storage = new App_Plugin_Querylist_Query($this->curr_shop['s_unique_id']);
+                $client_storage = new App_Plugin_Querylist_Query();
                 $article = $client_storage->queryWxArticle($url);
                 $ret['result']['title']   = $article['info']['title'];
                 $ret['result']['content'] = $article['content'];
@@ -1965,8 +1611,8 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         list($usec, $sec) = explode(" ", microtime());
         $md5        = strtoupper(md5($usec.$sec));
         $name   = substr($md5, 0, 8).'-'.substr($md5, 10, 4).'-'.mt_rand(1000, 9999).'-'.substr($md5, 20, 12);
-        $filename = PLUM_DIR_UPLOAD. '/depot/'.$this->curr_shop['s_unique_id'].'/'.date('Ymd', time()).'/'.$name.'.png';
-        $filepath = PLUM_PATH_UPLOAD . '/depot/'.$this->curr_shop['s_unique_id'].'/'.date('Ymd', time()).'/'.$name.'.png';
+        $filename = PLUM_DIR_UPLOAD. '/gallery/thumbnail/'.$name.'.png';
+        $filepath = PLUM_PATH_UPLOAD . '/gallery/thumbnail/'.$name.'.png';
         if(!file_exists($filename)){
             $hander = curl_init();
             $fp = fopen($filename,'wb');
@@ -1978,12 +1624,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             curl_exec($hander);
             curl_close($hander);
             fclose($fp);
-            try {
-                $sync = new Libs_Image_DataSync();
-                $sync->pushQueue($filepath);
-            } catch (Exception $e) {
-                Libs_Log_Logger::outputLog($e->getMessage().':'.$filepath, 'imgsrc.log');
-            }
         }
         return $filepath;
     }
@@ -1998,7 +1638,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                 $content = Libs_Http_Client::get($url);
                 $content_html_pattern = '/VIDEO_INFO = ({[^}]*.*?)(;.*?var |<\/script>)/s';
                 preg_match($content_html_pattern, $content, $video_matchs);
-                
+
                 $video_matchs[1] = preg_replace('/(\/\*.*\*\/)/s', '', $video_matchs[1]);
                 $videoInfo = json_decode($video_matchs[1], true);
                 if(!$videoInfo){
@@ -2058,7 +1698,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         return $params;
     }
 
-    
+
     public function bindCategoryAction(){
         $cid = $this->request->getIntParam('cid');
         $sourceId = $this->request->getIntParam('sourceId');
@@ -2073,33 +1713,19 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             $information_storage->updateValue($set, $where);
             $set = array('abg_cate_id' => $cid);
             $ret = $gzh_model->updateById($set,$sourceId);
-
-            if($ret){
-                $category_model = new App_Model_Applet_MysqlAppletInformationCategoryStorage($this->curr_sid);
-                $category = $category_model->getRowById($cid);
-                App_Helper_OperateLog::saveOperateLog("绑定公众号与分类【{$category['aic_name']}】");
-            }
-
             $this->showAjaxResult($ret);
         }else{
             $this->displayJsonError('请选择内容源');
         }
     }
 
-    
+
     public function delBindCategoryAction(){
         $id = $this->request->getIntParam('id');
         $gzh_model = new App_Model_Information_MysqlInformationGzhStorage($this->curr_sid);
         if($id){
             $set = array('abg_cate_id' => 0);
             $ret = $gzh_model->updateById($set,$id);
-
-            if($ret){
-                $category_model = new App_Model_Applet_MysqlAppletInformationCategoryStorage($this->curr_sid);
-                $category = $category_model->getRowById($id);
-                App_Helper_OperateLog::saveOperateLog("解绑公众号与分类【{$category['aic_name']}】");
-            }
-
             $this->showAjaxResult($ret);
         }else{
             $this->displayJsonError('操作失败');
@@ -2107,24 +1733,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
     }
 
 
-    
-    private function _recharge_record($tid,$mid,$money){
-        $record_storage = new App_Model_Member_MysqlRechargeStorage($this->curr_sid);
-        $indata = array(
-            'rr_tid'        => $tid,
-            'rr_s_id'       => $this->curr_sid,
-            'rr_m_id'       => $mid,
-            'rr_amount'     => 0,
-            'rr_gold_coin'  => $money,
-            'rr_status'     => 1,//标识金币增加
-            'rr_pay_type'   => 18,//收银台退款
-            'rr_remark'     => '收银台退款',
-            'rr_create_time'=> time(),
-        );
-        $record_storage->insertValue($indata);
-    }
 
-    
     private function _deal_es_cash_refund($cash){
         $store_model = new App_Model_Entershop_MysqlEnterShopStorage();
         $entershop       = $store_model->getRowById($cash['cr_es_id']);
@@ -2132,8 +1741,8 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $inout_model    = new App_Model_Shop_MysqlShopInoutStorage($this->curr_sid);
         $appletPay_Model = new App_Model_Applet_MysqlAppletPayStorage($this->curr_sid);
         $appcfg = $appletPay_Model->findRowPay();
-        if($entershop['es_cash_proportion'] && $entershop['es_cash_proportion']>0){
-            $maid = $entershop['es_cash_proportion']/100;
+        if($entershop['es_maid_proportion'] && $entershop['es_maid_proportion']>0){
+            $maid = $entershop['es_maid_proportion']/100;
         }elseif($appcfg['ap_shop_percentage'] && $appcfg['ap_shop_percentage']>0){
             $maid = $appcfg['ap_shop_percentage']/100;
         }else{
@@ -2152,7 +1761,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $inout_model->insertValue($indata);
         $store_model->incrementShopBalance($cash['cr_es_id'], -($cash['cr_money']-($less/100)));
     }
-    
+
     public function sslListAction(){
         $page         = $this->request->getIntParam('page');
         $index        = $page*$this->count;
@@ -2174,7 +1783,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/ssl-list.tpl');
     }
 
-    
+
     public function wxAlipayChargeQrcodeAction() {
         $allow_type = array('wxpay' => 'wx_pub_qr', 'alipay' => 'alipay_qr');
         $channel    = $this->request->getStrParam('channel');
@@ -2198,7 +1807,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         Libs_Qrcode_QRCode::png($qrcode);
     }
 
-    
+
     private function _wx_pay_cfg($amount){
         $tid = App_Plugin_Weixin_PayPlugin::makeMchOrderid($this->uid);
         $body   = $this->curr_shop['s_name']."购买ssl证书";
@@ -2214,7 +1823,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         return $pay_storage->agentPayRecharge(floatval($amount),$tid,$notify_url,$body,$other);
     }
 
-    
+
     private function _alipay_pay_cfg($amount){
         $out_trade_no = App_Plugin_Weixin_PayPlugin::makeMchOrderid($this->uid);
         $subject   = $this->curr_shop['s_name']."购买ssl证书";
@@ -2226,12 +1835,12 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         );
         $body = json_encode($attach);
         $ali_qrpay = new App_Plugin_Alipaysdk_NewClient(0);
-        $result      = $ali_qrpay->agentPayRecharge($out_trade_no, $subject,$body, $amount,$notify_url,true);
+        $result      = $ali_qrpay->agentPayRecharge($out_trade_no, $subject,$body, $amount,$notify_url);
         return $result;
 
     }
 
-    
+
     public function updateSslAction(){
         $strField = array('domain','company','department','mobile','name','job','tel','address');
         $data     = $this->getStrByField($strField,'ss_');
@@ -2247,7 +1856,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->showAjaxResult($ret);
     }
 
-    
+
     private function _save_applet_public_key(){
         $wxpay_plugin   = new App_Plugin_Weixin_NewPay($this->curr_sid);
         $ret = $wxpay_plugin->appletPublicKey();
@@ -2260,7 +1869,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         }
     }
 
-    
+
     public function informationCommentListAction(){
         $page = $this->request->getIntParam('page');
         $aid  = $this->request->getIntParam('aid');
@@ -2282,7 +1891,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
 
     }
 
-    
+
     public function replyInformationCommentAction(){
         $result = array(
             'ec' => 400,
@@ -2312,13 +1921,12 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                     'ec' => 200,
                     'em' => '回复成功'
                 );
-                App_Helper_OperateLog::saveOperateLog("回复资讯评论成功");
             }
             $this->displayJson($result);
         }
     }
 
-    
+
     public function deleteInformationCommentAction(){
         $aid = $this->request->getIntParam('aid');
         $ret = 0;
@@ -2326,15 +1934,10 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             $comment_model = new App_Model_Applet_MysqlAppletInformationCommentStorage($this->curr_sid);
             $ret = $comment_model->deleteBySidId($aid,$this->curr_sid);
         }
-
-        if($ret){
-            App_Helper_OperateLog::saveOperateLog("删除资讯评论");
-        }
-
         $this->showAjaxResult($ret,'删除');
     }
 
-    
+
     public function qiniuAction() {
         $qiniu_model      = new App_Model_Applet_MysqlAppletQiniuStorage($this->curr_sid);
         $qiniu       = $qiniu_model->findRowCfg();
@@ -2347,21 +1950,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty("wxapp/currency/qiniu.tpl");
     }
 
-    
-    public function tencentCfgAction() {
-        $tencentyun_model = new App_Model_Applet_MysqlAppletTencentyunStorage($this->curr_sid);
-        $tencentyun        = $tencentyun_model->findRowCfg();
 
-        $this->output['tencentyun']       = $tencentyun;
-        $this->buildBreadcrumbs(array(
-            array('title' => '音视频管理', 'link' => '/wxapp/currency/video'),
-            array('title' => '腾讯云配置', 'link' => '#'),
-        ));
-        $this->displaySmarty("wxapp/currency/tencent-cfg.tpl");
-    }
-
-
-    
     public function saveQiniuAction(){
         $data['aq_bucket_zone'] = $this->request->getIntParam('zone');
         $data['aq_access_key'] = $this->request->getStrParam('ak');
@@ -2391,35 +1980,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->showAjaxResult($ret);
     }
 
-    
-    public function saveTencentyunAction(){
-        $data['at_bucket_zone'] = $this->request->getStrParam('zone');
-        $data['at_secret_id']   = $this->request->getStrParam('secretId');
-        $data['at_secret_key']  = $this->request->getStrParam('secretKey');
-        $data['at_bucket_name'] = $this->request->getStrParam('name');
-        $data['at_host']        = $this->request->getStrParam('host');
-        $data['at_update_time'] = time();
 
-        $tencentyun_model = new App_Model_Applet_MysqlAppletTencentyunStorage($this->curr_sid);
-
-        $row    = $tencentyun_model->findRowCfg();
-        if($row){
-            $ret = $tencentyun_model->updateById($data, $row['at_id']);
-            
-        }else{
-            $data['at_s_id'] = $this->curr_sid;
-            $data['at_create_time'] = time();
-            $ret = $tencentyun_model->insertValue($data);
-        }
-        if($ret){
-            $qcloud_plugin = new App_Plugin_Tencentyun_Qcloud($this->curr_sid);
-            $qcloud_plugin->putBucketCors();
-            App_Helper_OperateLog::saveOperateLog("腾讯云配置信息保存成功");
-        }
-        $this->showAjaxResult($ret);
-    }
-
-    
     public function videoAction(){
         $page = $this->request->getIntParam('page');
         $index = $page*$this->count;
@@ -2434,54 +1995,20 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         if($index <= $total){
             $list = $video_model->getList($where, $index, $this->count, $sort);
         }
-
-        if($this->curr_shop['s_media_provider'] == 2){
-            $tencentyun_model = new App_Model_Applet_MysqlAppletTencentyunStorage($this->curr_sid);
-            $tencentyun       = $tencentyun_model->findRowCfg();
-            if($tencentyun){
-                $this->output['tencentyun'] = $tencentyun;
-            }
-        }else{
-            $qiniu_model      = new App_Model_Applet_MysqlAppletQiniuStorage($this->curr_sid);
-            $qiniu       = $qiniu_model->findRowCfg();
-            if($qiniu){
-                $url  = plum_parse_config('url', 'qiniu');
-                $this->output['qiniu'] = $qiniu;
-                $this->output['uploadUrl'] = $url[$qiniu['aq_bucket_zone']];
-                $this->output['qnDomain'] = $qiniu['aq_host'] == 'tdkjxcx.tincing.com' ? 'https://'.$qiniu['aq_host'] :  'http://'.$qiniu['aq_host'];
-            }
+        $qiniu_model      = new App_Model_Applet_MysqlAppletQiniuStorage($this->curr_sid);
+        $qiniu       = $qiniu_model->findRowCfg();
+        if($qiniu){
+            $url  = plum_parse_config('url', 'qiniu');
+            $this->output['qiniu'] = $qiniu;
+            $this->output['uploadUrl'] = $url[$qiniu['aq_bucket_zone']];
+            $this->output['qnDomain'] = 'http://'.$qiniu['aq_host'];
         }
-
         $this->output['list'] = $list;
         $this->buildBreadcrumbs(array(
             array('title' => '插件管理', 'link' => '#'),
             array('title' => '音视频管理', 'link' => '#'),
         ));
-
-        if($this->curr_shop['s_media_provider'] == 2){
-            $this->displaySmarty("wxapp/currency/tencent-video.tpl");
-        }else{
-            $this->displaySmarty("wxapp/currency/qiniu-video.tpl");
-        }
-    }
-
-    
-    public function changeMediaProviderAction(){
-        $type = $this->request->getIntParam('type');
-        $shop_model = new App_Model_Shop_MysqlShopCoreStorage();
-        $ret = $shop_model->updateById(array('s_media_provider' => $type), $this->curr_sid);
-
-        if($ret){
-            $str = '';
-            if($str == 1){
-                $str = '七牛云';
-            }elseif ($str == 2){
-                $str = '腾讯云';
-            }
-            App_Helper_OperateLog::saveOperateLog("切换云存储服务商为【{$str}】");
-        }
-
-        $this->showAjaxResult($ret);
+        $this->displaySmarty("wxapp/currency/qiniu-video.tpl");
     }
 
     public function uploadCfgAction(){
@@ -2503,35 +2030,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         }
     }
 
-    public function tencentUploadCfgAction(){
-        $tencentyun_model = new App_Model_Applet_MysqlAppletTencentyunStorage($this->curr_sid);
-        $tencentyun = $tencentyun_model->findRowCfg();
-        if($tencentyun){
-            $qcloud = new App_Plugin_Tencentyun_Qcloud($this->curr_sid);
-            $cfg    = $qcloud->getUploadKey();
-            $this->displayJsonSuccess($cfg);
-        }else{
-            $this->displayJsonError('请配置腾讯云信息');
-        }
-    }
 
-    public function uploadTencentCfgAction(){
-        $type = $this->request->getStrParam('type');
-        $key  = $this->request->getStrParam('key');
-        $tencentyun_model = new App_Model_Applet_MysqlAppletTencentyunStorage($this->curr_sid);
-        $tencentyun = $tencentyun_model->findRowCfg();
-        if($tencentyun){
-            if(!$key){
-                $key = plum_random_code(8).$type;
-            }
-            $data['key'] = $key;
-            $this->displayJsonSuccess($data);
-        }else{
-            $this->displayJsonError('请配置腾讯云信息');
-        }
-    }
-
-    
     public function saveQiniuVideoAction(){
         $id = $this->request->getIntParam('id');
         $name = $this->request->getStrParam('name');
@@ -2550,25 +2049,19 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             );
             $video_model = new App_Model_Applet_MysqlAppletQiniuVideoStorage($this->curr_sid);
             if($id){
-                if($this->curr_shop['s_media_provider'] == 1){
-                    $params = array(
-                        'urls' => array($videoUrl)
-                    );
-                    $qiniu_model      = new App_Model_Applet_MysqlAppletQiniuStorage($this->curr_sid);
-                    $qiniu       = $qiniu_model->findRowCfg();
-                    $qiniu_client = new App_Plugin_Qiniu_Client($qiniu['aq_access_key'], $qiniu['aq_secret_key'], $qiniu['aq_bucket_name']);
-                    $ret = $qiniu_client->refreshCdn($params);
-                }
+                $params = array(
+                    'urls' => array($videoUrl)
+                );
+                $qiniu_model      = new App_Model_Applet_MysqlAppletQiniuStorage($this->curr_sid);
+                $qiniu       = $qiniu_model->findRowCfg();
+                $qiniu_client = new App_Plugin_Qiniu_Client($qiniu['aq_access_key'], $qiniu['aq_secret_key'], $qiniu['aq_bucket_name']);
+                $ret = $qiniu_client->refreshCdn($params);
                 $video_model->updateById($data, $id);
                 $ret = $id;
             }else{
                 $ret = $video_model->insertValue($data);
             }
         }
-        if($ret){
-            App_Helper_OperateLog::saveOperateLog("音视频文件上传成功");
-        }
-
         $this->showAjaxResult($ret,'上传');
     }
 
@@ -2583,10 +2076,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $ret = $qiniu_client->delete($key);
         $video_model = new App_Model_Applet_MysqlAppletQiniuVideoStorage($this->curr_sid);
         $ret = $video_model->deleteById($id);
-        if($ret){
-            App_Helper_OperateLog::saveOperateLog("音视频文件删除成功");
-        }
-
         $this->showAjaxResult($ret,'删除');
     }
     public function noRechargeAction(){
@@ -2599,7 +2088,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $qyrfret = $wxxcx_client->testqyrf();
         $billret = $wxxcx_client->testbill();
         if($pret1['code']==0 && $qret1['err_code']=='SUCCESS' && $pret2['code']==0 && $qret2['err_code'] == 'SUCCESS'
-        && $rfret['refund_fee']=="552" && $qyrfret['err_code']=='SUCCESS' && $billret){
+            && $rfret['refund_fee']=="552" && $qyrfret['err_code']=='SUCCESS' && $billret){
             $this->showAjaxResult(1,'升级');
         }else{
             $this->showAjaxResult(0,'升级');
@@ -2681,16 +2170,13 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             $data['wa_activity_id'] = $ret['result']['activity_id'];
             $activity_model = new App_Model_Wechat_MysqlActivityStorage($this->curr_sid);
             $ret = $activity_model->insertValue($data);
-            if($ret){
-                App_Helper_OperateLog::saveOperateLog("创建立减金活动成功");
-            }
             $this->showAjaxResult($ret,'创建');
         }else{
             $this->showAjaxResult(0,'创建');
         }
     }
 
-    
+
     public function informationCardTypeAction(){
         $this->informationSecondLink('pay');
         $card_type = plum_parse_config('information_card_type');
@@ -2707,7 +2193,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
     }
 
 
-    
+
     public function saveInformationCardTypeAction(){
         $id = $this->request->getIntParam('id');
         $title = $this->request->getStrParam('title');
@@ -2732,21 +2218,17 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->showAjaxResult($ret);
     }
 
-    
+
     public function deletedInformationCardAction(){
         $id = $this->request->getIntParam('id');
         if($id){
             $card_storage = new App_Model_Information_MysqlInformationCardStorage($this->curr_sid);
-            $card = $card_storage->getRowById($id);
             $ret = $card_storage->deleteDFById($id,$this->curr_sid);
-            if($ret){
-                App_Helper_OperateLog::saveOperateLog("付费会员类型【".$card['aic_title']."】删除成功");
-            }
         }
         $this->showAjaxResult($ret,'删除');
     }
 
-    
+
     public function saveShopRewardAction(){
         $open = $this->request->getIntParam('open');
         $percentage = $this->request->getIntParam('percentage');
@@ -2759,20 +2241,10 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             $set = array('s_information_reward'=>$open);
         }
         $ret = $shop_model->updateById($set,$this->curr_sid);
-
-        if($ret){
-            if($type && $type==2){
-                App_Helper_OperateLog::saveOperateLog("保存帖子打赏配置信息成功");
-            }else{
-                $str = $open == 1 ? '开启' : '关闭';
-                App_Helper_OperateLog::saveOperateLog("{$str}资讯打赏成功");
-            }
-        }
-
         $this->showAjaxResult($ret);
     }
 
-    
+
     public function saveShopShowAllImgAction(){
         $open = $this->request->getIntParam('open');
         $shop_model = new App_Model_Shop_MysqlShopCoreStorage();
@@ -2780,119 +2252,9 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $set = array('s_post_img_show_all'=>($open==1?1:0));
 
         $ret = $shop_model->updateById($set,$this->curr_sid);
-
-        if($ret){
-            $str = $set['s_post_img_show_all'] == 1 ? '显示' : '不显示';
-            App_Helper_OperateLog::saveOperateLog("{$str}列表帖子全部图片");
-        }
-
         $this->showAjaxResult($ret);
     }
 
-    
-    public function informationSlideAction() {
-        $this->informationSecondLink('cate');
-        $this->buildBreadcrumbs(array(
-            array('title' => '模块管理', 'link' => '#'),
-            array('title' => '资讯管理', 'link' => '/wxapp/currency/informationList'),
-            array('title' => '分类管理', 'link' => '/wxapp/currency/informationCate'),
-            array('title' => '幻灯图管理', 'link' => '#'),
-        ));
-        $category_storage = new App_Model_Applet_MysqlAppletInformationCategoryStorage($this->curr_sid);
-        $category_select = $category_storage->getCategoryListForSelect();
-        $this->output['category_select'] = $category_select;
-
-        $count      = 10;
-        $page       = $this->request->getIntParam('page');
-        $index      = $page * $count;
-        $where         = array();
-        $where[]       = array('name'=>'ais_s_id','oper'=>'=','value'=>$this->curr_sid);
-        $where[]       = array('name'=>'ais_deleted','oper'=>'=','value'=>0);
-        $this->output['category_search'] = $this->request->getIntParam('category_search');
-        if($this->output['category_search']){
-            $where[]       = array('name'=>'ais_category','oper'=>'=','value'=>$this->output['category_search']);
-        }
-
-        $slide_model = new App_Model_Information_MysqlInformationSlideStorage($this->curr_sid);
-        $total      = $slide_model->getCount($where);
-        $pageCfg    = new Libs_Pagination_Paginator($total,$count);
-        $this->output['pagination']   = $pageCfg->render();
-        $list = array();
-        if($index < $total){
-            $sort          = array('ais_update_time' => 'DESC');
-            $list          = $slide_model->getList($where,$index,$count,$sort);
-        }
-        $this->output['list'] = $list;
-        $this->output['sid']  = $this->curr_sid;
-        $this->_get_information_select();
-        $this->renderCropTool('/wxapp/index/uploadImg');
-        $this->displaySmarty('wxapp/currency/information-slide.tpl');
-    }
-    
-    public function saveSlideAction(){
-        $id = $this->request->getIntParam('id',0);
-        $category = $this->request->getIntParam('category');
-        $categoryOld = $this->request->getIntParam('categoryOld');
-        $sort = $this->request->getIntParam('sort');
-        $path = $this->request->getStrParam('path');
-        $information = $this->request->getIntParam('information',0);
-
-        if($this->_get_category_slide_count($category,$categoryOld,$id)){
-            $slide_model = new App_Model_Information_MysqlInformationSlideStorage($this->curr_sid);
-            $data = array(
-                'ais_s_id'      => $this->curr_sid,
-                'ais_category'  => $category,
-                'ais_sort'      => $sort,
-                'ais_path'      => $path,
-                'ais_link_id'     => $information,
-                'ais_update_time' => time()
-            );
-            if($id){
-                $res = $slide_model -> updateById($data,$id);
-            }else{
-                $res = $slide_model -> insertValue($data);
-            }
-            if($res){
-                App_Helper_OperateLog::saveOperateLog("资讯分类幻灯保存成功");
-            }
-
-            $this->showAjaxResult($res,'保存');
-        }else{
-            $this->displayJsonError('一个分类最多添加6张幻灯图');
-        }
-
-    }
-
-    
-    private function _get_category_slide_count($category,$categoryOld,$id){
-        if($category == $categoryOld && $id){
-            return TRUE;
-        }else{
-            $slide_model = new App_Model_Information_MysqlInformationSlideStorage($this->curr_sid);
-            $where[]       = array('name'=>'ais_s_id','oper'=>'=','value'=>$this->curr_sid);
-            $where[]       = array('name'=>'ais_deleted','oper'=>'=','value'=>0);
-            $where[]       = array('name'=>'ais_category','oper'=>'=','value'=>$category);
-            $count = $slide_model->getCount($where);
-            if($count >= 6){
-                return FALSE;
-            }else{
-                return TRUE;
-            }
-        }
-    }
-    
-    public function deleteSlideAction(){
-        $id = $this->request->getIntParam('id',0);
-        $slide_model = new App_Model_Information_MysqlInformationSlideStorage($this->curr_sid);
-        $res = $slide_model->deleteDFById($id,$this->curr_sid);
-        if($res){
-            App_Helper_OperateLog::saveOperateLog("资讯分类幻灯删除成功");
-        }
-
-        $this->showAjaxResult($res,'删除');
-    }
-
-    
     public function getInformationMemberListAction(){
         $this->informationSecondLink('pay');
         $page = $this->request->getIntParam('page',0);
@@ -2930,7 +2292,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/information-card-record.tpl');
     }
 
-     
+
     public function getInformationPayRecordAction(){
         $this->informationSecondLink('pay');
         $page = $this->request->getIntParam('page',0);
@@ -2980,7 +2342,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
     }
 
 
-    
+
     public function getInformationCardPayRecordAction(){
         $this->informationSecondLink('pay');
         $page = $this->request->getIntParam('page',0);
@@ -3014,7 +2376,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
     }
 
 
-    
+
     public function _get_information_cate_group($except = 0,$isJson = true){
         $info_model = new App_Model_Applet_MysqlAppletInformationStorage();
         $where[] = array('name'=>'ai_s_id','oper'=>'=','value'=>$this->curr_sid);
@@ -3041,7 +2403,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
 
     }
 
-    
+
     public function _get_information_select(){
         $info_model = new App_Model_Applet_MysqlAppletInformationStorage();
         $where[] = array('name'=>'ai_s_id','oper'=>'=','value'=>$this->curr_sid);
@@ -3056,7 +2418,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->output['information_select'] = $data;
     }
 
-    
+
     public function gzhBindAction(){
         $page = $this->request->getIntParam('page');
         $index = $page * $this->count;
@@ -3093,7 +2455,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/gzh-bind.tpl');
     }
 
-    
+
     public function helpCenterInfoListAction(){
         $page = $this->request->getIntParam('page');
         $index = $page * $this->count;
@@ -3116,7 +2478,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/help-center-info-list.tpl');
     }
 
-    
+
     public function helpCenterInfoEditAction(){
         $id = $this->request->getIntParam('id');
         if($id){
@@ -3132,7 +2494,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         $this->displaySmarty('wxapp/currency/help-center-info-edit.tpl');
     }
 
-    
+
     public function helpCenterInfoSaveAction(){
         $id = $this->request->getIntParam('id');
         $title = $this->request->getStrParam('title');
@@ -3160,28 +2522,19 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
             $data['ahci_s_id'] = $this->curr_sid;
             $res = $info_storage->insertValue($data);
         }
-        if($res){
-            App_Helper_OperateLog::saveOperateLog("帮助中心文章【".$title."】信息保存成功");
-        }
-
+        App_Helper_OperateLog::saveOperateLog("帮助中心文章【".$title."】信息保存成功");
         $this->showAjaxResult($res,'保存');
     }
 
-    
+
     public function helpCenterInfoDeleteAction(){
         $id = $this->request->getIntParam('id');
         $info_storage = new App_Model_Applet_MysqlAppletHelpCenterInfoStorage($this->curr_sid);
-        $info = $info_storage->getRowById($id);
         $res = $info_storage->deleteDFById($id,$this->curr_sid);
-
-        if($res){
-            App_Helper_OperateLog::saveOperateLog("帮助中心文章【{$info['ahci_title']}】删除成功");
-        }
-
         $this->showAjaxResult($res,'删除');
     }
 
-    
+
     public function getShopMessageAction(){
         $page = $this->request->getIntParam('page');
         $index = $page * $this->count;
@@ -3226,7 +2579,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                 'content' => $val['sm_content'],
                 'time' => date('Y-m-d H:i:s', $val['sm_create_time']),
                 'read' => $val['sm_read'],
-                'extraContent' => ''
             );
             switch ($val['sm_type']){
                 case App_Helper_ShopMessage::TRADE_HAD_PAY:
@@ -3270,10 +2622,6 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
                     break;
                 case App_Helper_ShopMessage::LEAVING_SHOP_CLAIM:
                     $item['link'] = '/wxapp/city/claimList/acsId/'.$val['sm_tid'];
-                    if($val['sm_extra_content']){
-                        $item['extraContent'] = "店铺名称<a class='' href='/wxapp/city/addAreaShop/id/{$val['sm_tid']}'>{$val['sm_extra_content']}</a>";
-                    }
-
                     break;
                 case App_Helper_ShopMessage::LEAVING_MOBILE_ENTER:
                     $item['link'] ='/wxapp/mobile/shopEdit/?id='.$val['sm_tid'];
@@ -3294,7 +2642,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
         }
     }
 
-    
+
     public function setReadAction(){
         $id = $this->request->getIntParam('id');
         $set = array('sm_read' => 1);
@@ -3309,16 +2657,11 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
 
             $ret = $message_storage->updateValue($set, $where);
         }
-
-        if($ret){
-            App_Helper_OperateLog::saveOperateLog("设置消息已读成功");
-        }
-
         $this->showAjaxResult($ret);
     }
 
 
-    
+
     private function _save_pay_record($data){
         $member_storage = new App_Model_Member_MysqlMemberCoreStorage();
         $member = $member_storage->findUpdateMemberByWeixinOpenid($data['data']['openid'],$this->curr_sid);
@@ -3353,185 +2696,68 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
     }
 
 
-    
-    private function _entershop_for_select($all = false){
-        $where[] = array('name'=>'es_s_id','oper'=>'=','value'=>$this->curr_sid);
-        if(!$all){
-            $where[] = array('name'=>'es_status','oper'=>'=','value'=>0);
-        }
 
-
-        $shop_model = new App_Model_Entershop_MysqlEnterShopStorage();
-        $sort    = array('es_createtime' => 'DESC');
-        $list    = $shop_model->getList($where,0,0,$sort);
-
-        $data = array();
-        $selectShop = array();
-        if($list){
-            foreach ($list as $val){
-                $data[] = array(
-                    'id'   => $val['es_id'],
-                    'name' => $val['es_name']
-                );
-                $selectShop[$val['es_id']] = $val['es_name'];
+    public function uploadVerifyAction(){
+        $type = $this->request->getStrParam('type');
+        $mergecode_model = new App_Model_Applet_MysqlMergeQrcodeStorage($this->curr_sid);
+        if (!empty($_FILES)) {
+            if (isset($_FILES['verify'])) {
+                $field = $_FILES['verify'];
+                if($field['type'] != 'text/plain'){
+                    $this->displayJsonError("上传失败，请上传txt类型的文件");
+                }
+                $tmp_name = $field['tmp_name'];
+                $absolute_path = PLUM_DIR_UPLOAD.'/mergecode/';
+                $relative_path = PLUM_PATH_UPLOAD.'/mergecode/';
+                if (!is_dir($absolute_path)) {
+                    @mkdir($absolute_path, 0755);
+                }
+                $filename = $field['name'];
+                if (move_uploaded_file($tmp_name, $absolute_path.$filename)) {
+                    if($type == 'weixin'){
+                        $mergecode_model->findUpdateBySid(array('amq_weixin_path' => $relative_path.$filename));
+                    }
+                    if($type == 'baidu'){
+                        $mergecode_model->findUpdateBySid(array('amq_baidu_path' => $relative_path.$filename));
+                    }
+                    if($type == "ali"){
+                        $mergecode_model->findUpdateBySid(array('amq_ali_path' => $relative_path.$filename));
+                    }
+                    $this->displayJsonSuccess(array('path' => $relative_path.$filename), true);
+                }
             }
         }
-        $this->output['shoplist'] = json_encode($data);
-        $this->output['selectShop'] = $selectShop;
+        $this->displayJsonError("上传失败，请重试");
     }
 
-    
-    public function couponReceiveListAction(){
-        $page = $this->request->getIntParam('page');
-        $index = $page*$this->count;
-        $nickname = $this->request->getStrParam('nickname');
-        $id = $this->request->getIntParam('id');
-        $name = $this->request->getStrParam('name');
-        $status = $this->request->getIntParam('status');
-        $share = $this->request->getIntParam('share');
-        $sort = array('cr_receive_time'=>'DESC');
-        $now = time();
-        $where[] = array('name'=>'cr_s_id','oper'=>'=','value'=>$this->curr_sid);
-
-        if($status == 1){
-            $where[] = array('name'=>'cr_is_used','oper'=>'=','value'=>1);
-        }elseif ($status == 2){
-            $where[] = array('name'=>'cr_is_used','oper'=>'=','value'=>0);
-            $where[] = array('name'=>'cr_expire_time','oper'=>'>','value'=>$now);
-        }elseif ($status == 3){
-            $where[] = array('name'=>'cr_is_used','oper'=>'=','value'=>0);
-            $where[] = array('name'=>'cr_expire_time','oper'=>'<','value'=>$now);
-        }
-        $this->output['status'] = $status;
-        if($nickname){
-            $where[] = array('name'=>'cr_share_nickname','oper'=>'like','value'=>"%{$nickname}%");
-        }
-        $this->output['nickname'] = $nickname;
-
-        if($name){
-            $where[] = array('name'=>'cl_name','oper'=>'like','value'=>"%{$name}%");
-        }
-        $this->output['name'] = $name;
-
-        if($id){
-            $where[] = array('name'=>'cl_id','oper'=>'=','value'=>$id);
-        }
-        $this->output['id'] = $id;
 
 
-        $area_model = new App_Model_Coupon_MysqlReceiveStorage();
-        $total = $area_model->getReceiveCountNoMember($where);
-        $pageCfg = new Libs_Pagination_Paginator($total,$this->count,'jquery',true);
-        $this->output['pagination']   = $pageCfg->render();
-        $this->output['showPage'] = $total > $this->count ? 1 : 0;
-
-        $list = $area_model->getReceiveListNoMember($where,$index,$this->count,$sort);
-        foreach ($list as $key => &$val){
-            if($val['cr_is_used'] == 0 && $val['cr_expire_time'] < $now){
-                $val['cr_is_used'] = 2;
-            }
-        }
-        $this->output['list'] = $list;
-        $this->buildBreadcrumbs(array(
-            array('title' => '优惠券', 'link' => '/wxapp/coupon/index'),
-            array('title' => '领取记录', 'link' => '#'),
-        ));
-
-        $this->displaySmarty('wxapp/currency/coupon-receive-list.tpl');
-
+    //首页活动图管理
+    public function diagramAction() {
+        $diagram_model = new App_Model_Slide_MysqlDiagramStorage();
+        $list          = $diagram_model->getList(array(),0,0,array('di_id'=>'ASC'));
+//        plum_msg_dump($list,1);
+        $this->output['list']  = $list;
+        $this->renderCropTool('/wxapp/index/uploadImg');
+        $this->displaySmarty('wxapp/currency/diagram.tpl');
     }
 
-    
-    public function recommendInformationAction(){
-        $id = $this->request->getIntParam('id');
-        $recommend = $this->request->getIntParam('recommend',0);
-        $information_storage = new App_Model_Applet_MysqlAppletInformationStorage();
-        $set = [
-            'ai_isrecommend' => $recommend
-        ];
-        $res = $information_storage->updateById($set,$id);
-        $this->showAjaxResult($res,'操作');
-    }
-
-    
-    public function changeInformationInfoAction(){
-        $result = array(
-            'ec' => 400,
-            'em' => '保存失败'
-        );
-        $id = $this->request->getIntParam('id');
-        $field = $this->request->getStrParam('field');
-        $value = $this->request->getFloatParam('value');
-        $pre='ai_';
-
-        $model = new App_Model_Applet_MysqlAppletInformationStorage();
-        $str = '排序';
-
-
-        if($id && $field){
-            $menu_field = $pre.$field;
-            $set = array(
-                $menu_field => $value
+    public function saveDiagramAction(){
+        $id    = $this->request->getIntParam('id',1);
+        $title = $this->request->getStrParam('title');
+        $path  = $this->request->getStrParam('path');
+        if($path){
+            $diagram_model = new App_Model_Slide_MysqlDiagramStorage();
+            $data = array(
+                'di_img'       => $path,
+                'di_title'     => $title,
             );
-
-            $res = $model->getRowUpdateByIdSid($id,$this->curr_sid,$set);
-            if($res){
-                $result = array(
-                    'ec' => 200,
-                    'em' => '保存成功'
-                );
-                $menu_info = $model->getRowById($id);
-
-                App_Helper_OperateLog::saveOperateLog("资讯【{$menu_info['ai_title']}】{$str}保存成功");
-            }
+            $res = $diagram_model -> updateById($data,$id);
+            $this->showAjaxResult($res,'保存');
         }else{
-            $result = array(
-                'ec' => 400,
-                'em' => '操作异常'
-            );
+            $this->displayJsonError('添加失败');
         }
-        $this->displayJson($result);
-    }
 
-
-
-    
-    private function _get_osManage() {
-        $cid = $this->manager['m_c_id'];
-        $manager = new App_Model_Member_MysqlManagerStorage();
-        $where[] = ['name'=>'m_c_id', 'oper'=>'=', 'value'=>$cid];
-        $where[] = ['name'=>'m_bind_sid', 'oper'=>'!=', 'value'=>0];
-
-        $list = $manager->getList($where, 0, 0, array(), array('m_id', 'm_nickname'));
-        $data = array();
-        if($list) {
-            foreach($list as $value) {
-                $data[$value['m_id']] = $value;
-            }
-        }
-        return $data;
-    }
-
-
-    
-    private function _get_bind_machine() {
-        $machine_model = new App_Model_Cash_MysqlBindRecordStorage($this->curr_sid);
-
-        $where = [];
-        $where[] = ['name'=>'cbr_s_id', 'oper'=>'=', 'value'=>$this->curr_sid];
-        $where[] = ['name'=>'cbr_bind_level', 'oper'=>'=', 'value'=>1];
-        $where[] = ['name'=>'cbr_bind_status', 'oper'=>'=', 'value'=>1];
-        $where[] = ['name'=>'cbr_deleted', 'oper'=>'=', 'value'=>0];
-
-        $list = $machine_model->getList($where, 0, 0);
-
-        $result = [];
-        if($list) {
-            foreach($list as $value) {
-                $result[$value['cbr_bind_code']] = $value['cbr_name'];
-            }
-        }
-        return $result;
     }
 
 }
