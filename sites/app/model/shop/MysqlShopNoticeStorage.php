@@ -12,6 +12,7 @@ class App_Model_Shop_MysqlShopNoticeStorage extends Libs_Mvc_Model_BaseModel{
         $this->_table 	= 'shop_notice';
         $this->_pk 		= 'sn_id';
         $this->_shopId 	= 'sn_s_id';
+        $this->_df      = 'sn_deleted';
         parent::__construct();
 
         $this->sid  = $sid;
