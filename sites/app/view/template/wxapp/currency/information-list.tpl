@@ -770,9 +770,9 @@
 
                                 <td>
                                     <p>
-                                        <a href="/wxapp/currency/addInformation/id/<{$val['ai_id']}>" >编辑</a> -
+                                        <a class="btn btn-xs btn-primary" href="/wxapp/currency/addInformation/id/<{$val['ai_id']}>" >编辑</a> -
                                         <!--<a href="/wxapp/currency/informationCommentList?aid=<{$val['ai_id']}>" >评论</a> - -->
-                                        <a href="#" id="delete-confirm" data-id="<{$val['ai_id']}>" onclick="deleteArticle('<{$val['ai_id']}>')" style="color:#f00;">删除</a>
+                                        <a class=" btn btn-xs btn-danger" href="#" id="delete-confirm" data-id="<{$val['ai_id']}>" onclick="deleteArticle('<{$val['ai_id']}>')" style="color:#f00;">删除</a>
                                        <!--<{if !$dyyu}>
                                         - <a href="javascript:;" id="link_<{$val['ai_id']}>" class="btn-link" data-link="<{$page_link}>?id=<{$val['ai_id']}>">页面路径</a>
                                        <{/if}>-->

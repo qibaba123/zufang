@@ -32,7 +32,7 @@
                                 <td><{date('Y-m-d H:i',$val['sn_create_time'])}></td>
                                 <td style="color:#ccc;">
                                     <a class="confirm-handle btn btn-xs btn-primary" href="#" data-toggle="modal" data-target="#myModal"  data-id="<{$val['sn_id']}>" data-name="<{$val['sn_brief']}>" data-weight="<{$val['sn_weight']}>" >编辑</a>
-                                    - <a  class=" btn btn-xs btn-info"  href="#" data-id="<{$val['sn_id']}>" onclick="confirmDelete(this)" style="color:#f00;">删除</a>
+                                    - <a  class=" btn btn-xs btn-danger"  href="#" data-id="<{$val['sn_id']}>" onclick="confirmDelete(this)" style="color:#f00;">删除</a>
                                 </td>
                             </tr>
                             <{/foreach}>
