@@ -10,6 +10,108 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
     }
 
 
+    //工位列表
+    public function houseListAction(){
+        $page   = $this->request->getIntParam('page');
+        $type   = $this->request->getIntParam('type');//1.工位 2.办公室
+        $index  = $page * $this->count;
+        $resource_model = new App_Model_Resources_MysqlResourcesStorage();
+        $where[] = array('name'=>"ahr_type",'oper'=>'=','value'=>$type);
+        $list    = $resource_model->getList($where,$index,$this->count,array('ahr_weigth'=>'DESC'));
+        $total   = $resource_model->getCount($where);
+        $pageCfg    = new Libs_Pagination_Paginator($total,$this->count);
+        $this->output['pageHtml']  = $pageCfg->render();
+        $this->output['list']      = $list;
+        $this->buildBreadcrumbs(array(
+            array('title' => '工位列表', 'link' => '#'),
+        ));
+        $this->displaySmarty('wxapp/park/house-list.tpl');
+    }
+
+    //新增或编辑工位
+    public function addHouseAction(){
+
+        $this->buildBreadcrumbs(array(
+            array('title' => '编辑工位', 'link' => '#'),
+        ));
+        $this->displaySmarty('wxapp/park/house-list.tpl');
+    }
+
+
+    //保存工位
+    public function saveHouseAction(){
+        $result = array(
+            'ec' => 400,
+            'em' => '请填写完整房源信息'
+        );
+        $id       = $this->request->getIntParam('id');
+        $data     = array();
+        $data['ahr_title']      = $this->request->getStrParam('title');
+        $data['ahr_community']  = $this->request->getStrParam('community');
+        $data['ahr_area']       = $this->request->getFloatParam('area');
+        $data['ahr_home_num']   = $this->request->getIntParam('home_num');
+        $data['ahr_hall_num']   = $this->request->getIntParam('hall_num');
+        $data['ahr_toilet_num']   = $this->request->getIntParam('toilet_num');
+        $data['ahr_orientation']= $this->request->getStrParam('orientation');//朝向
+        $data['ahr_floor']      = $this->request->getStrParam('floor');
+        $data['ahr_all_floor']  = $this->request->getStrParam('all_floor');
+        $data['ahr_type']       = $this->request->getStrParam('type');
+        $data['ahr_fitment']    = $this->request->getStrParam('fitmentType');
+        $data['ahr_orientation']     = $this->request->getStrParam('orientation');
+        $data['ahr_build_time'] = $this->request->getStrParam('build_time');
+        $data['ahr_address']    = $this->request->getStrParam('address');//地址
+        $data['ahr_lng']        = $this->request->getStrParam('lng');//经纬度
+        $data['ahr_lat']        = $this->request->getStrParam('lat');
+        $data['ahr_contact']    = $this->request->getStrParam('contact');
+        $data['ahr_mobile']     = $this->request->getStrParam('mobile');
+        $data['ahr_weixin']     = $this->request->getStrParam('weixin');
+        $data['ahr_content']    = $this->request->getStrParam('detail');
+        $data['ahr_cover']      = $this->request->getStrParam('slide_0');
+        $data['ahr_sale_type']  = $this->request->getIntParam('saleType');
+        $data['ahr_province']   = $this->request->getIntParam('province');;
+        $data['ahr_city']       = $this->request->getIntParam('city');
+        $data['ahr_zone']       = $this->request->getIntParam('zone');
+        $data['ahr_video_url']  = $this->request->getStrParam('video');
+        $data['ahr_vr_url']     = $this->request->getStrParam('vr');
+        if($this->request->getStrParam('label')){
+            $data['ahr_label']       = json_encode(explode('/',$this->request->getStrParam('label')));
+        }else{
+            $data['ahr_label'] = '';
+        }
+
+        $data['ahr_resource_source']  = $this->request->getIntParam('resourceSource');
+
+        $data['ahr_s_id']       = $this->curr_sid;
+        if($data['ahr_sale_type'] == 1){
+            $data['ahr_price']      = $this->request->getFloatParam('salePrice');
+        }else{
+            $data['ahr_price']      = $this->request->getFloatParam('rentPrice');
+        }
+
+        $resources_model = new App_Model_Resources_MysqlResourcesStorage();
+        $is_add = 0;
+        if($id){
+            $data['ahr_update_time']= $_SERVER['REQUEST_TIME'];
+            $ret = $resources_model->getRowUpdateByIdSid($id,$this->curr_sid,$data);
+        }else{
+            $data['ahr_create_time']= $_SERVER['REQUEST_TIME'];
+            $ret = $resources_model->insertValue($data);
+            $id  = $ret;
+            $is_add = 1;
+        }
+        if($ret){
+            $this->batchSlide($id,$is_add);
+            $result = array(
+                'ec' => 200,
+                'em' => '保存成功',
+            );
+            App_Helper_OperateLog::saveOperateLog("房源【{$data['ahr_title']}】保存成功");
+        }else{
+            $result['em'] = '保存失败';
+        }
+        $this->displayJson($result);
+    }
+
 
     //园区列表
     public function parkListAction(){
