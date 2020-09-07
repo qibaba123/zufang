@@ -125,7 +125,7 @@
 
     </div>
 <div class="alert setting-save" style="text-align: center;margin-top:100px;">
-    <button class="btn btn-primary btn-sm btn-save">保存</button>
+    <button class="btn btn-primary btn-save">保存</button>
 </div>
 
 

@@ -72,6 +72,9 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
             $area = $address_model->get_area_by_parent($row['ap_city']);
             $this->output['area'] = $area;
         }
+        $this->buildBreadcrumbs(array(
+            array('title' => '新增园区', 'link' => '#'),
+        ));
         $this->displaySmarty('wxapp/park/add-park.tpl');
     }
 
