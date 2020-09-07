@@ -76,6 +76,7 @@
                     <tr>
                         <th>园区名称</th>
                         <th>所属区域</th>
+                        <th>权重</th>
                         <th>修改时间</th>
                         <th>操作</th>
                     </tr>
@@ -85,6 +86,7 @@
                         <tr id="tr_<{$val['ap_id']}>" class="tr-content">
                             <td><{$val['ap_name']}></td>
                             <td><{$val['ap_pro']}>-<{$val['ap_city']}>-<{$val['ap_area']}></td>
+                            <td><{$val['ap_weight']}></td>
                             <td><{date('Y-m-d,H:i',$val['ap_create_time'])}></td>
                             <td>
                                 <a class="btn btn-xs btn-blueoutline" href="/wxapp/area/addAreaManage?id=<{$val['am_id']}>">编辑</a>
@@ -113,7 +115,7 @@
 <script src="/public/plugin/ZeroClip/clipboard.min.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
- 
+
 
     $('#pro').change(function(){
         $("#city").html('');
