@@ -97,13 +97,13 @@
                             </tr>
                         <{foreach $list as $val}>
                             <tr>
-                                <td style="white-space: normal;"><img src="<{$val['sl_img']}>" alt="" style="height:100px;"></td>
+                                <td style="white-space: normal;"><img src="<{$val['sl_img']}>" alt="" style="width:150px;"></td>
                                 <td style="white-space: normal;"><{$val['sl_link_name']}></td>
                                 <td style="white-space: normal;"><{$val['sl_weight']}></td>
                                 <td style="white-space: normal;"><{date('Y-m-d H:i',$val['sl_add_time'])}></td>
                                 <td style="white-space: normal;">
-                                    <a class="add-slide" href="#" data-toggle="modal" data-target="#myModal"  data-id="<{$val['sl_id']}>"  data-path="<{$val['sl_img']}>" data-sort="<{$val['sl_weight']}>" data-link="<{$val['sl_link']}>">编辑</a> -
-                                    <a href="javascript:;" onclick="deleteSubject(this)" data-id="<{$val['sl_id']}>" class="btn-del">删除</a>
+                                    <a class="add-slide btn btn-xs btn-primary" href="#" data-toggle="modal" data-target="#myModal"  data-id="<{$val['sl_id']}>"  data-path="<{$val['sl_img']}>" data-sort="<{$val['sl_weight']}>" data-link="<{$val['sl_link']}>">编辑</a> -
+                                    <a class=" btn btn-xs btn-danger" href="javascript:;" onclick="deleteSubject(this)" data-id="<{$val['sl_id']}>" class="btn-del">删除</a>
                                 </td>
                             </tr>
                         <{/foreach}>
@@ -142,7 +142,7 @@
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">链接文章：</label>
-                    <div class="control-group">
+                    <div class="col-sm-8">
                         <select name="aiid" id="aiid" style="width: 345px" class="form-control">
                             <option value="0">请选择链接文章</option>
                             <{foreach $information as $val}>
@@ -151,15 +151,6 @@
                         </select>
                     </div>
                 </div>
-              <!--  <div class="form-group row">
-                    <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">展示位置：</label>
-                    <div class="col-sm-8">
-                        <select name="type" id="type" class="form-control">
-                            <option value="1">首页</option>
-                            <option value="2">创业赛</option>
-                        </select>
-                    </div>
-                </div>-->
                 <div class="form-group row">
                     <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">排序权重：</label>
                     <div class="col-sm-8">

@@ -41,7 +41,7 @@ class App_Controller_Wxapp_CurrencyController extends App_Controller_Wxapp_InitC
 
 
     //保存公告
-    public function noticeSave(){
+    public function noticeSaveAction(){
         $id = $this->request->getIntParam('id');
         $brief = $this->request->getStrParam('name');
         $weight = $this->request->getIntParam('weight');

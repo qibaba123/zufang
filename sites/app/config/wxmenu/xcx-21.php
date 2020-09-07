@@ -14,89 +14,6 @@ return array(
             'icon'      => 'icon-dashboard',
             'access'    => 'index-index',
         ),
-//        array(
-//            'title'     => '商户概览',
-//            'link'      => '/statisticanalysis/index',
-//            'icon'      => 'fa-line-chart',
-//            'access'    => 'analysis-index',
-//        ),
-//        array(
-//            'title'     => '小程序管理',
-//            'link'      => '#',
-//            'icon'      => 'icon-desktop',
-//            'access'    => 'setup-cfg',
-//            'submenu'   => array(
-//                array(
-//                    'title'     => '开发设置',
-//                    'link'      => '/setup/index',
-//                    'icon'      => 'icon-bar-chart',
-//                    'access'    => 'setup-index',
-//                    'ignore'    => true
-//                ),
-//                array(
-//                    'title'     => '审核管理',
-//                    'link'      => '/setup/code',
-//                    'icon'      => 'icon-bar-chart',
-//                    'access'    => 'setup-code',
-//                    'ignore'    => true
-//                ),
-//                array(
-//                    'title'     => '菜单导航',
-//                    'link'      => '/setup/bottomMenu',
-//                    'icon'      => 'icon-bar-chart',
-//                    'access'    => 'setup-bottomMenu',
-//                    'ignore'    => true
-//                ),
-//                array(
-//                    'title'     => '模板消息',
-//                    'link'      => '/tplmsg/tpl',
-//                    'icon'      => 'icon-bar-chart',
-//                    'access'    => 'tplmsg-tpl',
-//                ),
-//                array(
-//                    'title'     => '分身小程序',
-//                    'link'      => '/child/index',
-//                    'icon'      => 'icon-bar-chart',
-//                    'access'    => 'child-index',
-//                    'ignore'    => true
-//                ),
-//                array(
-//                    'title'     => '跳转小程序',
-//                    'link'      => '/setup/jumpList',
-//                    'icon'      => 'icon-bar-chart',
-//                    'access'    => 'setup-jumpList',
-//                    'ignore'    => true
-//                ),
-//                array(
-//                    'title'     => '开发者模式',
-//                    'link'      => '/setup/person',
-//                    'icon'      => 'icon-bar-chart',
-//                    'access'    => 'setup-person',
-//                    'ignore'    => true
-//                ),
-////                array(
-////                    'title'     => '支付宝小程序',
-////                    'link'      => '/setup/aliapp',
-////                    'icon'      => 'icon-bar-chart',
-////                    'access'    => 'setup-aliapp',
-////                ),
-//                array(
-//                    'title'     => '数据统计',
-//                    'link'      => '/plugin/aldApplet',
-//                    'icon'      => 'fa-expeditedssl',
-//                    'access'    => 'plugin-aldApplet',
-//                    'ignore'    => true
-//                ),
-//                /*
-//                array(
-//                    'title'     => '客服消息',
-//                    'link'      => '/setup/customer',
-//                    'icon'      => 'icon-bar-chart',
-//                    'access'    => array(),
-//                ),
-//                */
-//            ),
-//        ),
         array(
             'title'     => '配置管理',
             'link'      => '#',
@@ -109,54 +26,6 @@ return array(
                     'icon'      => 'icon-cog',
                     'access'    => 'currency-payStyle',
                 ),
-//array(
-//                    'title'     => '收银台',
-//                    'link'      => '/currency/cashier',
-//                    'icon'      => 'icon-cog',
-//                    'access'    => 'currency-cashier',
-//                ),
-//                array(
-//                    'title'     => 'VR/音视频设置',
-//                    'link'      => '/currency/conductVideo',
-//                    'icon'      => 'icon-cog',
-//                    'access'    => 'currency-conductVideo',
-//                ),
-//                array(
-//                    'title'     => '分享海报设置',
-//                    'link'      => '/currency/sharecfg',
-//                    'icon'      => 'icon-cog',
-//                    'access'    => 'currency-sharecfg',
-//                ),
-//                array(
-//                    'title'     => '客服设置',
-//                    'link'      => '/currency/kefucfg',
-//                    'icon'      => 'icon-cog',
-//                    'access'    => 'currency-kefucfg',
-//                ),
-//                array(
-//                    'title'     => '微信卡券',
-//                    'link'      => '/currency/wxcard',
-//                    'icon'      => 'icon-cog',
-//                    'access'    => 'currency-wxcard',
-//                ),
-//                array(
-//                    'title'     => '短信设置',
-//                    'link'      => '/plugin/settingSms',
-//                    'icon'      => 'icon-cog',
-//                    'access'    => 'plugin-settingSms',
-//                ),
-//                array(
-//                    'title'     => '音视频存储',
-//                    'link'      => '/currency/video',
-//                    'icon'      => 'icon-cog',
-//                    'access'    => 'currency-video',
-//                ),
-//                array(
-//                    'title'     => '云打印机',
-//                    'link'      => '/print/feieList',
-//                    'icon'      => 'icon-cog',
-//                    'access'    => 'mall-sendMethod',
-//                ),
             ),
         ),
         array(
@@ -168,7 +37,7 @@ return array(
             'submenu'   => array(
                 array(
                     'title'     => '轮播图管理',
-                    'link'      => '/currency/slideList',
+                    'link'      => '/slide/informationSlide',
                     'icon'      => 'icon-cog',
                     'access'    => 'currency-informationList',
                 ),
