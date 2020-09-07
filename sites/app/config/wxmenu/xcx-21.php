@@ -186,6 +186,33 @@ return array(
                 ),
             ),
         ),
+        array(
+            'title'     => '园区管理',
+            'link'      => '#',
+            'icon'      => 'icon-tasks',
+            'access'    => 'module-cfg',
+            'special'   => true,
+            'submenu'   => array(
+                array(
+                    'title'     => '园区列表',
+                    'link'      => '/park/parkList',
+                    'icon'      => 'icon-cog',
+                    'access'    => 'currency-informationList',
+                ),
+                array(
+                    'title'     => '工位列表',
+                    'link'      => '/park/stationList',
+                    'icon'      => 'icon-cog',
+                    'access'    => 'currency-informationList',
+                ),
+                array(
+                    'title'     => '办公室列表',
+                    'link'      => '/park/officeList',
+                    'icon'      => 'icon-cog',
+                    'access'    => 'currency-informationList',
+                ),
+            ),
+        ),
 //        array(
 //            'title'     => '平台管理',
 //            'link'      => '#',
