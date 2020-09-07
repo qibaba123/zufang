@@ -9,11 +9,30 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         parent::__construct();
     }
 
-
     //工位列表
-    public function houseListAction(){
+    public function stationListAction(){
         $page   = $this->request->getIntParam('page');
-        $type   = $this->request->getIntParam('type');//1.工位 2.办公室
+        $this->houseList($page,1);
+        $this->buildBreadcrumbs(array(
+            array('title' => '工位列表', 'link' => '#'),
+        ));
+        $this->displaySmarty('wxapp/park/house-list.tpl');
+    }
+
+
+    //办公室列表
+    public function officeListAction(){
+        $page   = $this->request->getIntParam('page');
+        $this->houseList($page,2);
+        $this->buildBreadcrumbs(array(
+            array('title' => '办公室列表', 'link' => '#'),
+        ));
+        $this->displaySmarty('wxapp/park/house-list.tpl');
+    }
+
+
+    //园区资源列表
+    public function houseList($page,$type){
         $index  = $page * $this->count;
         $resource_model = new App_Model_Resources_MysqlResourcesStorage();
         $where[] = array('name'=>"ahr_type",'oper'=>'=','value'=>$type);
@@ -22,10 +41,6 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $pageCfg    = new Libs_Pagination_Paginator($total,$this->count);
         $this->output['pageHtml']  = $pageCfg->render();
         $this->output['list']      = $list;
-        $this->buildBreadcrumbs(array(
-            array('title' => '工位列表', 'link' => '#'),
-        ));
-        $this->displaySmarty('wxapp/park/house-list.tpl');
     }
 
     //新增或编辑工位
