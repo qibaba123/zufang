@@ -95,7 +95,7 @@
                     </tbody>
                     <tbody class="widget-list-item">
                     <tr class="separation-row">
-                        <td colspan="8"><{$page_html}> </td>
+                        <td colspan="8"><{$pageHtml}> </td>
                     </tr>
                     </tbody>
                 </table>
@@ -113,24 +113,7 @@
 <script src="/public/plugin/ZeroClip/clipboard.min.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
-    $('.saveStatus').on('click',function(){
-        var id      = $(this).data('id');
-        var status  = $(this).data('status');
-        $.ajax({
-            'type'  : 'post',
-            'url'   : '/wxapp/area/savestatus',
-            'data'  : { id : id , status : status },
-            'dataType'  : 'json',
-            'success'   : function(ret){
-                layer.msg(ret.em);
-                if(ret.ec == 200){
-                    window.location.reload();
-                }else{
-
-                }
-            }
-        });
-    })
+ 
 
     $('#pro').change(function(){
         $("#city").html('');
@@ -141,7 +124,7 @@
             'pro' : p_ro,
         }
         $.ajax({
-            url:'/wxapp/area/getcity',
+            url:'/wxapp/park/getcity',
             type:'post',
             data:data,
             dataType:'json',
@@ -162,7 +145,7 @@
             'city' : city,
         }
         $.ajax({
-            url:'/wxapp/area/getarea',
+            url:'/wxapp/park/getarea',
             type:'post',
             data:data,
             dataType:'json',

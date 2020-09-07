@@ -56,5 +56,21 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
     }
 
 
+    // 根据省获得市
+    public function getcityAction(){
+        $pro = $this->request->getParam('pro');
+        //var_dump($pro);exit;
+        $area_model = new App_Model_Address_MysqlAddressCoreStorage();
+        $city = $area_model->get_city_by_parent($pro);
+        echo json_encode($city);
+    }
+    // 根据市获得县区
+    public function getareaAction(){
+        $city = $this->request->getParam('city');
+        $area_model = new App_Model_Address_MysqlAddressCoreStorage();
+        $area = $area_model->get_area_by_parent($city);
+        echo json_encode($area);
+    }
+
 
 }
