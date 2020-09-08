@@ -80,46 +80,26 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $id       = $this->request->getIntParam('id');
         $data     = array();
         $data['ahr_title']      = $this->request->getStrParam('title');
-        $data['ahr_community']  = $this->request->getStrParam('community');
         $data['ahr_area']       = $this->request->getFloatParam('area');
-        $data['ahr_home_num']   = $this->request->getIntParam('home_num');
-        $data['ahr_hall_num']   = $this->request->getIntParam('hall_num');
-        $data['ahr_toilet_num']   = $this->request->getIntParam('toilet_num');
-        $data['ahr_orientation']= $this->request->getStrParam('orientation');//朝向
-        $data['ahr_floor']      = $this->request->getStrParam('floor');
-        $data['ahr_all_floor']  = $this->request->getStrParam('all_floor');
         $data['ahr_type']       = $this->request->getStrParam('type');
-        $data['ahr_fitment']    = $this->request->getStrParam('fitmentType');
-        $data['ahr_orientation']     = $this->request->getStrParam('orientation');
-        $data['ahr_build_time'] = $this->request->getStrParam('build_time');
         $data['ahr_address']    = $this->request->getStrParam('address');//地址
         $data['ahr_lng']        = $this->request->getStrParam('lng');//经纬度
-        $data['ahr_lat']        = $this->request->getStrParam('lat');
-        $data['ahr_contact']    = $this->request->getStrParam('contact');
-        $data['ahr_mobile']     = $this->request->getStrParam('mobile');
-        $data['ahr_weixin']     = $this->request->getStrParam('weixin');
+        $data['ahr_lat']        = $this->request->getStrParam('lat');;
         $data['ahr_content']    = $this->request->getStrParam('detail');
         $data['ahr_cover']      = $this->request->getStrParam('slide_0');
         $data['ahr_sale_type']  = $this->request->getIntParam('saleType');
         $data['ahr_province']   = $this->request->getIntParam('province');;
         $data['ahr_city']       = $this->request->getIntParam('city');
         $data['ahr_zone']       = $this->request->getIntParam('zone');
-        $data['ahr_video_url']  = $this->request->getStrParam('video');
-        $data['ahr_vr_url']     = $this->request->getStrParam('vr');
-        if($this->request->getStrParam('label')){
-            $data['ahr_label']       = json_encode(explode('/',$this->request->getStrParam('label')));
-        }else{
-            $data['ahr_label'] = '';
-        }
+        $data['ahr_park']       = $this->request->getIntParam('park');
+        $data['ahr_province_name']   = $this->request->getStrParam('pro_name');;
+        $data['ahr_city_name']       = $this->request->getStrParam('city_name');
+        $data['ahr_zone_name']       = $this->request->getStrParam('zone_name');
+        $data['ahr_park_name']       = $this->request->getStrParam('park_name');
 
-        $data['ahr_resource_source']  = $this->request->getIntParam('resourceSource');
 
         $data['ahr_s_id']       = $this->curr_sid;
-        if($data['ahr_sale_type'] == 1){
-            $data['ahr_price']      = $this->request->getFloatParam('salePrice');
-        }else{
-            $data['ahr_price']      = $this->request->getFloatParam('rentPrice');
-        }
+        $data['ahr_price']      = $this->request->getFloatParam('rentPrice');
 
         $resources_model = new App_Model_Resources_MysqlResourcesStorage();
         $is_add = 0;
@@ -138,7 +118,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
                 'ec' => 200,
                 'em' => '保存成功',
             );
-            App_Helper_OperateLog::saveOperateLog("房源【{$data['ahr_title']}】保存成功");
+            App_Helper_OperateLog::saveOperateLog("【{$data['ahr_title']}】保存成功");
         }else{
             $result['em'] = '保存失败';
         }
@@ -266,5 +246,66 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $park = $park_model->get_park_by_parent($zone);
 
         echo json_encode($park);
+    }
+
+    public function batchSlide($resId,$is_add=0){
+        $slide_model    = new App_Model_Resources_MysqlResourcesSlideStorage($this->curr_sid);
+        $maxNum         = $this->request->getStrParam('slide-img-num');
+        $slide          = array();
+        if($is_add){
+            for($i=0; $i<= $maxNum; $i++){
+                $temp = $this->request->getStrParam('slide_'.$i);
+                $temp = plum_sql_quote($temp);
+                if($temp){
+                    $slide[] = "(NULL, '{$this->curr_sid}', '{$resId}', 1,'{$temp}', 0, '".time()."')";
+                }
+            }
+            $slide_model->batchSave($slide);
+        }else{
+            $sl_id = array();
+            for($i=0; $i<= $maxNum; $i++){
+                $temp = $this->request->getStrParam('slide_'.$i);
+                $temp = plum_sql_quote($temp);
+                $temp_id = $this->request->getIntParam('slide_id_'.$i);
+                if($temp && $temp_id == 0){
+                    $slide[] = $temp;
+                }
+                if($temp_id){
+                    $sl_id[] = $temp_id;
+                }
+            }
+            $del_id = array();
+            $old_slide = $slide_model->getListByGidSid($resId,$this->curr_sid,1);
+            foreach($old_slide as $val){
+                if(!in_array($val['ahrs_id'],$sl_id)){
+                    $del_id[] = $val['ahrs_id'];
+                }
+            }
+            if(count($slide) <= count($del_id)){
+                for($d=0 ; $d < count($del_id) ; $d++){
+                    if(isset($slide[$d]) && $slide[$d]){
+                        $slide_model->updateSlide($del_id[$d],$slide[$d]);
+                        unset($del_id[$d]);
+                    }
+                }
+                if(!empty($del_id)){
+                    $slide_model->deleteSlide($resId,$del_id);
+                }
+            }else{
+                $batch_slide = array();
+                for($s=0 ; $s < count($slide) ; $s++){
+                    if(isset($del_id[$s]) && $del_id[$s]){
+                        $slide_model->updateSlide($del_id[$s],$slide[$s]);
+                        unset($slide[$s]);
+                    }else{
+                        $sTemp = plum_sql_quote($slide[$s]);
+                        $batch_slide[] = "(NULL, '{$this->curr_sid}', '{$resId}', 1,'{$sTemp}', 0, '".time()."')";
+                    }
+                }
+                if(!empty($batch_slide)){
+                    $slide_model->batchSave($batch_slide);
+                }
+            }
+        }
     }
 }

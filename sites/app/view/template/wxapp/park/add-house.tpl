@@ -96,9 +96,9 @@
                                                     <div class="group-info">
 
                                                         <div class="form-group">
-                                                            <label for="name" class="control-label"><font color="red">*</font>标题：</label>
+                                                            <label for="name" class="control-label"><font color="red">*</font>名称：</label>
                                                             <div class="control-group">
-                                                                <input type="text" class="form-control" id="title" name="title" placeholder="请填写房源信息标题" required="required" value="<{if $row}><{$row['ahr_title']}><{/if}>">
+                                                                <input type="text" class="form-control" id="title" name="title" placeholder="请填写名称" required="required" value="<{if $row}><{$row['ahr_title']}><{/if}>">
                                                             </div>
                                                         </div>
 
@@ -115,26 +115,26 @@
                                                             <label class="control-label"><font color="red">*</font>详细地址：</label>
 
                                                             <div class="control-group" style="float: left;width: 63%;margin: 0;">
-                                                                <select id="province" name="province" class="form-control inline" onchange="changeWxappProvince()" style="width: 29%;display: inline-block">
+                                                                <select id="province" name="province" class="form-control inline" onchange="changeWxappProvince()" style="width: 20%;display: inline-block">
                                                                     <option value="0">省份</option>
                                                                     <{foreach $province as $val}>
                                                                 <option value="<{$val['region_id']}>" <{if $row['ahr_province'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
                                                                     <{/foreach}>
                                                                 </select>
-                                                                <select name="city" id="city" class="form-control inline"  style="width: 29%;display: inline-block">
+                                                                <select name="city" id="city" class="form-control inline"  style="width: 20%;display: inline-block">
                                                                     <option value="0">城市</option>
                                                                     <{foreach $city as $val}>
                                                                 <option value="<{$val['region_id']}>" <{if $row['ahr_city'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
                                                                     <{/foreach}>
                                                                 </select>
-                                                                <select id="zone" name="zone" class="form-control inline" style="width: 29%;display: inline-block">
+                                                                <select id="zone" name="zone" class="form-control inline" style="width: 20%;display: inline-block">
                                                                     <option value="0">地区</option>
                                                                     <{foreach $area as $val}>
                                                                 <option value="<{$val['region_id']}>" <{if $row['ahr_zone'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
                                                                     <{/foreach}>
 
                                                                 </select>
-                                                                <select id="park" name="park" class="form-control inline" style="width: 29%;display: inline-block">
+                                                                <select id="park" name="park" class="form-control inline" style="width: 20%;display: inline-block">
                                                                     <option value="0">园区</option>
                                                                     <{foreach $park as $val}>
                                                                 <option value="<{$val['region_id']}>" <{if $row['ahr_park'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
@@ -160,10 +160,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="info-group-box">
+                                      <!--      <div class="info-group-box">
                                                 <div class="info-group-inner">
                                                     <div class="group-title">
-                                                        <span>联系人信息</span>
                                                     </div>
                                                     <div class="group-info">
                                                         <div class="form-group" style="width: 400px;display: inline-block;">
@@ -186,7 +185,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <div class="step-pane" id="step2">
                                             <div class="info-group-box">
@@ -466,81 +465,7 @@
 
     });
 
-    /**
-     * 省会变更
-     */
-    function changeWxappProvince(){
-        var fid = $('#province').val();
-        initCityRegion(fid ,'city');
-    }
-    /**
-     * 城市变更
-     */
-    function changeWxappCity(){
-        var fid = $('#city').val();
-        initWxappRegion(fid ,'zone');
-    }
 
-    function initCityRegion(fid,selectId,df){
-        if(fid > 0) {
-            var data = {
-                'fid': fid
-            };
-            $.ajax({
-                'type'   : 'post',
-                'url'   : '/wxapp/house/region',
-                'data'  : data,
-                'dataType'  : 'json',
-                'success'   : function(ret){
-                    if(ret.ec == 200){
-                        region_html(ret.data,selectId,df);
-                        if(!df){
-                            if(selectId == 'city'){
-                                initWxappRegion(ret.data[0].region_id,'zone');
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    }
-
-    function initWxappRegion(fid,selectId,df){
-        if(fid > 0) {
-            var data = {
-                'fid': fid
-            };
-            $.ajax({
-                'type'   : 'post',
-                'url'   : '/wxapp/index/region',
-                'data'  : data,
-                'dataType'  : 'json',
-                'success'   : function(ret){
-                    if(ret.ec == 200){
-                        region_html(ret.data,selectId,df);
-                    }
-                }
-            });
-        }
-    }
-
-    /**
-     * 展示区域省市区
-     * @param data
-     * @param selectId
-     */
-    function region_html(data,selectId,df){
-        var option = '';
-        for(var i=0 ; i < data.length ; i++){
-            var temp  = data[i];
-            var sel   = '';
-            if(df && temp.region_id == df ){
-                sel = 'selected';
-            }
-            option += '<option  value="'+temp.region_id+'" '+sel+'>'+temp.region_name+'</option>';
-        }
-        $('#'+selectId).html(option);
-    }
 
 
     /**
@@ -560,7 +485,7 @@
      * 第二步检查基本信息
      * */
     function checkBasic(){
-        var check   = new Array('title','address','contact','mobile');
+        var check   = new Array('title','address');
         for(var i=0 ; i < check.length ; i++){
             var temp = $('#'+check[i]).val();
             if(!temp){
@@ -607,10 +532,14 @@
                     time: 10*1000
                 }
         );
+        var pro_name      = $("#province").find("option:selected").text();
+        var city_name     = $("#city").find("option:selected").text();
+        var zone_name     = $("#zone").find("option:selected").text();
+        var park_name     = $("#park").find("option:selected").text();
         $.ajax({
             'type'   : 'post',
-            'url'   : '/wxapp/resources/save',
-            'data'  : $('#resources-form').serialize(),
+            'url'   : '/wxapp/park/saveHouse',
+            'data'  : $('#resources-form').serialize()+"&pro_name="+JSON.stringify(pro_name)+"&city_name="+JSON.stringify(city_name)+"&zone_name="+JSON.stringify(zone_name)+"&park_name="+JSON.stringify(park_name),
             'dataType'  : 'json',
             'success'   : function(ret){
                 layer.close(load_index);
