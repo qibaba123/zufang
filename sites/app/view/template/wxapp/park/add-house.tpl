@@ -247,7 +247,7 @@
                                                     <div class="group-info" style="padding-left: 0">
                                                         <div class="control-group" style="margin-left: 0">
                                                              <textarea class="form-control" style="width:100%;height:600px;visibility:hidden;" id = "detail" name="detail" placeholder="详情"  rows="20" style=" text-align: left; resize:vertical;" >
-                                                                 <{$val['ahr_content']}>
+                                                                 <{$row['ahr_content']}>
                                                          </textarea>
                                                             <input type="hidden" name="sub_dir" id="sub-dir" value="default" />
                                                             <input type="hidden" name="ke_textarea_name" value="detail" />
