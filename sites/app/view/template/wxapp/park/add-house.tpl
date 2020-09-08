@@ -250,7 +250,7 @@
                                                                  <{$val['ahr_content']}>
                                                          </textarea>
                                                             <input type="hidden" name="sub_dir" id="sub-dir" value="default" />
-                                                            <input type="hidden" name="ke_textarea_name" value="aboutus" />
+                                                            <input type="hidden" name="ke_textarea_name" value="detail" />
                                                         </div>
                                                     </div>
                                                 </div>
