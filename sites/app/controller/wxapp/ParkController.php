@@ -36,7 +36,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $index  = $page * $this->count;
         $resource_model = new App_Model_Resources_MysqlResourcesStorage();
         $where[] = array('name'=>"ahr_type",'oper'=>'=','value'=>$type);
-        $list    = $resource_model->getList($where,$index,$this->count,array('ahr_weigth'=>'DESC'));
+        $list    = $resource_model->getList($where,$index,$this->count,array('ahr_weight'=>'DESC'));
         $total   = $resource_model->getCount($where);
         $pageCfg    = new Libs_Pagination_Paginator($total,$this->count);
         $this->output['pageHtml']  = $pageCfg->render();
