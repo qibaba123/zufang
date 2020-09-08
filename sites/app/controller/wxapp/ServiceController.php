@@ -9,6 +9,16 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         parent::__construct();
     }
 
+    //企业服务列表
+    public function serviceListAction(){
+        $page  = $this->request->getIntParam('page');
+        $index = $page * $this->count;
+    }
+
+
+
+
+
 
     
     public function msgListAction(){
