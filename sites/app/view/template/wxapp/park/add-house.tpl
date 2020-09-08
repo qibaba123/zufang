@@ -384,12 +384,12 @@
                         var pcz  = {
                             'province'  : result.regeocode.addressComponent.province,
                             'city'      : result.regeocode.addressComponent.city,
-                            'zone'      : result.regeocode.addressComponent.district
+                            'zone'      : result.regeocode.addressComponent.zone
                         };
 
                         var province    = result.regeocode.addressComponent.province;
                         var city       = result.regeocode.addressComponent.city;
-                        var zone        = result.regeocode.addressComponent.district;
+                        var zone        = result.regeocode.addressComponent.zone;
                         var township    =  result.regeocode.addressComponent.township;
                         var street      =  result.regeocode.addressComponent.street;
                         var streetNumber=  result.regeocode.addressComponent.streetNumber;
