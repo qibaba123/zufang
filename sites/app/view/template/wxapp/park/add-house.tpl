@@ -101,10 +101,7 @@
                                                                 <input type="text" class="form-control" id="title" name="title" placeholder="请填写名称" required="required" value="<{if $row}><{$row['ahr_title']}><{/if}>">
                                                             </div>
                                                         </div>
-
-
-
-                                                        <div class="form-group" style="width: 420px;display: none;" id="rent">
+                                                        <div class="form-group" style="width: 420px;" id="rent">
                                                             <label class="control-label"><font color="red">*</font>租金：</label>
                                                             <div class="control-group">
                                                                 <input type="text" class="form-control inline" id="rentPrice" name="rentPrice"  value="<{if $row}><{$row['ahr_price']}><{/if}>"  style="width:200px;padding-right: 40px;">
@@ -540,7 +537,7 @@
         $.ajax({
             'type'   : 'post',
             'url'   : '/wxapp/park/saveHouse',
-            'data'  : $('#resources-form').serialize()+"&pro_name="+JSON.stringify(pro_name)+"&city_name="+JSON.stringify(city_name)+"&zone_name="+JSON.stringify(zone_name)+"&park_name="+JSON.stringify(park_name),
+            'data'  : $('#resources-form').serialize()+"&pro_name="+pro_name+"&city_name="+city_name+"&zone_name="+zone_name+"&park_name="+park_name,
             'dataType'  : 'json',
             'success'   : function(ret){
                 layer.close(load_index);
