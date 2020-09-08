@@ -57,6 +57,11 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
             $resource_model = new App_Model_Resources_MysqlResourcesStorage();
             $row            = $resource_model->getRowById($id);
             $this->output['row'] = $row;
+            if(!empty($row)){
+                $slide_model    = new App_Model_Resources_MysqlResourcesSlideStorage($this->curr_sid);
+                $slide          = $slide_model->getSlideByGid($row['ahr_id'], 1);
+            }
+            $this->output['slide'] = $slide;
             $city           = $address_model->get_city_by_parent($row['ahr_province']);
             $this->output['city'] = $city;
             $area = $address_model->get_area_by_parent($row['ahr_city']);

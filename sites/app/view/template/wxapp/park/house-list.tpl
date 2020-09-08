@@ -295,14 +295,15 @@
                     <table class="table table-striped table-hover table-avatar">
                         <thead>
                             <tr>
-                                <th>名称</th>
-                                <th>售价</th>
-                                <th>封面</th>
-                                <th>库存</th>
-                                <th>所属区域</th>
-                                <th>权重</th>
-                                <th>添加时间</th>
-                                <th>操作</th>
+                                <th style="width: 11.1%">名称</th>
+                                <th style="width: 11.1%">编号</th>
+                                <th style="width: 11.1%">售价</th>
+                                <th style="width: 11.1%">封面</th>
+                                <th style="width: 11.1%">库存</th>
+                                <th style="width: 11.1%">所属区域</th>
+                                <th style="width: 11.1%">权重</th>
+                                <th style="width: 11.1%">添加时间</th>
+                                <th style="width: 11.1%">操作</th>
                             </tr>
                         </thead>
                     </table>
@@ -313,14 +314,15 @@
                         <{foreach $list as $val}>
                             <tr id="tr_<{$val['ahr_id']}>">
 
-                                <td><{$val['ahr_title']}></td>
-                                <td><{$val['ahr_price']}>/天</td>
-                                <td><img src="<{$val['ahr_cover']}>" alt="" style="width: 150px;"></td>
-                                <td><{$val['ahr_stock']}></td>
-                                <td><{$val['ahr_province_name']}> - <{$val['ahr_city_name']}> - <{$val['ahr_zone_name']}> - <{$val['ahr_park_name']}></td>
-                                <td><{$val['ahr_weight']}></td>
-                                <td><{date('Y-m-d H:i',$val['ahr_create_time'])}></td>
-                                <td>
+                                <td style="width: 11.1%"><{$val['ahr_title']}></td>
+                                <td style="width: 11.1%"><{$val['ahr_number']}></td>
+                                <td style="width: 11.1%"><{$val['ahr_price']}>/天</td>
+                                <td style="width: 11.1%"><img src="<{$val['ahr_cover']}>" alt="" style="width: 150px;"></td>
+                                <td style="width: 11.1%"><{$val['ahr_stock']}></td>
+                                <td style="width: 11.1%"><{$val['ahr_province_name']}> - <{$val['ahr_city_name']}> - <{$val['ahr_zone_name']}> - <{$val['ahr_park_name']}></td>
+                                <td style="width: 11.1%"><{$val['ahr_weight']}></td>
+                                <td style="width: 11.1%"><{date('Y-m-d H:i',$val['ahr_create_time'])}></td>
+                                <td style="width: 11.1%">
                                     <p>
                                         <a href="/wxapp/park/addHouse/?type=<{$type}>&id=<{$val['ahr_id']}>" >编辑</a> -
                                         <a href="javascript:;" id="del_<{$val['ahr_id']}>" class="btn-del" data-gid="<{$val['ahr_id']}>">删除</a>
