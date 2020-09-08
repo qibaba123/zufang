@@ -81,7 +81,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $id       = $this->request->getIntParam('id');
         $data     = array();
         $data['ahr_title']      = $this->request->getStrParam('title');
-        $data['ahr_area']       = $this->request->getFloatParam('area');
+        //$data['ahr_area']       = $this->request->getFloatParam('area');
         $data['ahr_type']       = $this->request->getStrParam('type');
         $data['ahr_address']    = $this->request->getStrParam('address');//地址
         $data['ahr_lng']        = $this->request->getStrParam('lng');//经纬度

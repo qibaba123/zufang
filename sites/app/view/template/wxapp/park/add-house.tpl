@@ -256,7 +256,7 @@
 </div><!-- PAGE CONTENT ENDS -->
 <{include file="../img-upload-modal.tpl"}>
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=099aa80c85be20b87ecf7fd6ad75bdc2"></script>
-<script type="text/javascript" src="/public/common/js/province-city-area.js"></script>
+
 <script type="text/javascript" src="/public/plugin/layer/layer.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/fuelux/fuelux.wizard.min.js"></script>
 <script type="text/javascript" src="/public/plugin/sortable/jquery-ui.min.js"></script>
