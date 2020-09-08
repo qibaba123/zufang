@@ -105,7 +105,7 @@
                                 <td style="white-space: normal;"><{date('Y-m-d H:i',$val['es_create_time'])}></td>
                                 <td style="white-space: normal;">
                                     <a class="btn btn-xs btn-primary" href="/wxapp/service/addService?id=<{$val['es_id']}>" >编辑</a> -
-                                    <a class="btn btn-xs btn-danger" href="javascript:;" onclick="deleteSubject(this)" data-id="<{$val['sl_id']}>" class="btn-del">删除</a>
+                                    <a class="btn btn-xs btn-danger" href="javascript:;" onclick="deleteSubject(this)" data-id="<{$val['es_id']}>" class="btn-del">删除</a>
                                 </td>
                             </tr>
                         <{/foreach}>
@@ -230,7 +230,7 @@
             }, function () {
                 $.ajax({
                     'type': 'post',
-                    'url' : '/wxapp/slide/deleteSlide',
+                    'url' : '/wxapp/service/deleteService',
                     'data':data,
                     'dataType': 'json',
                     success: function (ret) {

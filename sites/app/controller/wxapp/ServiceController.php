@@ -35,6 +35,19 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
 
     }
 
+    //删除企业服务
+    public function deleteServiceAction(){
+        $id = $this->request->getIntParam('id');
+        $update['es_deleted'] = 1;
+        $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $ret = $service_model->updateById($update,$id);
+        if($ret){
+            $this->displayJsonSuccess(array(),true,'删除成功');
+        }else{
+            $this->displayJsonError('删除失败');
+        }
+    }
+
 
     //保存服务
     public function saveServiceAction(){

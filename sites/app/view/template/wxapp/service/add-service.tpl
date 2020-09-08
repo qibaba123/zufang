@@ -82,7 +82,7 @@
         <div class="form-group">
             <label for="" style="width: 100%" >服务名称<font color="red">*</font></label>
             <div class="control-group">
-                <input type="text" id="es_name" placeholder="服务名称" class="form-control" name="es_name" value="<{if $row && $row['es_name']}><{$row['ap_name']}><{/if}>"/>
+                <input type="text" id="es_name" placeholder="服务名称" class="form-control" name="es_name" value="<{if $row && $row['es_name']}><{$row['es_name']}><{/if}>"/>
             </div>
         </div>
         <div class="form-group">
