@@ -262,7 +262,6 @@ return array(
 
 
 
-
         //**********************单品分享分销*************************//
         'applet_deduct_goods_list'     => array(
             'controller'        => 'App_Controller_Applet_GoodsratioController',
