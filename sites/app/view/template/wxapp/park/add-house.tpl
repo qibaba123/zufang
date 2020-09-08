@@ -140,7 +140,7 @@
                                                                 <select id="park" name="park" class="form-control inline" style="width: 20%;display: inline-block">
                                                                     <option value="0">园区</option>
                                                                     <{foreach $park as $val}>
-                                                                <option value="<{$val['region_id']}>" <{if $row['ahr_park'] == $val['ap_id']}>selected<{/if}>><{$val['ap_name']}></option>
+                                                                <option value="<{$val['ap_id']}>" <{if $row['ahr_park'] == $val['ap_id']}>selected<{/if}>><{$val['ap_name']}></option>
                                                                     <{/foreach}>
 
                                                                 </select>
