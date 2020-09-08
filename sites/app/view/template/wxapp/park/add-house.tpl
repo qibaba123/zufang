@@ -264,6 +264,7 @@
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
+    var s_type = '<{$type}>';
     $('#pro').change(function(){
         $("#city").html('');
         $("#area").html('');
@@ -543,9 +544,14 @@
             'dataType'  : 'json',
             'success'   : function(ret){
                 layer.close(load_index);
-                if(ret.ec == 200 && type == 'step'){
+                if(ret.ec == 200 ){
                     alert(ret.em);
-                    window.location.href='/wxapp/resources/index';
+                    if(s_type == 1){
+                        window.location.href='/wxapp/park/stationList';
+                    }else{
+                        window.location.href='/wxapp/park/officeList';
+                    }
+
                 }else{
                     layer.msg(ret.em);
                 }
