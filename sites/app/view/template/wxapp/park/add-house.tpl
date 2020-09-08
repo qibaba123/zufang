@@ -52,6 +52,7 @@
     }
 
 </style>
+<{include file="../../manage/common-kind-editor.tpl"}>
 <div>
     <div class="row">
         <div class="col-xs-12">
@@ -112,6 +113,12 @@
                                                             <div class="control-group">
                                                                 <input type="text" class="form-control inline" id="rentPrice" name="rentPrice"  value="<{if $row}><{$row['ahr_price']}><{/if}>"  style="width:200px;padding-right: 20px;text-align: left;">
                                                                 <span class="palceholder" style="left: -45px">元/月</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group" style="width: 420px;" id="rent">
+                                                            <label class="control-label">权重：</label>
+                                                            <div class="control-group">
+                                                                <input type="text" class="form-control inline" id="stock" name="stock"  value="<{if $row}><{$row['ahr_stock']}><{/if}>"  style="width:200px;padding-right: 20px;text-align: left;">
                                                             </div>
                                                         </div>
                                                         <div class="form-group" style="width: 420px;" id="stock">
@@ -277,7 +284,7 @@
         </div><!-- /span -->
     </div><!-- /row -->
 </div><!-- PAGE CONTENT ENDS -->
-<{include file="../../manage/common-kind-editor.tpl"}>
+
 <{include file="../img-upload-modal.tpl"}>
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=099aa80c85be20b87ecf7fd6ad75bdc2"></script>
 
