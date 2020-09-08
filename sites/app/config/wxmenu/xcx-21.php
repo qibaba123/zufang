@@ -82,6 +82,21 @@ return array(
                 ),
             ),
         ),
+        array(
+            'title'     => '企业服务',
+            'link'      => '#',
+            'icon'      => 'icon-tasks',
+            'access'    => 'module-cfg',
+            'special'   => true,
+            'submenu'   => array(
+                array(
+                    'title'     => '企业服务列表',
+                    'link'      => '/service/serviceList',
+                    'icon'      => 'icon-cog',
+                    'access'    => 'currency-informationList',
+                ),
+            ),
+        ),
 //        array(
 //            'title'     => '平台管理',
 //            'link'      => '#',

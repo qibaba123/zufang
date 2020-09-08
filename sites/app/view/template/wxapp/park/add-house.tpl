@@ -228,11 +228,25 @@
                                                     </div>
                                                     <div class="group-info" style="padding-left: 0">
                                                             <div class="control-group" style="margin-left: 0">
-                                                                <textarea class="form-control" style="width:100%;height:200px;" id = "detail" name="detail" placeholder="描述"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['ahr_content']}><{$row['ahr_content']}><{/if}></textarea>
+                                                                <textarea class="form-control" style="width:100%;height:200px;" id = "brief" name="brief" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['ahr_brief']}><{$row['ahr_brief']}><{/if}></textarea>
                                                             </div>
                                                     </div>
                                                 </div>
 
+                                                <div class="info-group-inner">
+                                                    <div class="group-title">
+                                                        <span>详情</span>
+                                                    </div>
+                                                    <div class="group-info" style="padding-left: 0">
+                                                        <div class="control-group" style="margin-left: 0">
+                                                             <textarea class="form-control" style="width:100%;height:600px;visibility:hidden;" id = "detail" name="detail" placeholder="详情"  rows="20" style=" text-align: left; resize:vertical;" >
+                                                                 <{$val['ahr_content']}>
+                                                         </textarea>
+                                                            <input type="hidden" name="sub_dir" id="sub-dir" value="default" />
+                                                            <input type="hidden" name="ke_textarea_name" value="aboutus" />
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </form>
@@ -263,6 +277,7 @@
         </div><!-- /span -->
     </div><!-- /row -->
 </div><!-- PAGE CONTENT ENDS -->
+<{include file="../../manage/common-kind-editor.tpl"}>
 <{include file="../img-upload-modal.tpl"}>
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=099aa80c85be20b87ecf7fd6ad75bdc2"></script>
 

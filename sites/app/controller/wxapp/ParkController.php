@@ -93,7 +93,8 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $data['ahr_type']       = $this->request->getStrParam('type');
         $data['ahr_address']    = $this->request->getStrParam('address');//地址
         $data['ahr_lng']        = $this->request->getStrParam('lng');//经纬度
-        $data['ahr_lat']        = $this->request->getStrParam('lat');;
+        $data['ahr_lat']        = $this->request->getStrParam('lat');
+        $data['ahr_brief']    = $this->request->getStrParam('brief');
         $data['ahr_content']    = $this->request->getStrParam('detail');
         $data['ahr_cover']      = $this->request->getStrParam('slide_0');
         $data['ahr_province']   = $this->request->getIntParam('province');;
