@@ -56,6 +56,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         if($id){
             $resource_model = new App_Model_Resources_MysqlResourcesStorage();
             $row            = $resource_model->getRowById($id);
+            $this->output['row'] = $row;
             $city           = $address_model->get_city_by_parent($row['ahr_province']);
             $this->output['city'] = $city;
             $area = $address_model->get_area_by_parent($row['ahr_city']);
