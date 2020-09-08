@@ -317,7 +317,7 @@
                                 <td style="width: 11.1%"><{$val['ahr_title']}></td>
                                 <td style="width: 11.1%"><{$val['ahr_number']}></td>
                                 <td style="width: 11.1%"><{$val['ahr_price']}>/天</td>
-                                <td style="width: 11.1%"><img src="<{$val['ahr_cover']}>" alt="" style="width: 150px;"></td>
+                                <td style="width: 11.1%"><img src="<{$val['ahr_cover']}>" alt="" style="width: 174px;"></td>
                                 <td style="width: 11.1%"><{$val['ahr_stock']}></td>
                                 <td style="width: 11.1%"><{$val['ahr_province_name']}> - <{$val['ahr_city_name']}> - <{$val['ahr_zone_name']}> - <{$val['ahr_park_name']}></td>
                                 <td style="width: 11.1%"><{$val['ahr_weight']}></td>

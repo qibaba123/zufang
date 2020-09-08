@@ -85,7 +85,7 @@
                     <{foreach $list as $val}>
                         <tr id="tr_<{$val['ap_id']}>" class="tr-content">
                             <td><{$val['ap_name']}></td>
-                            <td><{$val['ap_pro']}>-<{$val['ap_city']}>-<{$val['ap_area']}></td>
+                            <td><{$val['ap_pro_name']}>-<{$val['ap_city_name']}>-<{$val['ap_area_name']}></td>
                             <td><{$val['ap_weight']}></td>
                             <td><{date('Y-m-d,H:i',$val['ap_create_time'])}></td>
                             <td>
