@@ -101,6 +101,12 @@
                                                                 <input type="text" class="form-control" id="title" name="title" placeholder="请填写名称" required="required" value="<{if $row}><{$row['ahr_title']}><{/if}>">
                                                             </div>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label for="name" class="control-label"><font color="red">*</font>编号：</label>
+                                                            <div class="control-group">
+                                                                <input type="text" class="form-control" id="number" name="number" placeholder="请填写编号" required="required" value="<{if $row}><{$row['ahr_number']}><{/if}>">
+                                                            </div>
+                                                        </div>
                                                         <div class="form-group" style="width: 420px;" id="rent">
                                                             <label class="control-label"><font color="red">*</font>租金：</label>
                                                             <div class="control-group">

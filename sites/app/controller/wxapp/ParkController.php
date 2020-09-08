@@ -62,7 +62,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
             $area = $address_model->get_area_by_parent($row['ahr_city']);
             $this->output['area'] = $area;
             $park_model = new App_Model_Park_MysqlAddressParkStorage();
-            $this->output['park'] = $park_model->get_park_by_parent($row['ahr_park']);
+            $this->output['park'] = $park_model->get_park_by_parent($row['ahr_zone']);
         }
         $this->output['type'] = $type;
         $this->buildBreadcrumbs(array(
@@ -83,6 +83,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $data     = array();
         $data['ahr_title']      = $this->request->getStrParam('title');
         $data['ahr_stock']      = $this->request->getIntParam('stock');
+        $data['ahr_number']     = $this->request->getIntParam('number');
         //$data['ahr_area']       = $this->request->getFloatParam('area');
         $data['ahr_type']       = $this->request->getStrParam('type');
         $data['ahr_address']    = $this->request->getStrParam('address');//地址
