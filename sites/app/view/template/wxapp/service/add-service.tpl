@@ -82,7 +82,7 @@
         <div class="form-group">
             <label for="" style="width: 100%" >服务名称<font color="red">*</font></label>
             <div class="control-group">
-                <input type="text" id="name" placeholder="服务名称" class="form-control" name="name" value="<{if $row && $row['es_name']}><{$row['ap_name']}><{/if}>"/>
+                <input type="text" id="es_name" placeholder="服务名称" class="form-control" name="es_name" value="<{if $row && $row['es_name']}><{$row['ap_name']}><{/if}>"/>
             </div>
         </div>
         <div class="form-group">
@@ -168,7 +168,7 @@
 
     $('.btn-save').click(function(event){
         var id            = $('#hid_id').val();
-        var name          = $('#name').val();
+        var name          = $('#es_name').val();
         var weight        = $('#weight').val();
         var type          = $('#type').val();
         var logo          = $('#logo').val();
