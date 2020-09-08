@@ -147,7 +147,7 @@
     <button class="btn btn-primary btn-save">保存</button>
 </div>
 
-
+<{include file="../img-upload-modal.tpl"}>
 <script type="text/javascript" charset="utf-8" src="/public/plugin/layer/layer.js"></script>
 <script src="/public/manage/shopfixture/color-spectrum/spectrum.js"></script>
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
@@ -309,4 +309,3 @@
     });
 
 </script>
-<{include file="../img-upload-modal.tpl"}>
