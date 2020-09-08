@@ -104,8 +104,14 @@
                                                         <div class="form-group" style="width: 420px;" id="rent">
                                                             <label class="control-label"><font color="red">*</font>租金：</label>
                                                             <div class="control-group">
-                                                                <input type="text" class="form-control inline" id="rentPrice" name="rentPrice"  value="<{if $row}><{$row['ahr_price']}><{/if}>"  style="width:200px;padding-right: 40px;">
+                                                                <input type="text" class="form-control inline" id="rentPrice" name="rentPrice"  value="<{if $row}><{$row['ahr_price']}><{/if}>"  style="width:200px;padding-right: 20px;">
                                                                 <span class="palceholder" style="left: -45px">元/月</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group" style="width: 420px;" id="stock">
+                                                            <label class="control-label"><font color="red">*</font>库存：</label>
+                                                            <div class="control-group">
+                                                                <input type="text" class="form-control inline" id="stock" name="stock"  value="<{if $row}><{$row['ahr_stock']}><{/if}>"  >
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
