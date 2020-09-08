@@ -16,7 +16,8 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $this->buildBreadcrumbs(array(
             array('title' => '工位列表', 'link' => '#'),
         ));
-        $this->output['type'] = 'stationList';
+        $this->output['type'] = 1;
+        $this->output['type_name'] = 'stationList';
         $this->displaySmarty('wxapp/park/house-list.tpl');
     }
 
@@ -28,7 +29,8 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $this->buildBreadcrumbs(array(
             array('title' => '办公室列表', 'link' => '#'),
         ));
-        $this->output['type'] = 'officeList';
+        $this->output['type'] = 2;
+        $this->output['type_name'] = 'officeList';
         $this->displaySmarty('wxapp/park/house-list.tpl');
     }
 
@@ -48,6 +50,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
     //新增或编辑工位
     public function addHouseAction(){
         $id  = $this->request->getIntParam('id');
+        $type  = $this->request->getIntParam('type');
         $address_model = new App_Model_Address_MysqlAddressCoreStorage();
         $this->output['province'] = $address_model->get_province();
         if($id){
@@ -60,10 +63,11 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
             $park_model = new App_Model_Park_MysqlAddressParkStorage();
             $this->output['park'] = $park_model->get_park_by_parent($row['ahr_park']);
         }
+        $this->output['type'] = $type;
         $this->buildBreadcrumbs(array(
             array('title' => '编辑工位', 'link' => '#'),
         ));
-        $this->displaySmarty('wxapp/park/house-list.tpl');
+        $this->displaySmarty('wxapp/park/add-house.tpl');
     }
 
 

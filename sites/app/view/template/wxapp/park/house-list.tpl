@@ -263,14 +263,14 @@
         </div>
         <div class="arrow"></div>
     </div>
-    <a href="/wxapp/park/addHouse" class="btn btn-green btn-xs"><i class="icon-plus bigger-80"></i> 新增</a>
+    <a href="/wxapp/park/addHouse?type=<{$type}>" class="btn btn-green btn-xs"><i class="icon-plus bigger-80"></i> 新增</a>
 
     <!--<a class="btn btn-green btn-xs" style="padding-top: 2px;padding-bottom: 2px;" data-toggle="modal" data-target="#advModal"><i class="icon-plus bigger-80"></i>广告位设置</a>-->
     <!--<a class="add-cost btn btn-primary btn-xs" href="#" data-toggle="modal" data-target="#cfgModal"  data-id="" data-weight="" >发布设置</a>
     <a href="javascript:;" class="btn btn-green btn-xs btn-excel" ><i class="icon-download"></i>房源导出</a>-->
     <div class="page-header search-box">
         <div class="col-sm-12">
-            <form action="/wxapp/park/<{$type}>" method="get" class="form-inline">
+            <form action="/wxapp/park/<{$type_name}>" method="get" class="form-inline">
                 <div class="col-xs-11 form-group-box">
                     <div class="form-container">
                         <div class="form-group">
@@ -322,7 +322,7 @@
                                 <td><{date('Y-m-d H:i',$val['ahr_create_time'])}></td>
                                 <td>
                                     <p>
-                                        <a href="/wxapp/park/addHouse/?id=<{$val['ahr_id']}>" >编辑</a> -
+                                        <a href="/wxapp/park/addHouse/?type=<{$type}>&id=<{$val['ahr_id']}>" >编辑</a> -
                                         <a href="javascript:;" id="del_<{$val['ahr_id']}>" class="btn-del" data-gid="<{$val['ahr_id']}>">删除</a>
                                     </p>
                                 </td>

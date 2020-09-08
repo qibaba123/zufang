@@ -75,7 +75,7 @@
 
                                         <li data-target="#step2">
                                             <span class="step">2</span>
-                                            <span class="title">房源图片</span>
+                                            <span class="title">图片</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -84,6 +84,7 @@
                                 <div class="step-content row-fluid position-relative" id="step-container">
                                     <form class="form-horizontal" id="resources-form"  enctype="multipart/form-data" style="overflow: hidden;">
                                         <input type="hidden" id="hid_id" name="id" value="<{if $row}><{$row['ahr_id']}><{else}>0<{/if}>">
+                                        <input type="hidden" id="type" name="type" value="<{if $type}><{$type}><{else}>0<{/if}>">
                                         <div class="step-pane active" id="step1" >
 
                                             <!-- 表单分类显示 -->
