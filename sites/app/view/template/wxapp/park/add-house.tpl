@@ -93,164 +93,16 @@
                                                         <span>基本信息</span>
                                                     </div>
                                                     <div class="group-info">
-                                                        <div class="form-group">
-                                                            <label class="control-label"><font color="red">*</font>发布类型：</label>
-                                                            <div class="control-group" style="margin-left: 165px;">
-                                                                <div class="radio-box">
-                                                                    <span>
-                                                                        <input type="radio" name="saleType" id="saleType1" value="1" <{if $row && $row['ahr_sale_type'] eq 1}>checked<{/if}>>
-                                                                        <label for="saleType1">出售</label>
-                                                                    </span>
-                                                                    <{if $curr_shop['s_id'] neq 12253}>
-                                                                    <span>
-                                                                        <input type="radio" name="saleType" id="saleType2" value="2" <{if $row && $row['ahr_sale_type'] eq 2}>checked<{/if}>>
-                                                                        <label for="saleType2">出租</label>
-                                                                    </span>
-                                                                    <{/if}>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label"><font color="red">*</font>房源类型：</label>
-                                                            <div class="control-group" style="margin-left: 165px;">
-                                                                <div class="radio-box">
-                                                                    <span>
-                                                                        <input type="radio" name="resourceSource" id="resourceSource1" value="1" <{if $row && $row['ahr_resource_source'] eq 1}>checked<{/if}>>
-                                                                        <label for="resourceSource1">个人房源</label>
-                                                                    </span>
-                                                                    <span>
-                                                                        <input type="radio" name="resourceSource" id="resourceSource2" value="2" <{if $row && $row['ahr_resource_source'] eq 2}>checked<{/if}>>
-                                                                        <label for="resourceSource2">中介房源</label>
-                                                                    </span>
-                                                                    <{if $curr_shop['s_id'] eq 12253}>
-                                                                    <span>
-                                                                        <input type="radio" name="resourceSource" id="resourceSource3" value="3" <{if $row && $row['ahr_resource_source'] eq 3}>checked<{/if}>>
-                                                                        <label for="resourceSource3">闲置资源</label>
-                                                                    </span>
-                                                                    <span>
-                                                                        <input type="radio" name="resourceSource" id="resourceSource4" value="4" <{if $row && $row['ahr_resource_source'] eq 4}>checked<{/if}>>
-                                                                        <label for="resourceSource4">闲置农房</label>
-                                                                    </span>
-                                                                    <span>
-                                                                        <input type="radio" name="resourceSource" id="resourceSource5" value="5" <{if $row && $row['ahr_resource_source'] eq 5}>checked<{/if}>>
-                                                                        <label for="resourceSource5">闲置古厝</label>
-                                                                    </span>
-                                                                    <{/if}>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+
                                                         <div class="form-group">
                                                             <label for="name" class="control-label"><font color="red">*</font>标题：</label>
                                                             <div class="control-group">
                                                                 <input type="text" class="form-control" id="title" name="title" placeholder="请填写房源信息标题" required="required" value="<{if $row}><{$row['ahr_title']}><{/if}>">
                                                             </div>
                                                         </div>
-                                                        <{if $applet == 51}>
-                                                        <div class="form-group">
-                                                            <label for="name" class="control-label">房源视频地址：</label>
-                                                            <div class="control-group">
-                                                                <input type="text" class="form-control" id="video" name="video" placeholder="请填写房源视频地址" required="required" value="<{if $row}><{$row['ahr_video_url']}><{/if}>">
-                                                            </div>
-                                                        </div>
-                                                        <{/if}>
-                                                        <div class="form-group">
-                                                            <label for="name" class="control-label">VR全景：</label>
-                                                            <div class="control-group">
-                                                                <input type="text" class="form-control" id="vr" name="vr" placeholder="请填写VR全景连接" required="required" value="<{if $row}><{$row['ahr_vr_url']}><{/if}>">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="name" class="control-label"><font color="red">*</font>房源标签：</label>
-                                                            <div class="control-group">
-                                                                <input type="text" class="form-control" id="label" name="label" placeholder="请填写标签，以 / 分割" required="required" value="<{if $row}><{$row['ahr_label']}><{/if}>">
-                                                            </div>
-                                                        </div>
 
-                                                        <{if $curr_shop['s_id'] eq 12253}>
-                                                        <div class="form-group">
-                                                            <label class="control-label"><font color="red">*</font>面积：</label>
-                                                            <div class="control-group">
-                                                                <input type="number" class="form-control inline" style="width: 130px;" id="area" name="area" onblur="mathVIp()"  value="<{if $row}><{$row['ahr_area']}><{/if}>"  style="width:80px;">
-                                                                <span class="palceholder">㎡</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label"><font color="red">*</font>结构：</label>
-                                                            <div class="control-group">
-                                                                <select id="fitmentType" name="fitmentType" class="form-control inline" style="width: 130px;">
-                                                                    <{foreach $fitmentType as $key => $val}>
-                                                                <option <{if $row && $row['ahr_fitment'] eq $val}>selected<{/if}> value="<{$val}>"><{$val}></option>
-                                                                    <{/foreach}>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="control-label"><font color="red">*</font>建造时间：</label>
-                                                            <div class="control-group">
-                                                                <input type="text" class="form-control" style="width: 200px" name="build_time" id="build_time" value="<{if $row}><{$row['ahr_build_time']}><{/if}>"  placeholder="请填写建造时间"onchange="">
-                                                            </div>
-                                                        </div>
-                                                        <{else}>
-                                                        <div class="form-group">
-                                                            <label class="control-label"><font color="red">*</font>房屋类型：</label>
-                                                            <div class="control-group">
-                                                                <input type="number" class="form-control inline" style="width: 130px;" id="home_num" name="home_num" onblur="mathVIp()"  value="<{if $row}><{$row['ahr_home_num']}><{/if}>"  style="width:80px;">
-                                                                <span class="palceholder">室</span>
-                                                                <input type="number" class="form-control inline" style="width: 130px;margin-left: -15px" id="hall_num" name="hall_num" onblur="mathVIp()"   value="<{if $row}><{$row['ahr_hall_num']}><{/if}>"  style="width:80px;">
-                                                                <span class="palceholder">厅</span>
-                                                                <input type="number" class="form-control inline" style="width: 130px;margin-left: -15px" id="toilet_num" name="toilet_num" onblur="mathVIp()"   value="<{if $row}><{$row['ahr_toilet_num']}><{/if}>"  style="width:80px;">
-                                                                <span class="palceholder">卫</span>
-                                                                <input type="number" class="form-control inline" style="width: 130px;margin-left: -15px" id="area" name="area" onblur="mathVIp()"  value="<{if $row}><{$row['ahr_area']}><{/if}>"  style="width:80px;">
-                                                                <span class="palceholder">㎡</span>
-                                                            </div>
-                                                        </div>
 
-                                                        <div class="form-group">
-                                                            <label class="control-label"><font color="red">*</font>房源类型：</label>
-                                                            <div class="control-group">
-                                                                <select id="type" name="type" class="form-control inline" style="width: 130px">
-                                                                    <{foreach $type as $key => $val}>
-                                                                    <option <{if $row && $row['ahr_type'] eq $val}>selected<{/if}> value="<{$val}>"><{$val}></option>
-                                                                    <{/foreach}>
-                                                                </select>
-                                                                <select id="fitmentType" name="fitmentType" class="form-control inline" style="width: 130px;margin-left: 0">
-                                                                    <{foreach $fitmentType as $key => $val}>
-                                                                    <option <{if $row && $row['ahr_fitment'] eq $val}>selected<{/if}> value="<{$val}>"><{$val}></option>
-                                                                    <{/foreach}>
-                                                                </select>
-                                                                <select id="orientation" name="orientation" class="form-control inline" style="width: 130px;margin-left: 0">
-                                                                    <{foreach $orientation as $key => $val}>
-                                                                    <option <{if $row && $row['ahr_orientation'] eq $val}>selected<{/if}> value="<{$val}>"><{$val}></option>
-                                                                    <{/foreach}>
-                                                                </select>
-                                                            </div>
-                                                        </div>
 
-                                                        <div class="form-group">
-                                                            <label class="control-label"><font color="red">*</font>楼层：</label>
-                                                            <div class="control-group">
-                                                                <span class="left-palceholder"></span>
-                                                                <input type="text" class="form-control inline left-inline" id="floor" name="floor" onblur="mathVIp()"  value="<{if $row}><{$row['ahr_floor']}><{/if}>"  style="width:130px;margin-left: 17px">
-                                                                <span class="palceholder">层</span>
-                                                                <span class="left-palceholder" style="right: 0">共</span>
-                                                                <input type="text" class="form-control inline left-inline" id="all_floor" name="all_floor" onblur="mathVIp()"  value="<{if $row}><{$row['ahr_all_floor']}><{/if}>"  style="width:130px;margin-left: -35px">
-                                                                <span class="palceholder">层</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="control-label"><font color="red">*</font>建造时间：</label>
-                                                            <div class="control-group">
-                                                                <input type="text" class="form-control" style="width: 200px" name="build_time" id="build_time" onclick="chooseDate()" value="<{if $row}><{$row['ahr_build_time']}><{/if}>"  placeholder="请选择建造时间"onchange="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group" style="width: 420px;display: inline-block;" id="sale">
-                                                            <label class="control-label"><font color="red">*</font>价格：</label>
-                                                            <div class="control-group">
-                                                                <input type="text" class="form-control inline" id="salePrice" name="salePrice"  value="<{if $row}><{$row['ahr_price']}><{/if}>"  style="width:200px;padding-right: 40px;">
-                                                                <span class="palceholder" style="left: -45px">万元</span>
-                                                            </div>
-                                                        </div>
                                                         <div class="form-group" style="width: 420px;display: none;" id="rent">
                                                             <label class="control-label"><font color="red">*</font>租金：</label>
                                                             <div class="control-group">
@@ -258,29 +110,37 @@
                                                                 <span class="palceholder" style="left: -45px">元/月</span>
                                                             </div>
                                                         </div>
-                                                        <{/if}>
                                                         <div class="form-group">
                                                             <label class="control-label"><font color="red">*</font>详细地址：</label>
 
                                                             <div class="control-group" style="float: left;width: 63%;margin: 0;">
                                                                 <select id="province" name="province" class="form-control inline" onchange="changeWxappProvince()" style="width: 29%;display: inline-block">
-                                                                    <option value="">选择省会</option>
-                                                                    <{foreach $zone as $key => $val}>
-                                                                    <option <{if $row && $row['ahr_province'] == $key}>selected<{/if}> value="<{$key}>"><{$val}></option>
+                                                                    <option value="0">省份</option>
+                                                                    <{foreach $province as $val}>
+                                                                <option value="<{$val['region_id']}>" <{if $row['ahr_province'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
                                                                     <{/foreach}>
                                                                 </select>
-                                                                <select name="city" id="city" class="form-control inline" onchange="changeWxappCity()" style="width: 29%;display: inline-block">
-                                                                    <option value="">选择城市</option>
-
+                                                                <select name="city" id="city" class="form-control inline"  style="width: 29%;display: inline-block">
+                                                                    <option value="0">城市</option>
+                                                                    <{foreach $city as $val}>
+                                                                <option value="<{$val['region_id']}>" <{if $row['ahr_city'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
+                                                                    <{/foreach}>
                                                                 </select>
                                                                 <select id="zone" name="zone" class="form-control inline" style="width: 29%;display: inline-block">
-                                                                    <option value="">选择地区</option>
+                                                                    <option value="0">地区</option>
+                                                                    <{foreach $area as $val}>
+                                                                <option value="<{$val['region_id']}>" <{if $row['ahr_zone'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
+                                                                    <{/foreach}>
+
+                                                                </select>
+                                                                <select id="park" name="park" class="form-control inline" style="width: 29%;display: inline-block">
+                                                                    <option value="0">园区</option>
+                                                                    <{foreach $park as $val}>
+                                                                <option value="<{$val['region_id']}>" <{if $row['ahr_park'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
+                                                                    <{/foreach}>
 
                                                                 </select>
                                                                 <input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;margin-top: 20px" placeholder="请填写具体地址" value="<{if $row}><{$row['ahr_address']}><{/if}>">
-                                                                <{if $curr_shop['s_id'] neq 12253}>
-                                                                <input type="text" class="form-control" id="community" style="width: 43%;display: inline-block;margin-left: 5px;margin-top: 20px" name="community" placeholder="所在小区" required="required" value="<{if $row}><{$row['ahr_community']}><{/if}>">
-                                                                <{/if}>
                                                             </div>
 
                                                             <div class="control-group col-sm-2 text-left" style="margin-left: 0;margin-top: 54px">
@@ -335,7 +195,7 @@
                                                     </div>
                                                     <div class="group-info">
                                                         <div class="form-group">
-                                                            <h3 class="lighter block green">房源图片</h3>
+                                                            <h3 class="lighter block green">图片</h3>
                                                             <div id="slide-img" class="pic-box" style="display:inline-block">
                                                                 <{foreach $slide as $key=>$val}>
                                                                 <p>
@@ -355,14 +215,15 @@
                                             <div class="info-group-box">
                                                 <div class="info-group-inner">
                                                     <div class="group-title">
-                                                        <span>房源描述</span>
+                                                        <span>简介</span>
                                                     </div>
                                                     <div class="group-info" style="padding-left: 0">
                                                             <div class="control-group" style="margin-left: 0">
-                                                                <textarea class="form-control" style="width:100%;height:200px;" id = "detail" name="detail" placeholder="房源描述"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['ahr_content']}><{$row['ahr_content']}><{/if}></textarea>
+                                                                <textarea class="form-control" style="width:100%;height:200px;" id = "detail" name="detail" placeholder="描述"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['ahr_content']}><{$row['ahr_content']}><{/if}></textarea>
                                                             </div>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </form>
@@ -403,20 +264,73 @@
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
-    var province = '<{$row['ahr_province']}>';
-    var city = '<{$row['ahr_city']}>';
-    var saleType = '<{$row['ahr_sale_type']}>';
-    $(function(){
-        initCityRegion(province,'city','<{$row['ahr_city']}>');
-        initWxappRegion(city,'zone','<{$row['ahr_zone']}>');
-        if(saleType == 1){
-            $('#rent').hide();
-            $('#sale').show();
-        }else{
-            $('#rent').show();
-            $('#sale').hide();
+    $('#pro').change(function(){
+        $("#city").html('');
+        $("#area").html('');
+        var p_ro = $(this).val();
+        //console.log(p_ro);return;
+        var data = {
+            'pro' : p_ro,
         }
+        $.ajax({
+            url:'/wxapp/park/getcity',
+            type:'post',
+            data:data,
+            dataType:'json',
+            success: function(ret){
+                var option="<option value=''>地市</option>";
+                $.each(ret,function(k,v){
+                    option += '<option value=' + v['region_id'] + '>' + v['region_name'] + '</option>'
+                });
+                $("#city").html(option);
+            }
+        })
 
+    });
+    $('#city').change(function(){
+        $("#zone").html('');
+        var city = $(this).val();
+        var data = {
+            'city' : city,
+        }
+        $.ajax({
+            url:'/wxapp/park/getarea',
+            type:'post',
+            data:data,
+            dataType:'json',
+            success: function(ret){
+                var option="<option value='0'>区域</option>";
+                $.each(ret,function(k,v){
+                    option += '<option value=' + v['region_id'] + '>' + v['region_name'] + '</option>'
+                });
+                $("#zone").html(option);
+            }
+        })
+
+    });
+
+    $('#zone').change(function(){
+        $("#park").html('');
+        var zone = $(this).val();
+        var data = {
+            'zone' : zone,
+        }
+        $.ajax({
+            url:'/wxapp/park/getpark',
+            type:'post',
+            data:data,
+            dataType:'json',
+            success: function(ret){
+                var option="<option value='0'>园区</option>";
+                $.each(ret,function(k,v){
+                    option += '<option value=' + v['ap_id'] + '>' + v['ap_name'] + '</option>'
+                });
+                $("#park").html(option);
+            }
+        })
+
+    });
+    $(function(){
         $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
             /*  去掉商品类目不再做验证*/
             /*

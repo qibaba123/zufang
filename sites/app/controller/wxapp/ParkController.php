@@ -47,7 +47,19 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
 
     //新增或编辑工位
     public function addHouseAction(){
-
+        $id  = $this->request->getIntParam('id');
+        $address_model = new App_Model_Address_MysqlAddressCoreStorage();
+        $this->output['province'] = $address_model->get_province();
+        if($id){
+            $resource_model = new App_Model_Resources_MysqlResourcesStorage();
+            $row            = $resource_model->getRowById($id);
+            $city           = $address_model->get_city_by_parent($row['ahr_province']);
+            $this->output['city'] = $city;
+            $area = $address_model->get_area_by_parent($row['ahr_city']);
+            $this->output['area'] = $area;
+            $park_model = new App_Model_Park_MysqlAddressParkStorage();
+            $this->output['park'] = $park_model->get_park_by_parent($row['ahr_park']);
+        }
         $this->buildBreadcrumbs(array(
             array('title' => '编辑工位', 'link' => '#'),
         ));
@@ -243,6 +255,12 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $area = $area_model->get_area_by_parent($city);
         echo json_encode($area);
     }
+    // 根据区获得园区
+    public function getparkAction(){
+        $zone = $this->request->getParam('zone');
+        $park_model = new App_Model_Park_MysqlAddressParkStorage();
+        $park = $park_model->get_park_by_parent($zone);
 
-
+        echo json_encode($park);
+    }
 }

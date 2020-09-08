@@ -317,7 +317,7 @@
                                 <td><{$val['ahr_price']}>/天</td>
                                 <td><img src="<{$val['ahr_cover']}>" alt="" style="width: 150px;"></td>
                                 <td><{$val['ahr_stock']}></td>
-                                <td><{$val['ahr_province']}> - <{$val['ahr_city']}> - <{$val['ahr_zone']}> - <{$val['ahr_park']}></td>
+                                <td><{$val['ahr_province_name']}> - <{$val['ahr_city_name']}> - <{$val['ahr_zone_name']}> - <{$val['ahr_park_name']}></td>
                                 <td><{$val['ahr_weight']}></td>
                                 <td><{date('Y-m-d H:i',$val['ahr_create_time'])}></td>
                                 <td>
@@ -325,14 +325,13 @@
                                         <a href="/wxapp/park/addHouse/?id=<{$val['ahr_id']}>" >编辑</a> -
                                         <a href="javascript:;" id="del_<{$val['ahr_id']}>" class="btn-del" data-gid="<{$val['ahr_id']}>">删除</a>
                                     </p>
-
                                 </td>
                             </tr>
                             <{/foreach}>
                             <tr>
                                 <td colspan="4">
-                                    <span class="btn btn-xs btn-name btn-multi-change btn-primary" data-target="#changeModal" data-toggle="modal">批量修改</span>
-                                    <span class="btn btn-xs btn-name btn-multi-delete btn-default" >批量删除</span></td>
+                                    <!--<span class="btn btn-xs btn-name btn-multi-change btn-primary" data-target="#changeModal" data-toggle="modal">批量修改</span>
+                                    <span class="btn btn-xs btn-name btn-multi-delete btn-default" >批量删除</span></td>-->
                                 <td colspan="10" style="text-align:right"><{$paginator}></td>
                             </tr>
                         </tbody>
