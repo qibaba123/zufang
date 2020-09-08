@@ -106,13 +106,11 @@
         <div class="form-group ">
             <label for="">服务类型：</label>
             <div class="control-group">
-                <div class="col-sm-8">
                     <select class="form-control" name="type" id="type" >
                         <option value="0">请选择服务类型</option>
                         <option value="1" <{if $row['es_type'] == 1}>selected<{/if}>>企业服务商品</option>
                         <option value="2" <{if $row['es_type'] == 2}>selected<{/if}>>企业服务文章</option>
                     </select>
-                </div>
             </div>
         </div>
         <div class="form-group priceshow" <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
