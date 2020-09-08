@@ -322,7 +322,7 @@
                                 <td><{date('Y-m-d H:i',$val['ahr_create_time'])}></td>
                                 <td>
                                     <p>
-                                        <a href="/wxapp/resources/add/?id=<{$val['ahr_id']}>" >编辑</a> -
+                                        <a href="/wxapp/park/addHouse/?id=<{$val['ahr_id']}>" >编辑</a> -
                                         <a href="javascript:;" id="del_<{$val['ahr_id']}>" class="btn-del" data-gid="<{$val['ahr_id']}>">删除</a>
                                     </p>
 
