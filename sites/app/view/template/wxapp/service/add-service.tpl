@@ -88,7 +88,7 @@
         <div class="form-group">
             <label for="">LOGO<font color="red">*</font></label>
             <div class="control-group">
-                <div class="cropper-box" data-width="250" data-height="250" style="height:100%;">
+                <div class="cropper-box" data-width="250" data-height="250" style="height:25%;">
                         <img onclick="toUpload(this)" data-limit="1" data-width="250" data-height="250" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;">
                         <input type="hidden" id="logo"  class="avatar-field bg-img" name="logo" value="<{if $row && $row['es_logo']}><{$row['es_logo']}><{/if}>"/>
 
@@ -97,7 +97,7 @@
         <div class="form-group">
             <label for="">封面<font color="red">*</font></label>
             <div class="control-group">
-                    <div class="cropper-box" data-width="710" data-height="250" style="height:100%;">
+                    <div class="cropper-box" data-width="710" data-height="250" style="height:25%;">
                         <img onclick="toUpload(this)" data-limit="1" data-width="750" data-height="420" data-dom-id="upload-cover" id="upload-cover"  src="<{if $row && $row['es_cover']}><{$row['es_cover']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;">
                         <input type="hidden" id="cover"  class="avatar-field bg-img" name="cover" value="<{if $row && $row['es_cover']}><{$row['es_cover']}><{/if}>"/>
                     </div>
@@ -138,7 +138,7 @@
                                                                  <{$row['es_content']}>
                                                          </textarea>
             <input type="hidden" name="sub_dir" id="sub-dir" value="default" />
-            <input type="hidden" name="ke_textarea_name" value="detail" />
+            <input type="hidden" name="ke_textarea_name" value="content" />
         </div>
     </div>
     </div>
