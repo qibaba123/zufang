@@ -199,9 +199,9 @@
                                                             <div id="slide-img" class="pic-box" style="display:inline-block">
                                                                 <{foreach $slide as $key=>$val}>
                                                                 <p>
-                                                                    <img class="img-thumbnail col" layer-src="/<{$val['ahrs_path']}>"  layer-pid="" src="/<{$val['ahrs_path']}>" >
+                                                                    <img class="img-thumbnail col" layer-src="<{$val['ahrs_path']}>"  layer-pid="" src="<{$val['ahrs_path']}>" >
                                                                     <span class="delimg-btn">×</span>
-                                                                    <input type="hidden" id="slide_<{$key}>" name="slide_<{$key}>" value="/<{$val['ahrs_path']}>">
+                                                                    <input type="hidden" id="slide_<{$key}>" name="slide_<{$key}>" value="<{$val['ahrs_path']}>">
                                                                     <input type="hidden" id="slide_id_<{$key}>" name="slide_id_<{$key}>" value="<{$val['ahrs_id']}>">
                                                                 </p>
                                                                 <{/foreach}>

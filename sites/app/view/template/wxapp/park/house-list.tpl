@@ -263,7 +263,7 @@
         </div>
         <div class="arrow"></div>
     </div>
-    <a href="/wxapp/resources/add" class="btn btn-green btn-xs"><i class="icon-plus bigger-80"></i> 新增</a>
+    <a href="/wxapp/park/addHouse" class="btn btn-green btn-xs"><i class="icon-plus bigger-80"></i> 新增</a>
 
     <!--<a class="btn btn-green btn-xs" style="padding-top: 2px;padding-bottom: 2px;" data-toggle="modal" data-target="#advModal"><i class="icon-plus bigger-80"></i>广告位设置</a>-->
     <!--<a class="add-cost btn btn-primary btn-xs" href="#" data-toggle="modal" data-target="#cfgModal"  data-id="" data-weight="" >发布设置</a>
