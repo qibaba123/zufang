@@ -13,7 +13,55 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
     public function serviceListAction(){
         $page  = $this->request->getIntParam('page');
         $index = $page * $this->count;
+        $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $list  = $service_model->getList(array(),$index,$this->count,array('es_weight'=>'DESC'));
+        $this->output['list'] = $list;
+        $this->displaySmarty('wxapp/service/service-list.tpl');
     }
+
+    //新增或编辑企业服务
+    public function addServiceAction(){
+        $id = $this->request->getIntParam('id');
+        if($id){
+            $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+            $row           = $service_model->getRowById($id);
+            $this->output['row'] = $row;
+        }
+        $this->renderCropTool('/wxapp/index/uploadImg');
+        $this->buildBreadcrumbs(array(
+            array('title' => '编辑企业服务', 'link' => '#'),
+        ));
+        $this->displaySmarty('wxapp/service/add-service.tpl');
+
+    }
+
+
+    //保存服务
+    public function saveServiceAction(){
+        $id   = $this->request->getIntParam('id');
+        $data['es_name']     = $this->request->getStrParam('name');
+        $data['es_weight']   = $this->request->getIntParam('weight');
+        $data['es_type']     = $this->request->getIntParam('type');
+        $data['es_logo']     = $this->request->getStrParam('logo');
+        $data['es_cover']    = $this->request->getStrParam('cover');
+        $data['es_brief']    = $this->request->getStrParam('brief');
+        $data['es_content']  = $this->request->getStrParam('content');
+        $data['es_price']    = $this->request->getFloatParam('price');
+        $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $data['es_create_time'] = time();
+        if($id){
+            $ret = $service_model->updateById($data,$id);
+        }else{
+            $data['es_s_id'] = $this->curr_sid;
+            $ret = $service_model->insertValue($data);
+        }
+        if($ret){
+            $this->displayJsonSuccess(array(),true,'保存成功');
+        }else{
+            $this->displayJsonError('保存失败');
+        }
+    }
+
 
 
 
