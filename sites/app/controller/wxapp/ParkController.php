@@ -16,6 +16,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $this->buildBreadcrumbs(array(
             array('title' => '工位列表', 'link' => '#'),
         ));
+        $this->output['type'] = 'stationList';
         $this->displaySmarty('wxapp/park/house-list.tpl');
     }
 
@@ -27,6 +28,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $this->buildBreadcrumbs(array(
             array('title' => '办公室列表', 'link' => '#'),
         ));
+        $this->output['type'] = 'officeList';
         $this->displaySmarty('wxapp/park/house-list.tpl');
     }
 

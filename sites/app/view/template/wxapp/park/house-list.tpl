@@ -234,18 +234,7 @@
     }
 
 </style>
-<div class="ui-popover ui-popover-select left-center" style="top:100px;">
-    <div class="ui-popover-inner">
-        <span style="display: inline-block;width: 100%;text-align: center">更改绑定会员</span>
-        <{include file="../layer/ajax-select-input-single.tpl"}>
-        <input type="hidden" id="hid_ahrId" value="0">
-        <div style="text-align: center">
-            <a class="ui-btn ui-btn-primary js-save my-ui-btn" href="javascript:;">确定</a>
-            <a class="ui-btn js-cancel my-ui-btn" href="javascript:;" onclick="optshide(this)">取消</a>
-        </div>
-    </div>
-    <div class="arrow"></div>
-</div>
+<div class="ui-popover ui-popover-select left-center" style="top:100px;"></div>
 <div  id="content-con" >
     <!-- 推广商品弹出框 -->
     <div class="ui-popover ui-popover-tuiguang left-center">
@@ -274,76 +263,23 @@
         </div>
         <div class="arrow"></div>
     </div>
-    <!-- 复制链接弹出框 -->
-    <div class="ui-popover ui-popover-link left-center" style="top:100px;">
-        <div class="ui-popover-inner">
-            <div class="input-group copy-div">
-                <input type="text" class="form-control" id="copy" value="" readonly>
-                <span class="input-group-btn">
-                    <a href="#" class="btn btn-white copy_input" id="copycardid" type="button" data-clipboard-target="copy" style="border-left:0;outline:none;padding-left:0;padding-right:0;width:60px;text-align:center">复制</a>
-                </span>
-            </div>
-        </div>
-        <div class="arrow"></div>
-    </div>
     <a href="/wxapp/resources/add" class="btn btn-green btn-xs"><i class="icon-plus bigger-80"></i> 新增</a>
 
     <!--<a class="btn btn-green btn-xs" style="padding-top: 2px;padding-bottom: 2px;" data-toggle="modal" data-target="#advModal"><i class="icon-plus bigger-80"></i>广告位设置</a>-->
-    <a class="add-cost btn btn-primary btn-xs" href="#" data-toggle="modal" data-target="#cfgModal"  data-id="" data-weight="" >发布设置</a>
-    <a href="javascript:;" class="btn btn-green btn-xs btn-excel" ><i class="icon-download"></i>房源导出</a>
+    <!--<a class="add-cost btn btn-primary btn-xs" href="#" data-toggle="modal" data-target="#cfgModal"  data-id="" data-weight="" >发布设置</a>
+    <a href="javascript:;" class="btn btn-green btn-xs btn-excel" ><i class="icon-download"></i>房源导出</a>-->
     <div class="page-header search-box">
         <div class="col-sm-12">
-            <form action="/wxapp/resources/index" method="get" class="form-inline">
+            <form action="/wxapp/park/<{$type}>" method="get" class="form-inline">
                 <div class="col-xs-11 form-group-box">
                     <div class="form-container">
                         <div class="form-group">
                             <div class="input-group">
-                                <div class="input-group-addon">标题</div>
-                                <input type="text" class="form-control" name="title" value="<{$title}>" placeholder="商品名称">
+                                <div class="input-group-addon">名称</div>
+                                <input type="text" class="form-control" name="title" value="<{$title}>" placeholder="名称">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon" style="height:34px;"><{if $curr_shop['s_id'] eq 12253}>地址<{else}>小区<{/if}></div>
-                                <input type="text" class="form-control" name="coumunity" value="<{$coumunity}>" <{if $curr_shop['s_id'] neq 12253}>placeholder="小区名称"<{/if}> >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon" style="height:34px;">推荐</div>
-                                <select name="recommend" class="form-control" >
-                                    <option value="-1" <{if !$recommend}>selected<{/if}>>全部</option>
-                                    <option value="0" <{if $recommend == 0}>selected<{/if}>>未推荐</option>
-                                    <option value="1" <{if $recommend == 1}>selected<{/if}>>首页</option>
-                                    <option value="2" <{if $recommend == 2}>selected<{/if}>>分类页</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon" style="height:34px;">出售类型</div>
-                                <select name="saleType" id="saleType" class="form-control" >
-                                    <option value="0" <{if !$saleType}>selected<{/if}>>全部</option>
-                                    <option value="1" <{if $saleType == 1}>selected<{/if}>>出售</option>
-                                    <option value="2" <{if $saleType == 2}>selected<{/if}>>出租</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon" style="height:34px;">房源类型</div>
-                                <select name="resourceSource" id="resourceSource" class="form-control">
-                                    <option value="0" <{if !$resourceSource}>selected<{/if}>>全部</option>
-                                    <option value="1" <{if $resourceSource == 1}>selected<{/if}>>个人房源</option>
-                                    <option value="2" <{if $resourceSource == 2}>selected<{/if}>>中介房源</option>
-                                    <{if $curr_shop['s_id'] eq 12253}>
-                                    <option value="3" <{if $resourceSource == 3}>selected<{/if}>>闲置资源</option>
-                                    <option value="4" <{if $resourceSource == 4}>selected<{/if}>>闲置农房</option>
-                                    <option value="5" <{if $resourceSource == 5}>selected<{/if}>>闲置古厝</option>
-                                    <{/if}>
-                                </select>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="col-xs-1 pull-right search-btn">
@@ -359,37 +295,12 @@
                     <table class="table table-striped table-hover table-avatar">
                         <thead>
                             <tr>
-                                <th class="center" style='width: 50px;min-width: 50px;'>
-                                    <label>
-                                        <input type="checkbox" class="ace"  id="checkBox" onclick="select_all_by_name('ids','checkBox')" />
-                                        <span class="lbl"></span>
-                                    </label>
-                                </th>
-                                <th>标题</th>
-                                <th>出售类型</th>
-                                <th>房源类型</th>
-                                <th>用户信息</th>
-                                <{if $curr_shop['s_id'] eq 12253}>
-                                <th>地址</th>
-                                <th>图片</th>
-                                <th>面积</th>
-                                <th>结构</th>
-                                <th>建造年份</th>
-                                <th>状态</th>
-                                <{else}>
-                                <th>小区</th>
-                                <th>图片</th>
-                                <th>面积</th>
-                                <th>房型</th>
-                                <th>朝向</th>
-                                <th>楼层</th>
-                                <{/if}>
-
-                                <{if $applet == 51}>
-                                <th>查看价格</th>
-                                <{/if}>
-                                <th>是否置顶</th>
-                                <th>置顶到期时间</th>
+                                <th>名称</th>
+                                <th>售价</th>
+                                <th>封面</th>
+                                <th>库存</th>
+                                <th>所属区域</th>
+                                <th>权重</th>
                                 <th>添加时间</th>
                                 <th>操作</th>
                             </tr>
@@ -401,75 +312,20 @@
                         <tbody>
                         <{foreach $list as $val}>
                             <tr id="tr_<{$val['ahr_id']}>">
-                                <!--<td><{if $val['ahr_status']==1}>首页推荐<{/if}><{if $val['ahr_status']==2}>分类页推荐<{/if}></td>-->
-                                <td class="center" style='width: 50px;min-width: 50px;'>
-                                    <label>
-                                        <input type="checkbox" class="ace" name="ids" value="<{$val['ahr_id']}>"/>
-                                        <span class="lbl"></span>
-                                    </label>
-                                </td>
 
                                 <td><{$val['ahr_title']}></td>
-                                <td><{if $val['ahr_sale_type']==1}>出售<{else}>出租<{/if}></td>
-                                <td><{$houseType[$val['ahr_resource_source']]}></td>
-                                <td>
-                                    用户编号：<{$val['m_show_id']}><br>
-                                    <{$val['m_nickname']}>
-                                </td>
-                                <{if $curr_shop['s_id'] eq 12253}>
-                                <td><{$val['ahr_address']}></td>
-                                <{else}>
-                                <td><{$val['ahr_community']}></td>
-                                <{/if}>
-                                <td><img src="<{$val['ahr_cover']}>" alt="" style="width: 100px"/></td>
-                                <td><{$val['ahr_area']}>㎡</td>
-                                <{if $curr_shop['s_id'] eq 12253}>
-                                <td><{$val['ahr_fitment']}></td>
-                                <td><{$val['ahr_build_time']}></td>
-                                <td><{if $val['ahr_status'] lt 4}><span style="color:green">通过</span><{else}><{if $val['ahr_status'] eq 4}>待审核<{else}><span style="color:red">未通过</span><{/if}><{/if}></td>
-                                <{else}>
-                                <td><{$val['ahr_home_num']}>室<{$val['ahr_hall_num']}>厅<{$val['ahr_toilet_num']}>卫</td>
-                                <td><{$val['ahr_orientation']}></td>
-                                <td><{$val['ahr_floor']}>楼/共<{$val['ahr_all_floor']}>层</td>
-                                <{/if}>
-
-                                <{if $applet == 51}>
-                                <td><{$val['ahr_fee']}></td>
-                                <{/if}>
-                                <td>
-                                    <{if $val['ahr_is_top'] == 1 && $val['ahr_istop_expiration'] > time()}>
-                                    <span style="color:green">已置顶</span>
-                                    <{else}>
-                                    未置顶
-                                    <{/if}>
-                                </td>
-                                <td>
-                                    <{if $val['ahr_istop_expiration']}>
-                                    <{date('Y-m-d H:i:s',$val['ahr_istop_expiration'])}>
-                                    <{/if}>
-                                </td>
-                                <td><{date('Y-m-d H:i:s',$val['ahr_create_time'])}></td>
+                                <td><{$val['ahr_price']}>/天</td>
+                                <td><img src="<{$val['ahr_cover']}>" alt="" style="width: 150px;"></td>
+                                <td><{$val['ahr_stock']}></td>
+                                <td><{$val['ahr_province']}> - <{$val['ahr_city']}> - <{$val['ahr_zone']}> - <{$val['ahr_park']}></td>
+                                <td><{$val['ahr_weight']}></td>
+                                <td><{date('Y-m-d H:i',$val['ahr_create_time'])}></td>
                                 <td>
                                     <p>
                                         <a href="/wxapp/resources/add/?id=<{$val['ahr_id']}>" >编辑</a> -
-                                        <a class="change-status" href="#" data-toggle="modal" data-target="#myModal"  data-id="<{$val['ahr_id']}>" data-status = "<{$val['ahr_status']}>">设置置顶</a> -
-                                        <{if $curr_shop['s_id'] eq 12253}><a class="change-auth-status" href="#" data-toggle="modal" data-target="#statusModal"  data-id="<{$val['ahr_id']}>" data-status = "<{$val['ahr_status']}>">审核</a> -<{/if}>
-                                        <a href="javascript:;" class="refresh-time" data-id="<{$val['ahr_id']}>">刷新时间</a>
-                                        <{if $applet == 51}>
-                                         - <a class="change-price" href="#" data-id="<{$val['ahr_id']}>">查看价格</a>
-                                        <a class="change-recommend" href="#" data-toggle="modal" data-target="#recommendModal"  data-id="<{$val['ahr_id']}>" data-status = "<{$val['ahr_recommend']}>">房源标签</a>
-                                        <{/if}>
-                                    </p>
-                                    <p>
-                                        <a href="javascript:;" onclick="pushHouse('<{$val['ahr_id']}>')" >推送</a> -
-                                        <a href="javascript:;" onclick="showPreview(<{$val['ahr_id']}>)">推送预览</a> -
-                                        <a href="/wxapp/tplpreview/pushHistory?type=house&id=<{$val['ahr_id']}>" >推送记录</a>
-                                    </p>
-                                    <p>
-                                        <a href="javascript:;" class="btn-tuiguang" data-share="<{$val['ahr_qrcode']}>" data-id="<{$val['ahr_id']}>">房源二维码</a> -
                                         <a href="javascript:;" id="del_<{$val['ahr_id']}>" class="btn-del" data-gid="<{$val['ahr_id']}>">删除</a>
-                                         - <a class="set-member" data-id="<{$val['ahr_id']}>" >绑定用户</a>
                                     </p>
+
                                 </td>
                             </tr>
                             <{/foreach}>
