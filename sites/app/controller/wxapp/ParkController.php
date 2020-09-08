@@ -67,6 +67,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $this->buildBreadcrumbs(array(
             array('title' => '编辑工位', 'link' => '#'),
         ));
+        $this->renderCropTool('/wxapp/index/uploadImg');
         $this->displaySmarty('wxapp/park/add-house.tpl');
     }
 
