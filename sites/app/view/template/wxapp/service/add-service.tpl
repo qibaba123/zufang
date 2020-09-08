@@ -142,7 +142,6 @@
         </div>
     </div>
     </div>
-    </div>
 <div class="alert setting-save" style="text-align: center;margin-top:100px;">
     <button class="btn btn-primary btn-save">保存</button>
 </div>
@@ -154,6 +153,8 @@
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=099aa80c85be20b87ecf7fd6ad75bdc2"></script>
 
 <script type="text/javascript">
+
+
     $('#type').change(function(){
         var type = $(this).val();
         if(type == 1){
@@ -220,92 +221,5 @@
         })
     });
 
-    //管理商品
-    $('.btn-add-shop').on('click',function(){
-        $('#shop-tr').empty();
-        $('#footer-page').empty();
-        var type = $(this).data('mk');
-
-        $('.th-weight').hide();
-
-        $('#shop-modal').modal('show');
-
-        //重新获取数据
-        $('#mkType').val(type) ;
-        $('#currId').val($(this).data('id')) ;
-        currPage = 1 ;
-        fetchShopPageData(currPage);
-    });
-
-    function fetchShopPageData(page){
-        currPage = page;
-        var index = layer.load(10, {
-            shade: [0.6,'#666']
-        });
-        var data = {
-            'type'  :  $('#mkType').val() ,
-            'id'    :  $('#currId').val()  ,
-            'page'  : page,
-            'keyword': $('#keyword').val()
-        };
-        $.ajax({
-            'type'  : 'post',
-            'url'   : '/wxapp/city/selectShop',
-            'data'  : data,
-            'dataType' : 'json',
-            'success'   : function(ret){
-                layer.close(index);
-                if(ret.ec == 200){
-                    fetchShopHtml(ret.list);
-                    $('#footer-page').html(ret.pageHtml)
-                }
-            }
-        });
-    }
-
-    function fetchShopHtml(data){
-        var html = '';
-        for(var i=0 ; i < data.length ; i++){
-            html += '<tr id="goods_tr_'+data[i].acs_id+'">';
-            html += '<td><img src="'+data[i].acs_cover+'"/></td>';
-            html += '<td style="text-align:left"><p class="g-name">'+data[i].acs_name+'</p></td>';
-            html += '<td><a href="javascript:;" class="btn btn-xs btn-info deal-goods" data-sid="'+data[i].acs_id+'" data-name="'+data[i].acs_name+'" onclick="dealShop( this )"> 选取 </td>';
-            html += '</tr>';
-        }
-        $('#shop-tr').html(html);
-    }
-
-    //选择关联商品
-    function dealShop(ele) {
-        var sid = $(ele).data('sid');
-        var gname = $(ele).data('name');
-        //防止重复关联
-        var num = $("[sid='" +sid+ "']").length;
-        if(num >= 1){
-            layer.msg('您已添加此商品，请勿重复');
-            return false;
-        }
-
-        $(".goods-none").remove();
-        var append_html = "<div class='goods-name goods-selected' sid='"+ sid +"' ><div class='goods-selected-name'>"+ gname +"</div><div class='goods-selected-button'><button class='btn btn-sm btn-default goods-button btn-remove' onclick='removeGoods(this)'>移除</button></div></div>";
-        $('.goods-selected-list').append(append_html);
-        $('#shop-modal').modal('hide');
-    }
-
-    //移除关联商品
-    function removeGoods(ele) {
-        $(ele).parent().parent().remove();
-        var num = $('.goods-selected').length;
-        if(num == 0){
-            var default_html = '<span class="goods-name goods-none" style="font-weight: bold;color: #38f">无推荐店铺 </span>';
-            $('.goods-selected-list').html(default_html);
-        }
-    }
-
-    //清空关联商品
-    $('.btn-remove-all').on('click',function () {
-        var default_html = '<span class="goods-name goods-none" style="font-weight: bold;color: #38f">无推荐店铺</span>';
-        $('.goods-selected-list').html(default_html);
-    });
 
 </script>
