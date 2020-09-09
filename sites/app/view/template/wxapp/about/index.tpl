@@ -251,9 +251,9 @@
                                                         <div class="form-group">
                                                             <label for="name" class="control-label">工作时间：</label>
                                                             <div class="control-group">
-                                                                <input type="text" style="width: 150px;display: inline" class="form-control business-time time" id="start_time"  placeholder="营业开始时间" value="<{$row['au_work_start_time']}>">
+                                                                <input type="text" style="width: 150px;display: inline" class="form-control business-time time" name="start_time" id="start_time"  placeholder="营业开始时间" value="<{$row['au_work_start_time']}>">
                                                                 至
-                                                                <input type="text" style="width: 150px;display: inline" class="form-control business-time time" id="end_time"  placeholder="营业结束时间" value="<{$row['au_work_end_time']}>">
+                                                                <input type="text" style="width: 150px;display: inline" class="form-control business-time time" id="end_time" name="end_time" placeholder="营业结束时间" value="<{$row['au_work_end_time']}>">
                                                             </div>
                                                         </div>
                                                         <div class="form-group ">
@@ -301,7 +301,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介(上)：</label>
                                                         <div class="control-group xs-hidden-info" >
-                                                            <textarea class="form-control" style="width:750px;height:200px;" id = "brief1" name="brief1" placeholder="简介1"  rows="20" style=" text-align: left; resize:vertical;" >
+                                                            <textarea class="form-control" style="width:750px;height:200px;" id = "brief1" name="brief1" placeholder="简介1"  rows="20" style=" text-align: left;" >
                                                                         <{if $row && $row['au_brief1']}><{$row['au_brief1']}><{/if}>
                                                                         </textarea>
                                                         </div>
@@ -316,8 +316,8 @@
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介(下)：</label>
                                                         <div class="control-group xs-hidden-info" >
-                                                            <textarea class="form-control" style="width:750px;height:200px;" id = "brief2" name="brief2" placeholder="简介2"  rows="20" style=" text-align: left; resize:vertical;" >
-                                                                        <{if $row && $row['au_brief1']}><{$row['au_brief1']}><{/if}>
+                                                            <textarea class="form-control" style="width:750px;height:200px;" id = "brief2" name="brief2" placeholder="简介2"  rows="20" style=" text-align: left; " >
+                                                                        <{if $row && $row['au_brief2']}><{$row['au_brief2']}><{/if}>
                                                             </textarea>
                                                         </div>
                                                     </div>
