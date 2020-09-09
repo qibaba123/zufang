@@ -301,7 +301,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介(上)：</label>
                                                         <div class="control-group xs-hidden-info" >
-                                                            <input class="form-control"  id = "brief1" name="brief1" placeholder="简介1" type="text" style="width:750px;height:200px;" value=" <{if $row && $row['au_brief1']}><{$row['au_brief1']}><{/if}>">
+                                                            <input class="form-control"  id = "brief1" name="brief1" placeholder="简介1" type="text" style="width:750px;height:50px;" value=" <{if $row && $row['au_brief1']}><{$row['au_brief1']}><{/if}>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -314,7 +314,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介(下)：</label>
                                                         <div class="control-group xs-hidden-info" >
-                                                            <input class="form-control"  id = "brief2" name="brief2" placeholder="简介2" type="text" style="width:750px;height:200px;" value=" <{if $row && $row['au_brief2']}><{$row['au_brief2']}><{/if}>">
+                                                            <input class="form-control"  id = "brief2" name="brief2" placeholder="简介2" type="text" style="width:750px;height:50px;" value=" <{if $row && $row['au_brief2']}><{$row['au_brief2']}><{/if}>">
                                                         </div>
                                                     </div>
                                                 </div>
