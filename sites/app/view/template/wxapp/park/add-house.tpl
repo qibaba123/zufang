@@ -494,8 +494,7 @@
             });
             infoWindow.open(map, [lng,lat]);
         }
-
-    });
+        
 
 
 
