@@ -67,21 +67,16 @@
         white-space: normal;
     }
 </style>
-
+<div id="content-con">
 <div  id="mainContent"  style="">
-    <a class=" btn btn-green btn-xs" href="/wxapp/service/addService" ><i class="icon-plus bigger-80"></i> 新增</a>
-    <!--<div style="margin: 10px 0;border: 1px solid #ccc;width: 45%">
-        <div class="input-group-addon" style="text-align: left;">导入题目信息</div>
-        <div style="padding: 10px 20px">
-            <form enctype="multipart/form-data" method="post" action="/wxapp/answer/excelSubject" >
-                <label>选择导入的excel<font color="red">*</font></label>
-                <div>
-                    <input type="file" id="files" name="files" style="float: left"/>
-                    <button type="submit" class="btn btn-green btn-sm">导入excel题目信息</button>
-                </div>
-            </form>
+
+    <div id="content-con" class="content-con">
+        <div class="opera-btn-box" style="display: flex;">
+            <a href="/wxapp/service/addService" class="btn btn-blue btn-sm"><i class="icon-plus bigger-80"></i> 新增</a>
         </div>
-    </div>-->
+        <div class="search-part-wrap">
+
+        </div>
 
     <div class="row">
         <div class="col-xs-12">
@@ -109,13 +104,14 @@
                                 </td>
                             </tr>
                         <{/foreach}>
-                        <tr><td colspan="5" style="text-align:right"><{$paginator}></td></tr>
+                        <tr><td colspan="6" style="text-align:right"><{$paginator}></td></tr>
                     </table>
                 </div>
             </div>
         </div><!-- /span -->
     </div><!-- /row -->
 </div>    <!-- PAGE CONTENT ENDS -->
+</div>
 <!-- 添加奖品弹出层 -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width: 550px;">
