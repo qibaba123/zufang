@@ -11,7 +11,7 @@ class App_Controller_Wxapp_AboutusController extends App_Controller_Wxapp_InitCo
 
     //关于我们
     public function indexAction(){
-        $about_model = new App_Model_Address_MysqlAboutUsStorage();
+        $about_model = new App_Model_aboutus_MysqlAboutUsStorage();
         $this->output['row'] = $about_model->getRow(array('au_id'=>1));
         $this->renderCropTool('/wxapp/index/uploadImg');
         $this->displaySmarty('wxapp/about/index.tpl');
@@ -32,7 +32,7 @@ class App_Controller_Wxapp_AboutusController extends App_Controller_Wxapp_InitCo
         $data['au_image2']     = $this->request->getStrParam('image2');
         $data['au_brirf1']     = $this->request->getStrParam('brirf1');
         $data['au_brirf2']     = $this->request->getStrParam('brirf2');
-        $about_model = new App_Model_Address_MysqlAboutUsStorage();
+        $about_model = new App_Model_aboutus_MysqlAboutUsStorage();
         $ret = $about_model->updateById($data,1);
         if($ret){
             $this->displayJsonSuccess(array(),true,'保存成功');
