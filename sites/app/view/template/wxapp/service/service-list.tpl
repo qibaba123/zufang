@@ -66,6 +66,9 @@
     td{
         white-space: normal;
     }
+    .layui-layer-shade2{
+        z-index: 1;
+    }
 </style>
 <div id="content-con">
 <div  id="mainContent"  style="">
