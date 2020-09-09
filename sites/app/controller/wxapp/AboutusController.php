@@ -30,8 +30,8 @@ class App_Controller_Wxapp_AboutusController extends App_Controller_Wxapp_InitCo
         $data['au_lat']     = $this->request->getFloatParam('lat');
         $data['au_image1']     = $this->request->getStrParam('image1');
         $data['au_image2']     = $this->request->getStrParam('image2');
-        $data['au_brirf1']     = $this->request->getStrParam('brirf1');
-        $data['au_brirf2']     = $this->request->getStrParam('brirf2');
+        $data['au_brief1']     = $this->request->getStrParam('brirf1');
+        $data['au_brief1']     = $this->request->getStrParam('brirf2');
         $about_model = new App_Model_aboutus_MysqlAboutUsStorage();
         $ret = $about_model->updateById($data,1);
         if($ret){
