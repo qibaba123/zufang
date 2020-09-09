@@ -324,7 +324,7 @@
                                             <div class="info-group-inner">
                                                 <div class="group-title" style="background-color: transparent!important;"></div>
                                                 <div class='group-info' style="margin-left: 0;padding-left: 0;background-color: transparent!important;">
-                                                    <button class="btn btn-primary saveData"  style="width: 150px;">保存</button>
+                                                    <button class="btn btn-primary saveData"  style="width: 150px;margin-left:280px">保存</button>
                                                 </div>
                                             </div>
                                         </div>
