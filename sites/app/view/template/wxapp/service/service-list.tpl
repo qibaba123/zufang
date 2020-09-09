@@ -66,9 +66,6 @@
     td{
         white-space: normal;
     }
-    .layui-layer-shade2{
-        z-index: 1;
-    }
 </style>
 <div id="content-con">
 <div  id="mainContent"  style="">
@@ -199,7 +196,6 @@
     }
 </style>
     <{include file="../img-upload-modal.tpl"}>
-<{$cropper['modal']}>
 <script type="text/javascript" src="/public/plugin/layer/layer.js"></script>
 <script type="text/javascript" src="/public/manage/controllers/custom.js"></script>
 <script type="text/javascript" src="/public/plugin/ZeroClip/ZeroClipboard.min.js"></script>
@@ -253,20 +249,7 @@
             });
         }
     }
-    //点击编辑或添加幻灯图
-    $('.add-slide').on('click',function () {
-        $("#type").val($(this).data('type'));
-        $('#hid_id').val($(this).data('id'));
-        $('#category').val($(this).data('category'));
-        $('#information').val($(this).data('information'));
-        $('#categoryOld').val($(this).data('category'));
-        $('#sort').val($(this).data('sort'));
-        $('#slide-path').val($(this).data('path'));
-        $('#default-cover').attr('src',$(this).data('path'));
-        var link = $(this).data('link');
-        $('#aiid').val(link);
-        //$('#gid').val($(this).data('link'));
-    });
+
 
     $('#save-slide').on('click',function(){
 //        var category = $('#category').val();
