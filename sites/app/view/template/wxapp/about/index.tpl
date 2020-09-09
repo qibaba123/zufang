@@ -377,18 +377,7 @@
     })
 
 
-
-    //图片上传完成时，图片加载事件绑定angularjs
-    app.directive('imageonload', function () {
-        return {
-            restrict: 'A', link: function (scope, element, attrs) {
-                element.bind('load', function () {
-                    scope.$apply(attrs.imageonload);
-                });
-            }
-        };
-    });
-
+    
 
     /**
      * 图片结果处理
