@@ -26,7 +26,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
 
     //保存顶部图片
     public function saveServiceImageAction(){
-        $data['s_servicr_image'] = $this->request->getStrParam('image');
+        $data['s_service_image'] = $this->request->getStrParam('image');
         $shop_model = new App_Model_Shop_MysqlShopCoreStorage($this->curr_sid);
         $ret = $shop_model->updateById($data,$this->curr_sid);
         if($ret){
