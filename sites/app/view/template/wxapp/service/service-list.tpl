@@ -74,6 +74,7 @@
         <div class="opera-btn-box" style="display: flex;">
             <a href="/wxapp/service/addService" class="btn btn-blue btn-sm"><i class="icon-plus bigger-80"></i> 新增</a>
         </div>
+        <button class="btn btn-blue btn-sm" style="margin-left: 20px;padding-bottom: 5px;" data-toggle="modal" data-target="#topModal"><i class="icon-plus bigger-80"></i>企业服务顶部图片</button>
         <div class="search-part-wrap">
 
         </div>
@@ -112,6 +113,44 @@
     </div><!-- /row -->
 </div>    <!-- PAGE CONTENT ENDS -->
 </div>
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="topModal" tabindex="-1" role="dialog" aria-labelledby="topModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 600px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        企业服务顶部图片
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <!--<div style="text-align: center;padding: 20px 0">
+                            <img onclick="toUpload(this)" data-limit="1" style="width: 80%" data-width="750" data-height="200" data-dom-id="upload-cover" id="upload-cover"  src="<{if $image}><{$image}><{else}>/public/wxapp/community/images/image_750_200.png<{/if}>"  width="750px" height="200px" style="display:inline-block;margin-left:0;">
+                            <input type="hidden" id="top-image"  class="avatar-field bg-img" name="top-image" value="<{if $image}><{$image}><{/if}>"/>
+                        </div>-->
+                            <div class="cropper-box" data-width="750" data-height="400" style="padding: 20px 0">
+                                <img id="default-cover" src="<{if $image}><{$image}><{else}>/public/manage/images/zhanwei/add0.png<{/if}>" width="150px" height="66px" style="display:block;margin:auto" alt="轮播图">
+                                <input type="hidden" class="avatar-field bg-img" name="top-image" id="top-image" value="<{if $image}><{$image}><{else}>/public/wxapp/community/images/image_750_200.png<{/if}>"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消
+                    </button>
+                    <button type="button" class="btn btn-primary" id="confirm-save">
+                        保存
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
 <!-- 添加奖品弹出层 -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="width: 550px;">
@@ -209,11 +248,36 @@
         cursor: pointer;
     }
 </style>
+    <{include file="../img-upload-modal.tpl"}>
 <{$cropper['modal']}>
 <script type="text/javascript" src="/public/plugin/layer/layer.js"></script>
 <script type="text/javascript" src="/public/manage/controllers/custom.js"></script>
 <script type="text/javascript" src="/public/plugin/ZeroClip/ZeroClipboard.min.js"></script>
 <script type="text/javascript">
+    $('#confirm-save').on('click',function(){
+        var image = $('#top-image').val();
+        var data = {
+            image: image
+        };
+
+        var loading = layer.load(2);
+        $.ajax({
+            'type'  : 'post',
+            'url'   : '/wxapp/service/saveServiceImage',
+            'data'  : data,
+            'dataType' : 'json',
+            success : function(ret){
+                layer.close(loading);
+                layer.msg(ret.em);
+                if(ret.ec == 200){
+                    window.location.reload();
+                }
+            }
+        });
+
+    });
+
+
     function deleteSubject(ele) {
         var id = $(ele).data('id');
         var data={

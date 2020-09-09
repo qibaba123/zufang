@@ -97,6 +97,12 @@ return array(
                 ),
             ),
         ),
+        array(
+            'title'     => '关于我们',
+            'link'      => '/aboutus/index',
+            'icon'      => 'icon-dashboard',
+            'access'    => 'index-index',
+        ),
 //        array(
 //            'title'     => '平台管理',
 //            'link'      => '#',

@@ -16,8 +16,27 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
         $list  = $service_model->getList(array(),$index,$this->count,array('es_weight'=>'DESC'));
         $this->output['list'] = $list;
+        $this->output['image'] = $this->curr_shop['s_service_image'];
+        $this->renderCropTool('/wxapp/index/uploadImg');
+        $this->buildBreadcrumbs(array(
+            array('title' => '企业服务', 'link' => '#'),
+        ));
         $this->displaySmarty('wxapp/service/service-list.tpl');
     }
+
+    //保存顶部图片
+    public function saveServiceImageAction(){
+        $data['s_servicr_image'] = $this->request->getStrParam('image');
+        $shop_model = new App_Model_Shop_MysqlShopCoreStorage($this->curr_sid);
+        $ret = $shop_model->updateById($data,$this->curr_sid);
+        if($ret){
+            $this->displayJsonSuccess(array(),true,'保存成功');
+        }else{
+            $this->displayJsonError('保存失败');
+        }
+    }
+
+
 
     //新增或编辑企业服务
     public function addServiceAction(){
