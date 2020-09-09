@@ -275,7 +275,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="control-group col-sm-9">
-                                                                <div id="container"></div>
+                                                                <div id="container" style="width: 750px; height: 300px"></div>
                                                             </div>
                                                         </div>
                                                     </div>

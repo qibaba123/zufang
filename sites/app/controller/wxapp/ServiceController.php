@@ -71,20 +71,20 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
     //保存服务
     public function saveServiceAction(){
         $id   = $this->request->getIntParam('id');
-        $data['es_name']     = $this->request->getStrParam('name');
-        $data['es_weight']   = $this->request->getIntParam('weight');
-        $data['es_type']     = $this->request->getIntParam('type');
-        $data['es_logo']     = $this->request->getStrParam('logo');
-        $data['es_cover']    = $this->request->getStrParam('cover');
-        $data['es_brief']    = $this->request->getStrParam('brief');
-        $data['es_content']  = $this->request->getStrParam('content');
-        $data['es_price']    = $this->request->getFloatParam('price');
+        $data['au_name']     = $this->request->getStrParam('name');
+        $data['au_weight']   = $this->request->getIntParam('weight');
+        $data['au_type']     = $this->request->getIntParam('type');
+        $data['au_logo']     = $this->request->getStrParam('logo');
+        $data['au_cover']    = $this->request->getStrParam('cover');
+        $data['au_brief']    = $this->request->getStrParam('brief');
+        $data['au_content']  = $this->request->getStrParam('content');
+        $data['au_price']    = $this->request->getFloatParam('price');
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
-        $data['es_create_time'] = time();
+        $data['au_create_time'] = time();
         if($id){
             $ret = $service_model->updateById($data,$id);
         }else{
-            $data['es_s_id'] = $this->curr_sid;
+            $data['au_s_id'] = $this->curr_sid;
             $ret = $service_model->insertValue($data);
         }
         if($ret){
