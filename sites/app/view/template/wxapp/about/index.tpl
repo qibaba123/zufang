@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/public/manage/css/addgoods.css">
 <link rel="stylesheet" href="/public/manage/ajax-page.css">
 
+
 <{if $isActivity == 1}>
     <{include file="../common-second-menu-new.tpl"}>
 <{/if}>
@@ -268,15 +269,19 @@
                                                         <div class="form-group">
                                                             <label class="control-label"><font color="red">*</font>详细地址：</label>
                                                             <div class="control-group" style="float: left;width: 63%;margin: 0;">
-                                                                <input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;margin-top: 20px" placeholder="请填写具体地址" value="<{if $row}><{$row['au_address']}><{/if}>">
+                                                                <input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;" placeholder="请填写具体地址" value="<{if $row}><{$row['au_address']}><{/if}>">
                                                             </div>
-                                                            <div class="control-group col-sm-2 text-left" style="margin-left: 0;margin-top: 54px">
+                                                            <div class="control-group col-sm-2 text-left" style="margin-left: 0;">
                                                                 <input type="hidden" id="lng" name="lng" placeholder="请在地图中标注分店位置" value="<{if $row}><{$row['au_lng']}><{/if}>">
                                                                 <input type="hidden" id="lat" name="lat" placeholder="请在地图中标注分店位置" value="<{if $row}><{$row['au_lat']}><{/if}>">
                                                                 <label class="btn btn-default btn-sm btn-map-search"> 搜索地图 </label>
                                                             </div>
                                                         </div>
-
+                                                        <div class="form-group">
+                                                            <div class="control-group col-sm-9">
+                                                                <div id="container"></div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -350,6 +355,8 @@
 <script src="/public/manage/newTemTwo/js/angular-1.4.6.min.js"></script>
 <script src="/public/manage/newTemTwo/js/angular-root.js"></script>
 <script src="/public/plugin/sortable/sortable.js"></script>
+<script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
     /*初始化日期选择器*/
     $('.time').click(function(){
@@ -377,7 +384,7 @@
     })
 
 
-    
+
 
     /**
      * 图片结果处理
