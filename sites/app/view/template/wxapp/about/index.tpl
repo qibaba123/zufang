@@ -294,7 +294,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介图片(上)：</label>
                                                         <div class="control-group" >
-                                                            <img onclick="toUpload(this)" data-limit="1" data-width="250" data-height="250" data-dom-id="upload-image1" id="upload-image1"  src="<{if $row && $row['au_image1']}><{$row['au_image1']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                            <img onclick="toUpload(this)" data-limit="1" data-width="240" data-height="142" data-dom-id="upload-image1" id="upload-image1"  src="<{if $row && $row['au_image1']}><{$row['au_image1']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                                                             <input type="hidden" id="image1"  class="avatar-field bg-img" name="image1" value="<{if $row && $row['au_image1']}><{$row['au_image1']}><{/if}>"/>
                                                         </div>
                                                     </div>
@@ -309,7 +309,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介图片(下)：</label>
                                                         <div class="control-group" >
-                                                            <img onclick="toUpload(this)" data-limit="1" data-width="250" data-height="250" data-dom-id="upload-image2" id="upload-image2"  src="<{if $row && $row['au_image2']}><{$row['au_image2']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                            <img onclick="toUpload(this)" data-limit="1" data-width="240" data-height="142" data-dom-id="upload-image2" id="upload-image2"  src="<{if $row && $row['au_image2']}><{$row['au_image2']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                                                             <input type="hidden" id="image2"  class="avatar-field bg-img" name="image2" value="<{if $row && $row['au_image2']}><{$row['au_image2']}><{/if}>"/>
                                                         </div>
                                                     </div>
