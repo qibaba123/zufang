@@ -71,7 +71,7 @@
 <div  id="mainContent"  style="">
 
     <div id="content-con" class="content-con">
-        <div class="opera-btn-box" style="display: flex;">
+        <div class="opera-btn-box" style="display: inline;">
             <a href="/wxapp/service/addService" class="btn btn-blue btn-sm"><i class="icon-plus bigger-80"></i> 新增</a>
         </div>
         <button class="btn btn-blue btn-sm" style="margin-left: 20px;padding-bottom: 5px;" data-toggle="modal" data-target="#topModal"><i class="icon-plus bigger-80"></i>企业服务顶部图片</button>
