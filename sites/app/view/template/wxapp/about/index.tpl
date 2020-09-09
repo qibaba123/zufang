@@ -353,7 +353,6 @@
 <script type="text/javascript" src="/public/manage/assets/js/fuelux/fuelux.wizard.min.js"></script>
 <script type="text/javascript" src="/public/plugin/sortable/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/public/wxapp/mall/js/goods.js?1"></script>
-<script src="/public/manage/newTemTwo/js/angular-root.js"></script>
 <script src="/public/plugin/sortable/sortable.js"></script>
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
