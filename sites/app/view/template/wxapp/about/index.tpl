@@ -4,9 +4,6 @@
 <link rel="stylesheet" href="/public/manage/ajax-page.css">
 
 
-<{if $isActivity == 1}>
-    <{include file="../common-second-menu-new.tpl"}>
-<{/if}>
 <style type="text/css">
     h1, h2, h3, h4, h5, h6{
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"Microsoft yahei"!important;
@@ -352,7 +349,6 @@
 <script type="text/javascript" src="/public/manage/assets/js/fuelux/fuelux.wizard.min.js"></script>
 <script type="text/javascript" src="/public/plugin/sortable/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/public/wxapp/mall/js/goods.js?1"></script>
-<script src="/public/plugin/sortable/sortable.js"></script>
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
