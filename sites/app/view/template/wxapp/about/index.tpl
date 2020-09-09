@@ -257,7 +257,7 @@
                                                             <div class="control-group">
                                                                 <input type="text" style="width: 150px;display: inline" class="form-control business-time time" id="start_time"  placeholder="营业开始时间" value="<{$row['au_work_start_time']}>">
                                                                 至
-                                                                <input type="text" style="width: 150px" class="form-control business-time time" id="end_time"  placeholder="营业结束时间" value="<{$row['au_work_end_time']}>">
+                                                                <input type="text" style="width: 150px;display: inline" class="form-control business-time time" id="end_time"  placeholder="营业结束时间" value="<{$row['au_work_end_time']}>">
                                                             </div>
                                                         </div>
                                                         <div class="form-group ">
