@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="/public/manage/assets/css/datepicker.css">
-<link rel="stylesheet" href="/public/plugin/sortable/jquery-ui.min.css">
 <link rel="stylesheet" href="/public/manage/assets/css/bootstrap-timepicker.css" />
 <link rel="stylesheet" href="/public/manage/css/addgoods.css">
 <link rel="stylesheet" href="/public/manage/ajax-page.css">
