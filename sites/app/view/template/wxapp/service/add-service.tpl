@@ -73,6 +73,18 @@
         display: inline-block;
         padding-left: 2px;
     }
+    .setting-save {
+        border: 1px solid #F5F5AA;
+        background-color: #FFFFCC;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        margin-left: -484px;
+        width:1090px;
+        margin-bottom: 0;
+        z-index: 9999;
+    }
 </style>
 
 <{include file="../../manage/common-kind-editor.tpl"}>
@@ -141,7 +153,7 @@
     </div>
     </div>
 <div class="alert alert-warning setting-save" role="alert">
-    <button class="btn btn-primary btn-sm btn-save" style="background-color: #02c700;margin-right: 15px">保存</button>
+    <button class="btn btn-primary btn-save" style="background-color: #02c700;margin-right: 15px">保存</button>
 </div>
 </div>
 <{include file="../img-upload-modal.tpl"}>
