@@ -140,10 +140,10 @@
         </div>
     </div>
     </div>
-<div class="alert setting-save" style="text-align: center;margin-top:100px;">
-    <button class="btn btn-primary btn-save">保存</button>
+<div class="alert alert-warning setting-save" role="alert">
+    <button class="btn btn-primary btn-sm btn-save" style="background-color: #02c700;margin-right: 15px">保存</button>
 </div>
-
+</div>
 <{include file="../img-upload-modal.tpl"}>
 <script type="text/javascript" charset="utf-8" src="/public/plugin/layer/layer.js"></script>
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
