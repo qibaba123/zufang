@@ -151,60 +151,7 @@
         </div><!-- /.modal -->
     </div>
 
-<!-- 添加奖品弹出层 -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width: 550px;">
-        <div class="modal-content">
-            <input type="hidden" id="hid_id" >
-            <input type="hidden" id="categoryOld">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    &times;
-                </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    幻灯图
-                </h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group row">
-                    <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">幻灯图：(建议尺寸710*250)</label>
-                    <div class="col-sm-8">
-                        <div>
-                            <div class="cropper-box" data-width="710" data-height="250" style="height:100%;">
-                                <img id="default-cover" src="/public/manage/img/zhanwei/zw_fxb_75_36.png" width="100%" height="100%" style="display:block;width: 335px;" alt="封面" >
-                                <input type="hidden" class="avatar-field bg-img" name="slide-path" id="slide-path"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">链接文章：</label>
-                    <div class="col-sm-8">
-                        <select name="aiid" id="aiid" style="width: 345px" class="form-control">
-                            <option value="0">请选择链接文章</option>
-                            <{foreach $information as $val}>
-                                 <option  value="<{$val['ai_id']}>"><{$val['ai_title']}></option>
-                            <{/foreach}>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">排序权重：</label>
-                    <div class="col-sm-8">
-                        <input id="sort" class="form-control" placeholder="请输入整数，越大越靠前" style="height:auto!important"/>
-                    </div>
-                </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消
-                </button>
-                <button type="button" class="btn btn-primary" id="save-slide">
-                    保存
-                </button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
 </div>
 <style>
     .layui-layer-btn{
