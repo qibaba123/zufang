@@ -169,40 +169,18 @@ class App_Controller_Applet_CurrencyController extends App_Controller_Applet_Ini
     
     public function informationListAction(){
         $page          = $this->request->getIntParam("page");
-        $title         = $this->request->getStrParam('title');
         $category      = $this->request->getIntParam("categoryId");  // 所属分类
-        $type          = $this->request->getStrParam('type');   // 资讯类型 type=collection我的收藏
         $index         = $page * $this->count;
         $where         = array();
         $where[]       = array('name'=>'ai_s_id','oper'=>'=','value'=>$this->sid);
         $where[]       = array('name'=>'ai_deleted','oper'=>'=','value'=>0);
 
-        if($type && $type=='collection'){
-            $uid = plum_app_user_islogin();
-            if(!$uid){
-                $this->outputError('请重新授权后重试');
-            }
-            $where[] = array('name'=>'aic_m_id','oper'=>'=','value'=>$uid);
-            $collection_model = new App_Model_Article_MysqlInformationCollectionStorage($this->sid);
-            $list = $collection_model->getCollectionListMember($where,$index,$this->count,array('aic_time'=>'DESC'));
-        }else{
-            if($title){
-                $where[]       = array('name'=>'ai_title','oper'=>'like','value'=>"%{$title}%");
-            }else{
-                if($category > 0){
-                    $where[]       = array('name'=>'ai_category','oper'=>'=','value'=>$category);
-                }else{
-                    $where[]       = array('name'=>'ai_isrecommend','oper'=>'=','value'=>1);
-                }
-            }
-            $information_storage = new App_Model_Applet_MysqlAppletInformationStorage();
-            $sort          = array('ai_sort'=>'DESC','ai_create_time' => 'DESC');
-            if($this->sid==12253){
-                $list          = $information_storage->getList($where,$index,15,$sort);
-            }else{
-                $list          = $information_storage->getList($where,$index,$this->count,$sort);
-            }
+        if($category > 0) {
+            $where[] = array('name' => 'ai_category', 'oper' => '=', 'value' => $category);
         }
+        $information_storage = new App_Model_Applet_MysqlAppletInformationStorage();
+        $sort          = array('ai_sort'=>'DESC','ai_create_time' => 'DESC');
+        $list          = $information_storage->getList($where,$index,$this->count,$sort);
         $category_storage = new App_Model_Applet_MysqlAppletInformationCategoryStorage($this->sid);
         if($list){
             $info  = array();
@@ -215,24 +193,11 @@ class App_Controller_Applet_CurrencyController extends App_Controller_Applet_Ini
                     'title'   => $value['ai_title'],
                     'cover'   => $this->dealImagePath($value['ai_cover']),
                     'brief'   => $value['ai_brief'],
-                    'category' => $categoryRow['aic_name']?$categoryRow['aic_name']:'',
-                    //'content' => $content,
-                    'time'    => date('m-d H:i',$value['ai_create_time']),
+                   // 'category' => $categoryRow['aic_name']?$categoryRow['aic_name']:'',
+                    'time'    => date('Y-m-d ',$value['ai_create_time']),
                     'showNum' => $this->number_format($value['ai_show_num']),
-                    'likeNum' => $this->number_format($value['ai_like_num']),
-                    'commentNum' => $this->number_format($value['ai_comment_num']),
-                    'shareNum'   => $this->number_format($value['ai_share_num']),
-                    'videoUrl'   => $value['ai_video_type']==1 && $value['ai_video'] ? $value['ai_video'] : '',
-                    'musicUrl'   => $value['ai_video_type']==2 && $value['ai_video'] ? $value['ai_video'] : '',
-                    'videoType'  => $value['ai_video_type'],
-                    'price'      => floatval($value['ai_price']),
-                    'images'     => !empty($images[1]) ? $images[1] : array($this->dealImagePath($value['ai_cover'])),
                 );
-                //$this->_add_information_show_num($value['ai_id']);
             }
-            $info['data']['style'] = $this->applet_cfg['ac_information_style'];
-            $info['data']['slide'] = $this->_get_information_slide($category);
-            $info['data']['newSlide'] = $this->_new_get_information_slide($category);
             $this->outputSuccess($info);
         }else{
             $this->outputError('数据加载完毕');
@@ -280,93 +245,24 @@ class App_Controller_Applet_CurrencyController extends App_Controller_Applet_Ini
         }
         return $slide;
     }
-    
-//    
-//    public function informationDetailsAction(){
-//        $id = $this->request->getIntParam('id');
-//        $information_storage = new App_Model_Applet_MysqlAppletInformationStorage();
-//        $row = $information_storage->getRowById($id);
-//        if($row){
-//            $info['data'] = array(
-//                'id'       => $row['ai_id'],
-//                'shopName' => $this->shop['s_name'],
-//                'title'    => (string)$row['ai_title'],
-//                'video'    => $row['ai_video_type']==1 && isset($row['ai_video']) && $row['ai_video'] ? $row['ai_video'] : '',
-//                'musicUrl' => $row['ai_video_type']==2 && isset($row['ai_video']) && $row['ai_video'] ? $row['ai_video'] : '',
-//                'cover'    => $this->dealImagePath($row['ai_cover']),
-//                'content'  => plum_parse_img_path($row['ai_content']),
-//                'time'     => date('Y-m-d',$row['ai_create_time']),
-//                'showNum'  => $this->number_format($row['ai_show_num']+1),
-//                'likeNum'  => $this->number_format($row['ai_like_num']),
-//                'commentNum' => $this->number_format($row['ai_comment_num']),
-//                'shareNum'   => $this->number_format($row['ai_share_num']),
-//                'isLike'     => $this->_information_like($row['ai_id']),
-//            );
-//            // 增加文章的浏览量
-//            $this->_add_information_show_num($row['ai_id']);
-//            $uid = plum_app_user_islogin();
-//            if($uid){
-//                $point_storage = new App_Helper_Point($this->sid);
-//                $point_storage->gainPointBySource($uid,App_Helper_Point::POINT_SOURCE_READ);
-//            }
-//            $this->outputSuccess($info);
-//        }else{
-//            $this->outputError('该信息不存在或已删除');
-//        }
-//
-//    }
+
     
     public function informationDetailsAction(){
         $id = $this->request->getIntParam('id');
         $information_storage = new App_Model_Applet_MysqlAppletInformationStorage();
         $row = $information_storage->getRowByIdSid($id,$this->sid);
 
-        if($id == 303962){
-            Libs_Log_Logger::outputLog('sid='.$this->sid,'test.log');
-        }
-        if($this->sid == 12090){
-            Libs_Log_Logger::outputLog('id='.$id,'test.log');
-        }
-
         if($row){
-            if($row['ai_price'] > 0){
-                $uid = plum_app_user_islogin();
-                if($uid){
-                    // 是否已付费或者购买会员
-                    $allow = $this->_is_member_card($uid,$row);
-                    if($allow){
-                        $info = $this->_information_details($row);
-                        // 增加文章的浏览量
-                        $this->_add_information_show_num($row['ai_id']);
-                        $uid = plum_app_user_islogin();
-                        if($uid){
-                            $point_storage = new App_Helper_Point($this->sid);
-                            $point_storage->gainPointBySource($uid,App_Helper_Point::POINT_SOURCE_READ);
-                        }
-                        // 已付费或购买过会员
-                        $info['data']['price'] = 0;
-                        $this->outputSuccess($info);
-                    }else{
-                        $info = $this->_information_details($row);
-                        $cardList = $this->_information_card();
-                        $info['data']['expense']['list'] = $cardList;
-                        $info['data']['expense']['prompt'] = '开通会员可以免费观看所有文章信息';
-                        $this->outputSuccess($info);
-                    }
-                }else{
-                    $this->outputError('暂未授权，请授权获取用户信息后重试');
-                }
-            }else{
-                $info = $this->_information_details($row);
-                // 增加文章的浏览量
-                $this->_add_information_show_num($row['ai_id']);
-                $uid = plum_app_user_islogin();
-                if($uid){
-                    $point_storage = new App_Helper_Point($this->sid);
-                    $point_storage->gainPointBySource($uid,App_Helper_Point::POINT_SOURCE_READ);
-                }
-                $this->outputSuccess($info);
+            $info = $this->_information_details($row);
+            // 增加文章的浏览量
+            $this->_add_information_show_num($row['ai_id']);
+            $uid = plum_app_user_islogin();
+            if($uid){
+                $point_storage = new App_Helper_Point($this->sid);
+                $point_storage->gainPointBySource($uid,App_Helper_Point::POINT_SOURCE_READ);
             }
+            $this->outputSuccess($info);
+
         }else{
             $this->outputError('该信息不存在或已删除');
         }
@@ -376,97 +272,22 @@ class App_Controller_Applet_CurrencyController extends App_Controller_Applet_Ini
     
     private function _information_details($row){
         $uid = plum_app_user_islogin();
-        $collection = 0;
-        // 是否已经收藏过
 
-        $collection_model = new App_Model_Article_MysqlInformationCollectionStorage($this->sid);
-        $collection = $collection_model->getCollectionByMidPid($uid,$row['ai_id']);
+        // 是否已经收藏过
+//
+//        $collection_model = new App_Model_Article_MysqlInformationCollectionStorage($this->sid);
+//        $collection = $collection_model->getCollectionByMidPid($uid,$row['ai_id']);
 
         $info['data'] = array(
             'id'       => $row['ai_id'],
-            'watermark'  => $this->watermark,
-            'watermarkImg'  => $this->watermarkImg,
-            'openWatermark'   => $this->openWatermark,
-            'supportOpen'=> $this->support && isset($this->support['as_audit']) ? intval($this->support['as_audit']) : 0,
-            'supportMobile'   => $this->support && isset($this->support['as_mobile']) ? $this->support['as_mobile'] : '',
-            'shopName' => $this->shop['s_name'],
             'shopLogo' => $this->shop['s_logo']? $this->dealImagePath($this->shop['s_logo']) : $this->dealImagePath($this->applet_cfg['ac_avatar']),
             'title'    => (string)$row['ai_title'],
-            'video'    => $row['ai_video_type']==1 && isset($row['ai_video']) && $row['ai_video'] ? $row['ai_video'] : '',
-            'musicUrl' => $row['ai_video_type']==2 && isset($row['ai_video']) && $row['ai_video'] ? $row['ai_video'] : '',
             'cover'    => $this->dealImagePath($row['ai_cover']),
             'brief'    => $row['ai_brief'],
             'content'  => preg_replace('/<style.*?>(.*?)<\/style>/s', '', plum_parse_img_path($row['ai_content'])),
             'time'     => date('Y-m-d',$row['ai_create_time']),
             'showNum'  => $this->number_format($row['ai_show_num']+1),
-            'showNumTrue'  => intval($row['ai_show_num']+1),
-            'likeNum'  => $this->number_format($row['ai_like_num']),
-            'likeNumTrue'  => intval($row['ai_like_num']),
-            'likeAvatars' => $this->_get_like_avatar($row['ai_id'],$row['ai_like_num']),
-            'commentNum' => $this->number_format($row['ai_comment_num']),
-            'commentNumTrue' => intval($row['ai_comment_num']),
-            'shareNum'   => $this->number_format($row['ai_share_num']),
-            'shareNumTrue'   => intval($row['ai_share_num']),
-            'isLike'     => $this->_information_like($row['ai_id']),
-            'price'      => floatval($row['ai_price']),
-            'isCollection'  => $collection ? 1 : 0,    //是否收藏过
-            'from'       => $row['ai_from'] ? $row['ai_from'] : '',
-            'expense'    => array(),
-            'goodsInfo'  => array(),
-            'appointmentGoodsInfo'  => array(),
-            'relatedInfo'=> array(),
-            'openReward' => intval($this->shop['s_information_reward']),
-            'displayType' => $row['ai_display_type'],
-            'qrcode'     => '',
-            'goodsType'  => $row['ai_goods_type'] ? intval($row['ai_goods_type']) : 1,
-            'appointmentGoodsType'  => $row['ai_appointment_goods_type'] ? intval($row['ai_appointment_goods_type']) : 1,
-            'wxRealLink' => ''
         );
-        if($info['data']['video']){
-            $info['data']['video'] =  plum_is_url($info['data']['video'])?$info['data']['video']:$this->_get_tencent_video($info['data']['video']);
-        }
-        if($row['ai_g_id']){
-            $info['data']['goodsInfo'] = $this->_information_goods_info($row['ai_g_id']);
-        }
-        if($row['ai_ag_id']){
-            $info['data']['appointmentGoodsInfo'] = $this->_information_goods_info($row['ai_ag_id']);
-        }
-        if($row['ai_related_info']){
-            $info['data']['relatedInfo'] = $this->_information_related_info($row['ai_related_info']);
-        }
-
-        if($row['ai_wx_no'] && $row['ai_wx_real_url']){
-            $gzh_model = new App_Model_Information_MysqlInformationGzhStorage($this->sid);
-            $gzh = $gzh_model->getRowByWxId($row['ai_wx_no']);
-            if($gzh['abg_show_type']){
-                $info['data']['wxRealLink'] = $row['ai_wx_real_url'];
-            }
-        }
-
-        $extra_model = new App_Model_Applet_MysqlAppletInformationExtraStorage($this->sid);
-        $extra = $extra_model->findUpdateExtraByAid($row['ai_id']);
-        $allowComment = 1;
-        $allowLike = 1;
-        if($extra && $extra['aie_allow_comment'] == 0){
-            $allowComment = 0;
-        }
-//        if($extra && $extra['aie_allow_like'] == 0){
-//            $allowLike = 0;
-//        }
-        $info['data']['allowComment'] = $allowComment;
-//        $info['data']['allowLike'] = $allowLike;
-
-//        //资讯二维码
-//        if($row['ai_qrcode']){
-//            $info['data']['qrcode'] = $this->dealImagePath($row['ai_qrcode'],true);
-//        }else{
-//            $information_model = new App_Model_Applet_MysqlAppletInformationStorage();
-//            $client_plugin  = new App_Plugin_Weixin_WxxcxClient($this->sid);
-//            $str = "id=".$row['ai_id'];
-//            $url = $client_plugin->fetchWxappShareCode($str, $client_plugin::INFORMATION_DETAIL, 210, '');
-//            $info['data']['qrcode'] = $this->dealImagePath($url,true);
-//            $information_model->updateById(array('ai_qrcode'=>$url),$row['ai_id']);
-//        }
         return $info;
     }
 

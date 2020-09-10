@@ -269,6 +269,40 @@ return array(
             'action'            => 'aboutusAction',
             'desc'              => '关于我们接口'
         ),
+        'applet_zf_service_list'     => array(
+            'controller'        => 'App_Controller_Applet_ServiceController',
+            'action'            => 'serviceListAction',
+            'desc'              => '企业服务列表接口'
+        ),
+        'applet_zf_service_detail'     => array(
+            'controller'        => 'App_Controller_Applet_ServiceController',
+            'action'            => 'serviceDetailAction',
+            'desc'              => '企业服务详情接口'
+        ),
+        'applet_zf_collet'     => array(
+            'controller'        => 'App_Controller_Applet_ServiceController',
+            'action'            => 'colletAction',
+            'desc'              => '收藏接口'
+        ),
+        'applet_information_category'      => array(
+            'controller'        => 'App_Controller_Applet_CurrencyController',
+            'action'            => 'informationCategoryAction',
+            'desc'              => '资讯分类接口'
+        ),
+        'applet_information_list'      => array(
+            'controller'        => 'App_Controller_Applet_CurrencyController',
+            'action'            => 'informationListAction',
+            'desc'              => '通用资讯列表接口'
+        ),
+        'applet_information_details'      => array(
+            'controller'        => 'App_Controller_Applet_CurrencyController',
+            'action'            => 'informationDetailsAction',
+            'desc'              => '通用资讯详情接口'
+        ),
+
+
+
+
 
 
         //**********************单品分享分销*************************//
@@ -805,21 +839,7 @@ return array(
         
         
         
-        'applet_applet_information_category'      => array(
-            'controller'        => 'App_Controller_Applet_CurrencyController',
-            'action'            => 'informationCategoryAction',
-            'desc'              => '通用资讯分类接口'
-        ),
-        'applet_applet_information_list'      => array(
-            'controller'        => 'App_Controller_Applet_CurrencyController',
-            'action'            => 'informationListAction',
-            'desc'              => '通用资讯列表接口'
-        ),
-        'applet_applet_information_details'      => array(
-            'controller'        => 'App_Controller_Applet_CurrencyController',
-            'action'            => 'informationDetailsAction',
-            'desc'              => '通用资讯详情接口'
-        ),
+
         'applet_applet_jump_list'      => array(
             'controller'        => 'App_Controller_Applet_CurrencyController',
             'action'            => 'appletJumpListAction',

@@ -39,7 +39,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         }
         //首页文章
         $information_model = new App_Model_Applet_MysqlAppletInformationStorage();
-        $information       = $information_model->getList(array(),0,5,array('ai_sort'=>'DESC'));
+        $information       = $information_model->getList(array(),0,2,array('ai_sort'=>'DESC'));
         foreach ($information as $val){
             $data['information'][] = array(
                 'id' => $val['ai_id'],
@@ -71,7 +71,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
 //            }
         }
         //企业服务顶部图片
-        $data['service']['top_image'] = $this->shop['s_service_image'];
+        $data['service']['top_image'] = $this->dealImagePath($this->shop['s_service_image']);
         //联系我们
         $about_us_model = new App_Model_Shop_MysqlShopAboutUsStorage();
         $about_us       = $about_us_model->getRowById(1);
