@@ -109,8 +109,25 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
         }
     }
 
+    //我的收藏列表
+    public function myColletAction(){
+        $page  = $this->request->getIntParam('page');
+        $index = $page * $this->count;
+        $collet_model  = new App_Model_Member_MysqlMemberCollletStorage();
+        $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $where[]  = array('name'=>"mc_m_id",'oper'=>'=','value'=>$this->member['m_id']);
+        $list     = $collet_model->getList($where,$index,$this->count,array('mc_create_time'=>'DESC'));
+        foreach($list as $val){
+            if($val['mc_type'] == 1){
 
+            }elseif($val['mc_type'] == 2){
 
+            }
+            $data['list'][] = array(
+                ''
+            );
+        }
+    }
 
 
 

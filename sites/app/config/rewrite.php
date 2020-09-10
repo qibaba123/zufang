@@ -284,6 +284,11 @@ return array(
             'action'            => 'colletAction',
             'desc'              => '收藏接口'
         ),
+        'applet_zf_my_collet'     => array(
+            'controller'        => 'App_Controller_Applet_ServiceController',
+            'action'            => 'myColletAction',
+            'desc'              => '收藏接口'
+        ),
         'applet_information_category'      => array(
             'controller'        => 'App_Controller_Applet_CurrencyController',
             'action'            => 'informationCategoryAction',
@@ -299,7 +304,6 @@ return array(
             'action'            => 'informationDetailsAction',
             'desc'              => '通用资讯详情接口'
         ),
-
 
 
 
