@@ -301,7 +301,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介(上)：</label>
                                                         <div class="control-group xs-hidden-info" >
-                                                            <input class="form-control"  id = "brief1" name="brief1" placeholder="简介1" type="text" style="width:750px;height:50px;" value=" <{if $row && $row['au_brief1']}><{$row['au_brief1']}><{/if}>">
+                                                            <textarea class="form-control" style="width:100%;height:200px;" id = "brief1" name="brief1" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['au_brief1']}><{$row['au_brief1']}><{/if}></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -314,7 +314,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介(下)：</label>
                                                         <div class="control-group xs-hidden-info" >
-                                                            <input class="form-control"  id = "brief2" name="brief2" placeholder="简介2" type="text" style="width:750px;height:50px;" value=" <{if $row && $row['au_brief2']}><{$row['au_brief2']}><{/if}>">
+                                                            <textarea class="form-control" style="width:100%;height:200px;" id = "brief2" name="brief2" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['au_brief2']}><{$row['au_brief2']}><{/if}></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
