@@ -29,7 +29,7 @@ class App_Controller_Wxapp_AboutusController extends App_Controller_Wxapp_InitCo
         $data['au_lat']     = $this->request->getFloatParam('lat');
         $data['au_lat']     = $this->request->getFloatParam('lat');
         $data['au_image']      = $this->request->getStrParam('image');
-        $data['au_service_image']      = $this->request->getStrParam('service_image');
+        $data['au_service_image']      = $this->request->getStrParam('serviceimage');
         $data['au_image1']     = $this->request->getStrParam('image1');
         $data['au_image2']     = $this->request->getStrParam('image2');
         $data['au_brief']     = $this->request->getStrParam('brief');

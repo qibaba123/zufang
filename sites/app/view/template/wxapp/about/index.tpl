@@ -265,8 +265,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label xs-hidden-label">企业服务封面(345px*130px)：</label>
                                                             <div class="control-group" >
-                                                                <img onclick="toUpload(this)" data-limit="1" data-width="345" data-height="130" data-dom-id="upload-service_image" id="upload-service_image"  src="<{if $row && $row['au_service_image']}><{$row['au_service_image']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
-                                                                <input type="hidden" id="service_image"  class="avatar-field bg-img" name="service_image" value="<{if $row && $row['au_service_image']}><{$row['au_service_image']}><{/if}>"/>
+                                                                <img onclick="toUpload(this)" data-limit="1" data-width="345" data-height="130" data-dom-id="upload-serviceimage" id="upload-serviceimage"  src="<{if $row && $row['au_service_image']}><{$row['au_service_image']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                                <input type="hidden" id="serviceimage"  class="avatar-field bg-img" name="serviceimage" value="<{if $row && $row['au_service_image']}><{$row['au_service_image']}><{/if}>"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
