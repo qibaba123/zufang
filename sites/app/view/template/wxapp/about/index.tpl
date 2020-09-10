@@ -263,6 +263,19 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
+                                                            <label class="control-label xs-hidden-label">首页简介图片：</label>
+                                                            <div class="control-group" >
+                                                                <img onclick="toUpload(this)" data-limit="1" data-width="240" data-height="142" data-dom-id="upload-image" id="upload-image"  src="<{if $row && $row['au_image']}><{$row['au_image']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                                <input type="hidden" id="image"  class="avatar-field bg-img" name="image" value="<{if $row && $row['au_image']}><{$row['au_image']}><{/if}>"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label xs-hidden-label">首页简介：</label>
+                                                            <div class="control-group xs-hidden-info" >
+                                                                <textarea class="form-control" style="width:100%;height:200px;" id = "brief" name="brief" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['au_brief']}><{$row['au_brief']}><{/if}></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label class="control-label"><font color="red">*</font>详细地址：</label>
                                                             <div class="control-group" style="float: left;width: 63%;margin: 0;">
                                                                 <input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;" placeholder="请填写具体地址" value="<{if $row}><{$row['au_address']}><{/if}>">
