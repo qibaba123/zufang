@@ -263,9 +263,16 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="control-label xs-hidden-label">首页简介图片：</label>
+                                                            <label class="control-label xs-hidden-label">企业服务封面(345px*130px)：</label>
                                                             <div class="control-group" >
-                                                                <img onclick="toUpload(this)" data-limit="1" data-width="240" data-height="142" data-dom-id="upload-image" id="upload-image"  src="<{if $row && $row['au_image']}><{$row['au_image']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                                <img onclick="toUpload(this)" data-limit="1" data-width="345" data-height="130" data-dom-id="upload-service_image" id="upload-service_image"  src="<{if $row && $row['au_service_image']}><{$row['au_service_image']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                                <input type="hidden" id="service_image"  class="avatar-field bg-img" name="service_image" value="<{if $row && $row['au_service_image']}><{$row['au_service_image']}><{/if}>"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label xs-hidden-label">首页封面(168px*119px)：</label>
+                                                            <div class="control-group" >
+                                                                <img onclick="toUpload(this)" data-limit="1" data-width="168" data-height="119" data-dom-id="upload-image" id="upload-image"  src="<{if $row && $row['au_image']}><{$row['au_image']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                                                                 <input type="hidden" id="image"  class="avatar-field bg-img" name="image" value="<{if $row && $row['au_image']}><{$row['au_image']}><{/if}>"/>
                                                             </div>
                                                         </div>
@@ -305,7 +312,7 @@
                                                 </div>
                                                 <div class="group-info  xs-hidden-info">
                                                     <div class="form-group">
-                                                        <label class="control-label xs-hidden-label">简介图片(上)：</label>
+                                                        <label class="control-label xs-hidden-label">简介图片(上 240px*142px)：</label>
                                                         <div class="control-group" >
                                                             <img onclick="toUpload(this)" data-limit="1" data-width="240" data-height="142" data-dom-id="upload-image1" id="upload-image1"  src="<{if $row && $row['au_image1']}><{$row['au_image1']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                                                             <input type="hidden" id="image1"  class="avatar-field bg-img" name="image1" value="<{if $row && $row['au_image1']}><{$row['au_image1']}><{/if}>"/>
@@ -325,7 +332,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="control-label xs-hidden-label">简介(下)：</label>
+                                                        <label class="control-label xs-hidden-label">简介(下 240px*142px)：</label>
                                                         <div class="control-group xs-hidden-info" >
                                                             <textarea class="form-control" style="width:100%;height:200px;" id = "brief2" name="brief2" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['au_brief2']}><{$row['au_brief2']}><{/if}></textarea>
                                                         </div>

@@ -259,7 +259,16 @@ return array(
 
     /*******************************微信小程序接口相关********************************/
     'applet'    => array(
-
+        'applet_zf_index'     => array(
+            'controller'        => 'App_Controller_Applet_ShopController',
+            'action'            => 'indexAction',
+            'desc'              => '首页接口'
+        ),
+        'applet_zf_aboutus'     => array(
+            'controller'        => 'App_Controller_Applet_ShopController',
+            'action'            => 'aboutusAction',
+            'desc'              => '关于我们接口'
+        ),
 
 
         //**********************单品分享分销*************************//
