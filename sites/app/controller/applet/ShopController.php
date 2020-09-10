@@ -101,7 +101,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
             'brief1'  => $about_us['au_bridf1'],
             'image2'  => $this->dealImagePath($about_us['au_image2']),
             'brief2'  => $about_us['au_bridf2'],
-            'image'   => $about_us['au_image'],
+            'service_image'   => $this->dealImagePath($about_us['au_service_image']),
         );
         $this->displayJsonSuccess($data,true,'获取成功');
     }
