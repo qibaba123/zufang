@@ -45,6 +45,11 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
             $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
             $row           = $service_model->getRowById($id);
             $this->output['row'] = $row;
+            if(!empty($row)){
+                $slide_model    = new App_Model_Service_MysqlServiceSlideStorage();
+                $slide          = $slide_model->getSlideByGid($row['es_id'], 1);
+            }
+            $this->output['slide'] = $slide;
         }
         $this->renderCropTool('/wxapp/index/uploadImg');
         $this->buildBreadcrumbs(array(
@@ -98,7 +103,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
     }
 
     public function batchSlide($resId,$is_add=0){
-        $slide_model    = new App_Model_Service_MysqlServiceSlideStorage($this->curr_sid);
+        $slide_model    = new App_Model_Service_MysqlServiceSlideStorage();
         $maxNum         = $this->request->getStrParam('slide-img-num');
         $slide          = array();
         if($is_add){
@@ -106,7 +111,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
                 $temp = $this->request->getStrParam('slide_'.$i);
                 $temp = plum_sql_quote($temp);
                 if($temp){
-                    $slide[] = "(NULL, '{$this->curr_sid}', '{$resId}', 1,'{$temp}', 0, '".time()."')";
+                    $slide[] = "(NULL, '{$this->curr_sid}', '{$resId}','{$temp}', 0, '".time()."')";
                 }
             }
             $slide_model->batchSave($slide);
@@ -126,8 +131,8 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
             $del_id = array();
             $old_slide = $slide_model->getListByGidSid($resId,$this->curr_sid,1);
             foreach($old_slide as $val){
-                if(!in_array($val['ahrs_id'],$sl_id)){
-                    $del_id[] = $val['ahrs_id'];
+                if(!in_array($val['ss_id'],$sl_id)){
+                    $del_id[] = $val['ss_id'];
                 }
             }
             if(count($slide) <= count($del_id)){
@@ -159,7 +164,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
     }
 
 
-    
+
 
 
 
