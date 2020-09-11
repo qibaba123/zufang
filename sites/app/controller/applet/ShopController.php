@@ -98,9 +98,9 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
             'address' => $about_us['au_address'],
             'work_time' => $about_us['au_work_start_time'].'-'.$about_us['au_work_end_time'],
             'image1'  => $this->dealImagePath($about_us['au_image1']),
-            'brief1'  => $about_us['au_bridf1'],
+            'brief1'  => $about_us['au_brief1'],
             'image2'  => $this->dealImagePath($about_us['au_image2']),
-            'brief2'  => $about_us['au_bridf2'],
+            'brief2'  => $about_us['au_brief2'],
             'service_image'   => $this->dealImagePath($about_us['au_service_image']),
         );
         $this->displayJsonSuccess($data,true,'获取成功');
