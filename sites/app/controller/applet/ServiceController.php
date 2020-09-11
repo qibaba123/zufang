@@ -70,7 +70,7 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
                 $data['format'][] = $val['sf_name'];
             }
         }
-        $collet_model  = new App_Model_Member_MysqlMemberCollletStorage();
+        $collet_model  = new App_Model_Member_MysqlMemberColletStorage();
         $where         = array();
         $where[]       = array('name'=>'mc_m_id','oper'=>"=",'value'=>$this->member['m_id']);
         $where[]       = array('name'=>'mc_c_id','oper'=>"=",'value'=>$id);
