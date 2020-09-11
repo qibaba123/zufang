@@ -169,15 +169,15 @@ class App_Controller_Applet_CurrencyController extends App_Controller_Applet_Ini
     
     public function informationListAction(){
         $page          = $this->request->getIntParam("page");
-        $category      = $this->request->getIntParam("categoryId");  // 所属分类
+       // $category      = $this->request->getIntParam("categoryId");  // 所属分类
         $index         = $page * $this->count;
         $where         = array();
         $where[]       = array('name'=>'ai_s_id','oper'=>'=','value'=>$this->sid);
         $where[]       = array('name'=>'ai_deleted','oper'=>'=','value'=>0);
 
-        if($category > 0) {
-            $where[] = array('name' => 'ai_category', 'oper' => '=', 'value' => $category);
-        }
+//        if($category > 0) {
+//            $where[] = array('name' => 'ai_category', 'oper' => '=', 'value' => $category);
+//        }
         $information_storage = new App_Model_Applet_MysqlAppletInformationStorage();
         $sort          = array('ai_sort'=>'DESC','ai_create_time' => 'DESC');
         $list          = $information_storage->getList($where,$index,$this->count,$sort);
@@ -280,7 +280,6 @@ class App_Controller_Applet_CurrencyController extends App_Controller_Applet_Ini
 
         $info['data'] = array(
             'id'       => $row['ai_id'],
-            'shopLogo' => $this->shop['s_logo']? $this->dealImagePath($this->shop['s_logo']) : $this->dealImagePath($this->applet_cfg['ac_avatar']),
             'title'    => (string)$row['ai_title'],
             'cover'    => $this->dealImagePath($row['ai_cover']),
             'brief'    => $row['ai_brief'],
