@@ -459,7 +459,6 @@
             'data'  : $('#resources-form').serialize(),
             'dataType'  : 'json',
             'success'   : function(ret){
-                layer.close(load_index);
                 if(ret.ec == 200 ){
                     alert(ret.em);
                     window.location.href='/wxapp/service/serviceList';
