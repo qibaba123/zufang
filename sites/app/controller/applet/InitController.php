@@ -270,9 +270,9 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
             $this->displayJsonError($result['msg']);
         }
         // 检查店铺是否开通支付宝小程序或百度小程序
-        if(!$result['code']){
-            $this->_wxapp_alipay_Visit($cfg);
-        }
+//        if(!$result['code']){
+//            $this->_wxapp_alipay_Visit($cfg);
+//        }
         /*
          * 获取店铺技术支持信息
          */
