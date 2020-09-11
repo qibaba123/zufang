@@ -268,89 +268,22 @@
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
-    var s_type = '<{$type}>';
-    $('#pro').change(function(){
-        $("#city").html('');
-        $("#area").html('');
-        var p_ro = $(this).val();
-        //console.log(p_ro);return;
-        var data = {
-            'pro' : p_ro,
-        }
-        $.ajax({
-            url:'/wxapp/park/getcity',
-            type:'post',
-            data:data,
-            dataType:'json',
-            success: function(ret){
-                var option="<option value=''>地市</option>";
-                $.each(ret,function(k,v){
-                    option += '<option value=' + v['region_id'] + '>' + v['region_name'] + '</option>'
-                });
-                $("#city").html(option);
-            }
-        })
-
-    });
-    $('#city').change(function(){
-        $("#zone").html('');
-        var city = $(this).val();
-        var data = {
-            'city' : city,
-        }
-        $.ajax({
-            url:'/wxapp/park/getarea',
-            type:'post',
-            data:data,
-            dataType:'json',
-            success: function(ret){
-                var option="<option value='0'>区域</option>";
-                $.each(ret,function(k,v){
-                    option += '<option value=' + v['region_id'] + '>' + v['region_name'] + '</option>'
-                });
-                $("#zone").html(option);
-            }
-        })
-
-    });
-
-    $('#zone').change(function(){
-        $("#park").html('');
-        var zone = $(this).val();
-        var data = {
-            'zone' : zone,
-        }
-        $.ajax({
-            url:'/wxapp/park/getpark',
-            type:'post',
-            data:data,
-            dataType:'json',
-            success: function(ret){
-                var option="<option value='0'>园区</option>";
-                $.each(ret,function(k,v){
-                    option += '<option value=' + v['ap_id'] + '>' + v['ap_name'] + '</option>'
-                });
-                $("#park").html(option);
-            }
-        })
-
-    });
     $(function(){
-        $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
-            /*  去掉商品类目不再做验证*/
-            /*
-             if(info.step == 1 && info.direction == 'next') {
-             if(!checkCategory()) return false;
-             }else
-             */
-            if(info.step == 1 && info.direction == 'next'){
-                if(!checkBasic()) return false;
-            }else if(info.step == 2 && info.direction == 'next'){
-                if(!checkImg()) return false;
-            }
-        }).on('finished', function(e) {
-            saveResource('step');
-        });
+        // $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
+        //     /*  去掉商品类目不再做验证*/
+        //     /*
+        //      if(info.step == 1 && info.direction == 'next') {
+        //      if(!checkCategory()) return false;
+        //      }else
+        //      */
+        //     if(info.step == 1 && info.direction == 'next'){
+        //         if(!checkBasic()) return false;
+        //     }else if(info.step == 2 && info.direction == 'next'){
+        //         if(!checkImg()) return false;
+        //     }
+        // }).on('finished', function(e) {
+        //     saveResource('step');
+        // });
 
         $('.product-leibie').on('click', 'li', function(event) {
             $(this).addClass('selected').siblings('li').removeClass('selected');
@@ -490,7 +423,7 @@
      * 第二步检查基本信息
      * */
     function checkBasic(){
-        var check   = new Array('title','address');
+        var check   = new Array();
         for(var i=0 ; i < check.length ; i++){
             var temp = $('#'+check[i]).val();
             if(!temp){
