@@ -1,0 +1,632 @@
+<link rel="stylesheet" href="/public/manage/assets/css/datepicker.css">
+<link rel="stylesheet" href="/public/plugin/sortable/jquery-ui.min.css">
+<link rel="stylesheet" href="/public/manage/assets/css/bootstrap-timepicker.css" />
+<link rel="stylesheet" href="/public/manage/css/addgoods.css">
+<style type="text/css">
+    .input-group-addon{
+        padding: 6px;
+    }
+    input[type=checkbox].ace.ace-switch.ace-switch-5+.lbl::before {
+        content: "是\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0\a0否";
+    }
+    #container {
+        width:100%;
+        height: 300px;
+    }
+
+    .inline{
+        display: inline-block;
+        padding-right: 30px;
+        text-align: center;
+    }
+
+    .left-inline{
+        padding-left: 30px;
+    }
+
+    .left-palceholder{
+        position: relative;
+        right: -30px;
+        color: #a6a6a6;
+        top: 2px;
+    }
+
+    .palceholder{
+        position: relative;
+        left: -30px;
+        color: #a6a6a6;
+        top: 2px;
+    }
+
+    .form-control:not(.left-inline){
+        margin-left: 18px;
+    }
+
+    .group-title, .group-info,.info-group-inner .group-info,.info-group-inner .group-title{
+        background: #fff;;
+    }
+
+    .info-group-inner .group-info .control-label {
+        font-weight: normal;
+        color: gray;
+    }
+
+</style>
+<{include file="../../manage/common-kind-editor.tpl"}>
+<div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="widget-box">
+                        <div class="widget-header widget-header-blue widget-header-flat">
+                            <h4 class="lighter"><small><a href="#"> 返回 </a></small> | 新增/编辑房源信息</h4>
+                            <div class="col-xs-1 pull-right search-btn">
+
+                            </div>
+                        </div>
+                        <div class="widget-body" >
+                            <div class="widget-main">
+                                <div id="fuelux-wizard" class="row-fluid" data-target="#step-container">
+                                    <ul class="wizard-steps">
+                                        <li data-target="#step1" <{if $row}>class="complete" <{else}>class="active"<{/if}>>
+                                        <span class="step">1</span>
+                                        <span class="title">基本信息</span>
+                                        </li>
+
+                                        <li data-target="#step2">
+                                            <span class="step">2</span>
+                                            <span class="title">图片</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <hr />
+                                <div class="step-content row-fluid position-relative" id="step-container">
+                                    <form class="form-horizontal" id="resources-form"  enctype="multipart/form-data" style="overflow: hidden;">
+                                        <input type="hidden" id="hid_id"  class="avatar-field bg-img" name="hid_id" value="<{if $row && $row['es_id']}><{$row['es_id']}><{/if}>"/>                                        <input type="hidden" id="type" name="type" value="<{if $type}><{$type}><{else}>0<{/if}>">
+                                        <div class="step-pane active" id="step1" >
+
+                                            <!-- 表单分类显示 -->
+                                            <div class="info-group-box">
+                                                <div class="info-group-inner">
+                                                    <div class="group-title">
+                                                        <span>基本信息</span>
+                                                    </div>
+                                                    <div class="group-info">
+
+                                                        <div class="form-group">
+                                                            <label for="" style="width: 100%" >服务名称<font color="red">*</font></label>
+                                                            <div class="control-group">
+                                                                <input type="text" id="es_name" placeholder="服务名称" class="form-control" name="es_name" value="<{if $row && $row['es_name']}><{$row['es_name']}><{/if}>"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label for="">服务类型：</label>
+                                                            <div class="control-group">
+                                                                <select class="form-control" name="type" id="type" >
+                                                                    <option value="0">请选择服务类型</option>
+                                                                    <option value="1" <{if $row['es_type'] == 1}>selected<{/if}>>企业服务商品</option>
+                                                                    <option value="2" <{if $row['es_type'] == 2}>selected<{/if}>>企业服务文章</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group priceshow" <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
+                                                        <label for="">金额<font color="red">*</font></label>
+                                                        <div class="control-group">
+                                                            <input id="price" class="form-control"  placeholder="金额" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">权重<font color="red">*</font></label>
+                                                        <div class="control-group">
+                                                            <input id="weight" class="form-control"  placeholder="权重" value="<{if $row && $row['es_weight']}><{$row['es_weight']}><{/if}>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">简介<font color="red">*</font></label>
+                                                        <div class="control-group">
+                                                            <textarea class="form-control" style="width:100%;height:200px;" id = "brief" name="brief" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['es_brief']}><{$row['es_brief']}><{/if}></textarea>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--      <div class="info-group-box">
+                                                <div class="info-group-inner">
+                                                    <div class="group-title">
+                                                    </div>
+                                                    <div class="group-info">
+                                                        <div class="form-group" style="width: 400px;display: inline-block;">
+                                                            <label class="control-label">联系人姓名：</label>
+                                                            <div class="control-group">
+                                                                <input type="text" class="form-control" id="contact" name="contact" placeholder="请填写姓名" required="required" value="<{if $row}><{$row['ahr_contact']}><{/if}>" style="width: 160px;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group" style="width: 400px;display: inline-block;">
+                                                            <label class="control-label">手机号：</label>
+                                                            <div class="control-group">
+                                                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="请填写手机号" required="required" value="<{if $row}><{$row['ahr_mobile']}><{/if}>" style="width: 160px;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group" style="width: 400px;display: inline-block;">
+                                                            <label class="control-label">微信：</label>
+                                                            <div class="control-group">
+                                                                <input type="text" class="form-control" id="weixin" name="weixin" placeholder="请填写微信"  value="<{if $row}><{$row['ahr_weixin']}><{/if}>" style="width: 160px;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                                        </div>
+                                        <div class="step-pane" id="step2">
+                                            <div class="info-group-box">
+                                                <div class="info-group-inner">
+                                                    <div class="group-title">
+                                                        <span>图片信息</span>
+                                                    </div>
+
+                                                    <div class="group-info">
+                                                        <div class="form-group">
+                                                            <label for="">LOGO<font color="red">*</font></label>
+                                                            <div class="control-group">
+                                                                <img onclick="toUpload(this)" data-limit="1" data-width="250" data-height="250" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                                <input type="hidden" id="logo"  class="avatar-field bg-img" name="logo" value="<{if $row && $row['es_logo']}><{$row['es_logo']}><{/if}>"/>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="">封面<font color="red">*</font></label>
+                                                            <div class="control-group">
+
+                                                                <img onclick="toUpload(this)" data-limit="1" data-width="750" data-height="400" data-dom-id="upload-cover" id="upload-cover"  src="<{if $row && $row['es_cover']}><{$row['es_cover']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                                <input type="hidden" id="cover"  class="avatar-field bg-img" name="cover" value="<{if $row && $row['es_cover']}><{$row['es_cover']}><{/if}>"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <h3 class="lighter block green">图片</h3>
+                                                            <div id="slide-img" class="pic-box" style="display:inline-block">
+                                                                <{foreach $slide as $key=>$val}>
+                                                                <p>
+                                                                    <img class="img-thumbnail col" layer-src="<{$val['ahrs_path']}>"  layer-pid="" src="<{$val['ahrs_path']}>" >
+                                                                    <span class="delimg-btn">×</span>
+                                                                    <input type="hidden" id="slide_<{$key}>" name="slide_<{$key}>" value="<{$val['ahrs_path']}>">
+                                                                    <input type="hidden" id="slide_id_<{$key}>" name="slide_id_<{$key}>" value="<{$val['ahrs_id']}>">
+                                                                </p>
+                                                                <{/foreach}>
+                                                            </div>
+                                                            <span onclick="toUpload(this)" data-limit="10" data-width="750" data-height="400" data-dom-id="slide-img" class="btn btn-success btn-xs">添加幻灯</span>
+                                                            <input type="hidden" id="slide-img-num" name="slide-img-num" value="<{if $slide}><{count($slide)}><{else}>0<{/if}>" placeholder="控制图片张数">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="info-group-box">
+                                                <div class="info-group-inner">
+                                                    <div class="group-title">
+                                                        <span>简介</span>
+                                                    </div>
+                                                    <div class="group-info" style="padding-left: 0">
+                                                        <div class="control-group" style="margin-left: 0">
+                                                            <textarea class="form-control" style="width:100%;height:200px;" id = "brief" name="brief" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['es_brief']}><{$row['es_brief']}><{/if}></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="info-group-inner">
+                                                    <div class="group-title">
+                                                        <span>详情</span>
+                                                    </div>
+                                                    <div class="group-info" style="padding-left: 0">
+                                                        <div class="control-group" style="margin-left: 0">
+                                                            <textarea class="form-control" style="width:100%;height:600px;visibility:hidden;" id = "content" name="content" placeholder="详情"  rows="20" style=" text-align: left; resize:vertical;" >
+                                                                 <{$row['es_content']}>
+                                                         </textarea>
+                                                            <input type="hidden" name="sub_dir" id="sub-dir" value="default" />
+                                                            <input type="hidden" name="ke_textarea_name" value="content" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <hr />
+                                <div class="row-fluid wizard-actions">
+                                    <{if $row}>
+                                    <button class="btn btn-primary" onclick="saveResource('save');">
+                                        保存
+                                    </button>
+                                    <{/if}>
+                                    <button class="btn btn-prev">
+                                        <i class="icon-arrow-left"></i>
+                                        上一步
+                                    </button>
+
+                                    <button class="btn btn-success btn-next" data-last="完成">
+                                        下一步
+                                        <i class="icon-arrow-right icon-on-right"></i>
+                                    </button>
+                                </div>
+                            </div><!-- /widget-main -->
+                        </div><!-- /widget-body -->
+                    </div>
+                </div>
+            </div>
+        </div><!-- /span -->
+    </div><!-- /row -->
+</div><!-- PAGE CONTENT ENDS -->
+
+<{include file="../img-upload-modal.tpl"}>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=099aa80c85be20b87ecf7fd6ad75bdc2"></script>
+
+<script type="text/javascript" src="/public/plugin/layer/layer.js"></script>
+<script type="text/javascript" src="/public/manage/assets/js/fuelux/fuelux.wizard.min.js"></script>
+<script type="text/javascript" src="/public/plugin/sortable/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/public/manage/controllers/goods.js"></script>
+<script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript">
+    var s_type = '<{$type}>';
+    $('#pro').change(function(){
+        $("#city").html('');
+        $("#area").html('');
+        var p_ro = $(this).val();
+        //console.log(p_ro);return;
+        var data = {
+            'pro' : p_ro,
+        }
+        $.ajax({
+            url:'/wxapp/park/getcity',
+            type:'post',
+            data:data,
+            dataType:'json',
+            success: function(ret){
+                var option="<option value=''>地市</option>";
+                $.each(ret,function(k,v){
+                    option += '<option value=' + v['region_id'] + '>' + v['region_name'] + '</option>'
+                });
+                $("#city").html(option);
+            }
+        })
+
+    });
+    $('#city').change(function(){
+        $("#zone").html('');
+        var city = $(this).val();
+        var data = {
+            'city' : city,
+        }
+        $.ajax({
+            url:'/wxapp/park/getarea',
+            type:'post',
+            data:data,
+            dataType:'json',
+            success: function(ret){
+                var option="<option value='0'>区域</option>";
+                $.each(ret,function(k,v){
+                    option += '<option value=' + v['region_id'] + '>' + v['region_name'] + '</option>'
+                });
+                $("#zone").html(option);
+            }
+        })
+
+    });
+
+    $('#zone').change(function(){
+        $("#park").html('');
+        var zone = $(this).val();
+        var data = {
+            'zone' : zone,
+        }
+        $.ajax({
+            url:'/wxapp/park/getpark',
+            type:'post',
+            data:data,
+            dataType:'json',
+            success: function(ret){
+                var option="<option value='0'>园区</option>";
+                $.each(ret,function(k,v){
+                    option += '<option value=' + v['ap_id'] + '>' + v['ap_name'] + '</option>'
+                });
+                $("#park").html(option);
+            }
+        })
+
+    });
+    $(function(){
+        $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
+            /*  去掉商品类目不再做验证*/
+            /*
+             if(info.step == 1 && info.direction == 'next') {
+             if(!checkCategory()) return false;
+             }else
+             */
+            if(info.step == 1 && info.direction == 'next'){
+                if(!checkBasic()) return false;
+            }else if(info.step == 2 && info.direction == 'next'){
+                if(!checkImg()) return false;
+            }
+        }).on('finished', function(e) {
+            saveResource('step');
+        });
+
+        $('.product-leibie').on('click', 'li', function(event) {
+            $(this).addClass('selected').siblings('li').removeClass('selected');
+            var id = $(this).data('id');
+            $('#g_c_id').val(id);
+        });
+        //高德地图引入
+        var marker, geocoder,map = new AMap.Map('container',{
+            zoom            : 10,
+            keyboardEnable  : true,
+            resizeEnable    : true,
+            topWhenClick    : true
+        });
+        //添加地图控件
+        AMap.plugin(['AMap.ToolBar'],function(){
+            var toolBar = new AMap.ToolBar();
+            map.addControl(toolBar);
+        });
+
+        //地图添加点击事件
+        map.on('click', function(e) {
+            $('#lng').val(e.lnglat.getLng());
+            $('#lat').val(e.lnglat.getLat());
+            //添加地图服务
+            AMap.service('AMap.Geocoder',function(){
+                //实例化Geocoder
+                geocoder = new AMap.Geocoder({
+                    city: "010"//城市，默认：“全国”
+                });
+                //TODO: 使用geocoder 对象完成相关功能
+                //逆地理编码
+                var lnglatXY=[e.lnglat.getLng(), e.lnglat.getLat()];//地图上所标点的坐标
+                geocoder.getAddress(lnglatXY, function(status, result) {
+                    if (status === 'complete' && result.info === 'OK') {
+                        addMarker(e.lnglat.getLng(), e.lnglat.getLat(),result.regeocode.formattedAddress);
+
+                        //详细地址处理
+                        var pcz  = {
+                            'province'  : result.regeocode.addressComponent.province,
+                            'city'      : result.regeocode.addressComponent.city,
+                            'zone'      : result.regeocode.addressComponent.zone
+                        };
+
+                        var province    = result.regeocode.addressComponent.province;
+                        var city       = result.regeocode.addressComponent.city;
+                        var zone        = result.regeocode.addressComponent.zone;
+                        var township    =  result.regeocode.addressComponent.township;
+                        var street      =  result.regeocode.addressComponent.street;
+                        var streetNumber=  result.regeocode.addressComponent.streetNumber;
+                        var neighborhood=  result.regeocode.addressComponent.neighborhood;
+                        town = zone;
+                        var adds = province + city + zone + township + street + streetNumber + neighborhood;
+                        $('#zone').val(zone);
+                        $('#address').val(township+street+streetNumber);
+                    }else{
+                        //获取地址失败
+                    }
+                });
+            });
+        });
+        //搜索地图位置
+        $('.btn-map-search').on('click',function(){
+            var province = $('#province').find("option:selected").text();
+            var city = $('#city').find("option:selected").text();
+            var addr = $('#address').val();
+            var zone = $('#zone').find("option:selected").text();
+            var community = $('#community').val();
+            var detail  = province+''+city+''+zone+''+addr+''+community;
+            if(detail){
+                var address = detail;
+                AMap.service('AMap.Geocoder',function(){ //回调函数
+                    //实例化Geocoder
+                    geocoder = new AMap.Geocoder({
+                        'city'   : '', //城市，默认：“全国”
+                        'radius' : 1000   //范围，默认：500
+                    });
+                    //TODO: 使用geocoder 对象完成相关功能
+                    //地理编码,返回地理编码结果
+                    geocoder.getLocation(address, function(status, result) {
+                        if (status === 'complete' && result.info === 'OK') {
+                            var loc_lng_lat = result.geocodes[0].location;
+                            $('#lng').val(loc_lng_lat.getLng());
+                            $('#lat').val(loc_lng_lat.getLat());
+                            addMarker(loc_lng_lat.getLng(),loc_lng_lat.getLat(),result.geocodes[0].formattedAddress);
+                        }else{
+                            layer.msg('您输入的地址无法找到，请确认后再次输入');
+                        }
+                    });
+                });
+
+            }else{
+                layer.msg('请填写详细地址');
+            }
+        });
+        /**
+         * 添加一个标签和一个结构体
+         * @param lng
+         * @param lat
+         * @param address
+         */
+        function addMarker(lng,lat,address) {
+            if (marker) {
+                marker.setMap();
+            }
+            marker = new AMap.Marker({
+                icon    : "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+                position: [lng,lat]
+            });
+            marker.setMap(map);
+
+            infoWindow = new AMap.InfoWindow({
+                offset  : new AMap.Pixel(0,-30),
+                content : '您选中的位置：'+address
+            });
+            infoWindow.open(map, [lng,lat]);
+        }
+
+    });
+
+
+
+
+    /**
+     * 第一步检查商品类目
+     * */
+    function checkCategory(){
+        var temp = $('#g_c_id').val();
+        if(!temp){
+            var msg = $('#g_c_id').attr('placeholder');
+            layer.msg(msg);
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 第二步检查基本信息
+     * */
+    function checkBasic(){
+        var check   = new Array('title','address');
+        for(var i=0 ; i < check.length ; i++){
+            var temp = $('#'+check[i]).val();
+            if(!temp){
+                var msg = $('#'+check[i]).attr('placeholder');
+                layer.msg(msg);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 第三步，检查图片
+     * @returns {boolean}
+     */
+    function checkImg(){
+        var res_cover = $('#cover').val();
+        if(!res_cover){
+            layer.msg('请上传封面图');
+            return false;
+        }
+        var slide = 0;
+        for(var i=0;i<=4;i++){
+            var temp = $('#slide_'+i).val();
+            if(temp) {
+                slide = parseInt(slide) + 1;
+            }
+        }
+        if(slide == 0){
+            layer.msg('请上传幻灯');
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 保存房源信息
+     */
+    function saveResource(){
+        $.ajax({
+            'type'   : 'post',
+            'url'   : '/wxapp/service/saveService',
+            'data'  : $('#resources-form').serialize(),
+            'dataType'  : 'json',
+            'success'   : function(ret){
+                layer.close(load_index);
+                if(ret.ec == 200 ){
+                    alert(ret.em);
+                    window.location.href='/wxapp/service/serviceList';
+                }else{
+                    layer.msg(ret.em);
+                }
+            }
+        });
+    }
+
+    $('input[name="saleType"]').click(function(){
+        if($(this).val() == 1){
+            $('#rent').hide();
+            $('#sale').show();
+        }else{
+            $('#rent').show();
+            $('#sale').hide();
+        }
+    })
+
+    /**
+     * 图片结果处理
+     * @param allSrc
+     */
+    function deal_select_img(allSrc){
+        if(allSrc){
+            if(maxNum == 1){
+                $('#'+nowId).attr('src',allSrc[0]);
+                if(nowId == 'upload-cover'){
+                    $('#cover').val(allSrc[0]);
+                }
+            }else{
+                var img_html = '';
+                var cur_num = $('#'+nowId+'-num').val();
+                for(var i=0 ; i< allSrc.length ; i++){
+                    var key = i + parseInt(cur_num);
+                    img_html += '<p>';
+                    img_html += '<img class="img-thumbnail col" layer-src="'+allSrc[i]+'"  layer-pid="" src="'+allSrc[i]+'" >';
+                    img_html += '<span class="delimg-btn">×</span>';
+                    img_html += '<input type="hidden" id="slide_'+key+'" name="slide_'+key+'" value="'+allSrc[i]+'">';
+                    img_html += '<input type="hidden" id="slide_id_'+key+'" name="slide_id_'+key+'" value="0">';
+                    img_html += '</p>';
+                }
+                var now_num = parseInt(cur_num)+allSrc.length;
+                if(now_num <= maxNum){
+                    $('#'+nowId+'-num').val(now_num);
+                    $('#'+nowId).prepend(img_html);
+                }else{
+                    layer.msg('幻灯图片最多'+maxNum+'张');
+                }
+            }
+        }
+    }
+
+    $('.math-vip').blur(function(){
+        var discount = $(this).val();
+    });
+
+    function formatSort(){
+        $("#panel-group").sortable({
+            update: function( event, ui ) {
+                sortString();
+            }
+        });
+    }
+    function sortString(){
+        var sortString="";
+        $('#panel-group').find(".panel").each(function(){
+            var sortid = $(this).data("sort");
+            sortString +=sortid+",";
+        });
+        $("#format-sort").val(sortString);
+    }
+    var nowdate = new Date();
+    var year  = nowdate.getFullYear(),
+        month = nowdate.getMonth()+1,
+        date  = nowdate.getDate();
+    var today = year+"-"+month+"-"+date;
+    /*初始化日期选择器*/
+    function chooseDate(){
+        WdatePicker({
+            dateFmt:'yyyy',
+            maxDate:today
+        });
+    }
+
+
+
+
+
+
+</script>
+
