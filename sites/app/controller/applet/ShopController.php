@@ -78,7 +78,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $data['company'] = array(
             'c_name' => $about_us['au_c_name'],
             'image'  => $this->dealImagePath($about_us['au_image']),
-            'brief'  => $about_us['au_bridf'],
+            'brief'  => $about_us['au_brief'],
             'mobile' => $about_us['au_mobile'],
             'address' => $about_us['au_address']
         );
