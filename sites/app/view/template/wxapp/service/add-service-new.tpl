@@ -168,7 +168,7 @@
 
                                                     <div class="group-info">
                                                         <div class="form-group">
-                                                            <label for="">LOGO<font color="red">*</font></label>
+                                                            <label for="" class="green">LOGO</label>
                                                             <div class="control-group">
                                                                 <img onclick="toUpload(this)" data-limit="1" data-width="250" data-height="250" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                                                                 <input type="hidden" id="logo"  class="avatar-field bg-img" name="logo" value="<{if $row && $row['es_logo']}><{$row['es_logo']}><{/if}>"/>
@@ -176,7 +176,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="">封面<font color="red">*</font></label>
+                                                            <label for=""  class="green">封面</label>
                                                             <div class="control-group">
 
                                                                 <img onclick="toUpload(this)" data-limit="1" data-width="750" data-height="400" data-dom-id="upload-cover" id="upload-cover"  src="<{if $row && $row['es_cover']}><{$row['es_cover']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
@@ -202,16 +202,6 @@
                                                 </div>
                                             </div>
                                             <div class="info-group-box">
-                                                <div class="info-group-inner">
-                                                    <div class="group-title">
-                                                        <span>简介</span>
-                                                    </div>
-                                                    <div class="group-info" style="padding-left: 0">
-                                                        <div class="control-group" style="margin-left: 0">
-                                                            <textarea class="form-control" style="width:100%;height:200px;" id = "brief" name="brief" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['es_brief']}><{$row['es_brief']}><{/if}></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
                                                 <div class="info-group-inner">
                                                     <div class="group-title">

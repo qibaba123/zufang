@@ -70,8 +70,8 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
 
     //保存服务
     public function saveServiceAction(){
-        $id   = $this->request->getIntParam('id');
-        $data['es_name']     = $this->request->getStrParam('name');
+        $id   = $this->request->getIntParam('hid_id');
+        $data['es_name']     = $this->request->getStrParam('es_name');
         $data['es_weight']   = $this->request->getIntParam('weight');
         $data['es_type']     = $this->request->getIntParam('type');
         $data['es_logo']     = $this->request->getStrParam('logo');
@@ -81,26 +81,95 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $data['es_price']    = $this->request->getFloatParam('price');
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
         $data['es_create_time'] = time();
+        $is_add = 0;
         if($id){
             $ret = $service_model->updateById($data,$id);
         }else{
             $data['es_s_id'] = $this->curr_sid;
             $ret = $service_model->insertValue($data);
+            $is_add = 1;
         }
         if($ret){
+            $this->batchSlide($id,$is_add);
             $this->displayJsonSuccess(array(),true,'保存成功');
         }else{
             $this->displayJsonError('保存失败');
         }
     }
 
-
-
-
-
+    public function batchSlide($resId,$is_add=0){
+        $slide_model    = new App_Model_Service_MysqlServiceSlideStorage($this->curr_sid);
+        $maxNum         = $this->request->getStrParam('slide-img-num');
+        $slide          = array();
+        if($is_add){
+            for($i=0; $i<= $maxNum; $i++){
+                $temp = $this->request->getStrParam('slide_'.$i);
+                $temp = plum_sql_quote($temp);
+                if($temp){
+                    $slide[] = "(NULL, '{$this->curr_sid}', '{$resId}', 1,'{$temp}', 0, '".time()."')";
+                }
+            }
+            $slide_model->batchSave($slide);
+        }else{
+            $sl_id = array();
+            for($i=0; $i<= $maxNum; $i++){
+                $temp = $this->request->getStrParam('slide_'.$i);
+                $temp = plum_sql_quote($temp);
+                $temp_id = $this->request->getIntParam('slide_id_'.$i);
+                if($temp && $temp_id == 0){
+                    $slide[] = $temp;
+                }
+                if($temp_id){
+                    $sl_id[] = $temp_id;
+                }
+            }
+            $del_id = array();
+            $old_slide = $slide_model->getListByGidSid($resId,$this->curr_sid,1);
+            foreach($old_slide as $val){
+                if(!in_array($val['ahrs_id'],$sl_id)){
+                    $del_id[] = $val['ahrs_id'];
+                }
+            }
+            if(count($slide) <= count($del_id)){
+                for($d=0 ; $d < count($del_id) ; $d++){
+                    if(isset($slide[$d]) && $slide[$d]){
+                        $slide_model->updateSlide($del_id[$d],$slide[$d]);
+                        unset($del_id[$d]);
+                    }
+                }
+                if(!empty($del_id)){
+                    $slide_model->deleteSlide($resId,$del_id);
+                }
+            }else{
+                $batch_slide = array();
+                for($s=0 ; $s < count($slide) ; $s++){
+                    if(isset($del_id[$s]) && $del_id[$s]){
+                        $slide_model->updateSlide($del_id[$s],$slide[$s]);
+                        unset($slide[$s]);
+                    }else{
+                        $sTemp = plum_sql_quote($slide[$s]);
+                        $batch_slide[] = "(NULL, '{$this->curr_sid}', '{$resId}', 1,'{$sTemp}', 0, '".time()."')";
+                    }
+                }
+                if(!empty($batch_slide)){
+                    $slide_model->batchSave($batch_slide);
+                }
+            }
+        }
+    }
 
 
     
+
+
+
+
+
+
+
+
+
+
     public function msgListAction(){
         $page   = $this->request->getIntParam('page');
         $index  = $page * $this->count;
