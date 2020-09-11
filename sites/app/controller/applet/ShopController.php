@@ -10,7 +10,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
 {
 
     public function __construct(){
-        parent::__construct(true);
+        parent::__construct();
     }
 
     /**
@@ -90,7 +90,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
 
     //关于我们接口
     public function aboutusAction(){
-        $about_us_model = new App_Model_Shop_MysqlShopAboutUsStorage();
+        $about_us_model = new App_Model_aboutus_MysqlAboutUsStorage();
         $about_us       = $about_us_model->getRowById(1);
         $data = array(
             'c_name' => $about_us['au_c_name'],
