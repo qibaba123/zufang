@@ -96,13 +96,13 @@
                                                     <div class="group-info">
 
                                                         <div class="form-group">
-                                                            <label for="" style="width: 100%" >服务名称<font color="red">*</font></label>
+                                                            <label for="name" class="control-label"><font color="red">*</font>服务名称：</label>
                                                             <div class="control-group">
                                                                 <input type="text" id="es_name" placeholder="服务名称" class="form-control" name="es_name" value="<{if $row && $row['es_name']}><{$row['es_name']}><{/if}>"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group ">
-                                                            <label for="">服务类型：</label>
+                                                            <label for="name" class="control-label"><font color="red">*</font>服务类型：</label>
                                                             <div class="control-group">
                                                                 <select class="form-control" name="type" id="type" >
                                                                     <option value="0">请选择服务类型</option>
@@ -112,19 +112,19 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group priceshow" <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
-                                                        <label for="">金额<font color="red">*</font></label>
+                                                        <label for="name" class="control-label"><font color="red">*</font>金额：</label>
                                                         <div class="control-group">
                                                             <input id="price" class="form-control"  placeholder="金额" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="">权重<font color="red">*</font></label>
+                                                        <label for="name" class="control-label"><font color="red">*</font>权重：</label>
                                                         <div class="control-group">
                                                             <input id="weight" class="form-control"  placeholder="权重" value="<{if $row && $row['es_weight']}><{$row['es_weight']}><{/if}>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="">简介<font color="red">*</font></label>
+                                                        <label for="name" class="control-label"><font color="red">*</font>简介：</label>
                                                         <div class="control-group">
                                                             <textarea class="form-control" style="width:100%;height:200px;" id = "brief" name="brief" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['es_brief']}><{$row['es_brief']}><{/if}></textarea>
                                                         </div>
@@ -529,7 +529,7 @@
     /**
      * 保存房源信息
      */
-    function saveResource(){
+    function saveResource(type){
         $.ajax({
             'type'   : 'post',
             'url'   : '/wxapp/service/saveService',
