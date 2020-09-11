@@ -45,7 +45,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
                 'id' => $val['ai_id'],
                 'title' => $val['ai_title'],
                 'cover' => $this->dealImagePath($val['ai_cover']),
-                'brief' => $val['brief'],
+                'brief' => $val['ai_brief'],
                 'create_time' => date('Y-m-d',$val['ai_create_time']),
                 'show_num' => $val['ai_show_num']
             );
@@ -73,7 +73,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         //企业服务顶部图片
         $data['service']['top_image'] = $this->dealImagePath($this->shop['s_service_image']);
         //联系我们
-        $about_us_model = new App_Model_Shop_MysqlShopAboutUsStorage();
+        $about_us_model = new App_Model_aboutus_MysqlAboutUsStorage();
         $about_us       = $about_us_model->getRowById(1);
         $data['company'] = array(
             'c_name' => $about_us['au_c_name'],
