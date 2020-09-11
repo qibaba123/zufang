@@ -120,7 +120,7 @@
                                                     <div class="form-group">
                                                         <label for="name" class="control-label"><font color="red">*</font>权重：</label>
                                                         <div class="control-group">
-                                                            <input id="weight" class="form-control"  placeholder="权重" value="<{if $row && $row['es_weight']}><{$row['es_weight']}><{/if}>">
+                                                            <input id="weight" class="form-control"  name="weight" placeholder="权重" value="<{if $row && $row['es_weight']}><{$row['es_weight']}><{/if}>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -188,10 +188,10 @@
                                                             <div id="slide-img" class="pic-box" style="display:inline-block">
                                                                 <{foreach $slide as $key=>$val}>
                                                                 <p>
-                                                                    <img class="img-thumbnail col" layer-src="<{$val['ahrs_path']}>"  layer-pid="" src="<{$val['ahrs_path']}>" >
+                                                                    <img class="img-thumbnail col" layer-src="<{$val['ss_path']}>"  layer-pid="" src="<{$val['ss_path']}>" >
                                                                     <span class="delimg-btn">×</span>
-                                                                    <input type="hidden" id="slide_<{$key}>" name="slide_<{$key}>" value="<{$val['ahrs_path']}>">
-                                                                    <input type="hidden" id="slide_id_<{$key}>" name="slide_id_<{$key}>" value="<{$val['ahrs_id']}>">
+                                                                    <input type="hidden" id="slide_<{$key}>" name="slide_<{$key}>" value="<{$val['ss_path']}>">
+                                                                    <input type="hidden" id="slide_id_<{$key}>" name="slide_id_<{$key}>" value="<{$val['ss_id']}>">
                                                                 </p>
                                                                 <{/foreach}>
                                                             </div>
