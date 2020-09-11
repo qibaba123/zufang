@@ -427,11 +427,13 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
      */
     private function _verify_member(){
         $uid    = plum_app_user_islogin();
+        //$test   = $this->request->getIntParam('test');
+
         //  测试 -2019-11-09
         if(!$uid) {
-            $test11 = $this->request->getIntParam('test11');
-            if($test11 == 5914282) {
-                $uid = $test11;
+            $test11 = $this->request->getIntParam('test');
+            if($test11) {
+                $uid = 4;
             }
         }
 
