@@ -57,7 +57,7 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
             'id'    => $row['es_id'],
             'name'  => $row['es_name'],
             'cover' => $this->dealImagePath($row['es_cover']),
-            'brief' => $row['es_detail'],
+            'brief' => $row['es_brief'],
             'price' => $row['es_price'],
             'content' => plum_parse_img_path($row['es_content']),
             'type'    => $row['es_type']
