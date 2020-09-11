@@ -50,7 +50,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $this->buildBreadcrumbs(array(
             array('title' => '编辑企业服务', 'link' => '#'),
         ));
-        $this->displaySmarty('wxapp/service/add-service_new.tpl');
+        $this->displaySmarty('wxapp/service/add-service-new.tpl');
 
     }
 
