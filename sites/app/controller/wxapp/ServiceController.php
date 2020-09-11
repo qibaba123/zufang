@@ -50,7 +50,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
                 $slide          = $slide_model->getSlideByGid($row['es_id'], 1);
             }
             var_dump($slide);exit;
-            $this->output['slide'] = $slide;
+            //$this->output['slide'] = $slide;
         }
         $this->renderCropTool('/wxapp/index/uploadImg');
         $this->buildBreadcrumbs(array(
