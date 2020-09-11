@@ -84,7 +84,7 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
     public function __construct($index=false) {
 
         parent::__construct();
-        $this->_log_watch_dog();
+        //$this->_log_watch_dog();
         $this->_verify_shop();
         // 进入商城首页不验证用户信息
         if(!$index){
