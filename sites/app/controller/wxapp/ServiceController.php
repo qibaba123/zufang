@@ -153,7 +153,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
                         unset($slide[$s]);
                     }else{
                         $sTemp = plum_sql_quote($slide[$s]);
-                        $batch_slide[] = "(NULL, '{$this->curr_sid}', '{$resId}', 1,'{$sTemp}', 0, '".time()."')";
+                        $batch_slide[] = "(NULL, '{$this->curr_sid}', '{$resId}','{$sTemp}', 0, '".time()."')";
                     }
                 }
                 if(!empty($batch_slide)){
