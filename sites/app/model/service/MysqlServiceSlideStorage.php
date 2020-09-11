@@ -91,7 +91,7 @@ class App_Model_Service_MysqlServiceSlideStorage extends Libs_Mvc_Model_BaseMode
     public function batchSave(array $value){
         if(!empty($value)){
             $sql = 'INSERT '.' INTO '.DB::table($this->_table);
-            $sql .= ' (`ss_id`, `sss_s_id`, `ss_ser_id`,`ss_path`, `ss_deleted`, `ss_create_time`) ';
+            $sql .= ' (`ss_id`, `ss_s_id`, `ss_ser_id`,`ss_path`, `ss_deleted`, `ss_create_time`) ';
             $sql .= ' VALUES '.implode(',',$value);
 
             $ret  = DB::query($sql);
