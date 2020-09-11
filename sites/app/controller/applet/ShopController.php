@@ -17,6 +17,96 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
      * 店铺首页
      */
 
+    public function indexAction(){
+        //首页轮播图
+        $slide_model = new App_Model_Slide_MysqlSlideStorage();
+        $where[]     = array('name'=>"sl_show",'oper'=>"=",'value'=>1);
+        $slide       = $slide_model->getList($where,0,0,array('sl_weight'=>'DESC'));
+        foreach($slide as $val){
+            $data['slide'][] = array(
+                'img' => $this->dealImagePath($val['sl_img']),
+                'link_id' => $val['sl_link']
+            );
+        }
+
+        //首页公告
+        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage();
+        $notice       = $notice_model->getList(array(),0,0,array('sn_weight'=>'DESC'));
+        foreach($notice as $val){
+            $data['notice'][] = array(
+                'content' => $val['sn_brief']
+            );
+        }
+        //首页文章
+        $information_model = new App_Model_Applet_MysqlAppletInformationStorage();
+        $information       = $information_model->getList(array(),0,2,array('ai_sort'=>'DESC'));
+        foreach ($information as $val){
+            $data['information'][] = array(
+                'id' => $val['ai_id'],
+                'title' => $val['ai_title'],
+                'cover' => $this->dealImagePath($val['ai_cover']),
+                'brief' => $val['brief'],
+                'create_time' => date('Y-m-d',$val['ai_create_time']),
+                'show_num' => $val['ai_show_num']
+            );
+        }
+
+        //首页企业服务
+        $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $service       = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        foreach($service as $val){
+//            if($val['es_type'] == 1){
+            $data['service']['list'][] = array(
+                'id'   => $val['es_id'],
+                'name' => $val['es_name'],
+                'type' => $val['es_type'],
+                'logo' => $this->dealImagePath($val['es_logo'])
+            );
+//            }else{
+//                $data['service']['information'][] = array(
+//                    'id'   => $val['es_id'],
+//                    'name' => $val['es_name'],
+//                    'logo' => $this->dealImagePath($val['es_logo'])
+//                );
+//            }
+        }
+        //企业服务顶部图片
+        $data['service']['top_image'] = $this->dealImagePath($this->shop['s_service_image']);
+        //联系我们
+        $about_us_model = new App_Model_Shop_MysqlShopAboutUsStorage();
+        $about_us       = $about_us_model->getRowById(1);
+        $data['company'] = array(
+            'c_name' => $about_us['au_c_name'],
+            'image'  => $this->dealImagePath($about_us['au_image']),
+            'brief'  => $about_us['au_bridf'],
+            'mobile' => $about_us['au_mobile'],
+            'address' => $about_us['au_address']
+        );
+        $this->displayJsonSuccess($data,true,'获取成功');
+
+
+    }
+
+
+    //关于我们接口
+    public function aboutusAction(){
+        $about_us_model = new App_Model_Shop_MysqlShopAboutUsStorage();
+        $about_us       = $about_us_model->getRowById(1);
+        $data = array(
+            'c_name' => $about_us['au_c_name'],
+            'mobile' => $about_us['au_mobile'],
+            'address' => $about_us['au_address'],
+            'work_time' => $about_us['au_work_start_time'].'-'.$about_us['au_work_end_time'],
+            'image1'  => $this->dealImagePath($about_us['au_image1']),
+            'brief1'  => $about_us['au_bridf1'],
+            'image2'  => $this->dealImagePath($about_us['au_image2']),
+            'brief2'  => $about_us['au_bridf2'],
+            'service_image'   => $this->dealImagePath($about_us['au_service_image']),
+        );
+        $this->displayJsonSuccess($data,true,'获取成功');
+    }
+
+
 
     private function _get_bottom_menu(){
         // 解析配置的菜单信息

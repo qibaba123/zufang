@@ -1,12 +1,9 @@
 <link rel="stylesheet" href="/public/manage/assets/css/datepicker.css">
-<link rel="stylesheet" href="/public/plugin/sortable/jquery-ui.min.css">
 <link rel="stylesheet" href="/public/manage/assets/css/bootstrap-timepicker.css" />
 <link rel="stylesheet" href="/public/manage/css/addgoods.css">
 <link rel="stylesheet" href="/public/manage/ajax-page.css">
 
-<{if $isActivity == 1}>
-    <{include file="../common-second-menu-new.tpl"}>
-<{/if}>
+
 <style type="text/css">
     h1, h2, h3, h4, h5, h6{
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif,"Microsoft yahei"!important;
@@ -254,9 +251,9 @@
                                                         <div class="form-group">
                                                             <label for="name" class="control-label">工作时间：</label>
                                                             <div class="control-group">
-                                                                <input type="text" class="form-control business-time time" id="start_time"  placeholder="营业开始时间" value="<{$row['au_work_start_time']}>">
+                                                                <input type="text" style="width: 150px;display: inline" class="form-control business-time time" name="start_time" id="start_time"  placeholder="营业开始时间" value="<{$row['au_work_start_time']}>">
                                                                 至
-                                                                <input type="text" class="form-control business-time time" id="end_time"  placeholder="营业结束时间" value="<{$row['au_work_end_time']}>">
+                                                                <input type="text" style="width: 150px;display: inline" class="form-control business-time time" id="end_time" name="end_time" placeholder="营业结束时间" value="<{$row['au_work_end_time']}>">
                                                             </div>
                                                         </div>
                                                         <div class="form-group ">
@@ -266,17 +263,41 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
+                                                            <label class="control-label xs-hidden-label">企业服务封面(345px*130px)：</label>
+                                                            <div class="control-group" >
+                                                                <img onclick="toUpload(this)" data-limit="1" data-width="345" data-height="130" data-dom-id="upload-serviceimage" id="upload-serviceimage"  src="<{if $row && $row['au_service_image']}><{$row['au_service_image']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                                <input type="hidden" id="serviceimage"  class="avatar-field bg-img" name="serviceimage" value="<{if $row && $row['au_service_image']}><{$row['au_service_image']}><{/if}>"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label xs-hidden-label">首页封面(168px*119px)：</label>
+                                                            <div class="control-group" >
+                                                                <img onclick="toUpload(this)" data-limit="1" data-width="168" data-height="119" data-dom-id="upload-image" id="upload-image"  src="<{if $row && $row['au_image']}><{$row['au_image']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                                <input type="hidden" id="image"  class="avatar-field bg-img" name="image" value="<{if $row && $row['au_image']}><{$row['au_image']}><{/if}>"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label xs-hidden-label">首页简介：</label>
+                                                            <div class="control-group xs-hidden-info" >
+                                                                <textarea class="form-control" style="width:100%;height:200px;" id = "brief" name="brief" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['au_brief']}><{$row['au_brief']}><{/if}></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label class="control-label"><font color="red">*</font>详细地址：</label>
                                                             <div class="control-group" style="float: left;width: 63%;margin: 0;">
-                                                                <input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;margin-top: 20px" placeholder="请填写具体地址" value="<{if $row}><{$row['au_address']}><{/if}>">
+                                                                <input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;" placeholder="请填写具体地址" value="<{if $row}><{$row['au_address']}><{/if}>">
                                                             </div>
-                                                            <div class="control-group col-sm-2 text-left" style="margin-left: 0;margin-top: 54px">
+                                                            <div class="control-group col-sm-2 text-left" style="margin-left: 0;">
                                                                 <input type="hidden" id="lng" name="lng" placeholder="请在地图中标注分店位置" value="<{if $row}><{$row['au_lng']}><{/if}>">
                                                                 <input type="hidden" id="lat" name="lat" placeholder="请在地图中标注分店位置" value="<{if $row}><{$row['au_lat']}><{/if}>">
                                                                 <label class="btn btn-default btn-sm btn-map-search"> 搜索地图 </label>
                                                             </div>
                                                         </div>
-
+                                                        <div class="form-group">
+                                                            <div class="control-group col-sm-9">
+                                                                <div id="container" style="width: 750px; height: 300px"></div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div> 
@@ -291,33 +312,29 @@
                                                 </div>
                                                 <div class="group-info  xs-hidden-info">
                                                     <div class="form-group">
-                                                        <label class="control-label xs-hidden-label">简介图片(上)：</label>
+                                                        <label class="control-label xs-hidden-label">简介图片(上 240px*142px)：</label>
                                                         <div class="control-group" >
-                                                            <img onclick="toUpload(this)" data-limit="1" data-width="250" data-height="250" data-dom-id="upload-image1" id="upload-image1"  src="<{if $row && $row['au_image1']}><{$row['au_image1']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                            <img onclick="toUpload(this)" data-limit="1" data-width="240" data-height="142" data-dom-id="upload-image1" id="upload-image1"  src="<{if $row && $row['au_image1']}><{$row['au_image1']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                                                             <input type="hidden" id="image1"  class="avatar-field bg-img" name="image1" value="<{if $row && $row['au_image1']}><{$row['au_image1']}><{/if}>"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介(上)：</label>
                                                         <div class="control-group xs-hidden-info" >
-                                                            <textarea class="form-control" style="width:850px;height:500px;visibility:hidden;" id = "brief1" name="brief1" placeholder="简介1"  rows="20" style=" text-align: left; resize:vertical;" >
-                                                                        <{if $row && $row['au_brief1']}><{$row['au_brief1']}><{/if}>
-                                                                        </textarea>
+                                                            <textarea class="form-control" style="width:100%;height:200px;" id = "brief1" name="brief1" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['au_brief1']}><{$row['au_brief1']}><{/if}></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介图片(下)：</label>
                                                         <div class="control-group" >
-                                                            <img onclick="toUpload(this)" data-limit="1" data-width="250" data-height="250" data-dom-id="upload-image2" id="upload-image2"  src="<{if $row && $row['au_image2']}><{$row['au_image2']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                            <img onclick="toUpload(this)" data-limit="1" data-width="240" data-height="142" data-dom-id="upload-image2" id="upload-image2"  src="<{if $row && $row['au_image2']}><{$row['au_image2']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                                                             <input type="hidden" id="image2"  class="avatar-field bg-img" name="image2" value="<{if $row && $row['au_image2']}><{$row['au_image2']}><{/if}>"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="control-label xs-hidden-label">简介(下)：</label>
+                                                        <label class="control-label xs-hidden-label">简介(下 240px*142px)：</label>
                                                         <div class="control-group xs-hidden-info" >
-                                                            <textarea class="form-control" style="width:850px;height:500px;visibility:hidden;" id = "brief2" name="brief2" placeholder="简介2"  rows="20" style=" text-align: left; resize:vertical;" >
-                                                                        <{if $row && $row['au_brief1']}><{$row['au_brief1']}><{/if}>
-                                                            </textarea>
+                                                            <textarea class="form-control" style="width:100%;height:200px;" id = "brief2" name="brief2" placeholder="简介"  rows="20" style=" text-align: left; resize:vertical;" ><{if $row && $row['au_brief2']}><{$row['au_brief2']}><{/if}></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -327,7 +344,7 @@
                                             <div class="info-group-inner">
                                                 <div class="group-title" style="background-color: transparent!important;"></div>
                                                 <div class='group-info' style="margin-left: 0;padding-left: 0;background-color: transparent!important;">
-                                                    <button class="btn btn-primary saveData"  style="width: 150px;">保存</button>
+                                                    <button class="btn btn-primary saveData"  style="width: 150px;margin-left:350px">保存</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -343,13 +360,13 @@
 </div><!-- PAGE CONTENT ENDS -->
 
 <{include file="../img-upload-modal.tpl"}>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=099aa80c85be20b87ecf7fd6ad75bdc2"></script>
 
 <script type="text/javascript" src="/public/manage/assets/js/fuelux/fuelux.wizard.min.js"></script>
 <script type="text/javascript" src="/public/plugin/sortable/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/public/wxapp/mall/js/goods.js?1"></script>
-<script src="/public/manage/newTemTwo/js/angular-1.4.6.min.js"></script>
-<script src="/public/manage/newTemTwo/js/angular-root.js"></script>
-<script src="/public/plugin/sortable/sortable.js"></script>
+<script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
     /*初始化日期选择器*/
     $('.time').click(function(){
@@ -377,17 +394,6 @@
     })
 
 
-
-    //图片上传完成时，图片加载事件绑定angularjs
-    app.directive('imageonload', function () {
-        return {
-            restrict: 'A', link: function (scope, element, attrs) {
-                element.bind('load', function () {
-                    scope.$apply(attrs.imageonload);
-                });
-            }
-        };
-    });
 
 
     /**
@@ -542,7 +548,6 @@
         infoWindow.open(map, [lng,lat]);
     }
 
-    });
 
 
 

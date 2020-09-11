@@ -10,12 +10,11 @@ class App_Model_Shop_MysqlShopAboutUsStorage extends Libs_Mvc_Model_BaseModel{
 
     private $sid;
 
-    public function __construct($sid){
+    public function __construct(){
         $this->_table 	= 'shop_about_us';
         $this->_pk 		= 'sa_id';
         $this->_shopId 	= 'sa_s_id';
         parent::__construct();
-        $this->sid  = $sid;
     }
 
     /*

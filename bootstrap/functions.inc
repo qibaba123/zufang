@@ -3,7 +3,7 @@
 define('DEFAULT_DIR_MODE', 0775);
 define('PLUM_AUTH_TOKEN', 'plum');//默认的认证token
 //define('PLUM_IMG_HOST_PATH','jdfs.jixuantiant.com');   //图片加速域名
-define('PLUM_IMG_HOST_PATH','jdfs.jixuantiant.com');   //图片加速域名
+define('PLUM_IMG_HOST_PATH','myd.jixuantiant.com');   //图片加速域名
 
 /**
  * @author thomas<thomas@ikinvin.com>

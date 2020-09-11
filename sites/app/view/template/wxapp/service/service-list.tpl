@@ -71,7 +71,7 @@
 <div  id="mainContent"  style="">
 
     <div id="content-con" class="content-con">
-        <div class="opera-btn-box" style="display: flex;">
+        <div class="opera-btn-box" style="display: inline;">
             <a href="/wxapp/service/addService" class="btn btn-blue btn-sm"><i class="icon-plus bigger-80"></i> 新增</a>
         </div>
         <button class="btn btn-blue btn-sm" style="margin-left: 20px;padding-bottom: 5px;" data-toggle="modal" data-target="#topModal"><i class="icon-plus bigger-80"></i>企业服务顶部图片</button>
@@ -151,60 +151,7 @@
         </div><!-- /.modal -->
     </div>
 
-<!-- 添加奖品弹出层 -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width: 550px;">
-        <div class="modal-content">
-            <input type="hidden" id="hid_id" >
-            <input type="hidden" id="categoryOld">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    &times;
-                </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    幻灯图
-                </h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group row">
-                    <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">幻灯图：(建议尺寸710*250)</label>
-                    <div class="col-sm-8">
-                        <div>
-                            <div class="cropper-box" data-width="710" data-height="250" style="height:100%;">
-                                <img id="default-cover" src="/public/manage/img/zhanwei/zw_fxb_75_36.png" width="100%" height="100%" style="display:block;width: 335px;" alt="封面" >
-                                <input type="hidden" class="avatar-field bg-img" name="slide-path" id="slide-path"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">链接文章：</label>
-                    <div class="col-sm-8">
-                        <select name="aiid" id="aiid" style="width: 345px" class="form-control">
-                            <option value="0">请选择链接文章</option>
-                            <{foreach $information as $val}>
-                                 <option  value="<{$val['ai_id']}>"><{$val['ai_title']}></option>
-                            <{/foreach}>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">排序权重：</label>
-                    <div class="col-sm-8">
-                        <input id="sort" class="form-control" placeholder="请输入整数，越大越靠前" style="height:auto!important"/>
-                    </div>
-                </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消
-                </button>
-                <button type="button" class="btn btn-primary" id="save-slide">
-                    保存
-                </button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
 </div>
 <style>
     .layui-layer-btn{
@@ -249,7 +196,6 @@
     }
 </style>
     <{include file="../img-upload-modal.tpl"}>
-<{$cropper['modal']}>
 <script type="text/javascript" src="/public/plugin/layer/layer.js"></script>
 <script type="text/javascript" src="/public/manage/controllers/custom.js"></script>
 <script type="text/javascript" src="/public/plugin/ZeroClip/ZeroClipboard.min.js"></script>
@@ -303,20 +249,7 @@
             });
         }
     }
-    //点击编辑或添加幻灯图
-    $('.add-slide').on('click',function () {
-        $("#type").val($(this).data('type'));
-        $('#hid_id').val($(this).data('id'));
-        $('#category').val($(this).data('category'));
-        $('#information').val($(this).data('information'));
-        $('#categoryOld').val($(this).data('category'));
-        $('#sort').val($(this).data('sort'));
-        $('#slide-path').val($(this).data('path'));
-        $('#default-cover').attr('src',$(this).data('path'));
-        var link = $(this).data('link');
-        $('#aiid').val(link);
-        //$('#gid').val($(this).data('link'));
-    });
+
 
     $('#save-slide').on('click',function(){
 //        var category = $('#category').val();

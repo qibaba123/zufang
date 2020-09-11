@@ -4,7 +4,7 @@ class App_Model_Service_MysqlServiceFormatStorage extends Libs_Mvc_Model_BaseMod
 {
 
 
-    public function __construct($sid)
+    public function __construct()
     {
         parent::__construct();
         $this->_table = 'applet_service_format';
