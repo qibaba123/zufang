@@ -287,7 +287,7 @@ return array(
         'applet_zf_my_collet'     => array(
             'controller'        => 'App_Controller_Applet_ServiceController',
             'action'            => 'myColletAction',
-            'desc'              => '收藏接口'
+            'desc'              => '我的收藏接口'
         ),
         'applet_information_category'      => array(
             'controller'        => 'App_Controller_Applet_CurrencyController',

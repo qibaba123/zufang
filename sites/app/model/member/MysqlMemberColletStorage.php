@@ -1,7 +1,7 @@
 <?php
 
 
-class App_Model_Member_MysqlMemberCollletStorage extends Libs_Mvc_Model_BaseModel {
+class App_Model_Member_MysqlMemberColletStorage extends Libs_Mvc_Model_BaseModel {
 
 
     public function __construct() {
