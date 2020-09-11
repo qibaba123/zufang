@@ -269,21 +269,21 @@
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        // $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
-        //     /*  去掉商品类目不再做验证*/
-        //     /*
-        //      if(info.step == 1 && info.direction == 'next') {
-        //      if(!checkCategory()) return false;
-        //      }else
-        //      */
-        //     if(info.step == 1 && info.direction == 'next'){
-        //         if(!checkBasic()) return false;
-        //     }else if(info.step == 2 && info.direction == 'next'){
-        //         if(!checkImg()) return false;
-        //     }
-        // }).on('finished', function(e) {
-        //     saveResource('step');
-        // });
+        $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
+            /*  去掉商品类目不再做验证*/
+            /*
+             if(info.step == 1 && info.direction == 'next') {
+             if(!checkCategory()) return false;
+             }else
+             */
+            if(info.step == 1 && info.direction == 'next'){
+                //if(!checkBasic()) return false;
+            }else if(info.step == 2 && info.direction == 'next'){
+               // if(!checkImg()) return false;
+            }
+        }).on('finished', function(e) {
+            saveResource('step');
+        });
 
         $('.product-leibie').on('click', 'li', function(event) {
             $(this).addClass('selected').siblings('li').removeClass('selected');
