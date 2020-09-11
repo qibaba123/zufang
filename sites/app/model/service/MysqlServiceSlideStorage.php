@@ -78,7 +78,7 @@ class App_Model_Service_MysqlServiceSlideStorage extends Libs_Mvc_Model_BaseMode
      */
     public function getSlideByGid($gid, $type){
         $where = array();
-        $where[] = array('name'=>'ss_ahr_id','oper'=>'=','value'=>$gid);
+        $where[] = array('name'=>'ss_ser_id','oper'=>'=','value'=>$gid);
         $where[] = array('name'=>'ss_deleted','oper'=>'=','value'=>0);
         return $this->getList($where,0,0);
     }
