@@ -41,9 +41,8 @@ class App_Controller_Wxapp_SlideController extends App_Controller_Wxapp_InitCont
         $name = $this->request->getStrParam('name');
 
         if($path){
-            $slide_model = new App_Model_Slide_MysqlSlideStorage();
+            $nav_model = new App_Model_Index_MysqlIndexNavStorage();
             $data = array(
-                'in_s_id'      => $this->curr_sid,
                 'in_weight'    => $sort,
                 'in_logo'      => $path,
                 'in_type'      => $type,
@@ -51,9 +50,9 @@ class App_Controller_Wxapp_SlideController extends App_Controller_Wxapp_InitCont
                 'in_create_time'  => time()
             );
             if($id){
-                $res = $slide_model -> updateById($data,$id);
+                $res = $nav_model -> updateById($data,$id);
             }else{
-                $res = $slide_model -> insertValue($data);
+                $res = $nav_model -> insertValue($data);
             }
             $this->showAjaxResult($res,'保存');
         }else{
