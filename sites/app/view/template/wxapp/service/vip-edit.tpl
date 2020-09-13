@@ -103,9 +103,9 @@
                                                         </div>
                                                         <input type="hidden" name="type" value="<{$row['es_type']}>">
                                                         <div class="form-group priceshow">
-                                                        <label for="name" class="control-label" style="width: 100px;"><font color="red">*</font>金额：</label>
+                                                        <label for="name" class="control-label" ><font color="red">*</font>金额：</label>
                                                         <div class="control-group">
-                                                            <input id="price" class="form-control"  placeholder="金额/年" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
+                                                            <input id="price" class="form-control" style="width: 100px;" placeholder="金额/年" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
