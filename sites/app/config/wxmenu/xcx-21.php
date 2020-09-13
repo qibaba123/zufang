@@ -36,6 +36,12 @@ return array(
             'special'   => true,
             'submenu'   => array(
                 array(
+                    'title'     => '首页导航',
+                    'link'      => '/slide/indexNav',
+                    'icon'      => 'icon-cog',
+                    'access'    => 'currency-informationList',
+                ),
+                array(
                     'title'     => '轮播图管理',
                     'link'      => '/slide/informationSlide',
                     'icon'      => 'icon-cog',

@@ -17,7 +17,6 @@
 </style>
 <script src="/public/plugin/datePicker/WdatePicker.js"></script>
 
-
 <div id="content-con" class="content-con">
     <div class="search-part-wrap">
         <form action="/wxapp/zftrade/formTradeList" method="get" class="form-inline">

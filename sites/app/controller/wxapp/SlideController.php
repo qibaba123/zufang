@@ -10,6 +10,55 @@ class App_Controller_Wxapp_SlideController extends App_Controller_Wxapp_InitCont
 //        $this->access_path  = PLUM_PATH_PUBLIC.'/build/spread/';
     }
 
+
+    //首页导航
+    public function indexNavAction(){
+        $nav_model = new App_Model_Index_MysqlIndexNavStorage();
+        $list      = $nav_model->getList(array(),0,0,array('in_weight'=>"DESC"));
+        $this->output['list'] = $list;
+        $this->output['type'] = array(
+            1 => '企业服务',
+            2 => '园区服务',
+            3 => '学习园地',
+            4 => '关于我们',
+        );
+        $this->displayBlankPage('wxapp/currency/nav.tpl');
+    }
+
+    //保存首页导航
+    public function saveNavAction(){
+        $id = $this->request->getIntParam('id',0);
+//        $category = $this->request->getIntParam('category');
+//        $categoryOld = $this->request->getIntParam('categoryOld');
+        $sort = $this->request->getIntParam('sort');
+        $type = $this->request->getIntParam('type');
+        $path = $this->request->getStrParam('path');
+        //$gid  = $this->request->getIntParam('gid',0);
+        $name = $this->request->getStrParam('name');
+
+        if($path){
+            $slide_model = new App_Model_Slide_MysqlSlideStorage();
+            $data = array(
+                'in_s_id'      => $this->curr_sid,
+                'in_weight'    => $sort,
+                'in_logo'      => $path,
+                'in_type'      => $type,
+                'in_name'      => $name,
+                'in_create_time'  => time()
+            );
+            if($id){
+                $res = $slide_model -> updateById($data,$id);
+            }else{
+                $res = $slide_model -> insertValue($data);
+            }
+            $this->showAjaxResult($res,'保存');
+        }else{
+            $this->displayJsonError('添加失败');
+        }
+
+    }
+
+
     //幻灯管理
     public function informationSlideAction() {
         $this->informationSecondLink('cate');
