@@ -117,7 +117,7 @@ return array(
             'commonTools' => true,   //常用工具模块
             'submenu'   => array(
                 array(
-                    'title'     => '预约订单',
+                    'title'     => '付费订单',
                     'link'      => '/community/tradeList',
                     'icon'      => 'icon-th-large',
                     'access'    => 'community-tradeList',

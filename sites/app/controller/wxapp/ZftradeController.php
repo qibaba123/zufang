@@ -63,6 +63,9 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
             3 => '关于我们'
         );
         $this->output['type'] = $type;
+        $this->buildBreadcrumbs(array(
+            array('title' => '预约订单列表', 'link' => '#'),
+        ));
         $this->displaySmarty('wxapp/trade/form-trade-list.tpl');
     }
 
