@@ -61,6 +61,22 @@ return array(
                 ),
             ),
         ),
+                array(
+            'title'     => '用户管理',
+            'link'      => '#',
+            'icon'      => 'icon-user',
+            'access'    => 'member-list',
+            'commonTools' => true,   //常用工具模块
+            'submenu'   => array(
+                array(
+                    'title'     => '用户列表',
+                    'link'      => '/member/list',
+                    'icon'      => 'icon-user',
+                    'access'    => 'member-list',
+                    'index-icon'=> '/community/member-list.png',
+                ),
+            ),
+        ),
         array(
             'title'     => '园区管理',
             'link'      => '#',
