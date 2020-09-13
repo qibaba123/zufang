@@ -272,13 +272,74 @@
                         </td>
                         <td>
                             <p>
-                                <{if $val['m_status'] == 0}>
-                                <a href="javascript:;" class="btn btn-blueoutline btn-xs" onclick="changeStatus(<{$val['m_id']}>,<{$val['m_status']}>)">封禁</a>
+                                <a class="btn btn-blueoutline btn-xs" href="/wxapp/member/memberDetailNew?id=<{$val['m_id']}>" >
+                                    明细
+                                </a>
+                            </p>
+                            <p>
+                                <{if $val['m_is_highest'] == 0}>
+                                <a class="add-slide btn btn-blueoutline btn-xs" href="#" data-toggle="modal" data-target="#threeModal"  data-id="<{$val['m_id']}>">设置分销商</a>
+                                <{else}>
+                                <a class="del-highest btn btn-blueoutline btn-xs" href="#" data-id="<{$val['m_id']}>">取消分销商</a>
                                 <{/if}>
-                                <{if $val['m_status'] == 1}>
-                                <a href="javascript:;" class="btn btn-blueoutline btn-xs" onclick="changeStatus(<{$val['m_id']}>,<{$val['m_status']}>)">解封</a>
+
+                            </p>
+                            <{if $val['m_is_highest'] != 0}>
+                            <p>
+                                <a class="add-area btn btn-blueoutline btn-xs" href="#" data-toggle="modal" data-target="#threeareaModal"  data-id="<{$val['m_id']}>">增加区域</a>
+                            </p>
+                            <p>
+
+
+                                <a class="add-level btn btn-blueoutline btn-xs" href="#" data-toggle="modal" data-target="#threelevelModal"  data-id="<{$val['m_id']}>">更改等级</a>
+
+                            </p>
+                            <{/if}>
+                            <{if $canBan}>
+                          
+                            <{/if}>
+                            <p>
+                                <{if $val['m_gold_freeze'] == 0}>
+                                <a class="freeze-gold btn btn-blueoutline btn-xs" href="#" mid="<{$val['m_id']}>" status="1">冻结余额</a>
+                                <{else}>
+                                <a class="freeze-gold btn btn-blueoutline btn-xs"  href="#" mid="<{$val['m_id']}>" status="0">解冻余额</a>
                                 <{/if}>
                             </p>
+                            <{if $appletCfg['ac_type'] == 4 || $appletCfg['ac_type'] == 32 || $appletCfg['ac_type'] == 36}>
+                            <div class="drop-btn-box">
+                                <span class="btn btn-blue btn-xs">设置<b class="arrow icon-angle-down"></b></span>
+                                <div class="drop-btn-list">
+                                    <{if !$hideLevel}>
+                                    <p>
+                                        <a href="#" class="change-level-btn btn btn-lightblue btn-xs" data-toggle="modal" data-target="#levelSingleModal"  data-mid="<{$val['m_id']}>" data-type="single" data-level="<{$val['m_level']}>">设置会员</a>
+                                    </p>
+                                    <{/if}>
+                                    <{if $appletCfg['ac_type'] == 4}>
+                                    <p>
+                                        <a class="waiter-set btn btn-lightblue btn-xs" data-toggle="modal" data-target="#waiterModal"  data-mid="<{$val['m_id']}>" data-waiter="<{$val['m_is_waiter']}>" data-shop="<{$val['m_waiter_shop']}>">设置服务员</a>
+                                    </p>
+                                    <{/if}>
+                                    <!-- 社区团购设置团长 -->
+                                    <{if $appletCfg['ac_type'] == 32 || $appletCfg['ac_type'] == 36}>
+                                    <{if $val['asl_status'] == 2}>
+                                    <p>
+                                        <a class="leader-set btn btn-lightblue btn-xs" data-mid="<{$val['m_id']}>" data-type="2">取消团长</a>
+                                    </p>
+                                    <{else}>
+                                    <p>
+                                        <a class="leader-set btn btn-lightblue btn-xs" data-mid="<{$val['m_id']}>" data-type="1">设置团长</a>
+                                    </p>
+                                    <{/if}>
+                                    <{/if}>
+                                </div>
+                            </div>
+                            <{else}>
+                            <{if !$hideLevel}>
+                            <p>
+                                <a href="#" class="change-level-btn btn btn-blueoutline btn-xs" data-toggle="modal" data-target="#levelSingleModal"  data-mid="<{$val['m_id']}>" data-type="single" data-level="<{$val['m_level']}>">设置会员</a>
+                            </p>
+                            <{/if}>
+                            <{/if}>
 
                         </td>
                     </tr>
