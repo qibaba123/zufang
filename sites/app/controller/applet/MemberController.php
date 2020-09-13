@@ -36,9 +36,9 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
             'avatar'   => $this->dealImagePath($member['m_avatar']),
             'realname' => $member['m_realname'],
             'mobile'   => $member['m_mobile'],
-            'pro'      => $member['m_pro_new'],
-            'city'     => $member['m_city_new'],
-            'area'     => $member['m_area_new'],
+            'pro'      => $member['m_pro_name'],
+            'city'     => $member['m_city_name'],
+            'area'     => $member['m_area_name'],
             'address'  => $member['m_address'],
             'brief'    => $member['m_brief']
         );
@@ -49,9 +49,9 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
         $data['m_avatar']     = $this->request->getStrParam('avatar');
         $data['m_realname']   = $this->request->getStrParam('realname');
         $data['m_mobile']     = $this->request->getStrParam('mobile');
-        $data['m_pro_new']    = $this->request->getStrParam('pro');
-        $data['m_city_new']   = $this->request->getStrParam('city');
-        $data['m_area_new']   = $this->request->getStrParam('area');
+        $data['m_pro_name']    = $this->request->getStrParam('pro');
+        $data['m_pro_name']   = $this->request->getStrParam('city');
+        $data['m_area_name']   = $this->request->getStrParam('area');
         $data['m_address']    = $this->request->getStrParam('address');
         $data['m_brief']      = $this->request->getStrParam('brief');
         $member_storage = new App_Model_Member_MysqlMemberCoreStorage();

@@ -133,49 +133,6 @@
                     </div>
                 </div>
             </div>
-            <div class="search-input-item">
-                <div class="input-item-group">
-                    <div class="input-item-addon">用户等级</div>
-                    <div class="input-form">
-                        <select name="searchlv" id="searchlv" class="form-control">
-                            <option value="0">全部</option>
-                            <{foreach $mLevel as $key=>$val}>
-                        <option value="<{$key}>" <{if $key == $searchlv}>selected<{/if}>><{$val}></option>
-                            <{/foreach}>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <{if $addMember == 1}>
-            <div class="search-input-item">
-                <div class="input-item-group">
-                    <div class="input-item-addon">用户来源</div>
-                    <div class="input-form">
-                        <select name="source" id="source" class="form-control">
-                            <option value="0">全部</option>
-                            <option value="1" <{if $source eq 1}>selected<{/if}> >公众号</option>
-                            <option value="2" <{if $source eq 2}>selected<{/if}> >小程序</option>
-                            <option value="5" <{if $source eq 5}>selected<{/if}> >后台添加</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <{/if}>
-            <{if $sequenceShowAll == 1}>
-            <div class="search-input-item" <{if $cash}> style="display:none;" <{/if}>>
-            <div class="input-item-group">
-                <div class="input-item-addon">分类</div>
-                <div class="input-form">
-                    <select name="category" id="category" class="form-control">
-                        <option value="0">全部</option>
-                        <{foreach $memberCategory as $key =>$val}>
-                    <option value="<{$key}>" <{if $key == $category}>selected<{/if}>><{$val['mc_name']}></option>
-                        <{/foreach}>
-                    </select>
-                </div>
-            </div>
-    </div>
-    <{/if}>
 
     <div class="search-input-item">
         <div class="input-item-group">
@@ -213,7 +170,7 @@
     </form>
 </div>
 <!-- 排序按钮 -->
-<div class="sort-type-box">
+<!--<div class="sort-type-box">
     <{foreach $member_sort_type as $key => $item}>
     <div class="sort-type-item" data-sorttype="<{$key}>_<{$item['sort']}>">
         <span class="sort-type" <{if $sort_type == $key}>style="color:#008cf6"<{/if}>><{$item['name']}>
@@ -222,7 +179,7 @@
         </span>
     </div>
     <{/foreach}>
-</div>
+</div>-->
 <div class="cus-part-item" style="padding:0 12px;box-shadow: none;">
     <div class="fixed-table-box">
         <div class="fixed-table-body">
@@ -237,7 +194,7 @@
                     </th>
                     <th>头像</th>
                     <th>用户信息</th>
-                    <th>个人数据</th>
+                    <th>用户地区</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
@@ -287,7 +244,7 @@
                                 <p class="tab-txt left"><span class="lab-name left">姓名：</span><span class="lab-txt"><{if $val['m_realname']}><{$val['m_realname']}><{else}>无<{/if}></span></p>
                                 <p class="tab-txt left"><span class="lab-name left">性别：</span><span class="lab-txt"><{$val['m_sex']}></span></p>
                                 <p class="tab-txt left"><span class="lab-name left">类别：</span><span class="lab-txt"><{if $val['ame_cate'] > 0 && $memberCategory[$val['ame_cate']]}><{$memberCategory[$val['ame_cate']]['mc_name']}><{else}>无<{/if}></span>
-                                <p class="tab-txt left"><span class="lab-name left">地区：</span><span class="lab-txt"><{$val['m_pro_name']}>-<{$val['m_city_name']}>-<{$val['m_area_name']}>-<{$val['m_street_name']}></span></p>
+
 
                                 <p class="tab-txt left"><span class="lab-name left">关注时间：</span><span class="lab-txt"><{$val['m_follow_time']}></span></p>
                             </div>
@@ -295,20 +252,8 @@
                         <!-- 个人数据 -->
                         <td>
                             <div class="td-top-info" style="text-align: left;">
-                                <p class="tab-txt left"><span class="lab-name left">积分：</span><span class="lab-txt"><{$val['m_points']}></span></p>
-                                <p class="tab-txt left"><span class="lab-name left">余额：</span><span class="lab-txt"><{$val['m_gold_coin']}></span></p>
-                                <p class="tab-txt left"><span class="lab-name left">收益：</span><span class="lab-txt"><{$val['m_deduct_ktx'] + $val['m_deduct_dsh'] + $val['m_deduct_ytx']}></span>
-                                <p class="tab-txt left"><span class="lab-name left">订单成交总数：</span><span class="lab-txt"><{$val['m_traded_num']}></span></p>
-                                <p class="tab-txt left"><span class="lab-name left">订单成交总额：</span><span class="lab-txt"><{$val['m_traded_money']}></span></p>
-                                <{if $val['m_is_highest'] > 0}>
-
-                                <p class="tab-txt left"><span class="lab-name left">分销地区： </span>
-                                <{foreach $val['area'] as $vv}>
-                                   <p class="lab-txt" style="max-width: 250px;"><{$vv['area']}><a href="#" class="del-area" data-id="<{$vv['id']}>">   删除</a></p>
-                                    <{/foreach}>
-                                </p>
-
-                                <{/if}>
+                                <p class="tab-txt left"><span class="lab-name left">地区：</span><span class="lab-txt"><{$val['m_pro_name']}>-<{$val['m_city_name']}>-<{$val['m_area_name']}></span></p>
+                                <p class="tab-txt left"><span class="lab-name left">详细地址：</span><span class="lab-txt"><{$val['m_address']}></span></p>
                             </div>
                         </td>
                         <!-- 状态 -->
@@ -316,9 +261,6 @@
                             <div class="td-top-info" style="text-align: left;">
                                 <{if $canBan == 1}>
                                 <p class="tab-txt left"><span class="lab-name left">用户状态：</span><span class="lab-txt"><{if $val['m_status'] == 0}><span style="color: #333;">正常</span><{/if}><{if $val['m_status'] == 1}><span style="color: red">封禁中</span><{/if}></span></p>
-                                <{/if}>
-                                <{if !$hideLevel}>
-                                <p class="tab-txt left"><span class="lab-name left">用户等级：</span><span class="lab-txt member-level-text"><{if isset($mLevel[$val['m_level']])}><{$mLevel[$val['m_level']]}><{else}>无<{/if}></span></p>
                                 <{/if}>
                                 <{if $addMember == 1}>
                                 <p class="tab-txt left"><span class="lab-name left">用户来源：</span><span class="lab-txt"><{$memberSource[$val['m_source']]}></span>
