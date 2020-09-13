@@ -98,14 +98,14 @@
                                                         <div class="form-group">
                                                             <label for="name" class="control-label"><font color="red">*</font>服务名称：</label>
                                                             <div class="control-group">
-                                                                <input type="text" id="es_name" placeholder="服务名称" class="form-control" name="es_name" value="<{if $row && $row['es_name']}><{$row['es_name']}><{/if}>"/>
+                                                                <input type="text" id="es_name" style="width: 150px;" placeholder="服务名称" class="form-control" name="es_name" value="<{if $row && $row['es_name']}><{$row['es_name']}><{/if}>"/>
                                                             </div>
                                                         </div>
                                                         <input type="hidden" name="type" value="<{$row['es_type']}>">
                                                         <div class="form-group priceshow">
                                                         <label for="name" class="control-label" ><font color="red">*</font>金额：</label>
                                                         <div class="control-group">
-                                                            <input id="price" class="form-control" style="width: 100px;" placeholder="金额/年" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
+                                                            <input id="price" class="form-control" style="width: 150px;" placeholder="金额/年" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">

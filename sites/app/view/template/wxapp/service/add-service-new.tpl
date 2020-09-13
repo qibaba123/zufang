@@ -98,13 +98,13 @@
                                                         <div class="form-group">
                                                             <label for="name" class="control-label"><font color="red">*</font>服务名称：</label>
                                                             <div class="control-group">
-                                                                <input type="text" id="es_name" placeholder="服务名称" class="form-control" name="es_name" value="<{if $row && $row['es_name']}><{$row['es_name']}><{/if}>"/>
+                                                                <input type="text" id="es_name" style="width: 150px;" placeholder="服务名称" class="form-control" name="es_name" value="<{if $row && $row['es_name']}><{$row['es_name']}><{/if}>"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group ">
                                                             <label for="name" class="control-label"><font color="red">*</font>服务类型：</label>
                                                             <div class="control-group">
-                                                                <select class="form-control" name="type" id="type" >
+                                                                <select class="form-control" style="width: 150px;" name="type" id="type" >
                                                                     <option value="0">请选择服务类型</option>
                                                                     <option value="1" <{if $row['es_type'] == 1}>selected<{/if}>>企业服务商品</option>
                                                                     <option value="2" <{if $row['es_type'] == 2}>selected<{/if}>>企业服务文章</option>
@@ -114,13 +114,13 @@
                                                         <div class="form-group priceshow" <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
                                                         <label for="name" class="control-label"><font color="red">*</font>金额：</label>
                                                         <div class="control-group">
-                                                            <input id="price" class="form-control"  placeholder="金额" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
+                                                            <input id="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="name" class="control-label"><font color="red">*</font>权重：</label>
                                                         <div class="control-group">
-                                                            <input id="weight" class="form-control"  name="weight" placeholder="权重" value="<{if $row && $row['es_weight']}><{$row['es_weight']}><{/if}>">
+                                                            <input id="weight" class="form-control" style="width: 150px;"  name="weight" placeholder="权重" value="<{if $row && $row['es_weight']}><{$row['es_weight']}><{/if}>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
