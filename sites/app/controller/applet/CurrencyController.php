@@ -1347,4 +1347,51 @@ class App_Controller_Applet_CurrencyController extends App_Controller_Applet_Ini
 
         $log_model->insertValue($data);
     }
+
+
+    //获取省市区
+       public function getareaAction(){
+        $address_model = new App_Model_Address_MysqlAddressCoreStorage();
+        //$where[]       = array('name'=>'parent_id','oper'=>'=','value'=>$id);
+        $where[]       = array('name'=>'region_type','oper'=>'=','value'=>1);
+        $list          = $address_model->getList($where,0,0,array());
+        foreach ($list as $val){
+            $where = array();
+            $where[]       = array('name'=>'parent_id','oper'=>'=','value'=>$val['region_id']);
+            $where[]       = array('name'=>'region_type','oper'=>'=','value'=>2);
+            $city_list     = $address_model->getList($where,0,0,array());
+            $city          = array();
+            foreach($city_list as $v){
+                $where  = array();
+                $where[]       = array('name'=>'parent_id','oper'=>'=','value'=>$val['region_id']);
+                $where[]       = array('name'=>'region_type','oper'=>'=','value'=>2);
+                $area_list     = $address_model->getList($where,0,0,array());
+                $area          = array();
+                foreach ($area_list as $vv){
+                    $area[] = array(
+                        'id'   => $vv['region_id'],
+                        'name' => $vv['region_name']
+                    );
+                }
+                $city[] = array(
+                    'id'   => $v['region_id'],
+                    'name' => $v['region_name'],
+                    'area' => $area,
+                );
+            }
+            $info['pro'][] = array(
+                'id'   => $val['region_id'],
+                'name' => $val['region_name'],
+                'city' => $city
+            );
+        }
+        if($list){
+            $this->outputSuccess($info);
+        }else{
+            $this->displayJsonError('没有数据');
+        }
+    }
+
+
+
 }

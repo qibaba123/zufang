@@ -303,7 +303,7 @@
                 layer.close(loading);
                 layer.msg(ret.em);
                 if(ret.ec == 200){
-                    window.location.href='/wxapp/slide/informationSlide'
+                    window.location.href='/wxapp/slide/indexNav'
                 }
             }
         });

@@ -14,6 +14,54 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
 
     }
 
+    //我的接口
+    public function meAction(){
+        $member = $this->member;
+        $data = array(
+            'id' => $member['m_id'],
+            'nickname' => $member['m_nickname'],
+            'avatar'   => $this->dealImagePath($member['m_avatar']),
+        );
+        $data['is_vip'] = 0;//是否开通VIP
+        if($member['m_vip_end_time'] > time()){
+            $data['is_vip'] = 1;
+        }
+
+    }
+
+
+    public function meDataAction(){
+        $member = $this->member;
+        $data   = array(
+            'avatar'   => $this->dealImagePath($member['m_avatar']),
+            'realname' => $member['m_realname'],
+            'mobile'   => $member['m_mobile'],
+            'pro'      => $member['m_pro_new'],
+            'city'     => $member['m_city_new'],
+            'area'     => $member['m_area_new'],
+            'address'  => $member['m_address'],
+            'brief'    => $member['m_brief']
+        );
+        $this->displayJsonSuccess($data,true,'获取成功');
+    }
+
+    public function saveDataAction() {
+        $data['m_avatar']     = $this->request->getStrParam('avatar');
+        $data['m_realname']   = $this->request->getStrParam('realname');
+        $data['m_mobile']     = $this->request->getStrParam('mobile');
+        $data['m_pro_new']    = $this->request->getStrParam('pro');
+        $data['m_city_new']   = $this->request->getStrParam('city');
+        $data['m_area_new']   = $this->request->getStrParam('area');
+        $data['m_address']    = $this->request->getStrParam('address');
+        $data['m_brief']      = $this->request->getStrParam('brief');
+        $member_storage = new App_Model_Member_MysqlMemberCoreStorage();
+        $member_storage->updateById($data, $this->member['m_id']);
+        $info = array(
+            'data' => "修改成功"
+        );
+        $this->outputSuccess($info);
+    }
+
 
 //   public function findareaAction(){
 //        $id   = $this->request->getIntParam('id');

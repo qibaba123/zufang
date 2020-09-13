@@ -29,6 +29,18 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
             );
         }
 
+        //首页导航
+        $nav_model = new App_Model_Index_MysqlIndexNavStorage();
+        $nav       = $nav_model->getList(array(),0,0,array('in_weight'=>"DESC"));
+        foreach($nav as $val){
+            $data['nav'][] = array(
+                'logo' => $this->dealImagePath($val['in_logo']),
+                'name' => $val['in_name'],
+                'link_type' => $val['in_type']  //1.企业服务  2.园区服务  3.学习园地 4.关于我们
+            );
+        }
+
+
         //首页公告
         $notice_model = new App_Model_Shop_MysqlShopNoticeStorage();
         $notice       = $notice_model->getList(array(),0,0,array('sn_weight'=>'DESC'));
@@ -82,6 +94,9 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
             'mobile' => $about_us['au_mobile'],
             'address' => $about_us['au_address']
         );
+        //首页视频
+        $data['video'] = $this->dealImagePath($about_us['au_video']);
+        $data['video_image'] = $this->dealImagePath($about_us['au_video_image']);
         $this->displayJsonSuccess($data,true,'获取成功');
 
 

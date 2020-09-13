@@ -304,6 +304,38 @@ return array(
             'action'            => 'informationDetailsAction',
             'desc'              => '通用资讯详情接口'
         ),
+        'applet_get_area'      => array(
+            'controller'        => 'App_Controller_Applet_CurrencyController',
+            'action'            => 'getareaAction',
+            'desc'              => '获取省市区'
+        ),
+        'applet_get_park'      => array(
+            'controller'        => 'App_Controller_Applet_ParkController',
+            'action'            => 'getparkAction',
+            'desc'              => '获取园区'
+        ),
+        'applet_house_list'      => array(
+            'controller'        => 'App_Controller_Applet_ParkController',
+            'action'            => 'houseListAction',
+            'desc'              => '办公室/工位列表'
+        ),
+        'applet_house_details'      => array(
+            'controller'        => 'App_Controller_Applet_ParkController',
+            'action'            => 'houseDetailsAction',
+            'desc'              => '办公室/工位详情'
+        ),
+
+        'applet_my_center'      => array(
+            'controller'        => 'App_Controller_Applet_MemberController',
+            'action'            => 'meAction',
+            'desc'              => '个人中心接口'
+        ),
+        'applet_my_data'      => array(
+            'controller'        => 'App_Controller_Applet_MemberController',
+            'action'            => 'meDataAction',
+            'desc'              => '我的资料接口'
+        ),
+
 
 
 
