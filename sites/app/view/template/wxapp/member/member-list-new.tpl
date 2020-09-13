@@ -92,9 +92,6 @@
 </div>
 <div id="content-con" class="content-con">
     <div class="opera-btn-box">
-        <{if $addMember == 1}>
-        <a href="javascript:;" onclick="addMember()" class="btn btn-blue btn-sm"><i class="icon-plus bigger-80"></i> 新增</a>
-        <{/if}>
         <!-- <a href="javascript:;" class="btn btn-blue btn-sm btn-excel" ><i class="icon-download"></i>用户导出</a> -->
     </div>
     <div class="search-part-wrap">
