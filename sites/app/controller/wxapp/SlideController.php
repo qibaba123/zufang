@@ -26,7 +26,7 @@ class App_Controller_Wxapp_SlideController extends App_Controller_Wxapp_InitCont
         $this->buildBreadcrumbs(array(
             array('title' => '首页导航管理', 'link' => '#'),
         ));
-        $this->displaySmarty('wxapp/currency/nav.tpl');
+        $this->displaySmarty('wxapp/slide/nav.tpl');
     }
 
     //保存首页导航
