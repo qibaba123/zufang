@@ -60,7 +60,7 @@
                 <div class="span12">
                     <div class="widget-box">
                         <div class="widget-header widget-header-blue widget-header-flat">
-                            <h4 class="lighter"><small><a href="#"> 返回 </a></small> | 新增/编辑房源信息</h4>
+                            <h4 class="lighter"><small><a href="#"> 返回 </a></small> | 编辑VIP信息</h4>
                             <div class="col-xs-1 pull-right search-btn">
 
                             </div>
@@ -105,7 +105,7 @@
                                                         <div class="form-group priceshow">
                                                         <label for="name" class="control-label" ><font color="red">*</font>金额：</label>
                                                         <div class="control-group">
-                                                            <input id="price" class="form-control" style="width: 150px;" placeholder="金额/年" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
+                                                            <input id="price" class="form-control" name="price" style="width: 150px;" placeholder="金额/年" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -446,7 +446,7 @@
             'success'   : function(ret){
                 if(ret.ec == 200 ){
                     alert(ret.em);
-                    window.location.href='/wxapp/service/serviceList';
+                    window.location.href='/wxapp/service/vipEdit';
                 }else{
                     layer.msg(ret.em);
                 }

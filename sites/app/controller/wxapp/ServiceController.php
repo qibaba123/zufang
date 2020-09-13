@@ -16,6 +16,8 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $where[]       = array('name'=>'es_type','oper'=>"=",'value'=>3);
         $row           = $service_model->getRow($where);
         $this->output['row'] = $row;
+        $slide_model    = new App_Model_Service_MysqlServiceSlideStorage();
+        $slide          = $slide_model->getSlideByGid($row['es_id'], 1);
         $this->renderCropTool('/wxapp/index/uploadImg');
         $this->buildBreadcrumbs(array(
             array('title' => 'VIP管理', 'link' => '#'),

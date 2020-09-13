@@ -114,7 +114,7 @@
                                                         <div class="form-group priceshow" <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
                                                         <label for="name" class="control-label"><font color="red">*</font>金额：</label>
                                                         <div class="control-group">
-                                                            <input id="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
+                                                            <input id="price" name="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
