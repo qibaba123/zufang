@@ -22,6 +22,10 @@ class App_Controller_Wxapp_SlideController extends App_Controller_Wxapp_InitCont
             3 => '学习园地',
             4 => '关于我们',
         );
+        $this->renderCropTool('/wxapp/index/uploadImg');
+        $this->buildBreadcrumbs(array(
+            array('title' => '首页导航管理', 'link' => '#'),
+        ));
         $this->displayBlankPage('wxapp/currency/nav.tpl');
     }
 
