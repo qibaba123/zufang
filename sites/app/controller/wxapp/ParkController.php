@@ -165,7 +165,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
             $this->output['area'] = $arealist;
         }
         if($area){
-            $where[] = array('name'=>'ap_area_id','oper'=>'=','value'=>$area);
+            $where[] = array('name'=>'ap_area','oper'=>'=','value'=>$area);
             $this->output['area_id'] = $area;
         }
         $list       = $park_model->getList($where,$index,$this->count,array('ap_weight'=>'DESC'));

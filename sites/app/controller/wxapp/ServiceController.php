@@ -36,6 +36,9 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $this->output['list'] = $list;
         $this->output['image'] = $this->curr_shop['s_service_image'];
         $this->renderCropTool('/wxapp/index/uploadImg');
+        $total  = $service_model->getCount(array());
+        $page_libs = new Libs_Pagination_Paginator($total,$this->count,'jquery',true);
+        $this->output['pageHtml']   = $page_libs->render();
         $this->buildBreadcrumbs(array(
             array('title' => '企业服务', 'link' => '#'),
         ));
