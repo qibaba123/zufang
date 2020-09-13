@@ -288,7 +288,7 @@
             path : cover,
             sort : sort,
            /* gid  :  gid,*/
-            name : save-name,
+            name : name,
             type  : type
 //            information : information
         };
