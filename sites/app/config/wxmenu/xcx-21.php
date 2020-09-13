@@ -98,6 +98,12 @@ return array(
             ),
         ),
         array(
+            'title'     => 'VIP管理',
+            'link'      => '/service/vipEdit',
+            'icon'      => 'icon-dashboard',
+            'access'    => 'index-index',
+        ),
+        array(
             'title'     => '关于我们',
             'link'      => '/aboutus/index',
             'icon'      => 'icon-dashboard',

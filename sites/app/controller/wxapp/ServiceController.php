@@ -9,6 +9,20 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         parent::__construct();
     }
 
+
+    //VIP管理
+    public function vipEditAction(){
+        $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $row           = $service_model->getRow(array('es_type'=>3));
+        $this->output['row'] = $row;
+        $this->renderCropTool('/wxapp/index/uploadImg');
+        $this->buildBreadcrumbs(array(
+            array('title' => 'VIP管理', 'link' => '#'),
+        ));
+        $this->displaySmarty('wxapp/service/vip-edit.tpl');
+    }
+
+
     //企业服务列表
     public function serviceListAction(){
         $page  = $this->request->getIntParam('page');
