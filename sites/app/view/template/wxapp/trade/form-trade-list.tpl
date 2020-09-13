@@ -25,7 +25,7 @@
                 <div class="input-item-group">
                     <div class="input-item-addon">联系人</div>
                     <div class="input-form">
-                        <input type="text" style="width: 100px;" class="form-control" name="name" id="name" value="<{$name}>" placeholder="联系人">
+                        <input type="text" style="width: 150px;" class="form-control" name="name" id="name" value="<{$name}>" placeholder="联系人">
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                 <div class="input-item-group">
                     <div class="input-item-addon">联系方式</div>
                     <div class="input-form">
-                        <input type="text" style="width: 100px;" class="form-control" name="mobile" id="mobile" value="<{$mobile}>" placeholder="联系方式">
+                        <input type="text" style="width: 150px;" class="form-control" name="mobile" id="mobile" value="<{$mobile}>" placeholder="联系方式">
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <div class="input-item-group">
                     <div class="input-item-addon">公司名称</div>
                     <div class="input-form">
-                        <input type="text" style="width: 100px;" class="form-control" name="c_name" id="c_name" value="<{$c_name}>" placeholder="公司名称">
+                        <input type="text" style="width: 150px;" class="form-control" name="c_name" id="c_name" value="<{$c_name}>" placeholder="公司名称">
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                 <div class="input-item-group">
                     <div class="input-item-addon">区域</div>
                     <div class="input-form">
-                        <div class="col-sm-8" style="width:30%;">
+                        <div class="col-sm-8" style="width:20%;">
                             <select class="form-control" name="pro" id="pro" >
                                 <option value="0">省份</option>
                                 <{foreach $pro as $val}>
@@ -57,7 +57,7 @@
                                 <{/foreach}>
                             </select>
                         </div>
-                        <div class="col-sm-8" style="width:30%;">
+                        <div class="col-sm-8" style="width:20%;">
                             <select class="form-control" name="city" id="city" >
                                 <option value="0">城市</option>
                                 <{foreach $city as $val}>
@@ -65,7 +65,7 @@
                                 <{/foreach}>
                             </select>
                         </div>
-                        <div class="col-sm-8" style="width:30%;">
+                        <div class="col-sm-8" style="width:20%;">
                             <select class="form-control" name="area" id="area" >
                                 <option value="0">地区</option>
                                 <{foreach $area as $val}>
