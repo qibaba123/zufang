@@ -9,6 +9,30 @@ class App_Controller_Wxapp_AboutusController extends App_Controller_Wxapp_InitCo
         parent::__construct();
     }
 
+    //关于我们清除视频
+    public function emptyvideoAction(){
+        $id = $this->request->getIntParam('id');
+        $about_model = new App_Model_aboutus_MysqlAboutUsStorage();
+        $update['au_video'] = '';
+        $ret = $about_model->updateById($update,$id);
+        if($ret){
+            $this->displayJsonSuccess(array(),true,'清除成功');
+        }else{
+            $this->displayJsonError('清除失败');
+        }
+    }
+
+    //保存上传视频
+    public function getlinkAction(){
+      //  $type    = $this->request->getIntParam('type');
+        $dir     = '/upload/gallery/thumbnail/';
+        $tool    = new App_Helper_Tool();
+        $upload  = $tool->upload_video_limit_type('link', $dir,0,1);
+        //var_dump($upload);exit;
+        $this->displayJson($upload);
+    }
+
+
     //关于我们
     public function indexAction(){
         $about_model = new App_Model_aboutus_MysqlAboutUsStorage();
@@ -35,6 +59,8 @@ class App_Controller_Wxapp_AboutusController extends App_Controller_Wxapp_InitCo
         $data['au_brief']     = $this->request->getStrParam('brief');
         $data['au_brief1']     = $this->request->getStrParam('brief1');
         $data['au_brief2']     = $this->request->getStrParam('brief2');
+        $data['au_video_image']   = $this->request->getStrParam('videoimage');
+        $data['au_video']         = $this->request->getStrParam('video');
         $about_model = new App_Model_aboutus_MysqlAboutUsStorage();
         $ret = $about_model->updateById($data,1);
         if($ret){

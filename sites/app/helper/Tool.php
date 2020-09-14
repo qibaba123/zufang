@@ -8,6 +8,68 @@
 class App_Helper_Tool {
     const TRANSFER_ERROR    = 'LOG转换失败，非LOG信息';
     const NOTICE_SUBJECT    = '天店通店铺动态通知';
+
+    // 文件上传
+    public function upload_video_limit_type($key, $dir,$isDrupal=0,$type=1){
+        $upload_file = isset($_FILES[$key]) ? $_FILES[$key] : false;
+
+        //var_dump($upload_file);exit;
+        /*   $filename = $this->getFileName();
+           $file_path = $dir.$filename.$check[$info[2]];
+           move_uploaded_file($tmp_name, PLUM_DIR_ROOT . $file_path);*/
+        if($type == 1){
+            $urltype = '.mp4';
+        }elseif($type == 2){
+            $urltype = '.mp3';
+        }
+        $data = $this->deal_video_info($upload_file['tmp_name'],$upload_file['error'],$dir,$urltype);
+        if($isDrupal){
+            drupal_json_output($data);
+        }else{
+            return $data;
+        }
+    }
+
+
+    // 文件上传处理
+    private function deal_video_info($tmp_name,$error,$dir,$urltype){
+        set_time_limit(0);
+        //初始状态
+        $data = array(
+            'ec'    => 400,
+            'em'    => '上传失败，请重试！'
+        );
+        //初始信息
+        $check = array(
+            1           => '.mp4',
+            2           => '.mp3',
+            'type'      => array(1, 2),
+        );
+        if ($tmp_name && !$error) {
+            //var_dump($tmp_name);exit;
+            //$info = @getimagesize($tmp_name);
+            $fileSize = filesize($tmp_name);  // 获取文件大小，超过 50M 提示视频过大
+            //var_dump($fileSize);exit;
+            if($fileSize>2*1024*1024*50){
+                $data['em']     = '图片大小超过100M，请先压缩后重新上传';
+            }else{
+                //var_dump($info);exit;
+                /* if ($info && in_array($info[2], $check['type']) ) {*/
+                $filename = $this->getFileName();
+                $file_path = $dir.$filename.$urltype;
+                move_uploaded_file($tmp_name, PLUM_DIR_ROOT . $file_path);
+                $data['ec']     = 200;
+                $data['em']     = '上传成功！';
+                $data['url']    = $file_path;
+                /*  } else {
+                      $data['em']     = '上传格式错误的文件';
+                  }*/
+            }
+            // 清楚缓存
+            clearstatcache();
+        }
+        return $data;
+    }
     /*
      * 发送邮件给邮件配置人员
      */

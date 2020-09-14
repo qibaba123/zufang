@@ -302,7 +302,36 @@
                                                 </div>
                                             </div> 
                                         </div>
-
+                                        <!-- 首页视频信息 -->
+                                        <div class="info-group-box">
+                                            <div class="info-group-inner">
+                                                <div class="group-title">
+                                                    <span>首页视频</span>
+                                                </div>
+                                                <div class="group-info  xs-hidden-info">
+                                                    <div class="form-group">
+                                                        <label class="control-label xs-hidden-label">视频封面（345px * 165px ）：</label>
+                                                        <div class="control-group" >
+                                                            <img onclick="toUpload(this)" data-limit="1" data-width="345" data-height="165" data-dom-id="upload-videoimage" id="upload-videoimage"  src="<{if $row && $row['au_video_image']}><{$row['au_video_image']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                            <input type="hidden" id="videoimage"  class="avatar-field bg-img" name="videoimage" value="<{if $row && $row['au_video_image']}><{$row['au_video_image']}><{/if}>"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label xs-hidden-label">视频地址：</label>
+                                                        <div class="control-group xs-hidden-info" >
+                                                            <div class="topic">
+                                                                <{if $row['au_video']}>
+                                                                <video id="media" src="<{$row['au_video']}>"autoplay="autoplay" controls="controls" style="width:400px"></video>
+                                                                <{/if}>
+                                                                <label for="">视频链接</label><a href="#" class="btn btn-sm btn-info empty_video">清空视频</a>
+                                                                <input type="file" id="link" class="form-control">
+                                                                <input type="hidden" name="video" id="link_url" value="<{$row['au_video']}>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <!-- 富文本框信息 -->
                                         <div class="info-group-box">
@@ -376,6 +405,45 @@
         })
     });
 
+    $('#link').on('change',function(){
+      //  var urlType  = $('input[name="type"]:checked').val();
+        var link1       =  document.getElementById("link").files[0]; // js 获取文件对象
+        //console.log(link);return;
+        var formFile = new FormData();
+        formFile.append('link',link1);
+        //formFile.append('type',urlType);
+        $.ajax({
+            'type'	: 'post',
+            'url'	: '/wxapp/aboutus/getlink',
+            'data'	: formFile,
+            'dataType' : 'json',
+            'processData' :false, // 不处理发送的数据，因为data值是Formdata对象，不需要对数据做处理
+            'contentType' :false, // 不设置Content-type请求头
+            'success'  : function(ret){
+                if(ret.ec == 200){
+                    $('#link_url').val(ret.url);
+                    layer.msg('上传成功');
+                }
+            }
+        });
+    });
+
+    $('.empty_video').on('click',function(){
+        var id       = $('#hid_id').val();
+        $.ajax({
+            'type'  : 'post',
+            'url'   : '/wxapp/aboutus/emptyvideo',
+            'data'  : { id : id},
+            'dataType'  : 'json',
+            'success'   : function(ret){
+                if(ret.ec == 200){
+                    //console.log(111);
+                    $('#media').attr('src','');
+                    $('#link_url').val('');
+                }
+            }
+        });
+    })
 
     $('.saveData').on('click',function () {
         $.ajax({
