@@ -320,9 +320,7 @@
                                                         <label class="control-label xs-hidden-label">视频地址：</label>
                                                         <div class="control-group xs-hidden-info" >
                                                             <div class="topic">
-                                                                <{if $row['au_video']}>
                                                                 <video id="media" src="<{$row['au_video']}>"autoplay="autoplay" controls="controls" style="width:400px"></video>
-                                                                <{/if}>
                                                                 <label for="">视频链接</label><a href="#" class="btn btn-sm btn-info empty_video">清空视频</a>
                                                                 <input type="file" id="link" class="form-control">
                                                                 <input type="hidden" name="video" id="link_url" value="<{$row['au_video']}>">
