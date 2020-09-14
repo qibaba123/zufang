@@ -42,7 +42,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
 
 
         //首页公告
-        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage();
+        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage($this->sid);
         $notice       = $notice_model->getList(array(),0,0,array('sn_weight'=>'DESC'));
         foreach($notice as $val){
             $data['notice'][] = array(
@@ -67,20 +67,20 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
         $service       = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
         foreach($service as $val){
-//            if($val['es_type'] == 1){
-            $data['service']['list'][] = array(
+            if($val['es_type'] == 1){
+            $data['service']['goods'][] = array(
                 'id'   => $val['es_id'],
                 'name' => $val['es_name'],
                 'type' => $val['es_type'],
                 'logo' => $this->dealImagePath($val['es_logo'])
             );
-//            }else{
-//                $data['service']['information'][] = array(
-//                    'id'   => $val['es_id'],
-//                    'name' => $val['es_name'],
-//                    'logo' => $this->dealImagePath($val['es_logo'])
-//                );
-//            }
+            }else{
+                $data['service']['information'][] = array(
+                    'id'   => $val['es_id'],
+                    'name' => $val['es_name'],
+                    'logo' => $this->dealImagePath($val['es_logo'])
+                );
+            }
         }
         //企业服务顶部图片
         $data['service']['top_image'] = $this->dealImagePath($this->shop['s_service_image']);
