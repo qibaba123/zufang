@@ -29,7 +29,7 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
                 'type' => $val['es_type'],
                 'logo' => $this->dealImagePath($val['es_logo'])
             );
-            }else{
+            }elseif($val['es_type'] == 2){
                 $data['information'][] = array(
                     'id'   => $val['es_id'],
                     'name' => $val['es_name'],

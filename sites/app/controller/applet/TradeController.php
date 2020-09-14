@@ -15,6 +15,72 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
     }
 
+    //创建预约订单
+    public function createServiceTradeAction(){
+        $type = $this->request->getIntParam('type');//1.园区预约  2.服务预约
+        $gid  = $this->request->getIntParam('gid');//商品ID
+        $format_id = $this->request->getIntParam('format_id');//规格ID  只有服务有
+        $time_type = $this->request->getIntParam('time_type');//时间类型 1.天 2.月 3.年
+        $time_num  = $this->request->getIntParam('time_num'); //天数/月数/年数
+        $start_time = $this->request->getStrParam('start_time');//开始时间
+        $end_time   = $this->request->getStrParam('end_time');//结束时间
+        $m_name     = $this->request->getStrParam('m_name');//结束时间
+        $m_mobile   = $this->request->getStrParam('m_mobile');//结束时间
+        $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+        $number      = '';
+        if($type == 1){
+            $house_model = new App_Model_Resources_MysqlResourcesStorage();
+            $row         = $house_model->getRowById($gid);
+            $g_name      = $row['ahr_title'];
+            $number      = $row['ahr_number'];
+            $cover       = $row['ahr_cover'];
+            $brief       = $row['ahr_brief'];
+            $price       = $row['ahr_price'];
+        }elseif($type == 2){
+            $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+            $row           = $service_model->getRowById($gid);
+            $g_name        = $row['es_name'];
+            $cover         = $row['es_cover'];
+            $brief         = $row['es_brief'];
+            $price         = $row['es_price'];
+        }
+        $fee = $time_num * $price;
+        $insert = array(
+            'rt_s_id' => $this->sid,
+            'rt_m_id' => $this->member['m_id'],
+            'rt_m_nickname' => $this->member['m_nickname'],
+            'rt_openid'   => $this->member['m_openid'],
+            'rt_m_name'   => $m_name,
+            'rt_m_mobile' => $m_mobile,
+            'rt_g_id'     => $gid,
+            'rt_fee'      => $fee,
+            'rt_cover'    => $cover,
+            'rt_g_name'   => $g_name,
+            'rt_format_id' => $format_id,
+            'rt_number'    => $number,
+            'rt_tid'       => App_Plugin_Weixin_PayPlugin::makeMchOrderid($this->sid),//生成唯一性订单ID
+            'rt_time_type' => $time_type,
+            'rt_time_num'  => $time_num,
+            'rt_start_time' => $start_time,
+            'rt_end_time'   => $end_time,
+        );
+        $ret = $trade_model->insertValue($insert);
+        $data = array(
+            'number' => $number,
+            'name'   => $g_name,
+            'brief'  => $brief,
+            'price_fee'  => $fee,
+            'm_name'  => $m_name,
+            'm_mobile' => $m_mobile,
+            'time_num' => $time_num,
+        );
+        if($ret){
+            $this->displayJsonSuccess($data,true,'订单创建成功');
+        }else{
+            $this->displayJsonError('订单创建失败');
+        }
+    }
+
 
     public function createTradeAction(){
         $buys    = $this->request->getStrParam('buys');
