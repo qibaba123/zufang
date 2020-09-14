@@ -68,16 +68,17 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $service       = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
         foreach($service as $val){
             if($val['es_type'] == 1){
-            $data['service']['goods'][] = array(
-                'id'   => $val['es_id'],
-                'name' => $val['es_name'],
-                'type' => $val['es_type'],
-                'logo' => $this->dealImagePath($val['es_logo'])
-            );
+                $data['service']['goods'][] = array(
+                    'id'   => $val['es_id'],
+                    'name' => $val['es_name'],
+                    'type' => $val['es_type'],
+                    'logo' => $this->dealImagePath($val['es_logo'])
+                );
             }else{
                 $data['service']['information'][] = array(
                     'id'   => $val['es_id'],
                     'name' => $val['es_name'],
+                    'type' => $val['es_type'],
                     'logo' => $this->dealImagePath($val['es_logo'])
                 );
             }
