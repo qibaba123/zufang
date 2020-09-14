@@ -259,6 +259,11 @@ return array(
 
     /*******************************微信小程序接口相关********************************/
     'applet'    => array(
+        'applet_member_info'     => array(
+            'controller'        => 'App_Controller_Applet_MemberController',
+            'action'            => 'userInfoAction',
+            'desc'              => '验证获取用户信息'
+        ),
         'applet_zf_index'     => array(
             'controller'        => 'App_Controller_Applet_ShopController',
             'action'            => 'indexAction',
@@ -335,6 +340,7 @@ return array(
             'action'            => 'meDataAction',
             'desc'              => '我的资料接口'
         ),
+
 
 
 
@@ -540,11 +546,11 @@ return array(
         //*************************小程序配置信息（appletCfg）***************
         
         //*************************用户信息（member）************************
-        'applet_member_info'     => array(
-            'controller'        => 'App_Controller_Applet_MemberController',
-            'action'            => 'userInfoAction',
-            'desc'              => '验证获取用户信息'
-        ),
+//        'applet_member_info'     => array(
+//            'controller'        => 'App_Controller_Applet_MemberController',
+//            'action'            => 'userInfoAction',
+//            'desc'              => '验证获取用户信息'
+//        ),
         'applet_member_center_cfg'     => array(
             'controller'        => 'App_Controller_Applet_MemberController',
             'action'            => 'memberCenterAction',

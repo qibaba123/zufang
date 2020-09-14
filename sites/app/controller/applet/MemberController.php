@@ -272,173 +272,21 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
      */
     public function userInfoAction()
     {
-        $shareMid   = $this->request->getIntParam('shareMid');
-        $appletType = $this->request->getIntParam('appletType');
         $member     = $this->member;
         if (empty($member)) {
             $this->outputError('获取用户信息失败或账号已被禁用');
         }
-        $trade_model    = new App_Model_Trade_MysqlTradeStorage($this->sid);
-        $where[]        = array('name' => 't_s_id', 'oper' => '=', 'value' => $this->sid);
-        $where[]        = array('name' => 't_m_id', 'oper' => '=', 'value' => $this->member['m_id']);
-        $where[]        = array('name' => 't_status', 'oper' => '=', 'value' => App_Helper_Trade::TRADE_FINISH);
-        $total          = $trade_model->getCount($where);
-        $offline_member = new App_Model_Store_MysqlMemberStorage($this->sid);
-        $level          = $offline_member->currLevel($this->member['m_id']);
         $info['data']   = [
-            'appid'               => $this->applet_cfg['ac_appid'],
             'mid'                 => $member['m_id'],
-            'showId'              => $member['m_show_id'],
             'nickname'            => $member['m_nickname'],
-            'unionId'             => $member['m_union_id'] ? $member['m_union_id'] : '',
             'avatar'              => $member['m_avatar'] ? $this->dealImagePath($member['m_avatar']) : $this->dealImagePath('/public/wxapp/images/applet-avatar.png'),
             'sex'                 => $member['m_sex'],
             'slient'              => $member['m_is_slient'],
-            'money'               => (float) $member['m_gold_coin'],
-            'points'              => $member['m_points'],
             'mobile'              => isset($member['m_mobile']) ? $member['m_mobile'] : '',
-            'isVip'               => $member['m_level_long'] > time() ? 1 : 0,
             'plum_session_applet' => session_id(),
-            'level'               => $this->_get_level_name($level ? $level : $member['m_level']),
-            'deduct_ktx'          => (float) $member['m_deduct_ktx'],
-            'deduct_ytx'          => (float) $member['m_deduct_ytx'],
-            'deduct_dsh'          => (float) $member['m_deduct_dsh'],
             'followTime'          => $member['m_follow_time'],
-            'isdistrib'           => ($member['m_is_highest'] > 0 || $member['m_1f_id'] > 0) ? 1 : 0,
-            'isapply'             => $this->_is_apply_branch($member),
-            'total'               => $total,
-            'haveCard'            => $this->_check_member_card($member['m_id']) || $this->_check_vcaimao_card()['memberData'] ? 1 : 0,
-            'haveVcmCard'         => $this->_check_vcaimao_card() ? 1 : 0,
-            'haveUnionid'         => isset($member['m_union_id']) && $member['m_union_id'] && ($this->_check_vcaimao_card() || !$this->_check_vcaimao_card()) ? 1 : 0,
-            'iosShow'             => $this->_is_open_apply(),
-            'shareAlertShow'      => 0,
-            'shareAlertNote'      => '',
-            'goodsfee_ktx'        => 0,
-            'goodsfee_ytx'        => 0,
-            'goodsfee_dsh'        => 0,
         ];
-        //多维度币种账户的，则显示多币种账户数据，目前只真对7126号店铺
-        if ($this->sid == 7126) {
-            $account_model = new App_Model_City_MysqlCityAccountStorage($this->sid);
-            $list          = $account_model->getListByMid($this->uid);
-            $temp          = array();
-            foreach ($list as $val) {
-                $temp[] = array(
-                    'id'    => $val['aca_acc_id'],
-                    'title' => $val['aca_acc_name'],
-                    'ktx'   => $val['aca_ktx'],
-                );
-            }
-            $info['data']['account'] = $temp;
-        }
 
-        $extra_model                  = new App_Model_Member_MysqlMemberExtraStorage($this->sid);
-        $extra                        = $extra_model->findUpdateExtraByMid($member['m_id']);
-        $info['data']['educationArr'] = array('高中', '专科', '本科', '硕士', '博士', '博士后');
-        $info['data']['education']    = $extra['ame_education'] ? $extra['ame_education'] : '';
-        $info['data']['industry']     = $extra['ame_industry'] ? $extra['ame_industry'] : '';
-        $info['data']['profession']   = $extra['ame_profession'] ? $extra['ame_profession'] : '';
-        $info['data']['birth']        = $extra['ame_birth'] ? $extra['ame_birth'] : '';
-
-        if ($this->applet_cfg['ac_type'] == 33) {
-            $share_model                = new App_Model_Car_MysqlCarShareDeductStorage($this->sid);
-            $shareSum                   = $share_model->getSum($member['m_id']);
-            $info['data']['deduct_car'] = $shareSum ? floatval($shareSum) : 0;
-        } else if ($this->applet_cfg['ac_type'] == 34 || $this->sid == 4546) {
-            $share_model                    = new App_Model_Legwork_MysqlLegworkShareDeductStorage($this->sid);
-            $shareSum                       = $share_model->getSum($member['m_id']);
-            $info['data']['deduct_legwork'] = $shareSum ? floatval($shareSum) : 0;
-        } else if ($this->applet_cfg['ac_type'] == 32) {
-            $leader_model = new App_Model_Sequence_MysqlSequenceLeaderStorage($this->sid);
-            $leader       = $leader_model->getRowByMid($member['m_id']);
-            if ($leader) {
-                switch ($leader['asl_status']) {
-                    case 1:
-                        $info['data']['leaderMsg']    = '您的申请已经提交，请耐心等待';
-                        $info['data']['leaderReason'] = '';
-                        $info['data']['tzcenterShow'] = 0;
-                        break;
-                    case 2:
-                        $info['data']['leaderMsg']    = '';
-                        $info['data']['leaderReason'] = '';
-                        $info['data']['tzapplyShow']  = 0;
-                        break;
-                    case 3:
-                        $info['data']['leaderMsg']    = '很遗憾，您的申请未通过平台审核';
-                        $info['data']['leaderReason'] = $leader['asl_handle_remark'] ? $leader['asl_handle_remark'] : '';
-                        $info['data']['tzcenterShow'] = 0;
-                        break;
-                    case 4:
-                        $info['data']['leaderMsg']    = '管理员撤销了您的团长身份';
-                        $info['data']['leaderReason'] = '';
-                        $info['data']['tzcenterShow'] = 0;
-                        break;
-                }
-                $info['data']['leaderStatus'] = intval($leader['asl_status']);
-            } else {
-                $info['data']['leaderStatus'] = 0;
-                $info['data']['leaderMsg']    = '';
-                $info['data']['leaderReason'] = '';
-                $info['data']['tzcenterShow'] = 0;
-            }
-
-            if ($shareMid) {
-                $share_extra = $extra_model->findUpdateExtraByMid($shareMid);
-                if ($share_extra['ame_se_cid'] && !$extra['ame_se_cid']) {
-                    if ($extra) {
-                        $com_res = $extra_model->findUpdateExtraByMid($member['m_id'], ['ame_se_cid' => $share_extra['ame_se_cid']]);
-                    } else {
-                        $extra_insert = [
-                            'ame_s_id'        => $member['m_s_id'],
-                            'ame_m_id'        => $member['m_id'],
-                            'ame_se_cid'      => $share_extra['ame_se_cid'],
-                            'ame_create_time' => time(),
-                            'ame_update_time' => time(),
-                        ];
-                        $com_res = $extra_model->insertValue($extra_insert);
-                    }
-                }
-            }
-        } else if ($this->applet_cfg['ac_type'] == 37 || $this->sid == 10043) {
-            $rider_model = new App_Model_Handy_MysqlHandyRiderStorage($this->sid);
-            $rider       = $rider_model->findRowByMid($member['m_id']);
-            if ($rider) {
-                $info['data']['goodsfee_ktx'] = (float) $rider['ahr_goodsfee_ktx'];
-                $info['data']['goodsfee_ytx'] = (float) $rider['ahr_goodsfee_ytx'];
-                $info['data']['goodsfee_dsh'] = (float) $rider['ahr_goodsfee_dsh'];
-            }
-        }
-
-        //抖音报名小程序
-        if ($this->applet_cfg['ac_type'] == 38) {
-            $info['data']['remind_id']  = 0;
-            $info['data']['remind_num'] = 0;
-            $info['data']['isnewuser']  = 1;
-            //活动审核通过通知
-            //是否有刚审核通过的活动
-            $activity_model = new App_Model_Enroll_MysqlEnrollActivityCoreStorage($this->sid);
-            $where          = array();
-            $where[]        = array('name' => 'aea_s_id', 'oper' => '=', 'value' => $this->sid);
-            $where[]        = array('name' => 'aea_m_id', 'oper' => '=', 'value' => $this->uid);
-            $where[]        = array('name' => 'aea_has_reminded', 'oper' => '=', 'value' => 0);
-            $where[]        = array('name' => 'aea_status', 'oper' => '=', 'value' => 2);
-            $activity       = $activity_model->getList($where, 0, 5);
-
-            if ($activity) {
-                $info['data']['remind_id']  = $activity[0]['aea_id'];
-                $info['data']['remind_num'] = count($activity);
-            }
-
-            //如果没有发布过活动就是新用户
-            $where    = array();
-            $where[]  = array('name' => 'aea_s_id', 'oper' => '=', 'value' => $this->sid);
-            $where[]  = array('name' => 'aea_m_id', 'oper' => '=', 'value' => $this->uid);
-            $field    = array('aea_id');
-            $activity = $activity_model->getRowContainDeleted($where, $field);
-            if ($activity) {
-                $info['data']['isnewuser'] = 0;
-            }
-        }
         $this->outputSuccess($info);
     }
 
@@ -767,7 +615,7 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
             $updata['m_nickname'] = $nickname;
         }
         if ($city) {
-            $updata['m_city'] = $city;
+            $updata['m_c ity'] = $city;
         }
         if ($province) {
             $updata['m_province'] = $province;
