@@ -175,7 +175,7 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
      * 校验店铺是否存在
      */
     private function _verify_shop() {
-        $suid   = $this->request->getStrParam('suid');  // 获取店铺信息
+        $suid   = $this->request->getStrParam('suid','gaus0xcyuh');  // 获取店铺信息
         $state  = $this->request->getStrParam('state');
         $appletType = $this->request->getIntParam('appletType',1);  // 小程序类型：1微信小程序，2百度小程序，3支付宝小程序，4头条小程序 5.公众号 6.qq小程序 7.360小程序
         if($state && $appletType == 5 && !$suid){
