@@ -1364,7 +1364,7 @@ class App_Controller_Applet_CurrencyController extends App_Controller_Applet_Ini
             foreach($city_list as $v){
                 $where  = array();
                 $where[]       = array('name'=>'parent_id','oper'=>'=','value'=>$val['region_id']);
-                $where[]       = array('name'=>'region_type','oper'=>'=','value'=>2);
+                $where[]       = array('name'=>'region_type','oper'=>'=','value'=>3);
                 $area_list     = $address_model->getList($where,0,0,array());
                 $area          = array();
                 foreach ($area_list as $vv){

@@ -365,7 +365,7 @@ return array(
             'action'            => 'shareProfitListAction',
             'desc'              => '单品分享分销收益'
         ),
-               'applet_member_card_details' => array(
+        'applet_member_card_details' => array(
             'controller'        => 'App_Controller_Applet_MemberCardController',
             'action'            => 'memberCardDetailsAction',
             'desc'              => '门店会员卡详情'
