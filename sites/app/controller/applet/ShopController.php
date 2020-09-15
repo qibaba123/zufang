@@ -74,7 +74,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
                     'type' => $val['es_type'],
                     'logo' => $this->dealImagePath($val['es_logo'])
                 );
-            }else{
+            }elseif($val['es_type'] == 2){
                 $data['service']['information'][] = array(
                     'id'   => $val['es_id'],
                     'name' => $val['es_name'],
