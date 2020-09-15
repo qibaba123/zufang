@@ -52,7 +52,7 @@ class App_Controller_Applet_ParkController extends App_Controller_Applet_InitCon
             );
         }
         if($list){
-            $this->displayJsonSuccess(array(),true,'获取成功');
+            $this->displayJsonSuccess($data,true,'获取成功');
         }else{
             $this->displayJsonError('没有数据');
         }
