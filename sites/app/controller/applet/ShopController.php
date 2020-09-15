@@ -10,7 +10,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
 {
 
     public function __construct(){
-        parent::__construct();
+        parent::__construct(true);
     }
 
     /**
