@@ -15,10 +15,11 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
     }
 
+
     //创建预约订单
     public function createServiceTradeAction(){
-        $type = $this->request->getIntParam('type');//1.园区预约  2.服务预约
-        $gid  = $this->request->getIntParam('gid');//商品ID
+        $type      = $this->request->getIntParam('type');//1.园区预约  2.服务预约
+        $gid       = $this->request->getIntParam('gid');//商品ID
         $format_id = $this->request->getIntParam('format_id');//规格ID  只有服务有
         $time_type = $this->request->getIntParam('time_type');//时间类型 1.天 2.月 3.年
         $time_num  = $this->request->getIntParam('time_num'); //天数/月数/年数
@@ -145,6 +146,31 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             }
         }else{
             $this->displayJsonError('订单提交失败，请稍后重试');
+        }
+    }
+
+
+    //创建表单订单
+    public function createFormTradeAction(){
+        $data['ft_type']    = $this->request->getIntParam('type');
+        $data['ft_ser_id']  = $this->request->getIntParam('gid');
+        $data['ft_name']    = $this->request->getStrParam('name');
+        $data['ft_mobile']  = $this->request->getStrParam('mobile');
+        $data['ft_pro']     = $this->request->getIntParam('pro');
+        $data['ft_city']    = $this->request->getIntParam('city');
+        $data['ft_area']    = $this->request->getIntParam('area');
+        $data['ft_pro_name']    = $this->request->getIntParam('pro_name');
+        $data['ft_city_name']   = $this->request->getIntParam('city_name');
+        $data['ft_area_name']   = $this->request->getIntParam('area_name');
+        $data['ft_c_name']      = $this->request->getStrParam('c_name');
+        $trade_model = new App_Model_Trade_MysqlFormTradeStorage();
+        $data['ft_s_id'] = $this->sid;
+        $data['ft_create_time'] = time();
+        $ret = $trade_model->insertValue($data);
+        if($ret){
+            $this->displayJsonSuccess(array(),true,'提交成功');
+        }else{
+            $this->displayJsonError('提交失败，请稍后重试');
         }
     }
 
