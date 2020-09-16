@@ -68,7 +68,10 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
             $where[]      = array('name'=>"sf_e_id",'oper'=>"=",'value'=>$id);
             $format_list  = $format_model->getList($where,0,0,array('sf_create_time'=>'DESC'));
             foreach($format_list as $val){
-                $data['format'][] = $val['sf_name'];
+                $data['format'][] = array(
+                    'id'   => $val['sf_id'],
+                    'name' => $val['sf_name']
+                );
             }
         }
         $slide_model = new App_Model_Service_MysqlServiceSlideStorage();
