@@ -442,42 +442,20 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
             $this->_respond_weixin_notify(false, "订单已支付，勿重复通知:{$tid}");
         }
         $updata = array(
-            't_pay_type'        => $trade['t_pay_type'] == App_Helper_Trade::TRADE_PAY_HHZF?App_Helper_Trade::TRADE_PAY_HHZF:App_Helper_Trade::TRADE_PAY_WXZFZY,
-            't_pay_trade_no'    => $ret['transaction_id'],
-            't_status'          => App_Helper_Trade::TRADE_WAIT_PAY_RETURN, //支付完成待确认状态
-            't_pay_time'        => time(),
-            't_meal_end'        => isset($meal_end) ? 1 : 0,
-            't_payment'         => $ret['total_fee']/100,
+            'rt_pay_trade_no'    => $ret['transaction_id'],
+            'rt_status'          => 2, //已支付
+            'rt_pay_time'        => time(),
         );
         $trade_model->findUpdateTradeByTid($tid, $updata);
-        if($trade['t_es_id']>0){
-            //入驻店铺添加待结算交易记录
-            $trade_helper   = new App_Helper_Trade($this->shop['s_id']);
-            if($trade['t_express_method'] == 4 || $trade['t_express_method'] == 5){//平台配送, 蜂鸟配送，减去配送费
-                $trade['t_total_fee'] = $trade['t_total_fee'] - $trade['t_post_fee'];
-            }
-            if($trade['t_express_method'] == 7){
-                $legworkExtra = json_decode($trade['t_legwork_extra'],1);
-                if(isset($legworkExtra['price']) && $legworkExtra['price'] > 0){
-                    $trade['t_total_fee'] = floatval($trade['t_total_fee']) - floatval($legworkExtra['price']) - floatval($trade['t_share_post_fee']);
-                }
-            }
-            $trade_helper->recordPendingSettled($tid, $trade['t_total_fee'], $trade['t_title'], $trade['t_es_id']);
-        }
-        // //        // 非积分商城订单则返还积分
-        //         if($trade['t_applet_type']!=App_Helper_Trade::TRADE_APPLET_POINT){
-        // //            // 支付订单获取积分
-        //            $point_storage = new App_Helper_Point($this->shop['s_id']);
-        //             $point_storage->gainPointBySource($trade['t_m_id'],App_Helper_Point::POINT_SOURCE_TRADE,$trade);
-        //        }
+
 
         //订单活动后续处理
-        plum_open_backend('index', 'tradeBack', array('sid' => $this->shop['s_id'], 'tid' => $tid));
-        if($trade['t_applet_type']==App_Helper_Trade::TRADE_ORDER_MEETING){
-            plum_open_backend('templmsg', 'meetingTempl', array('sid' => $this->shop['s_id'], 'tid' => $tid));
-        }else{
-            plum_open_backend('index', 'wxappTempl', array('sid' => $this->shop['s_id'], 'tid' => $tid, 'type' => App_Helper_WxappApplet::SEND_SETUP_ZFCG));
-        }
+//        plum_open_backend('index', 'tradeBack', array('sid' => $this->shop['s_id'], 'tid' => $tid));
+//        if($trade['t_applet_type']==App_Helper_Trade::TRADE_ORDER_MEETING){
+//            plum_open_backend('templmsg', 'meetingTempl', array('sid' => $this->shop['s_id'], 'tid' => $tid));
+//        }else{
+//            plum_open_backend('index', 'wxappTempl', array('sid' => $this->shop['s_id'], 'tid' => $tid, 'type' => App_Helper_WxappApplet::SEND_SETUP_ZFCG));
+//        }
         $this->_respond_weixin_notify(true, 'OK');
     }
 

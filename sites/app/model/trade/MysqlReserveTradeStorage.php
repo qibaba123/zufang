@@ -5,10 +5,10 @@ class App_Model_Trade_MysqlReserveTradeStorage extends Libs_Mvc_Model_BaseModel{
 
 
     public function __construct(){
-        $this->_table 	= 'service_trade';
-        $this->_pk 		= 'st_id';
-        $this->_shopId 	= 'st_s_id';
-        $this->_df      = 'st_deleted';
+        $this->_table 	= 'reserve_trade';
+        $this->_pk 		= 'rt_id';
+        $this->_shopId 	= 'rt_s_id';
+        $this->_df      = 'rt_deleted';
         parent::__construct();
     }
 
@@ -16,7 +16,7 @@ class App_Model_Trade_MysqlReserveTradeStorage extends Libs_Mvc_Model_BaseModel{
  * 通过订单id获取订单
  */
     public function findUpdateTradeByTid($tid, $data = null) {
-        $where[]    = array('name' => 'st_tid', 'oper' => '=', 'value' => $tid);
+        $where[]    = array('name' => 'rt_tid', 'oper' => '=', 'value' => $tid);
         if ($data) {
             return $this->updateValue($data, $where);
         } else {
