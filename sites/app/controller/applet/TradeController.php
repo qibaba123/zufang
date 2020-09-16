@@ -107,8 +107,8 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $appid = 'wxe57483a62f88b851';
             if ($trade) {
                 $body = $trade['rt_g_name'];
-                $amount = floatval($trade['t_total_fee'] - $trade['t_coin_payment']);
-                $openid = $trade['t_buyer_openid'];
+                $amount = floatval($trade['rt_fee']);
+                $openid = $trade['rt_openid'];
                 $pay_storage = new App_Plugin_Weixin_NewPay($this->sid);
                 $notify_url = $this->response->responseHost() . '/mobile/wxpay/tradeReserveNotifyApplet'; //回调地址
 
@@ -128,7 +128,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
                 if (is_array($ret)) {
                     // 将prepay_id保存到数据库
-                    $updata = array('t_prepay_id' => $ret['prepay_id']);
+                    $updata = array('rt_prepay_id' => $ret['prepay_id']);
                     $trade_model->findUpdateTradeByTid($tid, $updata);
                     $params = array(
                         'appId' => $ret['appid'],

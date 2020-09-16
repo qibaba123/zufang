@@ -40,6 +40,7 @@ class App_Controller_Applet_ParkController extends App_Controller_Applet_InitCon
             $where[] = array('name'=>"ahr_park",'oper'=>"=",'value'=>$park);
         }
         $list = $house_model->getList($where,$index,$this->count,array('ahr_weight'=>"DESC"));
+        $data['list'] = array();
         foreach($list as $val){
             $data['list'][] = array(
                 'id'   => $val['ahr_id'],
@@ -51,12 +52,7 @@ class App_Controller_Applet_ParkController extends App_Controller_Applet_InitCon
                 'stock'  => $val['ahr_stock']
             );
         }
-        if($list){
-            $this->displayJsonSuccess($data,true,'获取成功');
-        }else{
-            $this->displayJsonError('没有数据');
-        }
-
+        $this->displayJsonSuccess($data,true,'获取成功');
     }
 
     //办公室/工位详情
