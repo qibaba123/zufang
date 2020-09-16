@@ -26,7 +26,7 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
         if($member['m_vip_end_time'] > time()){
             $data['is_vip'] = 1;
         }
-
+        $this->displayJsonSuccess($data,true,'获取成功');
     }
 
 

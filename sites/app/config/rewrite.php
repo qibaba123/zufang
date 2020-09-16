@@ -340,6 +340,11 @@ return array(
             'action'            => 'meDataAction',
             'desc'              => '我的资料接口'
         ),
+        'applet_save_my_data'      => array(
+            'controller'        => 'App_Controller_Applet_MemberController',
+            'action'            => 'saveDataAction',
+            'desc'              => '保存我的资料接口'
+        ),
         'applet_create_service_trade'      => array(
             'controller'        => 'App_Controller_Applet_TradeController',
             'action'            => 'createServiceTradeAction',
