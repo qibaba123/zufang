@@ -841,6 +841,70 @@ class App_Plugin_Weixin_NewPay {
         }
     }
 
+
+    /**
+     * 小程序订单支付（买家版）
+     */
+    public function appletReserveOrderPayRecharge($amount, $openid, $tid, $notify_url, $body, $other=array()){
+
+        $amount     = round($amount*100);//转化为分
+        $body       = mb_strlen($body, 'UTF-8') > 40 ? mb_substr($body, 0, 40, 'UTF-8') : $body;
+
+        // 获取小程序配置及支付相关配置
+//        $applet_storage = new App_Model_Applet_MysqlCfgStorage($this->sid);
+//        $appcfg = $applet_storage->findShopCfg();
+        $appletPay_Model = new App_Model_Applet_MysqlAppletPayStorage($this->sid);
+        $appcfg = $appletPay_Model->findRowPay();
+        if(!$appcfg){
+            return 40005 ;    // 未配置微信支付
+        }
+        $request_params = array(
+            'appid'             => $appcfg['ap_appid'], //小程序ID
+            'mch_id'            => $appcfg['ap_mchid'], //商户号
+            'nonce_str'         => self::getNonceStr(24),
+            'body'              => $body,
+            'out_trade_no'      => $tid,//商户内部订单号
+            'total_fee'         => $amount,//单位分
+            'spbill_create_ip'  => plum_get_server('SERVER_ADDR'),
+            'notify_url'        => $notify_url,
+            'trade_type'        => 'JSAPI',
+            'openid'            => $openid,
+            'attach'            => $other['attach']
+        );
+        if($this->sid == 4546){
+            Libs_Log_Logger::outputLog('3333','test.log');
+        }
+        $request_params = array_merge($request_params, $other);
+        $sign   = self::makeWxpaySign($request_params, $appcfg['ap_mchkey']);
+        $request_params['sign'] = $sign;
+        if ($xml = $this->toXml($request_params)) {
+            $ret = self::postXmlCurl($xml, $this->unified_url);
+            $ret = $this->fromXml($ret);
+            if($this->sid == 10871){
+                Libs_Log_Logger::outputLog($appcfg,'test.log');
+                Libs_Log_Logger::outputLog($request_params,'test.log');
+                Libs_Log_Logger::outputLog($ret,'test.log');
+            }
+            if ($ret) {
+                if ($ret['return_code'] == 'SUCCESS' && $ret['result_code'] == 'SUCCESS') {
+                    return array(
+                        'code'          => 0,
+                        'appid'         => $ret['appid'],
+                        'mch_id'        => $ret['mch_id'],
+                        'trade_type'    => $ret['trade_type'],
+                        'prepay_id'     => $ret['prepay_id'],
+                        'app_key'       => $appcfg['ap_mchkey'],
+                    );
+                }
+            } else {
+                return 40004;
+            }
+        } else {
+            return 40003;
+        }
+    }
+
+
     /**
      * 小程序订单支付（买家版）
      */

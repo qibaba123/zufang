@@ -24,8 +24,8 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $time_num  = $this->request->getIntParam('time_num'); //天数/月数/年数
         $start_time = $this->request->getStrParam('start_time');//开始时间
         $end_time   = $this->request->getStrParam('end_time');//结束时间
-        $m_name     = $this->request->getStrParam('m_name');//结束时间
-        $m_mobile   = $this->request->getStrParam('m_mobile');//结束时间
+        $m_name     = $this->request->getStrParam('m_name');//预约人
+        $m_mobile   = $this->request->getStrParam('m_mobile');//联系电话
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         $number      = '';
         if($type == 1){
@@ -66,6 +66,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         );
         $ret = $trade_model->insertValue($insert);
         $data = array(
+            'tid'    => $insert['rt_tid'],
             'number' => $number,
             'name'   => $g_name,
             'brief'  => $brief,
@@ -80,6 +81,73 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $this->displayJsonError('订单创建失败');
         }
     }
+
+
+    //确认订单
+    public function confirmServiceTradeAction(){
+        $tid        = $this->request->getStrParam('tid');
+        $note       = $this->request->getStrParam('note');
+        $m_name     = $this->request->getStrParam('m_name');//预约人
+        $m_mobile   = $this->request->getStrParam('m_mobile');//联系电话
+        $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+        $data = array(
+            'rt_m_name'   => $m_name,
+            'rt_m_mobile' => $m_mobile,
+            'rt_note'     => $note,
+            'rt_status'   => 1,//待支付
+        );
+        $ret      = $trade_model->findUpdateTradeByTid($tid,$data);
+        if($ret){
+            $trade    = $trade_model->findUpdateTradeByTid($tid);
+            $pay_type = new App_Model_Auth_MysqlPayTypeStorage($this->sid);
+            $payType  = $pay_type->findRowPay();
+//            if (!$payType || ($payType && $payType['pt_wxpay_applet'] == 0)) {
+//                $this->outputError('该店铺暂未开启微信支付');
+//            }
+            $appid = 'wxe57483a62f88b851';
+            if ($trade) {
+                $body = $trade['rt_g_name'];
+                $amount = floatval($trade['t_total_fee'] - $trade['t_coin_payment']);
+                $openid = $trade['t_buyer_openid'];
+                $pay_storage = new App_Plugin_Weixin_NewPay($this->sid);
+                $notify_url = $this->response->responseHost() . '/mobile/wxpay/tradeReserveNotifyApplet'; //回调地址
+
+                $attach = array(
+                    'suid' => $this->shop['s_unique_id'],
+                    'mid' => $this->member['m_id'],
+                    'appid' => $appid,
+                );
+                $other = array(
+                    'attach' => json_encode($attach),
+                );
+
+                $appletPay_Model = new App_Model_Applet_MysqlAppletPayStorage($this->sid);
+                $appcfg = $appletPay_Model->findRowPay();
+                $ret = $pay_storage->appletOrderPayRecharge($amount, $openid, $tid, $notify_url, $body, $other);
+
+
+                if (is_array($ret)) {
+                    // 将prepay_id保存到数据库
+                    $updata = array('t_prepay_id' => $ret['prepay_id']);
+                    $trade_model->findUpdateTradeByTid($tid, $updata);
+                    $params = array(
+                        'appId' => $ret['appid'],
+                        'timeStamp' => strval(time()),
+                        'nonceStr' => App_Plugin_Weixin_PayPlugin::getNonceStr(24),
+                        'package' => "prepay_id={$ret['prepay_id']}",
+                        'signType' => 'MD5',
+                    );
+                    $params['paySign'] = App_Plugin_Weixin_PayPlugin::makeWxpaySign($params, $ret['app_key']);
+                    $this->outputSuccess(array('data' => $params));
+                } else {
+                    $this->outputError('支付错误，请稍后重试');
+                }
+            }
+        }else{
+            $this->displayJsonError('订单提交失败，请稍后重试');
+        }
+    }
+
 
 
     public function createTradeAction(){

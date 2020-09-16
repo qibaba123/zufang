@@ -102,17 +102,15 @@ class App_Controller_Applet_ParkController extends App_Controller_Applet_InitCon
         $park_model = new App_Model_Park_MysqlAddressParkStorage();
         $where[] = array('name'=>"ap_area",'oper'=>"=",'value'=>$area);
         $list    = $park_model->getList($where,0,0,array('ap_weight'=>'DESC'));
+        $data['list'] = array();
         foreach($list as $val){
             $data['list'][] = array(
                 'id' => $val['ap_id'],
                 'name' => $val['ap_name']
             );
         }
-        if($list){
-            $this->displayJsonSuccess($data,true,'获取成功');
-        }else{
-            $this->displayJsonError('没有数据');
-        }
+        $this->displayJsonSuccess($data,true,'获取成功');
+
     }
 
 

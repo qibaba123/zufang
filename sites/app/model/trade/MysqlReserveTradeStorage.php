@@ -12,6 +12,19 @@ class App_Model_Trade_MysqlReserveTradeStorage extends Libs_Mvc_Model_BaseModel{
         parent::__construct();
     }
 
+    /*
+ * 通过订单id获取订单
+ */
+    public function findUpdateTradeByTid($tid, $data = null) {
+        $where[]    = array('name' => 'st_tid', 'oper' => '=', 'value' => $tid);
+        if ($data) {
+            return $this->updateValue($data, $where);
+        } else {
+            return $this->getRow($where);
+        }
+    }
+
+
     public function getSerList($where,$index,$count,$sort){
         $sql = 'SELECT ft.*,es.es_name ';
         $sql .= " FROM ".DB::table($this->_table)." ft ";
