@@ -32,7 +32,8 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $page  = $this->request->getIntParam('page');
         $index = $page * $this->count;
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
-        $list  = $service_model->getList(array(),$index,$this->count,array('es_weight'=>'DESC'));
+        $where[]       = array('name'=>'es_type','oper'=>"in",'value'=>array(1,2));
+        $list  = $service_model->getList($where,$index,$this->count,array('es_weight'=>'DESC'));
         $this->output['list'] = $list;
         $this->output['image'] = $this->curr_shop['s_service_image'];
         $this->renderCropTool('/wxapp/index/uploadImg');
