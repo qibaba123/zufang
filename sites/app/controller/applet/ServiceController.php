@@ -128,21 +128,50 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
     public function myColletAction(){
         $page  = $this->request->getIntParam('page');
         $index = $page * $this->count;
-        $collet_model  = new App_Model_Member_MysqlMemberCollletStorage();
+        $collet_model  = new App_Model_Member_MysqlMemberColletStorage();
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $house_model   = new App_Model_Resources_MysqlResourcesStorage();
         $where[]  = array('name'=>"mc_m_id",'oper'=>'=','value'=>$this->member['m_id']);
         $list     = $collet_model->getList($where,$index,$this->count,array('mc_create_time'=>'DESC'));
         foreach($list as $val){
+            $id     = $val['mc_c_id'];
             if($val['mc_type'] == 1){
-
+                $row = $service_model->getRowById($val['mc_c_id']);
+                $type   = 1;
+                $number = '';
+                $name   = $row['es_name'];
+                $cover  = $row['es_cover']?$this->dealImagePath($row['es_cover']):'';
+                $price  = $row['es_price'];
+                $brief  = $row['es_brief'];
+                $stock  = 0;
             }elseif($val['mc_type'] == 2){
-
+                $row = $house_model->getRowById($val['mc_c_id']);
+                $type   = 2;
+                $number = $row['ahr_number'];
+                $name   = $row['ahr_title'];
+                $cover  = $row['ahr_cover']?$this->dealImagePath($row['ahr_cover']):'';
+                $price  = $row['ahr_price'];
+                $brief  = $row['ahr_brief'];
+                $stock  = $row['ahr_stock'];
             }
             $data['list'][] = array(
-                ''
+                'id'    => $id,
+                'type'  => $type,
+                'number' => $number,
+                'name'   => $name,
+                'cover'  => $cover,
+                'price'  => $price,
+                'brief'  => $brief,
+                'stock'  => $stock
             );
         }
+        if($list){
+            $this->displayJsonSuccess($data,true,'获取成功');
+        }else{
+            $this->displayJsonError('没有数据');
+        }
     }
+
 
 
 
