@@ -62,13 +62,24 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
             'content' => plum_parse_img_path($row['es_content']),
             'type'    => $row['es_type']
         );
+        $data['format'] = array();
         if($row['es_status'] != 0){
             $format_model = new App_Model_Service_MysqlServiceFormatStorage();
-            $where[]      = array('name'=>"sf_e_id",'oper'=>"=",'name'=>$id);
+            $where[]      = array('name'=>"sf_e_id",'oper'=>"=",'value'=>$id);
             $format_list  = $format_model->getList($where,0,0,array('sf_create_time'=>'DESC'));
             foreach($format_list as $val){
                 $data['format'][] = $val['sf_name'];
             }
+        }
+        $slide_model = new App_Model_Service_MysqlServiceSlideStorage();
+        $where       = array();
+        $where[]     = array('name'=>"ss_ser_id",'oper'=>"=",'value'=>$id);
+        $slide_list  = $slide_model->getList($where,0,0,array());
+        $data['slide'] = array();
+        foreach ($slide_list as $val){
+            $data['slide'][] = array(
+                'image' => $this->dealImagePath($val['ss_path'])
+            );
         }
         $collet_model  = new App_Model_Member_MysqlMemberColletStorage();
         $where         = array();
