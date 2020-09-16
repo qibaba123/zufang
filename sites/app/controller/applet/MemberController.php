@@ -20,7 +20,7 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
         $data = array(
             'id' => $member['m_id'],
             'nickname' => $member['m_nickname'],
-            'avatar'   => $this->dealImagePath($member['m_avatar']),
+            'avatar'   => $member['m_avatar']?$this->dealImagePath($member['m_avatar']):'',
         );
         $data['is_vip'] = 0;//是否开通VIP
         if($member['m_vip_end_time'] > time()){
@@ -33,7 +33,7 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
     public function meDataAction(){
         $member = $this->member;
         $data   = array(
-            'avatar'   => $this->dealImagePath($member['m_avatar']),
+            'avatar'   => $member['m_avatar']?$this->dealImagePath($member['m_avatar']):'',
             'realname' => $member['m_realname'],
             'mobile'   => $member['m_mobile'],
             'pro'      => $member['m_pro_name'],
