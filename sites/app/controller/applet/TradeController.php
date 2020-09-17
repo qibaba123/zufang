@@ -191,9 +191,9 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $data['ft_pro']     = $this->request->getIntParam('pro');
         $data['ft_city']    = $this->request->getIntParam('city');
         $data['ft_area']    = $this->request->getIntParam('area');
-        $data['ft_pro_name']    = $this->request->getIntParam('pro_name');
-        $data['ft_city_name']   = $this->request->getIntParam('city_name');
-        $data['ft_area_name']   = $this->request->getIntParam('area_name');
+        $data['ft_pro_name']    = $this->request->getStrParam('pro_name');
+        $data['ft_city_name']   = $this->request->getStrParam('city_name');
+        $data['ft_area_name']   = $this->request->getStrParam('area_name');
         $data['ft_c_name']      = $this->request->getStrParam('c_name');
         $trade_model = new App_Model_Trade_MysqlFormTradeStorage();
         $data['ft_s_id'] = $this->sid;
