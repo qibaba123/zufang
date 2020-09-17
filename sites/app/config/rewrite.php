@@ -366,6 +366,11 @@ return array(
             'desc'              => '创建表单订单'
         ),
 
+        'applet_service_trade_list'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'ServiceTradeListAction',
+            'desc'              => '预约订单列表'
+        ),
 
 
 

@@ -17,6 +17,54 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
 
 
+    //预约订单列表
+    public function ServiceTradeListAction(){
+        $status = $this->request->getIntParam('status');//0.全部  1.租聘中  2.已过期  3.续租
+        $page   = $this->request->getIntParam('page');
+        $index  =  $page*$this->count;
+        if($status == 3){
+            $status = 1;
+        }
+        $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+        if($status){
+            $where[] = array('name'=>"rt_status",'oper'=>"=",'value'=>$status);
+        }else{
+            $where[] = array('name'=>"rt_status",'oper'=>"in",'value'=>array(1,2,3));
+        }
+        $where[] = array('name'=>"rt_m_id",'oper'=>"=",'value'=>$this->member['m_id']);
+        $list    = $trade_model->getList($where,$index.$this->count,array('rt_pay_time'=>'DESC','rt_create_time'));
+        $house_model = new App_Model_Resources_MysqlResourcesStorage();
+        $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $data = array();
+        foreach($list as $val){
+            if($val['rt_type'] == 1){
+                $row         = $house_model->getRowById($val['rt_g_id']);
+                $g_name      = $row['ahr_title'];
+                $number      = $row['ahr_number'];
+                $cover       = $row['ahr_cover'];
+                $brief       = $row['ahr_brief'];
+                $price       = $row['ahr_price'];
+            }elseif($val['rt_type'] == 1){
+                $row           = $service_model->getRowById($val['rt_g_id']);
+                $g_name        = $row['es_name'];
+                $cover         = $row['es_cover'];
+                $brief         = $row['es_brief'];
+                $price         = $row['es_price'];
+            }
+            $data[] = array(
+                'tid'    => $val['rt_tid'],
+                'number' => $number,
+                'name'   => $g_name,
+                'cover'  => $this->dealImagePath($cover),
+                'brief'  => $brief,
+                'price_fee'  => $val['rt_fee'],
+                'start_time' => date('Y-m-d',$val['rt_start_time']),
+                'end_time'   => date('Y-m-d',$val['rt_end_time']),
+            );
+        }
+        $this->displayJsonSuccess($data,true,'获取成功');
+    }
+
 
 
     //创建预约订单
@@ -79,6 +127,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'tid'    => $insert['rt_tid'],
             'number' => $number,
             'name'   => $g_name,
+            'cover'  => $this->dealImagePath($cover),
             'brief'  => $brief,
             'price'  => $price,
             'price_fee'  => $fee,
