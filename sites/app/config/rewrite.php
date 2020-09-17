@@ -350,6 +350,12 @@ return array(
             'action'            => 'createServiceTradeAction',
             'desc'              => '创建预约订单'
         ),
+        'applet_confirm_service_trade'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'confirmServiceTradeAction',
+            'desc'              => '确认预约订单'
+        ),
+
 
 
 
