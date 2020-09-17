@@ -34,6 +34,9 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         if($type == 1){
             $house_model = new App_Model_Resources_MysqlResourcesStorage();
             $row         = $house_model->getRowById($gid);
+            if($row['ahr_stock'] <= 0 ){
+                $this->displayJsonError('库存不足');
+            }
             $g_name      = $row['ahr_title'];
             $number      = $row['ahr_number'];
             $cover       = $row['ahr_cover'];
@@ -51,6 +54,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $insert = array(
             'rt_s_id' => $this->sid,
             'rt_m_id' => $this->member['m_id'],
+            'rt_type' => $type,
             'rt_m_nickname' => $this->member['m_nickname'],
             'rt_openid'   => $this->member['m_openid'],
             'rt_m_name'   => $m_name,
@@ -98,6 +102,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'rt_m_mobile' => $m_mobile,
             'rt_note'     => $note,
             'rt_status'   => 1,//待支付
+            'rt_create_time' => time()
         );
         $ret      = $trade_model->findUpdateTradeByTid($tid,$data);
         if($ret){
