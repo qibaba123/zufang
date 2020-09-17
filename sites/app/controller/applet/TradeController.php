@@ -32,8 +32,9 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $where[] = array('name'=>"rt_status",'oper'=>"in",'value'=>array(1,2,3));
         }
         $where[] = array('name'=>"rt_m_id",'oper'=>"=",'value'=>$this->member['m_id']);
+        Libs_Log_Logger::outputLog($where);
         $list    = $trade_model->getList($where,$index.$this->count,array('rt_create_time'=>'DESC'));
-
+        Libs_Log_Logger::outputLog($list);
         $house_model = new App_Model_Resources_MysqlResourcesStorage();
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
         $data['list'] = array();
@@ -52,7 +53,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
                 $brief         = $row['es_brief'];
                 $price         = $row['es_price'];
             }
-            $data['list'] = array(
+            $data['list'][] = array(
                 'tid'    => $val['rt_tid'],
                 'number' => $number,
                 'name'   => $g_name,
