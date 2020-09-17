@@ -119,7 +119,8 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $trade_redis    = new App_Model_Trade_RedisTradeStorage($this->sid);
             $overTime      = 15*60;//关闭时间15分钟
             $trade_redis->setTradeCloseTtl($tid, $overTime);
-            $this->displayJsonSuccess(array(),true,'订单提交成功');
+            $data['tid'] = $tid;
+            $this->displayJsonSuccess($data,true,'订单提交成功');
         }else{
             $this->displayJsonError('订单提交失败，请稍后重试');
         }
