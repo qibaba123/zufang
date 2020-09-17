@@ -880,11 +880,9 @@ class App_Plugin_Weixin_NewPay {
         if ($xml = $this->toXml($request_params)) {
             $ret = self::postXmlCurl($xml, $this->unified_url);
             $ret = $this->fromXml($ret);
-            if($this->sid == 10871){
                 Libs_Log_Logger::outputLog($appcfg,'test.log');
                 Libs_Log_Logger::outputLog($request_params,'test.log');
                 Libs_Log_Logger::outputLog($ret,'test.log');
-            }
             if ($ret) {
                 if ($ret['return_code'] == 'SUCCESS' && $ret['result_code'] == 'SUCCESS') {
                     return array(
