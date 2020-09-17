@@ -35,7 +35,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $list    = $trade_model->getList($where,$index.$this->count,array('rt_pay_time'=>'DESC','rt_create_time'));
         $house_model = new App_Model_Resources_MysqlResourcesStorage();
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
-        $data = array();
+        $data['list'] = array();
         foreach($list as $val){
             if($val['rt_type'] == 1){
                 $row         = $house_model->getRowById($val['rt_g_id']);
@@ -51,7 +51,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
                 $brief         = $row['es_brief'];
                 $price         = $row['es_price'];
             }
-            $data[] = array(
+            $data['list'] = array(
                 'tid'    => $val['rt_tid'],
                 'number' => $number,
                 'name'   => $g_name,
