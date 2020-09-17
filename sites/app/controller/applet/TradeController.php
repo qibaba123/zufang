@@ -32,7 +32,8 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $where[] = array('name'=>"rt_status",'oper'=>"in",'value'=>array(1,2,3));
         }
         $where[] = array('name'=>"rt_m_id",'oper'=>"=",'value'=>$this->member['m_id']);
-        $list    = $trade_model->getList($where,$index.$this->count,array('rt_pay_time'=>'DESC','rt_create_time'));
+        $list    = $trade_model->getList($where,$index.$this->count,array('rt_pay_time'=>'DESC','rt_create_time'=>'DESC'));
+
         $house_model = new App_Model_Resources_MysqlResourcesStorage();
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
         $data['list'] = array();
