@@ -919,6 +919,7 @@ class App_Plugin_Weixin_NewPay {
         if(!$appcfg){
             return 40005 ;    // 未配置微信支付
         }
+        Libs_Log_Logger::outputLog($appcfg,'test.log');
         $request_params = array(
             'appid'             => $appcfg['ap_appid'], //小程序ID
             'mch_id'            => $appcfg['ap_mchid'], //商户号
