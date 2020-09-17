@@ -16,6 +16,9 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
     }
 
 
+
+
+
     //创建预约订单
     public function createServiceTradeAction(){
         $type      = $this->request->getIntParam('type');//1.园区预约  2.服务预约

@@ -360,6 +360,12 @@ return array(
             'action'            => 'TradePayAction',
             'desc'              => '订单支付'
         ),
+        'applet_create_form_trade'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'createFormTradeAction',
+            'desc'              => '创建表单订单'
+        ),
+
 
 
 
