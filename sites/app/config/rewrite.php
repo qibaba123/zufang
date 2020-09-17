@@ -355,6 +355,11 @@ return array(
             'action'            => 'confirmServiceTradeAction',
             'desc'              => '确认预约订单'
         ),
+        'applet_pay_service_trade'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'TradePayAction',
+            'desc'              => '订单支付'
+        ),
 
 
 
