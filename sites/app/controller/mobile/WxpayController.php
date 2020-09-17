@@ -456,6 +456,9 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
 //        }else{
 //            plum_open_backend('index', 'wxappTempl', array('sid' => $this->shop['s_id'], 'tid' => $tid, 'type' => App_Helper_WxappApplet::SEND_SETUP_ZFCG));
 //        }
+        //将订单从超时处理队列中移除
+        $trade_redis    = new App_Model_Trade_RedisTradeStorage($this->shop['s_id']);
+        $trade_redis->delTradeClose($trade['t_id']);
         $this->_respond_weixin_notify(true, 'OK');
     }
 

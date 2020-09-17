@@ -272,116 +272,26 @@ class App_Helper_Trade {
      * $tid 订单ID,非订单号
      */
   public function closeOvertimeTrade($tid) {
-     
-        $trade_model= new App_Model_Trade_MysqlTradeStorage($this->sid);
+
+        $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         $trade      = $trade_model->getRowById($tid);
         if (!$trade) {
             return false;
         }
-      
-        //积分类型订单,设置兑换记录失败
-        if ($trade['t_type'] == self::TRADE_POINT) {
-            $record_model   = new App_Model_Point_MysqlRecordStorage($this->sid);
-            $updata = array('pr_status' => App_Helper_Point::POINT_STATUS_FAILURE, 'pr_update_time' => time());
-            $record_model->findRecordByTid($trade['t_tid'], $updata);
-        }
-     
-        if ($trade['t_status'] < self::TRADE_WAIT_GROUP) {
-        
-            //退还交易中使用的优惠券
-            $trade_coupon   = new App_Model_Trade_MysqlTradeCouponStorage($this->sid);
-            $coupon_use     = $trade_coupon->findCouponByTid($trade['t_tid']);
-            if ($coupon_use) {
-                $coupon_receive = new App_Model_Coupon_MysqlReceiveStorage();
-                $updata = array('cr_is_used' => 0);
-                $coupon_receive_res = $coupon_receive->updateCouponReceive($coupon_use['tc_rc_id'], $trade['t_m_id'], $this->sid, $updata);
-                if($coupon_receive_res){
-                    //优惠券使用数量 -1
-                    $coupon_model   = new App_Model_Coupon_MysqlCouponStorage();
-                    $coupon_model->incrementUsedCount($coupon_use['tc_c_id'], -1);
-                }
-            }
-           
-            //如果是混合支付，退还支付的余额
-            if($trade['t_pay_type'] == self::TRADE_PAY_HHZF){
-                //增加会员金币
-                App_Helper_MemberLevel::goldCoinTrans($this->sid, $trade['t_m_id'], $trade['t_coin_payment']);
-                // 记录使用记录
-                App_Helper_MemberLevel::coinInoutRecord($this->sid,$trade['t_m_id'], $trade['t_coin_payment'], $trade['t_coin_payment'], 14, "订单关闭退还余额", $trade['t_tid']);
-            }
-        
-            //退还交易中使用的兑换码
-            $code_storage = new App_Model_Cake_MysqlCakeRechargeCodeStorage($this->sid);
-            $where[] = array('name' => 'arc_tid', 'oper' => '=', 'value' => $trade['t_tid']);
-            $where[] = array('name' => 'arc_s_id', 'oper' => '=', 'value' => $this->sid);
-            $codeList     = $code_storage->getList($where);
-            foreach($codeList as $val) {
-                $updata = array('arc_status' => 1);
-                $code_storage->updateById($updata,$val['arc_id']);
-            }
+       //如果是园区商品  库存减一
+       if($trade['rt_type'] == 1){
+          $house_model   = new App_Model_Resources_MysqlResourcesStorage();
+          $house         = $house_model->getRowById($trade['rt_g_id']);
+          $update['ahr_stock'] = $house['ahr_stock'] + 1;
+          $house_model->updateById($update,$trade['rt_g_id']);
+       }
+       //订单状态变成已关闭
+        $updata = array(
+            'rt_status'  => 4,
+        );
 
-            //交易佣金提成通知
-            $order_deduct   = new App_Helper_OrderDeduct($this->sid);
-            $order_deduct->updateOrderDeduct($trade['t_tid'], $trade['t_m_id'], $order_deduct::ORDER_HAD_CLOSED);
-        
-            // 订单超时以后恢复库存 (也只有在线上（微信）支付的时候才会占用次库存信息)
-            // zhangzc
-            // 2019-08-11
-            // 判断是来自社区团购的订单、判断是微信支付的订单、根据这个订单查找到子订单里面的各个商品购买的数量
-            // && $this->sid==9373
-            $order_model= new App_Model_Trade_MysqlTradeOrderStorage($this->sid);
-            $applet_cfg = new App_Model_Applet_MysqlCfgStorage($this->shop['s_id']);
-            $cfg        = $applet_cfg->findShopCfg();
-            if((in_array($cfg['ac_type'],[32,36])) && ($trade['t_pay_type'] == self::TRADE_PAY_WXZFZY || $trade['t_pay_type'] == self::TRADE_PAY_HHZF)){
-                $order_list= $order_model->fetchOrderListByTid($tid);
-                $goods_model=new App_Model_Goods_MysqlGoodsStorage($this->sid);
-                $trade_redis_model=new  App_Model_Trade_RedisTradeStorage($this->sid); 
-                foreach ($order_list as $key => $value) {
-                    // 只有待支付状态的订单会被涨上去库存
-                    // zhangzc
-                    // 2019-09-05
-                    if($trade['t_status']==1)
-                        $is_reduce_success=$goods_model->adjustStock($value['to_g_id'],$value['to_num'],$value['to_gf_id']);
+        return $trade_model->updateById($updata, $trade['t_id']);
 
-                   // 库存超时恢复 记录
-                   // zhangzc
-                   // 2019-09-03
-                    $trade_record_model=new App_Model_Trade_MysqlTradeRecordStorage($this->sid);
-                    $record_data=[
-                        'tsr_sid'   =>$this->sid,
-                        'tsr_gfid'  =>$value['to_gf_id'],
-                        'tsr_gid'   =>$value['to_g_id'],
-                        'tsr_tid'   =>$tid,
-                        'tsr_stock' =>$value['to_num'],
-                        'tsr_type'  =>1,                //加库存
-                        'tsr_reason'=>4,                //超时恢复库存
-                        'tsr_class' =>__CLASS__,
-                        'tsr_method'=>__METHOD__,
-                        'tsr_ip'    =>$_SERVER['SERVER_ADDR'],
-                        'tsr_create_time'=>time()
-                    ];
-                    if(!$is_reduce_success){
-                       $record_data['tsr_status']=0;                    
-                    }
-                    // 只有待支付状态的订单会被涨上去库存
-                    // zhangzc
-                    // 2019-09-05
-                    if($trade['t_status']==1)
-                        $trade_record_model->insertValue($record_data);
-
-                  
-                   // todo 在加一个设置到缓存中的库存
-                   $trade_redis_model->sequenceSetGoodsStockStatus($value['to_g_id']);
-                } 
-            }
-
-            $updata = array(
-                't_status'  => self::TRADE_CLOSED,
-            );
-         
-            return $trade_model->updateById($updata, $trade['t_id']);
-        }
-        return false;
     }
     /*
      * 完成超时未确认订单
