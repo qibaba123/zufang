@@ -25,8 +25,8 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $time_num  = $this->request->getIntParam('time_num'); //天数/月数/年数
         $start_time = $this->request->getStrParam('start_time');//开始时间
         $end_time   = $this->request->getStrParam('end_time');//结束时间
-        $m_name     = $this->request->getStrParam('m_name');//预约人
-        $m_mobile   = $this->request->getStrParam('m_mobile');//联系电话
+   //     $m_name     = $this->request->getStrParam('m_name');//预约人
+  //      $m_mobile   = $this->request->getStrParam('m_mobile');//联系电话
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         $start_time = strtotime($start_time);
         $end_time   = strtotime($end_time);
@@ -57,8 +57,8 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'rt_type' => $type,
             'rt_m_nickname' => $this->member['m_nickname'],
             'rt_openid'   => $this->member['m_openid'],
-            'rt_m_name'   => $m_name,
-            'rt_m_mobile' => $m_mobile,
+  //          'rt_m_name'   => $m_name,
+  //          'rt_m_mobile' => $m_mobile,
             'rt_g_id'     => $gid,
             'rt_fee'      => $fee,
             'rt_cover'    => $cover,
@@ -77,9 +77,10 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'number' => $number,
             'name'   => $g_name,
             'brief'  => $brief,
+            'price'  => $price,
             'price_fee'  => $fee,
-            'm_name'  => $m_name,
-            'm_mobile' => $m_mobile,
+//            'm_name'  => $m_name,
+//            'm_mobile' => $m_mobile,
             'time_num' => $time_num,
         );
         if($ret){
