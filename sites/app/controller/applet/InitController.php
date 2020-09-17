@@ -433,7 +433,7 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
         if(!$uid) {
             $test11 = $this->request->getIntParam('test');
             if($test11) {
-                $uid = 60;
+                $uid = 289;
             }
         }
 
