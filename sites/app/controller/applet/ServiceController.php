@@ -15,6 +15,34 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
 
     }
 
+    //企业服务详情
+    public function vipDetailAction(){
+        $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $where[]       = array('name'=>"es_type",'oper'=>"=",'value'=>3);
+        $row           = $service_model->getRow($where);
+        $data   = array(
+            'id'    => $row['es_id'],
+            'name'  => $row['es_name'],
+            'cover' => $this->dealImagePath($row['es_cover']),
+            'brief' => $row['es_brief'],
+            'price' => $row['es_price'],
+            'content' => plum_parse_img_path($row['es_content']),
+            'type'    => $row['es_type']
+        );
+        $slide_model = new App_Model_Service_MysqlServiceSlideStorage();
+        $where       = array();
+        $where[]     = array('name'=>"ss_ser_id",'oper'=>"=",'value'=>$row['es_id']);
+        $slide_list  = $slide_model->getList($where,0,0,array());
+        $data['slide'] = array();
+        foreach ($slide_list as $val){
+            $data['slide'][] = array(
+                'image' => $this->dealImagePath($val['ss_path'])
+            );
+        }
+        $this->displayJsonSuccess($data,true,'获取成功');
+    }
+
+
 
     //企业服务
     public function serviceListAction(){

@@ -259,6 +259,12 @@ return array(
 
     /*******************************微信小程序接口相关********************************/
     'applet'    => array(
+        'applet_img_upload'     => array(
+            'controller'        => 'App_Controller_Applet_IndexController',
+            'action'            => 'uploadImgAction',
+            'desc'              => '单张图片上传'
+        ),
+
         'applet_member_info'     => array(
             'controller'        => 'App_Controller_Applet_MemberController',
             'action'            => 'userInfoAction',
@@ -370,6 +376,12 @@ return array(
             'controller'        => 'App_Controller_Applet_TradeController',
             'action'            => 'ServiceTradeListAction',
             'desc'              => '预约订单列表'
+        ),
+
+        'applet_zf_vip_detail'     => array(
+            'controller'        => 'App_Controller_Applet_ServiceController',
+            'action'            => 'vipDetailAction',
+            'desc'              => 'VIP详情接口'
         ),
 
 
