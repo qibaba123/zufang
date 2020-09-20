@@ -83,13 +83,11 @@
 						</div>
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon" style="height:34px;">所属商家</div>
-								<select id="esId" name="esId" style="height:34px;width:100%" class="form-control my-select2">
+								<div class="input-group-addon" style="height:34px;">订单类型</div>
+								<select id="type" name="type" style="height:34px;width:100%" class="form-control my-select2">
 									<option value="0">全部</option>
-									<option value="-1" <{if $esId == -1}>selected<{/if}>>平台自营</option>
-									<{foreach $selectShop as $key => $val}>
-								<option <{if $esId eq $key}>selected<{/if}> value="<{$key}>"><{$val}></option>
-									<{/foreach}>
+									<option value="1" <{if $type == 1}>selected<{/if}>>园区服务</option>
+									<option value="2" <{if $type == 2}>selected<{/if}>>企业服务</option>
 								</select>
 							</div>
 						</div>

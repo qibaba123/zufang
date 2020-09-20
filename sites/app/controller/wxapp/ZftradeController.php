@@ -16,7 +16,45 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         $ceshi_model = new App_Model_Trade_MysqlTradeStorage();
         $where   = array();
-      // $where[] = array('name'=>"",'oper'=>"");
+        $output['type'] = $this->request->getIntParam('type');
+        if($output['type']){
+            $where[]= array('name'=>'rt_type','oper'=>'=','value'=>$output['type']);
+        }else{
+            $where[] = array('name'=>"rt_type",'oper'=>"!=",'value'=>3);
+        }
+        $output['status'] = $this->request->getIntParam('status');
+        if($output['status']){
+            $where[]= array('name'=>'rt_status','oper'=>'=','value'=>$output['status']);
+        }
+        $output['title'] = $this->request->getStrParam('title');
+        if($output['title']){
+            $where[]= array('name'=>'rt_g_name','oper'=>'like','value'=>"%{$output['title']}%");
+        }
+        $output['tid'] = $this->request->getStrParam('tid');
+        if($output['tid']){
+            $where[]= array('name'=>'rt_tid','oper'=>'=','value'=>$output['tid']);
+        }
+        $output['buyer']  = $this->request->getStrParam('buyer');
+        if($output['buyer']){
+            $where[]= array('name'=>'rt_m_nickname','oper'=>'like','value'=>"%{$output['buyer']}%");
+        }
+        $output['harvest']  = $this->request->getStrParam('harvest');
+        if($output['harvest']){
+            $where[]= array('name'=>'rt_m_name','oper'=>'like','value'=>"%{$output['harvest']}%");
+        }
+        $output['phone']  = $this->request->getStrParam('phone');
+        if($output['phone']){
+            $where[]= array('name'=>'rt_m_mobile','oper'=>'=','value'=>$output['phone']);
+        }
+        $output['start']   = $this->request->getStrParam('start');
+        if($output['start']){
+            $where[]    = array('name' => 'rt_start_time', 'oper' => '>=', 'value' => strtotime($output['start']));
+        }
+        $output['end']     = $this->request->getStrParam('end');
+        if($output['end']){
+            $where[]    = array('name' => 'rt_end_time', 'oper' => '<=', 'value' => (strtotime($output['end']) + 86400));
+        }
+        $this->showOutput($output);
         $list    = $trade_model->getMemberList($where,$index,$this->count,array('rt_create_time'=>'DESC'));
         $total   = $trade_model->getCount($where);
         $page_libs = new Libs_Pagination_Paginator($total,$this->count,'jquery',true);
