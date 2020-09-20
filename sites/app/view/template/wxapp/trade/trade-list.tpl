@@ -27,7 +27,7 @@
 		padding: 0 !important;
 	}
 	.balance .balance-info {
-		width: 16.66% !important;
+		width: 25% !important;
 	}
 
 	.entershop-select .select2-choice{
