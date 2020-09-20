@@ -140,7 +140,7 @@ return array(
             'submenu'   => array(
                 array(
                     'title'     => '付费订单',
-                    'link'      => '/community/tradeList',
+                    'link'      => '/zftrade/tradeList',
                     'icon'      => 'icon-th-large',
                     'access'    => 'community-tradeList',
                     'index-icon'=> '/community/order.png',
