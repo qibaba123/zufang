@@ -1376,13 +1376,13 @@ class App_Controller_Applet_CurrencyController extends App_Controller_Applet_Ini
                 $city[] = array(
                     'id'   => $v['region_id'],
                     'name' => $v['region_name'],
-                    'area' => $area,
+                    'children' => $area,
                 );
             }
             $info['pro'][] = array(
                 'id'   => $val['region_id'],
                 'name' => $val['region_name'],
-                'city' => $city
+                'children' => $city
             );
         }
         if($list){
