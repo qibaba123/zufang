@@ -9,6 +9,17 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
         parent::__construct();
     }
 
+    //预约支付订单列表
+    public function tradeListAction(){
+        $page  = $this->request->getIntParam('page');
+        $index = $page * $this->count;
+        $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+
+    }
+
+
+
+
    //预约表单订单
     public function formTradeListAction(){
         $page    = $this->request->getIntParam('page');

@@ -20,7 +20,7 @@ class App_Controller_Applet_IndexController extends Libs_Mvc_Controller_ApiBaseC
         $data = array();
         if($upload['ec'] == 200){
             $data['data'] = array(
-                'path' => $upload['url'],
+                'path' => $this->dealImagePath($upload['url']),
             );
 
             // 过滤敏感图片
