@@ -447,7 +447,16 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
             'rt_pay_time'        => time(),
         );
         $trade_model->findUpdateTradeByTid($tid, $updata);
-
+        if($trade['rt_type'] == 3){  //如果是开通VIP订单
+            $update = array();
+            $update = array(
+                'm_is_vip' => 1,
+                'm_vip_start_time' => time(),
+                'm_vip_emd_time'   => mktime(date('H',time()),date('i',time()),date('s',time()),date('m',time()),date('Y',time()),date('d',time()))
+            );
+            $member_model = new App_Model_Member_MysqlMemberCoreStorage();
+            $member_model->updateById($update,$this->member['m_id']);
+        }
 
         //订单活动后续处理
 //        plum_open_backend('index', 'tradeBack', array('sid' => $this->shop['s_id'], 'tid' => $tid));
