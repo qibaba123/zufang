@@ -279,8 +279,8 @@ class App_Helper_Tool {
     // 单张图片上传
     public function upload_file_limit_type($key, $dir,$isDrupal=0){
         $upload_file = isset($_FILES[$key]) ? $_FILES[$key] : false;
-        Libs_Log_Logger::outputLog($upload_file,'image.log');
-        Libs_Log_Logger::outputLog($dir,'image.log');
+     //   Libs_Log_Logger::outputLog($upload_file,'image.log');
+     //   Libs_Log_Logger::outputLog($dir,'image.log');
         $data = $this->deal_file_info($upload_file['tmp_name'],$upload_file['error'],$dir);
        if($isDrupal){
            drupal_json_output($data);

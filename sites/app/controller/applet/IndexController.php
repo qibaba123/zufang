@@ -12,11 +12,11 @@ class App_Controller_Applet_IndexController extends Libs_Mvc_Controller_ApiBaseC
 
     
     public function uploadImgAction() {
-        Libs_Log_Logger::outputLog(111,'image.log');
+        //Libs_Log_Logger::outputLog(111,'image.log');
         $dir = '/upload/depot/'.$this->suid.'/'.date('Ymd', time()).'/';
         $tool = new App_Helper_Tool();
         $upload = $tool->upload_file_limit_type('image', $dir);
-        Libs_Log_Logger::outputLog($upload,'image.log');
+        //Libs_Log_Logger::outputLog($upload,'image.log');
         $data = array();
         if($upload['ec'] == 200){
             $data['data'] = array(

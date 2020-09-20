@@ -113,6 +113,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
   //          'rt_m_name'   => $m_name,
   //          'rt_m_mobile' => $m_mobile,
             'rt_g_id'     => $gid,
+            'rt_g_price'  => $price,
             'rt_fee'      => $fee,
             'rt_cover'    => $cover,
             'rt_g_name'   => $g_name,

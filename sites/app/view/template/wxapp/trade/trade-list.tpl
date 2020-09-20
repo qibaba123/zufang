@@ -184,7 +184,7 @@
 			<tr class="header-row">
 				<td colspan="6">
 					<div>
-						订单号: <{$val['rt_tid']}>
+						订单号: <{$val['rt_tid']}> (<{if $val['rt_type'] == 1}>园区服务<{else}>企业服务<{/if}>)
 
 					</div>
 					<div class="clearfix">
@@ -213,7 +213,7 @@
 				<td class="title-cell">
 					<p class="goods-title">
 						<a href="/wxapp/zftrade/tradeList?title=<{$val['rt_g_name']}>"class="new-window" title="<{$val['rt_g_name']}>">
-							<{$val['rt_g_name']}>
+							<{if $val['rt_nume']}>[<{$val['rt_number']}>]<{/if}><{$val['rt_g_name']}><{if $val['re_format'] != 0}><{$val['sf_name']}><{/if}>
 						</a>
 					</p>
 					<p>
@@ -221,7 +221,7 @@
 				</td>
 				<td class="price-cell">
 					<p>
-						<{$val['rt_fee']}>
+						<{$val['rt_g_price']}>
 					</p>
 					<p>(<{$val['rt_time_num']}><{$time_type[$val['rt_time_type']]}>)</p>
 				</td>
