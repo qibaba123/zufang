@@ -151,7 +151,7 @@
         </div>
     </div>
 	<div class="choose-state">
-		<a href="/wxapp/zftrade/tradeList?status=0" <{if $status && $status eq 0}>class="active"<{/if}>>全部</a>
+		<a href="/wxapp/zftrade/tradeList?status=0" >全部</a>
 		<a href="/wxapp/zftrade/tradeList?status=1" <{if $status && $status eq 1}>class="active"<{/if}>>待支付</a>
 		<a href="/wxapp/zftrade/tradeList?status=2" <{if $status && $status eq 2}>class="active"<{/if}>>已支付</a>
 		<a href="/wxapp/zftrade/tradeList?status=3" <{if $status && $status eq 3}>class="active"<{/if}>>已过期</a>
