@@ -7,7 +7,7 @@ class App_Controller_Applet_IndexController extends Libs_Mvc_Controller_ApiBaseC
     private $suid;
     public function __construct(){
         parent::__construct();
-        $this->suid = $this->request->getStrParam('suid');
+        $this->suid = $this->request->getStrParam('suid','gaus0xcyuh');
     }
 
     
