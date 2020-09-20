@@ -48,7 +48,7 @@
 	</div>
 	<div class="page-header search-box">
 		<div class="col-sm-12">
-			<form class="form-inline" action="<{$searchUrl}>" method="get">
+			<form class="form-inline" action="/wxapp/zftrade/tradeList" method="get">
 				<div class="col-xs-11 form-group-box" style="overflow: visible;">
 					<div class="form-container">
 						<div class="form-group">
@@ -71,14 +71,14 @@
 						</div>
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">收货人</div>
-								<input type="text" class="form-control" name="name" value="<{$name}>"  placeholder="收货人姓名">
+								<div class="input-group-addon">预约人</div>
+								<input type="text" class="form-control" name="name" value="<{$name}>"  placeholder="预约人姓名">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="input-group">
-								<div class="input-group-addon">收货人电话</div>
-								<input type="text" class="form-control" name="phone" value="<{$phone}>"  placeholder="收货人电话">
+								<div class="input-group-addon">预约人电话</div>
+								<input type="text" class="form-control" name="phone" value="<{$phone}>"  placeholder="预约人电话">
 							</div>
 						</div>
 						<div class="form-group">
