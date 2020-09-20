@@ -25,10 +25,11 @@ class App_Model_Trade_MysqlReserveTradeStorage extends Libs_Mvc_Model_BaseModel{
     }
 
 
-    public function getSerList($where,$index,$count,$sort){
-        $sql = 'SELECT ft.*,es.es_name ';
-        $sql .= " FROM ".DB::table($this->_table)." ft ";
-        $sql .= ' LEFT JOIN pre_enterprise_service es ON es.es_id = ft.ft_ser_id ';
+    public function getMemberList($where,$index,$count,$sort){
+        $sql = 'SELECT rt.*,m.* ';
+        $sql .= " FROM ".DB::table($this->_table)." rt ";
+       // $sql .= ' LEFT JOIN pre_enterprise_service es ON es.es_id = rt.rt_ser_id ';
+        $sql .= ' LEFT JOIN pre_member m ON rt.rt_m_id = m.m_id ';
         $sql .= $this->formatWhereSql($where);
         $sql .= $this->getSqlSort($sort);
         $sql .= $this->formatLimitSql($index,$count);
@@ -39,5 +40,8 @@ class App_Model_Trade_MysqlReserveTradeStorage extends Libs_Mvc_Model_BaseModel{
         }
         return $ret;
     }
+
+
+
 
 }

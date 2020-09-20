@@ -14,7 +14,29 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
         $page  = $this->request->getIntParam('page');
         $index = $page * $this->count;
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
-
+        $ceshi_model = new App_Model_Trade_MysqlTradeStorage();
+        $where   = array();
+      // $where[] = array('name'=>"",'oper'=>"");
+        $list    = $trade_model->getMemberList($where,$index,$this->count,array('rt_create_time'=>'DESC'));
+        $total   = $trade_model->getCount($where);
+        $page_libs = new Libs_Pagination_Paginator($total,$this->count,'jquery',true);
+        $this->output['pageHtml']  = $page_libs->render();
+        $this->output['list']      = $list;
+        $time_type = array(
+            1 => '天',
+            2 => '月',
+            3 => '年'
+        );
+        $this->output['statusNote'] = array(
+            1 => '待付款',
+            2 => '已付款',
+            3 => '已到期',
+        );
+        $this->output['time_type'] = $time_type;
+        $this->buildBreadcrumbs(array(
+            array('title' => '订单列表', 'link' => '#'),
+        ));
+        $this->displaySmarty('wxapp/trade/trade-list.tpl');
     }
 
 
