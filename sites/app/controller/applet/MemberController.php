@@ -55,6 +55,8 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
         $data['m_address']    = $this->request->getStrParam('address');
         $data['m_brief']      = $this->request->getStrParam('brief');
         $member_storage = new App_Model_Member_MysqlMemberCoreStorage();
+        Libs_Log_Logger::outputLog($data,'data.log');
+        Libs_Log_Logger::outputLog($this->member['m_id'],'data.log');
         $member_storage->updateById($data, $this->member['m_id']);
         $info = array(
             'data' => "修改成功"
