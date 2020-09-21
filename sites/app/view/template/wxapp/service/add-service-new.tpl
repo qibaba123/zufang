@@ -280,7 +280,7 @@
         var html = '';
         var num  = $('#slide-format-num').val();
         html += '<p>';
-        html += '<input type="text" id="format_'+num+'" name="format_'+num+'" value="">';
+        html += '<input  class="form-control" type="text" id="format_'+num+'" name="format_'+num+'" value="">';
         html += '<span class="delformat-btn">×</span>';
         html += '<input type="hidden" id="format_id_'+num+'" name="format_id_'+num+'" value="0">';
         html += '</p>';
