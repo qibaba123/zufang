@@ -23,7 +23,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $page   = $this->request->getIntParam('page');
         $index  =  $page*$this->count;
         if($status == 4){
-            $status = 1;
+            $status = 2;
         }
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         if($status){

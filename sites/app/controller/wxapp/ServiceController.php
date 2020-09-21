@@ -73,6 +73,12 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
             }
             //var_dump($slide);exit;
             $this->output['slide'] = $slide;
+            if(!empty($row) && $row['es_type'] == 1){
+                $format_model = new App_Model_Service_MysqlServiceFormatStorage();
+                $where        = array();
+                $where[]      = array('name'=>"",'oper'=>"=",'value'=>);
+                $format       = $format_model->getList()
+            }
         }
         $this->renderCropTool('/wxapp/index/uploadImg');
         $this->buildBreadcrumbs(array(
