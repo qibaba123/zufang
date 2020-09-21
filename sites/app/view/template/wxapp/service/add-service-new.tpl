@@ -117,6 +117,22 @@
                                                             <input id="price" name="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                         </div>
                                                     </div>
+                                                    <div class="form-group formatshow">
+                                                        <h3 class="lighter block green">规格</h3>
+                                                        <div id="format" class="pic-box" style="display:inline-block">
+                                                            <{foreach $format as $key=>$val}>
+                                                            <p>
+                                                                <!--<img class="img-thumbnail col" layer-src="<{$val['ss_path']}>"  layer-pid="" src="<{$val['ss_path']}>" >
+                                                                <span class="delimg-btn">×</span>
+                                                                <input id="price" name="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{$val}>">-->
+                                                                <input type="text" id="format_<{$key}>" name="format_<{$key}>" value="<{$val}>">
+                                                                <input type="hidden" id="format_id_<{$key}>" name="format_id_<{$key}>" value="<{$val['ss_id']}>">
+                                                            </p>
+                                                            <{/foreach}>
+                                                        </div>
+                                                        <span onclick="toUpload(this)" data-limit="10" data-width="750" data-height="400" data-dom-id="slide-img" class="btn btn-success btn-xs">添加幻灯</span>
+                                                        <input type="hidden" id="slide-img-num" name="slide-img-num" value="<{if $slide}><{count($slide)}><{else}>0<{/if}>" placeholder="控制图片张数">
+                                                    </div>
                                                     <div class="form-group">
                                                         <label for="name" class="control-label"><font color="red">*</font>权重：</label>
                                                         <div class="control-group">
@@ -258,6 +274,15 @@
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
+    $('#type').on('change',function () {
+        var type = $('#type').val();
+        if(type == 1){
+            $('.priceshow').show();
+        }else{
+            $('.priceshow').hide();
+        }
+
+    })
     $(function(){
         $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
             /*  去掉商品类目不再做验证*/
