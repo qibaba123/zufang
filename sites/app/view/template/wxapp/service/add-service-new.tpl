@@ -275,6 +275,20 @@
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
+
+    function addformat(ret){
+        var html = '';
+        var num  = $('#slide-format-num').val();
+        html += '<p>';
+        html += '<input type="text" id="format_'+num+'" name="format_'+num+'" value="">';
+        html += '<span class="delformat-btn">×</span>';
+        html += '<input type="hidden" id="format_id_'+num+'" name="format_id_'+num+'" value="0">';
+        html += '</p>';
+        var now_num = num + 1;
+        $('#slide-format-num').val(now_num);
+        $('#format').prepend(html);
+    }
+
     $('#type').on('change',function () {
         var type = $('#type').val();
         if(type == 1){
@@ -505,10 +519,6 @@
         }
     })
 
-
-    function addformat(ret){
-        var html =
-    }
 
 
     /**
