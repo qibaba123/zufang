@@ -76,9 +76,10 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
             if(!empty($row) && $row['es_type'] == 1){
                 $format_model = new App_Model_Service_MysqlServiceFormatStorage();
                 $where        = array();
-                $where[]      = array('name'=>"",'oper'=>"=",'value'=>);
-                $format       = $format_model->getList()
+                $where[]      = array('name'=>"sf_e_id",'oper'=>"=",'value'=>$id);
+                $format       = $format_model->getList($where,0,0,array());
             }
+            $this->output['format'] = array_column($format,'sf_name','sf_id');
         }
         $this->renderCropTool('/wxapp/index/uploadImg');
         $this->buildBreadcrumbs(array(
