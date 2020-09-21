@@ -125,7 +125,7 @@
                                                                 <!--<img class="img-thumbnail col" layer-src="<{$val['ss_path']}>"  layer-pid="" src="<{$val['ss_path']}>" >
 
                                                                 <input id="price" name="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{$val}>">-->
-                                                                <input class="form-control" type="text" id="format_<{$key}>" name="format_<{$key}>" value="<{$val['sf_name']}>">
+                                                                <input style="white-space:nowrap;" class="form-control" type="text" id="format_<{$key}>" name="format_<{$key}>" value="<{$val['sf_name']}>">
                                                                 <span class="delformat-btn">×</span>
                                                                 <input type="hidden" id="format_id_<{$key}>" name="format_id_<{$key}>" value="<{$val['sf_id']}>">
                                                             </p>
@@ -280,7 +280,7 @@
         var html = '';
         var num  = $('#slide-format-num').val();
         html += '<p>';
-        html += '<input  class="form-control" type="text" id="format_'+num+'" name="format_'+num+'" value="">';
+        html += '<input style="white-space:nowrap;" class="form-control" type="text" id="format_'+num+'" name="format_'+num+'" value="">';
         html += '<span class="delformat-btn">×</span>';
         html += '<input type="hidden" id="format_id_'+num+'" name="format_id_'+num+'" value="0">';
         html += '</p>';
