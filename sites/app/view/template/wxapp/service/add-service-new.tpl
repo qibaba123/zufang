@@ -505,6 +505,12 @@
         }
     })
 
+
+    function addformat(ret){
+        var html =
+    }
+
+
     /**
      * 图片结果处理
      * @param allSrc
