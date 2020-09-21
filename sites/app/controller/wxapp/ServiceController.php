@@ -79,7 +79,8 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
                 $where[]      = array('name'=>"sf_e_id",'oper'=>"=",'value'=>$id);
                 $format       = $format_model->getList($where,0,0,array());
             }
-            $this->output['format'] = array_column($format,'sf_name','sf_id');
+           // $this->output['format'] = array_column($format,'sf_name','sf_id');
+            $this->output['format'] = $format;
         }
         $this->renderCropTool('/wxapp/index/uploadImg');
         $this->buildBreadcrumbs(array(

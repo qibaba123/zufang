@@ -123,15 +123,16 @@
                                                             <{foreach $format as $key=>$val}>
                                                             <p>
                                                                 <!--<img class="img-thumbnail col" layer-src="<{$val['ss_path']}>"  layer-pid="" src="<{$val['ss_path']}>" >
-                                                                <span class="delimg-btn">×</span>
+
                                                                 <input id="price" name="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{$val}>">-->
-                                                                <input type="text" id="format_<{$key}>" name="format_<{$key}>" value="<{$val}>">
-                                                                <input type="hidden" id="format_id_<{$key}>" name="format_id_<{$key}>" value="<{$val['ss_id']}>">
+                                                                <input type="text" id="format_<{$key}>" name="format_<{$key}>" value="<{$val['sf_name']}>">
+                                                                <span class="delformat-btn">×</span>
+                                                                <input type="hidden" id="format_id_<{$key}>" name="format_id_<{$key}>" value="<{$val['sf_id']}>">
                                                             </p>
                                                             <{/foreach}>
                                                         </div>
-                                                        <span onclick="toUpload(this)" data-limit="10" data-width="750" data-height="400" data-dom-id="slide-img" class="btn btn-success btn-xs">添加幻灯</span>
-                                                        <input type="hidden" id="slide-img-num" name="slide-img-num" value="<{if $slide}><{count($slide)}><{else}>0<{/if}>" placeholder="控制图片张数">
+                                                        <span onclick="addformat(this)" class="btn btn-success btn-xs">添加规格</span>
+                                                        <input type="hidden" id="slide-format-num" name="slide-format-num" value="<{if $format}><{count($format)}><{else}>0<{/if}>" placeholder="控制图片张数">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="name" class="control-label"><font color="red">*</font>权重：</label>

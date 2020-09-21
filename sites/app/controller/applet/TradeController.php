@@ -71,7 +71,8 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
                 'end_time'   => date('Y-m-d',$val['rt_end_time']),
                 //'type'       => $val['rt_type'],
                 'status'     => $val['rt_status'],
-                'status_desc'=> $status_arr[$val['rt_status']]
+                'status_desc'=> $status_arr[$val['rt_status']],
+                'close_time' => $val['rt_status'] == 1?$val['rt_create_time'] + (15 * 60):0
             );
         }
         $this->displayJsonSuccess($data,true,'获取成功');
