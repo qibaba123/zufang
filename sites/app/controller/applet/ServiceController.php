@@ -130,7 +130,10 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
         $collet_model  = new App_Model_Member_MysqlMemberColletStorage();
         if($status == 1){
             $update['mc_deleted'] = 1;
-            $ret = $collet_model->updateById($update,$id);
+            $where[] = array('name'=>'mc_c_id','oper'=>"=",'value'=>$id);
+            $where[] = array('name'=>'mc_type','oper'=>"=",'value'=>$type);
+            $where[] = array('name'=>'mc_m_id','oper'=>"=",'value'=>$this->member['m_id']);
+            $ret = $collet_model->updateValue($update,$where);
             $em  = '取消';
         }else{
             $insert = array(

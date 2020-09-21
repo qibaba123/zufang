@@ -94,6 +94,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         $start_time = strtotime($start_time);
         $end_time   = strtotime($end_time);
+        $end_time -
         $number      = '';
         if($type == 1){
             $house_model = new App_Model_Resources_MysqlResourcesStorage();
