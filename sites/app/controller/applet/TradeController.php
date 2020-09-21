@@ -19,10 +19,10 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
     //预约订单列表
     public function ServiceTradeListAction(){
-        $status = $this->request->getIntParam('status');//0.全部  1.租聘中  2.已过期  3.续租
+        $status = $this->request->getIntParam('status');//0.全部  1.待支付  2.进行中  3.已过期 4.续租
         $page   = $this->request->getIntParam('page');
         $index  =  $page*$this->count;
-        if($status == 3){
+        if($status == 4){
             $status = 1;
         }
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
