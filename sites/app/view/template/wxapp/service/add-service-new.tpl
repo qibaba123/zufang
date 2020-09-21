@@ -125,7 +125,7 @@
                                                                 <!--<img class="img-thumbnail col" layer-src="<{$val['ss_path']}>"  layer-pid="" src="<{$val['ss_path']}>" >
 
                                                                 <input id="price" name="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{$val}>">-->
-                                                                <input type="text" id="format_<{$key}>" name="format_<{$key}>" value="<{$val['sf_name']}>">
+                                                                <input class="form-control" type="text" id="format_<{$key}>" name="format_<{$key}>" value="<{$val['sf_name']}>">
                                                                 <span class="delformat-btn">×</span>
                                                                 <input type="hidden" id="format_id_<{$key}>" name="format_id_<{$key}>" value="<{$val['sf_id']}>">
                                                             </p>
