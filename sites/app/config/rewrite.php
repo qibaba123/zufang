@@ -377,6 +377,11 @@ return array(
             'action'            => 'ServiceTradeListAction',
             'desc'              => '预约订单列表'
         ),
+        'applet_service_trade_detail'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'ServiceTradeDetailAction',
+            'desc'              => '预约订单列表'
+        ),
 
         'applet_zf_vip_detail'     => array(
             'controller'        => 'App_Controller_Applet_ServiceController',

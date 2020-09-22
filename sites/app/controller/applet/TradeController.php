@@ -16,6 +16,31 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
     }
 
 
+    //订单详情
+    public function ServiceTradeDetailAction(){
+        $tid          = $this->request->getIntParam('tid');
+        $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+        $row         = $trade_model->findUpdateTradeByTid($tid);
+        $status_arr = array(
+            1 => '待支付',
+            2 => '租聘中',
+            3 => '已过期'
+        );
+        $data[]      = array(
+            'tid' => $row['rt_tid'],
+            'number' => $row['rt_number'],
+            'name'   => $row['rt_g_name'],
+            'cover'  => $this->dealImagePath($row['rt_cover']),
+            'price'  => $row['rt_g_price'],
+            'price_fee' => $row['rt_fee'],
+            'create_time' => date('Y-m-d H:i',$row['rt_create_time']),
+            'status'     => $row['rt_status'],
+            'status_desc'=> $status_arr[$row['rt_status']],
+        );
+        $this->displayJsonSuccess($data,true,'获取成功');
+    }
+
+
 
     //预约订单列表
     public function ServiceTradeListAction(){
@@ -94,7 +119,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         $start_time = strtotime($start_time);
         $end_time   = strtotime($end_time);
-        $end_time -
+       // $end_time -
         $number      = '';
         if($type == 1){
             $house_model = new App_Model_Resources_MysqlResourcesStorage();
