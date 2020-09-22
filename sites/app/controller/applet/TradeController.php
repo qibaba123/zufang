@@ -18,7 +18,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
     //订单详情
     public function ServiceTradeDetailAction(){
-        $tid          = $this->request->getIntParam('tid');
+        $tid          = $this->request->getStrParam('tid');
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         $row         = $trade_model->findUpdateTradeByTid($tid);
         $status_arr = array(
