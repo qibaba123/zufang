@@ -118,14 +118,18 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
    //     $m_name     = $this->request->getStrParam('m_name');//预约人
   //      $m_mobile   = $this->request->getStrParam('m_mobile');//联系电话
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
-        $start_time = strtotime($start_time);
-        $end_time   = strtotime($end_time);
+
         if($type == 1){
-            $time_num = ($start_time - $end_time)/(60*60*24);
+            $start_time = strtotime($start_time);
+            $end_time   = strtotime($end_time);
+            $time_num = ($end_time - $start_time)/(60*60*24);
             $time_type = 1;
         }else{
-            $time_num = ($start_time - $end_time)/(60*60*24*365);
+            $time_num = $end_time - $start_time;
             $time_type = 3;
+            $start_time = mktime(0,0,0,date('m',time()),date('d',time()),$start_time);
+            $end_time = mktime(0,0,0,date('m',time()),date('d',time()),$end_time);
+
         }
        // $end_time -
         $number      = '';
