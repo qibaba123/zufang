@@ -122,7 +122,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         if($type == 1){
             $start_time = strtotime($start_time);
             $end_time   = strtotime($end_time);
-            Libs_Log_Logger::outputLog(($end_time - $start_time),'trade.log');
+           // Libs_Log_Logger::outputLog(($end_time - $start_time),'trade.log');
             $time_num = round(($end_time - $start_time+86400)/(60*60*24));
             $time_type = 1;
         }else{
@@ -176,6 +176,11 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'rt_end_time'   => $end_time,
         );
         $ret = $trade_model->insertValue($insert);
+        $time_status = array(
+           1 => '天',
+           2 => '月',
+           3 => '年'
+        );
         $data = array(
             'tid'    => $insert['rt_tid'],
             'number' => $number,
@@ -186,6 +191,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'price_fee'  => $fee,
 //            'm_name'  => $m_name,
 //            'm_mobile' => $m_mobile,
+            'time_type' => $time_status[$time_type],
             'time_num' => $time_num,
         );
         if($ret){
