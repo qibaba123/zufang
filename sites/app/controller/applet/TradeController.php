@@ -123,7 +123,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $start_time = strtotime($start_time);
             $end_time   = strtotime($end_time);
             Libs_Log_Logger::outputLog(($end_time - $start_time),'trade.log');
-            $time_num = round(($end_time - $start_time)+1/(60*60*24));
+            $time_num = round(($end_time - $start_time+1)/(60*60*24));
             $time_type = 1;
         }else{
             $time_num = $end_time - $start_time;
