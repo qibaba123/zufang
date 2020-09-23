@@ -117,6 +117,23 @@
                                                             <input id="price" name="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                         </div>
                                                     </div>
+                                                    <div class="form-group formatshow">
+                                                        <h3 class="lighter block green">规格</h3>
+                                                        <div id="format" class="pic-box" style="display:inline-block">
+                                                            <{foreach $format as $key=>$val}>
+                                                            <p>
+                                                                <!--<img class="img-thumbnail col" layer-src="<{$val['ss_path']}>"  layer-pid="" src="<{$val['ss_path']}>" >
+
+                                                                <input id="price" name="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{$val}>">-->
+                                                                <input style="white-space:nowrap;" class="form-control" type="text" id="format_<{$key}>" name="format_<{$key}>" value="<{$val['sf_name']}>">
+                                                                <span class="delformat-btn">×</span>
+                                                                <input type="hidden" id="format_id_<{$key}>" name="format_id_<{$key}>" value="<{$val['sf_id']}>">
+                                                            </p>
+                                                            <{/foreach}>
+                                                        </div>
+                                                        <span onclick="addformat(this)" class="btn btn-success btn-xs">添加规格</span>
+                                                        <input type="hidden" id="slide-format-num" name="slide-format-num" value="<{if $format}><{count($format)}><{else}>0<{/if}>" placeholder="控制图片张数">
+                                                    </div>
                                                     <div class="form-group">
                                                         <label for="name" class="control-label"><font color="red">*</font>权重：</label>
                                                         <div class="control-group">
@@ -258,6 +275,29 @@
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
+
+    function addformat(ret){
+        var html = '';
+        var num  = $('#slide-format-num').val();
+        html += '<p>';
+        html += '<input style="white-space:nowrap;" class="form-control" type="text" id="format_'+num+'" name="format_'+num+'" value="">';
+        html += '<span class="delformat-btn">×</span>';
+        html += '<input type="hidden" id="format_id_'+num+'" name="format_id_'+num+'" value="0">';
+        html += '</p>';
+        var now_num = num + 1;
+        $('#slide-format-num').val(now_num);
+        $('#format').prepend(html);
+    }
+
+    $('#type').on('change',function () {
+        var type = $('#type').val();
+        if(type == 1){
+            $('.priceshow').show();
+        }else{
+            $('.priceshow').hide();
+        }
+
+    })
     $(function(){
         $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
             /*  去掉商品类目不再做验证*/
@@ -478,6 +518,8 @@
             $('#sale').hide();
         }
     })
+
+
 
     /**
      * 图片结果处理

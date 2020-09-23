@@ -433,7 +433,7 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
         if(!$uid) {
             $test11 = $this->request->getIntParam('test');
             if($test11) {
-                $uid = 60;
+                $uid = 1;
             }
         }
 
@@ -472,7 +472,7 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
         $province   = $this->request->getStrParam('province');      // 省份
         $city       = $this->request->getStrParam('city');          // 城市
         $avatarUrl  = $this->request->getStrParam('avatarUrl');     // 头像
-        $appid      = $this->request->getStrParam('appid');         // 小程序APPID
+        $appid      = $this->request->getStrParam('appid','wxe57483a62f88b851');         // 小程序APPID
         $slient     = $this->request->getIntParam('slient');        // 是否是静默授权
         $fid        = $this->request->getIntParam('mid');           // 邀请人id
         $join_type  = $this->request->getIntParam('join_type',0);           // 邀请人id

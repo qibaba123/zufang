@@ -16,6 +16,96 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
     }
 
 
+    //订单详情
+    public function ServiceTradeDetailAction(){
+        $tid          = $this->request->getStrParam('tid');
+        $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+        $row         = $trade_model->findUpdateTradeByTid($tid);
+        $status_arr = array(
+            1 => '待支付',
+            2 => '租聘中',
+            3 => '已过期'
+        );
+        $data[]      = array(
+            'tid' => $row['rt_tid'],
+            'number' => $row['rt_number'],
+            'name'   => $row['rt_g_name'],
+            'cover'  => $this->dealImagePath($row['rt_cover']),
+            'price'  => $row['rt_g_price'],
+            'price_fee' => $row['rt_fee'],
+            'create_time' => date('Y-m-d H:i',$row['rt_create_time']),
+            'status'     => $row['rt_status'],
+            'status_desc'=> $status_arr[$row['rt_status']],
+            'end_time'   => date('Y-m-d H:i',$row['rt_end_time']),
+        );
+        $this->displayJsonSuccess($data,true,'获取成功');
+    }
+
+
+
+    //预约订单列表
+    public function ServiceTradeListAction(){
+        $status = $this->request->getIntParam('status');//0.全部  1.待支付  2.进行中  3.已过期 4.续租
+        $page   = $this->request->getIntParam('page');
+        $index  =  $page*$this->count;
+        if($status == 4){
+            $status = 2;
+        }
+        $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+        if($status){
+            $where[] = array('name'=>"rt_status",'oper'=>"=",'value'=>$status);
+        }else{
+            $where[] = array('name'=>"rt_status",'oper'=>"in",'value'=>array(1,2,3));
+        }
+
+        $where[] = array('name'=>"rt_m_id",'oper'=>"=",'value'=>$this->member['m_id']);
+        $where[] = array('name'=>"rt_type",'oper'=>"in",'value'=>array(1,2));
+       // Libs_Log_Logger::outputLog($where);
+        $list    = $trade_model->getList($where,$index,$this->count,array('rt_create_time'=>'DESC'));
+    //    Libs_Log_Logger::outputLog($list);
+        $house_model = new App_Model_Resources_MysqlResourcesStorage();
+        $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $data['list'] = array();
+        $status_arr = array(
+            1 => '待支付',
+            2 => '租聘中',
+            3 => '已过期'
+        );
+        foreach($list as $val){
+            if($val['rt_type'] == 1){
+                $row         = $house_model->getRowById($val['rt_g_id']);
+                $g_name      = $row['ahr_title'];
+                $number      = $row['ahr_number'];
+                $cover       = $row['ahr_cover'];
+                $brief       = $row['ahr_brief'];
+                $price       = $row['ahr_price'];
+            }elseif($val['rt_type'] == 1){
+                $row           = $service_model->getRowById($val['rt_g_id']);
+                $g_name        = $row['es_name'];
+                $cover         = $row['es_cover'];
+                $brief         = $row['es_brief'];
+                $price         = $row['es_price'];
+            }
+            $data['list'][] = array(
+                'tid'    => $val['rt_tid'],
+                'number' => $number,
+                'name'   => $g_name,
+                'cover'  => $this->dealImagePath($cover),
+                'brief'  => $brief,
+                'price_fee'  => $val['rt_fee'],
+                'start_time' => date('Y-m-d',$val['rt_start_time']),
+                'end_time'   => date('Y-m-d',$val['rt_end_time']),
+                //'type'       => $val['rt_type'],
+                'status'     => $val['rt_status'],
+                'status_desc'=> $status_arr[$val['rt_status']],
+                'close_time' => $val['rt_status'] == 1?$val['rt_create_time'] + (15 * 60):0
+            );
+        }
+        $this->displayJsonSuccess($data,true,'获取成功');
+    }
+
+
+
     //创建预约订单
     public function createServiceTradeAction(){
         $type      = $this->request->getIntParam('type');//1.园区预约  2.服务预约
@@ -25,15 +115,31 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $time_num  = $this->request->getIntParam('time_num'); //天数/月数/年数
         $start_time = $this->request->getStrParam('start_time');//开始时间
         $end_time   = $this->request->getStrParam('end_time');//结束时间
-        $m_name     = $this->request->getStrParam('m_name');//预约人
-        $m_mobile   = $this->request->getStrParam('m_mobile');//联系电话
+   //     $m_name     = $this->request->getStrParam('m_name');//预约人
+  //      $m_mobile   = $this->request->getStrParam('m_mobile');//联系电话
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
-        $start_time = strtotime($start_time);
-        $end_time   = strtotime($end_time);
+
+        if($type == 1){
+            $start_time = strtotime($start_time);
+            $end_time   = strtotime($end_time);
+           // Libs_Log_Logger::outputLog(($end_time - $start_time),'trade.log');
+            $time_num = round(($end_time - $start_time+86400)/(60*60*24));
+            $time_type = 1;
+        }else{
+            $time_num = $end_time - $start_time;
+            $time_type = 3;
+            $start_time = mktime(0,0,0,date('m',time()),date('d',time()),$start_time);
+            $end_time = mktime(0,0,0,date('m',time()),date('d',time()),$end_time);
+
+        }
+       // $end_time -
         $number      = '';
         if($type == 1){
             $house_model = new App_Model_Resources_MysqlResourcesStorage();
             $row         = $house_model->getRowById($gid);
+            if($row['ahr_stock'] <= 0 ){
+                $this->displayJsonError('库存不足');
+            }
             $g_name      = $row['ahr_title'];
             $number      = $row['ahr_number'];
             $cover       = $row['ahr_cover'];
@@ -51,11 +157,13 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $insert = array(
             'rt_s_id' => $this->sid,
             'rt_m_id' => $this->member['m_id'],
+            'rt_type' => $type,
             'rt_m_nickname' => $this->member['m_nickname'],
             'rt_openid'   => $this->member['m_openid'],
-            'rt_m_name'   => $m_name,
-            'rt_m_mobile' => $m_mobile,
+  //          'rt_m_name'   => $m_name,
+  //          'rt_m_mobile' => $m_mobile,
             'rt_g_id'     => $gid,
+            'rt_g_price'  => $price,
             'rt_fee'      => $fee,
             'rt_cover'    => $cover,
             'rt_g_name'   => $g_name,
@@ -68,14 +176,22 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'rt_end_time'   => $end_time,
         );
         $ret = $trade_model->insertValue($insert);
+        $time_status = array(
+           1 => '天',
+           2 => '月',
+           3 => '年'
+        );
         $data = array(
             'tid'    => $insert['rt_tid'],
             'number' => $number,
             'name'   => $g_name,
+            'cover'  => $this->dealImagePath($cover),
             'brief'  => $brief,
+            'price'  => $price,
             'price_fee'  => $fee,
-            'm_name'  => $m_name,
-            'm_mobile' => $m_mobile,
+//            'm_name'  => $m_name,
+//            'm_mobile' => $m_mobile,
+            'time_type' => $time_status[$time_type],
             'time_num' => $time_num,
         );
         if($ret){
@@ -92,12 +208,17 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $note       = $this->request->getStrParam('note');
         $m_name     = $this->request->getStrParam('m_name');//预约人
         $m_mobile   = $this->request->getStrParam('m_mobile');//联系电话
+        Libs_Log_Logger::outputLog($tid,'trade.log');
+        Libs_Log_Logger::outputLog($note,'trade.log');
+        Libs_Log_Logger::outputLog($m_name,'trade.log');
+        Libs_Log_Logger::outputLog($m_mobile,'trade.log');
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         $data = array(
             'rt_m_name'   => $m_name,
             'rt_m_mobile' => $m_mobile,
             'rt_note'     => $note,
             'rt_status'   => 1,//待支付
+            'rt_create_time' => time()
         );
         $ret      = $trade_model->findUpdateTradeByTid($tid,$data);
         if($ret){
@@ -113,7 +234,9 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $trade_redis    = new App_Model_Trade_RedisTradeStorage($this->sid);
             $overTime      = 15*60;//关闭时间15分钟
             $trade_redis->setTradeCloseTtl($tid, $overTime);
-            $this->displayJsonSuccess(array(),true,'订单提交成功');
+            $data        = array();
+            $data['tid'] = $tid;
+            $this->displayJsonSuccess($data,true,'订单提交成功');
         }else{
             $this->displayJsonError('订单提交失败，请稍后重试');
         }
@@ -180,9 +303,9 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $data['ft_pro']     = $this->request->getIntParam('pro');
         $data['ft_city']    = $this->request->getIntParam('city');
         $data['ft_area']    = $this->request->getIntParam('area');
-        $data['ft_pro_name']    = $this->request->getIntParam('pro_name');
-        $data['ft_city_name']   = $this->request->getIntParam('city_name');
-        $data['ft_area_name']   = $this->request->getIntParam('area_name');
+        $data['ft_pro_name']    = $this->request->getStrParam('pro_name');
+        $data['ft_city_name']   = $this->request->getStrParam('city_name');
+        $data['ft_area_name']   = $this->request->getStrParam('area_name');
         $data['ft_c_name']      = $this->request->getStrParam('c_name');
         $trade_model = new App_Model_Trade_MysqlFormTradeStorage();
         $data['ft_s_id'] = $this->sid;

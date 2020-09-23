@@ -259,6 +259,12 @@ return array(
 
     /*******************************微信小程序接口相关********************************/
     'applet'    => array(
+        'applet_img_upload'     => array(
+            'controller'        => 'App_Controller_Applet_IndexController',
+            'action'            => 'uploadImgAction',
+            'desc'              => '单张图片上传'
+        ),
+
         'applet_member_info'     => array(
             'controller'        => 'App_Controller_Applet_MemberController',
             'action'            => 'userInfoAction',
@@ -350,8 +356,38 @@ return array(
             'action'            => 'createServiceTradeAction',
             'desc'              => '创建预约订单'
         ),
+        'applet_confirm_service_trade'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'confirmServiceTradeAction',
+            'desc'              => '确认预约订单'
+        ),
+        'applet_pay_service_trade'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'TradePayAction',
+            'desc'              => '订单支付'
+        ),
+        'applet_create_form_trade'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'createFormTradeAction',
+            'desc'              => '创建表单订单'
+        ),
 
+        'applet_service_trade_list'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'ServiceTradeListAction',
+            'desc'              => '预约订单列表'
+        ),
+        'applet_service_trade_detail'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'ServiceTradeDetailAction',
+            'desc'              => '预约订单列表'
+        ),
 
+        'applet_zf_vip_detail'     => array(
+            'controller'        => 'App_Controller_Applet_ServiceController',
+            'action'            => 'vipDetailAction',
+            'desc'              => 'VIP详情接口'
+        ),
 
 
 

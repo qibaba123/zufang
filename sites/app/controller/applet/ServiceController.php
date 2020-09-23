@@ -15,6 +15,33 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
 
     }
 
+    //企业服务详情
+    public function vipDetailAction(){
+        $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $where[]       = array('name'=>"es_type",'oper'=>"=",'value'=>3);
+        $row           = $service_model->getRow($where);
+        $data   = array(
+            'id'    => $row['es_id'],
+            'name'  => $row['es_name'],
+            'brief' => $row['es_brief'],
+            'price' => $row['es_price'],
+            'content' => plum_parse_img_path($row['es_content']),
+            'type'    => $row['es_type']
+        );
+        $slide_model = new App_Model_Service_MysqlServiceSlideStorage();
+        $where       = array();
+        $where[]     = array('name'=>"ss_ser_id",'oper'=>"=",'value'=>$row['es_id']);
+        $slide_list  = $slide_model->getList($where,0,0,array());
+        $data['slide'] = array();
+        foreach ($slide_list as $val){
+            $data['slide'][] = array(
+                'image' => $this->dealImagePath($val['ss_path'])
+            );
+        }
+        $this->displayJsonSuccess($data,true,'获取成功');
+    }
+
+
 
     //企业服务
     public function serviceListAction(){
@@ -103,7 +130,10 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
         $collet_model  = new App_Model_Member_MysqlMemberColletStorage();
         if($status == 1){
             $update['mc_deleted'] = 1;
-            $ret = $collet_model->updateById($update,$id);
+            $where[] = array('name'=>'mc_c_id','oper'=>"=",'value'=>$id);
+            $where[] = array('name'=>'mc_type','oper'=>"=",'value'=>$type);
+            $where[] = array('name'=>'mc_m_id','oper'=>"=",'value'=>$this->member['m_id']);
+            $ret = $collet_model->updateValue($update,$where);
             $em  = '取消';
         }else{
             $insert = array(

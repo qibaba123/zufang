@@ -7,18 +7,20 @@ class App_Controller_Applet_IndexController extends Libs_Mvc_Controller_ApiBaseC
     private $suid;
     public function __construct(){
         parent::__construct();
-        $this->suid = $this->request->getStrParam('suid');
+        $this->suid = $this->request->getStrParam('suid','gaus0xcyuh');
     }
 
     
     public function uploadImgAction() {
+        //Libs_Log_Logger::outputLog(111,'image.log');
         $dir = '/upload/depot/'.$this->suid.'/'.date('Ymd', time()).'/';
         $tool = new App_Helper_Tool();
         $upload = $tool->upload_file_limit_type('image', $dir);
+        //Libs_Log_Logger::outputLog($upload,'image.log');
         $data = array();
         if($upload['ec'] == 200){
             $data['data'] = array(
-                'path' => $upload['url'],
+                'path' => $this->dealImagePath($upload['url']),
             );
 
             // 过滤敏感图片

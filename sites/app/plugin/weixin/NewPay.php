@@ -880,11 +880,9 @@ class App_Plugin_Weixin_NewPay {
         if ($xml = $this->toXml($request_params)) {
             $ret = self::postXmlCurl($xml, $this->unified_url);
             $ret = $this->fromXml($ret);
-            if($this->sid == 10871){
                 Libs_Log_Logger::outputLog($appcfg,'test.log');
                 Libs_Log_Logger::outputLog($request_params,'test.log');
                 Libs_Log_Logger::outputLog($ret,'test.log');
-            }
             if ($ret) {
                 if ($ret['return_code'] == 'SUCCESS' && $ret['result_code'] == 'SUCCESS') {
                     return array(
@@ -921,6 +919,7 @@ class App_Plugin_Weixin_NewPay {
         if(!$appcfg){
             return 40005 ;    // 未配置微信支付
         }
+        Libs_Log_Logger::outputLog($appcfg,'test.log');
         $request_params = array(
             'appid'             => $appcfg['ap_appid'], //小程序ID
             'mch_id'            => $appcfg['ap_mchid'], //商户号
@@ -943,11 +942,9 @@ class App_Plugin_Weixin_NewPay {
         if ($xml = $this->toXml($request_params)) {
             $ret = self::postXmlCurl($xml, $this->unified_url);
             $ret = $this->fromXml($ret);
-            if($this->sid == 10871){
                 Libs_Log_Logger::outputLog($appcfg,'test.log');
                 Libs_Log_Logger::outputLog($request_params,'test.log');
                 Libs_Log_Logger::outputLog($ret,'test.log');
-            }
             if ($ret) {
                 if ($ret['return_code'] == 'SUCCESS' && $ret['result_code'] == 'SUCCESS') {
                     return array(
