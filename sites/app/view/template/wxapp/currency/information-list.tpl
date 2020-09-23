@@ -647,12 +647,12 @@
                                     <div class="input-group">
                                         <div class="input-group-addon" style="color: #000000">最近更新</div>
                                         <input type="text" class="form-control" name="start" value="<{$start}>" placeholder="开始时间" id="start-time" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
-                                        <span class="input-group-addon">
+                                        <span class="input-group-addon" style="color: #000000">
                                         <i class="icon-calendar bigger-110"></i>
                                     </span>
-                                        <span class="input-group-addon" style="border: none !important;background-color:  inherit !important;">到</span>
+                                        <span class="input-group-addon" style="color: #000000; border: none !important;background-color:  inherit !important;">到</span>
                                         <input type="text" class="form-control" name="end" value="<{$end}>" placeholder="截止时间" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
-                                        <span class="input-group-addon">
+                                        <span class="input-group-addon" style="color: #000000">
                                         <i class="icon-calendar bigger-110"></i>
                                     </span>
                                     </div>
