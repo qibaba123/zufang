@@ -133,9 +133,9 @@
                                                         <input type="hidden" id="slide-format-num" name="slide-format-num" value="<{if $format}><{count($format)}><{else}>0<{/if}>" placeholder="控制图片张数">
                                                     </div>-->
                                                     <div class="form-group formatshow"  <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
-                                                        <label for="name" class="control-label" style="width: 110px">规格：</label>
+                                                        <label for="name" class="control-label" >规格：</label>
                                                         <div class="control-group">
-                                                            <div class="panel-group" id="panel-group">
+                                                            <div class="panel-group" id="panel-group" style="margin-left: 17px;">
                                                                 <{foreach $format as $key=>$val}>
                                                                 <div class="panel" data-sort="format_id_<{$key}>">
                                                                     <div class="panel-collapse">
