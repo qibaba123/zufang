@@ -117,14 +117,12 @@
                                                             <input id="price" name="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                         </div>
                                                     </div>
-                                                    <div class="form-group formatshow">
+                                                <!--    <div class="form-group formatshow">
                                                         <h3 class="lighter block green">规格</h3>
                                                         <div id="format" class="pic-box" style="display:inline-block">
                                                             <{foreach $format as $key=>$val}>
                                                             <p>
-                                                                <!--<img class="img-thumbnail col" layer-src="<{$val['ss_path']}>"  layer-pid="" src="<{$val['ss_path']}>" >
 
-                                                                <input id="price" name="price" class="form-control" style="width: 150px;" placeholder="金额" value="<{$val}>">-->
                                                                 <input style="white-space:nowrap;" class="form-control" type="text" id="format_<{$key}>" name="format_<{$key}>" value="<{$val['sf_name']}>">
                                                                 <span class="delformat-btn">×</span>
                                                                 <input type="hidden" id="format_id_<{$key}>" name="format_id_<{$key}>" value="<{$val['sf_id']}>">
@@ -133,6 +131,34 @@
                                                         </div>
                                                         <span onclick="addformat(this)" class="btn btn-success btn-xs">添加规格</span>
                                                         <input type="hidden" id="slide-format-num" name="slide-format-num" value="<{if $format}><{count($format)}><{else}>0<{/if}>" placeholder="控制图片张数">
+                                                    </div>-->
+                                                    <div class="form-group formatshow">
+                                                        <label for="price" class="control-label" style="width: 110px"><font color="red">*</font>规格：</label>
+                                                        <div class="control-group">
+                                                            <div class="panel-group" id="panel-group">
+                                                                <{foreach $format as $key=>$val}>
+                                                                <div class="panel" data-sort="format_id_<{$key}>">
+                                                                    <div class="panel-collapse">
+                                                                        <a href="javascript:;" class="close" onclick="remove_address(this)">×</a>
+                                                                        <div class="panel-body">
+
+                                                                            <input type="hidden" name="format_id_<{$key}>" value="0">
+
+                                                                            <div class="col-xs-4">
+                                                                                <div class="input-group">
+                                                                                    <label for=""  class="input-group-addon"><font color="red">*</font>捐款额度</label>
+                                                                                    <input type="text" class="form-control guigeName" name="receive_name_<{$key}>" value="<{if $val['sf_name']}><{$val['sf_name']}><{else}><{/if}>" >
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <{/foreach}>
+                                                            </div>
+                                                            <a href="javascript:;" class="ui-btn" onclick="add_address()" style="    margin: 3px 0;"><i class="icon-plus"></i>添加规格</a>
+                                                            <input type="hidden" name="format-num" id="format-num" value="<{if $format}><{count($format)}><{else}>0<{/if}>">
+                                                            <input type="hidden" name="format-sort" id="format-sort" value="0">
+                                                        </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="name" class="control-label"><font color="red">*</font>权重：</label>
@@ -275,6 +301,57 @@
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
+    function get_format_html(key){
+        var _html   = '<div class="panel" data-sort="format_id_'+key+'">';
+        _html       += '<div class="panel-collapse">';
+        _html       += '<a href="javascript:;" class="close" onclick="remove_address(this)">×</a>';
+        _html       += '<div class="panel-body">';
+
+        _html       += '<input type="hidden" name="format_id_'+key+'" value="0">';
+
+        _html       += '<div class="col-xs-4">';
+        _html       += '<div class="input-group">';
+        _html       += '<label for=""  class="input-group-addon"><font color="red">*</font>捐款额度</label>';
+        _html       += '<input type="text" class="form-control guigeName" name="receive_name_'+key+'"  >';
+        _html       += '</div></div>';
+        _html       += '</div><!---panel-body----> </div><!---panel-collapse----></div><!---panel---->';
+        return _html;
+    }
+    /*移除规格*/
+    function remove_address(elem){
+        var panelBox = $(elem).parents(".panel");
+        panelBox.remove();
+        var panelNum = $('#format-num').val();
+        var is_old   = $(elem).data('hid-id');
+        if(is_old == 0){ //删除数据库存在的，则不递减
+            panelNum -- ; //递减
+        }
+        var panel = $("#panel-group .panel").length;
+        if(panel == 0){
+            $("#g_price").attr("readonly",false);
+            $("#g_stock").attr("readonly",false);
+        }else{
+            $("#g_price").attr("readonly",true);
+            $("#g_stock").attr("readonly",true);
+        }
+        $('#format-num').val(panelNum);
+    }
+    /*添加地址*/
+    function add_address() {
+        var key = parseInt($('#format-num').val());
+        console.log(key);
+
+        var html = get_format_html(key);//$("#panel-template").html();
+        key++;
+        $("#panel-group").append(html);
+        $('#format-num').val(key);
+        $("#g_price").attr("readonly", true);
+        $("#g_stock").attr("readonly", true);
+        formatSort();
+        sortString();
+    }
+
+
 
     function addformat(ret){
         var html = '';
