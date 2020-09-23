@@ -110,7 +110,7 @@
                             <td><{$val['ft_pro_name']}>-<{$val['ft_city_name']}>-<{$val['ft_area_name']}></td>
                             <td><{date('Y-m-d,H:i',$val['ft_create_time'])}></td>
                             <td>
-                                <a class="btn btn-xs btn-redoutline delCategory" data-id="<{$val['es_id']}>">删除</a>
+                                <a class="btn btn-xs btn-redoutline delCategory" data-id="<{$val['ft_id']}>">删除</a>
                             </td>
                         </tr>
                         <{/foreach}>
