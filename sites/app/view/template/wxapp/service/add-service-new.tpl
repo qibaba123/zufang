@@ -84,7 +84,7 @@
                                 <hr />
                                 <div class="step-content row-fluid position-relative" id="step-container">
                                     <form class="form-horizontal" id="resources-form"  enctype="multipart/form-data" style="overflow: hidden;">
-                                        <input type="hidden" id="hid_id"  class="avatar-field bg-img" name="hid_id" value="<{if $row && $row['es_id']}><{$row['es_id']}><{/if}>"/>                                        <input type="hidden" id="type" name="type" value="<{if $type}><{$type}><{else}>0<{/if}>">
+                                        <input type="hidden" id="hid_id"  class="avatar-field bg-img" name="hid_id" value="<{if $row && $row['es_id']}><{$row['es_id']}><{/if}>"/>
                                         <div class="step-pane active" id="step1" >
 
                                             <!-- 表单分类显示 -->
