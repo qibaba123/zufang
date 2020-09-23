@@ -627,14 +627,14 @@
                             <div class="form-container">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <div class="input-group-addon">标题</div>
+                                        <div class="input-group-addon" style="color: #000000">标题</div>
                                         <input type="text" class="form-control" name="title" value="<{$title}>"  placeholder="文章标题">
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                           <!--     <div class="form-group">
                                     <div class="input-group">
-                                        <div class="input-group-addon">分类</div>
+                                        <div class="input-group-addon" style="color: #000000">分类</div>
                                         <select class="form-control" name="categoryId">
                                             <option value="0">全部</option>
                                             <{foreach $category_select as $key => $val}>
@@ -642,10 +642,10 @@
                                             <{/foreach}>
                                         </select>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="form-group" style="width: 450px">
                                     <div class="input-group">
-                                        <div class="input-group-addon" >最近更新</div>
+                                        <div class="input-group-addon" style="color: #000000">最近更新</div>
                                         <input type="text" class="form-control" name="start" value="<{$start}>" placeholder="开始时间" id="start-time" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
                                         <span class="input-group-addon">
                                         <i class="icon-calendar bigger-110"></i>
