@@ -246,7 +246,7 @@
                 </div>
             </div>
             <div class="part" style="overflow: hidden">
-                <div style="width: 49%;float: left;">
+               <!-- <div style="width: 49%;float: left;">
                     <label for="">资讯类别</label>
                     <label id="default-onoff">
                         <select id="category-name" style="height: 35px;" class="form-control">
@@ -258,10 +258,14 @@
                             <{/if}>
                         </select>
                     </label>
-                </div>
-                <div style="width: 49%;float: right;">
+                </div>-->
+                <div style="width: 49%;float: left;">
                     <label for="">排序权重</label>
                     <input class="form-control" type="number" id="sort" value="<{if $row && $row['ai_sort']}><{$row['ai_sort']}><{/if}>" placeholder="排序权重">
+                </div>
+                <div style="width: 49%;float: right;">
+                    <label for="">阅读量</label>
+                    <input class="form-control" type="number" id="showNum" value="<{if $row}><{$row['ai_show_num']}><{else}>0<{/if}>" placeholder="阅读量">
                 </div>
             </div>
            <!-- <div class="part" style="overflow: hidden">
@@ -282,11 +286,8 @@
                 <{/if}>
             </div>-->
             <div class="part" style="overflow: hidden">
+
                 <div style="width: 49%;float: left;">
-                    <label for="">阅读量</label>
-                    <input class="form-control" type="number" id="showNum" value="<{if $row}><{$row['ai_show_num']}><{else}>0<{/if}>" placeholder="阅读量">
-                </div>
-                <div style="width: 49%;float: right;">
                     <label for="">时间</label>
                     <input class="form-control" type="text" id="customTime" value="<{if $row && $row['ai_create_time']}><{date('Y-m-d H:i:s',$row['ai_create_time'])}><{else}><{date('Y-m-d H:i:s',time())}><{/if}>" onclick="chooseDate()" placeholder="资讯时间">
                 </div>

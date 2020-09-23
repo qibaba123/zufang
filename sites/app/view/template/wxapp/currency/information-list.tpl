@@ -587,7 +587,7 @@
         visibility: visible;
     }
 </style>
-<{include file="../common-second-menu-new.tpl"}>
+<!--<{include file="../common-second-menu-new.tpl"}>-->
 <div id="mainContent">
     <!-- 复制链接弹出框 -->
     <div class="ui-popover ui-popover-link left-center" style="top:100px;">
@@ -617,7 +617,7 @@
 	<div id="content-con">
         <div class="page-header">
             <a href="/wxapp/currency/addInformation" class="btn btn-green btn-xs" style="padding-top: 2px;padding-bottom: 2px;"><i class="icon-plus bigger-80"></i> 新增</a>
-            <span style="color: red;font-size: 14px;">注：新增资讯时记得选择“资讯类别”。当不选择“资讯类别”时该条资讯则在手机端资讯列表不显示</span>
+            <span style="color: red;font-size: 14px;">
             <{if $appletCfg['ac_type'] eq 1 || $appletCfg['ac_type'] eq 3 || $appletCfg['ac_type'] eq 6 || $appletCfg['ac_type'] eq 13 || $appletCfg['ac_type'] eq 21}>
             <{/if}>
             <div class="page-header search-box" style="margin-bottom: 0">
@@ -724,7 +724,7 @@
                                 <!--
                                 <th>封面图</th>
                                 -->
-                                <th>分类</th>
+                               <!-- <th>分类</th>-->
                                 <th>阅读量</th>
                                 <th>排序</th>
                                 <!--
@@ -757,7 +757,7 @@
                                     <{/if}>
                                 </td>
                
-                                <td><{$category_select[$val['ai_category']]}></td>
+                              <!--  <td><{$category_select[$val['ai_category']]}></td>-->
                                 <td><{$val['ai_show_num']}></td>
                                 <td>
                                     <p id="sort_<{$val['ai_sort']}>">
@@ -810,7 +810,7 @@
     <div class="bottom-opera-fixd">
         <div class="bottom-opera">
             <div class="bottom-opera-item" style="padding: 13px 0;<{if $showPage == 0 }>text-align: center;<{/if}>">
-                <a href="#" class="btn btn-blue btn-xs js-recharge-btn" data-toggle="modal" data-target="#myModal">批量修改分类</a>
+              <!--  <a href="#" class="btn btn-blue btn-xs js-recharge-btn" data-toggle="modal" data-target="#myModal">批量修改分类</a>-->
                 <a href="#" class="btn btn-blueoutline btn-xs" id="multi-delete">批量删除</a>
             </div>
             <div class="bottom-opera-item" style="text-align: right">

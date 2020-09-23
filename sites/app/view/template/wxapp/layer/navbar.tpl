@@ -133,7 +133,7 @@
             </ul>
         </li>-->
         <!--<li><a href="javascript:;" style="color:#0077DD!important;"><{$curr_shop['s_name']}></a></li>-->
-        <li style="position: relative">
+       <!-- <li style="position: relative">
             <a href="JavaScript:;" class="toggle-message-box">消息通知</a>
             <{if $message_count > 0}>
             <span class="icon_dot_notices">
@@ -142,7 +142,7 @@
                 <span class="icon_dot_notices_right"></span>
             </span>
             <{/if}>
-        </li>
+        </li>-->
         <li><a href="/wxapp/user/userInfo">店铺设置</a></li>
         
         <li><a href="/manage/user/logout">退出</a></li>

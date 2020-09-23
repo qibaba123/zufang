@@ -116,15 +116,15 @@
 	                        &nbsp;&nbsp;&nbsp;
 							<{/if}>
 	                    </div>
-	                    <div class="kt-time">
+	                <!--    <div class="kt-time">
 	                    	<span>开通时间：<{$outinfo['open_time']}></span>
 	                    	<span style="margin-left:10px;">到期时间：<{$outinfo['expire_time']}></span>
-	                    </div>
+	                    </div>-->
 	                    <div class="kt-time">
 	                    	<span>当前版本:<{$appletCfg['ac_version']}></span>
 	                    	<span style="color:#118BFB;font-size:12px;">(最新版本<{$sys_notice[0]['sn_version']}>)</span>
 	                    </div>
-	                    <div class="btn-wrap">
+	                    <!--<div class="btn-wrap">
 	                    	<a href="javascript:void(0)" data-xid="<{$outinfo['curr_type']}>" class="infor-btn xufei-link js-buy-btn active">续费</a>
                             <{if $menuType=='aliapp'}>
 	                    	<a href="/wxapp/setup/code"class="infor-btn">升级版本</a>
@@ -132,7 +132,7 @@
 	                    	<{if !in_array($menuType,['aliapp','bdapp','qq'])}>
 	                    	<a href="/wxapp/index/tplImg/?id=<{$kind}>" class="infor-btn" target="_blank">功能导图</a>
 	                    	<{/if}>
-	                    </div>
+	                    </div>-->
 
 	                </div>
 	                <{if $menuType && $menuType=='wxapp'}>
