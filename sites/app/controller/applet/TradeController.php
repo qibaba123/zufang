@@ -236,7 +236,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             }
             //订单置于超时关闭队列
             $trade_redis    = new App_Model_Trade_RedisTradeStorage($this->sid);
-            $overTime      = 15*60;//关闭时间15分钟
+            $overTime       = 15*60;//关闭时间15分钟
             $trade_redis->setTradeCloseTtl($tid, $overTime);
             $data        = array();
             $data['tid'] = $tid;

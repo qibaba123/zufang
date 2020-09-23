@@ -575,6 +575,9 @@
                 if(nowId == 'upload-cover'){
                     $('#cover').val(allSrc[0]);
                 }
+                if(nowId == 'upload-logo'){
+                    $('#logo').val(allSrc[0]);
+                }
             }else{
                 var img_html = '';
                 var cur_num = $('#'+nowId+'-num').val();
