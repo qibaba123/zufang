@@ -338,19 +338,6 @@
 
 
 
-    function addformat(ret){
-        var html = '';
-        var num  = $('#slide-format-num').val();
-        html += '<p>';
-        html += '<input style="white-space:nowrap;" class="form-control" type="text" id="format_'+num+'" name="format_'+num+'" value="">';
-        html += '<span class="delformat-btn">×</span>';
-        html += '<input type="hidden" id="format_id_'+num+'" name="format_id_'+num+'" value="0">';
-        html += '</p>';
-        var now_num = num + 1;
-        $('#slide-format-num').val(now_num);
-        $('#format').prepend(html);
-    }
-
 
     $(function(){
         $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
@@ -612,34 +599,6 @@
     $('.math-vip').blur(function(){
         var discount = $(this).val();
     });
-
-    function formatSort(){
-        $("#panel-group").sortable({
-            update: function( event, ui ) {
-                sortString();
-            }
-        });
-    }
-    function sortString(){
-        var sortString="";
-        $('#panel-group').find(".panel").each(function(){
-            var sortid = $(this).data("sort");
-            sortString +=sortid+",";
-        });
-        $("#format-sort").val(sortString);
-    }
-    var nowdate = new Date();
-    var year  = nowdate.getFullYear(),
-        month = nowdate.getMonth()+1,
-        date  = nowdate.getDate();
-    var today = year+"-"+month+"-"+date;
-    /*初始化日期选择器*/
-    function chooseDate(){
-        WdatePicker({
-            dateFmt:'yyyy',
-            maxDate:today
-        });
-    }
 
 
 
