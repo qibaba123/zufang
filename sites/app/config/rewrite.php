@@ -259,6 +259,11 @@ return array(
 
     /*******************************微信小程序接口相关********************************/
     'applet'    => array(
+        'applet_update_member_info'     => array(
+            'controller'        => 'App_Controller_Applet_MemberController',
+            'action'            => 'updateMemberInfoAction',
+            'desc'              => '修改会员信息'
+        ),
         'applet_img_upload'     => array(
             'controller'        => 'App_Controller_Applet_IndexController',
             'action'            => 'uploadImgAction',
@@ -602,11 +607,7 @@ return array(
             'action'            => 'memberCenterAction',
             'desc'              => '会员中心配置'
         ),
-        'applet_update_member_info'     => array(
-            'controller'        => 'App_Controller_Applet_MemberController',
-            'action'            => 'updateMemberInfoAction',
-            'desc'              => '修改会员信息'
-        ),
+
         'applet_bind_member_mobile'     => array(
             'controller'        => 'App_Controller_Applet_MemberController',
             'action'            => 'savePhoneAction',

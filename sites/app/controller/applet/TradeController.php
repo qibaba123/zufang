@@ -37,6 +37,9 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'status'     => $row['rt_status'],
             'status_desc'=> $status_arr[$row['rt_status']],
             'end_time'   => date('Y-m-d H:i',$row['rt_end_time']),
+            'm_name'     => $row['rt_m_name'],
+            'm_mobile'     => $row['rt_m_mobile'],
+
         );
         $this->displayJsonSuccess($data,true,'获取成功');
     }
