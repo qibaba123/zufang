@@ -146,7 +146,7 @@
 
                                                                             <div class="col-xs-4">
                                                                                 <div class="input-group">
-                                                                                    <label for=""  class="input-group-addon"><font color="red">*</font>捐款额度</label>
+                                                                                    <label for=""  class="input-group-addon"><font color="red">*</font>规格名称</label>
                                                                                     <input type="text" class="form-control guigeName" name="receive_name_<{$key}>" value="<{if $val['sf_name']}><{$val['sf_name']}><{else}><{/if}>" >
                                                                                 </div>
                                                                             </div>
@@ -175,32 +175,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--      <div class="info-group-box">
-                                                <div class="info-group-inner">
-                                                    <div class="group-title">
-                                                    </div>
-                                                    <div class="group-info">
-                                                        <div class="form-group" style="width: 400px;display: inline-block;">
-                                                            <label class="control-label">联系人姓名：</label>
-                                                            <div class="control-group">
-                                                                <input type="text" class="form-control" id="contact" name="contact" placeholder="请填写姓名" required="required" value="<{if $row}><{$row['ahr_contact']}><{/if}>" style="width: 160px;">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group" style="width: 400px;display: inline-block;">
-                                                            <label class="control-label">手机号：</label>
-                                                            <div class="control-group">
-                                                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="请填写手机号" required="required" value="<{if $row}><{$row['ahr_mobile']}><{/if}>" style="width: 160px;">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group" style="width: 400px;display: inline-block;">
-                                                            <label class="control-label">微信：</label>
-                                                            <div class="control-group">
-                                                                <input type="text" class="form-control" id="weixin" name="weixin" placeholder="请填写微信"  value="<{if $row}><{$row['ahr_weixin']}><{/if}>" style="width: 160px;">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>-->
                                         </div>
                                         <div class="step-pane" id="step2">
                                             <div class="info-group-box">
@@ -301,6 +275,17 @@
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
+
+    $('#type').on('change',function () {
+        var type = $('#type').val();
+        console.log(type);
+        if(type == 1){
+            $('.priceshow').show();
+        }else{
+            $('.priceshow').hide();
+        }
+
+    })
     function get_format_html(key){
         var _html   = '<div class="panel" data-sort="format_id_'+key+'">';
         _html       += '<div class="panel-collapse">';
@@ -311,7 +296,7 @@
 
         _html       += '<div class="col-xs-4">';
         _html       += '<div class="input-group">';
-        _html       += '<label for=""  class="input-group-addon"><font color="red">*</font>捐款额度</label>';
+        _html       += '<label for=""  class="input-group-addon"><font color="red">*</font>规格名称</label>';
         _html       += '<input type="text" class="form-control guigeName" name="receive_name_'+key+'"  >';
         _html       += '</div></div>';
         _html       += '</div><!---panel-body----> </div><!---panel-collapse----></div><!---panel---->';
@@ -366,15 +351,7 @@
         $('#format').prepend(html);
     }
 
-    $('#type').on('change',function () {
-        var type = $('#type').val();
-        if(type == 1){
-            $('.priceshow').show();
-        }else{
-            $('.priceshow').hide();
-        }
 
-    })
     $(function(){
         $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
             /*  去掉商品类目不再做验证*/
