@@ -127,7 +127,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         }
         if($ret){
             $this->batchSlide($id,$is_add);
-            $this->_math_receive($id,$is_add);
+            $this->_math_receive($id,$is_add,$data['es_type']);
             $this->displayJsonSuccess(array(),true,'保存成功');
         }else{
             $this->displayJsonError('保存失败');
@@ -135,7 +135,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
     }
 
 
-    private function _math_receive($id,$is_add)
+    private function _math_receive($id,$is_add,$type)
     {
         $ret = array();
         $maxNum = $this->request->getIntParam('format-num');
@@ -144,19 +144,21 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
             $where[]      = array('name'=>'sf_e_id','oper'=>"=",'value'=>$id);
             $format_model->deleteValue($where);
         }
-        //var_dump($maxNum);exit;
-        for ($i = 0; $i < $maxNum; $i++) {
-            $receive_name = $this->request->getStrParam('receive_name_'.$i);
-            if($receive_name){
-                $insert = array(
-                    'sf_s_id' => $this->curr_sid,
-                    'sf_e_id' => $id,
-                    'sf_name' => $receive_name,
-                    'sf_create_time' => time()
-                );
-                $format_model->insertValue($insert);
+        if($type == 1){
+            for ($i = 0; $i < $maxNum; $i++) {
+                $receive_name = $this->request->getStrParam('receive_name_'.$i);
+                if($receive_name){
+                    $insert = array(
+                        'sf_s_id' => $this->curr_sid,
+                        'sf_e_id' => $id,
+                        'sf_name' => $receive_name,
+                        'sf_create_time' => time()
+                    );
+                    $format_model->insertValue($insert);
+                }
             }
         }
+
     }
 
     public function batchSlide($resId,$is_add=0){
