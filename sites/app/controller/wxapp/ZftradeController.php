@@ -129,7 +129,7 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
         $this->output['pageHtml']  = $page_libs->render();
         $service_model       = new App_Model_Service_MysqlEnterpriseServiceStorage();
         $information_storage = new App_Model_Applet_MysqlAppletInformationStorage();
-        foreach ($list as &$key=>$val){
+        foreach ($list as $key=>&$val){
             $name = '';
             if($val['sf_type'] == 1){
                 $row = $service_model->getRowById($val['sf_ser_id']);
