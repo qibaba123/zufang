@@ -122,14 +122,40 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
             $ret = $service_model->updateById($data,$id);
         }else{
             $data['es_s_id'] = $this->curr_sid;
-            $ret = $service_model->insertValue($data);
+            $id = $ret = $service_model->insertValue($data);
             $is_add = 1;
         }
         if($ret){
             $this->batchSlide($id,$is_add);
+            $this->_math_receive($id,$is_add);
             $this->displayJsonSuccess(array(),true,'保存成功');
         }else{
             $this->displayJsonError('保存失败');
+        }
+    }
+
+
+    private function _math_receive($id,$is_add)
+    {
+        $ret = array();
+        $maxNum = $this->request->getIntParam('format-num');
+        $format_model = new App_Model_Service_MysqlServiceFormatStorage();
+        if(!$is_add){
+            $where[]      = array('name'=>'sf_e_id','oper'=>"=",'value'=>$id);
+            $format_model->deleteValue($where);
+        }
+        //var_dump($maxNum);exit;
+        for ($i = 0; $i < $maxNum; $i++) {
+            $receive_name = $this->request->getStrParam('receive_name_'.$i);
+            if($receive_name){
+                $insert = array(
+                    'sf_s_id' => $this->curr_sid,
+                    'sf_e_id' => $id,
+                    'sf_name' => $receive_name,
+                    'sf_create_time' => time()
+                );
+                $format_model->insertValue($insert);
+            }
         }
     }
 

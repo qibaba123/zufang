@@ -132,7 +132,7 @@
                                                         <span onclick="addformat(this)" class="btn btn-success btn-xs">添加规格</span>
                                                         <input type="hidden" id="slide-format-num" name="slide-format-num" value="<{if $format}><{count($format)}><{else}>0<{/if}>" placeholder="控制图片张数">
                                                     </div>-->
-                                                    <div class="form-group formatshow">
+                                                    <div class="form-group formatshow"  <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
                                                         <label for="price" class="control-label" style="width: 110px"><font color="red">*</font>规格：</label>
                                                         <div class="control-group">
                                                             <div class="panel-group" id="panel-group">
@@ -278,11 +278,13 @@
 
     $('#type').on('change',function () {
         var type = $('#type').val();
-        console.log(type);
+       // console.log(type);
         if(type == 1){
             $('.priceshow').show();
+            $('.formatshow').show();
         }else{
             $('.priceshow').hide();
+            $('.formatshow').hide();
         }
 
     })
