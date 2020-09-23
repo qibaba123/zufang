@@ -103,7 +103,7 @@
                     <{foreach $list as $val}>
                         <tr id="tr_<{$val['ft_id']}>" class="tr-content">
                             <td><{$type[$val['ft_type']]}></td>
-                            <td><{$val['es_name']}></td>
+                            <td><{$val['name']}></td>
                             <td><{$val['ft_name']}></td>
                             <td><{$val['ft_mobile']}></td>
                             <td><{$val['ft_c_name']}></td>

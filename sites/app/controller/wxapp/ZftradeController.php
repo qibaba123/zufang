@@ -123,10 +123,23 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
             $where[] = array('name'=>'ft_area','oper'=>'=','value'=>$area);
             $this->output['area_id'] = $area;
         }
-        $list    = $form_model->getSerList($where,$index,$this->count,array('ft_create_time'=>"DESC"));
+        $list    = $form_model->getList($where,$index,$this->count,array('ft_create_time'=>"DESC"));
         $total   = $form_model->getCount($where);
         $page_libs = new Libs_Pagination_Paginator($total,$this->count,'jquery',true);
         $this->output['pageHtml']  = $page_libs->render();
+        $service_model       = new App_Model_Service_MysqlEnterpriseServiceStorage();
+        $information_storage = new App_Model_Applet_MysqlAppletInformationStorage();
+        foreach ($list as $key=>$val){
+            $name = '';
+            if($val['sf_type'] == 1){
+                $row = $service_model->getRowById($val['sf_ser_id']);
+                $name = $row['es_name'];
+            }elseif($val['sf_type'] == 4){
+                $row = $information_storage->getRowById($val['sf_ser_id']);
+                $name = $row['ai_title'];
+            }
+            $list[$key]['name'] = $name;
+        }
         $this->output['list']      = $list;
         $type = array(
             1 => '企业服务',
