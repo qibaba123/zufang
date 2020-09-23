@@ -1349,7 +1349,7 @@ class App_Controller_Applet_CurrencyController extends App_Controller_Applet_Ini
     }
 
 
-    //获取省市区
+       //获取省市区
        public function getareaAction(){
         $address_model = new App_Model_Address_MysqlAddressCoreStorage();
         //$where[]       = array('name'=>'parent_id','oper'=>'=','value'=>$id);
