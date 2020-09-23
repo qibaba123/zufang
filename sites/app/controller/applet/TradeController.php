@@ -27,7 +27,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             3 => '已过期'
         );
         $data[]      = array(
-            'tid' => $row['rt_tid'],
+            'tid'    => $row['rt_tid'],
             'number' => $row['rt_number'],
             'name'   => $row['rt_g_name'],
             'cover'  => $this->dealImagePath($row['rt_cover']),
@@ -38,7 +38,8 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'status_desc'=> $status_arr[$row['rt_status']],
             'end_time'   => date('Y-m-d H:i',$row['rt_end_time']),
             'm_name'     => $row['rt_m_name'],
-            'm_mobile'     => $row['rt_m_mobile'],
+            'm_mobile'   => $row['rt_m_mobile'],
+            'm_note'     => $row['rt_note']
 
         );
         $this->displayJsonSuccess($data,true,'获取成功');

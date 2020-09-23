@@ -385,7 +385,7 @@ return array(
         'applet_service_trade_detail'      => array(
             'controller'        => 'App_Controller_Applet_TradeController',
             'action'            => 'ServiceTradeDetailAction',
-            'desc'              => '预约订单列表'
+            'desc'              => '预约订单详情'
         ),
 
         'applet_zf_vip_detail'     => array(
