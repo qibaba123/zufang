@@ -163,6 +163,7 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
         $house_model   = new App_Model_Resources_MysqlResourcesStorage();
         $where[]  = array('name'=>"mc_m_id",'oper'=>'=','value'=>$this->member['m_id']);
         $list     = $collet_model->getList($where,$index,$this->count,array('mc_create_time'=>'DESC'));
+        $data['list'] = array();
         foreach($list as $val){
             $id     = $val['mc_c_id'];
             if($val['mc_type'] == 1){
@@ -195,11 +196,7 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
                 'stock'  => $stock
             );
         }
-        if($list){
-            $this->displayJsonSuccess($data,true,'获取成功');
-        }else{
-            $this->displayJsonError('没有数据');
-        }
+        $this->displayJsonSuccess($data,true,'获取成功');
     }
 
 
