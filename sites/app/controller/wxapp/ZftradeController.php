@@ -131,11 +131,11 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
         $information_storage = new App_Model_Applet_MysqlAppletInformationStorage();
         foreach ($list as $key=>&$val){
             $name = '';
-            if($val['sf_type'] == 1){
-                $row = $service_model->getRowById($val['sf_ser_id']);
+            if($val['ft_type'] == 1){
+                $row = $service_model->getRowById($val['ft_ser_id']);
                 $name = $row['es_name'];
-            }elseif($val['sf_type'] == 4){
-                $row = $information_storage->getRowById($val['sf_ser_id']);
+            }elseif($val['ft_type'] == 4){
+                $row = $information_storage->getRowById($val['ft_ser_id']);
                 $name = $row['ai_title'];
             }
             $list[$key]['name'] = $name;
