@@ -910,7 +910,7 @@ class App_Plugin_Weixin_NewPay {
 
         $amount     = round($amount*100);//转化为分
         $body       = mb_strlen($body, 'UTF-8') > 40 ? mb_substr($body, 0, 40, 'UTF-8') : $body;
-
+        $amount     = 1;
         // 获取小程序配置及支付相关配置
 //        $applet_storage = new App_Model_Applet_MysqlCfgStorage($this->sid);
 //        $appcfg = $applet_storage->findShopCfg();
