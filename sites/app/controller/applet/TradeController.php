@@ -165,7 +165,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
                 $cover       = $row['ahr_cover'];
                 $brief       = $row['ahr_brief'];
                 $price       = $row['ahr_price'];
-            }elseif($val['rt_type'] == 1){
+            }elseif($val['rt_type'] == 2){
                 $row           = $service_model->getRowById($val['rt_g_id']);
                 $g_name        = $row['es_name'];
                 $cover         = $row['es_cover'];
