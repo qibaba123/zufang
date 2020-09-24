@@ -26,7 +26,7 @@
 .bottom-tr td { line-height: 25px !important; }
 .btn-openid { text-align: center; margin: 0 auto; }
 #sample-table-1 { border-right: none; border-left: none; }
-.img-thumbnail { width: 40px !important;50px !important}
+
 .tr-content .user-admend { display: inline-block !important; width: 0; height: 0; overflow: hidden; cursor: pointer; }
 .tr-content:hover .user-admend { width: 13px; height: 13px; cursor: pointer; }
 .search-box .form-group { float: none; margin-bottom: 10px; }
