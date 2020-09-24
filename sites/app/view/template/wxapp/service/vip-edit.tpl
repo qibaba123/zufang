@@ -105,7 +105,7 @@
                                                         <div class="form-group priceshow">
                                                         <label for="name" class="control-label" ><font color="red">*</font>金额：</label>
                                                         <div class="control-group">
-                                                            <input id="price" class="form-control" name="price" style="width: 150px;" placeholder="金额/年" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
+                                                            <input id="price" class="form-control inline" name="price" style="width: 150px;" placeholder="金额/年" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                             <span class="palceholder" style="left: -45px">元/年</span>
                                                         </div>
                                                     </div>
