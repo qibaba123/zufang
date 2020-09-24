@@ -207,17 +207,24 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
         if($type == 1){
             $start_time = strtotime($start_time);
+            if($start_time > time()){
+                $this->displayJsonError('开始日期有误');
+            }
             $end_time   = strtotime($end_time);
            // Libs_Log_Logger::outputLog(($end_time - $start_time),'trade.log');
             $time_num = round(($end_time - $start_time+86400)/(60*60*24));
             $time_type = 1;
         }else{
+            if($start_time < date('Y',time())){
+                $this->displayJsonError('开始年份有误');
+            }
             $time_num = $end_time - $start_time;
             $time_type = 3;
             $start_time = mktime(0,0,0,date('m',time()),date('d',time()),$start_time);
             $end_time = mktime(0,0,0,date('m',time()),date('d',time()),$end_time);
 
         }
+
        // $end_time -
         $number      = '';
         if($type == 1){
