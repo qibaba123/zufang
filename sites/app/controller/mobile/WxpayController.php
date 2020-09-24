@@ -422,7 +422,8 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
         }
         $tid    = $ret['out_trade_no'];
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
-        $trade       = $trade_model->findUpdateTradeByTid($tid);
+        $where[]     = array('name'=>"rt_relet_tid",'oper'=>'=','value'=>$tid);
+        $trade       = $trade_model->getRow($where);
         //订单不存在，或者非待支付订单
         if (!$trade) {
             $this->_respond_weixin_notify(false, '订单不存在，或已支付');
@@ -434,7 +435,7 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
             'rt_end_time' => $ret['attach']['end_time'],
             'rt_pay_time' => time()
         );
-        $trade_model->findUpdateTradeByTid($tid,$update);
+        $trade_model->findUpdateTradeByTid($trade['rt_tid'],$update);
         $this->_respond_weixin_notify(true, 'OK');
     }
 

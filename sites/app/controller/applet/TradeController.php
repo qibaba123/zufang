@@ -50,6 +50,9 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $payType  = $pay_type->findRowPay();
         $appid    = 'wxe57483a62f88b851';
         if ($trade) {
+            $update['rt_relet_tid'] = App_Plugin_Weixin_PayPlugin::makeMchOrderid($this->sid);//生成唯一性订单ID
+            $trade_model->findUpdateTradeByTid($tid,$update);
+            $tid = $update['rt_relet_tid'];
             $body = $trade['rt_g_name'];
             $amount = floatval($trade['rt_g_price'] * $time_num);
             $openid = $trade['rt_openid'];
@@ -70,7 +73,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
             $appletPay_Model = new App_Model_Applet_MysqlAppletPayStorage($this->sid);
             $appcfg = $appletPay_Model->findRowPay();
-            $ret = $pay_storage->appletOrderPayRecharge($amount, $openid, $tid, $notify_url, $body, $other);
+            $ret    = $pay_storage->appletOrderPayRecharge($amount, $openid, $tid, $notify_url, $body, $other);
 
 
             if (is_array($ret)) {
