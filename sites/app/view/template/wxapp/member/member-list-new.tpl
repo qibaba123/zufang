@@ -207,11 +207,7 @@
                         </td>
                         <!-- 头像 标签 -->
                         <td>
-                            <{if $cash}>
                         <img class="img-thumbnail" width="60" src="<{if $val['m_avatar']}><{$val['m_avatar']}><{else}>/public/wxapp/images/member-2.png<{/if}>" />
-                            <{else}>
-                        <img class="img-thumbnail" width="60" src="<{if $val['m_avatar']}><{$val['m_avatar']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>" />
-                            <{/if}>
 
 
                             <!-- 标签 -->
