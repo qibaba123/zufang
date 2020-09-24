@@ -7,6 +7,10 @@ class App_Controller_Console_ServiceController extends Libs_Mvc_Controller_Conso
     }
 
 
+    public function ceshiAction(){
+        Libs_Log_Logger::outputLog(111,'console.log');
+    }
+
 
     //订单到期处理
     public function tradeExpireAction(){
