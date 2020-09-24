@@ -413,9 +413,35 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
     }
 
 
+    //服务续租回调
+    public function tradeReserveReletNotifyAppletAction(){
+        //获取通知的数据
+        $ret    = $this->_weixin_notify_base_verify_applet();
+        if (!$ret) {
+            $this->_respond_weixin_notify(false, '未知错误');
+        }
+        $tid    = $ret['out_trade_no'];
+        $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+        $trade       = $trade_model->findUpdateTradeByTid($tid);
+        //订单不存在，或者非待支付订单
+        if (!$trade) {
+            $this->_respond_weixin_notify(false, '订单不存在，或已支付');
+        }
+
+        $update = array(
+            'rt_fee' => $trade['rt_fee'] + $ret['attach']['amount'],
+            'rt_time_num' => $trade['rt_time_num'] + $ret['attach']['time_num'],
+            'rt_end_time' => $ret['attach']['end_time'],
+            'rt_pay_time' => time()
+        );
+        $trade_model->findUpdateTradeByTid($tid,$update);
+        $this->_respond_weixin_notify(true, 'OK');
+    }
+
+
 
     /*
-    * 小程序商城订单交易通知
+    * 预约服务回调
     */
     public function tradeReserveNotifyAppletAction() {
         //获取通知的数据

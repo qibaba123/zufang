@@ -16,6 +16,85 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
     }
 
 
+    //
+
+
+
+    //订单续租
+    public function ServiceTradeReletAction(){
+        $tid         = $this->request->getStrParam('tid');
+        $end_time    = $this->request->getStrParam('end_time');
+
+        $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+        $trade       = $trade_model->findUpdateTradeByTid($tid);
+
+        if($trade['rt_type'] == 1){
+            $start_time = $trade['rt_end_time'];
+            $end_time   = strtotime($end_time);
+            if($end_time <= $start_time){
+                $this->displayJsonError('续租时间有误');
+            }
+            // Libs_Log_Logger::outputLog(($end_time - $start_time),'trade.log');
+            $time_num = round(($end_time - $start_time+86400)/(60*60*24));
+            $time_type = 1;
+        }else{
+            $start_time =  date('Y',$trade['rt_end_time']);
+            if($end_time <= $start_time){
+                $this->displayJsonError('续租时间有误');
+            }
+            $time_num = $end_time - $start_time;
+            $time_type = 3;
+            $end_time  = mktime(0,0,0,date('m',time()),date('d',time()),$end_time);
+        }
+        $pay_type = new App_Model_Auth_MysqlPayTypeStorage($this->sid);
+        $payType  = $pay_type->findRowPay();
+        $appid    = 'wxe57483a62f88b851';
+        if ($trade) {
+            $body = $trade['rt_g_name'];
+            $amount = floatval($trade['rt_g_price'] * $time_num);
+            $openid = $trade['rt_openid'];
+            $pay_storage = new App_Plugin_Weixin_NewPay($this->sid);
+            $notify_url = $this->response->responseHost() . '/mobile/wxpay/tradeReserveReletNotifyApplet'; //回调地址
+
+            $attach = array(
+                'suid' => $this->shop['s_unique_id'],
+                'mid' => $this->member['m_id'],
+                'appid' => $appid,
+                'end_time' => $end_time,
+                'time_num' => $time_num,
+                'amount'   => $amount
+            );
+            $other = array(
+                'attach' => json_encode($attach),
+            );
+
+            $appletPay_Model = new App_Model_Applet_MysqlAppletPayStorage($this->sid);
+            $appcfg = $appletPay_Model->findRowPay();
+            $ret = $pay_storage->appletOrderPayRecharge($amount, $openid, $tid, $notify_url, $body, $other);
+
+
+            if (is_array($ret)) {
+                // 将prepay_id保存到数据库
+                $updata = array('rt_prepay_id' => $ret['prepay_id']);
+                $trade_model->findUpdateTradeByTid($tid, $updata);
+                $params = array(
+                    'appId' => $ret['appid'],
+                    'timeStamp' => strval(time()),
+                    'nonceStr' => App_Plugin_Weixin_PayPlugin::getNonceStr(24),
+                    'package' => "prepay_id={$ret['prepay_id']}",
+                    'signType' => 'MD5',
+                );
+                $params['paySign'] = App_Plugin_Weixin_PayPlugin::makeWxpaySign($params, $ret['app_key']);
+                $this->outputSuccess(array('data' => $params));
+            } else {
+                $this->outputError('支付错误，请稍后重试');
+            }
+        }
+
+
+    }
+
+
     //订单详情
     public function ServiceTradeDetailAction(){
         $tid          = $this->request->getStrParam('tid');

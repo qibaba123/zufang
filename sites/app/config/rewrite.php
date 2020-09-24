@@ -371,11 +371,26 @@ return array(
             'action'            => 'TradePayAction',
             'desc'              => '订单支付'
         ),
+//        'applet_service_trade_agent'      => array(
+//            'controller'        => 'App_Controller_Applet_TradeController',
+//            'action'            => 'ServiceTradeAGentAction',
+//            'desc'              => '带支付订单再次支付详情页面'
+//        ),
+
+        'applet_service_trade_relet'      => array(
+            'controller'        => 'App_Controller_Applet_TradeController',
+            'action'            => 'ServiceTradeReletAction',
+            'desc'              => '订单续租'
+        ),
+
+
+
         'applet_create_form_trade'      => array(
             'controller'        => 'App_Controller_Applet_TradeController',
             'action'            => 'createFormTradeAction',
             'desc'              => '创建表单订单'
         ),
+
 
         'applet_service_trade_list'      => array(
             'controller'        => 'App_Controller_Applet_TradeController',
