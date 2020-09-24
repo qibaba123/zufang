@@ -343,8 +343,8 @@ class App_Helper_Tool {
         if ($tmp_name && !$error) {
             $info = @getimagesize($tmp_name);
             $fileSize = filesize($tmp_name);  // 获取图片大小，超过 2M 提示图片过大
-            if($fileSize>2*1024*1024){
-                $data['em']     = '图片大小超过2M，请先压缩后重新上传';
+            if($fileSize>10*1024*1024){
+                $data['em']     = '图片大小超过10M，请先压缩后重新上传';
             }else{
                 if ($info && in_array($info[2], $check['type']) ) {
                     $fileroot   = PLUM_DIR_ROOT . $dir;
