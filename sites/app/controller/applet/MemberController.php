@@ -50,7 +50,7 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
         $data['m_realname']   = $this->request->getStrParam('realname');
         $data['m_mobile']     = $this->request->getStrParam('mobile');
         $data['m_pro_name']    = $this->request->getStrParam('pro');
-        $data['m_pro_name']   = $this->request->getStrParam('city');
+        $data['m_city_name']   = $this->request->getStrParam('city');
         $data['m_area_name']   = $this->request->getStrParam('area');
         $data['m_address']    = $this->request->getStrParam('address');
         $data['m_brief']      = $this->request->getStrParam('brief');
