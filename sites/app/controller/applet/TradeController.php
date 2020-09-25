@@ -174,6 +174,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             }
             $data['list'][] = array(
                 'tid'    => $val['rt_tid'],
+                'type'   => $val['rt_type'],
                 'number' => $number,
                 'name'   => $g_name,
                 'cover'  => $this->dealImagePath($cover),

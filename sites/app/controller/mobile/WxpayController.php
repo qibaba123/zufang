@@ -494,7 +494,7 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
 //        }
         //将订单从超时处理队列中移除
         $trade_redis    = new App_Model_Trade_RedisTradeStorage($this->shop['s_id']);
-        $trade_redis->delTradeClose($trade['t_id']);
+        $trade_redis->delTradeClose($trade['rt_tid']);
         $this->_respond_weixin_notify(true, 'OK');
     }
 
