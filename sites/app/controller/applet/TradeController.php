@@ -195,7 +195,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
     //创建预约订单
     public function createServiceTradeAction(){
-        $type      = $this->request->getIntParam('type');//1.园区预约  2.服务预约
+        $type      = $this->request->getIntParam('type');//1.园区预约  2.服务预约  3.VIP
         $gid       = $this->request->getIntParam('gid');//商品ID
         $format_id = $this->request->getIntParam('format_id');//规格ID  只有服务有
         $time_type = $this->request->getIntParam('time_type');//时间类型 1.天 2.月 3.年
@@ -239,7 +239,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $cover       = $row['ahr_cover'];
             $brief       = $row['ahr_brief'];
             $price       = $row['ahr_price'];
-        }elseif($type == 2){
+        }else{
             $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
             $row           = $service_model->getRowById($gid);
             $g_name        = $row['es_name'];
