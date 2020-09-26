@@ -13,6 +13,9 @@ class App_Plugin_Weixin_DecryptInfo {
     public function getUserInfo($appid, $sessionKey,$encryptedData, $iv){
         $data = '';
         $decrypt = new WXBizDataCrypt($appid, $sessionKey);
+        Libs_Log_Logger::outputLog($encryptedData,'code.log');
+        Libs_Log_Logger::outputLog($iv,'code.log');
+        Libs_Log_Logger::outputLog($sessionKey,'code.log');
         $errCode = $decrypt->decryptData($encryptedData, $iv,$data);
         Libs_Log_Logger::outputLog($errCode);
         $info = array(
