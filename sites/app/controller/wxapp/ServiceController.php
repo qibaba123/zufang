@@ -149,7 +149,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
             $where[]      = array('name'=>'sf_e_id','oper'=>"=",'value'=>$id);
             $format_model->deleteValue($where);
         }
-        if($type == 1){
+        if($type == 1 || $type == 3){
             for ($i = 0; $i < $maxNum; $i++) {
                 $receive_name = $this->request->getStrParam('receive_name_'.$i);
                 if($receive_name){
