@@ -38,6 +38,15 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
                 'image' => $this->dealImagePath($val['ss_path'])
             );
         }
+        $format_model = new App_Model_Service_MysqlServiceFormatStorage();
+        $where[]      = array('name'=>"sf_e_id",'oper'=>"=",'value'=>$row['es_id']);
+        $format_list  = $format_model->getList($where,0,0,array('sf_create_time'=>'DESC'));
+        foreach($format_list as $val){
+            $data['format'][] = array(
+                'id'   => $val['sf_id'],
+                'name' => $val['sf_name']
+            );
+        }
         $this->displayJsonSuccess($data,true,'获取成功');
     }
 
