@@ -108,7 +108,36 @@
                                                             <input id="price" class="form-control inline" name="price" style="width: 150px;" placeholder="金额/年" value="<{if $row && $row['es_price']}><{$row['es_price']}><{/if}>">
                                                             <span class="palceholder" style="left: -45px">元/年</span>
                                                         </div>
+
                                                     </div>
+                                                        <div class="form-group formatshow">
+                                                            <label for="name" class="control-label" >规格：</label>
+                                                            <div class="control-group">
+                                                                <div class="panel-group" id="panel-group" style="margin-left: 17px;">
+                                                                    <{foreach $format as $key=>$val}>
+                                                                    <div class="panel" data-sort="format_id_<{$key}>">
+                                                                        <div class="panel-collapse">
+                                                                            <a href="javascript:;" class="close" onclick="remove_address(this)">×</a>
+                                                                            <div class="panel-body">
+
+                                                                                <input type="hidden" name="format_id_<{$key}>" value="0">
+
+                                                                                <div class="col-xs-4">
+                                                                                    <div class="input-group">
+                                                                                        <label for=""  class="input-group-addon"><font color="red">*</font>规格名称</label>
+                                                                                        <input type="text" class="form-control guigeName" name="receive_name_<{$key}>" value="<{if $val['sf_name']}><{$val['sf_name']}><{else}><{/if}>" >
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <{/foreach}>
+                                                                </div>
+                                                                <a href="javascript:;" class="ui-btn" onclick="add_address()" style="    margin: 3px 0;"><i class="icon-plus"></i>添加规格</a>
+                                                                <input type="hidden" name="format-num" id="format-num" value="<{if $format}><{count($format)}><{else}>0<{/if}>">
+                                                                <input type="hidden" name="format-sort" id="format-sort" value="0">
+                                                            </div>
+                                                        </div>
                                                     <div class="form-group">
                                                         <label for="name" class="control-label"><font color="red">*</font>简介：</label>
                                                         <div class="control-group">
@@ -244,6 +273,55 @@
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
+    function get_format_html(key){
+        var _html   = '<div class="panel" data-sort="format_id_'+key+'">';
+        _html       += '<div class="panel-collapse">';
+        _html       += '<a href="javascript:;" class="close" onclick="remove_address(this)">×</a>';
+        _html       += '<div class="panel-body">';
+
+        _html       += '<input type="hidden" name="format_id_'+key+'" value="0">';
+
+        _html       += '<div class="col-xs-4">';
+        _html       += '<div class="input-group">';
+        _html       += '<label for=""  class="input-group-addon"><font color="red">*</font>规格名称</label>';
+        _html       += '<input type="text" class="form-control guigeName" name="receive_name_'+key+'"  >';
+        _html       += '</div></div>';
+        _html       += '</div><!---panel-body----> </div><!---panel-collapse----></div><!---panel---->';
+        return _html;
+    }
+    /*移除规格*/
+    function remove_address(elem){
+        var panelBox = $(elem).parents(".panel");
+        panelBox.remove();
+        var panelNum = $('#format-num').val();
+        var is_old   = $(elem).data('hid-id');
+        if(is_old == 0){ //删除数据库存在的，则不递减
+            panelNum -- ; //递减
+        }
+        var panel = $("#panel-group .panel").length;
+        if(panel == 0){
+            $("#g_price").attr("readonly",false);
+            $("#g_stock").attr("readonly",false);
+        }else{
+            $("#g_price").attr("readonly",true);
+            $("#g_stock").attr("readonly",true);
+        }
+        $('#format-num').val(panelNum);
+    }
+    /*添加地址*/
+    function add_address() {
+        var key = parseInt($('#format-num').val());
+        console.log(key);
+
+        var html = get_format_html(key);//$("#panel-template").html();
+        key++;
+        $("#panel-group").append(html);
+        $('#format-num').val(key);
+        $("#g_price").attr("readonly", true);
+        $("#g_stock").attr("readonly", true);
+        formatSort();
+        sortString();
+    }
     $(function(){
         $('#fuelux-wizard').ace_wizard().on('change' , function(e, info){
             /*  去掉商品类目不再做验证*/
