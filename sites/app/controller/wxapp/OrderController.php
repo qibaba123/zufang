@@ -1753,7 +1753,7 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
   
 
     
-    public function excelOrderNewAction(){
+    public function excelOrderAction(){
         $startDate      = $this->request->getStrParam('startDate');
         $startTime      = $this->request->getStrParam('startTime');
         $endDate        = $this->request->getStrParam('endDate');
@@ -2181,7 +2181,7 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
 
 
     
-    public function excelOrderAction(){
+    public function excelOrderNewAction(){
         $startDate  = $this->request->getStrParam('startDate');
         $startTime  = $this->request->getStrParam('startTime');
         $endDate    = $this->request->getStrParam('endDate');
