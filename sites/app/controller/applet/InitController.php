@@ -428,7 +428,7 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
     private function _verify_member(){
         $uid    = plum_app_user_islogin();
         //$test   = $this->request->getIntParam('test');
-
+        Libs_Log_Logger::outputLog($uid,'init.log');
         //  测试 -2019-11-09
         if(!$uid) {
             $test11 = $this->request->getIntParam('test');
