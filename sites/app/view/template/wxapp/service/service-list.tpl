@@ -123,7 +123,7 @@
                         &times;
                     </button>
                     <h4 class="modal-title" id="myModalLabel">
-                        企业服务顶部图片
+                        企业服务顶部图片(750 * 400)
                     </h4>
                 </div>
                 <div class="modal-body">
