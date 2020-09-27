@@ -123,7 +123,7 @@
                         &times;
                     </button>
                     <h4 class="modal-title" id="myModalLabel">
-                        企业服务顶部图片(750 * 400)
+                        企业服务顶部图片(690 * 158)
                     </h4>
                 </div>
                 <div class="modal-body">
@@ -133,7 +133,7 @@
                             <img onclick="toUpload(this)" data-limit="1" style="width: 80%" data-width="750" data-height="200" data-dom-id="upload-cover" id="upload-cover"  src="<{if $image}><{$image}><{else}>/public/wxapp/community/images/image_750_200.png<{/if}>"  width="750px" height="200px" style="display:inline-block;margin-left:0;">
                             <input type="hidden" id="top-image"  class="avatar-field bg-img" name="top-image" value="<{if $image}><{$image}><{/if}>"/>
                         </div>-->
-                            <div class="cropper-box" data-width="750" data-height="400" style="padding: 20px 0">
+                            <div class="cropper-box" data-width="690" data-height="158" style="padding: 20px 0">
                                 <img id="default-cover" src="<{if $image}><{$image}><{else}>/public/manage/images/zhanwei/add0.png<{/if}>" width="150px" height="66px" style="display:block;margin:auto" alt="轮播图">
                                 <input type="hidden" class="avatar-field bg-img" name="top-image" id="top-image" value="<{if $image}><{$image}><{else}>/public/wxapp/community/images/image_750_200.png<{/if}>"/>
                             </div>
