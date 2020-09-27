@@ -90,7 +90,7 @@
                     <table class="table table-striped table-hover table-avatar">
                             <tr>
                                 <th>图片</th>
-                                <th>链接文章</th>
+                             <!--   <th>链接文章</th>-->
                                 <th>排序权重</th>
                                 <th>编辑时间</th>
                                 <th>操作</th>
@@ -98,7 +98,7 @@
                         <{foreach $list as $val}>
                             <tr>
                                 <td style="white-space: normal;"><img src="<{$val['sl_img']}>" alt="" style="width:150px;"></td>
-                                <td style="white-space: normal;"><{$val['sl_link_name']}></td>
+                              <!--  <td style="white-space: normal;"><{$val['sl_link_name']}></td>-->
                                 <td style="white-space: normal;"><{$val['sl_weight']}></td>
                                 <td style="white-space: normal;"><{date('Y-m-d H:i',$val['sl_add_time'])}></td>
                                 <td style="white-space: normal;">
@@ -140,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group row">
+             <!--   <div class="form-group row">
                     <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">链接文章：</label>
                     <div class="col-sm-8">
                         <select name="aiid" id="aiid" style="width: 345px" class="form-control">
@@ -150,7 +150,7 @@
                             <{/foreach}>
                         </select>
                     </div>
-                </div>
+                </div>-->
                 <div class="form-group row">
                     <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">排序权重：</label>
                     <div class="col-sm-8">
@@ -261,8 +261,8 @@
 //        var categoryOld = $('#categoryOld').val();
         var sort  = $('#sort').val();
         var cover = $('#slide-path').val();
-        var aiid   = $('#aiid').val();
-        var ainame = $('#aiid option:selected').html();
+        // var aiid   = $('#aiid').val();
+        // var ainame = $('#aiid option:selected').html();
         var type  = $('#type').val();
 //        alert(gname);return;
 //        var information = $('#information').val();
@@ -287,8 +287,8 @@
             path : cover,
             sort : sort,
            /* gid  :  gid,*/
-            aiid : aiid,
-            ainame : ainame,
+            // aiid : aiid,
+            // ainame : ainame,
             type  : type
 //            information : information
         };

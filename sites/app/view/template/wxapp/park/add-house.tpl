@@ -131,7 +131,7 @@
                                                             <label class="control-label"><font color="red">*</font>详细地址：</label>
 
                                                             <div class="control-group" style="float: left;width: 63%;margin: 0;">
-                                                                <select id="province" name="province" class="form-control inline" onchange="changeWxappProvince()" style="width: 20%;display: inline-block">
+                                                                <select id="province" name="province" class="form-control inline"  style="width: 20%;display: inline-block">
                                                                     <option value="0">省份</option>
                                                                     <{foreach $province as $val}>
                                                                 <option value="<{$val['region_id']}>" <{if $row['ahr_province'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
