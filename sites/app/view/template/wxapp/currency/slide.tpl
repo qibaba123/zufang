@@ -130,10 +130,10 @@
             </div>
             <div class="modal-body">
                 <div class="form-group row">
-                    <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">幻灯图：(建议尺寸710*250)</label>
+                    <label class="col-sm-3 control-label no-padding-right" for="qq-num" style="text-align: center">幻灯图：(建议尺寸750*400)</label>
                     <div class="col-sm-8">
                         <div>
-                            <div class="cropper-box" data-width="710" data-height="250" style="height:100%;">
+                            <div class="cropper-box" data-width="750" data-height="400" style="height:100%;">
                                 <img id="default-cover" src="/public/manage/img/zhanwei/zw_fxb_75_36.png" width="100%" height="100%" style="display:block;width: 335px;" alt="封面" >
                                 <input type="hidden" class="avatar-field bg-img" name="slide-path" id="slide-path"/>
                             </div>
