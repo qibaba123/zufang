@@ -55,7 +55,7 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
             $this->objPHPExcel->getDefaultStyle()->getFont()->setName(@iconv('gbk//ignore', 'utf-8', '宋体'));
         }
 
-        ob_end_clean();
+        ob_clean();
 
         header("Pragma: public");
         header("Expires: 0");
