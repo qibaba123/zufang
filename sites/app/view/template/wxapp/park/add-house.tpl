@@ -296,7 +296,7 @@
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
     var s_type = '<{$type}>';
-    $('#pro').change(function(){
+    $('#province').change(function(){
         $("#city").html('');
         $("#area").html('');
         var p_ro = $(this).val();
