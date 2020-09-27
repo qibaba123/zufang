@@ -77,6 +77,7 @@ class App_Controller_Applet_ServiceController extends App_Controller_Applet_Init
         }
         //企业服务顶部图片
         $data['top_image'] = $this->dealImagePath($this->shop['s_service_image']);
+        Libs_Log_Logger::outputLog(111,'init.log');
 //        if($service){
             $this->displayJsonSuccess($data,true,'获取成功');
 //        }else{
