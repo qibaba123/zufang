@@ -35,7 +35,7 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
         // 开始操作excel表
         // 操作第一个工作表
         $this->objPHPExcel->setActiveSheetIndex(0);
-        ob_end_clean();
+
         // 设置工作薄名称
         $this->objPHPExcel->getActiveSheet()->setTitle(@iconv('gbk', 'utf-8//ignore', 'phpExcel'));
         // 设置默认字体和大小
@@ -55,6 +55,7 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
             // 设置默认字体和大小
             $this->objPHPExcel->getDefaultStyle()->getFont()->setName(@iconv('gbk//ignore', 'utf-8', '宋体'));
         }
+        ob_end_clean();
         header("Pragma: public");
         header("Expires: 0");
         header("Cache-Control:must-revalidate, post-check=0, pre-check=0");
