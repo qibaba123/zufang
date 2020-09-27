@@ -44,7 +44,6 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
 
         
         $filename = iconv("utf-8", "GBK", $filename);
-        ob_end_clean();
         // 修复 Macintosh 无法打开 GBK编码的Excel 文件问题
         // zhangzc
         // 2019-03-29
@@ -55,6 +54,8 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
             // 设置默认字体和大小
             $this->objPHPExcel->getDefaultStyle()->getFont()->setName(@iconv('gbk//ignore', 'utf-8', '宋体'));
         }
+        ob_end_clean();
+        ob_start();
 
         header("Pragma: public");
         header("Expires: 0");
