@@ -44,7 +44,7 @@
 
 
 	<div>
-		<!--<a href="javascript:;" class="btn btn-green btn-xs btn-excel" ><i class="icon-download"></i>订单导出</a>-->
+		<a href="javascript:;" class="btn btn-green btn-xs btn-excel" ><i class="icon-download"></i>订单导出</a>
 	</div>
 	<div class="page-header search-box">
 		<div class="col-sm-12">
@@ -88,6 +88,7 @@
 									<option value="0">全部</option>
 									<option value="1" <{if $type == 1}>selected<{/if}>>园区服务</option>
 									<option value="2" <{if $type == 2}>selected<{/if}>>企业服务</option>
+									<option value="3" <{if $type == 3}>selected<{/if}>>VIP服务</option>
 								</select>
 							</div>
 						</div>
@@ -182,7 +183,7 @@
 			<tr class="header-row">
 				<td colspan="6">
 					<div>
-						订单号: <{$val['rt_tid']}> (<{if $val['rt_type'] == 1}>园区服务<{else}>企业服务<{/if}>)
+						订单号: <{$val['rt_tid']}> (<{$goods_type[$val['rt_type']]}>)
 
 					</div>
 					<div class="clearfix">
@@ -521,24 +522,24 @@
 					<div class="modal-body" style="overflow: auto;text-align: center;margin-bottom: 45px">
 						<div class="modal-plan p_num clearfix shouhuo">
 							<form id='trade-export-form' enctype="multipart/form-data" action="/wxapp/order/excelOrder" method="post" onsubmit="return false">
-								<input type="hidden" value="<{$esId}>" name="esId">
-								<input type="hidden" value="<{if $orderType}><{$orderType}><{else}>-1<{/if}>" name="orderType">   <!--积分订单订单类型是4-->
 								<div class="form-group">
-									<label class="col-sm-2 control-label">订单类型</label>
+									<label class="col-sm-2 control-label">订单状态</label>
 									<div class="col-sm-4">
 										<select id="orderStatus" name="orderStatus" class="form-control">
-											<{foreach $link as $key=>$val}>
-											<option value="<{$key}>"><{$val['label']}></option>
+											<{foreach $statusNote as $key=>$val}>
+											<option value="<{$key}>"><{$val}></option>
 											<{/foreach}>
 										</select>
 									</div>
-									<div class="col-sm-3" style="text-align: left">
-										<input type="checkbox" name="mergeOrder" checked style="display: inline-block;width: 25px;position: relative;top: 3px;font-size: 20px;">
-										<label for="goods-order" style="position: relative;top: 2px">同订单合并</label>
-									</div>
-									<div class="col-sm-3" style="text-align: left">
-										<input type="checkbox" name="addressOrder" checked style="display: inline-block;width: 25px;position: relative;top: 3px;font-size: 20px;">
-										<label for="address-order" style="position: relative;top: 2px">根据地址排序</label>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">订单类型</label>
+									<div class="col-sm-4">
+										<select id="orderType" name="orderType" class="form-control">
+											<{foreach $goods_type as $key=>$val}>
+											<option value="<{$key}>"><{$val}></option>
+											<{/foreach}>
+										</select>
 									</div>
 								</div>
 								<div class="space"></div>
@@ -548,20 +549,6 @@
 										<input class="form-control" type="text" id="goodstitle" name="goodstitle" placeholder="请输入商品名称,不填默认全部商品"/>
 									</div>
 								</div>
-								<div class="space"></div>
-								<div class="form-group entershop-select">
-									<label class="col-sm-2 control-label">所属商家</label>
-									<div class="col-sm-10">
-										<select id="entershop" name="entershop" style="width:100%;padding: 0;text-align: left;height: 34px" class="form-control <{if $curr_shop['s_id'] == 5741}> select2-entershop <{/if}>">
-											<option value="0">全部</option>
-											<option value="-1">平台自营</option>
-											<{foreach $selectShop as $key => $val}>
-											<option value="<{$key}>"><{$val}></option>
-											<{/foreach}>
-										</select>
-									</div>
-								</div>
-
 								<div class="space"></div>
 								<div class="form-group">
 									<label class="col-sm-2 control-label">开始日期</label>

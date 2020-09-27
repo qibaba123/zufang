@@ -2186,21 +2186,8 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
         $startTime  = $this->request->getStrParam('startTime');
         $endDate    = $this->request->getStrParam('endDate');
         $endTime    = $this->request->getStrParam('endTime');
-        $esId       = $this->request->getIntParam('esId');
-        $orderType  = $this->request->getIntParam('orderType', -1);
-        $groupType  = $this->request->getStrParam('groupType');
-        $addressOrder = $this->request->getStrParam('addressOrder');
-        $goodsOrder = $this->request->getStrParam('goodsOrder');
-        $storeOrder = $this->request->getStrParam('storeOrder');
-        $mergeOrder = $this->request->getStrParam('mergeOrder');
-        $entershop  = $this->request->getIntParam('entershop');
 
-        $cash       = $this->request->getStrParam('cash');
-        $test = $this->request->getIntParam('test');
 
-        $_independent = $this->request->getIntParam('independent',0);
-        $excel_independent = $this->request->getIntParam('excel_independent',0);
-        $independent = $excel_independent ? $excel_independent : $_independent;
 
 
 
@@ -2210,191 +2197,66 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
             $startTime  = strtotime($start);
             $endTime    = strtotime($end);
             $where      = array();
-            $where[]    = array('name'=>'t_create_time','oper'=>'>=','value'=>$startTime);
-            $where[]    = array('name'=>'t_create_time','oper'=>'<','value'=>$endTime);
-            $where[]    = array('name'=>'t_independent_mall','oper'=>'=','value'=>$independent);
-            if($orderType != -1){
-                $where[]    = array('name'=>'t_applet_type','oper'=>'=','value'=>$orderType);
-            }
-            $orderStatus = $this->request->getStrParam('orderStatus','all');
+            $where[]    = array('name'=>'rt_create_time','oper'=>'>=','value'=>$startTime);
+            $where[]    = array('name'=>'rt_create_time','oper'=>'<','value'=>$endTime);
 
-            $sort       = array('t_create_time' => 'DESC');
-            if($addressOrder=='on'){
-                $sort = array('ma_province' => 'DESC', 'ma_city' => 'DESC' , 'ma_zone' => 'DESC', 'ma_detail' => 'DESC');
-            }
-
-            if($storeOrder=='on'){
-                $sort = array('t_store_id' => 'DESC');
-            }
-
-            $link = App_Helper_Group::$group_trade_status;
-            $groupStatus = -1;
-            if($groupType && isset($link[$groupType]) && $link[$groupType]['id'] >= 0){
-                $groupStatus = $link[$groupType]['id'];
-            }
-            if ($groupStatus >= 0) {
-                $where[]    = array('name'=>'go_status','oper'=>'=','value'=>$groupStatus);
-            }
-            $postType = $this->request->getIntParam('postType');
-            if($postType){
-                $where[] = array('name'=>'t_express_method','oper'=>'=','value'=>$postType);
-            }
-            $ssMd = $this->request->getIntParam('ssMd');
-            if($ssMd){
-                $where[] = array('name'=>'t_store_id','oper'=>'=','value'=>$ssMd);
-            }
-            $communityId = $this->request->getIntParam('communityId',0);
-            if($communityId){
-                $where[] = array('name'=>'asc_id','oper'=>'=','value'=>$communityId);
-            }
-            $where[]    = array('name'=>'t_s_id','oper'=>'=','value'=>$this->curr_sid);
-            if($esId){
-                $where[]    = array('name'=>'t_es_id','oper'=>'=','value'=>$esId);
-            }
-
-            if($entershop){
-                if($entershop < 0){
-                    $where[]    = array('name'=>'t_es_id','oper'=>'=','value'=>0);
-                }else{
-                    $where[]    = array('name'=>'t_es_id','oper'=>'=','value'=>$entershop);
-                }
-            }
-
-            $where[]    = array('name'=>'t_status','oper'=>'>','value'=>0);
-            if($cash == 'cash') {
-                $where[]    = array('name'=>'t_type','oper'=>'=','value'=>9);
-            } else {
-                $where[]    = array('name'=>'t_type','oper'=>'=','value'=>5);
-            }
-
+            $orderStatus = $this->request->getIntParam('orderStatus');
+            $orderType   = $this->request->getIntParam('orderType');
+            $sort       = array('rt_create_time' => 'DESC');
+            $where[]    = array('name'=>'rt_s_id','oper'=>'=','value'=>$this->curr_sid);
+            $where[]    = array('name'=>'rt_status','oper'=>'=','value'=>$orderStatus);
             $goodstitle = $this->request->getStrParam('goodstitle');
             if($goodstitle){
                 $title = str_replace(" ", "", $goodstitle);
-                $where[]= array('name'=>'replace(t_title, " ", "")','oper'=>'like','value'=>"%{$title}%");
+                $where[]= array('name'=>'replace(rt_g_name, " ", "")','oper'=>'like','value'=>"%{$title}%");
             }
-            $link = App_Helper_Trade::$trade_link_status;
-            if($orderStatus && isset($link[$orderStatus]) && $link[$orderStatus]['id'] > 0){
-                $where[]= array('name'=>'t_status','oper'=>'=','value'=>$link[$orderStatus]['id']);
-            }
-            $trade_model = new App_Model_Trade_MysqlTradeStorage($this->curr_sid);
-            $list = $trade_model->getAddressList($where,0,0,$sort);
+            $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+            $list = $trade_model->getList($where,0,0,$sort);
 
 
             if(!empty($list)){
-                $tradePay   =  App_Helper_Trade::$trade_pay_type;
-                $groupType  =  plum_parse_config('group_type');
-                $statusNote = plum_parse_config('trade_status');
-                $expressMethod = array(
-                    1 => '商家配送',
-                    2 => '门店自取',
-                    3 => '快递发货'
+                $time_type = array(
+                    1 => '天',
+                    2 => '月',
+                    3 => '年'
                 );
-                $newlist  = array();
-                $newslist = array();
-                $gidnums  = array();
-                $gfidnums = array();
+                $statusNote = array(
+                    1 => '待付款',
+                    2 => '已付款',
+                    3 => '已到期',
+                );
+                $goods_type = array(
+                    1 => '园区服务',
+                    2 => '企业服务',
+                    3 => 'VIP服务'
+                );
+                //数据处理
+                $rows    = array();
+                $rows[]  = array('商品名称','类型','预约人名称','预约人电话','备注','开始时间','到期时间','订单状态');
+                $width   = array(
+                    'A' => 30,
+                    'B' => 20,
+                    'C' => 20,
+                    'D' => 30,
+                    'E' => 50,
+                    'F' => 30,
+                    'G' => 30,
+                    'H' => 20,
+                );
                 foreach($list as $key => $val){
-                    $trade_order        = new App_Model_Trade_MysqlTradeOrderStorage($this->curr_sid);
-                    $goodsList          = $trade_order->getGoodsListByTid($val['t_id']);
-
-                    foreach($goodsList as $k => $v){
-                        $gidnums[$v['to_g_id']] += $v['to_num'];
-                        $gfidnums[$v['to_g_id'].'-'.$v['gf_id']] += $v['to_num'];
-                        $newlist['t_tid']           = $val['t_tid'];
-                        $newlist['t_buyer_nick']    = $this->utf8_orderstr_to_unicode($val['t_buyer_nick']);
-                        $newlist['es_name']         = $val['es_name'];
-                        $newlist['s_name']          = $val['ma_name'];
-                        $newlist['s_phone']         = $val['ma_phone'];
-                        $newlist['s_province']      = $val['ma_province'];
-                        if(in_array($val['ma_province'],array('北京市','上海市','天津市','重庆市'))){
-                            $city = $val['ma_province'];
-                        }else{
-                            $city = $val['ma_city'];
-                        }
-                        $newlist['s_city']          = $city;
-                        $newlist['s_zone']          = $val['ma_zone'];
-                        $newlist['s_detail']        = $val['ma_detail'];
-                        $newlist['s_post']          = $val['ma_post'];
-                        $newlist['g_id']            = $v['to_g_id'];
-                        $newlist['gf_id']           = $v['gf_id'];
-                        $newlist['g_title']         = $v['to_title'];
-                        $newlist['g_gg']            = $v['to_gf_name'];
-                        $newlist['g_tp']            = $v['to_price'];
-                        $newlist['g_num']           = $v['to_num'];
-                        $newlist['g_price']         = $v['to_total'];
-                        $newlist['o_goods_price']   = $val['t_goods_fee'];
-                        $newlist['o_post_price']    = $val['t_post_fee'];
-                        $newlist['o_total_price']   = $val['t_payment'];
-                        $newlist['o_discount_fee']   = $val['t_discount_fee'];
-                        $newlist['o_promotion_fee']  = $val['t_promotion_fee'];
-                        $newlist['o_pay']           = $val['t_payment'];
-                        $newlist['o_exp_company']   = $val['t_express_company'];
-                        $newlist['o_exp_code']      = $val['t_express_code'];
-                        if($val['t_status'] == 8){
-                            $newlist['o_status']    = '已退款';
-                        }else{
-                            $newlist['o_status']    = $statusNote[$val['t_status']];
-                        }
-                        $newlist['o_paytype']       = $tradePay[$val['t_pay_type']];
-                        $newlist['o_createtime']    = $val['t_create_time'] ? date('Y-m-d H:i:s',$val['t_create_time']) : '';
-                        $newlist['o_paytime']       = $val['t_pay_time'] ? date('Y-m-d H:i:s',$val['t_pay_time']) : '';
-                        $newlist['o_sale_note']     = $val['t_note']?'备注: '.$val['t_note'].';':'';
-                        foreach (json_decode($val['t_remark_extra'], true) as $item){
-                            if($item['value']){
-                                $newlist['o_sale_note'] .= $item['name'].':'.$item['value'].';';
-                            }
-                        }
-
-                        $newlist['o_sendtime']      = $val['t_express_time'] ? date('Y-m-d H:i:s',$val['t_express_time']) : '';
-                        $newlist['o_finishtime']    = $val['t_finish_time'] ? date('Y-m-d H:i:s',$val['t_finish_time']) : '';
-                        $newlist['o_store_name']         = $val['os_name'] ? $val['os_name'] : '';
-                        $newlist['o_express_method']         = $expressMethod[$val['t_express_method']];//配送方式
-                        $newslist[] = $newlist;
-                    }
-                    if($mergeOrder=='on'){
-                        $columNums[$key] = count($goodsList);
-                    }
+                    $rows[] = array(
+                        $val['rt_g_name'],
+                        $goods_type[$val['rt_type']],
+                        $val['rt_m_name'],
+                        $val['rt_m_mobile'],
+                        $val['rt_note'],
+                        $val['rt_start_time'] > 0 ? date('Y-m-d', $val['rt_start_time']) : '无',
+                        $val['rt_end_time'] > 0 ? date('Y-m-d', $val['rt_end_time']) : '无',
+                        $statusNote[$val['rt_status']],
+                    );
                 }
-                $filename  = 'orders.xls';
-                if(!empty($newslist)){
-                    $plugin    = new App_Plugin_PHPExcel_PHPExcelPlugin();
-                    if($goodsOrder=='on'){
-                        $gids = array_column($newslist,'g_id');
-                        $gfids = array_column($newslist,'gf_id');
-                        array_multisort($gids,SORT_DESC, $gfids,SORT_DESC, $newslist);
-                        $gidsNum = array();
-                        $gfidsNum = array();
-                        foreach ($newslist as $key => $val){
-                            $gidsNum[$val['g_id']] = ($gidsNum[$val['g_id']]?$gidsNum[$val['g_id']]:0) + 1;
-                            $gfidsNum[$val['g_id'].'-'.$val['gf_id']] = ($gfidsNum[$val['g_id'].'-'.$val['gf_id']]?$gfidsNum[$val['g_id'].'-'.$val['gf_id']]:0) + 1;
-                            foreach ($gidnums as $numkey => $numval){
-                                if($numkey == $val['g_id']){
-                                    $newslist[$key]['goodsnums'] = $numval;
-                                }
-                            }
-                            foreach ($gfidnums as $numkey => $numval){
-                                if($numkey == $val['g_id'].'-'.$val['gf_id']){
-                                    $newslist[$key]['formatnums'] = $numval;
-                                }
-                            }
-                        }
-                        $gidsNum  = array_values($gidsNum);
-                        $gfidsNum = array_values($gfidsNum);
-                        if($this->wxapp_cfg['ac_type'] == 8){
-                            $plugin->down_community_goods_sort_orders($newslist,$filename, $gidsNum, $gfidsNum);
-                        }else{
-                            $plugin->down_goods_sort_orders($newslist,$filename, $gidsNum, $gfidsNum);
-                        }
-                        die();
-                    }else{
-                        if($this->wxapp_cfg['ac_type'] == 8) {
-                            $plugin->down_community_orders($newslist, $filename, $columNums);
-                        }else{
-                            $plugin->down_orders($newslist, $filename, $columNums);
-                        }
-                        die();
-                    }
-                }
+                $excel = new App_Plugin_PHPExcel_PHPExcelPlugin();
+                $excel->down_common_excel($rows,'付费订单导出.xls',$width);
             }else{
                 plum_url_location('当前时间段内没有订单!');
             }
