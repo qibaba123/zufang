@@ -526,6 +526,7 @@
 									<label class="col-sm-2 control-label">订单状态</label>
 									<div class="col-sm-4">
 										<select id="orderStatus" name="orderStatus" class="form-control">
+											<option value="0">全部</option>
 											<{foreach $statusNote as $key=>$val}>
 											<option value="<{$key}>"><{$val}></option>
 											<{/foreach}>
@@ -536,6 +537,7 @@
 									<label class="col-sm-2 control-label">订单类型</label>
 									<div class="col-sm-4">
 										<select id="orderType" name="orderType" class="form-control">
+											<option value="0">全部</option>
 											<{foreach $goods_type as $key=>$val}>
 											<option value="<{$key}>"><{$val}></option>
 											<{/foreach}>
