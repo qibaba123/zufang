@@ -2216,7 +2216,6 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
                 $where[]= array('name'=>'replace(rt_g_name, " ", "")','oper'=>'like','value'=>"%{$title}%");
             }
             $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
-            Libs_Log_Logger::outputLog($where,'where.log');
             $list = $trade_model->getList($where,0,0,$sort);
 
 

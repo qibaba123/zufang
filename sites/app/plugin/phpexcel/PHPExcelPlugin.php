@@ -9,21 +9,21 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
     public function __construct(){
         $this->objPHPExcel = new PHPExcel();
     }
-
-    /**
-     * @param $filename
-     * @throws PHPExcel_Reader_Exception
-     * 导出excel
-     */
+/*
+* @param $filename
+* @throws PHPExcel_Reader_Exception
+* 导出excel
+*/
     public  function set_excel($filename){
+        Libs_Log_Logger::outputLog('104','z.log');
         // 设置excel文档的属性
-        $this->objPHPExcel->getProperties()->setCreator("Ikinvin")
-            ->setLastModifiedBy("Maarten Balliauw")
-            ->setTitle("Office 2007 XLSX Test Document")
-            ->setSubject("Office 2007 XLSX Test Document")
-            ->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.")
-            ->setKeywords("office 2007 openxml php")
-            ->setCategory("Test result file");
+//        $this->objPHPExcel->getProperties()->setCreator("Ikinvin")
+//            ->setLastModifiedBy("Maarten Balliauw")
+//            ->setTitle("Office 2007 XLSX Test Document")
+//            ->setSubject("Office 2007 XLSX Test Document")
+//            ->setDescription("Test document for Office 2007 XLSX, generated using PHP classes.")
+//            ->setKeywords("office 2007 openxml php")
+//            ->setCategory("Test result file");
 
         $this->objPHPExcel->getProperties()->setCreator("Sam.c")
             ->setLastModifiedBy("Sam.c Test")
@@ -35,15 +35,15 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
         // 开始操作excel表
         // 操作第一个工作表
         $this->objPHPExcel->setActiveSheetIndex(0);
-
         // 设置工作薄名称
         $this->objPHPExcel->getActiveSheet()->setTitle(@iconv('gbk', 'utf-8//ignore', 'phpExcel'));
         // 设置默认字体和大小
         $this->objPHPExcel->getDefaultStyle()->getFont()->setName(@iconv('utf-8', 'gbk//ignore', '宋体'));
         $this->objPHPExcel->getDefaultStyle()->getFont()->setSize(10);
 
-        
+
         $filename = iconv("utf-8", "GBK", $filename);
+
         // 修复 Macintosh 无法打开 GBK编码的Excel 文件问题
         // zhangzc
         // 2019-03-29
@@ -54,6 +54,7 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
             // 设置默认字体和大小
             $this->objPHPExcel->getDefaultStyle()->getFont()->setName(@iconv('gbk//ignore', 'utf-8', '宋体'));
         }
+
         ob_end_clean();
         ob_start();
 
@@ -66,10 +67,10 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
         header("Content-Type:application/download");
         header("Content-Disposition:attachment;filename=".$filename);
         header("Content-Transfer-Encoding:binary");
-        
+
 
         // 从浏览器直接输出$filename
-       
+        Libs_Log_Logger::outputLog('105','z.log');
         $objWriter = PHPExcel_IOFactory::createWriter($this->objPHPExcel, 'Excel5');
         $objWriter->save("php://output");exit;
     }
