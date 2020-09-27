@@ -70,6 +70,11 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
             2 => '已付款',
             3 => '已到期',
         );
+        $this->output['goods_type'] = array(
+            1 => '园区服务',
+            2 => '企业服务',
+            3 => 'VIP服务'
+        );
         $this->output['time_type'] = $time_type;
         $this->buildBreadcrumbs(array(
             array('title' => '订单列表', 'link' => '#'),

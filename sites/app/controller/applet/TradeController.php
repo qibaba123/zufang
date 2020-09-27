@@ -145,7 +145,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         }
 
         $where[] = array('name'=>"rt_m_id",'oper'=>"=",'value'=>$this->member['m_id']);
-        $where[] = array('name'=>"rt_type",'oper'=>"in",'value'=>array(1,2));
+        $where[] = array('name'=>"rt_type",'oper'=>"in",'value'=>array(1,2,3));
        // Libs_Log_Logger::outputLog($where);
         $list    = $trade_model->getList($where,$index,$this->count,array('rt_create_time'=>'DESC'));
     //    Libs_Log_Logger::outputLog($list);
