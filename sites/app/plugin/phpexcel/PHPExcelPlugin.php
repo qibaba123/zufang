@@ -56,7 +56,6 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
         }
 
         ob_end_clean();
-        ob_start();
 
         header("Pragma: public");
         header("Expires: 0");
