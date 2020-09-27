@@ -9,11 +9,12 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
     public function __construct(){
         $this->objPHPExcel = new PHPExcel();
     }
-/*
-* @param $filename
-* @throws PHPExcel_Reader_Exception
-* 导出excel
-*/
+
+    /**
+     * @param $filename
+     * @throws PHPExcel_Reader_Exception
+     * 导出excel
+     */
     public  function set_excel($filename){
         Libs_Log_Logger::outputLog('104','z.log');
         // 设置excel文档的属性
@@ -55,14 +56,14 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
             $this->objPHPExcel->getDefaultStyle()->getFont()->setName(@iconv('gbk//ignore', 'utf-8', '宋体'));
         }
 
-        ob_end_clean(); // Added by me
-        ob_start(); // Added by me
+        ob_end_clean();
+        ob_start();
 
         header("Pragma: public");
         header("Expires: 0");
         header("Cache-Control:must-revalidate, post-check=0, pre-check=0");
         header("Content-Type:application/force-download");
-        header("Content-Type: application/vnd.ms-excel;name='".$filename."'");
+        header("Content-Type: application/vnd.ms-excel;charset=utf-8;name='".$filename."'");
         header("Content-Type:application/octet-stream");
         header("Content-Type:application/download");
         header("Content-Disposition:attachment;filename=".$filename);
@@ -74,6 +75,57 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
         $objWriter = PHPExcel_IOFactory::createWriter($this->objPHPExcel, 'Excel5');
         $objWriter->save("php://output");exit;
     }
+
+
+
+    /**
+     * @param $filename
+     * @param int $license
+     * @return array
+     * @throws PHPExcel_Exception
+     * @throws PHPExcel_Reader_Exception
+     * 获取导入excel数据信息
+     */
+    public function get_excel_info_alone($filename,$type,$license=1){
+        $objReader = PHPExcel_IOFactory::createReader('Excel2007');//use excel2003 和  2007 format
+        $PHPLoad = PHPExcel_IOFactory::load($filename);
+
+        $objWorksheet = $PHPLoad->getActiveSheet();
+
+        // 取得总行数,5,6,7
+        $highestRow = $objWorksheet->getHighestRow();
+        // 取得总列数,ABCDF
+        $highestColumn = $objWorksheet->getHighestColumn();
+        //字母列转换为数字列 如:AA变为27
+        $highestColumnIndex= PHPExcel_Cell::columnIndexFromString($highestColumn);
+        //获取定义自定义字段
+        $keys = array();
+        for($col=0; $col<$highestColumnIndex; $col++){
+            $value =  (string)$objWorksheet->getCellByColumnAndRow($col, 1)->getValue();
+            $keys[$col] =$this->_get_array_key_by_value($value,$type);
+        }
+
+        /** 循环读取每个单元格的数据 */
+        $data = array();
+        for ($row = 2; $row <= $highestRow; $row++){//行数是以第1行开始
+            $temp = array();
+            for ($column = 0; $column < $highestColumnIndex; $column++) { //列数是以第0列开始
+                if($keys[$column]){
+                    //$temp[$keys[$column]] = "'".$value."'";
+                    $value = (string)$objWorksheet->getCellByColumnAndRow($column, $row)->getValue();
+                    $temp[$keys[$column]] = $value;
+                }
+            }
+            $data[] =  $temp;
+        }
+        //var_dump($data);exit;
+        $info = array(
+            'data'   => $data
+        );
+
+        return $info;
+    }
+
 
     /**
      * @param $filename
@@ -127,6 +179,16 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
     private function _get_array_key_by_value($value,$type){
         $key='';
         switch($type){
+            case 'business':
+                switch($value){
+                    case '名称':
+                        $key = 'wb_name';
+                        break;
+                    case '权重':
+                        $key = 'wb_weight';
+                        break;
+                }
+                break;
             case 'express':
                 switch($value){
                     case '名称':
@@ -161,7 +223,38 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
                         $key = 'as_degree';
                         break;
                 }
-            break;
+                break;
+            case 'task':
+                switch ($value){
+                    case '任务包名称':
+                        $key = 'zt_name';
+                        break;
+                    case '报名开始时间':
+                        $key = 'zt_start_time';
+                        break;
+                    case '报名结束时间':
+                        $key = 'zt_end_time';
+                        break;
+                    case '佣金':
+                        $key = 'zt_money';
+                        break;
+                    case '工作开始时间':
+                        $key = 'zt_work_start_time';
+                        break;
+                    case '工作结束时间':
+                        $key = 'zt_work_end_time';
+                        break;
+                    case '工作地址':
+                        $key = 'zt_address';
+                        break;
+                    case '接单人数':
+                        $key = 'zt_people_num';
+                        break;
+                    case '任务包详情':
+                        $key = 'zt_details';
+                        break;
+                }
+                break;
         }
 
         return $key;
@@ -361,6 +454,9 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
         }
         $this->set_excel($filename);
     }
+
+
+
 
 
     /**
@@ -918,6 +1014,7 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
      * 通用导出EXCEL
      */
     public function down_common_excel($data,$filename,$set_width=array()){
+        Libs_Log_Logger::outputLog('100','z.log');
         $this->objPHPExcel->getActiveSheet()->getStyle('B')->getNumberFormat()
             ->setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_TEXT);
         //设置每一列的宽度
@@ -927,6 +1024,7 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
 
             }
         }
+        Libs_Log_Logger::outputLog('101','z.log');
         //填充每一列每一行的数据
         for($i=0;$i<count($data);$i++){
             $temp = $data[$i];
@@ -936,8 +1034,10 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
                 $this->objPHPExcel->getActiveSheet()->setCellValue($str . $num, $temp[$j]);
             }
         }
+        Libs_Log_Logger::outputLog('102','z.log');
         //导出数据
         if(empty($filename)) $filename = 'test.xls';
+        Libs_Log_Logger::outputLog('103','z.log');
         $this->set_excel($filename);
     }
 
@@ -1456,6 +1556,69 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
             $i ++;
         }
 
+        $this->set_excel($filename);
+    }
+
+
+
+    /**
+     * @param $data
+     * @param $filename
+     * 导出订单表(按商品排序)
+     */
+    public function down_tasks_sort_orders($data,$filename, $gidsNum = array(), $gfidsNum = array()){
+        $this->objPHPExcel->getActiveSheet()->getStyle('A')->getNumberFormat()->setFormatCode(PHPExcel_Style_NumberFormat::FORMAT_TEXT);
+        $info  = '企业名称、任务包名称、佣金、任务包开始时间、任务包结束时间、工作地址、接单人数、任务包详情、当前任务状态、发布时间';
+        $width = '20、20、10、20、20、20、10、30、10、20';
+        $num   = 'A、B、C、D、E、F、G、H、I、J';
+        $infos = explode('、',$info);
+        $wids  = explode('、',$width);
+        $nums  = explode('、',$num);
+        foreach($nums as $key => $val){
+            $this->objPHPExcel->getActiveSheet()->getColumnDimension($val)->setWidth($wids[$key]);
+        }
+        foreach($nums as $nkey => $nval){
+            $this->objPHPExcel->getActiveSheet()->setCellValue($nval.'1', $infos[$nkey]);
+        }
+        $i = 2;
+        foreach($data as $item){
+            $this->objPHPExcel->getActiveSheet()->setCellValue('A' . $i, $item[0]);
+            $this->objPHPExcel->getActiveSheet()->setCellValue('B' . $i, $item[1]);
+            $this->objPHPExcel->getActiveSheet()->setCellValue('C' . $i, $item[2]);
+            $this->objPHPExcel->getActiveSheet()->setCellValue('D' . $i, $item[3]);
+            $this->objPHPExcel->getActiveSheet()->setCellValue('E' . $i, $item[4]);
+            $this->objPHPExcel->getActiveSheet()->setCellValue('F' . $i, $item[5]);
+            $this->objPHPExcel->getActiveSheet()->setCellValue('G' . $i, $item[6]);
+            $this->objPHPExcel->getActiveSheet()->setCellValue('H' . $i, $item[7]);
+            $this->objPHPExcel->getActiveSheet()->setCellValue('I' . $i, $item[8]);
+            $this->objPHPExcel->getActiveSheet()->setCellValue('J' . $i, $item[9]);
+            $i ++;
+        }
+        if(!empty($gidsNum)){
+            $i = 2;
+            foreach ($gidsNum as $val){
+                if($val > 1){
+                    $this->objPHPExcel->getActiveSheet()->mergeCells('N'.$i.':N'.($i + $val - 1));
+                    $this->objPHPExcel->getActiveSheet()->getStyle('N'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+                    $i += $val;
+                }elseif($val != 0){
+                    $i += 1;
+                }
+            }
+        }
+        if(!empty($gfidsNum)){
+            $i = 2;
+            foreach ($gfidsNum as $val){
+                if($val > 1){
+                    $this->objPHPExcel->getActiveSheet()->mergeCells('P'.$i.':P'.($i + $val - 1));
+
+                    $this->objPHPExcel->getActiveSheet()->getStyle('P'.$i)->getAlignment()->setVertical(PHPExcel_Style_Alignment::VERTICAL_CENTER);
+                    $i += $val;
+                }elseif($val != 0){
+                    $i += 1;
+                }
+            }
+        }
         $this->set_excel($filename);
     }
 
