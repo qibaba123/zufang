@@ -2203,7 +2203,7 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
             $orderStatus = $this->request->getIntParam('orderStatus');
             $orderType   = $this->request->getIntParam('orderType');
             $sort       = array('rt_create_time' => 'DESC');
-            $where[]    = array('name'=>'rt_s_id','oper'=>'=','value'=>$this->curr_sid);
+            //$where[]    = array('name'=>'rt_s_id','oper'=>'=','value'=>$this->curr_sid);
             if($orderStatus){
                 $where[]    = array('name'=>'rt_status','oper'=>'=','value'=>$orderStatus);
             }
@@ -2216,6 +2216,7 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
                 $where[]= array('name'=>'replace(rt_g_name, " ", "")','oper'=>'like','value'=>"%{$title}%");
             }
             $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+            Libs_Log_Logger::outputLog($where,'where.log');
             $list = $trade_model->getList($where,0,0,$sort);
 
 
