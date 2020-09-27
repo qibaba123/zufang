@@ -55,13 +55,14 @@ class App_Plugin_PHPExcel_PHPExcelPlugin{
             $this->objPHPExcel->getDefaultStyle()->getFont()->setName(@iconv('gbk//ignore', 'utf-8', '宋体'));
         }
 
-        ob_clean();
+        ob_end_clean(); // Added by me
+        ob_start(); // Added by me
 
         header("Pragma: public");
         header("Expires: 0");
         header("Cache-Control:must-revalidate, post-check=0, pre-check=0");
         header("Content-Type:application/force-download");
-        header("Content-Type: application/vnd.ms-excel;charset=utf-8;name='".$filename."'");
+        header("Content-Type: application/vnd.ms-excel;name='".$filename."'");
         header("Content-Type:application/octet-stream");
         header("Content-Type:application/download");
         header("Content-Disposition:attachment;filename=".$filename);
