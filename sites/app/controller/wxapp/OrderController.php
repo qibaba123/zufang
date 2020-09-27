@@ -2204,7 +2204,12 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
             $orderType   = $this->request->getIntParam('orderType');
             $sort       = array('rt_create_time' => 'DESC');
             $where[]    = array('name'=>'rt_s_id','oper'=>'=','value'=>$this->curr_sid);
-            $where[]    = array('name'=>'rt_status','oper'=>'=','value'=>$orderStatus);
+            if($orderStatus){
+                $where[]    = array('name'=>'rt_status','oper'=>'=','value'=>$orderStatus);
+            }
+            if($orderType){
+                $where[]    = array('name'=>'rt_type','oper'=>'=','value'=>$orderType);
+            }
             $goodstitle = $this->request->getStrParam('goodstitle');
             if($goodstitle){
                 $title = str_replace(" ", "", $goodstitle);
