@@ -76,6 +76,13 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
             3 => 'VIP服务'
         );
         $this->output['time_type'] = $time_type;
+
+        $today_where[] = array('name'=>"rt_pay_time",'oper'=>">=",'value'=>mktime(0,0,0,date('m',time()),date('d',time()),date('Y',time())));
+        $total_where[] = $today_where[] = array('name'=>"rt_status",'oper'=>"in",'value'=>array(2,3));
+        $today         = $trade_model->statOrderStatus($today_where);
+        $total         = $trade_model->statOrderStatus($total_where);
+        $this->output['today'] = $today;
+        $this->output['total'] = $total;
         $this->buildBreadcrumbs(array(
             array('title' => '订单列表', 'link' => '#'),
         ));
