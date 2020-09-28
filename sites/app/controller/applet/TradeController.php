@@ -24,7 +24,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
     public function ServiceTradeReletAction(){
         $tid         = $this->request->getStrParam('tid');
         $end_time    = $this->request->getStrParam('end_time');
-
+        Libs_Log_Logger::outputLog($end_time,'trade.log');
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         $trade       = $trade_model->findUpdateTradeByTid($tid);
 
