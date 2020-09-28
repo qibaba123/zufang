@@ -521,7 +521,7 @@
 					</div>
 					<div class="modal-body" style="overflow: auto;text-align: center;margin-bottom: 45px">
 						<div class="modal-plan p_num clearfix shouhuo">
-							<form id='trade-export-form' enctype="multipart/form-data" action="/wxapp/order/excelOrder" method="post" onsubmit="return false">
+							<form id='trade-export-form' enctype="multipart/form-data" action="/wxapp/order/excelOrderNew" method="post" onsubmit="return false">
 								<div class="form-group">
 									<label class="col-sm-2 control-label">订单状态</label>
 									<div class="col-sm-4">
