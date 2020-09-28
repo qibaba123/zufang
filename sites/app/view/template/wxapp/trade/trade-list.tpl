@@ -120,7 +120,7 @@
         <div class="balance-info">
             <div class="balance-title">今日收益<span></span></div>
             <div class="balance-content">
-                <span class="money"><{if $todayTradeInfo['money']}><{$todayTradeInfo['money']}><{else}>0<{/if}></span>
+                <span class="money"><{if $today['money']}><{$today['money']}><{else}>0<{/if}></span>
                 <span class="unit">元</span>
                 <!--<a href="/manage/shop/inout" class="pull-right">收支明细</a>-->
             </div>
@@ -128,7 +128,7 @@
         <div class="balance-info">
             <div class="balance-title">今日订单数<span></span></div>
             <div class="balance-content">
-                <span class="money"><{if $todayTradeInfo}><{$todayTradeInfo['total']}><{else}>0<{/if}></span>
+                <span class="money"><{if $today}><{$today['total']}><{else}>0<{/if}></span>
                 <!--<span class="unit">元</span>
                 <a href="/manage/shop/settled" class="pull-right">待结算记录</a>-->
             </div>
@@ -138,7 +138,7 @@
 
             </div>
             <div class="balance-content">
-                <span class="money money-font"><{if $searchTradeInfo['money']}><{$searchTradeInfo['money']}><{else}>0<{/if}></span>
+                <span class="money money-font"><{if $total['money']}><{$total['money']}><{else}>0<{/if}></span>
                 <span class="unit">元</span>
                 <!--<a href="/manage/shop/inout" class="pull-right" style="margin-left: 6px;"> 明细 </a>
                 <!--<a href="/manage/withdraw/apply" class="ui-btn ui-btn-primary pull-right btn-margin-right js-goto-btn">提现</a>-->
@@ -147,7 +147,7 @@
         <div class="balance-info">
             <div class="balance-title">总订单数</div>
             <div class="balance-content">
-                <span class="money money-font"><{if $searchTradeInfo}><{$searchTradeInfo['total']}><{else}>0<{/if}></span>
+                <span class="money money-font"><{if $total}><{$total['total']}><{else}>0<{/if}></span>
             </div>
         </div>
     </div>

@@ -12,6 +12,18 @@ class App_Model_Trade_MysqlReserveTradeStorage extends Libs_Mvc_Model_BaseModel{
         parent::__construct();
     }
 
+    public function statOrderStatus($where){
+        $sql  = 'SELECT count(*) total,sum(rt_fee) money ';
+        $sql .= ' FROM '.DB::table($this->_table);
+        $sql .= $this->formatWhereSql($where);
+        $ret = DB::fetch_all($sql);
+        if ($ret === false) {
+            trigger_error("query mysql failed.", E_USER_ERROR);
+            return false;
+        }
+        return $ret;
+    }
+
     /*
  * 通过订单id获取订单
  */

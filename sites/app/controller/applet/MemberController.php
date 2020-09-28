@@ -274,8 +274,8 @@ class App_Controller_Applet_MemberController extends App_Controller_Applet_InitC
      */
     public function userInfoAction()
     {
-        Libs_Log_Logger::outputLog($this->member,'init.log');
-        Libs_Log_Logger::outputLog(session_id(),'init.log');
+       // Libs_Log_Logger::outputLog($this->member,'init.log');
+       // Libs_Log_Logger::outputLog(session_id(),'init.log');
         $member     = $this->member;
         if (empty($member)) {
             $this->outputError('获取用户信息失败或账号已被禁用');

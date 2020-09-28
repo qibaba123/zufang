@@ -428,14 +428,14 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
     private function _verify_member(){
         $uid    = plum_app_user_islogin();
         //$test   = $this->request->getIntParam('test');
-        Libs_Log_Logger::outputLog($uid,'init.log');
+     //   Libs_Log_Logger::outputLog($uid,'init.log');
         //  测试 -2019-11-09
-        if(!$uid) {
-            $test11 = $this->request->getIntParam('test');
-            if($test11) {
-                $uid = 1;
-            }
-        }
+//        if(!$uid) {
+//            $test11 = $this->request->getIntParam('test');
+//            if($test11) {
+//                $uid = 1;
+//            }
+//        }
 
         // 如果会员信息不存在会去验证
         if(!$uid){
@@ -638,7 +638,7 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
                 $this->uid = $uid;
 
                 plum_app_user_login($uid);
-                Libs_Log_Logger::outputLog(session_id(),'init.log');
+               // Libs_Log_Logger::outputLog(session_id(),'init.log');
             }else{
                 $this->outputError('获取用户信息失败.');
             }
