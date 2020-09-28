@@ -521,7 +521,7 @@
 					</div>
 					<div class="modal-body" style="overflow: auto;text-align: center;margin-bottom: 45px">
 						<div class="modal-plan p_num clearfix shouhuo">
-							<form id='trade-export-form' enctype="multipart/form-data" action="/wxapp/order/excelOrderNew" method="post" onsubmit="return false">
+							<form action="/wxapp/Task/excelOrderNew" method="get" class="form-inline">
 								<div class="form-group">
 									<label class="col-sm-2 control-label">订单状态</label>
 									<div class="col-sm-4">
@@ -575,7 +575,7 @@
 								</div>
 								<div class="space" style="margin-bottom: 70px;"></div>
 								<button type="button" class="btn btn-normal" data-dismiss="modal" style="margin-right: 30px">取消</button>
-								<button id='trade-export' type="submit" class="btn btn-primary" role="button">导出</button>
+								<button type="submit" class="btn btn-primary" role="button">导出</button>
 							</form>
 						</div>
 					</div>
