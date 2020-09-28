@@ -72,10 +72,10 @@ class App_Plugin_xlsxwriter_XLSXWriterPlugin
         } else {
             $header_first = array_pad([], 29, 'string');
 
-            $header        = ['string', 'string','string', 'string', 'string', 'string', 'string', 'string', 'string', 'string', 'string', 'price', 'price', 'string', 'string', 'price', 'integer', 'price', 'price', 'string', 'string', 'string', 'string', 'string', 'string', 'string', 'string', 'string', 'string'];
-            $widths        = [24, 11.5,11.5, 11.5, 11.5, 11.5, 11.5, 11.5, 44, 11.5, 11.5, 11.5, 11.5, 32, 17, 11.5, 11.5, 11.5, 11.5, 19, 19, 19, 33, 11.5, 11.5, 11.5, 17, 11.5, 19];
-            $first_row     = ['订单号', '购买人编号','购买人昵称', '收货人姓名', '手机', '收货人省份', '收货人城市', '收货人地区', '收货地址', '邮编', '快递单号/取货人手机号', '运费', '订单金额', '商品名称', '规格', '单价', '数量', '优惠金额', '促销减免金额', '下单时间', '付款时间', '发货时间', '买家备注', '物流公司/取货人', '自提门店', '订单状态', '购买方式', '配送方式', '完成时间'];
-            $merge_columns = [[0, 12], [17, 28]];
+            $header        = ['string', 'string','string', 'string', 'string', 'string', 'string', 'string'];
+            $widths        = [30, 20,20, 30, 50, 30, 30, 20];
+            $first_row     = array('商品名称','类型','预约人名称','预约人电话','备注','开始时间','到期时间','订单状态');
+            $merge_columns = [];
         }
         $first_rows[] = $first_row;
 

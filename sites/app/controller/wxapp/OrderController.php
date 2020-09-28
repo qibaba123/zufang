@@ -1752,214 +1752,6 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
 
   
 
-    
-    public function excelOrderAction(){
-        $startDate      = $this->request->getStrParam('startDate');
-        $startTime      = $this->request->getStrParam('startTime');
-        $endDate        = $this->request->getStrParam('endDate');
-        $endTime        = $this->request->getStrParam('endTime');
-        $esId           = $this->request->getIntParam('esId');
-        $orderType      = $this->request->getIntParam('orderType', -1);
-        $groupType      = $this->request->getStrParam('groupType');
-        $addressOrder   = $this->request->getStrParam('addressOrder');
-        $goodsOrder     = $this->request->getStrParam('goodsOrder');
-        $storeOrder     = $this->request->getStrParam('storeOrder');
-        $mergeOrder     = $this->request->getStrParam('mergeOrder');
-        $entershop      = $this->request->getIntParam('entershop');
-        $cash           = $this->request->getStrParam('cash');
-        $orderStatus    = $this->request->getStrParam('orderStatus','all');
-        $postType       = $this->request->getIntParam('postType');
-        $ssMd           = $this->request->getIntParam('ssMd');
-        $communityId    = $this->request->getIntParam('communityId',0);
-        $goodstitle     = $this->request->getStrParam('goodstitle');
-        $_independent   = $this->request->getIntParam('independent',0); 
-        $excel_independent = $this->request->getIntParam('excel_independent',0);
-        $independent = $excel_independent ? $excel_independent : $_independent;
-        $start          = $startDate.' '.$startTime;
-        $end            = $endDate.' '.$endTime;
-        $startTime      = strtotime($start);
-        $endTime        = strtotime($end);
-        if(!$startTime || !$endTime)
-            $this->displayJsonError('日期格式错误，请检查后重试!');
-        $filename  =sprintf('orders_%s_%s_%s_%s.xlsx',$this->curr_sid,$startDate,$endDate,rand());
-        $where=[
-            ['name'=>'t_create_time','oper'=>'>=','value'=>$startTime],
-            ['name'=>'t_create_time','oper'=>'<','value'=>$endTime],
-            ['name'=>'t_independent_mall','oper'=>'=','value'=>$independent],
-            ['name'=>'t_s_id','oper'=>'=','value'=>$this->curr_sid]
-        ]; 
-
-        if($orderType != -1){
-            $where[]=['name'=>'t_applet_type','oper'=>'=','value'=>$orderType];
-        }
-        if($postType){
-            $where[]=['name'=>'t_express_method','oper'=>'=','value'=>$postType];
-        }
-        if($ssMd){
-            $where[]=['name'=>'t_store_id','oper'=>'=','value'=>$ssMd];
-        }
-        if($communityId){
-            $where[]=['name'=>'asc_id','oper'=>'=','value'=>$communityId];
-        }
-        if($esId){
-            $where[]=['name'=>'t_es_id','oper'=>'=','value'=>$esId];
-        }
-        if($entershop < 0){
-            $where[]=['name'=>'t_es_id','oper'=>'=','value'=>0];
-        }else if($entershop > 0){
-            $where[]=['name'=>'t_es_id','oper'=>'=','value'=>$entershop];
-        }
-        $group_link = App_Helper_Group::$group_trade_status;
-        $groupStatus = -1;
-        if($groupType && isset($group_link[$groupType]) && $group_link[$groupType]['id'] >= 0){
-            $groupStatus = $group_link[$groupType]['id'];
-        }
-        if($groupStatus >= 0) {
-            $where[]=['name'=>'go_status','oper'=>'=','value'=>$groupStatus];
-        }
-
-        if($cash == 'cash') {
-            $where[]=['name'=>'t_type','oper'=>'=','value'=>9];
-        }else {
-            $where[]=['name'=>'t_type','oper'=>'=','value'=>5];
-        }
-        if($goodstitle){
-            $title = str_replace(" ", "", $goodstitle);
-            $where[]=['name'=>'replace(t_title, " ", "")','oper'=>'like','value'=>"%{$title}%"];
-        }
-        $trade_link = App_Helper_Trade::$trade_link_status;
-        if($orderStatus && isset($trade_link[$orderStatus]) && $trade_link[$orderStatus]['id'] > 0){
-            $where[]=['name'=>'t_status','oper'=>'=','value'=>$trade_link[$orderStatus]['id']];
-        }else{
-            $where[]=['name'=>'t_status','oper'=>'>','value'=>0];
-        }
-        $sort = ['t_create_time' => 'DESC'];
-        if($addressOrder=='on'){
-            $sort = ['ma_province' => 'DESC', 'ma_city' => 'DESC' , 'ma_zone' => 'DESC', 'ma_detail' => 'DESC'];
-        }
-        if($storeOrder=='on'){
-            $sort = ['t_store_id' => 'DESC'];
-        }
-        $trade_order_model = new App_Model_Trade_MysqlTradeOrderStorage($this->curr_sid);
-   
-        $export_num=$trade_order_model->getCountWithTrade($where);
-        if($export_num > self::MAX_EXPORT_EXCEL_ROWS){
-            $this->displayJsonError('单次导出的（子）订单数量不得超过'.self::MAX_EXPORT_EXCEL_ROWS.'行');
-        }
-        $trade_model = new App_Model_Trade_MysqlTradeStorage($this->curr_sid);
-        $main_trade_list = $trade_model->getAddressListNew($where,0,0,$sort);
-
-        if(empty($main_trade_list))
-            $this->displayJsonError('当前时间段内没有订单!');
-
-        $tradePay   =  App_Helper_Trade::$trade_pay_type;
-        $groupType  =  plum_parse_config('group_type');
-        $statusNote =  plum_parse_config('trade_status');
-        $expressMethod =[
-            1 => '商家配送',
-            2 => '门店自取',
-            3 => '快递发货'
-        ];
-        $excel_data         =[];//导出到的excel的拼装数据数组
-        $merge_order_nums   =[];//相同单行的订单合并时的行数
-        foreach($main_trade_list as $key => $trade_value){
-            $gid_sales_nums[$trade_value['to_g_id']] += $trade_value['to_num'];
-            $gfid_sales_nums[$trade_value['to_g_id'].'-'.$trade_value['to_gf_id']] += $trade_value['to_num'];
-            $excel_data['t_tid']           = $trade_value['t_tid'];
-            if($this->wxapp_cfg['ac_type'] == 8)
-                $excel_data['es_name']         = $trade_value['es_name'];
-            $excel_data['t_buyer_nick']    = $this->utf8_orderstr_to_unicode($trade_value['t_buyer_nick']);
-            $excel_data['s_name']          = $trade_value['ma_name'];
-            $excel_data['s_phone']         = $trade_value['ma_phone'];
-            $excel_data['s_province']      = $trade_value['ma_province'];
-            if(in_array($trade_value['ma_province'],array('北京市','上海市','天津市','重庆市'))){
-              $city = $trade_value['ma_province'];
-            }else{
-              $city = $trade_value['ma_city'];
-            }
-            $excel_data['s_city']          = $city;
-            $excel_data['s_zone']          = $trade_value['ma_zone'];
-            $excel_data['s_detail']        = $excel_data['s_province'].$excel_data['s_city'].$excel_data['s_zone'].$trade_value['ma_detail'];
-            $excel_data['s_post']          = $trade_value['ma_post'];
-            $excel_data['o_exp_code']      = $trade_value['t_express_code'];
-            $excel_data['o_post_price']    = $trade_value['t_post_fee'];
-            $excel_data['o_total_price']   = $trade_value['t_payment'];
-            $excel_data['g_title']         = $trade_value['to_title'];
-            $excel_data['g_gg']            = $trade_value['to_gf_name'];
-            $excel_data['g_tp']            = $trade_value['to_price'];
-            $excel_data['g_num']           = $trade_value['to_num'];
-            $excel_data['o_discount_fee']  = $trade_value['t_discount_fee'];
-            $excel_data['o_promotion_fee'] = $trade_value['t_promotion_fee'];
-            $excel_data['o_createtime']    = $trade_value['t_create_time'] ? date('Y-m-d H:i:s',$trade_value['t_create_time']) : '';
-            $excel_data['o_paytime']       = $trade_value['t_pay_time'] ? date('Y-m-d H:i:s',$trade_value['t_pay_time']) : '';
-            $excel_data['o_sendtime']      = $trade_value['t_express_time'] ? date('Y-m-d H:i:s',$trade_value['t_express_time']) : '';
-            $excel_data['o_sale_note']     = $trade_value['t_note']?'备注: '.$trade_value['t_note'].';':'';
-            foreach (json_decode($trade_value['t_remark_extra'], true) as $item){
-                if($item['value']){
-                    $excel_data['o_sale_note'] .= $item['name'].':'.$item['value'].';';
-                }
-            }
-            $excel_data['o_exp_company']   = $trade_value['t_express_company'];
-            $excel_data['o_store_name']    = $trade_value['os_name'] ? $trade_value['os_name'] : '';
-            if($trade_value['t_status'] == 8){
-              $excel_data['o_status']      = '已退款';
-            }else{
-              $excel_data['o_status']      = $statusNote[$trade_value['t_status']];
-            }
-            $excel_data['o_paytype']       = $tradePay[$trade_value['t_pay_type']];
-            $excel_data['o_express_method']= $expressMethod[$trade_value['t_express_method']];//配送方式
-            $excel_data['o_finishtime']    = $trade_value['t_finish_time'] ? date('Y-m-d H:i:s',$trade_value['t_finish_time']) : '';
-            if($goodsOrder=='on'){
-                $excel_data['g_id']            = $trade_value['to_g_id'];
-                $excel_data['gf_id']           = $trade_value['to_gf_id'];
-            }
-            $this->deleteUsaelessFieldsWithAppletType($excel_data);
-            
-            $excel_rows[]                  = $excel_data;
-            if($mergeOrder=='on'){ 
-                $merge_order_nums[$trade_value['t_id']] += 1;
-            }
-
-
-        }
-
-
-        $plugin    = new App_Plugin_xlsxwriter_XLSXWriterPlugin($filename);
-        if($goodsOrder=='on'){
-            $gids = array_column($excel_rows,'g_id');
-            $gfids = array_column($excel_rows,'gf_id');
-            array_multisort($gids,SORT_DESC, $gfids,SORT_DESC, $excel_rows);
-            unset($gids);
-            unset($gfids);
-
-            $merge_gids =$merge_gfids=[];
-            foreach ($excel_rows as $key => $val){
-                $merge_gids[$val['g_id']] += 1;
-                $merge_gfids[$val['g_id'].'-'.$val['gf_id']] +=1;
-                $part1=array_splice($val,0,13);          
-                $part2=['goodsnums'=>$gid_sales_nums[$val['g_id']]];
-
-                $part3=array_splice($val,0,1);   
-                $part4=['formatnums'=>$gfid_sales_nums[$val['g_id'].'-'.$val['gf_id']]];
-                $part5=array_splice($val,0,(count($val)-1));
-                $excel_rows[$key]=array_merge($part1,$part2,$part3,$part4,$part5);
-
-                unset($excel_rows[$key]['g_id']);
-                unset($excel_rows[$key]['gf_id']);
-            }
-            $merge_gids  = array_values($merge_gids);
-            $merge_gfids = array_values($merge_gfids);
-
-            $url=$plugin->tradeExportWithGoodsSort($excel_rows,$merge_gids,$merge_gfids,$this->wxapp_cfg['ac_type']);
-            
-        }else{
-            $url=$plugin->tradeExport($excel_rows,$merge_order_nums,$this->wxapp_cfg['ac_type']);  
-        }
-        if($url)
-            $this->displayJsonSuccess(['url'=>substr($url, 1)]);
-        else
-            $this->displayJsonError('导出数据失败');
-    }
 
     
     private function deleteUsaelessFieldsWithAppletType(&$excel_data){
@@ -2180,6 +1972,214 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
     }
 
 
+    public function excelOrderAction(){
+        $startDate      = $this->request->getStrParam('startDate');
+        $startTime      = $this->request->getStrParam('startTime');
+        $endDate        = $this->request->getStrParam('endDate');
+        $endTime        = $this->request->getStrParam('endTime');
+        $esId           = $this->request->getIntParam('esId');
+        $orderType      = $this->request->getIntParam('orderType', -1);
+        $groupType      = $this->request->getStrParam('groupType');
+        $addressOrder   = $this->request->getStrParam('addressOrder');
+        $goodsOrder     = $this->request->getStrParam('goodsOrder');
+        $storeOrder     = $this->request->getStrParam('storeOrder');
+        $mergeOrder     = $this->request->getStrParam('mergeOrder');
+        $entershop      = $this->request->getIntParam('entershop');
+        $cash           = $this->request->getStrParam('cash');
+        $orderStatus    = $this->request->getStrParam('orderStatus','all');
+        $postType       = $this->request->getIntParam('postType');
+        $ssMd           = $this->request->getIntParam('ssMd');
+        $communityId    = $this->request->getIntParam('communityId',0);
+        $goodstitle     = $this->request->getStrParam('goodstitle');
+        $_independent   = $this->request->getIntParam('independent',0);
+        $excel_independent = $this->request->getIntParam('excel_independent',0);
+        $independent = $excel_independent ? $excel_independent : $_independent;
+        $start          = $startDate.' '.$startTime;
+        $end            = $endDate.' '.$endTime;
+        $startTime      = strtotime($start);
+        $endTime        = strtotime($end);
+        if(!$startTime || !$endTime)
+            $this->displayJsonError('日期格式错误，请检查后重试!');
+        $filename  =sprintf('orders_%s_%s_%s_%s.xlsx',$this->curr_sid,$startDate,$endDate,rand());
+        $where=[
+            ['name'=>'t_create_time','oper'=>'>=','value'=>$startTime],
+            ['name'=>'t_create_time','oper'=>'<','value'=>$endTime],
+            ['name'=>'t_independent_mall','oper'=>'=','value'=>$independent],
+            ['name'=>'t_s_id','oper'=>'=','value'=>$this->curr_sid]
+        ];
+
+        if($orderType != -1){
+            $where[]=['name'=>'t_applet_type','oper'=>'=','value'=>$orderType];
+        }
+        if($postType){
+            $where[]=['name'=>'t_express_method','oper'=>'=','value'=>$postType];
+        }
+        if($ssMd){
+            $where[]=['name'=>'t_store_id','oper'=>'=','value'=>$ssMd];
+        }
+        if($communityId){
+            $where[]=['name'=>'asc_id','oper'=>'=','value'=>$communityId];
+        }
+        if($esId){
+            $where[]=['name'=>'t_es_id','oper'=>'=','value'=>$esId];
+        }
+        if($entershop < 0){
+            $where[]=['name'=>'t_es_id','oper'=>'=','value'=>0];
+        }else if($entershop > 0){
+            $where[]=['name'=>'t_es_id','oper'=>'=','value'=>$entershop];
+        }
+        $group_link = App_Helper_Group::$group_trade_status;
+        $groupStatus = -1;
+        if($groupType && isset($group_link[$groupType]) && $group_link[$groupType]['id'] >= 0){
+            $groupStatus = $group_link[$groupType]['id'];
+        }
+        if($groupStatus >= 0) {
+            $where[]=['name'=>'go_status','oper'=>'=','value'=>$groupStatus];
+        }
+
+        if($cash == 'cash') {
+            $where[]=['name'=>'t_type','oper'=>'=','value'=>9];
+        }else {
+            $where[]=['name'=>'t_type','oper'=>'=','value'=>5];
+        }
+        if($goodstitle){
+            $title = str_replace(" ", "", $goodstitle);
+            $where[]=['name'=>'replace(t_title, " ", "")','oper'=>'like','value'=>"%{$title}%"];
+        }
+        $trade_link = App_Helper_Trade::$trade_link_status;
+        if($orderStatus && isset($trade_link[$orderStatus]) && $trade_link[$orderStatus]['id'] > 0){
+            $where[]=['name'=>'t_status','oper'=>'=','value'=>$trade_link[$orderStatus]['id']];
+        }else{
+            $where[]=['name'=>'t_status','oper'=>'>','value'=>0];
+        }
+        $sort = ['t_create_time' => 'DESC'];
+        if($addressOrder=='on'){
+            $sort = ['ma_province' => 'DESC', 'ma_city' => 'DESC' , 'ma_zone' => 'DESC', 'ma_detail' => 'DESC'];
+        }
+        if($storeOrder=='on'){
+            $sort = ['t_store_id' => 'DESC'];
+        }
+        $trade_order_model = new App_Model_Trade_MysqlTradeOrderStorage($this->curr_sid);
+
+        $export_num=$trade_order_model->getCountWithTrade($where);
+        if($export_num > self::MAX_EXPORT_EXCEL_ROWS){
+            $this->displayJsonError('单次导出的（子）订单数量不得超过'.self::MAX_EXPORT_EXCEL_ROWS.'行');
+        }
+        $trade_model = new App_Model_Trade_MysqlTradeStorage($this->curr_sid);
+        $main_trade_list = $trade_model->getAddressListNew($where,0,0,$sort);
+
+        if(empty($main_trade_list))
+            $this->displayJsonError('当前时间段内没有订单!');
+
+        $tradePay   =  App_Helper_Trade::$trade_pay_type;
+        $groupType  =  plum_parse_config('group_type');
+        $statusNote =  plum_parse_config('trade_status');
+        $expressMethod =[
+            1 => '商家配送',
+            2 => '门店自取',
+            3 => '快递发货'
+        ];
+        $excel_data         =[];//导出到的excel的拼装数据数组
+        $merge_order_nums   =[];//相同单行的订单合并时的行数
+        foreach($main_trade_list as $key => $trade_value){
+            $gid_sales_nums[$trade_value['to_g_id']] += $trade_value['to_num'];
+            $gfid_sales_nums[$trade_value['to_g_id'].'-'.$trade_value['to_gf_id']] += $trade_value['to_num'];
+            $excel_data['t_tid']           = $trade_value['t_tid'];
+            if($this->wxapp_cfg['ac_type'] == 8)
+                $excel_data['es_name']         = $trade_value['es_name'];
+            $excel_data['t_buyer_nick']    = $this->utf8_orderstr_to_unicode($trade_value['t_buyer_nick']);
+            $excel_data['s_name']          = $trade_value['ma_name'];
+            $excel_data['s_phone']         = $trade_value['ma_phone'];
+            $excel_data['s_province']      = $trade_value['ma_province'];
+            if(in_array($trade_value['ma_province'],array('北京市','上海市','天津市','重庆市'))){
+                $city = $trade_value['ma_province'];
+            }else{
+                $city = $trade_value['ma_city'];
+            }
+            $excel_data['s_city']          = $city;
+            $excel_data['s_zone']          = $trade_value['ma_zone'];
+            $excel_data['s_detail']        = $excel_data['s_province'].$excel_data['s_city'].$excel_data['s_zone'].$trade_value['ma_detail'];
+            $excel_data['s_post']          = $trade_value['ma_post'];
+            $excel_data['o_exp_code']      = $trade_value['t_express_code'];
+            $excel_data['o_post_price']    = $trade_value['t_post_fee'];
+            $excel_data['o_total_price']   = $trade_value['t_payment'];
+            $excel_data['g_title']         = $trade_value['to_title'];
+            $excel_data['g_gg']            = $trade_value['to_gf_name'];
+            $excel_data['g_tp']            = $trade_value['to_price'];
+            $excel_data['g_num']           = $trade_value['to_num'];
+            $excel_data['o_discount_fee']  = $trade_value['t_discount_fee'];
+            $excel_data['o_promotion_fee'] = $trade_value['t_promotion_fee'];
+            $excel_data['o_createtime']    = $trade_value['t_create_time'] ? date('Y-m-d H:i:s',$trade_value['t_create_time']) : '';
+            $excel_data['o_paytime']       = $trade_value['t_pay_time'] ? date('Y-m-d H:i:s',$trade_value['t_pay_time']) : '';
+            $excel_data['o_sendtime']      = $trade_value['t_express_time'] ? date('Y-m-d H:i:s',$trade_value['t_express_time']) : '';
+            $excel_data['o_sale_note']     = $trade_value['t_note']?'备注: '.$trade_value['t_note'].';':'';
+            foreach (json_decode($trade_value['t_remark_extra'], true) as $item){
+                if($item['value']){
+                    $excel_data['o_sale_note'] .= $item['name'].':'.$item['value'].';';
+                }
+            }
+            $excel_data['o_exp_company']   = $trade_value['t_express_company'];
+            $excel_data['o_store_name']    = $trade_value['os_name'] ? $trade_value['os_name'] : '';
+            if($trade_value['t_status'] == 8){
+                $excel_data['o_status']      = '已退款';
+            }else{
+                $excel_data['o_status']      = $statusNote[$trade_value['t_status']];
+            }
+            $excel_data['o_paytype']       = $tradePay[$trade_value['t_pay_type']];
+            $excel_data['o_express_method']= $expressMethod[$trade_value['t_express_method']];//配送方式
+            $excel_data['o_finishtime']    = $trade_value['t_finish_time'] ? date('Y-m-d H:i:s',$trade_value['t_finish_time']) : '';
+            if($goodsOrder=='on'){
+                $excel_data['g_id']            = $trade_value['to_g_id'];
+                $excel_data['gf_id']           = $trade_value['to_gf_id'];
+            }
+            $this->deleteUsaelessFieldsWithAppletType($excel_data);
+
+            $excel_rows[]                  = $excel_data;
+            if($mergeOrder=='on'){
+                $merge_order_nums[$trade_value['t_id']] += 1;
+            }
+
+
+        }
+
+
+        $plugin    = new App_Plugin_xlsxwriter_XLSXWriterPlugin($filename);
+        if($goodsOrder=='on'){
+            $gids = array_column($excel_rows,'g_id');
+            $gfids = array_column($excel_rows,'gf_id');
+            array_multisort($gids,SORT_DESC, $gfids,SORT_DESC, $excel_rows);
+            unset($gids);
+            unset($gfids);
+
+            $merge_gids =$merge_gfids=[];
+            foreach ($excel_rows as $key => $val){
+                $merge_gids[$val['g_id']] += 1;
+                $merge_gfids[$val['g_id'].'-'.$val['gf_id']] +=1;
+                $part1=array_splice($val,0,13);
+                $part2=['goodsnums'=>$gid_sales_nums[$val['g_id']]];
+
+                $part3=array_splice($val,0,1);
+                $part4=['formatnums'=>$gfid_sales_nums[$val['g_id'].'-'.$val['gf_id']]];
+                $part5=array_splice($val,0,(count($val)-1));
+                $excel_rows[$key]=array_merge($part1,$part2,$part3,$part4,$part5);
+
+                unset($excel_rows[$key]['g_id']);
+                unset($excel_rows[$key]['gf_id']);
+            }
+            $merge_gids  = array_values($merge_gids);
+            $merge_gfids = array_values($merge_gfids);
+
+            $url=$plugin->tradeExportWithGoodsSort($excel_rows,$merge_gids,$merge_gfids,$this->wxapp_cfg['ac_type']);
+
+        }else{
+            $url=$plugin->tradeExport($excel_rows,$merge_order_nums,$this->wxapp_cfg['ac_type']);
+        }
+        if($url)
+            $this->displayJsonSuccess(['url'=>substr($url, 1)]);
+        else
+            $this->displayJsonError('导出数据失败');
+    }
+
     
     public function excelOrderNewAction(){
         $startDate  = $this->request->getStrParam('startDate');
@@ -2262,6 +2262,10 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
                 }
                 $excel = new App_Plugin_PHPExcel_PHPExcelPlugin();
                 $excel->down_common_excel($rows,'付费订单导出.xls',$width);
+                $plugin    = new App_Plugin_xlsxwriter_XLSXWriterPlugin($filename);
+                $merge_gids =$merge_gfids=[];
+                $merge_order_nums   =[];//相同单行的订单合并时的行数
+                $url=$plugin->tradeExport($rows,$merge_order_nums,$this->wxapp_cfg['ac_type']);
             }else{
                 plum_url_location('当前时间段内没有订单!');
             }
