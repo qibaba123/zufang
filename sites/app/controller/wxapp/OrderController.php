@@ -2237,7 +2237,6 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
                 );
                 //数据处理
                 $rows    = array();
-                $rows[]  = array('商品名称','类型','预约人名称','预约人电话','备注','开始时间','到期时间','订单状态');
                 $width   = array(
                     'A' => 30,
                     'B' => 20,
