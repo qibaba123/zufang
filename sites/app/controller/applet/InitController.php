@@ -638,11 +638,7 @@ class App_Controller_Applet_InitController extends Libs_Mvc_Controller_ApiBaseCo
                 $this->uid = $uid;
 
                 plum_app_user_login($uid);
-<<<<<<< HEAD
-                Libs_Log_Logger::outputLog(session_id(),'init.log');
-=======
                // Libs_Log_Logger::outputLog(session_id(),'init.log');
->>>>>>> 6db60f748afce65995032685bad60c387f2d599d
             }else{
                 $this->outputError('获取用户信息失败.');
             }

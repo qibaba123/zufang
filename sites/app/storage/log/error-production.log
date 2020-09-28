@@ -54,3 +54,7 @@
 [2020/09/28 21:20:05] Array: {"errortime":"2020-09-28 21:20:05", "errornum":4, "errortype":"语法解析错误", "errormsg":"syntax error, unexpected \u0027\u003C\u003C\u0027 (T_SL)", "errorfile":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "errorline":641}
 [2020/09/28 21:20:08] Array: {"file":"/www/wwwroot/default/zufang/libs/log/Error.php", "line":141}
 [2020/09/28 21:20:08] Array: {"errortime":"2020-09-28 21:20:08", "errornum":4, "errortype":"语法解析错误", "errormsg":"syntax error, unexpected \u0027\u003C\u003C\u0027 (T_SL)", "errorfile":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "errorline":641}
+[2020/09/28 21:21:54] Array: {"file":"/www/wwwroot/default/zufang/libs/log/Error.php", "line":141}
+[2020/09/28 21:21:54] Array: {"errortime":"2020-09-28 21:21:54", "errornum":4, "errortype":"语法解析错误", "errormsg":"syntax error, unexpected \u0027\u003C\u003C\u0027 (T_SL)", "errorfile":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "errorline":641}
+[2020/09/28 21:21:57] Array: {"file":"/www/wwwroot/default/zufang/libs/log/Error.php", "line":141}
+[2020/09/28 21:21:57] Array: {"errortime":"2020-09-28 21:21:57", "errornum":4, "errortype":"语法解析错误", "errormsg":"syntax error, unexpected \u0027\u003C\u003C\u0027 (T_SL)", "errorfile":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "errorline":641}
