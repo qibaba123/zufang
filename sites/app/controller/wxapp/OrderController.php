@@ -2260,9 +2260,9 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
                         $statusNote[$val['rt_status']],
                     );
                 }
-                $excel = new App_Plugin_PHPExcel_PHPExcelPlugin();
-                $excel->down_common_excel($rows,'付费订单导出.xls',$width);
-                $plugin    = new App_Plugin_xlsxwriter_XLSXWriterPlugin($filename);
+//                $excel = new App_Plugin_PHPExcel_PHPExcelPlugin();
+//                $excel->down_common_excel($rows,'付费订单导出.xls',$width);
+                $plugin    = new App_Plugin_xlsxwriter_XLSXWriterPlugin('付费订单导出.xls');
                 $merge_gids =$merge_gfids=[];
                 $merge_order_nums   =[];//相同单行的订单合并时的行数
                 $url=$plugin->tradeExport($rows,$merge_order_nums,$this->wxapp_cfg['ac_type']);
