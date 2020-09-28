@@ -51,7 +51,7 @@ class App_Plugin_xlsxwriter_XLSXWriterPlugin
      * @param  int    $applet_type      [小程序类型，默认通用，8为多店]
      * @return [type]                   [description]
      */
-    public function tradeExport($rows, $merge_order_nums, $applet_type = 0)
+    public function tradeExport($rows, $merge_order_nums, $applet_type = 0,$order_type = 0)
     {
         $this->applet_type = $applet_type;
         // 多店类型
@@ -70,12 +70,22 @@ class App_Plugin_xlsxwriter_XLSXWriterPlugin
             $first_row     = ['订单号', '购买人昵称', '订单金额', '商品名称', '单价', '数量', '优惠金额', '促销减免金额', '下单时间', '付款时间', '买家备注', '订单状态', '购买方式', '配送方式', '完成时间'];
             $merge_columns = [];
         } else {
-            $header_first = array_pad([], 29, 'string');
+            if($order_type == 1){
+                $header_first = array_pad([], 29, 'string');
 
-            $header        = ['string', 'string','string', 'string', 'string', 'string', 'string', 'string'];
-            $widths        = [30, 20,20, 30, 50, 30, 30, 20];
-            $first_row     = array('商品名称','类型','预约人名称','预约人电话','备注','开始时间','到期时间','订单状态');
-            $merge_columns = [];
+                $header        = ['string', 'string','string', 'string', 'string', 'string', 'string', 'string'];
+                $widths        = [20, 30,20, 30, 50, 30, 30];
+                $first_row     = array('类型','企业/文章','预约人名称','预约人电话','预约地区','预约公司','预约时间');
+                $merge_columns = [];
+            }else{
+                $header_first = array_pad([], 29, 'string');
+
+                $header        = ['string', 'string','string', 'string', 'string', 'string', 'string', 'string'];
+                $widths        = [30, 20,20, 30, 50, 30, 30, 20];
+                $first_row     = array('商品名称','类型','预约人名称','预约人电话','备注','开始时间','到期时间','订单状态');
+                $merge_columns = [];
+            }
+
         }
         $first_rows[] = $first_row;
 

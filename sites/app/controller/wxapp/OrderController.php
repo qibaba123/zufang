@@ -2279,4 +2279,82 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
         }
     }
 
+    public function excelFormOrderAction(){
+        $startDate  = $this->request->getStrParam('startDate');
+        $startTime  = $this->request->getStrParam('startTime');
+        $endDate    = $this->request->getStrParam('endDate');
+        $endTime    = $this->request->getStrParam('endTime');
+
+
+
+
+
+        if($startDate && $startTime && $endDate && $endTime){
+            $start = $startDate.' '.$startTime;
+            $end = $endDate.' '.$endTime;
+            $startTime  = strtotime($start);
+            $endTime    = strtotime($end);
+            $where      = array();
+            $where[]    = array('name'=>'ft_create_time','oper'=>'>=','value'=>$startTime);
+            $where[]    = array('name'=>'ft_create_time','oper'=>'<','value'=>$endTime);
+
+            $orderType   = $this->request->getIntParam('orderType');
+            $sort       = array('ft_create_time' => 'DESC');
+            if($orderType){
+                $where[]    = array('name'=>'ft_type','oper'=>'=','value'=>$orderType);
+            }
+            $trade_model = new App_Model_Trade_MysqlFormTradeStorage();
+            $list = $trade_model->getList($where,0,0,$sort);
+
+
+            if(!empty($list)){
+                $type = array(
+                    1 => '企业服务',
+                    2 => '学习园地',
+                    3 => '关于我们',
+                    4 => '资讯文章'
+                );
+                //数据处理
+                $rows    = array();
+                $service_model       = new App_Model_Service_MysqlEnterpriseServiceStorage();
+                $information_storage = new App_Model_Applet_MysqlAppletInformationStorage();
+                foreach($list as $key => $val){
+                    $name = '';
+                    if($val['ft_type'] == 1){
+                        $row = $service_model->getRowById($val['ft_ser_id']);
+                        $name = $row['es_name'];
+                    }elseif($val['ft_type'] == 4){
+                        $row = $information_storage->getRowById($val['ft_ser_id']);
+                        $name = $row['ai_title'];
+                    }
+                    $rows[] = array(
+                        $type[$val['ft_type']],
+                        $name,
+                        $val['ft_m_name'],
+                        $val['ft_m_mobile'],
+                        $val['ft_pro_name'].'-'.$val['ft_city_name'].'-'.$val['ft_area_name'],
+                        $val['ft_c_name'],
+                        $val['ft_start_time'] > 0 ? date('Y-m-d', $val['rt_start_time']) : '无',
+                    );
+                }
+//                $excel = new App_Plugin_PHPExcel_PHPExcelPlugin();
+//                $excel->down_common_excel($rows,'付费订单导出.xls',$width);
+                $plugin    = new App_Plugin_xlsxwriter_XLSXWriterPlugin('预约订单导出.xls');
+                $merge_gids =$merge_gfids=[];
+                $merge_order_nums   =[];//相同单行的订单合并时的行数
+                $url=$plugin->tradeExport($rows,$merge_order_nums,$this->wxapp_cfg['ac_type'],1);
+                if($url){
+                    $this->displayJsonSuccess(['url'=>substr($url, 1)]);
+                }else{
+                    $this->displayJsonError('导出数据失败');
+                }
+
+            }else{
+                plum_url_location('当前时间段内没有订单!');
+            }
+        }else{
+            plum_url_location('日期请填写完整!');
+        }
+    }
+
 }

@@ -18,6 +18,9 @@
 <script src="/public/plugin/datePicker/WdatePicker.js"></script>
 
 <div id="content-con" class="content-con">
+    <div>
+        <a href="javascript:;" class="btn btn-green btn-xs btn-excel" ><i class="icon-download"></i>订单导出</a>
+    </div>
     <div class="search-part-wrap">
         <form action="/wxapp/zftrade/formTradeList" method="get" class="form-inline">
             <div class="search-input-item">
@@ -41,6 +44,21 @@
                     <div class="input-item-addon">公司名称</div>
                     <div class="input-form">
                         <input type="text" style="width: 150px;" class="form-control" name="c_name" id="c_name" value="<{$c_name}>" placeholder="公司名称">
+                    </div>
+                </div>
+            </div>
+            <div class="search-input-item">
+                <div class="input-item-group">
+                    <div class="input-item-addon">预约类型</div>
+                    <div class="input-form">
+                        <div class="col-sm-8" style="width:30%;">
+                            <select class="form-control" name="order_type" id="order_type" >
+                                <option value="0">全部</option>
+                                <{foreach $type as $key=>$val}>
+                                  <option value="<{$key}>" <{if $order_type == $key}>selected<{/if}>><{$val}></option>
+                                <{/foreach}>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -125,7 +143,62 @@
         </div>
     </div>
 </div>
-
+<div class="modal fade" id="excelOrder" tabindex="-1" role="dialog" style="display: none;" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 700px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="excelOrderLabel">
+                    导出订单
+                </h4>
+            </div>
+            <div class="modal-body" style="overflow: auto;text-align: center;margin-bottom: 45px">
+                <div class="modal-plan p_num clearfix shouhuo">
+                    <form id='trade-export-form' enctype="multipart/form-data" action="/wxapp/order/excelFormOrder" method="post" onsubmit="return false">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">订单类型</label>
+                            <div class="col-sm-4">
+                                <select id="orderType" name="orderType" class="form-control">
+                                    <option value="0">全部</option>
+                                    <{foreach $type as $key=>$val}>
+                                    <option value="<{$key}>"><{$val}></option>
+                                    <{/foreach}>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">开始日期</label>
+                            <div class="col-sm-4">
+                                <input class="form-control date-picker" type="text" id="startDate" data-date-format="yyyy-mm-dd" name="startDate" placeholder="请输入开始日期" autocomplete='off'/>
+                            </div>
+                            <label class="col-sm-2 control-label">开始时间</label>
+                            <div class="col-sm-4 bootstrap-timepicker">
+                                <input class="form-control" type="text" id="timepicker1" name="startTime" placeholder="请输入开始时间"/>
+                            </div>
+                        </div>
+                        <div class="space"></div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">结束日期</label>
+                            <div class="col-sm-4">
+                                <input class="form-control date-picker" type="text" id="endDate" data-date-format="yyyy-mm-dd" name="endDate" placeholder="请输入结束日期"  autocomplete='off' />
+                            </div>
+                            <label class="col-sm-2 control-label">结束时间</label>
+                            <div class="col-sm-4 bootstrap-timepicker">
+                                <input class="form-control" type="text" id="timepicker2" name="endTime" placeholder="请输入结束时间"/>
+                            </div>
+                        </div>
+                        <div class="space" style="margin-bottom: 70px;"></div>
+                        <button type="button" class="btn btn-normal" data-dismiss="modal" style="margin-right: 30px">取消</button>
+                        <button id='trade-export' type="submit" class="btn btn-primary" role="button">导出</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript" src="/public/manage/searchable/jquery.searchableSelect.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/bootbox.min.js"></script>
@@ -135,6 +208,37 @@
 <script src="/public/plugin/ZeroClip/clipboard.min.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
+    //订单导出按钮
+    $('.btn-excel').on('click',function(){
+        $('#excelOrder').modal('show');
+    });
+
+    $('#trade-export').click(function(){
+        var index = layer.load(10, {
+            shade: [0.6,'#666']
+        });
+        $.ajax({
+            type:'POST',
+            url:'/wxapp/order/excelFormOrder',
+            dataType:'json',
+            data:$('#trade-export-form').serialize(),
+            success:function(res){
+                if(res.ec==200){
+                    // window.open('http://'+location.hostname+res.data.url);
+                    window.location.href=res.data.url;
+                }else{
+                    layer.msg(res.em);
+                }
+                layer.close(index);
+            },
+            error:function(){
+                layer.msg('数据导出失败，请稍后再试或减少单次的导出量！');
+            },
+            complete:function(){
+                layer.close(index);
+            }
+        })
+    });
 
 
     $('#pro').change(function(){

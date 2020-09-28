@@ -88,6 +88,7 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
    //预约表单订单
     public function formTradeListAction(){
         $page    = $this->request->getIntParam('page');
+        $order_type    = $this->request->getIntParam('order_type');
         $pro     = $this->request->getIntParam('pro');
         $city    = $this->request->getIntParam('city');
         $area    = $this->request->getIntParam('area');
@@ -99,6 +100,10 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
         $address_model = new App_Model_Address_MysqlAddressCoreStorage();
         $this->output['pro'] = $address_model->get_province();
         $where = array();
+        if($order_type){
+            $where[] = array('name'=>"ft_type",'oper'=>"=",'value'=>$order_type);
+            $this->output['order_type'] = $order_type;
+        }
         if($c_name){
             $where[] = array('name'=>"ft_c_name",'oper'=>"like",'value'=>'%'.$c_name.'%');
             $this->output['c_name'] = $c_name;
@@ -149,7 +154,8 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
         $type = array(
             1 => '企业服务',
             2 => '学习园地',
-            3 => '关于我们'
+            3 => '关于我们',
+            4 => '资讯文章'
         );
         $this->output['type'] = $type;
         $this->buildBreadcrumbs(array(
