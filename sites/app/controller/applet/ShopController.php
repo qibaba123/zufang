@@ -51,7 +51,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         }
         //首页文章
         $information_model = new App_Model_Applet_MysqlAppletInformationStorage();
-        $information       = $information_model->getList(array(),0,2,array('ai_sort'=>'DESC'));
+        $information       = $information_model->getList(array(),0,5,array('ai_sort'=>'DESC'));
         foreach ($information as $val){
             $data['information'][] = array(
                 'id' => $val['ai_id'],
