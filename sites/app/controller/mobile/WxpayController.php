@@ -428,12 +428,12 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
         if (!$trade) {
             $this->_respond_weixin_notify(false, '订单不存在，或已支付');
         }
-        Libs_Log_Logger::outputLog($ret['end_time'],'trade.log');
-
+        $attach         = json_decode($ret['attach'], true);
+        Libs_Log_Logger::outputLog($attach,'trade.log');
         $update = array(
-            'rt_fee' => $trade['rt_fee'] + $ret['attach']['amount'],
-            'rt_time_num' => $trade['rt_time_num'] + $ret['attach']['time_num'],
-            'rt_end_time' => $ret['end_time'],
+            'rt_fee' => $trade['rt_fee'] + $attach['amount'],
+            'rt_time_num' => $trade['rt_time_num'] + $attach['time_num'],
+            'rt_end_time' => $attach['end_time'],
             'rt_pay_time' => time()
         );
         $trade_model->findUpdateTradeByTid($trade['rt_tid'],$update);
@@ -621,9 +621,9 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
         }
         $attach         = json_decode($ret['attach'], true);
 
-        if($attach['end_time']){
-            $ret['ent_time'] = $attach['end_time'];
-        }
+//        if($attach['end_time']){
+//            $ret['ent_time'] = $attach['end_time'];
+//        }
         $shop_storage   = new App_Model_Shop_MysqlShopCoreStorage();
         $shop           = $shop_storage->findShopByUniqid($attach['suid']);
         if (!$shop) {
