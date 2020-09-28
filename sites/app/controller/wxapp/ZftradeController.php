@@ -83,6 +83,8 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
         $total         = $trade_model->statOrderStatus($total_where);
         $this->output['today'] = $today;
         $this->output['total'] = $total;
+        var_dump($today);
+        var_dump($total);exit;
         $this->buildBreadcrumbs(array(
             array('title' => '订单列表', 'link' => '#'),
         ));
