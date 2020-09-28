@@ -2334,7 +2334,7 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
                         $val['ft_m_mobile'],
                         $val['ft_pro_name'].'-'.$val['ft_city_name'].'-'.$val['ft_area_name'],
                         $val['ft_c_name'],
-                        $val['ft_start_time'] > 0 ? date('Y-m-d', $val['rt_start_time']) : '无',
+                        $val['ft_create_time'] > 0 ? date('Y-m-d', $val['ft_create_time']) : '无',
                     );
                 }
 //                $excel = new App_Plugin_PHPExcel_PHPExcelPlugin();
