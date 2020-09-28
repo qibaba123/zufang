@@ -16,7 +16,7 @@ class App_Model_Trade_MysqlReserveTradeStorage extends Libs_Mvc_Model_BaseModel{
         $sql  = 'SELECT count(*) total,sum(rt_fee) money ';
         $sql .= ' FROM '.DB::table($this->_table);
         $sql .= $this->formatWhereSql($where);
-        $ret = DB::result_first($sql);
+        $ret = DB::fetch_first($sql);
         if ($ret === false) {
             trigger_error("query mysql failed.", E_USER_ERROR);
             return false;
