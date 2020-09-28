@@ -194,7 +194,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for=""  class="green">封面</label>
+                                                            <label for=""  class="green">封面(750 * 400)</label>
                                                             <div class="control-group">
 
                                                                 <img onclick="toUpload(this)" data-limit="1" data-width="750" data-height="400" data-dom-id="upload-cover" id="upload-cover"  src="<{if $row && $row['es_cover']}><{$row['es_cover']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
@@ -202,7 +202,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <h3 class="lighter block green">图片</h3>
+                                                            <h3 class="lighter block green">图片(750 * 400)</h3>
                                                             <div id="slide-img" class="pic-box" style="display:inline-block">
                                                                 <{foreach $slide as $key=>$val}>
                                                                 <p>
