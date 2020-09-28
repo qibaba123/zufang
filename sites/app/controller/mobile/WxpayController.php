@@ -428,6 +428,7 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
         if (!$trade) {
             $this->_respond_weixin_notify(false, '订单不存在，或已支付');
         }
+        Libs_Log_Logger::outputLog($ret['attach']['end_time'],'trade.log');
 
         $update = array(
             'rt_fee' => $trade['rt_fee'] + $ret['attach']['amount'],
@@ -479,7 +480,7 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
             $update = array(
                 'm_is_vip' => 1,
                 'm_vip_start_time' => time(),
-                'm_vip_emd_time'   => mktime(date('H',time()),date('i',time()),date('s',time()),date('m',time()),date('Y',time()),date('d',time()))
+                'm_vip_end_time'   => mktime(date('H',time()),date('i',time()),date('s',time()),date('m',time()),date('Y',time()),date('d',time()))
             );
             $member_model = new App_Model_Member_MysqlMemberCoreStorage();
             $member_model->updateById($update,$this->member['m_id']);
