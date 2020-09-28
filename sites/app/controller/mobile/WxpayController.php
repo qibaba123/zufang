@@ -429,7 +429,7 @@ class App_Controller_Mobile_WxpayController extends Libs_Mvc_Controller_FrontBas
             $this->_respond_weixin_notify(false, '订单不存在，或已支付');
         }
         $attach         = json_decode($ret['attach'], true);
-        Libs_Log_Logger::outputLog($attach,'trade.log');
+       // Libs_Log_Logger::outputLog($attach,'trade.log');
         $update = array(
             'rt_fee' => $trade['rt_fee'] + $attach['amount'],
             'rt_time_num' => $trade['rt_time_num'] + $attach['time_num'],
