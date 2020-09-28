@@ -521,7 +521,7 @@
 					</div>
 					<div class="modal-body" style="overflow: auto;text-align: center;margin-bottom: 45px">
 						<div class="modal-plan p_num clearfix shouhuo">
-							<form action="/wxapp/Task/excelOrderNew" method="get" class="form-inline">
+							<form id='trade-export-form' enctype="multipart/form-data" action="/wxapp/order/excelOrderNew" method="post" onsubmit="return false">
 								<div class="form-group">
 									<label class="col-sm-2 control-label">订单状态</label>
 									<div class="col-sm-4">
@@ -575,7 +575,7 @@
 								</div>
 								<div class="space" style="margin-bottom: 70px;"></div>
 								<button type="button" class="btn btn-normal" data-dismiss="modal" style="margin-right: 30px">取消</button>
-								<button type="submit" class="btn btn-primary" role="button">导出</button>
+								<button id='trade-export' type="submit" class="btn btn-primary" role="button">导出</button>
 							</form>
 						</div>
 					</div>
@@ -596,6 +596,32 @@
 		// 订单导出
 		// zhangzc
 		// 2019-11-11
+	    $('#trade-export').click(function(){
+	    	var index = layer.load(10, {
+                shade: [0.6,'#666']
+            });
+	    	$.ajax({
+	    		type:'POST',
+	    		url:'/wxapp/order/excelOrderNew',
+	    		dataType:'json',
+	    		data:$('#trade-export-form').serialize(),
+	    		success:function(res){
+	    			if(res.ec==200){
+	    				// window.open('http://'+location.hostname+res.data.url);
+	    				window.location.href=res.data.url;
+	    			}else{
+	    				layer.msg(res.em);
+	    			}
+	    			layer.close(index);
+	    		},
+	    		error:function(){
+					layer.msg('数据导出失败，请稍后再试或减少单次的导出量！');
+	    		},
+	    		complete:function(){
+	    			layer.close(index);
+	    		}
+	    	})
+	    });
 
 
         /*初始化日期选择器*/
