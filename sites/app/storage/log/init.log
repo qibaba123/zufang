@@ -1,276 +1,176 @@
-[2020/09/27 16:33:09] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:33:09] Number: 10
-[2020/09/27 16:33:13] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:33:13] Number: 10
-[2020/09/27 16:33:18] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:33:18] Number: 10
-[2020/09/27 16:33:48] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:33:48] Number: 10
-[2020/09/27 16:33:48] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:33:48] Number: 10
-[2020/09/27 16:33:49] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:33:49] Number: 10
-[2020/09/27 16:33:49] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:33:49] Number: 10
-[2020/09/27 16:33:53] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:33:53] Number: 10
-[2020/09/27 16:34:01] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:34:01] Number: 10
-[2020/09/27 16:34:01] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:34:01] Number: 10
-[2020/09/27 16:34:16] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:34:16] Number: 4
-[2020/09/27 16:34:18] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:34:18] Number: 4
-[2020/09/27 16:34:28] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 16:34:28] Number: 14110
-[2020/09/27 16:34:28] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 16:34:28] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601195469", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 16:34:32] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 16:34:32] Number: 14110
-[2020/09/27 16:34:32] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 16:34:32] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601195668", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 16:34:34] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 16:34:34] Number: 14110
-[2020/09/27 16:34:34] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 16:34:34] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601195672", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 16:34:34] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 16:34:34] Number: 14110
-[2020/09/27 16:34:34] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 16:34:34] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601195674", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 16:34:51] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:34:51] Number: 10
-[2020/09/27 16:35:02] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:35:02] Number: 10
-[2020/09/27 16:35:07] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:35:07] Number: 10
-[2020/09/27 16:35:07] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/ServiceController.php", "line":80}
-[2020/09/27 16:35:07] Number: 111
-[2020/09/27 16:35:08] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:35:08] Number: 10
-[2020/09/27 16:35:13] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:35:13] Number: 10
-[2020/09/27 16:35:54] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:35:54] Number: 10
-[2020/09/27 16:35:55] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:35:55] Number: 10
-[2020/09/27 16:35:57] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:35:57] Number: 10
-[2020/09/27 16:36:40] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:36:40] Number: 4
-[2020/09/27 16:36:42] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:36:42] Number: 4
-[2020/09/27 16:36:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:36:43] Number: 4
-[2020/09/27 16:36:44] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:36:44] Number: 4
-[2020/09/27 16:36:46] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:36:46] Number: 4
-[2020/09/27 16:36:55] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:36:55] Number: 4
-[2020/09/27 16:37:06] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:06] Number: 10
-[2020/09/27 16:37:07] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:07] Number: 10
-[2020/09/27 16:37:11] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:11] Number: 10
-[2020/09/27 16:37:27] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:27] Number: 10
-[2020/09/27 16:37:29] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:29] Number: 4
-[2020/09/27 16:37:36] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:36] Number: 10
-[2020/09/27 16:37:40] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:40] Number: 4
-[2020/09/27 16:37:40] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:40] Number: 4
-[2020/09/27 16:37:41] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:41] Number: 4
-[2020/09/27 16:37:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:43] Number: 4
-[2020/09/27 16:37:44] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:44] Number: 4
-[2020/09/27 16:37:44] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:37:44] Number: 4
-[2020/09/27 16:37:57] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 16:37:57] Number: 14110
-[2020/09/27 16:37:57] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 16:37:57] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601195674", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 16:37:57] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 16:37:57] Number: 14110
-[2020/09/27 16:37:57] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 16:37:57] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601195877", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 16:38:06] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:38:06] Number: 0
-[2020/09/27 16:38:10] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:38:10] Number: 4
-[2020/09/27 16:38:11] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:38:11] Number: 4
-[2020/09/27 16:38:11] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:38:11] Number: 4
-[2020/09/27 16:38:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 16:38:17] Number: 14110
-[2020/09/27 16:38:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 16:38:17] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601195877", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 16:38:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 16:38:17] Number: 14110
-[2020/09/27 16:38:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 16:38:17] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601195897", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 16:38:34] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:38:34] Number: 4
-[2020/09/27 16:38:36] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:38:36] Number: 4
-[2020/09/27 16:38:36] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:38:36] Number: 4
-[2020/09/27 16:38:37] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:38:37] Number: 4
-[2020/09/27 16:39:39] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:39:39] Number: 4
-[2020/09/27 16:40:29] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:40:29] Number: 4
-[2020/09/27 16:40:32] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:40:32] Number: 4
-[2020/09/27 16:40:47] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:40:47] Number: 4
-[2020/09/27 16:40:47] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/ServiceController.php", "line":80}
-[2020/09/27 16:40:47] Number: 111
-[2020/09/27 16:40:53] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:40:53] Number: 0
-[2020/09/27 16:40:55] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:40:55] Number: 0
-[2020/09/27 16:40:56] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:40:56] Number: 0
-[2020/09/27 16:41:09] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:41:09] Number: 0
-[2020/09/27 16:41:12] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:41:12] Number: 4
-[2020/09/27 16:41:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:41:17] Number: 4
-[2020/09/27 16:41:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/ServiceController.php", "line":80}
-[2020/09/27 16:41:17] Number: 111
-[2020/09/27 16:41:53] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:41:53] Number: 9
-[2020/09/27 16:41:55] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:41:55] Number: 9
-[2020/09/27 16:42:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:42:17] Number: 0
-[2020/09/27 16:42:26] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:42:26] Number: 9
-[2020/09/27 16:42:26] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:42:26] Number: 9
-[2020/09/27 16:43:14] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:43:14] Number: 9
-[2020/09/27 16:43:29] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:43:29] Number: 9
-[2020/09/27 16:43:30] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:43:30] Number: 9
-[2020/09/27 16:43:59] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:43:59] Number: 10
-[2020/09/27 16:44:00] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:00] Number: 10
-[2020/09/27 16:44:00] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:00] Number: 10
-[2020/09/27 16:44:03] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:03] Number: 10
-[2020/09/27 16:44:04] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:04] Number: 10
-[2020/09/27 16:44:05] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:05] Number: 10
-[2020/09/27 16:44:06] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:06] Number: 0
-[2020/09/27 16:44:08] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:08] Number: 4
-[2020/09/27 16:44:08] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/ServiceController.php", "line":80}
-[2020/09/27 16:44:08] Number: 111
-[2020/09/27 16:44:08] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:08] Number: 9
-[2020/09/27 16:44:10] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:10] Number: 10
-[2020/09/27 16:44:10] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:10] Number: 9
-[2020/09/27 16:44:10] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:10] Number: 4
-[2020/09/27 16:44:10] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/ServiceController.php", "line":80}
-[2020/09/27 16:44:10] Number: 111
-[2020/09/27 16:44:11] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:11] Number: 9
-[2020/09/27 16:44:11] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:11] Number: 9
-[2020/09/27 16:44:14] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:14] Number: 6
-[2020/09/27 16:44:15] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:15] Number: 10
-[2020/09/27 16:44:15] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:15] Number: 9
-[2020/09/27 16:44:16] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:16] Number: 6
-[2020/09/27 16:44:16] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:16] Number: 6
-[2020/09/27 16:44:16] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:16] Number: 9
-[2020/09/27 16:44:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:17] Number: 9
-[2020/09/27 16:44:18] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:18] Number: 6
-[2020/09/27 16:44:18] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:18] Number: 10
-[2020/09/27 16:44:20] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:20] Number: 9
-[2020/09/27 16:44:21] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:21] Number: 9
-[2020/09/27 16:44:24] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:24] Number: 9
-[2020/09/27 16:44:31] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:31] Number: 6
-[2020/09/27 16:44:34] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:34] Number: 6
-[2020/09/27 16:44:36] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:36] Number: 6
-[2020/09/27 16:44:38] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:38] Number: 6
-[2020/09/27 16:44:39] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:39] Number: 6
-[2020/09/27 16:44:42] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:44:42] Number: 6
-[2020/09/27 16:44:42] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/ServiceController.php", "line":80}
-[2020/09/27 16:44:42] Number: 111
-[2020/09/27 16:45:48] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:45:48] Number: 6
-[2020/09/27 16:45:52] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:45:52] Number: 6
-[2020/09/27 16:46:04] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:46:04] Number: 6
-[2020/09/27 16:46:06] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:46:06] Number: 6
-[2020/09/27 16:52:16] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:52:16] Number: 10
-[2020/09/27 16:52:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:52:17] Number: 10
-[2020/09/27 16:52:20] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:52:20] Number: 10
-[2020/09/27 16:52:32] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:52:32] Number: 10
-[2020/09/27 16:52:41] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:52:41] Number: 10
-[2020/09/27 16:52:41] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:52:41] Number: 10
-[2020/09/27 16:54:32] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 16:54:32] Number: 14110
-[2020/09/27 16:54:32] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 16:54:32] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601195897", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 16:54:32] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 16:54:32] Number: 14110
-[2020/09/27 16:54:32] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 16:54:32] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601196872", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 16:55:44] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 16:55:44] Number: 9
-[2020/09/27 17:05:24] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
-[2020/09/27 17:05:24] Number: 6
-[2020/09/27 17:07:16] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 17:07:16] Number: 14110
-[2020/09/27 17:07:16] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 17:07:16] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601196872", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
-[2020/09/27 17:07:16] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
-[2020/09/27 17:07:16] Number: 14110
-[2020/09/27 17:07:16] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
-[2020/09/27 17:07:16] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601197636", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
+[2020/09/28 20:42:38] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:42:38] Number: 20
+[2020/09/28 20:42:38] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:42:38] Number: 0
+[2020/09/28 20:42:39] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":641}
+[2020/09/28 20:42:39] String: 
+[2020/09/28 20:42:39] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":277}
+[2020/09/28 20:42:39] Array: {"m_id":"21", "m_show_id":"393", "m_uid":"0", "m_s_id":"14110", "m_c_id":"14645", "m_user_id":"0", "m_buyer_id":"0", "m_source":"2", "m_openid":"omx0i5UJyqJlgrHWD6ECQ0muXGe8", "m_mobile":"", "m_invite_code":"", "m_nickname":"会员2020092820425062", "m_realname":"", "m_id_num":"", "m_avatar":"", "m_sex":"女", "m_province":"", "m_city":"", "m_pro_new":"", "m_city_new":"", "m_area_new":"", "m_email":"", "m_company":"", "m_depart":"", "m_post":"", "m_status":"0", "m_points":"0", "m_traded_num":"0", "m_traded_money":"0", "m_union_id":null, "m_is_follow":"1", "m_is_slient":"1", "m_follow_time":"2020-09-28 20:42:39", "m_spread_qrcode":null, "m_spread_image":"", "m_wx_ticket":"", "m_ticket_expire":"0", "m_last_destroy":"0", "m_ticket_qrcode_url":"", "m_sale_amount":"0.00", "m_deduct_amount":"0.00", "m_deduct_ktx":"0.00", "m_deduct_ytx":"0.00", "m_deduct_dsh":"0.00", "m_gold_coin":"0.00", "m_is_highest":"0", "m_is_refer":"0", "m_level":"0", "m_level_number":"", "m_level_long":"0", "m_card_long":"0", "m_level_card":"", "m_1f_id":"0", "m_2f_id":"0", "m_3f_id":"0", "m_1c_count":"0", "m_2c_count":"0", "m_3c_count":"0", "m_remark":"", "m_is_waiter":"0", "m_waiter_shop":"0", "m_gold_freeze":"0", "m_revive_card":"0", "m_mobile_check":"0", "m_update_time":"1601296959", "m_pro_id":"", "m_city_id":"", "m_area_id":"", "m_street_id":"", "m_pro_name":"", "m_city_name":"", "m_area_name":"", "m_street_name":"", "m_is_area":"0", "m_h_pro":"", "m_h_city":"", "m_h_area":"", "m_h_street":"", "m_h_pro_name":"", "m_h_city_name":"", "m_h_area_name":"", "m_h_street_name":"", "m_join_status":"0", "m_is_vip":"0", "m_vip_start_time":"0", "m_vip_end_time":"0", "m_address":"", "m_brief":""}
+[2020/09/28 20:42:39] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":278}
+[2020/09/28 20:42:39] String: 
+[2020/09/28 20:42:40] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:42:40] Number: 0
+[2020/09/28 20:43:07] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:43:07] Number: 14
+[2020/09/28 20:43:07] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:43:07] Number: 0
+[2020/09/28 20:43:07] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":641}
+[2020/09/28 20:43:07] String: 
+[2020/09/28 20:43:07] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":277}
+[2020/09/28 20:43:07] Array: {"m_id":"22", "m_show_id":"394", "m_uid":"0", "m_s_id":"14110", "m_c_id":"14645", "m_user_id":"0", "m_buyer_id":"0", "m_source":"2", "m_openid":"omx0i5feBO6-YwnOrBKGX64Ctmjc", "m_mobile":"", "m_invite_code":"", "m_nickname":"会员2020092820436722", "m_realname":"", "m_id_num":"", "m_avatar":"", "m_sex":"女", "m_province":"", "m_city":"", "m_pro_new":"", "m_city_new":"", "m_area_new":"", "m_email":"", "m_company":"", "m_depart":"", "m_post":"", "m_status":"0", "m_points":"0", "m_traded_num":"0", "m_traded_money":"0", "m_union_id":null, "m_is_follow":"1", "m_is_slient":"1", "m_follow_time":"2020-09-28 20:43:07", "m_spread_qrcode":null, "m_spread_image":"", "m_wx_ticket":"", "m_ticket_expire":"0", "m_last_destroy":"0", "m_ticket_qrcode_url":"", "m_sale_amount":"0.00", "m_deduct_amount":"0.00", "m_deduct_ktx":"0.00", "m_deduct_ytx":"0.00", "m_deduct_dsh":"0.00", "m_gold_coin":"0.00", "m_is_highest":"0", "m_is_refer":"0", "m_level":"0", "m_level_number":"", "m_level_long":"0", "m_card_long":"0", "m_level_card":"", "m_1f_id":"0", "m_2f_id":"0", "m_3f_id":"0", "m_1c_count":"0", "m_2c_count":"0", "m_3c_count":"0", "m_remark":"", "m_is_waiter":"0", "m_waiter_shop":"0", "m_gold_freeze":"0", "m_revive_card":"0", "m_mobile_check":"0", "m_update_time":"1601296987", "m_pro_id":"", "m_city_id":"", "m_area_id":"", "m_street_id":"", "m_pro_name":"", "m_city_name":"", "m_area_name":"", "m_street_name":"", "m_is_area":"0", "m_h_pro":"", "m_h_city":"", "m_h_area":"", "m_h_street":"", "m_h_pro_name":"", "m_h_city_name":"", "m_h_area_name":"", "m_h_street_name":"", "m_join_status":"0", "m_is_vip":"0", "m_vip_start_time":"0", "m_vip_end_time":"0", "m_address":"", "m_brief":""}
+[2020/09/28 20:43:07] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":278}
+[2020/09/28 20:43:07] String: 
+[2020/09/28 20:45:18] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:45:18] Number: 0
+[2020/09/28 20:45:19] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":641}
+[2020/09/28 20:45:19] String: apuvtj35vrtppq0rlk9mqc6g84
+[2020/09/28 20:45:19] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":277}
+[2020/09/28 20:45:19] Array: {"m_id":"22", "m_show_id":"394", "m_uid":"0", "m_s_id":"14110", "m_c_id":"14645", "m_user_id":"0", "m_buyer_id":"0", "m_source":"2", "m_openid":"omx0i5feBO6-YwnOrBKGX64Ctmjc", "m_mobile":"", "m_invite_code":"", "m_nickname":"会员2020092820436722", "m_realname":"", "m_id_num":"", "m_avatar":"", "m_sex":"女", "m_province":"", "m_city":"", "m_pro_new":"", "m_city_new":"", "m_area_new":"", "m_email":"", "m_company":"", "m_depart":"", "m_post":"", "m_status":"0", "m_points":"0", "m_traded_num":"0", "m_traded_money":"0", "m_union_id":null, "m_is_follow":"1", "m_is_slient":"1", "m_follow_time":"2020-09-28 20:43:07", "m_spread_qrcode":null, "m_spread_image":"", "m_wx_ticket":"", "m_ticket_expire":"0", "m_last_destroy":"0", "m_ticket_qrcode_url":"", "m_sale_amount":"0.00", "m_deduct_amount":"0.00", "m_deduct_ktx":"0.00", "m_deduct_ytx":"0.00", "m_deduct_dsh":"0.00", "m_gold_coin":"0.00", "m_is_highest":"0", "m_is_refer":"0", "m_level":"0", "m_level_number":"", "m_level_long":"0", "m_card_long":"0", "m_level_card":"", "m_1f_id":"0", "m_2f_id":"0", "m_3f_id":"0", "m_1c_count":"0", "m_2c_count":"0", "m_3c_count":"0", "m_remark":"", "m_is_waiter":"0", "m_waiter_shop":"0", "m_gold_freeze":"0", "m_revive_card":"0", "m_mobile_check":"0", "m_update_time":"1601296987", "m_pro_id":"", "m_city_id":"", "m_area_id":"", "m_street_id":"", "m_pro_name":"", "m_city_name":"", "m_area_name":"", "m_street_name":"", "m_is_area":"0", "m_h_pro":"", "m_h_city":"", "m_h_area":"", "m_h_street":"", "m_h_pro_name":"", "m_h_city_name":"", "m_h_area_name":"", "m_h_street_name":"", "m_join_status":"0", "m_is_vip":"0", "m_vip_start_time":"0", "m_vip_end_time":"0", "m_address":"", "m_brief":""}
+[2020/09/28 20:45:19] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":278}
+[2020/09/28 20:45:19] String: apuvtj35vrtppq0rlk9mqc6g84
+[2020/09/28 20:47:47] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:47:47] Number: 0
+[2020/09/28 20:47:48] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":641}
+[2020/09/28 20:47:48] String: km1gg2pq98ram8up08egl2psm3
+[2020/09/28 20:47:48] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":277}
+[2020/09/28 20:47:48] Array: {"m_id":"23", "m_show_id":"395", "m_uid":"0", "m_s_id":"14110", "m_c_id":"14645", "m_user_id":"0", "m_buyer_id":"0", "m_source":"2", "m_openid":"omx0i5UJyqJlgrHWD6ECQ0muXGe8", "m_mobile":"", "m_invite_code":"", "m_nickname":"会员2020092820475959", "m_realname":"", "m_id_num":"", "m_avatar":"", "m_sex":"女", "m_province":"", "m_city":"", "m_pro_new":"", "m_city_new":"", "m_area_new":"", "m_email":"", "m_company":"", "m_depart":"", "m_post":"", "m_status":"0", "m_points":"0", "m_traded_num":"0", "m_traded_money":"0", "m_union_id":null, "m_is_follow":"1", "m_is_slient":"1", "m_follow_time":"2020-09-28 20:47:48", "m_spread_qrcode":null, "m_spread_image":"", "m_wx_ticket":"", "m_ticket_expire":"0", "m_last_destroy":"0", "m_ticket_qrcode_url":"", "m_sale_amount":"0.00", "m_deduct_amount":"0.00", "m_deduct_ktx":"0.00", "m_deduct_ytx":"0.00", "m_deduct_dsh":"0.00", "m_gold_coin":"0.00", "m_is_highest":"0", "m_is_refer":"0", "m_level":"0", "m_level_number":"", "m_level_long":"0", "m_card_long":"0", "m_level_card":"", "m_1f_id":"0", "m_2f_id":"0", "m_3f_id":"0", "m_1c_count":"0", "m_2c_count":"0", "m_3c_count":"0", "m_remark":"", "m_is_waiter":"0", "m_waiter_shop":"0", "m_gold_freeze":"0", "m_revive_card":"0", "m_mobile_check":"0", "m_update_time":"1601297268", "m_pro_id":"", "m_city_id":"", "m_area_id":"", "m_street_id":"", "m_pro_name":"", "m_city_name":"", "m_area_name":"", "m_street_name":"", "m_is_area":"0", "m_h_pro":"", "m_h_city":"", "m_h_area":"", "m_h_street":"", "m_h_pro_name":"", "m_h_city_name":"", "m_h_area_name":"", "m_h_street_name":"", "m_join_status":"0", "m_is_vip":"0", "m_vip_start_time":"0", "m_vip_end_time":"0", "m_address":"", "m_brief":""}
+[2020/09/28 20:47:48] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":278}
+[2020/09/28 20:47:48] String: km1gg2pq98ram8up08egl2psm3
+[2020/09/28 20:47:49] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:47:49] Number: 23
+[2020/09/28 20:50:04] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
+[2020/09/28 20:50:04] Number: 14110
+[2020/09/28 20:50:04] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
+[2020/09/28 20:50:04] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601295031", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
+[2020/09/28 20:50:05] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
+[2020/09/28 20:50:05] Number: 14110
+[2020/09/28 20:50:05] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
+[2020/09/28 20:50:05] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601297404", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
+[2020/09/28 20:50:24] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
+[2020/09/28 20:50:24] Number: 14110
+[2020/09/28 20:50:24] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
+[2020/09/28 20:50:24] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601297405", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
+[2020/09/28 20:50:24] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":570}
+[2020/09/28 20:50:24] Number: 14110
+[2020/09/28 20:50:24] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/wxapp/InitController.php", "line":572}
+[2020/09/28 20:50:24] Array: {"ac_id":"8321", "ac_s_id":"14110", "ac_type":"21", "ac_open_time":"1578886353", "ac_expire_time":"1736566353", "ac_active_time":"1601297424", "ac_self_renewal":"0", "ac_appid":"wxe57483a62f88b851", "ac_appsecret":"5e82039331ef57821aa822c456c5a090", "ac_access_token":"36_UUk8psbm3gF2Ml8cHpYOGNDV6bOaQGtfSKlfIkgLAkzeWwoJSrhSeseMFcmtSNW638-KD1FXYyMmkXpv0BNaBgmJ6XEKvAkeJ4vK8Jm43J4ho_Bs47j4-Naq8qRpeZaNmKn9Q_YCiLhiG7aBVRVhAFAJFJ", "ac_expires_in":"1597837876", "ac_auth_status":"0", "ac_auth_access_token":"", "ac_auth_expire_time":"0", "ac_auth_refresh_token":"", "ac_auth_business_domain":"", "ac_gh_id":"", "ac_service_type":"0", "ac_verify_type":"-1", "ac_name":"", "ac_avatar":"", "ac_principal":"", "ac_qrcode":"", "ac_wxacode":"", "ac_signature":"", "ac_category":"", "ac_bottom_menu":"", "ac_bottom_time":"0", "ac_navigation_bar":"", "ac_suspension_menu":"", "ac_suspension_menu_show":"0", "ac_index_menu":"", "ac_index_menu_title":"", "ac_index_menu_open":"0", "ac_domain_time":"0", "ac_func_scope":"", "ac_open_appid":"", "ac_mch_id":"", "ac_mch_key":"", "ac_index_tpl":"0", "ac_information_style":"5", "ac_insert_total":"0", "ac_insert_use":"0", "ac_aliapp_open":"0", "ac_share_open":"1", "ac_share_addr":"/upload/gallery/thumbnail/041B39AD-7CF0-5810-7FD8C4EF2A16-tbl.jpeg", "ac_share_custom":"1", "ac_share_title":"扫码有惊喜，好店在这里", "ac_share_cover":"/upload/gallery/thumbnail/EE2298CC-2848-3833-BEFCB26182BB-tbl.jpeg", "ac_kefu_open":"1", "ac_kefu_mobile":"1", "ac_phone_open":"1", "ac_version":"", "ac_base":"0", "ac_watermark":"", "ac_open_watermark":"1", "ac_receivable_code":"/public/build/ge750db0g0d55i86.jpg", "ac_open_greetings":"0", "ac_set_greetings":"", "ac_audit_sing_page":"0", "ac_audit_status":"0", "ac_audit_reason":"", "ac_audit_time":"0", "ac_audit_id":"0", "ac_audit_base":"0", "ac_audit_version":"", "ac_audit_auto":"0", "ac_experience_version":"", "ac_experience_base":"0", "ac_status":"0", "ac_enable_change":"0", "ac_app_key":"", "ac_appletad_open":"0", "ac_update_time":"1588932618", "ac_follow_open":"0", "ac_report_open":"1", "ac_suspension_menu_img":null, "ac_vip_grade":"0", "ac_vip_domain":null, "ac_post_follow_open":"0", "ac_watermark_img":"", "ac_theme_type":"0", "ac_custom_theme_color1":"", "ac_custom_theme_color2":""}
+[2020/09/28 20:50:46] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:50:46] Number: 23
+[2020/09/28 20:50:46] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":277}
+[2020/09/28 20:50:46] Array: {"m_id":"23", "m_show_id":"395", "m_uid":"0", "m_s_id":"14110", "m_c_id":"14645", "m_user_id":"0", "m_buyer_id":"0", "m_source":"2", "m_openid":"omx0i5UJyqJlgrHWD6ECQ0muXGe8", "m_mobile":"", "m_invite_code":"", "m_nickname":"会员2020092820475959", "m_realname":"", "m_id_num":"", "m_avatar":"", "m_sex":"女", "m_province":"", "m_city":"", "m_pro_new":"", "m_city_new":"", "m_area_new":"", "m_email":"", "m_company":"", "m_depart":"", "m_post":"", "m_status":"0", "m_points":"0", "m_traded_num":"0", "m_traded_money":"0", "m_union_id":null, "m_is_follow":"1", "m_is_slient":"1", "m_follow_time":"2020-09-28 20:47:48", "m_spread_qrcode":null, "m_spread_image":"", "m_wx_ticket":"", "m_ticket_expire":"0", "m_last_destroy":"0", "m_ticket_qrcode_url":"", "m_sale_amount":"0.00", "m_deduct_amount":"0.00", "m_deduct_ktx":"0.00", "m_deduct_ytx":"0.00", "m_deduct_dsh":"0.00", "m_gold_coin":"0.00", "m_is_highest":"0", "m_is_refer":"0", "m_level":"0", "m_level_number":"", "m_level_long":"0", "m_card_long":"0", "m_level_card":"", "m_1f_id":"0", "m_2f_id":"0", "m_3f_id":"0", "m_1c_count":"0", "m_2c_count":"0", "m_3c_count":"0", "m_remark":"", "m_is_waiter":"0", "m_waiter_shop":"0", "m_gold_freeze":"0", "m_revive_card":"0", "m_mobile_check":"0", "m_update_time":"1601297268", "m_pro_id":"", "m_city_id":"", "m_area_id":"", "m_street_id":"", "m_pro_name":"", "m_city_name":"", "m_area_name":"", "m_street_name":"", "m_is_area":"0", "m_h_pro":"", "m_h_city":"", "m_h_area":"", "m_h_street":"", "m_h_pro_name":"", "m_h_city_name":"", "m_h_area_name":"", "m_h_street_name":"", "m_join_status":"0", "m_is_vip":"0", "m_vip_start_time":"0", "m_vip_end_time":"0", "m_address":"", "m_brief":""}
+[2020/09/28 20:50:46] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":278}
+[2020/09/28 20:50:46] String: km1gg2pq98ram8up08egl2psm3
+[2020/09/28 20:50:59] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:50:59] Number: 23
+[2020/09/28 20:51:01] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:01] Number: 23
+[2020/09/28 20:51:02] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:02] Number: 23
+[2020/09/28 20:51:09] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:09] Number: 23
+[2020/09/28 20:51:09] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:09] Number: 23
+[2020/09/28 20:51:15] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:15] Number: 23
+[2020/09/28 20:51:19] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:19] Number: 23
+[2020/09/28 20:51:20] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:20] Number: 23
+[2020/09/28 20:51:24] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:24] Number: 23
+[2020/09/28 20:51:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:43] Number: 0
+[2020/09/28 20:51:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:43] Number: 0
+[2020/09/28 20:51:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":641}
+[2020/09/28 20:51:43] String: bssn0ss5jgt1730ae1u4trad55
+[2020/09/28 20:51:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":277}
+[2020/09/28 20:51:43] Array: {"m_id":"24", "m_show_id":"396", "m_uid":"0", "m_s_id":"14110", "m_c_id":"14645", "m_user_id":"0", "m_buyer_id":"0", "m_source":"2", "m_openid":"omx0i5cHvrxeWQ_f2HJ8nKlY0_jA", "m_mobile":"", "m_invite_code":"", "m_nickname":"会员2020092820514994", "m_realname":"", "m_id_num":"", "m_avatar":"", "m_sex":"女", "m_province":"", "m_city":"", "m_pro_new":"", "m_city_new":"", "m_area_new":"", "m_email":"", "m_company":"", "m_depart":"", "m_post":"", "m_status":"0", "m_points":"0", "m_traded_num":"0", "m_traded_money":"0", "m_union_id":null, "m_is_follow":"1", "m_is_slient":"1", "m_follow_time":"2020-09-28 20:51:43", "m_spread_qrcode":null, "m_spread_image":"", "m_wx_ticket":"", "m_ticket_expire":"0", "m_last_destroy":"0", "m_ticket_qrcode_url":"", "m_sale_amount":"0.00", "m_deduct_amount":"0.00", "m_deduct_ktx":"0.00", "m_deduct_ytx":"0.00", "m_deduct_dsh":"0.00", "m_gold_coin":"0.00", "m_is_highest":"0", "m_is_refer":"0", "m_level":"0", "m_level_number":"", "m_level_long":"0", "m_card_long":"0", "m_level_card":"", "m_1f_id":"0", "m_2f_id":"0", "m_3f_id":"0", "m_1c_count":"0", "m_2c_count":"0", "m_3c_count":"0", "m_remark":"", "m_is_waiter":"0", "m_waiter_shop":"0", "m_gold_freeze":"0", "m_revive_card":"0", "m_mobile_check":"0", "m_update_time":"1601297503", "m_pro_id":"", "m_city_id":"", "m_area_id":"", "m_street_id":"", "m_pro_name":"", "m_city_name":"", "m_area_name":"", "m_street_name":"", "m_is_area":"0", "m_h_pro":"", "m_h_city":"", "m_h_area":"", "m_h_street":"", "m_h_pro_name":"", "m_h_city_name":"", "m_h_area_name":"", "m_h_street_name":"", "m_join_status":"0", "m_is_vip":"0", "m_vip_start_time":"0", "m_vip_end_time":"0", "m_address":"", "m_brief":""}
+[2020/09/28 20:51:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":278}
+[2020/09/28 20:51:43] String: bssn0ss5jgt1730ae1u4trad55
+[2020/09/28 20:51:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":641}
+[2020/09/28 20:51:43] String: 4ep7nerb0tqokeq38pjh0pbqc2
+[2020/09/28 20:51:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":277}
+[2020/09/28 20:51:43] Array: {"m_id":"25", "m_show_id":"397", "m_uid":"0", "m_s_id":"14110", "m_c_id":"14645", "m_user_id":"0", "m_buyer_id":"0", "m_source":"2", "m_openid":"omx0i5R-YoS80kTYp80hB2D5ocEA", "m_mobile":"", "m_invite_code":"", "m_nickname":"会员2020092820514299", "m_realname":"", "m_id_num":"", "m_avatar":"", "m_sex":"女", "m_province":"", "m_city":"", "m_pro_new":"", "m_city_new":"", "m_area_new":"", "m_email":"", "m_company":"", "m_depart":"", "m_post":"", "m_status":"0", "m_points":"0", "m_traded_num":"0", "m_traded_money":"0", "m_union_id":null, "m_is_follow":"1", "m_is_slient":"1", "m_follow_time":"2020-09-28 20:51:43", "m_spread_qrcode":null, "m_spread_image":"", "m_wx_ticket":"", "m_ticket_expire":"0", "m_last_destroy":"0", "m_ticket_qrcode_url":"", "m_sale_amount":"0.00", "m_deduct_amount":"0.00", "m_deduct_ktx":"0.00", "m_deduct_ytx":"0.00", "m_deduct_dsh":"0.00", "m_gold_coin":"0.00", "m_is_highest":"0", "m_is_refer":"0", "m_level":"0", "m_level_number":"", "m_level_long":"0", "m_card_long":"0", "m_level_card":"", "m_1f_id":"0", "m_2f_id":"0", "m_3f_id":"0", "m_1c_count":"0", "m_2c_count":"0", "m_3c_count":"0", "m_remark":"", "m_is_waiter":"0", "m_waiter_shop":"0", "m_gold_freeze":"0", "m_revive_card":"0", "m_mobile_check":"0", "m_update_time":"1601297503", "m_pro_id":"", "m_city_id":"", "m_area_id":"", "m_street_id":"", "m_pro_name":"", "m_city_name":"", "m_area_name":"", "m_street_name":"", "m_is_area":"0", "m_h_pro":"", "m_h_city":"", "m_h_area":"", "m_h_street":"", "m_h_pro_name":"", "m_h_city_name":"", "m_h_area_name":"", "m_h_street_name":"", "m_join_status":"0", "m_is_vip":"0", "m_vip_start_time":"0", "m_vip_end_time":"0", "m_address":"", "m_brief":""}
+[2020/09/28 20:51:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/MemberController.php", "line":278}
+[2020/09/28 20:51:43] String: 4ep7nerb0tqokeq38pjh0pbqc2
+[2020/09/28 20:51:47] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:47] Number: 24
+[2020/09/28 20:51:47] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/ServiceController.php", "line":80}
+[2020/09/28 20:51:47] Number: 111
+[2020/09/28 20:51:54] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:51:54] Number: 24
+[2020/09/28 20:52:08] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:08] Number: 24
+[2020/09/28 20:52:12] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:12] Number: 24
+[2020/09/28 20:52:13] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:13] Number: 24
+[2020/09/28 20:52:16] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:16] Number: 24
+[2020/09/28 20:52:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:17] Number: 24
+[2020/09/28 20:52:20] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:20] Number: 24
+[2020/09/28 20:52:22] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:22] Number: 24
+[2020/09/28 20:52:25] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:25] Number: 24
+[2020/09/28 20:52:25] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:25] Number: 24
+[2020/09/28 20:52:25] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:25] Number: 24
+[2020/09/28 20:52:25] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:25] Number: 24
+[2020/09/28 20:52:26] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:26] Number: 24
+[2020/09/28 20:52:34] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:34] Number: 24
+[2020/09/28 20:52:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:43] Number: 24
+[2020/09/28 20:52:47] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:47] Number: 24
+[2020/09/28 20:52:50] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:50] Number: 24
+[2020/09/28 20:52:50] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:50] Number: 24
+[2020/09/28 20:52:51] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:51] Number: 24
+[2020/09/28 20:52:55] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:55] Number: 24
+[2020/09/28 20:52:55] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:55] Number: 24
+[2020/09/28 20:52:58] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:58] Number: 24
+[2020/09/28 20:52:58] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:58] Number: 24
+[2020/09/28 20:52:58] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:58] Number: 24
+[2020/09/28 20:52:58] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:52:58] Number: 24
+[2020/09/28 20:53:05] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:05] Number: 24
+[2020/09/28 20:53:05] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:05] Number: 24
+[2020/09/28 20:53:05] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:05] Number: 24
+[2020/09/28 20:53:05] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:05] Number: 24
+[2020/09/28 20:53:06] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:06] Number: 24
+[2020/09/28 20:53:06] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:06] Number: 24
+[2020/09/28 20:53:11] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:11] Number: 24
+[2020/09/28 20:53:11] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/ServiceController.php", "line":80}
+[2020/09/28 20:53:11] Number: 111
+[2020/09/28 20:53:30] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:30] Number: 24
+[2020/09/28 20:53:34] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:34] Number: 24
+[2020/09/28 20:53:38] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:38] Number: 24
+[2020/09/28 20:53:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:43] Number: 24
+[2020/09/28 20:53:55] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/applet/InitController.php", "line":431}
+[2020/09/28 20:53:55] Number: 24

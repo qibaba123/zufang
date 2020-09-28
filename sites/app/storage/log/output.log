@@ -1,50 +1,24 @@
-[2020/09/27 16:34:18] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:34:18] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=001QgZZv3ytO1V2TfI1w37Uxvm2QgZZM&grant_type=authorization_code
-[2020/09/27 16:36:42] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:36:42] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=011EI91006mBnK181m20015CyS0EI91T&grant_type=authorization_code
-[2020/09/27 16:36:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/plugin/weixin/DecryptInfo.php", "line":20}
-[2020/09/27 16:36:43] Number: 0
-[2020/09/27 16:36:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:36:43] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=&grant_type=authorization_code
-[2020/09/27 16:36:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":70}
-[2020/09/27 16:36:43] Array: {"errcode":41008, "errmsg":"missing code, hints: [ req_id: RHneIz4ce-p ]"}
-[2020/09/27 16:37:40] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:37:40] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=0819A3000l4vmK1go02000bfFY19A30n&grant_type=authorization_code
-[2020/09/27 16:37:40] Array: {"file":"/www/wwwroot/default/zufang/sites/app/plugin/weixin/DecryptInfo.php", "line":20}
-[2020/09/27 16:37:40] Number: 0
-[2020/09/27 16:37:40] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:37:40] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=&grant_type=authorization_code
-[2020/09/27 16:37:41] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":70}
-[2020/09/27 16:37:41] Array: {"errcode":41008, "errmsg":"missing code, hints: [ req_id: sHnezkqge-avHTTA ]"}
-[2020/09/27 16:37:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:37:43] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=051WYUFa1HRJHz0UCOHa1D133L1WYUFX&grant_type=authorization_code
-[2020/09/27 16:37:44] Array: {"file":"/www/wwwroot/default/zufang/sites/app/plugin/weixin/DecryptInfo.php", "line":20}
-[2020/09/27 16:37:44] Number: 0
-[2020/09/27 16:37:44] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:37:44] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=&grant_type=authorization_code
-[2020/09/27 16:37:44] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":70}
-[2020/09/27 16:37:44] Array: {"errcode":41008, "errmsg":"missing code, hints: [ req_id: sHnexaMre-hKTXOA ]"}
-[2020/09/27 16:38:06] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:38:06] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=081r6tGa1RShIz0Z0MIa1aJk2p0r6tGJ&grant_type=authorization_code
-[2020/09/27 16:38:10] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:38:10] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=0913C3000xYumK1LVM200eFnBq13C30P&grant_type=authorization_code
-[2020/09/27 16:38:11] Array: {"file":"/www/wwwroot/default/zufang/sites/app/plugin/weixin/DecryptInfo.php", "line":20}
-[2020/09/27 16:38:11] Number: 0
-[2020/09/27 16:38:11] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:38:11] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=&grant_type=authorization_code
-[2020/09/27 16:38:11] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":70}
-[2020/09/27 16:38:11] Array: {"errcode":41008, "errmsg":"missing code, hints: [ req_id: SHneRIMre-uDi6wA ]"}
-[2020/09/27 16:38:36] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:38:36] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=051f2VFa1ZLJHz0sSuHa1KPhVp2f2VFB&grant_type=authorization_code
-[2020/09/27 16:38:36] Array: {"file":"/www/wwwroot/default/zufang/sites/app/plugin/weixin/DecryptInfo.php", "line":20}
-[2020/09/27 16:38:36] Number: 0
-[2020/09/27 16:38:36] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:38:36] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=&grant_type=authorization_code
-[2020/09/27 16:38:37] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":70}
-[2020/09/27 16:38:37] Array: {"errcode":41008, "errmsg":"missing code, hints: [ req_id: SHne6fMre-siR56a ]"}
-[2020/09/27 16:41:09] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:41:09] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=071WPO0w3FkC2V2WAg0w3HKCBb3WPO0n&grant_type=authorization_code
-[2020/09/27 16:42:17] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:42:17] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=041CXB000C52nK1pAp200l7QIw2CXB0t&grant_type=authorization_code
-[2020/09/27 16:44:06] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
-[2020/09/27 16:44:06] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=001XgnFa1oLaHz01XiJa1CnHXh2XgnFx&grant_type=authorization_code
+[2020/09/28 20:42:38] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
+[2020/09/28 20:42:38] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=0036nEFa1yWiHz0XU4Ja1HVQ8A26nEF4&grant_type=authorization_code
+[2020/09/28 20:43:07] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
+[2020/09/28 20:43:07] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=0110ytGa1tdGIz0CinGa1FwGF330ytGA&grant_type=authorization_code
+[2020/09/28 20:45:18] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
+[2020/09/28 20:45:18] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=011gJKGa1dZoIz0aWwHa1Fl0Ts1gJKGq&grant_type=authorization_code
+[2020/09/28 20:47:47] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
+[2020/09/28 20:47:47] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=083Dky0w3YCF2V2BND2w3gfDaM1Dky0k&grant_type=authorization_code
+[2020/09/28 20:51:19] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
+[2020/09/28 20:51:19] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=013Vr00w3Sn72V2CpD2w3YRYNq4Vr00x&grant_type=authorization_code
+[2020/09/28 20:51:20] Array: {"file":"/www/wwwroot/default/zufang/sites/app/plugin/weixin/DecryptInfo.php", "line":20}
+[2020/09/28 20:51:20] Number: 0
+[2020/09/28 20:51:20] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
+[2020/09/28 20:51:20] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=&grant_type=authorization_code
+[2020/09/28 20:51:20] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":70}
+[2020/09/28 20:51:20] Array: {"errcode":41008, "errmsg":"missing code, hints: [ req_id: zJNe3HqNe-TTnUHa ]"}
+[2020/09/28 20:51:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
+[2020/09/28 20:51:43] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=061mVEFa1SMdHz0s1PHa1H5JqE4mVEF4&grant_type=authorization_code
+[2020/09/28 20:51:43] Array: {"file":"/www/wwwroot/default/zufang/sites/app/helper/WeixinEvent.php", "line":62}
+[2020/09/28 20:51:43] String: https://api.weixin.qq.com/sns/jscode2session?appid=wxe57483a62f88b851&secret=5e82039331ef57821aa822c456c5a090&js_code=071mVEFa1SMdHz0SNPHa1dAanl2mVEFE&grant_type=authorization_code
+[2020/09/28 21:00:55] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/mobile/WxpayController.php", "line":408}
+[2020/09/28 21:00:55] Array: {"return_code":"FAIL", "return_msg":"订单不存在，或已支付"}
+[2020/09/28 21:02:00] Array: {"file":"/www/wwwroot/default/zufang/sites/app/controller/mobile/WxpayController.php", "line":408}
+[2020/09/28 21:02:00] Array: {"return_code":"FAIL", "return_msg":"订单不存在，或已支付"}
