@@ -596,32 +596,6 @@
 		// 订单导出
 		// zhangzc
 		// 2019-11-11
-	    $('#trade-export').click(function(){
-	    	var index = layer.load(10, {
-                shade: [0.6,'#666']
-            });
-	    	$.ajax({
-	    		type:'POST',
-	    		url:'/wxapp/order/excelOrderNew',
-	    		dataType:'json',
-	    		data:$('#trade-export-form').serialize(),
-	    		success:function(res){
-	    			if(res.ec==200){
-	    				// window.open('http://'+location.hostname+res.data.url);
-	    				window.location.href=res.data.url;
-	    			}else{
-	    				layer.msg(res.em);
-	    			}
-	    			layer.close(index);
-	    		},
-	    		error:function(){
-					layer.msg('数据导出失败，请稍后再试或减少单次的导出量！');
-	    		},
-	    		complete:function(){
-	    			layer.close(index);
-	    		}
-	    	})
-	    });
 
 
         /*初始化日期选择器*/
