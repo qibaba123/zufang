@@ -2266,6 +2266,12 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
                 $merge_gids =$merge_gfids=[];
                 $merge_order_nums   =[];//相同单行的订单合并时的行数
                 $url=$plugin->tradeExport($rows,$merge_order_nums,$this->wxapp_cfg['ac_type']);
+                if($url){
+                    $this->displayJsonSuccess(['url'=>substr($url, 1)]);
+                }else{
+                    $this->displayJsonError('导出数据失败');
+                }
+
             }else{
                 plum_url_location('当前时间段内没有订单!');
             }
