@@ -20,7 +20,7 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
         if($output['type']){
             $where[]= array('name'=>'rt_type','oper'=>'=','value'=>$output['type']);
         }else{
-            $where[] = array('name'=>"rt_type",'oper'=>"!=",'value'=>3);
+            //$where[] = array('name'=>"rt_type",'oper'=>"!=",'value'=>3);
         }
         $output['status'] = $this->request->getIntParam('status');
         if($output['status']){
