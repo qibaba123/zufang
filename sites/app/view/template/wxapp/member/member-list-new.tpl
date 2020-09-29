@@ -249,6 +249,7 @@
                             <div class="td-top-info" style="text-align: left;">
                                 <p class="tab-txt left"><span class="lab-name left">地区：</span><span class="lab-txt"><{$val['m_pro_name']}>-<{$val['m_city_name']}>-<{$val['m_area_name']}></span></p>
                                 <p class="tab-txt left"><span class="lab-name left">详细地址：</span><span class="lab-txt"><{$val['m_address']}></span></p>
+                                <p class="tab-txt left"><span class="lab-name left">介绍：</span><span class="lab-txt"><{$val['m_brief']}></span></p>
                             </div>
                         </td>
                         <!-- 状态 -->
