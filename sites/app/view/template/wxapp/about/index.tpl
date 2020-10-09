@@ -453,7 +453,7 @@
                 layer.close(load_index);
                 layer.msg(ret.em);
                 if(ret.ec == 200){
-                    window.location.href = '/wxapp/goods/index';
+                    window.location.href = '/wxapp/aboutus/index';
                 }
             }
         });
