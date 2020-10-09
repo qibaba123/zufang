@@ -450,7 +450,6 @@
             'data'  : $('#goods-form').serialize(),
             'dataType'  : 'json',
             'success'   : function(ret){
-                layer.close(load_index);
                 layer.msg(ret.em);
                 if(ret.ec == 200){
                     window.location.href = '/wxapp/aboutus/index';
