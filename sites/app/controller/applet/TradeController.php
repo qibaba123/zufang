@@ -213,7 +213,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
         if($type == 1){
             $start_time = strtotime($start_time);
-            if($start_time > time()){
+            if($start_time < mktime(0,0,0,date('m',time()),date('d',time()),date('Y',time()))){
                 $this->displayJsonError('开始日期有误');
             }
             $end_time   = strtotime($end_time);
@@ -229,7 +229,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 //            $start_time = mktime(0,0,0,date('m',time()),date('d',time()),$start_time);
 //            $end_time = mktime(0,0,0,date('m',time()),date('d',time()),$end_time);
             $start_time = strtotime($start_time);
-            if($start_time > time()){
+            if($start_time < mktime(0,0,0,date('m',time()),date('d',time()),date('Y',time()))){
                 $this->displayJsonError('开始日期有误');
             }
             $end_time  = mktime(0,0,0,date('m',$start_time),date('d',$start_time),date('Y',$start_time));
