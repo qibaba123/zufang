@@ -204,11 +204,11 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $end_time   = $this->request->getStrParam('end_time');//结束时间
    //     $m_name     = $this->request->getStrParam('m_name');//预约人
   //      $m_mobile   = $this->request->getStrParam('m_mobile');//联系电话
-        Libs_Log_Logger::outputLog($type,'trade.log');
-        Libs_Log_Logger::outputLog($gid,'trade.log');
-        Libs_Log_Logger::outputLog($format_id,'trade.log');
-        Libs_Log_Logger::outputLog($start_time,'trade.log');
-        Libs_Log_Logger::outputLog($end_time,'trade.log');
+//        Libs_Log_Logger::outputLog($type,'trade.log');
+//        Libs_Log_Logger::outputLog($gid,'trade.log');
+//        Libs_Log_Logger::outputLog($format_id,'trade.log');
+//        Libs_Log_Logger::outputLog($start_time,'trade.log');
+//        Libs_Log_Logger::outputLog($end_time,'trade.log');
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
 
         if($type == 1){
