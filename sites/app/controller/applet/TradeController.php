@@ -221,14 +221,20 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $time_num = round(($end_time - $start_time+86400)/(60*60*24));
             $time_type = 1;
         }else{
-            if($start_time < date('Y',time())){
-                $this->displayJsonError('开始年份有误');
+//            if($start_time < date('Y',time())){
+//                $this->displayJsonError('开始年份有误');
+//            }
+//            $time_num = $end_time - $start_time;
+//            $time_type = 3;
+//            $start_time = mktime(0,0,0,date('m',time()),date('d',time()),$start_time);
+//            $end_time = mktime(0,0,0,date('m',time()),date('d',time()),$end_time);
+            $start_time = strtotime($start_time);
+            if($start_time > time()){
+                $this->displayJsonError('开始日期有误');
             }
-            $time_num = $end_time - $start_time;
+            $end_time  = mktime(0,0,0,date('m',$start_time),date('d',$start_time),date('Y',$start_time));
             $time_type = 3;
-            $start_time = mktime(0,0,0,date('m',time()),date('d',time()),$start_time);
-            $end_time = mktime(0,0,0,date('m',time()),date('d',time()),$end_time);
-
+            $time_num  = 1;
         }
 
        // $end_time -
