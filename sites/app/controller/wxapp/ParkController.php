@@ -180,6 +180,19 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
     }
 
 
+    //删除园区
+    public function delparkAction(){
+        $id            = $this->request->getIntParam('id');
+        $park_model    = new App_Model_Park_MysqlAddressParkStorage();
+        $update['ap_deleted'] = 1;
+        $ret           = $park_model->updateById($update,$id);
+        if($ret){
+            $this->displayJsonSuccess(array(),true,'删除成功');
+        }else{
+            $this->displayJsonError('删除失败');
+        }
+    }
+
 
     //新增园区
     public function addParkAction(){
