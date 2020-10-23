@@ -89,7 +89,7 @@
                             <td><{$val['ap_weight']}></td>
                             <td><{date('Y-m-d,H:i',$val['ap_create_time'])}></td>
                             <td>
-                                <a class="btn btn-xs btn-blueoutline" href="/wxapp/area/addAreaManage?id=<{$val['am_id']}>">编辑</a>
+                                <a class="btn btn-xs btn-blueoutline" href="/wxapp/park/addPark?id=<{$val['am_id']}>">编辑</a>
                                 - <a class="btn btn-xs btn-redoutline delCategory" data-id="<{$val['am_id']}>">删除</a>
                             </td>
                         </tr>
