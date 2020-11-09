@@ -307,10 +307,12 @@
         if(type == 1){
             $('.priceshow').show();
             $('.type1_show').show();
+            $('.type2_show').hide();
             $('.formatshow').show();
         }else{
             $('.priceshow').hide();
-            $('.type2_show').hide();
+            $('.type1_show').hide();
+            $('.type2_show').show();
             $('.formatshow').hide();
         }
 
