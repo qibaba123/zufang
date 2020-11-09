@@ -87,6 +87,8 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
            // $this->output['format'] = array_column($format,'sf_name','sf_id');
             $this->output['format'] = $format;
         }
+        $this->output['type1'] = plum_parse_config('status1','zufang');
+        $this->output['type2'] = plum_parse_config('status2','zufang');
         $this->renderCropTool('/wxapp/index/uploadImg');
         $this->buildBreadcrumbs(array(
             array('title' => '编辑企业服务', 'link' => '#'),
