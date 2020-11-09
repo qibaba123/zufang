@@ -111,7 +111,7 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group type1_show" <{if $row['es_type'] == 1}> style="display:none;" <{/if}>>
+                                                        <div class="form-group type1_show" <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
                                                             <label for="name" class="control-label" ><font color="red">*</font>服务分类：</label>
                                                             <div class="control-group">
                                                                 <select class="form-control" style="width: 150px;" name="type1" id="type1" >
@@ -123,7 +123,7 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group type2_show" <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
+                                                        <div class="form-group type2_show" <{if $row['es_type'] == 1}> style="display:none;" <{/if}>>
                                                             <label for="name" class="control-label"><font color="red">*</font>服务分类：</label>
                                                             <div class="control-group">
                                                                 <select class="form-control" style="width: 150px;" name="type2" id="type2" >
