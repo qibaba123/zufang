@@ -111,10 +111,10 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group type1" <{if $row['es_type'] == 1}> style="display:none;" <{/if}>>
+                                                        <div class="form-group type1_show" <{if $row['es_type'] == 1}> style="display:none;" <{/if}>>
                                                             <label for="name" class="control-label" ><font color="red">*</font>服务分类：</label>
                                                             <div class="control-group">
-                                                                <select class="form-control" style="width: 150px;" name="type" id="type" >
+                                                                <select class="form-control" style="width: 150px;" name="type1" id="type1" >
                                                                     <option value="0">请选择分类</option>
                                                                     <{foreach $type1 as $key => $val }>
                                                                       <option value="<{$key}>" <{if $row['es_second_type'] == $key}>selected<{/if}>><{$val}></option>
@@ -123,10 +123,10 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                        <div class="form-group type1" <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
+                                                        <div class="form-group type2_show" <{if $row['es_type'] == 2}> style="display:none;" <{/if}>>
                                                             <label for="name" class="control-label"><font color="red">*</font>服务分类：</label>
                                                             <div class="control-group">
-                                                                <select class="form-control" style="width: 150px;" name="type" id="type" >
+                                                                <select class="form-control" style="width: 150px;" name="type2" id="type2" >
                                                                     <option value="0">请选择分类</option>
                                                                     <{foreach $type2 as $key => $val }>
                                                                         <option value="<{$key}>" <{if $row['es_second_type'] == $key}>selected<{/if}>><{$val}></option>
@@ -306,11 +306,11 @@
        // console.log(type);
         if(type == 1){
             $('.priceshow').show();
-            $('.type1').show();
+            $('.type1_show').show();
             $('.formatshow').show();
         }else{
             $('.priceshow').hide();
-            $('.type2').hide();
+            $('.type2_show').hide();
             $('.formatshow').hide();
         }
 

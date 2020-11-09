@@ -45,6 +45,8 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $total  = $service_model->getCount(array());
         $page_libs = new Libs_Pagination_Paginator($total,$this->count,'jquery',true);
         $this->output['pageHtml']   = $page_libs->render();
+        $this->output['type1'] = plum_parse_config('status1','zufang');
+        $this->output['type2'] = plum_parse_config('status2','zufang');
         $this->buildBreadcrumbs(array(
             array('title' => '企业服务', 'link' => '#'),
         ));
@@ -117,6 +119,8 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $data['es_name']     = $this->request->getStrParam('es_name');
         $data['es_weight']   = $this->request->getIntParam('weight');
         $data['es_type']     = $this->request->getIntParam('type');
+        $es_type1     = $this->request->getIntParam('type1');
+        $es_type2     = $this->request->getIntParam('type2');
         $data['es_logo']     = $this->request->getStrParam('logo');
         $data['es_cover']    = $this->request->getStrParam('cover');
         $data['es_brief']    = $this->request->getStrParam('brief');
@@ -125,6 +129,11 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
         $data['es_create_time'] = time();
         $is_add = 0;
+        if($data['es_type'] == 1){
+            $data['es_second_type'] = $es_type1;
+        }elseif($data['es_type'] == 2){
+            $data['es_second_type'] = $es_type2;
+        }
         if($id){
             $ret = $service_model->updateById($data,$id);
         }else{

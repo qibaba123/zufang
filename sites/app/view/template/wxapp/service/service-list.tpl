@@ -88,6 +88,7 @@
                                 <th>服务名称</th>
                                 <th>服务logo</th>
                                 <th>服务类型</th>
+                                <th>服务分类</th>
                                 <th>排序权重</th>
                                 <th>编辑时间</th>
                                 <th>操作</th>
@@ -97,6 +98,7 @@
                                 <td><{$val['es_name']}></td>
                                 <td style="white-space: normal;"><img src="<{$val['es_logo']}>" alt="" style="width:150px;"></td>
                                 <td style="white-space: normal;"><{if $val['es_type'] == 1}>企业服务商品<{else}>企业服务文章<{/if}></td>
+                                <td style="white-space: normal;"><{if $val['es_type'] == 1}><{$type1['es_second_type']}><{else}><{$type2['es_second_type']}><{/if}></td>
                                 <td style="white-space: normal;"><{$val['es_weight']}></td>
                                 <td style="white-space: normal;"><{date('Y-m-d H:i',$val['es_create_time'])}></td>
                                 <td style="white-space: normal;">
