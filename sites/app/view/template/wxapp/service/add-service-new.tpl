@@ -210,7 +210,7 @@
 
                                                     <div class="group-info">
                                                         <div class="form-group">
-                                                            <label for="" class="green">LOGO</label>
+                                                            <label for="" class="green logo_name">LOGO</label>
                                                             <div class="control-group">
                                                                 <img onclick="toUpload(this)" data-limit="1" data-width="250" data-height="250" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                                                                 <input type="hidden" id="logo"  class="avatar-field bg-img" name="logo" value="<{if $row && $row['es_logo']}><{$row['es_logo']}><{/if}>"/>
@@ -300,6 +300,33 @@
 <script src="/public/manage/coupon/datePicker/WdatePicker.js"></script>
 <script type="text/javascript" src="/public/manage/assets/js/date-time/bootstrap-timepicker.min.js"></script>
 <script type="text/javascript">
+    $('#type1').on('change',function () {
+        var type1 = $('#type1').val();
+        $('.logo_name').html('LOGO (153 X 56)');
+        $('#upload-logo').attr('data-width','153');
+        $('#upload-logo').attr('data-height','56');
+    })
+
+    $('#type2').on('change',function () {
+        var type2 = $('#type2').val();
+        if(type2 ==2){
+            $('.logo_name').html('LOGO (80 X 37)');
+            $('#upload-logo').attr('data-width','80');
+            $('#upload-logo').attr('data-height','37');
+        }else{
+            if(type2 == 3){
+                $('.logo_name').html('LOGO (141 X 56)');
+                $('#upload-logo').attr('data-width','141');
+                $('#upload-logo').attr('data-height','56');
+            }else{
+                $('.logo_name').html('LOGO (105 X 56)');
+                $('#upload-logo').attr('data-width','105');
+                $('#upload-logo').attr('data-height','56');
+            }
+
+        }
+
+    })
 
     $('#type').on('change',function () {
         var type = $('#type').val();
