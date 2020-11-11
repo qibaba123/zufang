@@ -79,19 +79,20 @@
     <input type="hidden" id="hid_id"  class="avatar-field bg-img" name="hid_id" value="<{if $row && $row['ap_id']}><{$row['ap_id']}><{/if}>"/>
     <div class="group-info">
         <div class="form-group">
-            <label for="" style="width: 100%" >园区名称<font color="red">*</font></label>
-            <div class="control-group">
-                <input type="text" id="ap_name" placeholder="园区名称" class="form-control" name="ap_name" value="<{if $row && $row['ap_name']}><{$row['ap_name']}><{/if}>"/>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="" class="green logo_name">首页图片 ( 110 * 80 )</label>
+            <label for="" class="">首页图片 ( 110 * 80 )</label>
             <div class="control-group">
                 <img onclick="toUpload(this)" data-limit="1" data-width="110" data-height="80" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                 <input type="hidden" id="logo"  class="avatar-field bg-img" name="logo" value="<{if $row && $row['es_logo']}><{$row['es_logo']}><{/if}>"/>
 
             </div>
         </div>
+        <div class="form-group">
+            <label for="" style="width: 100%" >园区名称<font color="red">*</font></label>
+            <div class="control-group">
+                <input type="text" id="ap_name" placeholder="园区名称" class="form-control" name="ap_name" value="<{if $row && $row['ap_name']}><{$row['ap_name']}><{/if}>"/>
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="">权重<font color="red">*</font></label>
             <div class="control-group">
