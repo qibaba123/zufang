@@ -75,6 +75,7 @@
                     <thead>
                     <tr>
                         <th>园区名称</th>
+                        <th>首页图片</th>
                         <th>所属区域</th>
                         <th>权重</th>
                         <th>修改时间</th>
@@ -85,6 +86,7 @@
                     <{foreach $list as $val}>
                         <tr id="tr_<{$val['ap_id']}>" class="tr-content">
                             <td><{$val['ap_name']}></td>
+                            <td><img src="<{$val['ap_logo']}>" style="width: 100px;" alt=""></td>
                             <td><{$val['ap_pro_name']}>-<{$val['ap_city_name']}>-<{$val['ap_area_name']}></td>
                             <td><{$val['ap_weight']}></td>
                             <td><{date('Y-m-d,H:i',$val['ap_create_time'])}></td>

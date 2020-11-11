@@ -173,6 +173,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $pageCfg    = new Libs_Pagination_Paginator($total,$this->count);
         $this->output['pageHtml']   = $pageCfg->render();
         $this->output['list']       = $list;
+        $this->renderCropTool('/wxapp/index/uploadImg');
         $this->buildBreadcrumbs(array(
             array('title' => '园区列表', 'link' => '#'),
         ));
@@ -222,6 +223,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $data['ap_pro']         = $this->request->getIntParam('pro');
         $data['ap_city']        = $this->request->getIntParam('city');
         $data['ap_area']        = $this->request->getIntParam('area');
+        $data['ap_logo']        = $this->request->getStrParam('logo');
         $data['ap_pro_name']    = $this->request->getStrParam('pro_name');
         $data['ap_city_name']   = $this->request->getStrParam('city_name');
         $data['ap_area_name']   = $this->request->getStrParam('area_name');

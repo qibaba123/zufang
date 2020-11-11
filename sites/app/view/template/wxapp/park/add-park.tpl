@@ -85,6 +85,14 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="" class="green logo_name">首页图片 ( 110 * 80 )</label>
+            <div class="control-group">
+                <img onclick="toUpload(this)" data-limit="1" data-width="110" data-height="80" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                <input type="hidden" id="logo"  class="avatar-field bg-img" name="logo" value="<{if $row && $row['es_logo']}><{$row['es_logo']}><{/if}>"/>
+
+            </div>
+        </div>
+        <div class="form-group">
             <label for="">权重<font color="red">*</font></label>
             <div class="control-group">
                 <input id="ap_weight" class="form-control"  placeholder="权重" value="<{if $row && $row['ap_weight']}><{$row['ap_weight']}><{/if}>">
@@ -127,7 +135,7 @@
 <div class="alert setting-save" style="text-align: center;margin-top:100px;">
     <button class="btn btn-primary btn-save">保存</button>
 </div>
-
+<{include file="../img-upload-modal.tpl"}>
 
 <script type="text/javascript" charset="utf-8" src="/public/plugin/layer/layer.js"></script>
 <script src="/public/manage/shopfixture/color-spectrum/spectrum.js"></script>
@@ -187,6 +195,7 @@
         var pro           = $('#pro').val();
         var city          = $('#city').val();
         var area          = $('#area').val();
+        var logo          = $('#logo').val();
         var pro_name      = $("#pro").find("option:selected").text();
         var city_name     = $("#city").find("option:selected").text();
         var area_name     = $("#area").find("option:selected").text();
@@ -204,6 +213,7 @@
             pro         : pro,
             city        : city,
             area        : area,
+            logo        : logo,
             pro_name    : pro_name,
             city_name   : city_name,
             area_name   : area_name
