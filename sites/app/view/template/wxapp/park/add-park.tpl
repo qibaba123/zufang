@@ -81,8 +81,8 @@
         <div class="form-group">
             <label for="" class="">首页图片 ( 110 * 80 )</label>
             <div class="control-group">
-                <img onclick="toUpload(this)" data-limit="1" data-width="110" data-height="80" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
-                <input type="hidden" id="logo"  class="avatar-field bg-img" name="logo" value="<{if $row && $row['es_logo']}><{$row['es_logo']}><{/if}>"/>
+                <img onclick="toUpload(this)" data-limit="1" data-width="110" data-height="80" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['ap_logo']}><{$row['ap_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                <input type="hidden" id="logo"  class="avatar-field bg-img" name="logo" value="<{if $row && $row['ap_logo']}><{$row['ap_logo']}><{/if}>"/>
 
             </div>
         </div>
