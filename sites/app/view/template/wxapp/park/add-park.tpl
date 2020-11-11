@@ -144,6 +144,42 @@
 <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=099aa80c85be20b87ecf7fd6ad75bdc2"></script>
 
 <script type="text/javascript">
+    /**
+     * 图片结果处理
+     * @param allSrc
+     */
+    function deal_select_img(allSrc){
+        if(allSrc){
+            if(maxNum == 1){
+                $('#'+nowId).attr('src',allSrc[0]);
+                if(nowId == 'upload-cover'){
+                    $('#cover').val(allSrc[0]);
+                }
+                if(nowId == 'upload-logo'){
+                    $('#logo').val(allSrc[0]);
+                }
+            }else{
+                var img_html = '';
+                var cur_num = $('#'+nowId+'-num').val();
+                for(var i=0 ; i< allSrc.length ; i++){
+                    var key = i + parseInt(cur_num);
+                    img_html += '<p>';
+                    img_html += '<img class="img-thumbnail col" layer-src="'+allSrc[i]+'"  layer-pid="" src="'+allSrc[i]+'" >';
+                    img_html += '<span class="delimg-btn">×</span>';
+                    img_html += '<input type="hidden" id="slide_'+key+'" name="slide_'+key+'" value="'+allSrc[i]+'">';
+                    img_html += '<input type="hidden" id="slide_id_'+key+'" name="slide_id_'+key+'" value="0">';
+                    img_html += '</p>';
+                }
+                var now_num = parseInt(cur_num)+allSrc.length;
+                if(now_num <= maxNum){
+                    $('#'+nowId+'-num').val(now_num);
+                    $('#'+nowId).prepend(img_html);
+                }else{
+                    layer.msg('幻灯图片最多'+maxNum+'张');
+                }
+            }
+        }
+    }
     $('#pro').change(function(){
         $("#city").html('');
         $("#area").html('');
