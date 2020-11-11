@@ -210,9 +210,9 @@
 
                                                     <div class="group-info">
                                                         <div class="form-group">
-                                                            <label for="" class="green logo_name">LOGO</label>
+                                                            <label for="" class="green logo_name">LOGO ( <{if $row['es_type'] == 1}>153 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>80 <{elseif $row['es_second_type'] == 3}>141 <{else}>105 <{/if}><{/if}> X <{if $row['es_type'] == 1}>56 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>37 <{elseif $row['es_second_type'] == 3}>56 <{else}>56 <{/if}><{/if}>)</label>
                                                             <div class="control-group">
-                                                                <img onclick="toUpload(this)" data-limit="1" data-width="250" data-height="250" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                                <img onclick="toUpload(this)" data-limit="1" data-width="<{if $row['es_type'] == 1}>153 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>80 <{elseif $row['es_second_type'] == 3}>141 <{else}>105 <{/if}><{/if}>" data-height="<{if $row['es_type'] == 1}>56 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>37 <{elseif $row['es_second_type'] == 3}>56 <{else}>56 <{/if}><{/if}>" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                                                                 <input type="hidden" id="logo"  class="avatar-field bg-img" name="logo" value="<{if $row && $row['es_logo']}><{$row['es_logo']}><{/if}>"/>
 
                                                             </div>
