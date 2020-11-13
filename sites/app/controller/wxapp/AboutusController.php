@@ -41,6 +41,17 @@ class App_Controller_Wxapp_AboutusController extends App_Controller_Wxapp_InitCo
         $this->displaySmarty('wxapp/about/index.tpl');
     }
 
+    //上传原图片方法
+    public function uploadImageAction() {
+        $uploader   = new Libs_File_Transfer_Uploader('image|gallery');
+        $ret = $uploader->receiveFile('');
+        if (!$ret) {
+            $this->displayJsonError("上传失败，请重试");
+        }
+        $this->displayJsonSuccess(array('error' => 0,'url' => plum_deal_image_url($ret['images'])));
+
+    }
+
 
     //保存关于我们
     public function saveAboutUsAction(){
@@ -54,8 +65,8 @@ class App_Controller_Wxapp_AboutusController extends App_Controller_Wxapp_InitCo
         $data['au_lat']     = $this->request->getFloatParam('lat');
         $data['au_image']      = $this->request->getStrParam('image');
         $data['au_service_image']      = $this->request->getStrParam('serviceimage');
-        $data['au_image1']     = $this->request->getStrParam('image1');
-        $data['au_image2']     = $this->request->getStrParam('image2');
+        $data['au_image1']     = $this->request->getStrParam('add_img2');
+   //     $data['au_image2']     = $this->request->getStrParam('image2');
         $data['au_brief']     = $this->request->getStrParam('brief');
         $data['au_brief1']     = $this->request->getStrParam('brief1');
         $data['au_brief2']     = $this->request->getStrParam('brief2');
