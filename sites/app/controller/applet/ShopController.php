@@ -30,87 +30,75 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         }
 
         //首页导航
-        $nav_model = new App_Model_Index_MysqlIndexNavStorage();
-        $nav       = $nav_model->getList(array(),0,0,array('in_weight'=>"DESC"));
-        foreach($nav as $val){
-            $data['nav'][] = array(
-                'logo' => $this->dealImagePath($val['in_logo']),
-                'name' => $val['in_name'],
-                'link_type' => $val['in_type']  //1.企业服务  2.园区服务  3.学习园地 4.关于我们
-            );
-        }
+//        $nav_model = new App_Model_Index_MysqlIndexNavStorage();
+//        $nav       = $nav_model->getList(array(),0,0,array('in_weight'=>"DESC"));
+//        foreach($nav as $val){
+//            $data['nav'][] = array(
+//                'logo' => $this->dealImagePath($val['in_logo']),
+//                'name' => $val['in_name'],
+//                'link_type' => $val['in_type']  //1.企业服务  2.园区服务  3.学习园地 4.关于我们
+//            );
+//        }
 
 
         //首页公告
-        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage($this->sid);
-        $notice       = $notice_model->getList(array(),0,0,array('sn_weight'=>'DESC'));
-        foreach($notice as $val){
-            $data['notice'][] = array(
-                'content' => $val['sn_brief']
-            );
-        }
+//        $notice_model = new App_Model_Shop_MysqlShopNoticeStorage($this->sid);
+//        $notice       = $notice_model->getList(array(),0,0,array('sn_weight'=>'DESC'));
+//        foreach($notice as $val){
+//            $data['notice'][] = array(
+//                'content' => $val['sn_brief']
+//            );
+//        }
         //首页文章
-        $information_model = new App_Model_Applet_MysqlAppletInformationStorage();
-        $information       = $information_model->getList(array(),0,5,array('ai_sort'=>'DESC'));
-        foreach ($information as $val){
-            $data['information'][] = array(
-                'id' => $val['ai_id'],
-                'title' => $val['ai_title'],
-                'cover' => $this->dealImagePath($val['ai_cover']),
-                'brief' => $val['ai_brief'],
-                'create_time' => date('Y-m-d',$val['ai_create_time']),
-                'show_num' => $val['ai_show_num']
-            );
-        }
+//        $information_model = new App_Model_Applet_MysqlAppletInformationStorage();
+//        $information       = $information_model->getList(array(),0,5,array('ai_sort'=>'DESC'));
+//        foreach ($information as $val){
+//            $data['information'][] = array(
+//                'id' => $val['ai_id'],
+//                'title' => $val['ai_title'],
+//                'cover' => $this->dealImagePath($val['ai_cover']),
+//                'brief' => $val['ai_brief'],
+//                'create_time' => date('Y-m-d',$val['ai_create_time']),
+//                'show_num' => $val['ai_show_num']
+//            );
+//        }
 
         //首页企业服务
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
-        $service       = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
-        foreach($service as $val){
-            if($val['es_type'] == 1){
-                $data['service']['goods'][] = array(
-                    'id'   => $val['es_id'],
-                    'name' => $val['es_name'],
-                    'type' => $val['es_type'],
-                    'logo' => $this->dealImagePath($val['es_logo'])
-                );
-            }elseif($val['es_type'] == 2){
-                $data['service']['information'][] = array(
-                    'id'   => $val['es_id'],
-                    'name' => $val['es_name'],
-                    'type' => $val['es_type'],
-                    'logo' => $this->dealImagePath($val['es_logo'])
-                );
-            }
-        }
+//        $service       = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+//        foreach($service as $val){
+//            if($val['es_type'] == 1){
+//                $data['service']['goods'][] = array(
+//                    'id'   => $val['es_id'],
+//                    'name' => $val['es_name'],
+//                    'type' => $val['es_type'],
+//                    'logo' => $this->dealImagePath($val['es_logo'])
+//                );
+//            }elseif($val['es_type'] == 2){
+//                $data['service']['information'][] = array(
+//                    'id'   => $val['es_id'],
+//                    'name' => $val['es_name'],
+//                    'type' => $val['es_type'],
+//                    'logo' => $this->dealImagePath($val['es_logo'])
+//                );
+//            }
+//        }
         //企业服务顶部图片
-        $data['service']['top_image'] = $this->dealImagePath($this->shop['s_service_image']);
-        //联系我们
-        $about_us_model = new App_Model_aboutus_MysqlAboutUsStorage();
-        $about_us       = $about_us_model->getRowById(1);
-        $data['company'] = array(
-            'c_name' => $about_us['au_c_name'],
-            'image'  => $this->dealImagePath($about_us['au_image']),
-            'brief'  => $about_us['au_brief'],
-            'mobile' => $about_us['au_mobile'],
-            'address' => $about_us['au_address']
-        );
+//        $data['service']['top_image'] = $this->dealImagePath($this->shop['s_service_image']);
+//        //联系我们
+//        $about_us_model = new App_Model_aboutus_MysqlAboutUsStorage();
+//        $about_us       = $about_us_model->getRowById(1);
+//        $data['company'] = array(
+//            'c_name' => $about_us['au_c_name'],
+//            'image'  => $this->dealImagePath($about_us['au_image']),
+//            'brief'  => $about_us['au_brief'],
+//            'mobile' => $about_us['au_mobile'],
+//            'address' => $about_us['au_address']
+//        );
         //首页视频
-        $data['video'] = $this->dealImagePath($about_us['au_video']);
-        $data['video_image'] = $this->dealImagePath($about_us['au_video_image']);
+//        $data['video'] = $this->dealImagePath($about_us['au_video']);
+//        $data['video_image'] = $this->dealImagePath($about_us['au_video_image']);
 
-        //企业开办
-        $where = array();
-        $service = array();
-        $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>1);
-        $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>1);
-        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
-        foreach ($service as $val){
-            $data['qykb'][] = array(
-                'id' => $val['es_id'],
-                'logo' => $this->dealImagePath($val['es_logo'])
-            );
-        }
         //企业开办
         $where = array();
         $service = array();
