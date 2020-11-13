@@ -98,6 +98,127 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         //首页视频
         $data['video'] = $this->dealImagePath($about_us['au_video']);
         $data['video_image'] = $this->dealImagePath($about_us['au_video_image']);
+
+        //企业开办
+        $where = array();
+        $service = array();
+        $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>1);
+        $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>1);
+        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        foreach ($service as $val){
+            $data['qykb'][] = array(
+                'id' => $val['es_id'],
+                'logo' => $this->dealImagePath($val['es_logo'])
+            );
+        }
+        //企业开办
+        $where = array();
+        $service = array();
+        $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>1);
+        $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>1);
+        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        foreach ($service as $val){
+            $data['qykb'][] = array(
+                'id' => $val['es_id'],
+                'logo' => $this->dealImagePath($val['es_logo'])
+            );
+        }
+
+        //高企申报
+        $where = array();
+        $service = array();
+        $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
+        $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>1);
+        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        foreach ($service as $val){
+            $data['gqsb'][] = array(
+                'id' => $val['es_id'],
+                'logo' => $this->dealImagePath($val['es_logo'])
+            );
+        }
+        //挂牌上市
+        $where = array();
+        $service = array();
+        $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
+        $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>2);
+        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        foreach ($service as $val){
+            $data['gpss'][] = array(
+                'id' => $val['es_id'],
+                'logo' => $this->dealImagePath($val['es_logo'])
+            );
+        }
+        //税筹
+        $where = array();
+        $service = array();
+        $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
+        $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>3);
+        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        foreach ($service as $val){
+            $data['sc'][] = array(
+                'id' => $val['es_id'],
+                'logo' => $this->dealImagePath($val['es_logo'])
+            );
+        }
+
+        //政策申报
+        $where = array();
+        $service = array();
+        $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
+        $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>4);
+        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        foreach ($service as $val){
+            $data['zcsb'][] = array(
+                'id' => $val['es_id'],
+                'logo' => $this->dealImagePath($val['es_logo'])
+            );
+        }
+        //知识产权
+        $where = array();
+        $service = array();
+        $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>1);
+        $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>2);
+        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        foreach ($service as $val){
+            $data['zscq'][] = array(
+                'id' => $val['es_id'],
+                'logo' => $this->dealImagePath($val['es_logo'])
+            );
+        }
+
+        //人力资源
+        $where = array();
+        $service = array();
+        $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
+        $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>5);
+        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        foreach ($service as $val){
+            $data['rlzy'][] = array(
+                'id' => $val['es_id'],
+                'logo' => $this->dealImagePath($val['es_logo'])
+            );
+        }
+
+        //融资服务
+        $where = array();
+        $service = array();
+        $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
+        $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>6);
+        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        foreach ($service as $val){
+            $data['rzfw'][] = array(
+                'id' => $val['es_id'],
+                'logo' => $this->dealImagePath($val['es_logo'])
+            );
+        }
+
+        //园区
+        $park_model = new App_Model_Park_MysqlAddressParkStorage();
+        $where      = array();
+        //$where[]    = array('name'=>"",'oper'=>"=",'value'=>);
+        $park       = $park_model->getList($where,0,0,array('address_park'=>'DESC'));
+
+
         $this->displayJsonSuccess($data,true,'获取成功');
 
 
