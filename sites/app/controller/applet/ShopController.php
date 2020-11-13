@@ -204,8 +204,13 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $park_model = new App_Model_Park_MysqlAddressParkStorage();
         $where      = array();
         //$where[]    = array('name'=>"",'oper'=>"=",'value'=>);
-        $park       = $park_model->getList($where,0,0,array('address_park'=>'DESC'));
-
+        $park       = $park_model->getList($where,0,0,array('ap_weight'=>'DESC'));
+        foreach ($park as $val){
+            $data['park'][] = array(
+                'id'   => $val['ap_id'],
+                'logo' => $this->dealImagePath($val['ap_logo'])
+            );
+        }
 
         $this->displayJsonSuccess($data,true,'获取成功');
 
