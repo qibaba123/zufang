@@ -339,11 +339,12 @@
                                                 </div>
                                                 <div class="group-info  xs-hidden-info">
                                                     <div class="form-group">
-                                                        <label class="control-label xs-hidden-label">简介图片(上 240px*142px)：</label>
+                                                        <label class="control-label xs-hidden-label">简介图片：</label>
                                                         <div class="control-group" >
                                                             <img onclick="uploadImage(this);" data-id="add_img2" id="img_add_img2"  src="<{if $row && $row['au_image1']}><{$row['au_image1']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>" style="width:170px;display:inline-block;margin-left:0;">
                                                             <input type="hidden" id="add_img2" name="add_img2" class="avatar-field bg-img"  value="<{if $row && $row['au_image1']}><{$row['au_image1']}><{/if}>"/>
                                                         </div>
+                                                        <input type="file" name="example-image" id="example-image" style="display: none;" enctype="multipart/form-data">
                                                     </div>
 
                                                    <!-- <div class="form-group">
