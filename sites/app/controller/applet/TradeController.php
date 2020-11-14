@@ -132,12 +132,21 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
     //预约订单列表
     public function ServiceTradeListAction(){
         $status = $this->request->getIntParam('status');//0.全部  1.待支付  2.进行中  3.已过期 4.续租
+        $type = $this->request->getIntParam('type');//0.全部  1.代账续约  2.园区续租
         $page   = $this->request->getIntParam('page');
         $index  =  $page*$this->count;
         if($status == 4){
             $status = 2;
         }
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
+        if($type == 1){
+            $where[] = array('name'=>"rt_type",'oper'=>"=",'value'=>2);
+            $where[] = array('name'=>"rt_second_type",'oper'=>"=",'value'=>1);
+        }elseif($type == 2){
+            $where[] = array('name'=>"rt_type",'oper'=>"in",'value'=>array(1,3));
+        }else{
+            $where[] = array('name'=>"rt_type",'oper'=>"in",'value'=>array(1,2,3));
+        }
         if($status){
             $where[] = array('name'=>"rt_status",'oper'=>"=",'value'=>$status);
         }else{
@@ -145,7 +154,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         }
 
         $where[] = array('name'=>"rt_m_id",'oper'=>"=",'value'=>$this->member['m_id']);
-        $where[] = array('name'=>"rt_type",'oper'=>"in",'value'=>array(1,2,3));
+
        // Libs_Log_Logger::outputLog($where);
         $list    = $trade_model->getList($where,$index,$this->count,array('rt_create_time'=>'DESC'));
     //    Libs_Log_Logger::outputLog($list);
@@ -239,6 +248,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
 
        // $end_time -
         $number      = '';
+        $second_type = 0;
         if($type == 1){
             $house_model = new App_Model_Resources_MysqlResourcesStorage();
             $row         = $house_model->getRowById($gid);
@@ -257,12 +267,14 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $cover         = $row['es_cover'];
             $brief         = $row['es_brief'];
             $price         = $row['es_price'];
+            $second_type   = $row['es_second_type'];
         }
         $fee = $time_num * $price;
         $insert = array(
             'rt_s_id' => $this->sid,
             'rt_m_id' => $this->member['m_id'],
             'rt_type' => $type,
+            'rt_second_type' => $second_type,
             'rt_m_nickname' => $this->member['m_nickname'],
             'rt_openid'   => $this->member['m_openid'],
   //          'rt_m_name'   => $m_name,
