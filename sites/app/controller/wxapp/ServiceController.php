@@ -43,10 +43,10 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         if($type){
             $where[]       = array('name'=>'es_type','oper'=>"=",'value'=>$type);
             $this->output['type'] = $type;
-            if($type == 1){
+            if($type == 1 && $type2){
                 $where[]       = array('name'=>'es_second_type','oper'=>"=",'value'=>$type2);
                 $this->output['type2'] = $type2;
-            }elseif($type == 2){
+            }elseif($type == 2 && $type3){
                 $where[]       = array('name'=>'es_second_type','oper'=>"=",'value'=>$type3);
                 $this->output['type3'] = $type3;
             }
