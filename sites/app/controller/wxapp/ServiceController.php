@@ -34,10 +34,21 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
 
     //企业服务列表
     public function serviceListAction(){
-        $page  = $this->request->getIntParam('page');
+        $page   = $this->request->getIntParam('page');
+        $type1  = $this->request->getIntParam('type1');
+        $type2  = $this->request->getIntParam('type2');
         $index = $page * $this->count;
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
-        $where[]       = array('name'=>'es_type','oper'=>"in",'value'=>array(1,2));
+        if($type1){
+            $where[]       = array('name'=>'es_type','oper'=>"=",'value'=>$type1);
+            $this->output['type1'] = $type1;
+        }else{
+            $where[]       = array('name'=>'es_type','oper'=>"in",'value'=>array(1,2));
+        }
+        if($type2){
+            $where[]       = array('name'=>'es_second_type','oper'=>"=",'value'=>$type2);
+            $this->output['type2'] = $type2;
+        }
         $list  = $service_model->getList($where,$index,$this->count,array('es_weight'=>'DESC'));
         $this->output['list'] = $list;
         $this->output['image'] = $this->curr_shop['s_service_image'];
@@ -45,8 +56,12 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $total  = $service_model->getCount(array());
         $page_libs = new Libs_Pagination_Paginator($total,$this->count,'jquery',true);
         $this->output['pageHtml']   = $page_libs->render();
-        $this->output['type1'] = plum_parse_config('status1','zufang');
-        $this->output['type2'] = plum_parse_config('status2','zufang');
+        $this->output['type_arr']   = array(
+                1 => '企业服务商品',
+                2 => '企业服务文章'
+        );
+        $this->output['type1_arr'] = plum_parse_config('status1','zufang');
+        $this->output['type2_arr'] = plum_parse_config('status2','zufang');
         $this->buildBreadcrumbs(array(
             array('title' => '企业服务', 'link' => '#'),
         ));

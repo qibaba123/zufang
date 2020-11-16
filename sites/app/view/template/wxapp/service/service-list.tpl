@@ -76,7 +76,43 @@
         </div>
         <button class="btn btn-blue btn-sm" style="margin-left: 20px;padding-bottom: 5px;" data-toggle="modal" data-target="#topModal"><i class="icon-plus bigger-80"></i>企业服务顶部图片</button>
         <div class="search-part-wrap">
-
+            <form action="/wxapp/service/serviceList" method="get" class="form-inline">
+                <div class="search-input-item">
+                    <div class="input-item-group">
+                        <div class="input-item-addon">服务分类</div>
+                        <div class="input-form">
+                            <div class="col-sm-8" style="width:30%;">
+                                <select class="form-control" name="type1" id="type1" >
+                                    <option value="0">服务类型</option>
+                                    <{foreach $type_arr as $key=>$val}>
+                                         <option value="<{$key}>" <{if $type1 == $key}>selected<{/if}>><{$val}></option>
+                                    <{/foreach}>
+                                </select>
+                            </div>
+                            <div class="col-sm-8" style="width:30%;">
+                                <select class="form-control" name="type2" <{if $type1 != 1}> style="display:none;"<{/if}>>
+                                    <option value="0">服务分类</option>
+                                    <{foreach $type1_arr as $key=>$val}>
+                                        <option value="<{$key}>" <{if $type2 == $key}>selected<{/if}>><{$val}></option>
+                                    <{/foreach}>
+                                </select>
+                                <select class="form-control" name="type2" <{if $type1 != 2}> style="display:none;"<{/if}> >
+                                    <option value="0">服务分类</option>
+                                    <{foreach $type2_arr as $key=>$val}>
+                                      <option value="<{$key}>" <{if $type2 == $key}>selected<{/if}>><{$val}></option>
+                                    <{/foreach}>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-input-item">
+                    <div class="search-btn">
+                        <button type="submit" class="btn btn-blue btn-sm">查询</button>
+                        <!--<a href="javascript:;" class="btn btn-blue btn-sm btn-excel" ><i class="icon-download"></i>用户导出</a>-->
+                    </div>
+                </div>
+            </form>
         </div>
 
     <div class="row">
