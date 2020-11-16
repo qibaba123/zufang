@@ -161,8 +161,10 @@ class App_Controller_Wxapp_ZftradeController extends App_Controller_Wxapp_InitCo
         $type = array(
             1 => '企业服务',
             2 => '学习园地',
-  //          3 => '关于我们',
-            4 => '资讯文章'
+            3 => '关于我们',
+            4 => '资讯文章',
+            5 => '我的预约',
+
         );
         $this->output['type'] = $type;
         $this->buildBreadcrumbs(array(
