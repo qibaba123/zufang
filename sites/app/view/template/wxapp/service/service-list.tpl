@@ -242,8 +242,11 @@
         var type = $('#type1').val();
         if( type == 1){
             $('#second_type1').show();
-        }elseif( type == 2){
+            $('#second_type2').hide();
+        }
+        if( type == 2){
             $('#second_type2').show();
+            $('#second_type1').hide();
         }
     })
     $('#confirm-save').on('click',function(){
