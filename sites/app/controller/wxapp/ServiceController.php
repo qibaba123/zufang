@@ -35,19 +35,27 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
     //企业服务列表
     public function serviceListAction(){
         $page   = $this->request->getIntParam('page');
-        $type1  = $this->request->getIntParam('type1');
+        $type   = $this->request->getIntParam('type');
         $type2  = $this->request->getIntParam('type2');
+        $type3  = $this->request->getIntParam('type3');
         $index = $page * $this->count;
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
-        if($type1){
-            $where[]       = array('name'=>'es_type','oper'=>"=",'value'=>$type1);
-            $this->output['type1'] = $type1;
+        if($type){
+            $where[]       = array('name'=>'es_type','oper'=>"=",'value'=>$type);
+            $this->output['$type'] = $type;
+            if($type == 1){
+                $where[]       = array('name'=>'es_second_type','oper'=>"=",'value'=>$type2);
+                $this->output['type2'] = $type2;
+            }elseif($type == 2){
+                $where[]       = array('name'=>'es_second_type','oper'=>"=",'value'=>$type3);
+                $this->output['type3'] = $type3;
+            }
         }else{
             $where[]       = array('name'=>'es_type','oper'=>"in",'value'=>array(1,2));
         }
-        if($type2){
-            $where[]       = array('name'=>'es_second_type','oper'=>"=",'value'=>$type2);
-            $this->output['type2'] = $type2;
+        if($type){
+
+
         }
         $list  = $service_model->getList($where,$index,$this->count,array('es_weight'=>'DESC'));
         $this->output['list'] = $list;

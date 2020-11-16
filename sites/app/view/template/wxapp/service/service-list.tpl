@@ -82,10 +82,10 @@
                         <div class="input-item-addon">服务分类</div>
                         <div class="input-form">
                             <div class="col-sm-8" style="width:30%;">
-                                <select class="form-control" name="type1" id="type1" >
+                                <select class="form-control" name="type" id="type1" >
                                     <option value="0">服务类型</option>
                                     <{foreach $type_arr as $key=>$val}>
-                                         <option value="<{$key}>" <{if $type1 == $key}>selected<{/if}>><{$val}></option>
+                                         <option value="<{$key}>" <{if $type == $key}>selected<{/if}>><{$val}></option>
                                     <{/foreach}>
                                 </select>
                             </div>
@@ -99,10 +99,10 @@
                                     <option value="<{$key}>" <{if $type2 == $key}>selected<{/if}>><{$val}></option>
                                 <{/foreach}>
                                 </select>
-                                <select class="form-control" name="type2" id="second_type2" <{if $type1 != 2}> style="display:none;"<{/if}> >
+                                <select class="form-control" name="type3" id="second_type2" <{if $type1 != 2}> style="display:none;"<{/if}> >
                                 <option value="0">服务分类</option>
                                 <{foreach $type2_arr as $key=>$val}>
-                                     <option value="<{$key}>" <{if $type2 == $key}>selected<{/if}>><{$val}></option>
+                                     <option value="<{$key}>" <{if $type3 == $key}>selected<{/if}>><{$val}></option>
                                 <{/foreach}>
                                 </select>
                             </div>
