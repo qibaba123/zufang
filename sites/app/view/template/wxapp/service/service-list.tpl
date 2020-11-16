@@ -243,7 +243,7 @@
 <script type="text/javascript" src="/public/plugin/ZeroClip/ZeroClipboard.min.js"></script>
 <script type="text/javascript">
     $('#type1').on('change',function(){
-        var type = $('#type1').val();
+        var type = $('#type').val();
         if( type == 1){
             $('#second_type1').show();
             $('#second_type2').hide();
