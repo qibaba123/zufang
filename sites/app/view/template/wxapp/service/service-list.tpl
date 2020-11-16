@@ -90,13 +90,13 @@
                                 </select>
                             </div>
                             <div class="col-sm-8" style="width:30%;">
-                                <select class="form-control" name="type2" <{if $type1 != 1}> style="display:none;"<{/if}>>
+                                <select class="form-control" name="type2" id="second_type1" <{if $type1 != 1}> style="display:none;"<{/if}>>
                                     <option value="0">服务分类</option>
                                     <{foreach $type1_arr as $key=>$val}>
                                         <option value="<{$key}>" <{if $type2 == $key}>selected<{/if}>><{$val}></option>
                                     <{/foreach}>
                                 </select>
-                                <select class="form-control" name="type2" <{if $type1 != 2}> style="display:none;"<{/if}> >
+                                <select class="form-control" name="type2" id="second_type2" <{if $type1 != 2}> style="display:none;"<{/if}> >
                                     <option value="0">服务分类</option>
                                     <{foreach $type2_arr as $key=>$val}>
                                       <option value="<{$key}>" <{if $type2 == $key}>selected<{/if}>><{$val}></option>
@@ -238,6 +238,14 @@
 <script type="text/javascript" src="/public/manage/controllers/custom.js"></script>
 <script type="text/javascript" src="/public/plugin/ZeroClip/ZeroClipboard.min.js"></script>
 <script type="text/javascript">
+    $('#type1').on('change',function(){
+        var type = $('#type1').val();
+        if( type == 1){
+            $('#second_type1').show();
+        }elseif( type == 2){
+            $('#second_type2').show();
+        }
+    })
     $('#confirm-save').on('click',function(){
         var image = $('#top-image').val();
         var data = {
