@@ -42,7 +42,7 @@ class App_Controller_Wxapp_ServiceController extends App_Controller_Wxapp_InitCo
         $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
         if($type){
             $where[]       = array('name'=>'es_type','oper'=>"=",'value'=>$type);
-            $this->output['$type'] = $type;
+            $this->output['type'] = $type;
             if($type == 1){
                 $where[]       = array('name'=>'es_second_type','oper'=>"=",'value'=>$type2);
                 $this->output['type2'] = $type2;
