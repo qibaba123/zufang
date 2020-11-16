@@ -2312,7 +2312,8 @@ class App_Controller_Wxapp_OrderController extends App_Controller_Wxapp_OrderCom
                     1 => '企业服务',
                     2 => '学习园地',
                     3 => '关于我们',
-                    4 => '资讯文章'
+                    4 => '资讯文章',
+                    5 => '我的预约',
                 );
                 //数据处理
                 $rows    = array();
