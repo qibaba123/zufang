@@ -104,7 +104,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $service = array();
         $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>1);
         $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>1);
-        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        $service = $service_model->getList($where,0,0,array('es_weight'=>'DESC'));
         foreach ($service as $val){
             $data['qykb'][] = array(
                 'id' => $val['es_id'],
@@ -117,7 +117,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $service = array();
         $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
         $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>1);
-        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        $service = $service_model->getList($where,0,0,array('es_weight'=>'DESC'));
         foreach ($service as $val){
             $data['gqsb'][] = array(
                 'id' => $val['es_id'],
@@ -129,7 +129,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $service = array();
         $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
         $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>2);
-        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        $service = $service_model->getList($where,0,0,array('es_weight'=>'DESC'));
         foreach ($service as $val){
             $data['gpss'][] = array(
                 'id' => $val['es_id'],
@@ -141,7 +141,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $service = array();
         $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
         $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>3);
-        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        $service = $service_model->getList($where,0,0,array('es_weight'=>'DESC'));
         foreach ($service as $val){
             $data['sc'][] = array(
                 'id' => $val['es_id'],
@@ -154,7 +154,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $service = array();
         $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
         $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>4);
-        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        $service = $service_model->getList($where,0,0,array('es_weight'=>'DESC'));
         foreach ($service as $val){
             $data['zcsb'][] = array(
                 'id' => $val['es_id'],
@@ -166,7 +166,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $service = array();
         $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>1);
         $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>2);
-        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        $service = $service_model->getList($where,0,0,array('es_weight'=>'DESC'));
         foreach ($service as $val){
             $data['zscq'][] = array(
                 'id' => $val['es_id'],
@@ -179,7 +179,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $service = array();
         $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
         $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>5);
-        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        $service = $service_model->getList($where,0,0,array('es_weight'=>'DESC'));
         foreach ($service as $val){
             $data['rlzy'][] = array(
                 'id' => $val['es_id'],
@@ -192,7 +192,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         $service = array();
         $where[] = array('name'=>"es_type",'oper'=>"=",'value'=>2);
         $where[] = array('name'=>"es_second_type",'oper'=>"=",'value'=>6);
-        $service = $service_model->getList(array(),0,0,array('es_weight'=>'DESC'));
+        $service = $service_model->getList($where,0,0,array('es_weight'=>'DESC'));
         foreach ($service as $val){
             $data['rzfw'][] = array(
                 'id' => $val['es_id'],
