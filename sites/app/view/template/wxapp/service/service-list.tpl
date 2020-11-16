@@ -138,7 +138,7 @@
                                 <td><{$val['es_name']}></td>
                                 <td style="white-space: normal;"><img src="<{$val['es_logo']}>" alt="" style="width:150px;"></td>
                                 <td style="white-space: normal;"><{if $val['es_type'] == 1}>企业服务商品<{else}>企业服务文章<{/if}></td>
-                                <td style="white-space: normal;"><{if $val['es_type'] == 1}><{$type1[$val['es_second_type']]}><{else}><{$type2[$val['es_second_type']]}><{/if}></td>
+                                <td style="white-space: normal;"><{if $val['es_type'] == 1}><{$type1_arr[$val['es_second_type']]}><{else}><{$type2_arr[$val['es_second_type']]}><{/if}></td>
                                 <td style="white-space: normal;"><{$val['es_weight']}></td>
                                 <td style="white-space: normal;"><{date('Y-m-d H:i',$val['es_create_time'])}></td>
                                 <td style="white-space: normal;">
@@ -244,6 +244,10 @@
 <script type="text/javascript">
     $('#type1').on('change',function(){
         var type = $('#type1').val();
+        if( type == 0){
+            $('#second_type1').hide();
+            $('#second_type2').hide();
+        }
         if( type == 1){
             $('#second_type1').show();
             $('#second_type2').hide();
