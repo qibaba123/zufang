@@ -341,7 +341,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label xs-hidden-label">简介图片：</label>
                                                         <div class="control-group" >
-                                                            <img onclick="uploadImage(this);" data-id="add_img2" id="img_add_img2"  src="<{if $row && $row['au_image1']}><{$row['au_image1']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>" style="max-height:300px">
+                                                            <img onclick="uploadImage(this);" data-id="add_img2" id="img_add_img2"  src="<{if $row && $row['au_image1']}><{$row['au_image1']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>" style="max-height:300px;margin: initial;">
                                                             <input type="hidden" id="add_img2" name="add_img2" class="avatar-field bg-img"  value="<{if $row && $row['au_image1']}><{$row['au_image1']}><{/if}>"/>
                                                         </div>
                                                         <input type="file" name="example-image" id="example-image" style="display: none;" enctype="multipart/form-data">
