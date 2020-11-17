@@ -210,9 +210,9 @@
 
                                                     <div class="group-info">
                                                         <div class="form-group">
-                                                            <label for="" class="green logo_name">LOGO ( <{if $row['es_type'] == 1}>153 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>80 <{elseif $row['es_second_type'] == 3}>141 <{else}>105 <{/if}><{/if}> * <{if $row['es_type'] == 1}>56 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>37 <{elseif $row['es_second_type'] == 3}>56 <{else}>56 <{/if}><{/if}>)</label>
+                                                            <label for="" class="green logo_name">LOGO ( <{if $row['es_type'] == 1}>306 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>160 <{elseif $row['es_second_type'] == 3}>282 <{else}>210 <{/if}><{/if}> * <{if $row['es_type'] == 1}>112 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>74 <{elseif $row['es_second_type'] == 3}>112 <{else}>112 <{/if}><{/if}>)</label>
                                                             <div class="control-group">
-                                                                <img onclick="toUpload(this)" data-limit="1" data-width="<{if $row['es_type'] == 1}>153 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>80 <{elseif $row['es_second_type'] == 3}>141 <{else}>105 <{/if}><{/if}>" data-height="<{if $row['es_type'] == 1}>56 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>37 <{elseif $row['es_second_type'] == 3}>56 <{else}>56 <{/if}><{/if}>" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
+                                                                <img onclick="toUpload(this)" data-limit="1" data-width="<{if $row['es_type'] == 1}>306 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>160 <{elseif $row['es_second_type'] == 3}>282 <{else}>210 <{/if}><{/if}>" data-height="<{if $row['es_type'] == 1}>112 <{elseif $row['es_type'] == 2}><{if $row['es_second_type'] == 2}>74 <{elseif $row['es_second_type'] == 3}>112 <{else}>112 <{/if}><{/if}>" data-dom-id="upload-logo" id="upload-logo"  src="<{if $row && $row['es_logo']}><{$row['es_logo']}><{else}>/public/manage/img/zhanwei/zw_fxb_45_45.png<{/if}>"  width="75%" style="display:inline-block;margin-left:0;width: 150px">
                                                                 <input type="hidden" id="logo"  class="avatar-field bg-img" name="logo" value="<{if $row && $row['es_logo']}><{$row['es_logo']}><{/if}>"/>
 
                                                             </div>
@@ -302,26 +302,26 @@
 <script type="text/javascript">
     $('#type1').on('change',function () {
         var type1 = $('#type1').val();
-        $('.logo_name').html('LOGO (153 * 56)');
-        $('#upload-logo').attr('data-width','153');
-        $('#upload-logo').attr('data-height','56');
+        $('.logo_name').html('LOGO (306 * 112)');
+        $('#upload-logo').attr('data-width','306');
+        $('#upload-logo').attr('data-height','112');
     })
 
     $('#type2').on('change',function () {
         var type2 = $('#type2').val();
         if(type2 ==2){
-            $('.logo_name').html('LOGO (80 * 37)');
-            $('#upload-logo').attr('data-width','80');
-            $('#upload-logo').attr('data-height','37');
+            $('.logo_name').html('LOGO (160 * 74)');
+            $('#upload-logo').attr('data-width','160');
+            $('#upload-logo').attr('data-height','74');
         }else{
             if(type2 == 3){
-                $('.logo_name').html('LOGO (141 * 56)');
-                $('#upload-logo').attr('data-width','141');
-                $('#upload-logo').attr('data-height','56');
+                $('.logo_name').html('LOGO (282 * 112)');
+                $('#upload-logo').attr('data-width','282');
+                $('#upload-logo').attr('data-height','112');
             }else{
-                $('.logo_name').html('LOGO (105 * 56)');
-                $('#upload-logo').attr('data-width','105');
-                $('#upload-logo').attr('data-height','56');
+                $('.logo_name').html('LOGO (210 * 112)');
+                $('#upload-logo').attr('data-width','210');
+                $('#upload-logo').attr('data-height','112');
             }
 
         }
