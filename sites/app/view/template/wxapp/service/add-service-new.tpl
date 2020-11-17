@@ -309,7 +309,7 @@
 
     $('#type2').on('change',function () {
         var type2 = $('#type2').val();
-        if(type2 ==2){
+        if(type2 == 2){
             $('.logo_name').html('LOGO (160 * 74)');
             $('#upload-logo').attr('data-width','160');
             $('#upload-logo').attr('data-height','74');

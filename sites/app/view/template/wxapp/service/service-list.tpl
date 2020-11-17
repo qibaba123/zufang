@@ -147,7 +147,7 @@
                                 </td>
                             </tr>
                         <{/foreach}>
-                        <tr><td colspan="6" style="text-align:right"><{$paginator}></td></tr>
+                        <tr><td colspan="7" style="text-align:right"><{$paginator}></td></tr>
                     </table>
                 </div>
             </div>
