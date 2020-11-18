@@ -86,7 +86,7 @@
                     <{foreach $list as $val}>
                         <tr id="tr_<{$val['ap_id']}>" class="tr-content">
                             <td><{$val['ap_name']}></td>
-                            <td><img src="<{$val['ap_logo']}>" style="width: 100px;" alt=""></td>
+                            <td><img src="<{$val['ap_logo']}>" style="width: 100px;margin:initial;" alt=""></td>
                             <td><{$val['ap_pro_name']}>-<{$val['ap_city_name']}>-<{$val['ap_area_name']}></td>
                             <td><{$val['ap_weight']}></td>
                             <td><{date('Y-m-d,H:i',$val['ap_create_time'])}></td>
