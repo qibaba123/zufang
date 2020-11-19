@@ -136,7 +136,7 @@
                         <{foreach $list as $val}>
                             <tr>
                                 <td><{$val['es_name']}></td>
-                                <td style="white-space: normal;"><img src="<{$val['es_logo']}>" alt="" style="width:150px;"></td>
+                                <td style="white-space: normal;"><img src="<{$val['es_logo']}>" alt="" style="width:150px;margin:initial;"></td>
                                 <td style="white-space: normal;"><{if $val['es_type'] == 1}>企业服务商品<{else}>企业服务文章<{/if}></td>
                                 <td style="white-space: normal;"><{if $val['es_type'] == 1}><{$type1_arr[$val['es_second_type']]}><{else}><{$type2_arr[$val['es_second_type']]}><{/if}></td>
                                 <td style="white-space: normal;"><{$val['es_weight']}></td>
@@ -147,7 +147,7 @@
                                 </td>
                             </tr>
                         <{/foreach}>
-                        <tr><td colspan="6" style="text-align:right"><{$paginator}></td></tr>
+                        <tr><td colspan="7" style="text-align:right"><{$paginator}></td></tr>
                     </table>
                 </div>
             </div>

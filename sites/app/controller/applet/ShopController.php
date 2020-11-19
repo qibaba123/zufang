@@ -212,7 +212,8 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
         foreach ($park as $val){
             $data['park'][] = array(
                 'id'   => $val['ap_id'],
-                'logo' => $this->dealImagePath($val['ap_logo'])
+                'logo' => $this->dealImagePath($val['ap_logo']),
+                'name' => $val['ap_name']
             );
         }
 
