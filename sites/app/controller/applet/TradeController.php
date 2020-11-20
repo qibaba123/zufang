@@ -108,6 +108,12 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             2 => '租聘中',
             3 => '已过期'
         );
+        $format_name = '';
+        if($row['rt_format_id']){
+            $format_model = new App_Model_Service_MysqlServiceFormatStorage();
+            $format       = $format_model->getRowById($row['rt_format_id']);
+            $format_name = $format['sf_name'];
+        }
         $data[]      = array(
             'tid'    => $row['rt_tid'],
             'number' => $row['rt_number'],
@@ -121,7 +127,8 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'end_time'   => date('Y-m-d H:i',$row['rt_end_time']),
             'm_name'     => $row['rt_m_name'],
             'm_mobile'   => $row['rt_m_mobile'],
-            'm_note'     => $row['rt_note']
+            'm_note'     => $row['rt_note'],
+            'format_name' => $format_name
 
         );
         $this->displayJsonSuccess($data,true,'获取成功');
