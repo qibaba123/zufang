@@ -232,7 +232,7 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
         $data['ap_weight']      = $this->request->getIntParam('ap_weight');
         $data['ap_create_time'] = time();
         $park_model  = new App_Model_Park_MysqlAddressParkStorage();
-        if(!$data['ap_pro'] || !$data['ap_city'] || !$data['ap_area'] || !$data['ap_name'] || !$data['ap_weight']){
+        if(!$data['ap_pro'] || !$data['ap_city'] || !$data['ap_name'] || !$data['ap_weight']){
             $this->displayJsonError('请完善资料');
         }
         if($id){
