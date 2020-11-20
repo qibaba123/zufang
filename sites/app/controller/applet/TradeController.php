@@ -144,12 +144,12 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
           //  $where[] = array('name'=>"rt_second_type",'oper'=>"=",'value'=>1);
         }elseif($type == 2){
             $where[] = array('name'=>"rt_second_type",'oper'=>"=",'value'=>2);
-            $where[] = array('name'=>"rt_type",'oper'=>"=",'value'=>2);
+            $where[] = array('name'=>"rt_type",'oper'=>"=",'value'=>1);
 
            // $where[] = array('name'=>"rt_type",'oper'=>"in",'value'=>array(1,3));
         }elseif($type == 3){
             $where[] = array('name'=>"rt_second_type",'oper'=>"=",'value'=>1);
-            $where[] = array('name'=>"rt_type",'oper'=>"=",'value'=>2);
+            $where[] = array('name'=>"rt_type",'oper'=>"=",'value'=>1);
         }elseif($type == 4){
            // $where[] = array('name'=>"rt_second_type",'oper'=>"=",'value'=>1);
             $where[] = array('name'=>"rt_type",'oper'=>"=",'value'=>3);
