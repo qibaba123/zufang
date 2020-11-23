@@ -21,4 +21,10 @@ class App_Model_Park_MysqlAddressParkStorage extends Libs_Mvc_Model_BaseModel
     }
 
 
+    public function get_park(){
+        $sql = 'SELECT * '.'FROM `pre_address_park` ';
+        $ret = DB::fetch_all($sql);
+        return $ret;
+    }
+
 }

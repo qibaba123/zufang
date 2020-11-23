@@ -131,7 +131,7 @@
                                                             <label class="control-label"><font color="red">*</font>详细地址：</label>
 
                                                             <div class="control-group" style="float: left;width: 63%;margin: 0;">
-                                                                <select id="province" name="province" class="form-control inline"  style="width: 20%;display: inline-block">
+                                                              <!--  <select id="province" name="province" class="form-control inline"  style="width: 20%;display: inline-block">
                                                                     <option value="0">省份</option>
                                                                     <{foreach $province as $val}>
                                                                 <option value="<{$val['region_id']}>" <{if $row['ahr_province'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
@@ -149,7 +149,7 @@
                                                                 <option value="<{$val['region_id']}>" <{if $row['ahr_zone'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
                                                                     <{/foreach}>
 
-                                                                </select>
+                                                                </select>-->
                                                                 <select id="park" name="park" class="form-control inline" style="width: 20%;display: inline-block">
                                                                     <option value="0">园区</option>
                                                                     <{foreach $park as $val}>
@@ -564,9 +564,9 @@
                     time: 10*1000
                 }
         );
-        var pro_name      = $("#province").find("option:selected").text();
-        var city_name     = $("#city").find("option:selected").text();
-        var zone_name     = $("#zone").find("option:selected").text();
+        // var pro_name      = $("#province").find("option:selected").text();
+        // var city_name     = $("#city").find("option:selected").text();
+        // var zone_name     = $("#zone").find("option:selected").text();
         var park_name     = $("#park").find("option:selected").text();
         $.ajax({
             'type'   : 'post',

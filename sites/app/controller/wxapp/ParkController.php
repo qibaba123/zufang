@@ -66,9 +66,10 @@ class App_Controller_Wxapp_ParkController extends App_Controller_Wxapp_InitContr
             $this->output['city'] = $city;
             $area = $address_model->get_area_by_parent($row['ahr_city']);
             $this->output['area'] = $area;
-            $park_model = new App_Model_Park_MysqlAddressParkStorage();
-            $this->output['park'] = $park_model->get_park_by_parent($row['ahr_zone']);
+
         }
+        $park_model = new App_Model_Park_MysqlAddressParkStorage();
+        $this->output['park'] = $park_model->get_park();
         $this->output['type'] = $type;
         $this->buildBreadcrumbs(array(
             array('title' => '编辑工位', 'link' => '#'),
