@@ -19,7 +19,7 @@ class App_Controller_Applet_ShopController extends App_Controller_Applet_InitCon
 
     public function indexAction(){
         $baseCode = $this->request->getIntParam('baseCode',0); //首页部分显示判断
-        if($baseCode == 102){  //小程序版本是这个时  隐藏
+        if($baseCode == 103){  //小程序版本是这个时  隐藏
             $data['is_show'] = false;  //
         }else{
             $data['is_show'] = true;
