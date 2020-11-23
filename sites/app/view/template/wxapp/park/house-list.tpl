@@ -300,7 +300,7 @@
                                 <th style="width: 11.1%">售价</th>
                                 <th style="width: 11.1%">封面</th>
                                 <th style="width: 11.1%">库存</th>
-                                <th style="width: 11.1%">所属工位</th>
+                                <th style="width: 11.1%">所属园区</th>
                                 <th style="width: 11.1%">权重</th>
                                 <th style="width: 11.1%">添加时间</th>
                                 <th style="width: 11.1%">操作</th>
