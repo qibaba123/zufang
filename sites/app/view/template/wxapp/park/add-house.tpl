@@ -564,9 +564,9 @@
                     time: 10*1000
                 }
         );
-        // var pro_name      = $("#province").find("option:selected").text();
-        // var city_name     = $("#city").find("option:selected").text();
-        // var zone_name     = $("#zone").find("option:selected").text();
+        var pro_name      = $("#province").find("option:selected").text();
+        var city_name     = $("#city").find("option:selected").text();
+        var zone_name     = $("#zone").find("option:selected").text();
         var park_name     = $("#park").find("option:selected").text();
         $.ajax({
             'type'   : 'post',
