@@ -157,7 +157,7 @@
                                                                     <{/foreach}>
 
                                                                 </select>
-                                                                <input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;margin-top: 20px" placeholder="请填写具体地址" value="<{if $row}><{$row['ahr_address']}><{/if}>">
+                                                                <input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;" placeholder="请填写具体地址" value="<{if $row}><{$row['ahr_address']}><{/if}>">
                                                             </div>
 
                                                             <div class="control-group col-sm-2 text-left" style="margin-left: 0;margin-top: 54px">

@@ -300,7 +300,7 @@
                                 <th style="width: 11.1%">售价</th>
                                 <th style="width: 11.1%">封面</th>
                                 <th style="width: 11.1%">库存</th>
-                                <th style="width: 11.1%">所属区域</th>
+                                <th style="width: 11.1%">所属工位</th>
                                 <th style="width: 11.1%">权重</th>
                                 <th style="width: 11.1%">添加时间</th>
                                 <th style="width: 11.1%">操作</th>
@@ -319,7 +319,7 @@
                                 <td style="width: 11.1%"><{$val['ahr_price']}>/天</td>
                                 <td style="width: 11.1%"><img src="<{$val['ahr_cover']}>" alt="" style="width: 174px;"></td>
                                 <td style="width: 11.1%"><{$val['ahr_stock']}></td>
-                                <td style="width: 11.1%"><{$val['ahr_province_name']}> - <{$val['ahr_city_name']}> - <{$val['ahr_zone_name']}> - <{$val['ahr_park_name']}></td>
+                                <td style="width: 11.1%"><{$val['ahr_park_name']}></td>
                                 <td style="width: 11.1%"><{$val['ahr_weight']}></td>
                                 <td style="width: 11.1%"><{date('Y-m-d H:i',$val['ahr_create_time'])}></td>
                                 <td style="width: 11.1%">
