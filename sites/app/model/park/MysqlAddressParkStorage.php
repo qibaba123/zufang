@@ -15,14 +15,14 @@ class App_Model_Park_MysqlAddressParkStorage extends Libs_Mvc_Model_BaseModel
 
 
     public function get_park_by_parent($parent_id){
-        $sql = 'SELECT * '.'FROM `pre_address_park` WHERE ap_area ='.intval($parent_id);
+        $sql = 'SELECT * '.'FROM `pre_address_park` WHERE ap_deleted = 0 and ap_area ='.intval($parent_id);
         $ret = DB::fetch_all($sql);
         return $ret;
     }
 
 
     public function get_park(){
-        $sql = 'SELECT * '.'FROM `pre_address_park` ';
+        $sql = 'SELECT * '.'FROM `pre_address_park` WHERE ap_deleted = 0 ';
         $ret = DB::fetch_all($sql);
         return $ret;
     }
