@@ -108,6 +108,12 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             2 => '租聘中',
             3 => '已过期'
         );
+        $format_name = '';
+        if($row['rt_format_id']){
+            $format_model = new App_Model_Service_MysqlServiceFormatStorage();
+            $format       = $format_model->getRowById($row['rt_format_id']);
+            $format_name = $format['sf_name'];
+        }
         $data[]      = array(
             'tid'    => $row['rt_tid'],
             'number' => $row['rt_number'],
@@ -121,7 +127,8 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             'end_time'   => date('Y-m-d H:i',$row['rt_end_time']),
             'm_name'     => $row['rt_m_name'],
             'm_mobile'   => $row['rt_m_mobile'],
-            'm_note'     => $row['rt_note']
+            'm_note'     => $row['rt_note'],
+            'format_name' => $format_name
 
         );
         $this->displayJsonSuccess($data,true,'获取成功');
@@ -132,7 +139,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
     //预约订单列表
     public function ServiceTradeListAction(){
         $status = $this->request->getIntParam('status');//0.全部  1.待支付  2.进行中  3.已过期 4.续租
-        $type = $this->request->getIntParam('type');//0.全部  1.代账续约  2.园区续租
+        $type = $this->request->getIntParam('type');//0.全部  1.代账续约  2.办公室续租  3.工位续租  4.会员续约
         $page   = $this->request->getIntParam('page');
         $index  =  $page*$this->count;
         if($status == 4){
@@ -141,9 +148,18 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
         $trade_model = new App_Model_Trade_MysqlReserveTradeStorage();
         if($type == 1){
             $where[] = array('name'=>"rt_type",'oper'=>"=",'value'=>2);
-            $where[] = array('name'=>"rt_second_type",'oper'=>"=",'value'=>1);
+          //  $where[] = array('name'=>"rt_second_type",'oper'=>"=",'value'=>1);
         }elseif($type == 2){
-            $where[] = array('name'=>"rt_type",'oper'=>"in",'value'=>array(1,3));
+            $where[] = array('name'=>"rt_second_type",'oper'=>"=",'value'=>2);
+            $where[] = array('name'=>"rt_type",'oper'=>"=",'value'=>1);
+
+           // $where[] = array('name'=>"rt_type",'oper'=>"in",'value'=>array(1,3));
+        }elseif($type == 3){
+            $where[] = array('name'=>"rt_second_type",'oper'=>"=",'value'=>1);
+            $where[] = array('name'=>"rt_type",'oper'=>"=",'value'=>1);
+        }elseif($type == 4){
+           // $where[] = array('name'=>"rt_second_type",'oper'=>"=",'value'=>1);
+            $where[] = array('name'=>"rt_type",'oper'=>"=",'value'=>3);
         }else{
             $where[] = array('name'=>"rt_type",'oper'=>"in",'value'=>array(1,2,3));
         }
@@ -260,6 +276,7 @@ class App_Controller_Applet_TradeController extends App_Controller_Applet_InitCo
             $cover       = $row['ahr_cover'];
             $brief       = $row['ahr_brief'];
             $price       = $row['ahr_price'];
+            $second_type = $row['ahr_type'];
         }else{
             $service_model = new App_Model_Service_MysqlEnterpriseServiceStorage();
             $row           = $service_model->getRowById($gid);

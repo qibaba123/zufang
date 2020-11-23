@@ -212,7 +212,7 @@
 				<td class="title-cell">
 					<p class="goods-title">
 						<a href="/wxapp/zftrade/tradeList?title=<{$val['rt_g_name']}>"class="new-window" title="<{$val['rt_g_name']}>">
-							<{if $val['rt_nume']}>[<{$val['rt_number']}>]<{/if}><{$val['rt_g_name']}><{if $val['re_format'] != 0}><{$val['sf_name']}><{/if}>
+							<{if $val['rt_nume']}>[<{$val['rt_number']}>]<{/if}><{$val['rt_g_name']}><{if $val['rt_format_id'] != 0}>(<{$val['sf_name']}>)<{/if}>
 						</a>
 					</p>
 					<p>
