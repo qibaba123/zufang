@@ -131,7 +131,7 @@
                                                             <label class="control-label"><font color="red">*</font>详细地址：</label>
 
                                                             <div class="control-group" style="float: left;width: 63%;margin: 0;">
-                                                                <select id="province" name="province" class="form-control inline"  style="width: 20%;display: inline-block">
+                                                              <!--  <select id="province" name="province" class="form-control inline"  style="width: 20%;display: inline-block">
                                                                     <option value="0">省份</option>
                                                                     <{foreach $province as $val}>
                                                                 <option value="<{$val['region_id']}>" <{if $row['ahr_province'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
@@ -149,15 +149,15 @@
                                                                 <option value="<{$val['region_id']}>" <{if $row['ahr_zone'] == $val['region_id']}>selected<{/if}>><{$val['region_name']}></option>
                                                                     <{/foreach}>
 
-                                                                </select>
+                                                                </select>-->
                                                                 <select id="park" name="park" class="form-control inline" style="width: 20%;display: inline-block">
-                                                                    <option value="0">园区</option>
+                                                                    <option value="0">请选择园区</option>
                                                                     <{foreach $park as $val}>
                                                                 <option value="<{$val['ap_id']}>" <{if $row['ahr_park'] == $val['ap_id']}>selected<{/if}>><{$val['ap_name']}></option>
                                                                     <{/foreach}>
 
                                                                 </select>
-                                                                <input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;margin-top: 20px" placeholder="请填写具体地址" value="<{if $row}><{$row['ahr_address']}><{/if}>">
+                                                                <input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;" placeholder="请填写具体地址" value="<{if $row}><{$row['ahr_address']}><{/if}>">
                                                             </div>
 
                                                             <div class="control-group col-sm-2 text-left" style="margin-left: 0;margin-top: 54px">
